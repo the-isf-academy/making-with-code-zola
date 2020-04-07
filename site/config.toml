@@ -1,3 +1,10 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Making with Code"
+theme = "book"
+publishdir = "../build"
+
+[params]
+
+  BookLogo = "fablearn.png"
+  BookSection = "courses"

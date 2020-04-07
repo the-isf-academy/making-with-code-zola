@@ -1,0 +1,4 @@
+build/*
+site/resources/*
+*.swp
+*.swo
