@@ -1,11 +1,7 @@
 ---
 title: Teaching notes
-_build:
-  list: false
-  render: false
+type: notes
 ---
-
-## Notes
 
 + 10 class meetings
 + This initial unit prioritizes getting students making personally-meaningful things as fast as possible. This means we aren’t aiming for completeness. In particular, we’re not introducing variables or conditional control structures in this unit: most students won’t need them, and we’ll spend a lot of time with them in the next unit.

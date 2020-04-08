@@ -1,9 +1,6 @@
 ---
 title: Teaching notes
-type: teaching-notes
-_build:
-  list: false
-  render: false
+type: notes
 ---
 
 ## Course structures

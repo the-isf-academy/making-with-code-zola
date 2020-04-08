@@ -1,0 +1,3 @@
+{{ range .Site.Params.CustomCSS -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+{{- end }}

@@ -9,24 +9,30 @@ In this lab, we are going to practice using the Terminal.
 {{< expand "Setup" >}}
 
 Open a new Terminal window and enter the following commands
-(Don't type the text from before the `$`):
+(Don't type the `$`.):
 
-    $ cd Destop/cs9/unit_00
-    $ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git
-    $ ls
-    lab_00_terminal_adventure	 
-    $ cd lab_00_terminal_adventure
+```shell
+$ cd Destop/cs9/unit_00
+$ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git
+$ ls
+lab_00_terminal_adventure	 
+$ cd lab_00_terminal_adventure
+```
 
 You just copied some code from GitHub onto your computer. Let's have a look:
 
-    $ ls
-    adventure	    returnToShip.py
+```shell
+$ ls
+adventure	    returnToShip.py
+```
 
 `returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end). Run it to see what happens:
 
-    $ python returnToShip.py
-      Your adventure has only just begun. You are not yet ready to return
-      to the ship. More secrets await you in the ocean's depths.
+```shell
+$ python returnToShip.py
+  Your adventure has only just begun. You are not yet ready to return
+  to the ship. More secrets await you in the ocean's depths.
+```
 
 Today, you will use Terminal to explore the contents of the `adventure` directory.
 
@@ -36,13 +42,17 @@ Today, you will use Terminal to explore the contents of the `adventure` director
 Your challenge is to see if you can get the treasure, using just the Terminal.
 To get started, let's go into the `adventure` directory:
 
-    $ cd adventure
-    $ ls
-    seafloor	sinking.txt
+```shell
+$ cd adventure
+$ ls
+seafloor	sinking.txt
+```
 
 `sinking.txt` is a text file, so we can read it. Try using the `cat` command:
 
-    $ cat sinking.txt
+```shell
+$ cat sinking.txt
+```
 
 You will end by running `returnToShip.py` in the `lab_00_terminal_adventure` directory.
 

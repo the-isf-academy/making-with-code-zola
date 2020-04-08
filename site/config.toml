@@ -8,6 +8,7 @@ publishdir = "../build"
 
   BookLogo = "fablearn.png"
   BookSection = "courses"
+  CustomCSS = ["css/book_custom.css"]
 
   ShowTeaching = true
-  ShowTeachingNotes = true
+  ShowNotes = true
