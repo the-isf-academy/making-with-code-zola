@@ -1,5 +1,6 @@
 ---
 title: Teaching
+type: teaching
 ---
 
 ## Lesson 0 - Welcome to Computer Science

@@ -1,6 +1,7 @@
-title: Lesson 0.0 - Welcome to Computer Science - Teaching Notes
-unit: 0
-lesson: 0
+---
+title: Teaching notes
+type: notes
+---
 
 ## Lesson 0.0
 

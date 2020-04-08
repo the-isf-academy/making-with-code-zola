@@ -9,3 +9,20 @@
     border-left-width: 4px;
     padding: 1.5em;
 }
+
+.teaching hr {
+    color: #aaa;
+}
+
+.book-expand input[type="checkbox"]:checked + .book-expand-content {
+    display: block;
+}
+
+.book-expand .book-expand-content {
+    display: none;
+    padding: 1rem;
+}
+
+details.details-view summary {
+    font-size: 1.17em;
+}
