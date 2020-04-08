@@ -1,8 +1,5 @@
 ---
 title: Teaching
-_build:
-  list: false
-  render: false
 ---
 
 ## Introduction

@@ -37,7 +37,8 @@
 {{ if or $ancestor (not $collapsed) }}
   {{ with .Section }}
   <ul>
-    {{ range where .Pages "Params.bookhidden" "!=" "true" }}
+    {{/* EDITED BY CP */}}
+    {{ range where (where .Pages "Params.bookhidden" "!=" "true") "Type" "not in" .Site.Params.ExcludeTypesFromMenu }}
       {{ if .IsSection }}
         {{ template "book-section" (dict "Section" . "CurrentPage" $.CurrentPage) }}
       {{ else if and .IsPage .Content }}
