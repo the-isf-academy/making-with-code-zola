@@ -1,20 +1,21 @@
 {{ define "main" }}
+  <article class="markdown">
   <h1>{{ .Title }}</h1>
 
   {{ if .Site.Params.ShowTeaching }}
     <div class="teaching">
     <h2>Teaching</h2>
-    {{ range first 1 (where .Pages "Type" "teaching") }}
-        {{ .Content }}
-    {{ end }}
-    {{ if .Site.Params.ShowNotes }}
-      {{ range where .Pages "Type" "notes" }}
-          {{ .Render "details" }}
+      {{ range first 1 (where .Pages "Type" "teaching") }}
+          {{ .Content }}
+      {{ end }}
+      {{ if .Site.Params.ShowNotes }}
+        {{ range where .Pages "Type" "notes" }}
+            {{ .Render "details" }}
+        {{ end }}
       {{ end }}
     </div>
-    {{ end }}
   {{ end }}
 
   {{ .Content }}
-
+  </article>
 {{ end }}
