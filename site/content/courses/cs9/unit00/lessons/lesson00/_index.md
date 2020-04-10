@@ -2,6 +2,9 @@
 title: Lesson 00.00
 type: lesson
 ---
+{{< devnote >}}
+This is a note for developers, using the devnote shortcode.
+{{< /devnote >}}
 
-This is the first lesson. NOTE: I am still working on the best way to attach
-modules like labs, handouts, homework, and repos to lessons.
+{{< include_module "lab_terminal_adventure" >}}
+{{< include_module "hw_terminal_practice" >}}

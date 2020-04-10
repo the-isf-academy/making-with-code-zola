@@ -1,5 +1,6 @@
 ---
 title: "Terminal Practice Homework"
+type: module
 ---
 
 # Terminal Practice Homework
