@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/courses/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/notes_hk_19_20/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/lessons/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/dev/config/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/dev/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/lessons/lesson00/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/dev/structure/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/dev/syntax/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/teaching/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/lessons/lesson00/teaching/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/lessons/lesson00/notes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/notes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/modules/lab_terminal_adventure/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/modules/hw_terminal_practice/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/unit00/teaching/</loc>
+  </url>
+  
+</urlset>
