@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Making with Code</title>
-    <link>http://example.org/courses/cs9/unit00/modules/</link>
+    <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/</link>
     <description>Recent content on Making with Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://example.org/courses/cs9/unit00/modules/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
