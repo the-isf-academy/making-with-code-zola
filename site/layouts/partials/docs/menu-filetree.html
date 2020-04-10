@@ -1,11 +1,10 @@
 {{ $bookSection := default "docs" .Site.Params.BookSection  }}
-{{ if eq $bookSection "*" }}
+{{ if .Site.Params.ShowDev }}
   {{ .Scratch.Set "BookSections" .Site.Sections }}
 {{ else }}
-  {{ $bookSections := where .Site.Sections "Section" $bookSection }}
+  {{ $bookSections := where .Site.Sections "Section" "!=" "dev" }}
   {{ .Scratch.Set "BookSections" $bookSections }}
 {{ end }}
-
 
 {{ $sections := .Scratch.Get "BookSections" }}
 {{/* If there is only one section to render then render its children, else render all sections */}}
