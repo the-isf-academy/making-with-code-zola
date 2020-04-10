@@ -1,0 +1,6 @@
+ShowTeaching = true
+ShowNotes = true
+ShowDev = true
+BookLogo = "fablearn.png"
+CustomCSS = ["css/book_custom.css"]
+ExcludeTypesFromMenu = ["teaching", "notes"]
