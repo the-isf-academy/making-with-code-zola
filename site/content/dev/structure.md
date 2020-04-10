@@ -9,7 +9,7 @@ resources:
 
 *Making with Code* is organized into courses, units, and lessons. Courses are the highest-level container for content. They contain one or more units. Units are clusters of content organized around essential questions, providing materials to orchestrate student learning for 1-2 months. Lessons are the finest level of organization, representing one class meeting. Lessons will be the hardest to adapt to different school schedules, so using lessons is optional. Courses and units are purely organizational structures, while lessons are also themselves a content type. 
 
-{{< figure src="{{ .Site.BaseURL }}/images/content_organization.png" title="Organization of content" >}}
+{{< figure src="images/content_organization.png" title="Organization of content" >}}
 
 ## Content types
 
