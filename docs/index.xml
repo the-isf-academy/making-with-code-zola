@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homepage on Making with Code</title>
-    <link>http://example.org/</link>
+    <link>https://cproctor.github.io/making-with-code/</link>
     <description>Recent content in Homepage on Making with Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cproctor.github.io/making-with-code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Teaching notes (Future, just a demo)</title>
-      <link>http://example.org/courses/cs9/notes_future_20_21/</link>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/notes_future_20_21/</link>
       <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/courses/cs9/notes_future_20_21/</guid>
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/notes_future_20_21/</guid>
       <description>future teaching notes These aren&amp;rsquo;t real teaching notes, but they do illustrate how we can potentially have many sets of teaching notes in the repo from different teachers.</description>
     </item>
     
     <item>
       <title>Teaching notes (Hong Kong, 2019-2020)</title>
-      <link>http://example.org/courses/cs9/notes_hk_19_20/</link>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/notes_hk_19_20/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/courses/cs9/notes_hk_19_20/</guid>
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/notes_hk_19_20/</guid>
       <description>Course structures Projects One primary structure in the course will be open-ended projects. The initial units will provide scaffolding, supporting students in designing and implementing projects. Later in the year, students will design their own projects independently.
 Labs Students will work on labs in class which integrate the skills and emphasize developing collaborative problem-solving. Early in the year, labs and projects will be tightly-integrated; students will be guided through creating projects.</description>
     </item>
     
     <item>
       <title>Config</title>
-      <link>http://example.org/dev/config/</link>
+      <link>https://cproctor.github.io/making-with-code/dev/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/dev/config/</guid>
+      <guid>https://cproctor.github.io/making-with-code/dev/config/</guid>
       <description>Configuration Configuration Files Multiple configuration files are provided to build Making with Code for various audiences:
  dev (default) teachers students  To build for a particular audience, use the environment flag:
 hugo --environment teachers Configuration Params The following params are defined. Making with Code extends the Book theme, so those params are defined as well. You should not need to modify these directly. Instead, use the environment flag.
@@ -44,19 +44,19 @@ ShowTeaching Show teaching content on courses, units, lessons, and modules.</des
     
     <item>
       <title>Structure</title>
-      <link>http://example.org/dev/structure/</link>
+      <link>https://cproctor.github.io/making-with-code/dev/structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/dev/structure/</guid>
+      <guid>https://cproctor.github.io/making-with-code/dev/structure/</guid>
       <description>Structure Making with Code is organized into courses, units, and lessons. Courses are the highest-level container for content. They contain one or more units. Units are clusters of content organized around essential questions, providing materials to orchestrate student learning for 1-2 months. Lessons are the finest level of organization, representing one class meeting. Lessons will be the hardest to adapt to different school schedules, so using lessons is optional. Courses and units are purely organizational structures, while lessons are also themselves a content type.</description>
     </item>
     
     <item>
       <title>Syntax</title>
-      <link>http://example.org/dev/syntax/</link>
+      <link>https://cproctor.github.io/making-with-code/dev/syntax/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/dev/syntax/</guid>
+      <guid>https://cproctor.github.io/making-with-code/dev/syntax/</guid>
       <description>Syntax Making with Code is a static site built with Hugo. You will need to understand the basics of the Hugo framework to contribute. Content is written in markdown, which you can probably pick up just by looking at some of the existing content.
 Custom Shortcodes include_module Includes the full content of a module (from the same unit) in a lesson.
 {{&amp;lt; include_module &amp;quot;lab_terminal_adventure&amp;quot; &amp;gt;}} ref_module Creates a link to a module (from the same unit) in a lesson.</description>
@@ -64,46 +64,46 @@ Custom Shortcodes include_module Includes the full content of a module (from the
     
     <item>
       <title>Teaching</title>
-      <link>http://example.org/courses/cs9/teaching/</link>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/teaching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/courses/cs9/teaching/</guid>
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/teaching/</guid>
       <description>Introduction This is a 9th grade constructionist computer science course. The central goal is to create a rich, diverse community of people making things with code, through which they can develop personal relationships with powerful ideas. The course is designed to help all students learn to interact with code as an expressive, evocative medium, which helps to structure thought. At the same time, the course is designed to support computational literacy, connecting with students’ existing ways of reading and writing.</description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>http://example.org/courses/cs9/unit00/lessons/lesson00/teaching/</link>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/teaching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/courses/cs9/unit00/lessons/lesson00/teaching/</guid>
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/teaching/</guid>
       <description>Lesson 0 - Welcome to Computer Science The purpose of the first lesson is to introduce students to the goals, structures, and norms of the course. By the end of Lesson 0.0, students should have a sense for what the course is about as well as a fun initial experience making with code.</description>
     </item>
     
     <item>
       <title>Teaching notes</title>
-      <link>http://example.org/courses/cs9/unit00/lessons/lesson00/notes/</link>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/courses/cs9/unit00/lessons/lesson00/notes/</guid>
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/notes/</guid>
       <description>Lesson 0.0 Example schedule  Before class [15 minutes before]  Set up into table groups, have name tags ready for students, physical journal Set up ppt Set up warmup Post it notes Bring some extension cords Play music Write agenda on board     Do Now (5 min) Basic configuration (10 min) Intro to writing code (10 min) Make a drawing (20 min) Put computers away + break (5 min) Intro to CS (5 min) Course Overview/Syllabus (10 min) Norms (10 min) Homework for next class and Questions (3 min) Summary of lesson (2 min)  Norms When students come into the room, it should be configured in a manner suitable for informal working&amp;ndash;ideally small clusters of 4 (so they can break out into pairs or have small discussions).</description>
     </item>
     
     <item>
       <title>Teaching notes (Hong Kong, 2019-2020)</title>
-      <link>http://example.org/courses/cs9/unit00/notes/</link>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/courses/cs9/unit00/notes/</guid>
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/notes/</guid>
       <description>10 class meetings This initial unit prioritizes getting students making personally-meaningful things as fast as possible. This means we aren’t aiming for completeness. In particular, we’re not introducing variables or conditional control structures in this unit: most students won’t need them, and we’ll spend a lot of time with them in the next unit.  Problem sets Assign students to create various drawing primitives, and use them to build up more complex functions.</description>
     </item>
     
     <item>
       <title>Unit 00: Teaching</title>
-      <link>http://example.org/courses/cs9/unit00/teaching/</link>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/courses/cs9/unit00/teaching/</guid>
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</guid>
       <description>Working within the context of drawing, students practice building up complex programs from simple ones. We’ll use Python’s turtle library, and use our exported SVGs to cut things on the laser cutter/cnc. Loosely inspired by Chris’s Python drawing unit from GMS (this links to the Scratch drawing assignment; further up on the page are lessons translating this into Python). Programming: Imperative programming; Basics of syntax; functions; decomposition and code reuse. Introductory debugging strategies.</description>
     </item>
     
