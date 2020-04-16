@@ -16,7 +16,7 @@ Multiple configuration files are provided to build
 To build for a particular audience, use the `environment` flag:
 
 ```
-hugo --environment=teachers server 
+hugo --environment teachers
 ```
 
 ## Configuration Params
