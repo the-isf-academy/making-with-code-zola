@@ -2,31 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CS9 on Making with Code</title>
-    <link>https://cproctor.github.io/making-with-code/courses/cs9/</link>
+    <link>http://example.org/courses/cs9/</link>
     <description>Recent content in CS9 on Making with Code</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cproctor.github.io/making-with-code/courses/cs9/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/courses/cs9/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Teaching notes (Future, just a demo)</title>
+      <link>http://example.org/courses/cs9/notes_future_20_21/</link>
+      <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/courses/cs9/notes_future_20_21/</guid>
+      <description>future teaching notes These aren&amp;rsquo;t real teaching notes, but they do illustrate how we can potentially have many sets of teaching notes in the repo from different teachers.</description>
+    </item>
+    
+    <item>
       <title>Teaching notes (Hong Kong, 2019-2020)</title>
-      <link>https://cproctor.github.io/making-with-code/courses/cs9/notes_hk_19_20/</link>
+      <link>http://example.org/courses/cs9/notes_hk_19_20/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cproctor.github.io/making-with-code/courses/cs9/notes_hk_19_20/</guid>
+      <guid>http://example.org/courses/cs9/notes_hk_19_20/</guid>
       <description>Course structures Projects One primary structure in the course will be open-ended projects. The initial units will provide scaffolding, supporting students in designing and implementing projects. Later in the year, students will design their own projects independently.
 Labs Students will work on labs in class which integrate the skills and emphasize developing collaborative problem-solving. Early in the year, labs and projects will be tightly-integrated; students will be guided through creating projects.</description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>https://cproctor.github.io/making-with-code/courses/cs9/teaching/</link>
+      <link>http://example.org/courses/cs9/teaching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cproctor.github.io/making-with-code/courses/cs9/teaching/</guid>
+      <guid>http://example.org/courses/cs9/teaching/</guid>
       <description>Introduction This is a 9th grade constructionist computer science course. The central goal is to create a rich, diverse community of people making things with code, through which they can develop personal relationships with powerful ideas. The course is designed to help all students learn to interact with code as an expressive, evocative medium, which helps to structure thought. At the same time, the course is designed to support computational literacy, connecting with students’ existing ways of reading and writing.</description>
     </item>
     

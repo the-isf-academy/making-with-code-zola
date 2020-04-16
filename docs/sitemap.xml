@@ -3,91 +3,96 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/</loc>
+    <loc>http://example.org/courses/</loc>
+    <lastmod>2020-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/</loc>
+    <lastmod>2020-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/notes_future_20_21/</loc>
+    <lastmod>2020-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/courses/cs9/notes_hk_19_20/</loc>
     <lastmod>2020-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/</loc>
-    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+    <loc>http://example.org/courses/cs9/unit00/lessons/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/</loc>
-    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+    <loc>http://example.org/courses/cs9/unit00/modules/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/notes_hk_19_20/</loc>
-    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+    <loc>http://example.org/categories/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/</loc>
+    <loc>http://example.org/dev/config/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/</loc>
+    <loc>http://example.org/dev/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/categories/</loc>
+    <loc>http://example.org/courses/cs9/unit00/lessons/lesson00/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/dev/config/</loc>
+    <loc>http://example.org/dev/structure/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/dev/</loc>
+    <loc>http://example.org/dev/syntax/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/</loc>
+    <loc>http://example.org/tags/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/dev/structure/</loc>
+    <loc>http://example.org/courses/cs9/teaching/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/dev/syntax/</loc>
+    <loc>http://example.org/courses/cs9/unit00/lessons/lesson00/teaching/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/tags/</loc>
+    <loc>http://example.org/courses/cs9/unit00/lessons/lesson00/notes/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/teaching/</loc>
+    <loc>http://example.org/courses/cs9/unit00/notes/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/teaching/</loc>
+    <loc>http://example.org/courses/cs9/unit00/modules/lab_terminal_adventure/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/notes/</loc>
+    <loc>http://example.org/courses/cs9/unit00/modules/hw_terminal_practice/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/notes/</loc>
+    <loc>http://example.org/courses/cs9/unit00/</loc>
   </url>
   
   <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_terminal_adventure/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/hw_terminal_practice/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</loc>
+    <loc>http://example.org/courses/cs9/unit00/teaching/</loc>
   </url>
   
 </urlset>
