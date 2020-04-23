@@ -26,8 +26,8 @@
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cproctor.github.io/making-with-code/courses/cs9/notes_hk_19_20/</guid>
-      <description>Course structures Projects One primary structure in the course will be open-ended projects. The initial units will provide scaffolding, supporting students in designing and implementing projects. Later in the year, students will design their own projects independently.
-Labs Students will work on labs in class which integrate the skills and emphasize developing collaborative problem-solving. Early in the year, labs and projects will be tightly-integrated; students will be guided through creating projects.</description>
+      <description>Course structures Infrastructure The course will be taught in Python. Each student will do her work primarily in Github repositories. We will use GitHub Classroom to manage assignments. Each project, lab, and problem set will be a separate repo.
+Assessment Projects and labs will be assessed manually, giving feedback not just on correctness but on style, etc. Problem sets will be graded automatically via GitHub webhooks&amp;ndash;every time commits are pushed, the auto-grader will assess the assignment and create or update an Issue giving feedback.</description>
     </item>
     
     <item>

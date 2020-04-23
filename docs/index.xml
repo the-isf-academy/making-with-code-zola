@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>Labs</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/labs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/labs/</guid>
+      <description>Labs Students will work on labs in class which integrate the skills and emphasize developing collaborative problem-solving. Early in the year, labs and projects will be tightly-integrated; students will be guided through creating projects. One feature of labs is that we will be providing some of the libraries students use, allowing them to interact with broader computational systems than they would be able to do on their own. For example, students will initially encounter machine library through functions we provide which allow them to do powerful things with their code.</description>
+    </item>
+    
+    <item>
+      <title>Problem sets</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/problem_sets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/problem_sets/</guid>
+      <description>Problem Sets There will be regularly-assigned problem sets supporting students in practicing their skills. (We should assess school culture, but I like the idea of having a small problem set due in each day of class). Students may work together on these, but they must be coded independently. Problem sets will be assessed automatically so that students get immediate feedback. Generally, problem sets will lag behind labs so that they are practice with content we’ve already explored together.</description>
+    </item>
+    
+    <item>
       <title>Teaching notes (Future, just a demo)</title>
       <link>https://cproctor.github.io/making-with-code/courses/cs9/notes_future_20_21/</link>
       <pubDate>Thu, 02 Apr 2020 00:00:00 +0000</pubDate>
@@ -26,8 +44,26 @@
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cproctor.github.io/making-with-code/courses/cs9/notes_hk_19_20/</guid>
-      <description>Course structures Projects One primary structure in the course will be open-ended projects. The initial units will provide scaffolding, supporting students in designing and implementing projects. Later in the year, students will design their own projects independently.
-Labs Students will work on labs in class which integrate the skills and emphasize developing collaborative problem-solving. Early in the year, labs and projects will be tightly-integrated; students will be guided through creating projects.</description>
+      <description>Course structures Infrastructure The course will be taught in Python. Each student will do her work primarily in Github repositories. We will use GitHub Classroom to manage assignments. Each project, lab, and problem set will be a separate repo.
+Assessment Projects and labs will be assessed manually, giving feedback not just on correctness but on style, etc. Problem sets will be graded automatically via GitHub webhooks&amp;ndash;every time commits are pushed, the auto-grader will assess the assignment and create or update an Issue giving feedback.</description>
+    </item>
+    
+    <item>
+      <title>Assigning competence</title>
+      <link>https://cproctor.github.io/making-with-code/practices/people/assigning_competence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/people/assigning_competence/</guid>
+      <description>Assigning competence  Assigning competence: Create practices by which students are seen as experts.  One useful practice that embodies this: when helping people from the queue, follow up helping a student by saying, “It looks like you understand this issue pretty well now. When I see another student having the same problem, may I send them to you for help?” That way, the student solidifies the understanding by teaching someone else, and gets to be an expert at that issue.</description>
+    </item>
+    
+    <item>
+      <title>Authorship</title>
+      <link>https://cproctor.github.io/making-with-code/practices/people/authorship/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/people/authorship/</guid>
+      <description>Authorship  Authorship: It is very important that each student develop as an author of her code.  Never touch a student’s keyboard. Instead, sit with the student and guide her in what to do. It can be helpful to bring another laptop, increase the font size, and type out code for the student to copy. It’s also great to have portable whiteboards or writable desk surfaces, so you can develop pseudocode together that then stays with the student.</description>
     </item>
     
     <item>
@@ -40,6 +76,52 @@ Labs Students will work on labs in class which integrate the skills and emphasiz
  dev (default) teachers students  To build for a particular audience, use the environment flag:
 hugo --environment teachers Configuration Params The following params are defined. Making with Code extends the Book theme, so those params are defined as well. You should not need to modify these directly. Instead, use the environment flag.
 ShowTeaching Show teaching content on courses, units, lessons, and modules.</description>
+    </item>
+    
+    <item>
+      <title>Funds of Knowledge</title>
+      <link>https://cproctor.github.io/making-with-code/practices/people/funds_of_knowledge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/people/funds_of_knowledge/</guid>
+      <description>Funds of Knowledge Explain how connected learning is related here...  Funds of knowledge refers to the idea that we will look at students as having lots of resources they can deploy in their learning (rather than viewing them in terms of their deficits). This also means we need to let go of the idea that we’re solely in the position of determining what’s worthwhile in CS. Our students are going to create things that are worthwhile and successful on their terms, not ours.</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://cproctor.github.io/making-with-code/practices/tools/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/tools/git/</guid>
+      <description>Git GitHub </description>
+    </item>
+    
+    <item>
+      <title>Groupwork</title>
+      <link>https://cproctor.github.io/making-with-code/practices/people/groupwork/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/people/groupwork/</guid>
+      <description>Include concepts from &#34;Students As Teachers and Communicators&#34; from Handbook of CS Ed Research.  Groupwork  Groupwork: Small groups are an important context for high-quality disciplinary talk. When students get to choose their groups, they can take advantage of existing social relationships. However, this can create in equities (the strongest students cluster together) and can also bring social tensions into the classroom.  Our recommendation is to always assign seats and groups, change groups regularly (perhaps every unit), and allow students some private input (eg “I really don’t get along with X”).</description>
+    </item>
+    
+    <item>
+      <title>Help Queue</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/help_queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/help_queue/</guid>
+      <description>Help Queue  Getting help: When working on individual projects and on problem sets, students will often need help from teachers. It is important to create structures to allocate teacher time so that pushier students can’t dominate, and to build a culture where it’s a good thing to be stuck, to need help, and to seek help.  One useful tool is the help queue, simply a list on the whiteboard where people can sign up if they need help.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/projects/</guid>
+      <description>Projects One primary structure in the course will be open-ended projects. The initial units will provide scaffolding, supporting students in designing and implementing projects. Later in the year, students will design their own projects independently.
+We ought to name the overall teaching philosophy as constructionism, but also explain how the project-based approach makes sense within POGIL and within computational action.  </description>
     </item>
     
     <item>
@@ -77,7 +159,8 @@ Custom Shortcodes include_module Includes the full content of a module (from the
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/teaching/</guid>
-      <description>Lesson 0 - Welcome to Computer Science The purpose of the first lesson is to introduce students to the goals, structures, and norms of the course. By the end of Lesson 0.0, students should have a sense for what the course is about as well as a fun initial experience making with code.</description>
+      <description>Lesson 0 - Welcome to Computer Science The purpose of the first lesson is to introduce students to the goals, structures, and norms of the course. By the end of Lesson 0.0, students should have a sense for what the course is about as well as a fun initial experience making with code.
+We will introduce the Help Queue . (This is just a test of the ref_practice shortcode. Should it embed content or link out to it?</description>
     </item>
     
     <item>
