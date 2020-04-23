@@ -27,6 +27,15 @@ Creates a link to a module (from the same unit) in a lesson.
 {{</* ref_module "lab_terminal_adventure" */>}}
 ```
 
+### ref_practice
+
+Creates a link to a practice description. May be used on any content page. 
+
+```
+{{</* ref_practice "activity/help_queue" */>}}
+```
+
+
 ### devnote
 
 Use for notes and TODO items. Content within `devnote` is highlighted and only
