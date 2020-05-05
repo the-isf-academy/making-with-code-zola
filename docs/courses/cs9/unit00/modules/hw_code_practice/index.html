@@ -4,16 +4,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=""><meta property="og:title" content="" />
+<meta name="description" content="Code block style: Do we want to use the black background / white text format? Also how do want to handle references to HK teaching team? (replace with generic &#34;instructor&#34; or &#34;teaching team&#34;?)  Code Practice Homework  Part 0: Who are you? (5 minutes) ↕  Send your teaching team an email answering the following questions:
+ What is your name and what would you like us to call you?"><meta property="og:title" content="Code Practice Homework" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/" />
+<meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/hw_code_practice/" />
 
-<title>Modules | Making with Code</title>
+<title>Code Practice Homework | Making with Code</title>
 <link rel="icon" href="/making-with-code/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/making-with-code/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
 <script defer src="/making-with-code/en.search.min.d0e8a089163be3c2bd81e6b879ef2bf7d0e84d61e5f85acc979cd856ed82af09.js" integrity="sha256-0OigiRY748K9gea4ee8r99DoTWHl&#43;FrMl5zYVu2Crwk="></script>
-<link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/index.xml" title="Making with Code" />
+<link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/hw_code_practice/index.xml" title="Making with Code" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -207,7 +208,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/making-with-code/courses/cs9/unit00/modules/hw_code_practice/" class="">Code Practice Homework</a>
+  <a href="/making-with-code/courses/cs9/unit00/modules/hw_code_practice/" class="active">Code Practice Homework</a>
   
 
 
@@ -661,7 +662,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/making-with-code/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Modules</strong>
+  <strong>Code Practice Homework</strong>
 
   <label for="toc-control">
     <img src="/making-with-code/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -683,7 +684,119 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown">
+<blockquote class="book-hint danger">
+Code block style: Do we want to use the black background / white text format? Also how do want to handle references to HK teaching team? (replace with generic "instructor" or "teaching team"?)
+</blockquote>
+
+
+
+<h1 id="code-practice-homework">Code Practice Homework</h1>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Part 0: Who are you? (5 minutes)</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>Send your teaching team an email answering the following questions:</p>
+<ol>
+<li>What is your name and what would you like us to call you?</li>
+<li>What is one goal you have for this class?</li>
+<li>What is one thing that makes you nervous about this class?</li>
+<li>What is your favorite dessert?</li>
+</ol>
+<p><em>Note: The italicized time in brackets in each part of the homework is an estimate of the amount of time we think you should spend on each part of the homework. Don&rsquo;t worry if something takes you a little more or less time, but if you are spending significantly more time on some part of the homework, please reach out to your teaching team so we can figure out why :)</em></p>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Part 1: Your first program (15 minutes)</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>Use Python&rsquo;s <code>turtle</code> library to draw something. You can do this with the <a href="../../lessons/lesson00">functions we talked about in class</a> or more from the <a href="https://docs.python.org/3.7/library/turtle.html">Turtle documentation</a> if you want a challenge.</p>
+<ul>
+<li>
+<p>Run the code to make sure it works.</p>
+<ul>
+<li>
+<p>Open a new Terminal window.</p>
+</li>
+<li>
+<p>Navigate to the directory where your homework is saved.</p>
+</li>
+<li>
+<p>Tell Terminal to open Atom and work on a new file</p>
+<pre><code>  ~$ cd Desktop/cs9/unit_00/
+  ~/Desktop/cs9/unit_00$ atom homework_01.py
+</code></pre>
+</li>
+<li>
+<p>Atom should have opened.</p>
+</li>
+<li>
+<p>Paste the starter code below into the window and save it (<code>⌘S</code>). Now you can see this file in Terminal:</p>
+<pre><code>  ~/Desktop/cs9/unit_00$ ls
+  homework_01.py
+</code></pre>
+</li>
+<li>
+<p>Run the program.</p>
+<pre><code>  ~/Desktop/cs9/unit_00$ python homework_01.py
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Change the code so it draws something new. (It might help to sketch what you are trying to draw.)</p>
+</li>
+<li>
+<p>After you make a change, save the file and run the program to make sure it worked properly.</p>
+</li>
+<li>
+<p>Be ready to share your drawing in class next time we meet. <strong>You don&rsquo;t need to submit anything for this part of the assignment before class.</strong></p>
+</li>
+</ul>
+<h3 id="starter-code">Starter code</h3>
+<pre><code>#!python
+# Unit 0 Lesson 1
+# Author: Your Name
+
+from turtle import *
+
+# You can add comments anywhere you want. The code below draws a square.
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+
+# This makes the program wait until you type some input.
+# Otherwise, it would quit right after it finished drawing.
+input(&quot;Press enter...&quot;)
+</code></pre>
+
+    </div>
+  </label>
+</div>
+
+<h1 id="deliverables">Deliverables</h1>
+<ul>
+<li>An email, as described above.</li>
+<li>A python file called <code>homework_01.py</code>, submitted your course site.</li>
+<li>The program should draw something.</li>
+</ul>
+</article>
  
       
 
@@ -702,6 +815,10 @@ https://github.com/alex-shpak/hugo-book
       </footer>
 
       
+  
+  <div class="book-comments">
+
+</div>
   
  
 

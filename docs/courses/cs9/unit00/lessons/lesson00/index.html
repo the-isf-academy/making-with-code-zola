@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="This is a note for developers, using the devnote shortcode.   Terminal Adventure Lab In this lab, we are going to practice using the Terminal.
- Setup ↕  Open a new Terminal window and enter the following commands (Don&rsquo;t type the $.):
-$ cd Destop/cs9/unit_00 $ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git $ ls lab_00_terminal_adventure	$ cd lab_00_terminal_adventure You just copied some code from GitHub onto your computer. Let&rsquo;s have a look:"><meta property="og:title" content="Lesson 00.00" />
+<meta name="description" content="This is a note for developers, using the devnote shortcode... May need to update configuration script, 00_00_compare_terminal_finder.png   Welcome to Computer Science  Do now: three questions ↕  Every class will start with a &ldquo;Do Now,&rdquo; what you should start working on when class starts.
+On 3 different post it notes, jot* your ideas down:
+ What do you expect CS to be? What are you looking forward to?"><meta property="og:title" content="Lesson 00.00" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/" />
@@ -14,7 +14,7 @@ $ cd Destop/cs9/unit_00 $ git clone https://github.com/the-isf-academy/lab_00_te
 <title>Lesson 00.00 | Making with Code</title>
 <link rel="icon" href="/making-with-code/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/making-with-code/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
-<script defer src="/making-with-code/en.search.min.dcebdbb03f9e07651ac49e2df0f091a4595afe82b5692c38a400a50e9e1b8bb6.js" integrity="sha256-3OvbsD&#43;eB2UaxJ4t8PCRpFla/oK1aSw4pAClDp4bi7Y="></script>
+<script defer src="/making-with-code/en.search.min.d0e8a089163be3c2bd81e6b879ef2bf7d0e84d61e5f85acc979cd856ed82af09.js" integrity="sha256-0OigiRY748K9gea4ee8r99DoTWHl&#43;FrMl5zYVu2Crwk="></script>
 <link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/index.xml" title="Making with Code" />
 <!--
 Made with Book Theme
@@ -201,6 +201,36 @@ https://github.com/alex-shpak/hugo-book
   
   <ul>
     
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/hw_code_practice/" class="">Code Practice Homework</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
     
       
         
@@ -773,10 +803,191 @@ Be explicit about when students should be watching you and getting ready to part
 
   
 <blockquote class="book-hint danger">
-This is a note for developers, using the devnote shortcode.
+This is a note for developers, using the devnote shortcode...
+May need to update configuration script, 00_00_compare_terminal_finder.png
 </blockquote>
 
 
+
+<hr>
+<h1 id="welcome-to-computer-science">Welcome to Computer Science</h1>
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Do now: three questions</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p><em>Every class will start with a &ldquo;Do Now,&rdquo; what you should start working on when class starts.</em></p>
+<p>On 3 different post it notes, jot* your ideas down:</p>
+<ul>
+<li><em>What do you expect CS to be?</em></li>
+<li><em>What are you looking forward to?</em></li>
+<li><em>What do you hope to learn?</em></li>
+</ul>
+<p>*Doesn’t need to be complete sentences.</p>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Basic configuration</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>To get your computer ready, we need to configure the workspace you will use for the class. To begin, start your Terminal app, paste in the following line into the window that opens, and press <code>return</code>. Enter your password when the window prompts you.</p>
+<pre><code>bash &lt; &lt;(curl -sL https://raw.githubusercontent.com/the-isf-academy/g9cs_student_setup/master/setup_script.sh)
+</code></pre>
+<p>The script installs the programs you need to write and run your code and creates the file system we&rsquo;ll use for the class.</p>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Into the terminal</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p>Take a peek at your Desktop. You should see a new folder called <code>cs9</code> created by the configuration script. We want to navigate to that folder using the Terminal interface to learn some Terminal skills that will be useful throughout the class.</p>
+<h3 id="open-a-new-terminal-window">Open a new Terminal window</h3>
+<p>You&rsquo;re probably used to interacting with the files in your computer through a <em>Graphical User Interface (GUI)</em> like Finder. Terminal allows us to interact with the files in our computer through a <em>Text-based User Interface (TUI)</em>. The files in our computers are organized in nested folders known as <em>directories</em>. Terminal opens in your <code>home</code> directory, but we will be working in the <code>cs9</code> directory. Since the home directory holds everything we will be working with on your computer, the <code>cs9</code> directory must be somewhere inside the <code>home</code> directory (organized as a <em>child directory</em> or <em>subdirectory</em>).</p>
+<pre><code>Last login: Thu Aug 15 13:57:41 on ttys008
+~$
+</code></pre>
+<h3 id="whats-in-your-home-directory">What&rsquo;s in your home directory?</h3>
+<p>To see the files and subdirectories in the current directory, type <code>ls</code> into the command line and press <code>return</code>. This will list everything in the current directory.</p>
+<pre><code>~$ ls
+Applications  Desktop  Documents  Downloads	 Library  Movies  Music	 Pictures
+</code></pre>
+<p>Here, you should see that <code>Desktop</code> is one of the subdirectories listed. Let&rsquo;s move into that subdirectory. To do so, type <code>cd Desktop</code> into the command line and press <code>return</code> (&ldquo;cd&rdquo; stands for &ldquo;change directory&rdquo;). Now, list all the items in your <code>Desktop</code> directory using <code>ls</code>.</p>
+<pre><code>~$ cd Desktop
+~/Desktop$ ls
+Screen Shot 2019-08-15 at 12.34.48 AM.png  dobby.gif			  warsaw-boarding-pass.pdf
+cs9						                   lentil loaf gravy.pdf
+</code></pre>
+<h3 id="compare-the-output-in-the-terminal-window-with-the-desktop-shown-by-the-gui">Compare the output in the Terminal window with the Desktop shown by the GUI.</h3>
+<p>Type <code>open .</code> to open Finder. All of the files and folders are the same! The Terminal really does show us the same files and directories as our GUI!</p>
+<!-- raw HTML omitted -->
+<p>Going back to the Terminal, we can also see that the <code>cs9</code> subdirectory is inside the <code>Desktop</code> directory. Change into the <code>cs9</code> directory and list what it contains. There is another subdirectory named <code>unit_00</code>, the directory we created for you to hold everything for Unit 0. Change into that directory and we&rsquo;ll be ready to get started with some actual code!</p>
+<pre><code>~/Desktop$ cd cs9/
+~/Desktop/cs9$ ls
+env	unit_00
+~/Desktop/cs9$ cd unit_00/
+~/Desktop/cs9/unit_00$
+</code></pre>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Introduction to writing code</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p><a href="https://www.youtube.com/embed/sTLi5unrY6I">YouTube link</a></p>
+<p>Just as we covered in class, this video goes over (1) the steps to write and run a Python Turtle program and (2) some demos of other functions in the Turtle library [starting at 3:19 in the video].</p>
+<p>As a reminder, here are some of the commands we learned for Terminal and Atom in Mac. If you have a Windows computer, you can reference the document <a href="bit.ly/windowsisf">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>In Terminal</em></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><code>cd Desktop/cs9/unit_00</code></td>
+<td align="left">to change to the directory &ldquo;unit_00&rdquo;</td>
+</tr>
+<tr>
+<td align="left"><code>atom .</code></td>
+<td align="left">to open Atom.</td>
+</tr>
+<tr>
+<td align="left"><code>atom newfilename.py</code></td>
+<td align="left">to make a new file. You can also choose to make a new file by right-clicking on the folder in atom.</td>
+</tr>
+<tr>
+<td align="left"><em>In Atom</em></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><code>[Insert your code]</code></td>
+<td align="left">In atom, edit the file. Remember to save (<code>⌘S</code>)  the file after editing.</td>
+</tr>
+<tr>
+<td align="left"><em>In Terminal</em></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><code>python newfilename.py</code></td>
+<td align="left">to run the program.</td>
+</tr>
+<tr>
+<td align="left"><code>done</code></td>
+<td align="left">to end the program.</td>
+</tr>
+<tr>
+<td align="left"><code>⇪</code> + <code>ENTER</code></td>
+<td align="left">to get to the previous command you typed in terminal</td>
+</tr>
+<tr>
+<td align="left"><!-- raw HTML omitted --></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>When you come across errors or bugs, do not fear! Write the issue down, and we can talk about it during class. Try to figure out whether your bug is a:
+<strong>Programmatic error</strong> (which happens when the program does something different than what you wanted. Remember that this happened when we set the angle to the wrong number)
+OR
+<strong>Syntax error</strong> (which happens when the program crashes because the program cannot be understood by the computer. Remember that this happened when we forgot a parentheses).</p>
+
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Make a drawing</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      In class, you worked in groups to make a drawing with the python Turtle library. Here are the functions we used:
+    </div>
+  </label>
+</div>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>Course overview</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      This is not a typical computer science class, and we believe that is a good thing. Learn more about the course under <a href="../../../../../practices">Course Information</a>.
+    </div>
+  </label>
+</div>
 
 <p> 
 
