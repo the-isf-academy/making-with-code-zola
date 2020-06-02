@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Loops Lab In this lab, we will learn how to make the computer do the same instruction over and over.
- The Python shell ↕  Usually, we write Python code in a file using Atom and then run it using Terminal. There&rsquo;s another way to run Python, which is really nice for when you just want to mess around or do a quick test. Open Terminal, navigate to your computer science directory and type python."><meta property="og:title" content="Loops Lab" />
+The Python shell Usually, we write Python code in a file using Atom and then run it using Terminal. There&rsquo;s another way to run Python, which is really nice for when you just want to mess around or do a quick test. Open Terminal, navigate to your computer science directory and type python."><meta property="og:title" content="Loops Lab" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_loops/" />
@@ -13,7 +13,7 @@
 <title>Loops Lab | Making with Code</title>
 <link rel="icon" href="/making-with-code/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/making-with-code/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
-<script defer src="/making-with-code/en.search.min.cc9562431d0dd0a94d29f212dee1d888fee08e9ccf01d3a385093d3e045e4573.js" integrity="sha256-zJViQx0N0KlNKfIS3uHYiP7gjpzPAdOjhQk9PgReRXM="></script>
+<script defer src="/making-with-code/en.search.min.7b899d01feae235a245810706357436d02663eae2e3d3e61d310c08bcbd14fa7.js" integrity="sha256-e4mdAf6uI1okWBBwY1dDbQJmPq4uPT5h0xDAi8vRT6c="></script>
 <link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_loops/index.xml" title="Making with Code" />
 <!--
 Made with Book Theme
@@ -238,6 +238,36 @@ https://github.com/alex-shpak/hugo-book
     
 
   
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_decomposition/" class="">Decomposition Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
   <a href="/making-with-code/courses/cs9/unit00/modules/lab_functions/" class="">Functions Lab</a>
   
 
@@ -298,6 +328,36 @@ https://github.com/alex-shpak/hugo-book
     
 
   
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_modules/" class="">Modules Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
   <a href="/making-with-code/courses/cs9/unit00/modules/lab_terminal_adventure/" class="">Terminal Adventure Lab</a>
   
 
@@ -329,6 +389,36 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/making-with-code/courses/cs9/unit00/modules/hw_terminal_practice/" class="">Terminal Practice Homework</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_git/" class="">Version Control Lab</a>
   
 
 
@@ -734,7 +824,33 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" id="toc-control" />
     <aside class="hidden clearfix">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-python-shell">The Python shell</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#variables">Variables</a></li>
+    <li><a href="#lists">Lists</a>
+      <ul>
+        <li><a href="#what-is-a-list">What is a list?</a></li>
+        <li><a href="#whats-going-on">What&rsquo;s going on?</a></li>
+      </ul>
+    </li>
+    <li><a href="#loops">Loops</a>
+      <ul>
+        <li><a href="#a-looping-through-an-entire-list">A. Looping through an entire list</a></li>
+        <li><a href="#b-looping-through-part-of-a-list">B. Looping through part of a list</a></li>
+        <li><a href="#cde-looping-with-steps">C,D,E. Looping with steps</a></li>
+        <li><a href="#f-looping-for-a-certain-number-of-times">F. Looping for a certain number of times</a></li>
+        <li><a href="#g-loopy-drawings">G. Loopy drawings</a></li>
+        <li><a href="#h-variable-drawings">H. Variable drawings</a></li>
+      </ul>
+    </li>
+    <li><a href="#deliverables">Deliverables</a></li>
+  </ul>
+</nav>
 
 
     </aside>
@@ -746,15 +862,8 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><h1 id="loops-lab">Loops Lab</h1>
 <p>In this lab, we will learn how to make the computer do the same instruction over and over.</p>
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>The Python shell</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>Usually, we write Python code in a file using Atom and then run it using Terminal. There&rsquo;s another way to run Python, which is really nice for when you just want to mess around or do a quick test. Open Terminal, navigate to your computer science directory and type <code>python</code>.</p>
+<h2 id="the-python-shell">The Python shell</h2>
+<p>Usually, we write Python code in a file using Atom and then run it using Terminal. There&rsquo;s another way to run Python, which is really nice for when you just want to mess around or do a quick test. Open Terminal, navigate to your computer science directory and type <code>python</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">~$ cd Desktop/cs9
 ~/Desktop/cs9$ python
 Python 3.7.3 <span style="color:#f92672">(</span>default, Mar <span style="color:#ae81ff">27</span> 2019, 09:23:15<span style="color:#f92672">)</span>
@@ -779,20 +888,9 @@ Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db
 &gt;&gt;&gt; <span style="color:#ae81ff">123456</span> + <span style="color:#ae81ff">654321</span>
 <span style="color:#ae81ff">777777</span>
 </code></pre></div><h4 id="checkpoint-stop-here-and-make-sure-everyone-in-your-group-has-finished-this-section-before-you-go-on-raise-your-hand-and-check-in-with-an-instructor-before-you-move-on">CHECKPOINT: Stop here and make sure everyone in your group has finished this section before you go on. Raise your hand and check in with an instructor before you move on.</h4>
-
-    </div>
-  </label>
-</div>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>Variables</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>You are probably familiar with variables in math. (&ldquo;Solve for x: <code>2x + 4 = 3x</code>&rdquo;) In math problems, the goal is often to figure out the secret value of a variable. Once you figure it out, the problem is finished. Variables work differently in computer science:</p>
+<hr>
+<h2 id="variables">Variables</h2>
+<p>You are probably familiar with variables in math. (&ldquo;Solve for x: <code>2x + 4 = 3x</code>&rdquo;) In math problems, the goal is often to figure out the secret value of a variable. Once you figure it out, the problem is finished. Variables work differently in computer science:</p>
 <ul>
 <li>You can create them whenever you want. In fact, you already made one. Remember typing <code>number = 5</code> above? You made a variable called &ldquo;number&rdquo; and set its value to 5.</li>
 <li>In computer science, you get to decide what value variables have, and you can change them whenever you want. Try this:</li>
@@ -803,20 +901,9 @@ Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db
 <li>You can call them whatever you want (no spaces though!) In math, variables have names like <code>x</code>, <code>y</code>, and <code>t</code>. In computer science, we usually call them things like <code>number_of_coins_in_my_hand</code> or <code>direction_my_character_is_facing</code> because it&rsquo;s less confusing.</li>
 </ul>
 <p>We&rsquo;re going to learn a lot about variables this year, but that&rsquo;s enough for now.</p>
-
-    </div>
-  </label>
-</div>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>Lists</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>Create a new file called <code>lab_02.py</code> in atom (This should be at <code>~/Desktop/cs9/unit_00/lab_02.py</code>.) You&rsquo;ll be turning in this file at the end of the lab. Copy this starter code:</p>
+<hr>
+<h2 id="lists">Lists</h2>
+<p>Create a new file called <code>lab_02.py</code> in atom (This should be at <code>~/Desktop/cs9/unit_00/lab_02.py</code>.) You&rsquo;ll be turning in this file at the end of the lab. Copy this starter code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#75715e"># Unit 0 Lab 2</span>
     <span style="color:#75715e"># Author: Your Name</span>
 
@@ -883,27 +970,21 @@ friend_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#3
 creeper?
 &gt;&gt;&gt;
 </code></pre></div><h4 id="checkpoint-when-you-are-confident-that-everybody-at-your-table-can-explain-lists-raise-your-hand-for-an-instructor-to-check-in-before-you-go-on">CHECKPOINT: When you are confident that <em>everybody at your table</em> can explain lists, raise your hand for an instructor to check in before you go on.</h4>
-
-    </div>
-  </label>
-</div>
-
-<div class="book-expand">
-  <label>
-    <div class="book-expand-head flex justify-between">
-      <span>Loops</span>
-      <span>↕</span>
-    </div>
-    <input type="checkbox" class="hidden" />
-    <div class="book-expand-content markdown-inner">
-      <p>In Python, when you want to run the same code multiple times, we use loops.
+<hr>
+<h2 id="loops">Loops</h2>
+<p>In Python, when you want to run the same code multiple times, we use loops.
 If you have used Scratch before, you have seen loops before:</p>
-<p><img src="scratch_repeat.png" alt="Scratch loop"></p>
+<figure>
+    <img src="https://cproctor.github.io/making-with-code/images/courses/cs9/unit00/00_loops_scratch_loop.png" width="200px"/> <figcaption>
+            <h4>Scratch loop</h4>
+        </figcaption>
+</figure>
+
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>How does a loop work in python? Let&rsquo;s see.
 <strong>Do these and check with your group if you get stuck:</strong></p>
-<h2 id="a-looping-through-an-entire-list">A. Looping through an entire list</h2>
+<h3 id="a-looping-through-an-entire-list">A. Looping through an entire list</h3>
 <ol>
 <li>Let&rsquo;s print the desserts one by one.
 <strong>Type</strong> this starter code at <code>YOUR CODE HERE (A)</code>. Don&rsquo;t copy paste so you can practice typing the code! Also note the indents.</li>
@@ -922,7 +1003,7 @@ If you have used Scratch before, you have seen loops before:</p>
 <ol start="3">
 <li>Alright! Now you try. There&rsquo;s a list called stars. Print every element in <code>star_list</code> using a for-loop.</li>
 </ol>
-<h2 id="b-looping-through-part-of-a-list">B. Looping through part of a list</h2>
+<h3 id="b-looping-through-part-of-a-list">B. Looping through part of a list</h3>
 <p>To give you more options, you can specify a range for your for-loop.</p>
 <ol>
 <li><strong>Type</strong> this code  at <code>YOUR CODE HERE (B)</code> (don&rsquo;t copy paste, so you can practice typing).</li>
@@ -939,7 +1020,7 @@ If you have used Scratch before, you have seen loops before:</p>
 <li>But our code prints out brownies, mochi, timtams, creme brulee, and mango sago.</li>
 <li>Change the code to print out the first 4 desserts only.</li>
 </ul>
-<h2 id="cde-looping-with-steps">C,D,E. Looping with steps</h2>
+<h3 id="cde-looping-with-steps">C,D,E. Looping with steps</h3>
 <p>Copy-paste this code into the file, replacing the line that says, <code>YOU WILL PASTE C, D, E HERE</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(my_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; stepped on the MTR after school, exhausted, and quickly fell asleep at a seat. Usually, the train stops at:&#34;</span>)
 
@@ -971,7 +1052,7 @@ By setting the <code>step</code> to <code>2</code>, we tell the <code>range()</c
 <p><em>Hint: you will also need to update the start/end argument of the <code>range()</code> function to account for the negative one step.</em></p>
 </li>
 </ol>
-<h2 id="f-looping-for-a-certain-number-of-times">F. Looping for a certain number of times</h2>
+<h3 id="f-looping-for-a-certain-number-of-times">F. Looping for a certain number of times</h3>
 <p>Sometimes you don&rsquo;t care about the list value. You just want something to happen a certain number of times. Here&rsquo;s an example using range. <strong>Type</strong> this code (don&rsquo;t copy paste, so you can practice typing) into part <strong>F</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># LOOPING FOR A CERTAIN NUMBER OF TIMES</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>):
@@ -982,22 +1063,23 @@ By setting the <code>step</code> to <code>2</code>, we tell the <code>range()</c
 <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span>
 <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span>
 <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span>
-</code></pre></div><h2 id="g-loopy-drawings">G. Loopy drawings</h2>
+</code></pre></div><h3 id="g-loopy-drawings">G. Loopy drawings</h3>
 <p>The loop concept we just learned will be really helpful in making our drawings more complex. In part <strong>G</strong>, try to create the following image using tools from the Turtle library that we&rsquo;ve covered so far.</p>
-<p><img src="turtle_loop.png" alt="Turtle loop drawing"></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h2 id="h-variable-drawings">H. Variable drawings</h2>
+<figure>
+    <img src="https://cproctor.github.io/making-with-code/images/courses/cs9/unit00/00_loops_turtle_loop.png" width="400px"/> <figcaption>
+            <h4>Turtle loop</h4>
+        </figcaption>
+</figure>
+
+<h3 id="h-variable-drawings">H. Variable drawings</h3>
 <p>Variables will also be useful in our Turtle drawings. Can you add a variable to the code you wrote for the drawing above to create the drawing below?</p>
-<p><img src="turtle_var.png" alt="Turtle variable drawing"></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<figure>
+    <img src="https://cproctor.github.io/making-with-code/images/courses/cs9/unit00/00_loops_turtle_var.png" width="400px"/> <figcaption>
+            <h4>Turtle var</h4>
+        </figcaption>
+</figure>
 
-    </div>
-  </label>
-</div>
-
-<h1 id="deliverables">Deliverables</h1>
+<h2 id="deliverables">Deliverables</h2>
 <ul>
 <li>Once you&rsquo;ve reached the end of the lab (or class time is over), please submit the <code>lab_02.py</code> file you have been creating</li>
 <li>Each member of your group should submit their own file.</li>
@@ -1035,7 +1117,33 @@ By setting the <code>step</code> to <code>2</code>, we tell the <code>range()</c
     
     <aside class="book-toc">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-python-shell">The Python shell</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#variables">Variables</a></li>
+    <li><a href="#lists">Lists</a>
+      <ul>
+        <li><a href="#what-is-a-list">What is a list?</a></li>
+        <li><a href="#whats-going-on">What&rsquo;s going on?</a></li>
+      </ul>
+    </li>
+    <li><a href="#loops">Loops</a>
+      <ul>
+        <li><a href="#a-looping-through-an-entire-list">A. Looping through an entire list</a></li>
+        <li><a href="#b-looping-through-part-of-a-list">B. Looping through part of a list</a></li>
+        <li><a href="#cde-looping-with-steps">C,D,E. Looping with steps</a></li>
+        <li><a href="#f-looping-for-a-certain-number-of-times">F. Looping for a certain number of times</a></li>
+        <li><a href="#g-loopy-drawings">G. Loopy drawings</a></li>
+        <li><a href="#h-variable-drawings">H. Variable drawings</a></li>
+      </ul>
+    </li>
+    <li><a href="#deliverables">Deliverables</a></li>
+  </ul>
+</nav>
 
  
     </aside>

@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Decomposition Lab Replace the ISF Academy repo links  In this lab, we&rsquo;ll explore how to plan backwards from a goal, breaking a complicated problem down into simpler steps. This lab will be different from previous labs in that you will not be programming. Instead, you will study a complete project and think about how it works. But first, a brief aside about dictonaries.
+Aside: Dictionaries Before we get into today&rsquo;s work, we need to learn about another data structure."><meta property="og:title" content="Decomposition Lab" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_decomposition/" />
+
+<title>Decomposition Lab | Making with Code</title>
+<link rel="icon" href="/making-with-code/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/making-with-code/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
+<script defer src="/making-with-code/en.search.min.7b899d01feae235a245810706357436d02663eae2e3d3e61d310c08bcbd14fa7.js" integrity="sha256-e4mdAf6uI1okWBBwY1dDbQJmPq4uPT5h0xDAi8vRT6c="></script>
+<link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_decomposition/index.xml" title="Making with Code" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  <link rel="stylesheet" href="https://cproctor.github.io/making-with-code/css/book_custom.css">
+
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/making-with-code"><img src="/making-with-code/fablearn.png" alt="Logo" /><span>Making with Code</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <ul>
+  
+    
+
+  <li>
+    
+
+  
+  <span>Courses</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/" class="">CS9</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/" class="">Unit 00: Drawing</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>Lessons</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/lessons/lesson00/" class="">Lesson 00.00</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>Modules</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/hw_code_practice/" class="">Code Practice Homework</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_decomposition/" class="active">Decomposition Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_functions/" class="">Functions Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_loops/" class="">Loops Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_modules/" class="">Modules Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_terminal_adventure/" class="">Terminal Adventure Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/hw_terminal_practice/" class="">Terminal Practice Homework</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_git/" class="">Version Control Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/" class="">Practices</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/activity/" class="">Activity</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/labs/" class="">Labs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/problem_sets/" class="">Problem sets</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/help_queue/" class="">Help Queue</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/projects/" class="">Projects</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/people/" class="">People</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/assigning_competence/" class="">Assigning competence</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/authorship/" class="">Authorship</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/funds_of_knowledge/" class="">Funds of Knowledge</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/groupwork/" class="">Groupwork</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/place/" class="">Place</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/tools/" class="">Tools</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/tools/git/" class="">Git</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/dev/" class="">Development</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/dev/config/" class="">Config</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/dev/structure/" class="">Structure</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/dev/syntax/" class="">Syntax</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/making-with-code/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Decomposition Lab</strong>
+
+  <label for="toc-control">
+    <img src="/making-with-code/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#aside-dictionaries">Aside: Dictionaries</a>
+      <ul>
+        <li><a href="#part-a-high--useful-data-structure">Part A: High 🗝 Useful Data Structure</a></li>
+        <li><a href="#part-b-dictionaries-in-action">Part B: Dictionaries in action</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-started-with-decomposition">Getting started with decomposition</a></li>
+    <li><a href="#exploring-mannequin-top-down-and-bottom-up">Exploring <code>mannequin</code> top-down and bottom-up</a>
+      <ul>
+        <li><a href="#body-parts">Body Parts</a></li>
+        <li><a href="#going-deeper">Going deeper</a></li>
+      </ul>
+    </li>
+    <li><a href="#questions">Questions</a></li>
+    <li><a href="#deliverables">Deliverables</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="decomposition-lab">Decomposition Lab</h1>
+
+<blockquote class="book-hint danger">
+Replace the ISF Academy repo links
+</blockquote>
+
+
+
+<p>In this lab, we&rsquo;ll explore how to plan backwards from a goal, breaking a complicated problem down into simpler steps. This lab will be different from previous labs in that you will not be programming. Instead, you will study a complete project and think about how it works. But first, a brief aside about dictonaries.</p>
+<h2 id="aside-dictionaries">Aside: Dictionaries</h2>
+<p>Before we get into today&rsquo;s work, we need to learn about another data structure. Paste the starter code below into a new python file, <code>lab_05.py</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#75715e"># STARTER CODE</span>
+    zodiac_year_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;monkey&#39;</span>,<span style="color:#e6db74">&#39;rooster&#39;</span>, <span style="color:#e6db74">&#39;dog&#39;</span>,
+                        <span style="color:#e6db74">&#39;pig&#39;</span>, <span style="color:#e6db74">&#39;rat&#39;</span>, <span style="color:#e6db74">&#39;ox&#39;</span>,
+                        <span style="color:#e6db74">&#39;tiger&#39;</span>, <span style="color:#e6db74">&#39;rabbit&#39;</span>, <span style="color:#e6db74">&#39;dragon&#39;</span>,
+                        <span style="color:#e6db74">&#39;snake&#39;</span>, <span style="color:#e6db74">&#39;horse&#39;</span>, <span style="color:#e6db74">&#39;sheep&#39;</span>]
+    animal_dict <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#34;rat&#34;</span>: <span style="color:#e6db74">&#34;鼠&#34;</span>,
+        <span style="color:#e6db74">&#34;ox&#34;</span>: <span style="color:#e6db74">&#34;牛&#34;</span>,
+        <span style="color:#e6db74">&#34;tiger&#34;</span>: <span style="color:#e6db74">&#34;虎&#34;</span>,
+        <span style="color:#e6db74">&#34;rabbit&#34;</span>: <span style="color:#e6db74">&#34;兔&#34;</span>,
+        <span style="color:#e6db74">&#34;dragon&#34;</span>: <span style="color:#e6db74">&#34;龙&#34;</span>,
+        <span style="color:#e6db74">&#34;snake&#34;</span>: <span style="color:#e6db74">&#34;蛇&#34;</span>,
+        <span style="color:#e6db74">&#34;horse&#34;</span>: <span style="color:#e6db74">&#34;马&#34;</span>,
+        <span style="color:#e6db74">&#34;sheep&#34;</span>: <span style="color:#e6db74">&#34;羊&#34;</span>,
+        <span style="color:#e6db74">&#34;monkey&#34;</span>: <span style="color:#e6db74">&#34;猴&#34;</span>,
+        <span style="color:#e6db74">&#34;rooster&#34;</span>: <span style="color:#e6db74">&#34;鸡&#34;</span>,
+        <span style="color:#e6db74">&#34;dog&#34;</span>: <span style="color:#e6db74">&#34;狗&#34;</span>,
+        <span style="color:#e6db74">&#34;pig&#34;</span>: <span style="color:#e6db74">&#34;猪&#34;</span>
+      }
+
+    <span style="color:#75715e"># PART A CODE</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_zodiac_year</span>(birth_year):
+        birth_year_animal <span style="color:#f92672">=</span> zodiac_year_list[birth_year<span style="color:#f92672">%</span><span style="color:#ae81ff">12</span>]
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;I was born in the year of the {}.&#34;</span><span style="color:#f92672">.</span>format(birth_year_animal))
+
+    <span style="color:#75715e"># PART B</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_character_traits</span>():
+        <span style="color:#66d9ef">return</span> {
+            <span style="color:#e6db74">&#34;courage&#34;</span>: <span style="color:#ae81ff">8</span>,
+            <span style="color:#e6db74">&#34;beauty&#34;</span>: <span style="color:#ae81ff">4</span>,
+            <span style="color:#e6db74">&#34;strength&#34;</span>: <span style="color:#ae81ff">7</span>,
+            <span style="color:#e6db74">&#34;empathy&#34;</span>: <span style="color:#ae81ff">5</span>
+        }
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">describe_character</span>(traits):
+         <span style="color:#66d9ef">if</span> traits[<span style="color:#e6db74">&#34;strength&#34;</span>] <span style="color:#f92672">&gt;</span> traits[<span style="color:#e6db74">&#34;courage&#34;</span>]:
+             <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;You are a coward.&#34;</span>)
+         <span style="color:#66d9ef">elif</span> traits[<span style="color:#e6db74">&#34;strength&#34;</span>] <span style="color:#f92672">==</span> traits[<span style="color:#e6db74">&#34;courage&#34;</span>]:
+             <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;You are wise, matching your strength to your courage.&#34;</span>)
+         <span style="color:#66d9ef">else</span>:
+             <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;You are foolhardy.&#34;</span>)
+</code></pre></div><h3 id="part-a-high--useful-data-structure">Part A: High 🗝 Useful Data Structure</h3>
+<p>You already know about lists ( 
+
+    <a href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_loops/">Loops Lab</a>
+
+
+
+), which are a great way to store things that naturally come one after another, like subway stops on a subway line, or homework assignments in a class. We call lists a <strong>data structure</strong> because they give structure to data. They put things in line, so you can access each element at an index. After looking over the code in <code>PART A</code> of the starter code, open a Python shell and import the <code>my_zodiac_year</code> function from the <code>lab_05.py</code> file. Run the <code>my_zodiac_year</code> function passing in your birth year as the argument:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    &gt;&gt;&gt; from lab_05 import my_zodiac_year
+    &gt;&gt;&gt; my_zodiac_year<span style="color:#f92672">(</span>1995<span style="color:#f92672">)</span>
+    I was born in the year of the pig.
+</code></pre></div><p>This kind of structure works well for things that have a natural order (like zodiac cycles), but what about things that don&rsquo;t have a natural order to them?</p>
+<p>A dictionary is another kind of data structure that is useful for information that does not have a natural order, like images of animals. Dictionaries connect keys to values. For each unique key (for example, an animal name like <code>'pig'</code>), a dictionary stores a unique value (like a translation <code>猪</code>). To access the values of a dictionary like the <code>animal_dict</code>, use the following syntax: <code>animal_dict[KEY]</code>.</p>
+<p><strong><code>quit()</code> the python shell</strong></p>
+<p>Below the <code>print</code> statement in <code>PART A</code> in the <code>lab_05.py</code> file, print the Chinese translation of the English sentence &ldquo;I was born in the year of the &hellip;&rdquo;
+Access the character for your <code>birth_year_animal</code> by accessing the value in the <code>animal_dict</code>.</p>
+<p>Open a new python shell and import and run the <code>my_zodiac_year</code> function again with your new code. Now you should see something like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    &gt;&gt;&gt; from lab_05 import my_zodiac_year
+    &gt;&gt;&gt; my_zodiac_year<span style="color:#f92672">(</span>1995<span style="color:#f92672">)</span>
+    I was born in the year of the pig.
+    我出生在猪年
+</code></pre></div><h3 id="part-b-dictionaries-in-action">Part B: Dictionaries in action</h3>
+<p>Dictionaries can be used to show one-to-one relationships like how words in one language are connected to words in other languages, how actions are connected to consequences, or how countries are connected to languages.</p>
+<p>Often we use dictionaries to describe properties of an object. A hero in an adventure game is defined in <code>PART B</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_character_traits</span>():
+        <span style="color:#66d9ef">return</span> {
+            <span style="color:#e6db74">&#34;courage&#34;</span>: <span style="color:#ae81ff">8</span>,
+            <span style="color:#e6db74">&#34;beauty&#34;</span>: <span style="color:#ae81ff">4</span>,
+            <span style="color:#e6db74">&#34;strength&#34;</span>: <span style="color:#ae81ff">7</span>,
+            <span style="color:#e6db74">&#34;empathy&#34;</span>: <span style="color:#ae81ff">5</span>
+        }
+</code></pre></div><p>Open a python shell and import the <code>describe_character</code> and <code>create_character_traits</code> functions from the <code>lab_05.py</code> file. Create a <code>character_traits</code> dictionary using the <code>create_character_traits</code> function and run the <code>describe_character</code> function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    &gt;&gt;&gt; from lab_05 import describe_character, create_character_traits
+    &gt;&gt;&gt; character_traits <span style="color:#f92672">=</span> create_character_traits<span style="color:#f92672">()</span>
+    &gt;&gt;&gt; describe_character<span style="color:#f92672">(</span>character_traits<span style="color:#f92672">)</span>
+    You are foolhardy.
+</code></pre></div><p>You can loop through a <code>dict</code> in almost the same way you can loop through a list:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    &gt;&gt;&gt; <span style="color:#66d9ef">for</span> trait, value in character_traits.items<span style="color:#f92672">()</span>:
+    ...     print<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;You have a {} value of {}.&#34;</span>.format<span style="color:#f92672">(</span>trait, value<span style="color:#f92672">))</span>
+    You have a courage value of 8.
+    You have a beauty value of 4.
+    You have a strength value of 7.
+    You have a empathy value of 5.
+</code></pre></div><p><strong>Stop! Once your whole group has carefully read the code in this section and can explain dictionaries, raise your hand to check in with a teacher. Your teacher is going to ask you about details in the code samples above. Make sure your group has read through them carefully.</strong></p>
+<figure>
+    <img src="https://cproctor.github.io/making-with-code/images/courses/cs9/unit00/00_decomposition_mannequin.png" width="400px"/> <figcaption>
+            <h4>Mannequin</h4>
+        </figcaption>
+</figure>
+
+<h2 id="getting-started-with-decomposition">Getting started with decomposition</h2>
+<p>Navigate to your <code>unit_00</code> directory and download the project using <code>git</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/mannequin.git lab_05
+    TEA-JWOLF:unit_00 jwolf$ cd lab_05
+</code></pre></div><p>Now you need to figure out what this code is and what it does. Decide with your group how you are going to do this. A few ideas:</p>
+<ul>
+<li>Use <code>tree</code> to list all the files.</li>
+<li>Read the documentation, either on <a href="https://github.com/the-isf-academy/mannequin">GitHub</a> or in the README (using <code>atom README.md</code>)</li>
+<li>The main file is called <code>main.py</code>. Try running it to see what happens.</li>
+</ul>
+<h2 id="exploring-mannequin-top-down-and-bottom-up">Exploring <code>mannequin</code> top-down and bottom-up</h2>
+<p><em>In this section, read and follow along. If you do, the questions in the next section will be easier.</em></p>
+<p>There are two main ways of thinking about complex problems: top-down and bottom-up. Top down means thinking about
+the problem as a whole, and how it could be broken up into a few smaller pieces. Then each of those smaller pieces
+could be broken into even smaller pieces. Bottom-up means starting with tiny chunks that are so simple we can already solve them, and using them to build gradually larger pieces, until you&rsquo;ve solved the problem. Some people like to start with top-down thinking; others prefer bottom-up. Usually we need to use both.</p>
+<p>Let&rsquo;s start top-down. Open <code>main.py</code> in Atom (<code>atom main.py</code>). It&rsquo;s nice and short, because most of the work is done
+is done elsewhere. See if you can figure out how the code in <code>main.py</code> works, and discuss these questions with
+your table group:</p>
+<ul>
+<li>The function <code>default_settings()</code> returns a dict full of settings. What do you think these do? Try changing some
+settings.</li>
+<li>Why would the author bother making <code>default_settings()</code> a function, instead of just defining a <code>dict</code> with the
+settings in it?</li>
+<li>Where does <code>default_settings()</code> get used?</li>
+</ul>
+<p>Now look at what gets imported in <code>main.py</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#f92672">from</span> helpers <span style="color:#f92672">import</span> no_delay
+    <span style="color:#f92672">from</span> body_parts <span style="color:#f92672">import</span> draw_body
+</code></pre></div><p>First, notice that <code>turtle</code> never gets imported. The actual drawing gets done somewhere else. We&rsquo;ve seen <code>no_delay</code>
+before (in the <a href="https://github.com/the-isf-academy/drawing">drawing package</a> we played with during the <a href="%7bfilename%7d/labs/00_modules.md">modules lab</a>), so let&rsquo;s skip it. The second import statement imports a function called <code>draw_body</code>, which seems to draw a body. Let&rsquo;s open up <code>body_parts.py</code> to see how it works.</p>
+<h3 id="body-parts">Body Parts</h3>
+<p><code>body_parts.py</code> has three sections. First, there are import statements. Second, there are a whole bunch of constants (like <code>TORSO_WIDTH = 40</code>). Third, there are five functions, each responsible for drawing a different body part. Before you study this code, skim it with your group. It&rsquo;s particularly important to read the comments and the <code>docstrings</code> (the string following each function). Try to get a sense of what each constant means and what each function does. Your group should be doing a lot of talking&ndash;feel free to ask a teacher if your group has questions.</p>
+<p>Try changing some of the constants and re-running <code>python main.py</code> to see what happens.</p>
+<h3 id="going-deeper">Going deeper</h3>
+<p>Now your group has some choices. Looking at the import statements, there are some interesting new functions
+imported from elsewhere. You could open those files to learn how they work.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#f92672">from</span> turtle <span style="color:#f92672">import</span> right, left, back, fillcolor
+    <span style="color:#f92672">from</span> helpers <span style="color:#f92672">import</span> fly, restore_state_when_finished, update_position
+    <span style="color:#f92672">from</span> shapes <span style="color:#f92672">import</span> rectangle, rectangle_from_center, rectangle_from_side_edge
+</code></pre></div><p>You might also have noticed that this module uses <code>fillcolor</code> to fill in shapes. You could open the <a href="https://docs.python.org/3.7/library/turtle.html?highlight=turtle#turtle.fillcolor">turtle documentation</a> and read about how filling works.</p>
+<p>You could also get a little more serious about making changes to the constants in <code>body_parts.py</code> and the settings in <code>main.py</code>. Can you pose the mannequin so she is laughing? Angry? Surprised?</p>
+<h2 id="questions">Questions</h2>
+<p><em>As a group, talk about these questions. Then, each student should write answers in her own words in the <code>questions.md</code> file. Each question needs a solid explanation, probably 1-3 sentences.</em> <strong>You will submit the <code>questions.md</code> file at the end of the lab.</strong></p>
+<ol start="0">
+<li>Read the <a href="https://docs.python.org/3.7/library/turtle.html?highlight=turtle#filling"><code>turtle</code> documentation on filling</a>. To fill in a shape, you have to call <code>begin_fill()</code> before drawing the shape and <code>end_fill()</code> afterwards. All the shapes in <code>mannequin</code> are filled. Where are <code>begin_fill()</code> and <code>end_fill()</code> actually used?</li>
+<li>What does <code>restore_state_when_finished</code> do?</li>
+<li>What&rsquo;s the difference between the <code>settings</code> in <code>main.py</code> and the constants at the top of <code>body_parts.py</code>?</li>
+<li>Let&rsquo;s imagine you wanted to move one of the constants at the top of <code>body_parts.py</code> (for example, <code>HEAD_COLOR</code>) into the settings in <code>main.py</code> instead. What steps would you have to take? (You can actually try this if you want.)</li>
+<li>In <code>shapes.py</code>, there are three different functions for drawing a rectangle. Why?</li>
+<li>The same function, <code>draw_arm</code>, is used to draw the back arm and the front arm. How does this work?</li>
+<li>Similarly, <code>draw_leg</code> is used to draw the back leg and the front leg. The code for <code>draw_leg</code>        <br>
+and for <code>draw_arm</code> looks suspiciously similar. Can you think of a way to combine these functions? Would this      <br>
+be a good idea? (Yes and No are both reasonable answers&ndash;explain your preference.)</li>
+</ol>
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Each student should submit a text file with answers to the questions above.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#aside-dictionaries">Aside: Dictionaries</a>
+      <ul>
+        <li><a href="#part-a-high--useful-data-structure">Part A: High 🗝 Useful Data Structure</a></li>
+        <li><a href="#part-b-dictionaries-in-action">Part B: Dictionaries in action</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-started-with-decomposition">Getting started with decomposition</a></li>
+    <li><a href="#exploring-mannequin-top-down-and-bottom-up">Exploring <code>mannequin</code> top-down and bottom-up</a>
+      <ul>
+        <li><a href="#body-parts">Body Parts</a></li>
+        <li><a href="#going-deeper">Going deeper</a></li>
+      </ul>
+    </li>
+    <li><a href="#questions">Questions</a></li>
+    <li><a href="#deliverables">Deliverables</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Functions Lab Removed the &#34;Input a code from the instructors to move on:&#34; requirement. Need to add images for Parts B and C. Also think about whether we should use dropdowns for different sections of labs  Starter code Create a new file called lab_03.py in atom (This should be at ~/Desktop/cs9/unit_00/lab_03.py.) You&rsquo;ll be turning in this file at the end of the lab. Copy this starter code:
+<meta name="description" content="Functions Lab Removed the &#34;Input a code from the instructors to move on:&#34; requirement. Also think about whether we should use dropdowns for different sections of labs  Starter code Create a new file called lab_03.py in atom (This should be at ~/Desktop/cs9/unit_00/lab_03.py.) You&rsquo;ll be turning in this file at the end of the lab. Copy this starter code:
  Starter code for functions lab ↕  # Unit 0 Lab 3 # Author: Your Name from turtle import * from random import * # These constants affect how the program works, so we&#39;ll list them all at the top ASK_FOR_PASSWORD = True PASSWORD = &#34;noodles&#34; TEST_PART_B = False TEST_PART_C = False # A."><meta property="og:title" content="Functions Lab" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -13,7 +13,7 @@
 <title>Functions Lab | Making with Code</title>
 <link rel="icon" href="/making-with-code/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/making-with-code/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
-<script defer src="/making-with-code/en.search.min.cc9562431d0dd0a94d29f212dee1d888fee08e9ccf01d3a385093d3e045e4573.js" integrity="sha256-zJViQx0N0KlNKfIS3uHYiP7gjpzPAdOjhQk9PgReRXM="></script>
+<script defer src="/making-with-code/en.search.min.7b899d01feae235a245810706357436d02663eae2e3d3e61d310c08bcbd14fa7.js" integrity="sha256-e4mdAf6uI1okWBBwY1dDbQJmPq4uPT5h0xDAi8vRT6c="></script>
 <link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_functions/index.xml" title="Making with Code" />
 <!--
 Made with Book Theme
@@ -238,6 +238,36 @@ https://github.com/alex-shpak/hugo-book
     
 
   
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_decomposition/" class="">Decomposition Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
   <a href="/making-with-code/courses/cs9/unit00/modules/lab_functions/" class="active">Functions Lab</a>
   
 
@@ -298,6 +328,36 @@ https://github.com/alex-shpak/hugo-book
     
 
   
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_modules/" class="">Modules Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
   <a href="/making-with-code/courses/cs9/unit00/modules/lab_terminal_adventure/" class="">Terminal Adventure Lab</a>
   
 
@@ -329,6 +389,36 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/making-with-code/courses/cs9/unit00/modules/hw_terminal_practice/" class="">Terminal Practice Homework</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_git/" class="">Version Control Lab</a>
   
 
 
@@ -763,7 +853,7 @@ https://github.com/alex-shpak/hugo-book
   <article class="markdown"><h1 id="functions-lab">Functions Lab</h1>
 
 <blockquote class="book-hint danger">
-Removed the "Input a code from the instructors to move on:" requirement. Need to add images for Parts B and C. Also think about whether we should use dropdowns for different sections of labs 
+Removed the "Input a code from the instructors to move on:" requirement. Also think about whether we should use dropdowns for different sections of labs
 </blockquote>
 
 
@@ -966,7 +1056,12 @@ word to the computer. It lets you talk about new ideas. You already saw a functi
 </ul>
 <p>One reason to write functions is to make your code simpler. Instead of writing all the code for a square over and over, you can get it right once and put it in a function.</p>
 <p>Let&rsquo;s practice writing some functions. Fill in the code blocks for the functions in part <strong>B</strong>. If you succeed, you&rsquo;ll get the image below:</p>
-<!-- raw HTML omitted -->
+<figure>
+    <img src="https://cproctor.github.io/making-with-code/images/courses/cs9/unit00/00_functions_fig_b.png" width="400px"/> <figcaption>
+            <h4>test_part_b() output</h4>
+        </figcaption>
+</figure>
+
 <hr>
 <p>Set <code>TEST_PART_B = False</code> and <code>TEST_PART_C = True</code>.</p>
 <h4 id="checkpoint-when-you-are-sure-everyone-at-your-table-understands-and-can-explain-part-b-raise-your-hand">Checkpoint: When you are sure <strong>everyone at your table</strong> understands and can explain Part B, raise your hand.</h4>
@@ -987,10 +1082,16 @@ word to the computer. It lets you talk about new ideas. You already saw a functi
 </li>
 </ul>
 <p>Your job is to write <code>rectangle</code> and <code>fly</code>.</p>
-<!-- raw HTML omitted -->
+<figure>
+    <img src="https://cproctor.github.io/making-with-code/images/courses/cs9/unit00/00_functions_forest.png" width="400px"/> <figcaption>
+            <h4>draw_forest(10) output</h4>
+        </figcaption>
+</figure>
+
+<hr>
 <h2 id="deliverables">Deliverables</h2>
 <ul>
-<li>Each student should turn in <code>lab_03.py</code> to Moodle at the end of class.</li>
+<li>Each student should turn in <code>lab_03.py</code> at the end of class.</li>
 </ul>
 </article>
  

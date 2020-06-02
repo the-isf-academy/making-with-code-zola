@@ -76,6 +76,10 @@
   </url>
   
   <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_decomposition/</loc>
+  </url>
+  
+  <url>
     <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_functions/</loc>
   </url>
   
@@ -101,6 +105,10 @@
   
   <url>
     <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_loops/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_modules/</loc>
   </url>
   
   <url>
@@ -161,6 +169,10 @@
   
   <url>
     <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_git/</loc>
   </url>
   
 </urlset>

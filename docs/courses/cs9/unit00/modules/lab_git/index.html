@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="fix &#34;first day of class&#34; link, replace links to isf repo  Set up  Double-check that git is installed by running which git in Terminal. (We installed git on the first day of class.) You should see the path where git is installed. If you see nothing, check with a teacher. Configure git: Type each of these commands into Terminal.  git config --global user.name &lt;Your name&gt; git config --global user."><meta property="og:title" content="Version Control Lab" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_git/" />
+
+<title>Version Control Lab | Making with Code</title>
+<link rel="icon" href="/making-with-code/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/making-with-code/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
+<script defer src="/making-with-code/en.search.min.7b899d01feae235a245810706357436d02663eae2e3d3e61d310c08bcbd14fa7.js" integrity="sha256-e4mdAf6uI1okWBBwY1dDbQJmPq4uPT5h0xDAi8vRT6c="></script>
+<link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_git/index.xml" title="Making with Code" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  <link rel="stylesheet" href="https://cproctor.github.io/making-with-code/css/book_custom.css">
+
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/making-with-code"><img src="/making-with-code/fablearn.png" alt="Logo" /><span>Making with Code</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <ul>
+  
+    
+
+  <li>
+    
+
+  
+  <span>Courses</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/" class="">CS9</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/" class="">Unit 00: Drawing</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>Lessons</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/lessons/lesson00/" class="">Lesson 00.00</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>Modules</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/hw_code_practice/" class="">Code Practice Homework</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_decomposition/" class="">Decomposition Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_functions/" class="">Functions Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_loops/" class="">Loops Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_modules/" class="">Modules Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_terminal_adventure/" class="">Terminal Adventure Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/hw_terminal_practice/" class="">Terminal Practice Homework</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/courses/cs9/unit00/modules/lab_git/" class="active">Version Control Lab</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/" class="">Practices</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/activity/" class="">Activity</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/labs/" class="">Labs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/problem_sets/" class="">Problem sets</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/help_queue/" class="">Help Queue</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/activity/projects/" class="">Projects</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/people/" class="">People</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/assigning_competence/" class="">Assigning competence</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/authorship/" class="">Authorship</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/funds_of_knowledge/" class="">Funds of Knowledge</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/people/groupwork/" class="">Groupwork</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/place/" class="">Place</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/practices/tools/" class="">Tools</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/practices/tools/git/" class="">Git</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+    
+
+  <li>
+    
+
+  
+  <a href="/making-with-code/dev/" class="">Development</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/dev/config/" class="">Config</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/dev/structure/" class="">Structure</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/making-with-code/dev/syntax/" class="">Syntax</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/making-with-code/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Version Control Lab</strong>
+
+  <label for="toc-control">
+    <img src="/making-with-code/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#set-up">Set up</a></li>
+    <li><a href="#your-first-repo">Your first repo</a>
+      <ul>
+        <li><a href="#join-github">Join github</a></li>
+        <li><a href="#creating-your-fork">Creating your fork</a></li>
+        <li><a href="#cloning-your-fork">Cloning your fork</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#step-0-edit-files">Step 0: Edit files</a></li>
+    <li><a href="#step-1-review-changes">Step 1: Review changes</a></li>
+    <li><a href="#step-2-commit">Step 2: Commit</a></li>
+    <li><a href="#step-3-push">Step 3: Push</a></li>
+    <li><a href="#deliverables">Deliverables</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown">
+<blockquote class="book-hint danger">
+fix "first day of class" link, replace links to isf repo
+</blockquote>
+
+
+
+<h2 id="set-up">Set up</h2>
+<ul>
+<li>Double-check that git is installed by running <code>which git</code> in Terminal.
+(We installed git on the <a href="lessons/lesson_00_00.md">first day of class</a>.)
+You should see the path where git is installed. If you see nothing, check with
+a teacher.</li>
+<li>Configure git: Type each of these commands into Terminal.
+<ul>
+<li><code>git config --global user.name &lt;Your name&gt;</code></li>
+<li><code>git config --global user.email &lt;Your school email&gt;</code></li>
+<li><code>git config --global core.editor &quot;atom --wait&quot;</code></li>
+<li><code>git config --global commit.template .commit_template</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="your-first-repo">Your first repo</h2>
+<p>You have already cloned a few git repositories (remember typing <code>git clone ...</code>?) Cloning means pulling a copy of a repository down from github onto your
+own computer. Now we are going to take the next step, forking a repository
+(making your own copy) and adding to it.</p>
+<p>From now on, your homework, labs, and projects will be provided as git repositories. We are going to start now, by setting up your final project for this unit.</p>
+<h3 id="join-github">Join github</h3>
+<p>Start by making a github account for yourself.</p>
+<ul>
+<li>Go to <a href="https://github.com">github.com</a>.</li>
+<li>Enter a username, email address, and password.
+<ul>
+<li>Your username should not include your real name.</li>
+<li>Please use your school email account.</li>
+<li>Write your password down somewhere!</li>
+</ul>
+</li>
+<li>You should get a verification email. Click the link to prove it&rsquo;s your email
+address.</li>
+</ul>
+<h3 id="creating-your-fork">Creating your fork</h3>
+<p>Your teachers have already created a repository for the unit project. Each
+student is going to fork this repository, so they have their own copy.</p>
+<ul>
+<li><a href="https://classroom.github.com/a/KrNLldo1">If you are in CS1, click this link</a></li>
+<li><a href="https://classroom.github.com/a/SVz6RdzM">If you are in CS2, click this link</a></li>
+</ul>
+<p>Follow the instructions. Once your fork is created, you will get a link to your
+project. Click it and you should see a screen like the one below.</p>
+<figure>
+    <img src="https://cproctor.github.io/making-with-code/images/courses/cs9/unit00/00_git_github.png" width="400px"/> <figcaption>
+            <h4>GitHub</h4>
+        </figcaption>
+</figure>
+
+<h3 id="cloning-your-fork">Cloning your fork</h3>
+<p>Now you are going to clone your repo, so there&rsquo;s a copy on your computer. If you
+look at the following commands, you&rsquo;ll see that the <code>git clone</code> command has a
+<code>******</code>. You need to replace this with your repo&rsquo;s URL, which you can get by
+clicking on the green &ldquo;Clone or download&rdquo; button.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    cd ~/Documents/cs9/unit_0/
+    git clone ******
+</code></pre></div><p>Now you have a directory called <code>~/Documents/cs9/unit_0/unit-0-drawing-yourname</code>. Let&rsquo;s go into the project folder and have a look inside:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    cd unit-0-drawing-yourname
+    tree .
+</code></pre></div><p>There are just a few files in the project right now. You can also see the
+history of changes to this repository, from before you forked it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    git log
+</code></pre></div><p>Press <code>esc</code> to leave the git log viewer.</p>
+<p><strong>Stop. Check in with your group, and make sure everyone has completed the
+steps above. Once your whole group is ready, raise your hand to check in with a
+teacher.</strong></p>
+<h1 id="working-with-git">Working with Git</h1>
+<p>Whenever you are working on a project, you will go through four steps:</p>
+<ul>
+<li><strong>Edit files</strong>: Work on all the files in this project just like normal.</li>
+<li><strong>Review changes</strong>: Look at your changes and make sure you are happy with
+them.</li>
+<li><strong>Commit</strong>: Save your changes to the repository.</li>
+<li><strong>Push</strong>: Push your copy of the repository up to github.</li>
+</ul>
+<p>Let&rsquo;s practice.</p>
+<h2 id="step-0-edit-files">Step 0: Edit files</h2>
+<p>Today we are going to start working on the project plan, using the file
+<code>planning.md</code>. Open it using Atom:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    atom planning.md
+</code></pre></div><p>There are three sections here: the idea, decomposition, and milestone. Each
+section has some text explaining what&rsquo;s expected. You should replace this text
+with your actual project plan.</p>
+<p>You don&rsquo;t have to write your whole project plan right now, but you need to make
+some changes to practice using git. Under the first section, called &ldquo;the idea&rdquo;,
+write a short paragraph describing your idea for the final project. If you have
+a bunch of different possible ideas, you can list them like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    - I was thinking I might draw a detailed self-portrait of my face.
+    - I also thought it might be neat to make a drawing I can use to laser cut a
+      customized rack <span style="color:#66d9ef">for</span> my desk at home. It will have holes just the right
+      size <span style="color:#66d9ef">for</span> all my favorite pens and pencils.
+    - I like to make T-shirts by cutting out stencils and spray-painting them. I
+      want to draw some shapes I can use to laser-cut templates.
+    - I want to draw the Hong Kong skyline.
+</code></pre></div><p>By the way, this file is written in a simple language called Markdown that
+allows you to format text. <a href="https://www.markdownguide.org/cheat-sheet">Here&rsquo;s a quick guide to
+markdown</a>. When you have a <code>.md</code> file
+open in Atom, you can preview the rendered version with the following menu
+option: <code>Packages &gt; Markdown Preview &gt; Toggle Preview</code>.</p>
+<h2 id="step-1-review-changes">Step 1: Review changes</h2>
+<p>Once you have made some changes to <code>planning.md</code>, save your work in Atom and go
+back to the Terminal. Let&rsquo;s use git to see what changes you have made. Type:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    git status
+<span style="color:#e6db74">```</span>shell
+
+You will see the following message:
+
+<span style="color:#e6db74">```</span>shell
+    On branch master
+    Your branch is up to date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+
+    Changes not staged <span style="color:#66d9ef">for</span> commit:
+    <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to update what will be committed<span style="color:#f92672">)</span>
+    <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git checkout -- &lt;file&gt;...&#34;</span> to discard changes in working directory<span style="color:#f92672">)</span>
+
+	    modified:   planning.md
+
+    no changes added to commit <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add&#34;</span> and/or <span style="color:#e6db74">&#34;git commit -a&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><p>Read the whole message. It is telling you that only file that you
+have changed is <code>planning.md</code>. Yup. But what changes did you make? Let&rsquo;s use
+another command to get some more detail:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    git diff
+</code></pre></div><p>Now you will see a description of what you have added and what you have removed
+from <code>planning.md</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    diff --git a/planning.md b/planning.md
+    index ac006b3..90b0e4f <span style="color:#ae81ff">100644</span>
+    --- a/planning.md
+    +++ b/planning.md
+    @@ -2,10 +2,13 @@
+
+    <span style="color:#75715e">## The idea</span>
+
+    -Replace this text with a description of the drawing you want to make. <span style="color:#f92672">(</span>It would be nice to also explain why you want to make this drawing.<span style="color:#f92672">)</span> It<span style="color:#960050;background-color:#1e0010">&#39;</span>s helpful, but not required, to include a sketch of what you are planning. If you want to add an image, you can <span style="color:#66d9ef">do</span> so like this:
+    -
+    -!<span style="color:#f92672">[</span>A description of the image, in <span style="color:#66d9ef">case</span> the person reading is blind<span style="color:#f92672">](</span>images/sample.jpg<span style="color:#f92672">)</span>
+    -
+    +- I was thinking I might draw a detailed semf-portrait of my face.
+    +- I also thought it might be neat to make a drawing I can use to laser cut a
+    +  customized rack <span style="color:#66d9ef">for</span> my desk at home. It will have holes just the right
+    +  size <span style="color:#66d9ef">for</span> all my favorite pens and pencils.
+    +- I like to make T-shirts by cutting out stencils and spray-painting them. I
+    +  want to draw some shapes I can use to laser-cut templates.
+    +- I want to draw the Hong Kong skyline.
+
+    <span style="color:#75715e">## Decomposition</span>
+</code></pre></div><p>You should always run <code>git status</code> and <code>git diff</code> before you add changes to your
+repository, to make sure you&rsquo;re saving the changes you meant to add. If you
+noticed any typos, or want to add something, edit <code>planning.md</code> in Atom again,
+and then run <code>git status</code> and <code>git diff</code> again.</p>
+<h2 id="step-2-commit">Step 2: Commit</h2>
+<p>Now it&rsquo;s time to add these changes to your repository. A <em>commit</em> is a
+collection of one or more changes that belong together. For example, if you
+wanted to add a photo of a sketch to your planning document, you would need to
+edit <code>planning.md</code>, telling it to include the photo. You would also need to add
+the image file itself to the repo. These two changes belong together, so they
+should be part of the same commit.</p>
+<p>You will prepare a commit by adding all the files that have changes. Right now,
+it&rsquo;s just <code>planning.md</code>, so let&rsquo;s add it to a new commit:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    git add planning.md
+</code></pre></div><p>Run <code>git status</code> again, and you will see that <code>planning.md</code> has gone from red to
+green because it has been added to a new commit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    On branch master
+    Your branch is up to date with <span style="color:#e6db74">&#39;origin/master&#39;</span>.
+
+    Changes to be committed:
+    <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git reset HEAD &lt;file&gt;...&#34;</span> to unstage<span style="color:#f92672">)</span>
+
+	    modified:   planning.md
+</code></pre></div><p>Now we are ready to finalize the commit. Type <code>git commit</code> and you will see an
+Atom file open. It&rsquo;s time to describe what you did, using a commit message.</p>
+<p>Every time you commit code, you need to write a message explaining what you have done. Anybody reading your code (teachers, peers, a future version of you) will read the log of your changes to understand what has been happening on the project. The file that opens contains a template explaining how to write your commit message.</p>
+<p>Once you finish, save the file and close it. Run <code>git log</code> to see the history of
+your project. You should see your commit right at the top. Congratulations!</p>
+<h2 id="step-3-push">Step 3: Push</h2>
+<p>Now it&rsquo;s time to sync the copy of your repo with the copy on github. Type <code>git push</code>. Reload your repository page on Github (remember the green button?). Click
+on <code>planning.md</code>; you should see your updated version.</p>
+<p>This probably felt like a lot of work just to save your work. That&rsquo;s true. But
+it will get easier as you get used to it, and you will start to see the value of
+using git when you start working on bigger projects. If you&rsquo;re not glad you
+learned git five years from now, come see us and we&rsquo;ll give you some extra
+credit or something :)</p>
+<p><strong>Check in with your table group and make sure everyone succeeds in committing a
+change. Once everyone has succeeded, check in with a teacher.</strong></p>
+<h2 id="deliverables">Deliverables</h2>
+<p>There is no file to turn in for this lab. Instead, you are expected to complete
+the instructions in this lab, so that your teachers can see your final project
+repository with a new commit message from you.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#set-up">Set up</a></li>
+    <li><a href="#your-first-repo">Your first repo</a>
+      <ul>
+        <li><a href="#join-github">Join github</a></li>
+        <li><a href="#creating-your-fork">Creating your fork</a></li>
+        <li><a href="#cloning-your-fork">Cloning your fork</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#step-0-edit-files">Step 0: Edit files</a></li>
+    <li><a href="#step-1-review-changes">Step 1: Review changes</a></li>
+    <li><a href="#step-2-commit">Step 2: Commit</a></li>
+    <li><a href="#step-3-push">Step 3: Push</a></li>
+    <li><a href="#deliverables">Deliverables</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
