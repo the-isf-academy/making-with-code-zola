@@ -16,7 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/notes/</guid>
-      <description>10 class meetings This initial unit prioritizes getting students making personally-meaningful things as fast as possible. This means we aren’t aiming for completeness. In particular, we’re not introducing variables or conditional control structures in this unit: most students won’t need them, and we’ll spend a lot of time with them in the next unit.  Problem sets Assign students to create various drawing primitives, and use them to build up more complex functions.</description>
+      <description>10 class meetings This initial unit prioritizes getting students making personally-meaningful things as fast as possible. This means we aren’t aiming for completeness. In particular, we’re not introducing variables or conditional control structures in this unit: most students won’t need them, and we’ll spend a lot of time with them in the next unit.  Unit Calendar Lesson 0: Introduction, turtle
+Lesson 1: Loops / lists
+Lesson 2: Functions</description>
     </item>
     
     <item>

@@ -178,7 +178,18 @@ We will introduce the Help Queue . (This is just a test of the ref_practice shor
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/notes/</guid>
-      <description>10 class meetings This initial unit prioritizes getting students making personally-meaningful things as fast as possible. This means we aren’t aiming for completeness. In particular, we’re not introducing variables or conditional control structures in this unit: most students won’t need them, and we’ll spend a lot of time with them in the next unit.  Problem sets Assign students to create various drawing primitives, and use them to build up more complex functions.</description>
+      <description>10 class meetings This initial unit prioritizes getting students making personally-meaningful things as fast as possible. This means we aren’t aiming for completeness. In particular, we’re not introducing variables or conditional control structures in this unit: most students won’t need them, and we’ll spend a lot of time with them in the next unit.  Unit Calendar Lesson 0: Introduction, turtle
+Lesson 1: Loops / lists
+Lesson 2: Functions</description>
+    </item>
+    
+    <item>
+      <title>Teaching notes (Hong Kong, 2019-2020)</title>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit01/notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit01/notes/</guid>
+      <description>All G9 students should be familiar with bar/scatter graphs and coordinate planes.  All students will understand linear equations Students study domain/range and functions rigorously in G10, not G9.   Statistics: all students should be familiar with mean/mode/etc. Only some students will touch on standard deviation in math class, but all students should be able to grasp the formula. Probability: students have limited/informal understanding of probability 15 class meetings  Unit Calendar Lesson 00: Our digital lives, functional program, I/O</description>
     </item>
     
     <item>
@@ -188,6 +199,15 @@ We will introduce the Help Queue . (This is just a test of the ref_practice shor
       
       <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</guid>
       <description>Working within the context of drawing, students practice building up complex programs from simple ones. We’ll use Python’s turtle library, and use our exported SVGs to cut things on the laser cutter/cnc. Loosely inspired by Chris’s Python drawing unit from GMS (this links to the Scratch drawing assignment; further up on the page are lessons translating this into Python). Programming: Imperative programming; Basics of syntax; functions; decomposition and code reuse. Introductory debugging strategies.</description>
+    </item>
+    
+    <item>
+      <title>Unit 01: Teaching</title>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit01/teaching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit01/teaching/</guid>
+      <description>In Unit 1 we will build on the drawing we did in Unit 0, but we will shift our attention from imperative programming to functional programming, and shift our task domain from creative drawing to data science. This will give us an opportunity to practice writing functions, to thoroughly address variables, data types, and how functions can be composed together to solve bigger problems. Furthermore, this unit will ask students to create a different kind of product for their audience: discovery of new facts through data analysis, justification of claims, and consideration of how such arguments can be framed in ways that will feel interesting and important.</description>
     </item>
     
   </channel>

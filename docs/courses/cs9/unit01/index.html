@@ -4,17 +4,18 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lesson 0 - Welcome to Computer Science The purpose of the first lesson is to introduce students to the goals, structures, and norms of the course. By the end of Lesson 0.0, students should have a sense for what the course is about as well as a fun initial experience making with code.
-We will introduce the Help Queue . (This is just a test of the ref_practice shortcode. Should it embed content or link out to it?"><meta property="og:title" content="Teaching" />
-<meta property="og:description" content="Lesson 0 - Welcome to Computer Science The purpose of the first lesson is to introduce students to the goals, structures, and norms of the course. By the end of Lesson 0.0, students should have a sense for what the course is about as well as a fun initial experience making with code.
-We will introduce the Help Queue . (This is just a test of the ref_practice shortcode. Should it embed content or link out to it?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit00/lessons/lesson00/teaching/" />
+<meta name="description" content="Programming: Introduction to functional programming; abstraction. Types: int, float, bool. Introduction to data structures. Iterating over lists. Students will build on code reuse from unit 1, this time writing functions without side effects that can be composed. Curriculum: Based on introductory unit from BJC.
+Problem sets Write basic functions to perform calculations on numbers and lists. Biggest, smallest, mean, median, mode. Quartiles. Scale, clamp, bin.
+Labs Lab 1: Students will write code to plot histograms, scatter plots, and the line of best fit."><meta property="og:title" content="Unit 01: Data Science" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cproctor.github.io/making-with-code/courses/cs9/unit01/" />
 
-<title>Teaching | Making with Code</title>
+<title>Unit 01: Data Science | Making with Code</title>
 <link rel="icon" href="/making-with-code/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/making-with-code/book.min.284c8fc21ced13c579d9027a9d14893c56b243c6045001180391cebb4cc36ab8.css" integrity="sha256-KEyPwhztE8V52QJ6nRSJPFayQ8YEUAEYA5HOu0zDarg=">
 <script defer src="/making-with-code/en.search.min.a78d5248d2752c2da8f4e4b4a6d513d99bbf40e0f5c6e59aa398e53b7b1c859c.js" integrity="sha256-p41SSNJ1LC2o9OS0ptUT2Zu/QOD1xuWao5jlO3schZw="></script>
+<link rel="alternate" type="application/rss+xml" href="https://cproctor.github.io/making-with-code/courses/cs9/unit01/index.xml" title="Making with Code" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -468,7 +469,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/making-with-code/courses/cs9/unit01/" class="">Unit 01: Data Science</a>
+  <a href="/making-with-code/courses/cs9/unit01/" class="active">Unit 01: Data Science</a>
   
 
 
@@ -962,7 +963,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/making-with-code/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Teaching</strong>
+  <strong>Unit 01: Data Science</strong>
 
   <label for="toc-control">
     <img src="/making-with-code/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -976,7 +977,10 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#lesson-0---welcome-to-computer-science">Lesson 0 - Welcome to Computer Science</a></li>
+    <li><a href="#programming">Programming:</a></li>
+    <li><a href="#problem-sets">Problem sets</a></li>
+    <li><a href="#labs">Labs</a></li>
+    <li><a href="#project">Project</a></li>
   </ul>
 </nav>
 
@@ -988,19 +992,65 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="lesson-0---welcome-to-computer-science">Lesson 0 - Welcome to Computer Science</h2>
-<p>The purpose of the first lesson is to introduce students to the goals, structures, and norms of the course. By the end of Lesson 0.0, students should have a sense for what the course is about as well as a fun initial experience making with code.</p>
-<p>We will introduce the  
+  <article class="markdown">
+  <h1>Unit 01: Data Science</h1>
 
-    <a href="https://cproctor.github.io/making-with-code/practices/activity/help_queue/">Help Queue</a>
+  
+    <div class="teaching">
+    <h2>Teaching</h2>
+    
+        <p>In Unit 1 we will build on the drawing we did in Unit 0, but we will shift our attention from imperative programming to functional programming, and shift our task domain from creative drawing to data science. This will give us an opportunity to practice writing functions, to thoroughly address variables, data types, and how functions can be composed together to solve bigger problems. Furthermore, this unit will ask students to create a different kind of product for their audience: discovery of new facts through data analysis, justification of claims, and consideration of how such arguments can be framed in ways that will feel interesting and important.</p>
 
+    
+    
+      
+          <details class="details-view">
+    <summary>Teaching notes (Hong Kong, 2019-2020)</summary>
+    <ul>
+<li>All G9 students should be familiar with bar/scatter graphs and coordinate planes.
+<ul>
+<li>All students will understand linear equations</li>
+<li>Students study domain/range and functions rigorously in G10, not G9.</li>
+</ul>
+</li>
+<li>Statistics: all students should be familiar with mean/mode/etc. Only some students will touch on standard deviation in math class, but all students should be able to grasp the formula.</li>
+<li>Probability: students have limited/informal understanding of probability</li>
+<li>15 class meetings</li>
+</ul>
+<h2 id="unit-calendar">Unit Calendar</h2>
+<p><strong>Lesson 00:</strong> Our digital lives, functional program, I/O<br>
+<strong>Lesson 01:</strong> Types<br>
+<strong>Lesson 02:</strong> Scatter plots<br>
+<strong>Lesson 03:</strong> Box plots<br>
+<strong>Lesson 04:</strong> Summary statistics<br>
+<strong>Lesson 05:</strong> Data analysis<br>
+<strong>Lesson 06:</strong> Summarizing data with a line<br>
+<strong>Lesson 07:</strong> Fitting a model to data<br>
+<strong>Lesson 08:</strong> Tools for bigger data<br>
+<strong>Lesson 09:</strong> Final project introduction<br>
+<strong>Lesson 10:</strong> Work time<br>
+<strong>Lesson 11:</strong> Work time<br>
+<strong>Lesson 12:</strong> Work time<br>
+<strong>Lesson 13:</strong> Work time<br>
+<strong>Lesson 14:</strong> Presentations</p>
 
+</details>
 
+      
+    </div>
+    
+  
 
-. (This is just
-a test of the <code>ref_practice</code> shortcode. Should it embed content or link out to
-it?)</p>
-</article>
+  <h2 id="programming">Programming:</h2>
+<p>Introduction to functional programming; abstraction. Types: int, float, bool. Introduction to data structures. Iterating over lists. Students will build on code reuse from unit 1, this time writing functions without side effects that can be composed. Curriculum: Based on introductory unit from BJC.</p>
+<h2 id="problem-sets">Problem sets</h2>
+<p>Write basic functions to perform calculations on numbers and lists. Biggest, smallest, mean, median, mode. Quartiles. Scale, clamp, bin.</p>
+<h2 id="labs">Labs</h2>
+<p>Lab 1: Students will write code to plot histograms, scatter plots, and the line of best fit. Lab 2: Students will be introduced to the basics of Pandas and matplotlib, the standard Python libraries for data analysis and plotting.</p>
+<h2 id="project">Project</h2>
+<p>Collect some data or use an existing dataset. Frame a research question and use the data to answer it.</p>
+
+  </article>
  
       
 
@@ -1034,7 +1084,10 @@ it?)</p>
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#lesson-0---welcome-to-computer-science">Lesson 0 - Welcome to Computer Science</a></li>
+    <li><a href="#programming">Programming:</a></li>
+    <li><a href="#problem-sets">Problem sets</a></li>
+    <li><a href="#labs">Labs</a></li>
+    <li><a href="#project">Project</a></li>
   </ul>
 </nav>
 

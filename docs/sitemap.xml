@@ -52,6 +52,14 @@
   </url>
   
   <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit01/lessons/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit01/modules/</loc>
+  </url>
+  
+  <url>
     <loc>https://cproctor.github.io/making-with-code/practices/activity/</loc>
   </url>
   
@@ -77,6 +85,10 @@
   
   <url>
     <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_decomposition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit01/modules/lab_functional_programming/</loc>
   </url>
   
   <url>
@@ -152,6 +164,10 @@
   </url>
   
   <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit01/notes/</loc>
+  </url>
+  
+  <url>
     <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/modules/lab_terminal_adventure/</loc>
   </url>
   
@@ -164,11 +180,23 @@
   </url>
   
   <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit01/modules/lab_types/</loc>
+  </url>
+  
+  <url>
     <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/</loc>
   </url>
   
   <url>
     <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit01/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cproctor.github.io/making-with-code/courses/cs9/unit01/teaching/</loc>
   </url>
   
   <url>
