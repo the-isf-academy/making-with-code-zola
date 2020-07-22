@@ -2,9 +2,6 @@
 title: "Code Practice Homework"
 type: module
 ---
-{{< devnote >}}
-Code block style: Do we want to use the black background / white text format? Also how do want to handle references to HK teaching team? (replace with generic "instructor" or "teaching team"?)
-{{< /devnote >}}
 
 # Code Practice Homework
 
@@ -29,8 +26,10 @@ Use Python's `turtle` library to draw something. You can do this with the [funct
     - Navigate to the directory where your homework is saved.
     - Tell Terminal to open Atom and work on a new file
 
-            ~$ cd Desktop/cs9/unit_00/
-            ~/Desktop/cs9/unit_00$ atom homework_01.py
+      ```shell
+      ~$ cd Desktop/cs9/unit_00/
+      ~/Desktop/cs9/unit_00$ atom homework_01.py
+      ```
 
     - Atom should have opened.
     - Paste the starter code below into the window and save it (`⌘S`). Now you can see this file in Terminal:
@@ -47,27 +46,29 @@ Use Python's `turtle` library to draw something. You can do this with the [funct
 - After you make a change, save the file and run the program to make sure it worked properly.
 - Be ready to share your drawing in class next time we meet. **You don't need to submit anything for this part of the assignment before class.**
 
+
 ### Starter code
 
-    #!python
-    # Unit 0 Lesson 1
-    # Author: Your Name
+```python
+# Unit 0 Lesson 1
+# Author: Your Name
 
-    from turtle import *
+from turtle import *
 
-    # You can add comments anywhere you want. The code below draws a square.
-    forward(100)
-    right(90)
-    forward(100)
-    right(90)
-    forward(100)
-    right(90)
-    forward(100)
-    right(90)
+# You can add comments anywhere you want. The code below draws a square.
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
 
-    # This makes the program wait until you type some input.
-    # Otherwise, it would quit right after it finished drawing.
-    input("Press enter...")
+# This makes the program wait until you type some input.
+# Otherwise, it would quit right after it finished drawing.
+input("Press enter...")
+```
 
 
 {{< /expand >}}

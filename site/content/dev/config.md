@@ -46,6 +46,10 @@ A list of custom CSS files to inject into the header.
 Certain types are only intended to be included in larger blocks of content,
 not on their own. Defaults to `["teaching", "notes"]`
 
+### `Teacher` 
+The name which should be used when referring to the teacher. (See the 
+[teacher shortcode]({{< ref "dev/syntax.md#teacher" >}}).)
+
 ### `BookSection`
 This param from the [Book theme](https://github.com/alex-shpak/hugo-book) is
 ignored.

@@ -47,3 +47,10 @@ This lesson went horribly. Need to revise.
 {{</* /devnote */>}}
 ```
 
+### teacher
+
+Uses the teacher's name, which can be configured via a 
+[site param]({{< ref "dev/config#Teacher" >}}). 
+```
+Even {{</* teacher */>}} sometimes makes mistakes. 
+```
