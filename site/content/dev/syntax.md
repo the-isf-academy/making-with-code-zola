@@ -47,6 +47,17 @@ This lesson went horribly. Need to revise.
 {{</* /devnote */>}}
 ```
 
+### local
+
+Use to mark content which is unavoidably localized to a particular learning
+environment. At least later users can search for these and make appropriate
+updates. 
+
+```
+{{</* local */>}}
+When you finish, turn this worksheet in to Moodle. 
+```
+
 ### teacher
 
 Uses the teacher's name, which can be configured via a 

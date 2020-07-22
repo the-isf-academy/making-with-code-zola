@@ -2,23 +2,20 @@
 Title: Style guide
 ---
 
-# Localization
+# Style guide
+
+## Localization
 
 Our goal is to produce curriculum which can be used anywhere, but every
 learning environment is specific. Therefore we will sometimes need to make
 assumptions about how things are set up. When local assumptions are unavoidable,
-please tag them with `LOCAL` in a [devnote]({{< ref "dev/syntax.md#devnote" >}}). 
+please tag them with the [local shortcode]({{< ref "dev/syntax.md#local" >}}). 
 
-{{< devnote >}}LOCAL{{< /devnote >}}
+{{< local >}}
 
-When someone later wants to further localize the curriculum, they can search for
-`LOCAL`.
+You can use the [`teacher` shortcode]({{< ref "dev/syntax.md#teacher" >}}) as a reference to the teacher's name (currently "{{< teacher >}}"). 
 
-You can use the [`teacher` shortcode]({{< ref "dev/syntax.md#teacher" >}}) as a reference to the teacher's name. 
-
-Even {{< teacher >}} sometimes makes mistakes. 
-
-# Code
+## Code
 
 - Use fenced code blocks to represent source code. 
 
