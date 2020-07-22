@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activity on Making with Code</title>
+    <link>https://cproctor.github.io/making-with-code/practices/activity/</link>
+    <description>Recent content in Activity on Making with Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://cproctor.github.io/making-with-code/practices/activity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Labs</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/labs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/labs/</guid>
+      <description>Labs Students will work on labs in class which integrate the skills and emphasize developing collaborative problem-solving. Early in the year, labs and projects will be tightly-integrated; students will be guided through creating projects. One feature of labs is that we will be providing some of the libraries students use, allowing them to interact with broader computational systems than they would be able to do on their own. For example, students will initially encounter machine library through functions we provide which allow them to do powerful things with their code.</description>
+    </item>
+    
+    <item>
+      <title>Problem sets</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/problem_sets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/problem_sets/</guid>
+      <description>Problem Sets There will be regularly-assigned problem sets supporting students in practicing their skills. (We should assess school culture, but I like the idea of having a small problem set due in each day of class). Students may work together on these, but they must be coded independently. Problem sets will be assessed automatically so that students get immediate feedback. Generally, problem sets will lag behind labs so that they are practice with content we’ve already explored together.</description>
+    </item>
+    
+    <item>
+      <title>Help Queue</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/help_queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/help_queue/</guid>
+      <description>Help Queue  Getting help: When working on individual projects and on problem sets, students will often need help from teachers. It is important to create structures to allocate teacher time so that pushier students can’t dominate, and to build a culture where it’s a good thing to be stuck, to need help, and to seek help.  One useful tool is the help queue, simply a list on the whiteboard where people can sign up if they need help.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://cproctor.github.io/making-with-code/practices/activity/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/practices/activity/projects/</guid>
+      <description>Projects One primary structure in the course will be open-ended projects. The initial units will provide scaffolding, supporting students in designing and implementing projects. Later in the year, students will design their own projects independently.
+We ought to name the overall teaching philosophy as constructionism, but also explain how the project-based approach makes sense within POGIL and within computational action.  </description>
+    </item>
+    
+  </channel>
+</rss>

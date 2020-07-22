@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unit 00: Drawing on Making with Code</title>
+    <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/</link>
+    <description>Recent content in Unit 00: Drawing on Making with Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://cproctor.github.io/making-with-code/courses/cs9/unit00/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Teaching notes (Hong Kong, 2019-2020)</title>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/notes/</guid>
+      <description>10 class meetings This initial unit prioritizes getting students making personally-meaningful things as fast as possible. This means we aren’t aiming for completeness. In particular, we’re not introducing variables or conditional control structures in this unit: most students won’t need them, and we’ll spend a lot of time with them in the next unit.  Unit Calendar Lesson 0: Introduction, turtle
+Lesson 1: Loops / lists
+Lesson 2: Functions</description>
+    </item>
+    
+    <item>
+      <title>Unit 00: Teaching</title>
+      <link>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cproctor.github.io/making-with-code/courses/cs9/unit00/teaching/</guid>
+      <description>Working within the context of drawing, students practice building up complex programs from simple ones. We’ll use Python’s turtle library, and use our exported SVGs to cut things on the laser cutter/cnc. Loosely inspired by Chris’s Python drawing unit from GMS (this links to the Scratch drawing assignment; further up on the page are lessons translating this into Python). Programming: Imperative programming; Basics of syntax; functions; decomposition and code reuse. Introductory debugging strategies.</description>
+    </item>
+    
+  </channel>
+</rss>
