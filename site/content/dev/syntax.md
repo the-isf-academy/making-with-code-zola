@@ -65,3 +65,25 @@ Uses the teacher's name, which can be configured via a
 ```
 Even {{</* teacher */>}} sometimes makes mistakes. 
 ```
+
+### checkpoint
+
+Adds a checkpoint where students should stop working on a lab and check in with
+a teacher. A self-closing tag will use a default message; otherwise a custom
+message may be provided. 
+
+{{< checkpoint />}}
+
+```
+{{</* checkpoint /*/>}}
+```
+
+{{< checkpoint >}}
+Take a break.
+{{< /checkpoint >}}
+
+```
+{{</* checkpoint */>}}
+Take a break.
+{{</* /checkpoint */>}}
+```

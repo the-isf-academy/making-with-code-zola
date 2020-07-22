@@ -43,3 +43,9 @@ You can use the [`teacher` shortcode]({{< ref "dev/syntax.md#teacher" >}}) as a 
   important, use `~/Desktop/cs9/unit_00$`.
 
 
+## Open issues
+
+We have a number of stylistic conventions sprinkled throughout the curriculum.
+Let's try to approach these declaratively using shortcodes so we can change them
+later if we want to. For example, various uses of emoji to indicate the kind of
+task.

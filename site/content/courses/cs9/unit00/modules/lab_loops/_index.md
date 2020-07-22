@@ -51,9 +51,7 @@ Once you exit the Python shell, all your work is lost. So it's not a good way to
 777777
 ```
 
-#### CHECKPOINT: Stop here and make sure everyone in your group has finished this section before you go on. Raise your hand and check in with an instructor before you move on.
-
----
+{{< checkpoint />}}
 
 ## Variables
 
