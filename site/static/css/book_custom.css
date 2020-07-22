@@ -27,3 +27,20 @@ details.details-view summary {
     font-size: 1.17em;
     cursor: pointer;
 }
+
+/* Zero-based counting for ol li  */
+ol {
+    list-style: none;
+}
+
+ol li:first-of-type {
+    counter-set: index 0;
+}
+
+ol li {
+    counter-increment: index;
+}
+
+ol li:before {
+    content: counter(index) ". ";
+}
