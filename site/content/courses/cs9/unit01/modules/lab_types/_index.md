@@ -39,9 +39,11 @@ is to guess a secret five-letter word. Each time you guess, you will be told
 how many of the letters are correct (even if they're not in the right place).
 
 
+{{< local >}}
 {{< expand "Collaborating with GitHub" >}}
 
 For this lab, use the following link to create a repo for your lab work. This will be a group assignment, so you will form a team with your table group and share one Github repository.
+
 
 If you are in **CS 1**, [click here](https://classroom.github.com/a/r13vhXjj).
 
