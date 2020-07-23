@@ -18,12 +18,14 @@ In this lab, we'll explore how to plan backwards from a goal, breaking a complic
 
 Before we get into today's work, we need to learn about another data structure. Paste the starter code below into a new python file, `lab_05.py`.
 
-```python
-    # STARTER CODE
-    zodiac_year_list = ['monkey','rooster', 'dog',
-                        'pig', 'rat', 'ox',
-                        'tiger', 'rabbit', 'dragon',
-                        'snake', 'horse', 'sheep']
+```python {linenos=table}
+    # lab_05.py
+
+    zodiac_year_list = [
+        'monkey','rooster', 'dog', 'pig', 'rat', 'ox',
+        'tiger', 'rabbit', 'dragon', 'snake', 'horse', 'sheep'
+    ]
+
     animal_dict = {
         "rat": "鼠",
         "ox": "牛",
@@ -37,14 +39,13 @@ Before we get into today's work, we need to learn about another data structure. 
         "rooster": "鸡",
         "dog": "狗",
         "pig": "猪"
-      }
+    }
 
-    # PART A CODE
     def my_zodiac_year(birth_year):
-        birth_year_animal = zodiac_year_list[birth_year%12]
+        zodiac_cycle_position = birth_year % 12
+        birth_year_animal = zodiac_year_list[zodiac_cycle_position]
         print("I was born in the year of the {}.".format(birth_year_animal))
 
-    # PART B
     def create_character_traits():
         return {
             "courage": 8,
@@ -64,7 +65,7 @@ Before we get into today's work, we need to learn about another data structure. 
 
 ### Part A: High 🗝 Useful Data Structure
 
-You already know about lists ({{< ref_module "lab_loops" >}}), which are a great way to store things that naturally come one after another, like subway stops on a subway line, or homework assignments in a class. We call lists a **data structure** because they give structure to data. They put things in line, so you can access each element at an index. After looking over the code in `PART A` of the starter code, open a Python shell and import the `my_zodiac_year` function from the `lab_05.py` file. Run the `my_zodiac_year` function passing in your birth year as the argument:
+You already know about lists ({{< ref_module "lab_loops" >}}), which are a great way to store things that naturally come one after another, like subway stops on a subway line, or homework assignments in a class. We call lists a **data structure** because they give structure to data. They put things in line, so you can access each element at an index. After reading the function `my_zodiac_year` (lines 23-26), open a Python shell and import `my_zodiac_year` from the `lab_05.py` file. Run the `my_zodiac_year` function passing in your birth year as the argument:
 
 ```shell
     >>> from lab_05 import my_zodiac_year
