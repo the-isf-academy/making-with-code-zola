@@ -15,7 +15,7 @@ All additions to the website should be developed on a feature branch before they
 
     git checkout -b branch-name
     
-The Hugo will automatically build the local version as you make changes in the branch. If you ever want to go back to see whatt's live on the web, you can change back to the master branch:
+The Hugo will automatically build the local version as you make changes in the branch. If you ever want to go back to see what's live on the web, you can change back to the master branch:
 
     git checkout master
     
