@@ -1,5 +1,6 @@
 ---
-title: Modules Lab
+title: 5. Modules
+type: labs
 ---
 
 # Modules Lab

@@ -1,5 +1,6 @@
 ---
-title: Terminal Adventure Lab
+title: 1. Terminal Adventure
+type: labs
 ---
 
 # Terminal Adventure Lab

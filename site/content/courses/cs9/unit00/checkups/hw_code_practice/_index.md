@@ -1,6 +1,6 @@
 ---
 title: "Code Practice Homework"
-type: module
+type: checkups
 ---
 
 # Code Practice Homework
@@ -37,7 +37,7 @@ Atom should have opened a new, unsaved, empty file. Paste the [starter code belo
 homework_01.py
 ```
 
-Now run the program. 
+Now run the program.
 
 ```shell
 ~/Desktop/cs9/unit_00$ python homework_01.py

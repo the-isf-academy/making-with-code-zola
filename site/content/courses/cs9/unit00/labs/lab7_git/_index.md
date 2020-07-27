@@ -1,5 +1,6 @@
 ---
-title: Version Control Lab
+title: 7. Version Control
+type: labs
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
