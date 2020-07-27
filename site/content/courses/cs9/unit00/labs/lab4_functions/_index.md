@@ -11,7 +11,7 @@ resources:
 # Functions Lab
 
 {{< devnote >}}
-Removed the "Input a code from the instructors to move on:" requirement. Also think about whether we should use dropdowns for different sections of labs
+
 {{< /devnote >}}
 
 ## Starter code

@@ -1,6 +1,6 @@
 ---
 title: Self Map Homework
-type: module
+type: checkup
 ---
 
 # Make a Self Map

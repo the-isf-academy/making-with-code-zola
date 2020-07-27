@@ -1,6 +1,6 @@
 ---
 title: Initial Sketch Homework
-type: module
+type: checkup
 ---
 
 # Draw an Initial Sketch for Final Project

@@ -1,4 +1,4 @@
-{{ $path := printf "../../modules/%s/_index.md" (.Get 0) }} 
+{{ $path := printf "../../resources/%s/_index.md" (.Get 0) }} 
 {{ with $.Page.GetPage $path }}
 <a href="{{ .Permalink }}">{{ .Title }}</a>
 {{ else }}

@@ -3,8 +3,6 @@ title: 2. Variables and Loops
 type: labs
 ---
 
-# Lab
-
 # Loops Lab
 
 In this lab, we will learn how to make the computer do the same instruction over and over.

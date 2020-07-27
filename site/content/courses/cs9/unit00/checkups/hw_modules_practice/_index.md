@@ -1,6 +1,6 @@
 ---
 title: Modules Practice Homework
-type: module
+type: checkup
 ---
 # Practice Using Modules
 

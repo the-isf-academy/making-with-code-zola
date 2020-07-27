@@ -1,6 +1,6 @@
 ---
 title: Functions Practice Homework
-type: module
+type: checkup
 resources:
 - name: Functions Practice Figures
   src: images/courses/cs9/unit00/00_hw_functions_practice.png

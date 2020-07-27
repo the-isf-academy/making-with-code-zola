@@ -1,6 +1,6 @@
 ---
 title: Drawing Practice Homework
-type: module
+type: checkup
 resources:
 - name: Drawing Practice Figures
   src: images/courses/cs9/unit00/00_hw_drawing_practice.png

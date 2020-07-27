@@ -1,6 +1,6 @@
 ---
 title: "Code Practice Homework"
-type: checkups
+type: checkup
 ---
 
 # Code Practice Homework

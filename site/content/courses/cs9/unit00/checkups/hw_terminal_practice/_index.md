@@ -1,6 +1,6 @@
 ---
 title: "Terminal Practice Homework"
-type: module
+type: checkup
 ---
 
 # Terminal Practice Homework
