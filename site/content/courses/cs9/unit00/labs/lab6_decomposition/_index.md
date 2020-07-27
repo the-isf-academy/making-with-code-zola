@@ -1,5 +1,6 @@
 ---
-title: Decomposition Lab
+title: 6. Decomposition
+type: labs
 resources:
 - name: mannequin
   src: images/courses/cs9/unit00/00_decomposition_mannequin.png
