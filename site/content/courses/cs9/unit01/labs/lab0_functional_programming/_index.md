@@ -1,5 +1,5 @@
 ---
-title: Functional Programming Lab
+title: 0. Functional Programming Lab
 resources:
 ---
 
