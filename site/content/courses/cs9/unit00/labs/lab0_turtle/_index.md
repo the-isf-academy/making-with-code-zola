@@ -16,16 +16,6 @@ first computer program.
 ## Setup
 To get your computer ready, we need to configure the workspace you will use for the class.
 
-{{< aside >}}
-*Hello! I'm the For Your Information Space Invader (or FyiSi for short). I'll be stopping by
-every once in a while to give you some extra information about labs or the content you're
-learning.  
-Here's my first FYI:*
-
-Sometimes you'll see {{< code-action >}} in a lab, this means that you
-need do something that involves writing code or using your Terminal. You can use these like
-little action items during labs.
-{{< /aside >}}
 
 {{< tabs "computer-setup" >}}
 {{< tab "MacOS" >}}
@@ -126,6 +116,17 @@ for Windows users that we'll explain along the way.
 {{< /aside >}}
 {{< /tab >}}
 {{< /tabs >}}
+
+{{< aside >}}
+*Hello! I'm the For Your Information Space Invader (or FyiSi for short). I'll be stopping by
+every once in a while to give you some extra information about labs or the content you're
+learning.  
+Here's my first FYI:*
+
+Sometimes you'll see {{< code-action >}} in a lab. This means that you
+need do something that involves writing code or using your Terminal. You can use these like
+little action items during labs.
+{{< /aside >}}
 
 ## Into the Terminal
 Take a peek at your Desktop. You should see a new folder called `cs9` created by the configuration
