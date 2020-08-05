@@ -3,155 +3,152 @@ title: 2. Variables and Loops
 type: labs
 ---
 
-# Loops Lab
+# Variables and Loops Lab
 
-In this lab, we will learn how to make the computer do the same instruction over and over.
+In this lab, we will learn how to make the computer do the same instruction over and over. To get started, let's
+talk about how the code we've written works in your computer.
 
-## The Python shell
+{{< include_resource "resource_code_process" >}}
 
-Usually, we write Python code in a file using Atom and then run it using Terminal. There's another way to run Python, which is really nice for when you just want to mess around or do a quick test. Open Terminal, navigate to your computer science directory and type `python`.
+{{< include_resource "resource_python_shell" >}}
 
-```shell
-~$ cd Desktop/cs9
-~/Desktop/cs9$ python
-Python 3.7.3 (default, Mar 27 2019, 09:23:15)
-[Clang 10.0.1 (clang-1001.0.46.3)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
+{{< checkpoint >}}
+Answer the following check-in questions on your group's Google doc before moving on:
 
-See how the prompt changed to `>>>`? That tells you you're in Python world. You can type Python code here and it will run. Let's try it out. Type the following, and make sure you get the same response.
+0. What does Python3 (the software) do?
+0. When adding, subtracting, multipling, and dividing numbers in Python, what is
+the order of operations? (Use the Python shell to test!)
 
-```shell
->>> 1+1
-2
->>> 123456 + 654321
-777777
->>> number = 5
->>> number * number
-25
->>> "I am " + "a robot"
-'I am a robot'
->>> exit()
-~/Desktop/cs9$
-```
+{{< /checkpoint >}}
 
-Once you exit the Python shell, all your work is lost. So it's not a good way to do serious work, but it works great as a fancy calculator.
+{{< include_resource "resource_variables" >}}
 
-```shell
->>> 1+1
-2
->>> 123456 + 654321
-777777
-```
+Let's do some tests to see more about how variables work.
 
-{{< checkpoint />}}
+## Variable tests
 
-## Variables
-
-You are probably familiar with variables in math. ("Solve for x: `2x + 4 = 3x`") In math problems, the goal is often to figure out the secret value of a variable. Once you figure it out, the problem is finished. Variables work differently in computer science:
-
-- You can create them whenever you want. In fact, you already made one. Remember typing `number = 5` above? You made a variable called "number" and set its value to 5.
-- In computer science, you get to decide what value variables have, and you can change them whenever you want. Try this:
-
-```shell
->>> name = "Elton"
->>> "my name is " + name
-```
-
-- You can call them whatever you want (no spaces though!) In math, variables have names like `x`, `y`, and `t`. In computer science, we usually call them things like `number_of_coins_in_my_hand` or `direction_my_character_is_facing` because it's less confusing.
-
-We're going to learn a lot about variables this year, but that's enough for now.
-
----
-
-## Lists
-
-Create a new file called `lab_02.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) You'll be turning in this file at the end of the lab. Copy this starter code:
+Create a new file called `lab_02.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) You'll be turning in
+this file at the end of the lab. Copy this starter code:
 
 ```python
-    # Unit 0 Lab 2
-    # Author: Your Name
+# Unit 0 Lab 2
+# Author: Your Name
 
-    from turtle import *
+from turtle import *
 
-    #VARIABLES
-    my_name = ""
-    friend_name = ""
-    meme_list = ["creeper?","aw man"]
-    cs1_dessert_list = ["ice cream", "brownies", "mochi", "timtams", "creme brulee", "mango sago", "pumpkin pie", "tiramisu", "cheesecake"]
-    metro_stop_list = ["0 Kennedy Town", "1. HKU", "2.. Sai Ying Pun", "3... Sheung Wan", "4.... Central", "5..... Admiralty", "6...... Wan Chai"]
-    star_list = ["*", "**", "***", "****", "*****"]
+# VARIABLE TESTS
+# variable test 0
+name = "Your name"
+print()
+print("Variable test 0")
+print("Hello")
+print(name)
 
-    # LIST EXPERIMENTS
-    print("help! I am trapped inside the computer!")
+#variable test 1
+print()
+print("Variable test 1")
 
-    # LOOPING THROUGH A LIST
-    # YOUR CODE HERE (A)
-
-    # LOOPING THROUGH PART OF A LIST
-    # YOUR CODE HERE (B)
-
-    # LOOPING WITH STEPS
-    # YOU WILL PASTE C, D, E HERE
-
-    # LOOPING FOR A CERTAIN NUMBER OF TIMES
-    # YOUR CODE HERE (F)
-
-    # LOOPY DRAWINGS
-    # YOUR CODE HERE (G)
-
-    # VARIABLE DRAWINGS
-    # YOUR CODE HERE (H)
+#variable test 2
+print()
+print("Variable test 2")
 ```
 
-We've created a ton of variables here, except this time they're in a file so we won't lose them after we run the program. Try running the program.
+#### Variable test 0
+{{< code-action >}} Start by replacing `"Your name"` with your name (but keep the `""`). Now you
+have *declared* the `name` variable and *assigned* your name as its value. 
+
+{{< code-action >}} Save the file and run the program like this:
 
 ```shell
-    ~/Desktop/cs9/unit_01$ python lab_02.py
-    help! I am trapped inside the computer!
-    ~/Desktop/cs9/unit_01$
+~/Desktop/cs9/unit_01$ python lab_02.py
+Variable test 0
+Hello
+FyiSi
+~/Desktop/cs9/unit_01$
 ```
 
-### What is a list?
-When you want to know what something is (inside a computer program), ask the program to print it out. Before we start, change the value of the variables `my_name` and `friend_name` to anything you want. Something like
+What just happened? After storing your name in the `name` variable, `print(name`) prints out whatever
+is stored in the variable.
+
+Let's do another test. {{< code-action >}} Add the following lines of code so that the `variable test 0`
+section looks like this:
+```python
+# variable test 0
+name = "Your name"
+print()
+print("Variable test 0")
+print("Hello")
+print(name)
+name = "Friend's name"
+print("Hello")
+print(name)
+```
+
+{{< code-action >}} Replace `"Friend's name"` with your friend's name.
+
+Now our program is printing the `name` variable twice but we've assigned different values to the
+variable at different places in the code. What do you think will happen?
+
+{{< code-action >}} Run the code to find out:
+```shell
+~/Desktop/cs9/unit_01$ python lab_02.py
+Variable test 0
+Hello
+FyiSi
+Hello
+cs9
+~/Desktop/cs9/unit_01$
+```
+
+Is this the output you expected? Talk with your group about what happened when you assigned the
+`name` variable twice.
+
+#### Variable test 1
+{{< code-action >}} Type the following lines of code under the `variable test 1` section of your program.
+Replace `"color"` and `"fruit"` with your favorite color and fruit:
 
 ```python
-#VARIABLES
-my_name = "Wall-E"
-friend_name = "Eva"
+# variable test 1
+print()
+print("Variable test 1")
+favorite_color = "color"
+print("Your favorite color is " + favorite_color)
+print("Your favorite fruit is " + favorite_fruit)
+favorite_fruit = "fruit"
 ```
 
-The program currently prints out `"help! I am trapped inside the computer!"`. Replace that string with the following objects one at a time. For each one, save your program and run it to see what the object is.
+{{< code-action >}} Try running the program now with `python lab_02.py`
 
-0.  `"hello"`
-1.  `goodbye` (This will cause an error. See if you can understand the error message.)
-1.  `my_name`
-1.  `"hello, " + my_name`
-1.  `meme_list`
-1.  `cs1_dessert_list`
-1.  `cs1_dessert_list[0]`
-1.  `cs1_dessert_list[1]`
-1.  `cs1_dessert_list[2]`
-1.  `cs1_dessert_list[100]` (Another error. Why?)
-1.  `my_name + " likes to eat " + cs1_dessert_list[0] + " but " + friend_name + " likes to eat " + cs1_dessert_list[1]`
+Hmm, something is wrong here. Work with your group to find and fix the bug.
 
-### What's going on?
-
-Once you finish running all these examples, talk with your table group to explain what each one means. Here are some terms:
-
-- A **list** is a collection of **elements** in order. When you write down a list, you use brackets on either end, and commas in between. Like this: `[100, 200, 400, 800]`.
-- Each list element has an **index**. The first element's index is 0, the second's is 1, and so on. You can get a list element by using its index, like this:
-
-```shell
->>> meme_list[0]
-creeper?
->>>
+#### Variable test 2
+{{< code-action >}} Type the following lines in the `variable test 2` section of your program:
+```python
+# variable test 2
+print()
+print("Variable test 2")
+favorite_artist = input("What is your favorite artist? ")
+print("Oh, I love " + favorite_artist + "!")
 ```
 
-#### CHECKPOINT: When you are confident that *everybody at your table* can explain lists, raise your hand for an instructor to check in before you go on.
+{{< code-action >}} Run your program multiple times and change up what artist you type.
 
----
+This shows how your programs can be responsive to user input and how you can store
+information from the user in variables that may change every time your program runs.
+
+{{< aside >}}
+You can get input from the user while your program is running using `input(PROMPT)`.
+
+If you want to get a number from the user, use `int(input("PROMPT"))`. This is because
+Python treats numbers and words differently. We'll talk more about this next unit.
+{{< /aside >}}
+{{< checkpoint >}}
+Answer the following check-in questions on your group's Google doc before moving on:
+
+0. What is a variable?
+0. How do you declare a variable?
+0. What is the scope of a variable?
+{{< /checkpoint >}}
 
 ## Loops
 

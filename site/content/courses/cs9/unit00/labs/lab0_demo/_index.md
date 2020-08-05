@@ -46,6 +46,13 @@ This is a devnote
 This is a custom checkpoint.
 {{< /checkpoint >}}
 
+{{< aside >}}
+Notice how something different happened when you `cd`'d into the `cs9` directory? A piece of
+software the install script installed called `direnv` just activated a virtual environment
+for you Terminal session. Basically, it keeps the things you do or the software you install
+for the class from affecting other parts of your computer.
+{{< /aside >}}
+
 {{< figure src="images/courses/cs9/unit00/00_git_github.png" width="400px" title="GitHub" >}}
 
 {{< include_resource "resource_loops">}}
@@ -53,3 +60,5 @@ This is a custom checkpoint.
 {{< ref_resource "resource_loops">}}
 
 {{< ref_lab "lab4_functions">}}
+
+{{< youtube id="https://www.youtube.com/embed/sTLi5unrY6I" autoplay="true" >}}

@@ -216,7 +216,7 @@ The {{< look-action >}} symbol is another helpful symbol to indicate that you ne
 something. This one means that there's something important for you to read or watch.
 {{< /aside >}}
 
-{{< tabs >}}
+{{< tabs python-programs >}}
 
 {{< tab "Video Explanation" >}}
 
