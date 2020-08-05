@@ -25,7 +25,7 @@ the order of operations? (Use the Python shell to test!)
 
 Let's do some tests to see more about how variables work.
 
-## Variable tests
+### A. Variable tests
 
 Create a new file called `lab_02.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) You'll be turning in
 this file at the end of the lab. Copy this starter code:
@@ -36,7 +36,7 @@ this file at the end of the lab. Copy this starter code:
 
 from turtle import *
 
-# VARIABLE TESTS
+# A. VARIABLE TESTS
 # variable test 0
 name = "Your name"
 print()
@@ -70,7 +70,7 @@ FyiSi
 What just happened? After storing your name in the `name` variable, `print(name`) prints out whatever
 is stored in the variable.
 
-Let's do another test. {{< code-action >}} Add the following lines of code so that the `variable test 0`
+Let's do another test. {{< code-action >}} **Type** the following lines of code so that the `variable test 0`
 section looks like this:
 ```python
 # variable test 0
@@ -104,7 +104,7 @@ Is this the output you expected? Talk with your group about what happened when y
 `name` variable twice.
 
 #### Variable test 1
-{{< code-action >}} Type the following lines of code under the `variable test 1` section of your program.
+{{< code-action >}} **Type** the following lines of code under the `variable test 1` section of your program.
 Replace `"color"` and `"fruit"` with your favorite color and fruit:
 
 ```python
@@ -122,7 +122,7 @@ favorite_fruit = "fruit"
 Hmm, something is wrong here. Work with your group to find and fix the bug.
 
 #### Variable test 2
-{{< code-action >}} Type the following lines in the `variable test 2` section of your program:
+{{< code-action >}} **Type** the following lines in the `variable test 2` section of your program:
 ```python
 # variable test 2
 print()
@@ -156,43 +156,86 @@ In Python, when you want to run the same code multiple times, we use loops.
 If you have used Scratch before, you have seen loops before:
 
 {{< figure src="images/courses/cs9/unit00/00_loops_scratch_loop.png" width="200px" title="Scratch loop" >}}
-<!---
-{{< figure src="/images/courses/cs9/unit00/scratch_repeat.png" title="Scratch loop" >}}
---->
 
 How does a loop work in python? Let's see.
+
+{{< code-action >}} Copy and paste the following code into your `lab_02.py` file:
+
+```python
+
+```
 **Do these and check with your group if you get stuck:**  
 
-### A. Looping through an entire list
-1. Let's print the desserts one by one.
-  **Type** this starter code at `YOUR CODE HERE (A)`. Don't copy paste so you can practice typing the code! Also note the indents.
+### B. Calculations
+Let's start by performing some calculations for many numbers.
+
+ {{< code-action >}} **Type** this starter code at `YOUR CODE HERE (B)`.
 
 ```python
 # LOOPING THROUGH A LIST
-print("Mr. Wolf, Ms. Han, and Mr. Ng go to the store for dessert. They decide to buy...")
-for thing in cs1_dessert_list:
-    print(thing)
+for num in range(10):
+    print(num)
 ```
 
-2. In this loop, `thing` is a variable that we use to store each element within `cs1_desserts` as we loop through one by one.
+**B.0.** {{< code-action >}} Run your program and see what gets output.
 
-  - `thing` is not a very descriptive variable name - there are lots of things in the world. How will we know what thing the variable is storing?
-  - Try changing `thing` to a more descriptive word in both lines, like `sweet` or `dessert_item` and see if the output changes.
+This loop runs 10 times, repeating everything indented to the right of the `for num in range(10):` line.
+`num` is a variable that gets incremented by one every time the loop runs. 
 
-3. Alright! Now you try. There's a list called stars. Print every element in `star_list` using a for-loop.
+**B.1.** {{< code-action >}} Edit the code to make the loop run a different number of times, maybe 5 or 14.
+Can you figure out how to do it? 
 
-### B. Looping through part of a list
-To give you more options, you can specify a range for your for-loop.
+Notice that the count inside `num` starts at 0 and goes up to the number inside `range()` but
+doesn't include that number.
 
-1. **Type** this code  at `YOUR CODE HERE (B)` (don't copy paste, so you can practice typing).
+**B.2.** {{< code-action >}} Finally, edit the code to make the loop print out the square of every number
+from 0 to 12. When you run your program, the output should look like this:
+
+```shell
+$ python lab_02.py
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+121
+```
+
+{{< aside >}}
+If you don't want code to be executed when you run a program, you can comment it
+out by placing `#` at the beginning of the line.
+
+If you don't wan't to run the code you wrote in the first part of the lab, just
+comment it out.
+{{< /aside >}}
+
+### C. Factorials
+Loops are particularly useful when we need to do things over time. To see this,
+let's use a loop to calculate the factorial of a number.
+
+{{< aside >}}
+The factorial of an integer (`n!`) is the product of the integer and all
+the integers below it. So, `4! = 4*3*2*1 = 24`.
+
+By definition, `0! = 1`.
+
+{{< code-action >}} **Type** this code  at `YOUR CODE HERE (C)`.
 
 ```python
-# LOOPING THROUGH PART OF A LIST
-print("But then they realized they ran out of money, so they can only buy 4 desserts. They decide to buy...")
-for i in range(1, 6):
-    print(cs1_dessert_list[i])
+num = int(input("What number do you want to find the factorial of? "))
+
+print("Factorial of " + str(num) + " is " + str(factorial))
 ```
 
+**C.0.** {{< write-action >}} To get started, think through the *pseudo-code*
+of what we want this program to do. *Pseudocode* is an outline of the program
+we'll ultimately write where we don't worry about using Python syntax.
 2. **Oops! This code has an error!**
 
   - The first four desserts in the `cs1_dessert_list` list are ice cream, brownies, mochi, and timtams.
