@@ -67,11 +67,15 @@ One thing we would need to do would be to create a pre-configured image which re
 1. RPis should be configured to connect to a school-provided VPN, so that they can easily interact with one another over a LAN and to minimize the risk of malware or data exposure. Keeping them on a VPN also allows teachers to remotely access the devices for debugging. The VPN will need to provide internet access for services like GitHub, but it could be severely filtered. 
 
 2. Create an image which can be flashed onto the rpi if students have trouble. 
-  - It should have VPN credentials and configuration baked in. 
-  - It should have a teacher user baked in, with ssh access and teachers' public keys. 
-  - On login, it should prompt the user for required config. This includes username, password, school ID, github username, and local wifi credentials. 
-  - Any time the RPi cannot find a wifi network to access, it should go into broadcast mode, broadcasting a wifi network to which students can connect from their laptops. 
-  - As much as possible, services should be distributed via PyPI or aptitude so that we don't have to re-release the image. 
+  - It should have VPN credentials and configuration baked in. [OpenVPN](https://www.ovpn.com/en/guides/raspberry-pi-raspbian) is a good option for a raspi client.
+  We could even host the VPN on a raspi using [this guide](https://www.pcmag.com/how-to/how-to-create-a-vpn-server-with-raspberry-pi)
+  - It should have a teacher user baked in, with ssh access and teachers' public keys. Linux user documentation [here](https://www.raspberrypi.org/documentation/linux/usage/users.md).
+  - On login, it should prompt the user for required config. This includes username, password, school ID, github username, and local wifi credentials. Details of the files the config script will edit are documented [here](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md).
+  - Any time the RPi cannot find a wifi network to access, it should go into broadcast mode, broadcasting a wifi network to which students can connect from their laptops. [This script](https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/157-raspberry-pi-auto-wifi-hotspot-switch-internet) should do the trick. 
+  - As much as possible, services should be distributed via PyPI or aptitude so that we don't have to re-release the image.
+  - An alternative approach could be to use [PiServer](https://www.raspberrypi.org/blog/piserver/) to centrally
+  manage the Pis. This could be useful if students break their Pis because everything is stored in a central
+  server Pi. However, not sure if this service can be accessed over a VPN.
 
 3. Creating a sense of embodiment, copresence, and geographic space. 
   - Provide tools for network and port scanning to show real-time whose pi is online, and which ports respond. 
