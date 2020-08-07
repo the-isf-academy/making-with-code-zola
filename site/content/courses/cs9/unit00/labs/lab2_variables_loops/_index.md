@@ -224,6 +224,7 @@ The factorial of an integer (`n!`) is the product of the integer and all
 the integers below it. So, `4! = 4*3*2*1 = 24`.
 
 By definition, `0! = 1`.
+{{< /aside >}}
 
 {{< code-action >}} **Type** this code  at `YOUR CODE HERE (C)`.
 
@@ -242,77 +243,16 @@ we'll ultimately write where we don't worry about using Python syntax.
   - But our code prints out brownies, mochi, timtams, creme brulee, and mango sago.
   - Change the code to print out the first 4 desserts only.
 
-### C,D,E. Looping with steps
-Copy-paste this code into the file, replacing the line that says, `YOU WILL PASTE C, D, E HERE`.
+### D. Fibonacci
 
-```python
-print(my_name + " stepped on the MTR after school, exhausted, and quickly fell asleep at a seat. Usually, the train stops at:")
-
-# YOUR CODE HERE (C)
-
-print("But on this particular afternoon, " + friend_name + " had hacked into the train system. The MTR was going twice as fast, and stopping at:")
-
-# YOUR CODE HERE (D)
-
-print("DING DONG!")
-print("PLEASE STAND BACK FROM THE TRAIN DOORS.")
-print("All of a sudden, " + my_name + " realized they had missed their stop! They leapt out of the train and got on in the other direction.")
-
-# YOUR CODE HERE (E)
-```
-
-1. In part **C**, write a for loop to print all the stops starting with Kennedy Town and ending with Wan Chai, using `range`.
-2. Sometimes you need even more options. Maybe you want to print every other element. That's where the `step` feature comes in. Your code for part **C** should look something like:
-
-```python
-for i in range(NUMBER1, NUMBER2):
-    print(SOMETHING)
-```
-
-In part **D**, use the same code as **C**, but add another argument to range:
-
-```python
-for i in range(NUMBER1, NUMBER2, 2):
-    print(SOMETHING)
-```
-
-`range()` can work with two arguments (`start`, `stop`) or with three (`start`, `stop`, `step`). If you only give two arguments, `step` is automatically set to one, and the for loop moves through the range one step at a time.
-By setting the `step` to `2`, we tell the `range()` function to take two steps at a time.
-
-3. You can also use the `step` and `range()` together to go through a list in the backwards direction. Just change the step argument to `-1`. Now, the `range()` function will walk through the range negative one step at a time. In part **E**, write a for loop to print all the stops starting with Wan Chai and ending with Sheung Wan.
-
-    *Hint: you will also need to update the start/end argument of the `range()` function to account for the negative one step.*
-
-### F. Looping for a certain number of times
-Sometimes you don't care about the list value. You just want something to happen a certain number of times. Here's an example using range. **Type** this code (don't copy paste, so you can practice typing) into part **F**
-
-```python
-# LOOPING FOR A CERTAIN NUMBER OF TIMES
-for i in range(0, 5):
-    print("hello")
-```
-
-Can you print this pattern using loops? There are multiple ways to do this, with or without lists. Add this to part **F**.
-
-```python
-* * * * *
-* * * * *
-* * * * *
-* * * * *
-* * * * *
-```
 
 ### G. Loopy drawings
-The loop concept we just learned will be really helpful in making our drawings more complex. In part **G**, try to create the following image using tools from the Turtle library that we've covered so far.
-
-{{< figure src="images/courses/cs9/unit00/00_loops_turtle_loop.png" width="400px" title="Turtle loop" >}}
-
 
 ### H. Variable drawings
-Variables will also be useful in our Turtle drawings. Can you add a variable to the code you wrote for the drawing above to create the drawing below?
 
-{{< figure src="images/courses/cs9/unit00/00_loops_turtle_var.png" width="400px" title="Turtle var" >}}
+### G. Computational Art
 
+### H. Drawing Fibonacci
 
 ## Deliverables
 - Once you've reached the end of the lab (or class time is over), please submit the `lab_02.py` file you have been creating
