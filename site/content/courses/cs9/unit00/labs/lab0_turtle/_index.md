@@ -8,7 +8,7 @@ resources:
 ---
 
 # Getting started
-Welcome to cs9! We're glad you're here! 😄
+Welcome to cs9! We're glad you're here! yay 😄
 
 This lab will help you get your computer set up for the class and show you how to run your
 first computer program.
@@ -83,7 +83,7 @@ typing the following lines one by one:
 1. Type `vim ~/.bashrc` and press enter. This will open a text file that holds configs for
 your shell.
 1. Go to the bottom of the file and press `i`.
-1. Add the following lines to the file. Be sure to replace `YOUR_USERNAME` with the name 
+1. Add the following lines to the file. Be sure to replace `YOUR_USERNAME` with the name
 you entered when you set up Ubuntu.
     ```
     export DISPLAY=:0
@@ -130,14 +130,14 @@ little action items during labs.
 
 ## Into the Terminal
 Take a peek at your Desktop. You should see a new folder called `cs9` created by the configuration
-script. We want to navigate to that folder using the Terminal interface to learn some Terminal skills 
+script. We want to navigate to that folder using the Terminal interface to learn some Terminal skills
 that will be useful throughout the class.
 
 ### Terminal: a new user interface
 
-You're probably used to interacting with the files in your computer through a *Graphical User Interface 
-(GUI)* like Finder. Terminal allows us to interact with the files in our computer through a *Text-based 
-User Interface (TUI)*. The files in our computers are organized in nested folders known as 
+You're probably used to interacting with the files in your computer through a *Graphical User Interface
+(GUI)* like Finder. Terminal allows us to interact with the files in our computer through a *Text-based
+User Interface (TUI)*. The files in our computers are organized in nested folders known as
 *directories*.
 
 {{< code-action >}} Open a new Terminal window. Terminal opens in your `home` directory, but we will be working in the `cs9` directory.
@@ -161,7 +161,7 @@ Applications  Desktop  Documents  Downloads	 Library  Movies  Music	 Pictures
 
 Here, you should see that `Desktop` is one of the subdirectories listed. Let's move into that
 subdirectory. To do so, {{< code-action >}} type `cd Desktop` into the command line and press
-`return` ("cd" stands for "change directory"). Now, list all the items in your `Desktop` 
+`return` ("cd" stands for "change directory"). Now, list all the items in your `Desktop`
 directory using `ls`.
 
 ```shell
@@ -328,7 +328,7 @@ Now that you've got the basics, try editing your `first_program.py` file to make
 | pensize  |       width      |   pensize(4)   | Sets the width of the pen for drawing                                                                                            |
 
 ### Error and bugs
-While trying this out, you may come across errors or bugs, do not fear! 
+While trying this out, you may come across errors or bugs, do not fear!
 Write the issue down, and we can talk about it during class. Try to
 figure out whether your bug is a:
 {{< columns >}}
@@ -341,4 +341,3 @@ you wanted. Remember that this happened when we set the angle to the wrong numbe
 understood by the computer. Remember that this happened when we forgot a parentheses).
 
 {{< /columns >}}
-
