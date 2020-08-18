@@ -1,6 +1,7 @@
 ---
 title: "Lesson 02"
 type: lesson
+draft: true
 ---
 
 # HTTP requests and responses lab

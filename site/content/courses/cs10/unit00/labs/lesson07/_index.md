@@ -1,6 +1,7 @@
 ---
 title: "Lesson 07"
 type: lesson
+draft: true
 ---
 
 ## Cyclic graphs PS meeting. 

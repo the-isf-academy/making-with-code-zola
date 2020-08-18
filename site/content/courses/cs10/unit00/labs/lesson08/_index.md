@@ -1,6 +1,7 @@
 ---
 title: "Lesson 08"
 type: lesson
+draft: true
 ---
 
 ## Cyclic/acyclic graphs lab

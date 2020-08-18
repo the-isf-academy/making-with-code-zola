@@ -1,6 +1,7 @@
 ---
 title: "Lesson 05"
 type: lesson
+draft: true
 ---
 
 ## Debrief first problem set. 

@@ -1,6 +1,7 @@
 ---
 title: "Lesson 01"
 type: lesson
+draft: true
 ---
 
 # Finish Raspberry Pi lab

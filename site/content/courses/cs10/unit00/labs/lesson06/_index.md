@@ -1,6 +1,7 @@
 ---
 title: "Lesson 06"
 type: lesson
+draft: true
 ---
 
 ## Work on final project proposal 

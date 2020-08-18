@@ -1,6 +1,7 @@
 ---
 title: "Lesson 04"
 type: lesson
+draft: true
 ---
 
 ## TCP/IP simulation

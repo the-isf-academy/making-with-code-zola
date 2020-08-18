@@ -1,6 +1,6 @@
 ---
-title: "Lesson 00"
-type: lesson
+title: "0. Freshly Baked Pi"
+type: lab
 ---
 
 # Welcome back. 
