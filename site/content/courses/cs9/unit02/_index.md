@@ -1,5 +1,6 @@
 ---
 title: "Unit 02: Games"
+bookCollapseSection: true
 type: unit
 ---
 

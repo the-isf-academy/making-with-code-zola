@@ -1,5 +1,6 @@
 ---
 title: "Unit 00: Drawing"
+bookCollapseSection: true
 type: unit
 ---
 

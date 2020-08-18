@@ -1,5 +1,6 @@
 ---
 title: "Unit 01: Data Science"
+bookCollapseSection: true
 type: unit
 ---
 

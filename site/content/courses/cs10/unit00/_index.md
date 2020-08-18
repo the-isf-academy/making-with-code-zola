@@ -1,5 +1,6 @@
 ---
 title: "Unit 00: Networking"
+bookCollapseSection: true
 type: unit
 ---
 
