@@ -1,157 +1,155 @@
 ---
 title: 2. Variables and Loops
 type: labs
+draft: true
 ---
 
-# Loops Lab
+# Variables and Loops Lab
 
-In this lab, we will learn how to make the computer do the same instruction over and over.
+In this lab, we will learn how to make the computer do the same instruction over and over. To get started, let's
+talk about how the code we've written works in your computer.
 
-## The Python shell
+{{< include_resource "resource_code_process" >}}
 
-Usually, we write Python code in a file using Atom and then run it using Terminal. There's another way to run Python, which is really nice for when you just want to mess around or do a quick test. Open Terminal, navigate to your computer science directory and type `python`.
+{{< include_resource "resource_python_shell" >}}
 
-```shell
-~$ cd Desktop/cs9
-~/Desktop/cs9$ python
-Python 3.7.3 (default, Mar 27 2019, 09:23:15)
-[Clang 10.0.1 (clang-1001.0.46.3)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
+{{< checkpoint >}}
+Answer the following check-in questions on your group's Google doc before moving on:
 
-See how the prompt changed to `>>>`? That tells you you're in Python world. You can type Python code here and it will run. Let's try it out. Type the following, and make sure you get the same response.
+0. What does Python3 (the software) do?
+0. When adding, subtracting, multipling, and dividing numbers in Python, what is
+the order of operations? (Use the Python shell to test!)
 
-```shell
->>> 1+1
-2
->>> 123456 + 654321
-777777
->>> number = 5
->>> number * number
-25
->>> "I am " + "a robot"
-'I am a robot'
->>> exit()
-~/Desktop/cs9$
-```
+{{< /checkpoint >}}
 
-Once you exit the Python shell, all your work is lost. So it's not a good way to do serious work, but it works great as a fancy calculator.
+{{< include_resource "resource_variables" >}}
 
-```shell
->>> 1+1
-2
->>> 123456 + 654321
-777777
-```
+Let's do some tests to see more about how variables work.
 
-{{< checkpoint />}}
+### A. Variable tests
 
-## Variables
-
-You are probably familiar with variables in math. ("Solve for x: `2x + 4 = 3x`") In math problems, the goal is often to figure out the secret value of a variable. Once you figure it out, the problem is finished. Variables work differently in computer science:
-
-- You can create them whenever you want. In fact, you already made one. Remember typing `number = 5` above? You made a variable called "number" and set its value to 5.
-- In computer science, you get to decide what value variables have, and you can change them whenever you want. Try this:
-
-```shell
->>> name = "Elton"
->>> "my name is " + name
-```
-
-- You can call them whatever you want (no spaces though!) In math, variables have names like `x`, `y`, and `t`. In computer science, we usually call them things like `number_of_coins_in_my_hand` or `direction_my_character_is_facing` because it's less confusing.
-
-We're going to learn a lot about variables this year, but that's enough for now.
-
----
-
-## Lists
-
-Create a new file called `lab_02.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) You'll be turning in this file at the end of the lab. Copy this starter code:
+Create a new file called `lab_02.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) You'll be turning in
+this file at the end of the lab. Copy this starter code:
 
 ```python
-    # Unit 0 Lab 2
-    # Author: Your Name
+# Unit 0 Lab 2
+# Author: Your Name
 
-    from turtle import *
+from turtle import *
 
-    #VARIABLES
-    my_name = ""
-    friend_name = ""
-    meme_list = ["creeper?","aw man"]
-    cs1_dessert_list = ["ice cream", "brownies", "mochi", "timtams", "creme brulee", "mango sago", "pumpkin pie", "tiramisu", "cheesecake"]
-    metro_stop_list = ["0 Kennedy Town", "1. HKU", "2.. Sai Ying Pun", "3... Sheung Wan", "4.... Central", "5..... Admiralty", "6...... Wan Chai"]
-    star_list = ["*", "**", "***", "****", "*****"]
+# A. VARIABLE TESTS
+# variable test 0
+name = "Your name"
+print()
+print("Variable test 0")
+print("Hello")
+print(name)
 
-    # LIST EXPERIMENTS
-    print("help! I am trapped inside the computer!")
+#variable test 1
+print()
+print("Variable test 1")
 
-    # LOOPING THROUGH A LIST
-    # YOUR CODE HERE (A)
-
-    # LOOPING THROUGH PART OF A LIST
-    # YOUR CODE HERE (B)
-
-    # LOOPING WITH STEPS
-    # YOU WILL PASTE C, D, E HERE
-
-    # LOOPING FOR A CERTAIN NUMBER OF TIMES
-    # YOUR CODE HERE (F)
-
-    # LOOPY DRAWINGS
-    # YOUR CODE HERE (G)
-
-    # VARIABLE DRAWINGS
-    # YOUR CODE HERE (H)
+#variable test 2
+print()
+print("Variable test 2")
 ```
 
-We've created a ton of variables here, except this time they're in a file so we won't lose them after we run the program. Try running the program.
+#### A.0 *Variable test 0*
+{{< code-action >}} Start by replacing `"Your name"` with your name (but keep the `""`). Now you
+have *declared* the `name` variable and *assigned* your name as its value. 
+
+{{< code-action >}} Save the file and run the program like this:
 
 ```shell
-    ~/Desktop/cs9/unit_01$ python lab_02.py
-    help! I am trapped inside the computer!
-    ~/Desktop/cs9/unit_01$
+~/Desktop/cs9/unit_01$ python lab_02.py
+Variable test 0
+Hello
+FyiSi
+~/Desktop/cs9/unit_01$
 ```
 
-### What is a list?
-When you want to know what something is (inside a computer program), ask the program to print it out. Before we start, change the value of the variables `my_name` and `friend_name` to anything you want. Something like
+What just happened? After storing your name in the `name` variable, `print(name`) prints out whatever
+is stored in the variable.
+
+Let's do another test. {{< code-action >}} **Type** the following lines of code so that the `variable test 0`
+section looks like this:
+```python
+# variable test 0
+name = "Your name"
+print()
+print("Variable test 0")
+print("Hello")
+print(name)
+name = "Friend's name"
+print("Hello")
+print(name)
+```
+
+{{< code-action >}} Replace `"Friend's name"` with your friend's name.
+
+Now our program is printing the `name` variable twice but we've assigned different values to the
+variable at different places in the code. What do you think will happen?
+
+{{< code-action >}} Run the code to find out:
+```shell
+~/Desktop/cs9/unit_01$ python lab_02.py
+Variable test 0
+Hello
+FyiSi
+Hello
+cs9
+~/Desktop/cs9/unit_01$
+```
+
+Is this the output you expected? Talk with your group about what happened when you assigned the
+`name` variable twice.
+
+#### A.1 *Variable test 1*
+{{< code-action >}} **Type** the following lines of code under the `variable test 1` section of your program.
+Replace `"color"` and `"fruit"` with your favorite color and fruit:
 
 ```python
-#VARIABLES
-my_name = "Wall-E"
-friend_name = "Eva"
+# variable test 1
+print()
+print("Variable test 1")
+favorite_color = "color"
+print("Your favorite color is " + favorite_color)
+print("Your favorite fruit is " + favorite_fruit)
+favorite_fruit = "fruit"
 ```
 
-The program currently prints out `"help! I am trapped inside the computer!"`. Replace that string with the following objects one at a time. For each one, save your program and run it to see what the object is.
+{{< code-action >}} Try running the program now with `python lab_02.py`
 
-0.  `"hello"`
-1.  `goodbye` (This will cause an error. See if you can understand the error message.)
-1.  `my_name`
-1.  `"hello, " + my_name`
-1.  `meme_list`
-1.  `cs1_dessert_list`
-1.  `cs1_dessert_list[0]`
-1.  `cs1_dessert_list[1]`
-1.  `cs1_dessert_list[2]`
-1.  `cs1_dessert_list[100]` (Another error. Why?)
-1.  `my_name + " likes to eat " + cs1_dessert_list[0] + " but " + friend_name + " likes to eat " + cs1_dessert_list[1]`
+Hmm, something is wrong here. Work with your group to find and fix the bug.
 
-### What's going on?
-
-Once you finish running all these examples, talk with your table group to explain what each one means. Here are some terms:
-
-- A **list** is a collection of **elements** in order. When you write down a list, you use brackets on either end, and commas in between. Like this: `[100, 200, 400, 800]`.
-- Each list element has an **index**. The first element's index is 0, the second's is 1, and so on. You can get a list element by using its index, like this:
-
-```shell
->>> meme_list[0]
-creeper?
->>>
+#### A.2 *Variable test 2*
+{{< code-action >}} **Type** the following lines in the `variable test 2` section of your program:
+```python
+# variable test 2
+print()
+print("Variable test 2")
+favorite_artist = input("What is your favorite artist? ")
+print("Oh, I love " + favorite_artist + "!")
 ```
 
-#### CHECKPOINT: When you are confident that *everybody at your table* can explain lists, raise your hand for an instructor to check in before you go on.
+{{< code-action >}} Run your program multiple times and change up what artist you type.
 
----
+This shows how your programs can be responsive to user input and how you can store
+information from the user in variables that may change every time your program runs.
+
+{{< aside >}}
+You can get input from the user while your program is running using `input(PROMPT)`.
+
+If you want to get a number from the user, use `int(input("PROMPT"))`. This is because
+Python treats numbers and words differently. We'll talk more about this next unit.
+{{< /aside >}}
+{{< checkpoint >}}
+Answer the following check-in questions on your group's Google doc before moving on:
+
+0. What is a variable?
+0. How do you declare a variable?
+0. At what point in a program can you use a given variable?
+{{< /checkpoint >}}
 
 ## Loops
 
@@ -159,120 +157,234 @@ In Python, when you want to run the same code multiple times, we use loops.
 If you have used Scratch before, you have seen loops before:
 
 {{< figure src="images/courses/cs9/unit00/00_loops_scratch_loop.png" width="200px" title="Scratch loop" >}}
-<!---
-{{< figure src="/images/courses/cs9/unit00/scratch_repeat.png" title="Scratch loop" >}}
---->
 
 How does a loop work in python? Let's see.
+
+{{< code-action >}} Copy and paste the following code into your `lab_02.py` file:
+
+```python
+# B. Calculations
+# YOUR CODE FOR HERE (B)
+
+# C. Geometric sequences
+# YOUR CODE FOR HERE (C)
+
+# D. Fibonacci
+# YOUR CODE FOR HERE (D)
+
+# E. Loopy drawings
+# YOUR CODE FOR HERE (E)
+
+# F. Variable drawings
+# YOUR CODE FOR HERE (E)
+
+# G. Drawing Fibonacci
+# YOUR CODE FOR HERE (G)
+
+```
 **Do these and check with your group if you get stuck:**  
 
-### A. Looping through an entire list
-1. Let's print the desserts one by one.
-  **Type** this starter code at `YOUR CODE HERE (A)`. Don't copy paste so you can practice typing the code! Also note the indents.
+### B. Calculations
+Let's start by performing some calculations for many numbers.
+
+ {{< code-action >}} **Type** this starter code at `YOUR CODE HERE (B)`.
 
 ```python
-# LOOPING THROUGH A LIST
-print("Mr. Wolf, Ms. Han, and Mr. Ng go to the store for dessert. They decide to buy...")
-for thing in cs1_dessert_list:
-    print(thing)
+# B. Calculations
+for i in range(10):
+    print(i)
 ```
 
-2. In this loop, `thing` is a variable that we use to store each element within `cs1_desserts` as we loop through one by one.
+#### B.0 *Listing numbers*
+{{< code-action >}} Run your program and see what gets output.
 
-  - `thing` is not a very descriptive variable name - there are lots of things in the world. How will we know what thing the variable is storing?
-  - Try changing `thing` to a more descriptive word in both lines, like `sweet` or `dessert_item` and see if the output changes.
+This loop runs 10 times, repeating everything indented to the right of the `for i in range(10):` line.
+`i` is a variable that gets incremented by one every time the loop runs. 
 
-3. Alright! Now you try. There's a list called stars. Print every element in `star_list` using a for-loop.
+#### B.1 *Listing more numbers*
+{{< code-action >}} Edit the code to make the loop run a different number of times, maybe 5 or 14.
+Can you figure out how to do it? 
 
-### B. Looping through part of a list
-To give you more options, you can specify a range for your for-loop.
+Notice that the count inside `i` starts at 0 and goes up to the number inside `range()` but
+doesn't include that number.
 
-1. **Type** this code  at `YOUR CODE HERE (B)` (don't copy paste, so you can practice typing).
+#### B.2 *Squaring numbers*
+{{< code-action >}} Finally, edit the code to make the loop print out the square of every number
+from 0 to 12. When you run your program, the output should look like this:
+
+```shell
+$ python lab_02.py
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+121
+```
+
+{{< aside >}}
+If you don't want code to be executed when you run a program, you can comment it
+out by placing `#` at the beginning of the line.
+
+If you don't wan't to run the code you wrote in the first part of the lab, just
+comment it out.
+{{< /aside >}}
+
+### C. Geometric sequences
+Loops are particularly useful when we need to do things over time. To see this,
+let's use a loop to list out the first 10 terms in a geometric sequence.
+
+{{< aside >}}
+Sequences are ordered collections of numbers that have a pattern to determine
+which numbers appear in the sequence. For example, `2, 4, 6, 8, 10,...` is a
+sequence where each number 2 more than the previous number.
+
+Geometric sequences are sequences where there is a common ratio between each
+number in the sequence. For example, `3, 9, 27, 81,...` is a geometric sequence
+where each number is 3 times the number before it (making the common ratio 3).
+{{< /aside >}}
+
+{{< code-action >}} **Type** this code  at `YOUR CODE HERE (C)`.
 
 ```python
-# LOOPING THROUGH PART OF A LIST
-print("But then they realized they ran out of money, so they can only buy 4 desserts. They decide to buy...")
-for i in range(1, 6):
-    print(cs1_dessert_list[i])
+# C. Geometric sequences
+ratio = float(input("What should the ratio of the sequence be? "))
+curr = 1
+print(curr)
 ```
 
-2. **Oops! This code has an error!**
+#### C.0 *Pseudocode*
+{{< write-action >}} To get started, think through the *pseudo-code*
+of what we want this program to do. *Pseudocode* is an outline of the program
+we'll ultimately write where we don't worry about using Python syntax.
 
-  - The first four desserts in the `cs1_dessert_list` list are ice cream, brownies, mochi, and timtams.
-  - But our code prints out brownies, mochi, timtams, creme brulee, and mango sago.
-  - Change the code to print out the first 4 desserts only.
+Here are some things to consider:
+- You will use a loop to calculate each term in the sequence. What is the formula
+you will use at each step in the loop to calculate the term?
+- You will need to know the previous term to calculate the current term. How will
+you keep track of this?
 
-### C,D,E. Looping with steps
-Copy-paste this code into the file, replacing the line that says, `YOU WILL PASTE C, D, E HERE`.
+#### C.1 *Code*
+After you are confident your pseduocode has the correct logic, translate it into
+python code. Type this code below the existing code in the `C. Sequences` section.
+
+### D. Fibonacci
+Let's explore another sequence, the Fibonacci sequence. This sequence has all kinds
+of interesting properties.
+
+{{< look-action >}} Watch this video about how the Fibonacci sequence appears in
+nature:
+{{< youtube id="https://www.youtube.com/watch?v=ahXIMUkSXX0" autoplay="true" >}}
+
+We're going to write an algorithm to print out numbers in the Fibonnaci sequence.
+{{< code-action >}} **Type** this code  at `YOUR CODE HERE (D)`.
 
 ```python
-print(my_name + " stepped on the MTR after school, exhausted, and quickly fell asleep at a seat. Usually, the train stops at:")
-
-# YOUR CODE HERE (C)
-
-print("But on this particular afternoon, " + friend_name + " had hacked into the train system. The MTR was going twice as fast, and stopping at:")
-
-# YOUR CODE HERE (D)
-
-print("DING DONG!")
-print("PLEASE STAND BACK FROM THE TRAIN DOORS.")
-print("All of a sudden, " + my_name + " realized they had missed their stop! They leapt out of the train and got on in the other direction.")
-
-# YOUR CODE HERE (E)
+# D. Fibonacci
+num_terms = int(input("How many terms of the fibonacci sequence should I display? "))
 ```
 
-1. In part **C**, write a for loop to print all the stops starting with Kennedy Town and ending with Wan Chai, using `range`.
-2. Sometimes you need even more options. Maybe you want to print every other element. That's where the `step` feature comes in. Your code for part **C** should look something like:
+#### D.0 *Pseudocode*
+{{< write-action >}} Just like you did with the geometric series algorithm, think
+through the pseudo-code of what we want the Fibonacci sequence algorithm to do.
+
+Here are some things to consider:
+- Your algorithm should print out the number of terms inputed by the user and
+stored in `num_terms`.
+- Just like before, you will need a way to track the previous terms of the sequence,
+but this time you need two past terms instead of just one.
+
+#### D.1 *Code*
+{{< code-action >}} After you are confident your pseduocode has the correct logic, translate it into
+python code. Type this code below the existing code in the `D. Fibonacci` section.
+
+{{< checkpoint >}}
+Answer the following check-in questions on your group's Google doc before moving on:
+
+0. What is a loop?
+0. How do you put code into a loop?
+0. 
+{{< /checkpoint >}}
+
+### E. Loopy drawings
+Loops are not just useful for numbers and sequences, they can also be helpful in
+making drawings. Any time your code does the same thing multiple times, you can
+use a loop to make it simplier and more powerful.
+
+Take a look at the code we've been using to draw a square:
 
 ```python
-for i in range(NUMBER1, NUMBER2):
-    print(SOMETHING)
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
 ```
 
-In part **D**, use the same code as **C**, but add another argument to range:
+Pretty repetitive, right?
+
+{{< code-action >}} Edit this code to use a loop to avoid repeating the same code over and over
+again.  **Type** this code  at `YOUR CODE HERE (E)`.
+
+### F. Variable drawings
+Loops are even more powerful drawing tools when paired with variables. This allows us to draw
+things differently over time or based on user input.
+
+{{< code-action >}} **Type** this code  at `YOUR CODE HERE (F)`.
 
 ```python
-for i in range(NUMBER1, NUMBER2, 2):
-    print(SOMETHING)
+# F. Variable drawings
+num_sides = int(input("How many sides? "))
 ```
 
-`range()` can work with two arguments (`start`, `stop`) or with three (`start`, `stop`, `step`). If you only give two arguments, `step` is automatically set to one, and the for loop moves through the range one step at a time.
-By setting the `step` to `2`, we tell the `range()` function to take two steps at a time.
+{{< code-action >}} Write a loop that draws a polygon with the number of sides
+stored in `num_sides`. Type this code below the existing code in the 
+`F. Variable Drawing` section.
 
-3. You can also use the `step` and `range()` together to go through a list in the backwards direction. Just change the step argument to `-1`. Now, the `range()` function will walk through the range negative one step at a time. In part **E**, write a for loop to print all the stops starting with Wan Chai and ending with Sheung Wan.
+### G. Drawing Fibonacci
+Finally, let's use the code you wrote to calculate Fibonacci sequences to make pattern
+drawings inspired by flowers and pinecones.
 
-    *Hint: you will also need to update the start/end argument of the `range()` function to account for the negative one step.*
+{{< figure src="images/courses/cs9/unit00/00_variables_pinecone.png" title="Fibonacci drawing" >}}
 
-### F. Looping for a certain number of times
-Sometimes you don't care about the list value. You just want something to happen a certain number of times. Here's an example using range. **Type** this code (don't copy paste, so you can practice typing) into part **F**
+#### G.0 One spiral
+First, use your Fibonacci code to draw a single spiral. You can do this by drawing a
+line for each number in the Fibonacci sequence and connecting the lines at a standard angle.
 
-```python
-# LOOPING FOR A CERTAIN NUMBER OF TIMES
-for i in range(0, 5):
-    print("hello")
-```
+{{< code-action >}} Write this code at `YOUR CODE HERE (G)`.
 
-Can you print this pattern using loops? There are multiple ways to do this, with or without lists. Add this to part **F**.
+The Turtle should draw something like this:
 
-```python
-* * * * *
-* * * * *
-* * * * *
-* * * * *
-* * * * *
-```
+{{< figure src="images/courses/cs9/unit00/00_variables_spiral.png" title="Fibonacci spiral" >}}
 
-### G. Loopy drawings
-The loop concept we just learned will be really helpful in making our drawings more complex. In part **G**, try to create the following image using tools from the Turtle library that we've covered so far.
+#### G.1 Multiple spirals
+{{< code-action >}} Now, loop your code in `G. Drawing Fibonacci` to draw multiple spirals originating from the
+center.
 
-{{< figure src="images/courses/cs9/unit00/00_loops_turtle_loop.png" width="400px" title="Turtle loop" >}}
+Now, the Turtle should draw something like this:
 
+{{< figure src="images/courses/cs9/unit00/00_variables_vortex.png" title="Many spirals" >}}
 
-### H. Variable drawings
-Variables will also be useful in our Turtle drawings. Can you add a variable to the code you wrote for the drawing above to create the drawing below?
+{{< aside >}}
+You can return your turtle to the center of the window using `goto(0, 0)`. If you want,
+you can use `penup()` and `pendown()` to keep the turtle from drawing as it returns to the
+center.
+{{< /aside >}}
 
-{{< figure src="images/courses/cs9/unit00/00_loops_turtle_var.png" width="400px" title="Turtle var" >}}
+#### G.2 Clockwise and counterclockwise
+To get a pinecone or flower effect like the video above described, you'll need to spiral clockwise
+and countercloackwise.
 
+{{< code-action >}} Repeat your spiral code, changing it to make your spirals turn in the other direction. 
 
 ## Deliverables
 - Once you've reached the end of the lab (or class time is over), please submit the `lab_02.py` file you have been creating
