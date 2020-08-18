@@ -3,6 +3,8 @@ title: CS10
 type: course
 ---
 
+{{< gdocs src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRPxZAyxM6GXY0wJlvTGb5RKavn3UbWtt4WQDX6Yo4L_XoR5S5taCnaQA2ZVhFD3BZIEGg4QHk6SHXk/pubhtml?widget=true&amp;headers=false" >}}
+
 ## Curriculum
 
 {{< expand "Unit 0: Networking" >}}

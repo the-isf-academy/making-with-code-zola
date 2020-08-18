@@ -5,6 +5,9 @@ type: course
 
 # Welcome to CS 9
 
+## Calendar
+{{< gdocs src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTz_Y1h_w3auNOX8SyMuakhPQzUXa4c0BVrr7UsYX36n8HxFEpn4VnYGaE1B1oaJBQ94Qo22ZZg6W3i/pubhtml?widget=true&amp;headers=false" >}}
+
 ## Curriculum
 
 This is a high-level overview of the curricular units that comprise this introductory course.
