@@ -1,6 +1,7 @@
 ---
 title: -1. Hugo Markdown Demo
 type: labs
+draft: true
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png

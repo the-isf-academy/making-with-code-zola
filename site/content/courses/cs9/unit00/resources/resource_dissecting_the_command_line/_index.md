@@ -1,6 +1,7 @@
 ---
 title: Dissecting the command line
 type: resource
+draft: true
 ---
 ## Dissecting the command line
 {{< tabs "dissecting-command-line" >}}

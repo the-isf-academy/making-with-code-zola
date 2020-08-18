@@ -220,7 +220,7 @@ something. This one means that there's something important for you to read or wa
 
 {{< tab "Video Explanation" >}}
 
-{{< youtube id="https://www.youtube.com/embed/sTLi5unrY6I" autoplay="true" >}}
+{{< youtube id="7bnoG9Hzihg" autoplay="true" >}}
 
 {{< /tab >}}
 
