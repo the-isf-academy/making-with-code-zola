@@ -1,15 +1,39 @@
 ---
 title: 1. Terminal Adventure
 type: labs
+draft: true
 ---
+# Into the Terminal
+This lab will explore one of the most important tools we'll use all year: the Terminal. While it
+may seem complicated at first, it will quickly become your go-to tool for computer science class.
+The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
+do all kinds of other tasks.
 
-# Terminal Adventure Lab
+{{< include_resource "resource_dissecting_the_command_line" >}}
+
+{{< aside >}}
+From now on, we will just use `$` to represent the terminal prompt unless the path to the
+current directory is important. If you see this in the lab:
+```shell
+$ ls
+some-directory some-file.txt
+```
+but your computer shows something like this:
+```shell
+COMPUTER: terminal_lab username$ ls
+some-directory some-file.txt
+```
+don't worry. As long as you see the `$` at the end, it means you can put in new commands to your
+Terminal.
+
+{{< /aside >}}
+
+
+## Terminal Adventure Lab
 
 In this lab, we are going to practice using the Terminal.
 
-{{< expand "Setup" >}}
-
-Open a new Terminal window and enter the following commands
+{{< code-action >}} Open a new Terminal window and enter the following commands
 (Don't type the `$`.):
 
 ```shell
@@ -20,14 +44,16 @@ lab_00_terminal_adventure
 $ cd lab_00_terminal_adventure
 ```
 
-You just copied some code from GitHub onto your computer. Let's have a look:
+You just copied some code from GitHub onto your computer. 
+
+{{< code-action >}} Let's have a look:
 
 ```shell
 $ ls
 adventure	    returnToShip.py
 ```
 
-`returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end). Run it to see what happens:
+`returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end). {{< code-action >}} Run it to see what happens:
 
 ```shell
 $ python returnToShip.py
@@ -37,11 +63,8 @@ $ python returnToShip.py
 
 Today, you will use Terminal to explore the contents of the `adventure` directory.
 
-{{< /expand >}}
-{{< expand "Adventure" >}}
-
 Your challenge is to see if you can get the treasure, using just the Terminal.
-To get started, let's go into the `adventure` directory:
+{{< code-action >}} To get started, let's go into the `adventure` directory:
 
 ```shell
 $ cd adventure
@@ -49,7 +72,7 @@ $ ls
 seafloor	sinking.txt
 ```
 
-`sinking.txt` is a text file, so we can read it. Try using the `cat` command:
+`sinking.txt` is a text file, so we can read it. {{< code-action >}} Try using the `cat` command:
 
 ```shell
 $ cat sinking.txt
@@ -58,11 +81,8 @@ $ cat sinking.txt
 You will end by running `returnToShip.py` in the `lab_00_terminal_adventure` directory.
 
 Below are some Terminal commands which might come in handy on your adventure.
-{{< /expand >}}
 
----
-
-## Terminal commands
+{{< expand "Terminal Commands" >}}
 
 | Command              | What it does                                 |
 | --------------       | -------------------------------------------- |
@@ -93,3 +113,5 @@ These are just for fun. There's lots more--ask your teachers!
 | `cat sinking.txt | say` | Makes the computer read the text file aloud |
 | `cal`                | Shows you a monthly calendar                 |
 | `banner hello`       | Just try it                                  |
+
+{{< /expand >}}

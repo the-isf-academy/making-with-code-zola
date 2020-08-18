@@ -15,6 +15,16 @@ please tag them with the [local shortcode]({{< ref "dev/syntax.md#local" >}}).
 
 You can use the [`teacher` shortcode]({{< ref "dev/syntax.md#teacher" >}}) as a reference to the teacher's name (currently "{{< teacher >}}"). 
 
+## Text and action indicators
+Throughout the site, we use a variety of symbols to indicate ccertain actions
+associated with the content. Here is a list of the symbol, it's short code, and how it should be used:
+
+| Symbol                | Shortcode                                                  | Usage                                            |
+|:---------------------:|:----------------------------------------------------------:|--------------------------------------------------|
+| {{< look-action >}}   | [`look-action`]({{< ref "dev/syntax.md#look-action" >}})   | There is something here you should read or watch |
+| {{< code-action >}}   | [`code-action`]({{< ref "dev/syntax.md#code-action" >}})   | Do something in code or with your Terminal       |
+| {{<  write-action >}} | [`write-action`]({{< ref "dev/syntax.md#write-action" >}}) | Write or draw something on paper or a Google Doc |
+
 ## Code
 
 - Use fenced code blocks to represent source code. 
