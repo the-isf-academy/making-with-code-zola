@@ -58,7 +58,7 @@ the first word you enter will be used.*
 0. Reconnect your computer to your regular wifi network and rejoin the Google Meet.
 
 ## Using Pi
-Your Pi should now be connected to your home wifi network. Now you can connect to it remotely with your computer and 
+Your Pi should now be connected to your home wifi network. Now you can connect to it remotely with your computer and
 it will have access to the internet!
 
 ### Connecting to your Pi (SSH)
@@ -119,7 +119,7 @@ look something like this: `ssh sifyi@192.167.1.500`.
 If you cannot find a `raspberrypi` device on your wifi network, wait a couple minutes
 to allow the Pi to reboot and connect to the internet. Try running the `arp -a` command a couple times.
 If the problem persists, you may need to re-enter your wifi password. You can do this by reconnecting
-to the `RPiHotspotN` wifi network, running `ssh setup@192.168.50.5` (password "setup"), choosing 
+to the `RPiHotspotN` wifi network, running `ssh setup@192.168.50.5` (password "setup"), choosing
 option 2 from the setup, and reentering your wifi credentials.
 
 **If you are able to connect to your Pi's wifi hotspot, it has not been able to connect to a wifi network
@@ -138,11 +138,68 @@ and you'll need to re-enter the wifi credentials.**
 
 ## Programming on Pi
 
-For the first coding project you will create a trivia game.  
+For the first coding project you will create a trivia game.
+
+
+Your tasks:
+
+1. Reacquaint yourself with Python
+2. Familiarize with coding on the Raspberry Pi
+2. Play and redesign the trivia game
+
+## [0] Setup
+
+💻 **TODO:** Create an individual repository for the lab using the following links:
+
+If you are in **CS 1**, [click here](https://classroom.github.com/a/LnM0ebqn).
+
+If you are in **CS 2**, [click here](https://classroom.github.com/a/98E-cm7d).
+
+### [1]  Classes *and* games
+In this lab, we'll work to remind ourselves of classes and objects by building a text-based trivia game.
+
+### Relevant Resources
+To get started, we need first remind ourselves how to utilize  Python classes and inheritance
+
+👀 **TODO:** Review Constructors: [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
+
+👀 **TODO:** Review Inheritance: [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
+
+
+For your reference, this Trivia Game has the following classes. Make sure your model includes each of them.
+
+- Game
+- View
+    - TerminalView
+    - PiView
+- Question
+- RGBLight
+
+### Play through
+💻 **TODO:** Now that you've got a model for how the Trivia Game software should work, play through a game by running the following command in your terminal:
+
+```shell
+    python game.py t
+```
+Was the gameplay different than you expected? Check you model to see if it still makes sense and change it up if it doesn't.
+
+
+### [2] Reskin
+One potentially confusing part of the software is the [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) class. What is it and why is it important?
+
+In many games, it's useful to separate the logic of the game from the user interface of the game. This lets developers easily change the interface without having to mess around with the rules or state of the game. In our Uno software, [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) does just that.
+
+Playing around with the [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) class will help you get a sense of how classes can interact in python. The [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) object knows nothing about the state of the game but delivers messages to users nonetheless.
+
+💻 **TODO:** Reskin the Uno game by changing up the messages delivered to the user in `view.py`.
+
+Maybe you want to translate the game into Chinese or make the game have an attitude. You could even try writing the game to speak in the voice of one of your favorite characters (*"Aye Aye, Player 1, two Krabby Patties comin right up for Player 2!"*).
+
+
 
 ## Pi Hardware
 
-Now that your trivia game is up and running, we will utilize the GPIO pins on the Raspberry Pi and an LED sensor to signal a correct or incorrect guess to the user. 
+Now that your trivia game is up and running, we will utilize the GPIO pins on the Raspberry Pi and an LED sensor to signal a correct or incorrect guess to the user.
 
 ### GPIO Pins
 To activate the LED, you must communicate to the Raspberry Pi which GPIO pins are being utilized.  
@@ -151,14 +208,8 @@ Try editing your `rgb.py` file to activate the lights.
 
 | Function |       Input      |   Example Use  | Explanation                                                                                                                      |
 |:--------:|:----------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------|
-|  forward |      amount      |  forward(100)  | Moves the turtle forward by the specified amount                                                                                 |
-| backward |      amount      |  backward(100) | Moves the turtle backward by the specified amount                                                                                |
-|   right  | angle in degrees |    right(45)   | Turns the turtle clockwise by the specified angle                                                                                |
-|   left   | angle in degress |    left(45)    | Turns the turtle counter clockwise by the specified angle                                                                        |
-|   color  |     colorname    |  color("red")  | Sets the color for drawing. Use "red", "black", etc.  Here's a list of all the colors.                                           |
-|   shape  |     shapename    | shape("arrow") | Should be "arrow", "classic", "turtle", or "circle"                                                                              |
-|   speed  | number from 0-10 |    speed(0)    | Determines the speed at which the turtle moves around the window. 1 for slowest, 3 for normal speed, 10 for fast, 0 for fastest. |
-|  pendown |       None       |    pendown()   | Puts down the turtle/pen so that it draws when it moves                                                                          |
-|   penup  |       None       |     penup()    | Picks up the turtle/pen so that it doesn’t draw when it moves                                                                    |
-| pensize  |       width      |   pensize(4)   | Sets the width of the pen for drawing                                                                                            |
-
+|  set mode |      setmode      |  setmode(BOARD)  | Sets GPIO numbering mode                                                           
+|
+| set pin |      setup      |  setup(pin,GPIO.OUT) | Sets GPIO pin for input                                                           |
+|   set pin output  | output |    output(pin,GPIO.LOW)   | Turns pin on or off                            ||  set mode |      setmode      |  setmode(BOARD)  | Sets GPIO numbering mode                                                            |
+|   cleanup   | cleanup |    cleanup()   | Turns the turtle counter clockwise by the specified angle                                                                            
