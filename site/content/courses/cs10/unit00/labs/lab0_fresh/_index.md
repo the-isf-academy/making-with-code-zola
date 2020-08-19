@@ -3,13 +3,13 @@ title: "0. Freshly Baked Pi"
 type: lab
 ---
 
-# Raspbery Pi 🥧
+# Fresh Baked Pi 🥧
 This year, you'll be using Raspberry Pi's as our computational companions. Before you get too excited, these
 are not warm, flakey baked goods, these are tiny computers built entirely on a single circuit board.
 
 But even if these Pi's might not be as tasty as edible raspberry pies, they are still pretty exciting!
 
-## Why Pi?
+## Raspberry what?
 Raspberry Pi's are tiny but powerful computers that can be used for tons of DIY projects. Since Raspberry
 Pi's are so small but have full computational, networking, and hardware capabilities, they are great tools
 for making robots, internet of things devices, networking services, and much more.
@@ -18,12 +18,33 @@ for making robots, internet of things devices, networking services, and much mor
 
 {{< youtube "ZXpGNBzHKRY" >}}
 
-## Uboxing
+### Unboxing
+The first unit of cs10 will help you get comfortable using your Raspberry Pi by exploring the practice of
+working over a network, the Linux-based operating system Raspbian, and the basics of the Pi's hardware.
+
+We'll provide more materials over the course of the year, but for now your Raspberry Pi kit should look
+like this:
+
+{{< figure src="images/courses/cs10/unit00/00_fresh_rpikit.png" width="100%" title="Raspberry Pi cs10 Starter Kit" >}}
+
+Here's what's included:
+- 1 Raspberry Pi 3B+
+- 1 microSD card imaged with the operating sytem and configs we'll use for the course
+- 1 Raspberry Pi case
+- 1 USB C (or USB 3) to microUSB cable
+- 8 female to female jumpers
+- 1 3-color LED component
+- 1 temperature sensor (or temperature/humidity sensor)
+
+We will talk more about the hardware components of the Pi in a future unit, but here's a diagram of each of the
+parts if you are interested. You can take your Pi out of the case to see what it's made of.
+
+{{< figure src="images/courses/cs10/unit00/00_fresh_rpidiagram.png" width="100%" title="Raspberry Pi component diagram" >}}
 
 **You will be using your Pi all year, so you've got to take good care of it! Treat it like you would treat
-a newborn baby if it were a computer you were building.**
+a newborn baby if the baby were a computer you were building.**
 
-## Setup
+### Setup
 Now that you've got a sense of the layout of your Pi, let's get setup so you can start coding with it.
 
 {{< aside >}}
@@ -34,69 +55,44 @@ If you know that your wifi network has special settings, talk to a teacher befor
 please tell {{< teacher >}} before starting the setup.**
 {{< /aside >}}
 
+#### Connect to Pi's hotspot
 0. Take the USB to MicroUSB cable and plug your Pi in. You can plug it into your computer or into a power
-outlet with a USB power plug. The red and green light on the side of your Pi should turn on and flash once
+outlet with a USB power plug. The red and green lights on the side of your Pi should turn on and flash once
 it is powered.
 0. Give your Pi a minute or two to boot up. Once it has booted, it will begin broadcasting a wifi signal called
 `RPiHotspotN` where `N` is the number on your Pi.
-    - If you don't see the Pi's network. Try reboot your Pi by unplugging it and pluggin it back in.
-    - If you still don't see the network, try manually adding the network on your computer using "Join other network..."
-    and entering the Pi's network name (`RPiHotspotN`), selecting "WPA/WPA2 Personal" for the security setting, and
-    entering the password `cs10_setup`.
-0. Connect your computer to this wifi network using the password `cs10_setup`. *Note: This wifi network will not
-have access to the internet. You will have to temporarily leave the Google Meet. If you have a problem during setup,
-you will need to reconnect to your regular wifi network and rejoin the Google Meet.*
-0. Once you are connected to the Pi's wifi network, open a Terminal window on your computer.
+    > *If you don't see the Pi's network. Try reboot your Pi by unplugging it and plugging it back in. If you
+    still don't see the network, try manually adding the network on your computer using `Join other network...`
+    and entering the Pi's network name (`RPiHotspotN`), selecting `WPA/WPA2 Personal` for the security setting, and
+    entering the password `cs10_setup`.*
+0. Connect your computer to this wifi network using the password `cs10_setup`. 
+    > *This wifi network will not
+    have access to the internet. You will have to temporarily leave the Google Meet. If you have a problem during setup,
+    you will need to reconnect to your regular wifi network and rejoin the Google Meet.*
+
+#### Pi Setup Script
+0. Once you are connected to the Pi's hotspot, open a Terminal window on your computer.
 0. Type the following into your terminal window: `ssh setup@192.168.50.5`
 0. When prompted for a password, enter `setup`. Once this command runs, you will be remotely controlling the Pi
 through the wifi network it is broadcasting!
-0. The Pi will automatically run a setup script. Choose option 0.
-0. Follow the instructions in the script to setup up a new user. *Note: your username must not contain any spaces. Only
-the first word you enter will be used.*
+0. The Pi will automatically run a setup script. Choose option `0`.
+0. Follow the instructions in the script to setup up a new user.
+    > *Your username must not contain any spaces. Only
+    the first word you enter will be used.*
 0. Follow the instructions to add your home wifi network into the Pi's network settings.
 0. After you finish the setup script, your Pi will reboot and your remote connection will be closed.
-0. Reconnect your computer to your regular wifi network and rejoin the Google Meet.
 
-## Using Pi
+Reconnect your computer to your regular wifi network and rejoin the Google Meet.
+
+### Using Pi
 Your Pi should now be connected to your home wifi network. Now you can connect to it remotely with your computer and 
 it will have access to the internet!
 
-### Connecting to your Pi (SSH)
+#### Connecting to your Pi (SSH)
 Once your Pi is connected to your home wifi network, you can remotely connect to it with your computer through your wifi router.
-Tp understand how this works, you'll need to understand some basics of networking.
+To understand how this works, you'll need to learn some basics of networking.
 
-{{< tabs networking >}}
-
-{{< tab "Text Eplanation" >}}
-You are probably most familiar with your wifi router because it offers your computer access to the internet. In this case, your
-computer connects to the router's wifi network and begins sending messages to the router. The wifi router recieves these messages
-and forwards them to the appropriate place via the internet. For example, if you click [this link](https://en.wikipedia.org/wiki/ARPANET),
-your computer will send a request to your wifi router to return the content of the page at the URL. Your router will recieve this
-message and forwards it to one of Wikipedia's servers somewhere in the world. When the Wikipedia servver recieves the message, it
-reads it, packages up the content of the page at the URL, and sends the content back to your router. Your router then forwards this
-reply to your computer which interprets the content and displays it in your web browser.
-
-{{< figure src="images/courses/cs10/unit00/00_fresh_internet.png" width="100%" title="Connecting to the internet via wifi" >}}
-
-This is obviously an extremely useful feature of your wifi router. You probably use it every day! However, we're going to use another
-feature of your wifi router that you may not have used before.
-
-Generally, wifi routers also create local area networks (LAN) that create a wireless interface between all the devices connected to
-the router. For example, if you have a wifi-enabled speaker or printer, your wifi router is probably making the connection between
-your computer (or phone) and the device. When you want to print something, your computer sends a message to your wifi router containing
-the file it wants to print. However, rather than being addressed to a destination at a server somewhere far away, this message is addressed
-to your printer. Your wifi router notices this and forwards the message to your printer through the LAN. When the printer recieves
-the message, it interprets it and prints the file. Your communication never left the local network created by your wifi router.
-
-{{< figure src="images/courses/cs10/unit00/00_fresh_lan.png" width="100%" title="Connecting to another deivce over a LAN" >}}
-{{< /tab >}}
-
-{{< tab "Video Explanation" >}}
-
-{{< youtube id="7_LPdttKXPc" autoplay="true" >}}
-
-{{< /tab >}}
-{{< /tabs >}}
+{{< include_resource "resource_network_basics" >}}
 
 Since both your Pi and your home computer are connected to your home wifi network, you
 can connect to your Pi using your computer using a Secure Shell (SSH) connection.
@@ -106,14 +102,13 @@ can connect to your Pi using your computer using a Secure Shell (SSH) connection
 0. Make sure your computer is connected to your home wifi network
 0. In a terminal window, run the command `arp -a`. This will list all the devices
 on your home wifi network.
-0. Look for the device labeled `rapberrypi`. Record the set of numbers in parentheses
-following the name. It should look something like this: `192.167.1.500`. This is the IP address
-of your Pi, basically it's unique identifier.
-0. Run the command `ssh USER@IP.ADDRESS`, replacing `USER` with the username you created
-in the setup and `IP.ADDRESS` with the IP address you recorded from the last step. It should
-look something like this: `ssh sifyi@192.167.1.500`.
+0. Look for the device labeled `raspberrypi`. If you see it, your Pi has connected to your
+regular wifi network!
+0. Run the command `ssh USER@raspberrypi`, replacing `USER` with the username you created
+in the setup.
 0. Enter the user password you used during the setup when prompted for a password.
-0. You should now be remotely connected to your Pi!
+0. You should now be remotely connected to your Pi! You'll know when you've connected
+to the Pi because your prompt will change to be `YOUR_USER@raspberrypi:~ $`
 
 {{< aside >}}
 If you cannot find a `raspberrypi` device on your wifi network, wait a couple minutes
@@ -126,16 +121,96 @@ option 2 from the setup, and reentering your wifi credentials.
 and you'll need to re-enter the wifi credentials.**
 {{< /aside >}}
 
-### File structure and running programs
+#### File structure
+Because you are remotely connected to your Pi through your Terminal, the Terminal is the only interface
+you have to naviagte the file structure and run programs. Fortunately, you have tons of experience with
+this tool from cs9. If you need a refresher, check out the Terminal lab from cs9.
 
-### Writing code
+When you log in to your Pi, you will be taken to the home (`~`) directory of your user. There's no
+Desktop on the Pi, so we'll treat this as out home base. Just like in cs9, cs10 will have it's own
+direcctory with a directory for each unit and more directories for each lab or project.
+
+{{< code-action >}} Run the following commands to make two new directories:
+
+```shell
+$ mkdir cs10
+$ cd cs10
+$ mkdir unit_00
+$ cd unit_00
+```
+
+#### Writing code
+The remote connection to the Raspberry Pi also means that there is no graphical interface for text
+editing. You can't run Atom on the Pi, only editors that run inside the Terminal. 
+However, there is a way to use a graphical text editor on your computer to edit the files on a remote
+device like your Pi. To do this, we need to connect Atom to the SSH tool you use to access your Pi.
+
+{{< code-action >}} To set up remote text editing over SSH, run the following 
+commands **in a Terminal window on your computer** (you may need to put in the password
+for your computer):
+```shell
+$ sudo apm install remote-atom
+$ echo '  "remote-atom":\n    launch_at_startup: true' >> ~/.atom/config.cson
+$ echo "\nHost raspberrypi\n\tRemoteForward 52698 localhost:52698\n\tUser user" >> ~/.ssh/config
+```
+
+{{< code-action >}} Now, run the following lines **on your Pi over an SSH connection**:
+```shell
+$ sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+$ sudo chmod +x /usr/local/bin/rmate
+$ sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
+```
+
+Now, whenever Atom is open on your computer and you are connected to your Pi via SSH,
+you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
+
+{{< aside >}}
+If you would like to try using a text editor in the Terminal, you can read about [vim](https://www.tutorialspoint.com/vim/vim_introduction.htm)
+or [emacs](http://www.jesshamrick.com/2012/09/10/absolute-beginners-guide-to-emacs/),
+two popular command line text editors. Talk to {{< teacher >}} if you have any questions.
+{{< /aside >}}
+
+{{< code-action >}} Let's try this out!
+
+0. Close your current SSH connection with `exit` and start it again with `ssh USER@raspberrypi`
+0. Create a new file using `ratom hello_world.py`.
+0. Type whatever python code you want to into the file that opens on your computer (maybe
+`print("Hello world!")`
+0. Save and close the file.
+
+#### Running code
+Now that you have a Python file on your Pi, you can run your very first Python program from
+a Raspberry Pi.
+
+{{< code-action >}} Run the following command:
+```shell
+python3 hello_world.py
+```
+
+Congrats! You are all ready to get started on your first Raspberry Pi project!
+
+{{< aside >}}
+Notice that you need to explicitly use `python3` to run your files on your Pi,
+not just `python`.
+{{< /aside >}}
+
+
+## Your first Pi project!
+
+git config
+
+```shell
+git config --global user.name <Your name>
+git config --global user.email <Your school email>
+git config --global core.editor "ratom --wait"
+git config --global commit.template .commit_template
+git config --global credential.helper store
+```
+
+### Programming on Pi
+
+### Pi Hardware
 
 ## Troubleshooting
 
 {{< include_resource "resource_troubleshooting" >}}
-
-# Your first Pi project!
-
-## Programming on Pi
-
-## Pi Hardware
