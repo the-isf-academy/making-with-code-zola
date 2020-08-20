@@ -195,7 +195,8 @@ not just `python`.
 {{< /aside >}}
 
 # Your First Pi Project
-##Programming on Pi
+
+## **Programming on Pi**
 
 For the first coding project you will create a trivia game.
 
@@ -203,10 +204,10 @@ For the first coding project you will create a trivia game.
 Your tasks:
 
 1. Reacquaint yourself with Python
-2. Familiarize with coding on the Raspberry Pi
+2. Familiarize yourself with coding on the Raspberry Pi
 2. Play and redesign the trivia game
 
-## [0] Setup
+### **[0] Setup**
 
 💻 **TODO:** Create an individual repository for the lab using the following links:
 
@@ -214,15 +215,10 @@ If you are in **CS 1**, [click here](https://classroom.github.com/a/LnM0ebqn).
 
 If you are in **CS 2**, [click here](https://classroom.github.com/a/98E-cm7d).
 
-### [1]  Classes *and* games
+<br>
+
+### **[1] Classes *and* games**
 In this lab, we'll work to remind ourselves of classes and objects by building a text-based trivia game.
-
-### Relevant Resources
-To get started, we need first remind ourselves how to utilize  Python classes and inheritance
-
-👀 **TODO:** Review Constructors: [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
-
-👀 **TODO:** Review Inheritance: [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
 
 
 For your reference, this Trivia Game has the following classes. Make sure your model includes each of them.
@@ -234,25 +230,41 @@ For your reference, this Trivia Game has the following classes. Make sure your m
 - Question
 - RGBLight
 
-### Play through
-💻 **TODO:** Now that you've got a model for how the Trivia Game software should work, play through a game by running the following command in your terminal:
+{{< aside >}}
+If you need a refresher on Classes, please reference the below resources.
+
+**Constructors:** [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
+
+**Inheritance:** [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
+{{< /aside >}}
+<br>
+
+
+**Question Class**
+
+As the program reads `trivia.txt it` creates a `Question` object for each trivia prompt. Edit `random_choices()` and `check_guess()` in `question.py` to complete the class.
+
+💻 **TODO:** Edit `random_choices()` to return a list of the choices for the question in a different random order every time it is called.
+
+💻 **TODO:** Edit `check_guess()` to take as input the player’s guess and check to see whether the guess matches the correct answer. If the guess is correct. The function should return True. If the guess is incorrect, the function should return False.
+
+<br>
+
+**Game Logic**
+
+💻 **TODO:** Fill in the `play()` function in game.py. The function should iterate through a list of `Question` objects and use the `View` class to receive input and display information.
+
+<br>
+
+### **[2] Play Game**
+
+💻 **TODO:** Now that you've got a model for the Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
-    python game.py t
+python game.py t
 ```
 Was the gameplay different than you expected? Check you model to see if it still makes sense and change it up if it doesn't.
 
-
-### [2] Reskin
-One potentially confusing part of the software is the [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) class. What is it and why is it important?
-
-In many games, it's useful to separate the logic of the game from the user interface of the game. This lets developers easily change the interface without having to mess around with the rules or state of the game. In our Uno software, [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) does just that.
-
-Playing around with the [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) class will help you get a sense of how classes can interact in python. The [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) object knows nothing about the state of the game but delivers messages to users nonetheless.
-
-💻 **TODO:** Reskin the Uno game by changing up the messages delivered to the user in `view.py`.
-
-Maybe you want to translate the game into Chinese or make the game have an attitude. You could even try writing the game to speak in the voice of one of your favorite characters (*"Aye Aye, Player 1, two Krabby Patties comin right up for Player 2!"*).
 
 
 
@@ -266,14 +278,33 @@ git config --global commit.template .commit_template
 git config --global credential.helper store
 ```
 
-## Pi Hardware
+## **Pi Hardware**
 
 Now that your trivia game is up and running, we will utilize the GPIO pins on the Raspberry Pi and an LED sensor to signal a correct or incorrect guess to the user.
 
-### GPIO Pins
+Your tasks:
+
+1. Familiarize yourself with the GPIO pins  
+2. Light up the LED through code and hardware
+2. Play and redesign the trivia game with LED sensor
+
+### **Setting Up the LED**
+
+To connect the LED to the Raspberry Pi you will need:
+- 1 Raspberry Pi
+- 4 female-to-female jumper cables
+- 3-color LED component
+
+IMAGE OF GPIO pins
+
+Image of Connection setup  
+
+
+
+### **GPIO Functions**
 To activate the LED, you must communicate to the Raspberry Pi which GPIO pins are being utilized.  
 
-Try editing your `rgb.py` file to activate the lights.
+👀 **TO DO:** Reference the usage of the below functions in the `rgb.py` file to understand how the LED turns on.
 
 | Function |       Input      |   Example Use  | Explanation                                                                                                                      |
 |:--------:|:----------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------|
