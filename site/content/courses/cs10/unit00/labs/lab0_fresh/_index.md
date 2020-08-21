@@ -31,7 +31,7 @@ Here's what's included:
 - 1 Raspberry Pi 3B+
 - 1 microSD card imaged with the operating sytem and configs we'll use for the course
 - 1 Raspberry Pi case
-- 1 USB C (or USB 3) to microUSB cable
+- 1 USB C (or USB 3) to Micro-USB power cable
 - 8 female to female jumpers
 - 1 3-color LED component
 - 1 temperature sensor (or temperature/humidity sensor)
