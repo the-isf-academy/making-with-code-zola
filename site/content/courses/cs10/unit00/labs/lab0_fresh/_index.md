@@ -252,7 +252,8 @@ Your tasks:
 To get started, we need to configure the git settings on your Pi so you can push and pull
 from GitHub. 
 
-{{< code-action >}} Enter the following command on your Pi over SSH:
+{{< code-action >}} Enter the following command on your Pi over SSH. Replace the `< >` with your
+information:
 
 ```shell
 git config --global user.name <Your name>
@@ -266,7 +267,7 @@ git config --global credential.helper store
 {{< code-action >}} Clone it to your Pi over SSH using the following command (replace
 `YOUR_GITHUB_USERNAME` with your Github username):
 
-```
+```shell
 $ git clone https://github.com/the-isf-academy/lab-trivia-YOUR_GITHUB_USERNAME.git
 ```
 
