@@ -348,7 +348,6 @@ By connecting the `R, G, and B` LED component pins to the GPIO pins of the Raspb
 
 
 
-
 <br>
 
 ### **[2] Coding the LED**
@@ -364,6 +363,7 @@ Reference the below resources to learn more about RGB light and binary code.
 **👀Binary** [How exactly does binary code work? - José Américo N L F de Freitas](https://www.youtube.com/watch?v=wgbV6DLVezo)
 {{< /aside >}}
 <br>
+
 
 *Review `changeColor()` in `rgb.py` and experiment with the function in the `PiView` class.*
 
@@ -384,6 +384,12 @@ To learn more about how the GPIO pins communicate with Python, take a look at `r
 | setup(arg,arg) |      PIN number, IN or OUT     |  Sets GPIO pin to receive input or send output |    setup(PIN,GPIO.OUT)                                                       |
 | output(arg,arg) |      PIN number, HIGH or LOW     |  Sets GPIO pin to on or off |    output(PIN,GPIO.HIGH)                                                         |
 |   cleanup()   | None |    Resets all GPIO pins used   | cleanup()
+
+Steps to Turning Off and On the LED:
+1.  Set PINS to output mode
+2.  Set power of each color PIN to HIGH
+3.  Set power of each color PIN to LOW
+4.  Clean Up
 {{< /aside >}}
 
 <br>
