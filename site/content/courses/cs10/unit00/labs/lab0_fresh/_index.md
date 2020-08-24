@@ -209,7 +209,7 @@ Your tasks:
 
 ### **[0] Setup**
 
-💻 **TODO:** Create an individual repository for the lab using the following links:
+{{< code-action >}} Create an individual repository for the lab using the following links:
 
 If you are in **CS 1**, [click here](https://classroom.github.com/a/LnM0ebqn).
 
@@ -225,19 +225,23 @@ The format for the question types can be found in the [README.md](http://)
 
 <br>
 
-💻 **TODO:** Customise `trivia.txt` to questions of your choosing.
+{{< code-action >}} Customise `trivia.txt` to questions of your choosing.
 
 <br>
 
 ### **[2] Classes *and* games**
 In this lab, we'll work to remind ourselves of classes and objects by building a text-based trivia game.
 
-For your reference, we will start by focusing on the `TerminalView` of the Trivia Game which utilize following classes. Make sure your model includes each of them.
+For your reference, we will start by focusing on the `TerminalView` of the Trivia Game which utilizes the following classes. Make sure your model includes each of them.
 
 - Game
 - View
     - TerminalView
 - Question
+
+{{< write-action >}} Read through the documentation pages and make a model for how this implementation of Trivia Game works.
+
+<br>
 
 {{< aside >}}
 If you need a refresher on Classes, please reference the below resources.
@@ -251,23 +255,23 @@ If you need a refresher on Classes, please reference the below resources.
 
 **Question Class**
 
-As the program reads `trivia.txt it` creates a `Question` object for each trivia prompt. Edit `random_choices()` and `check_guess()` in `question.py` to complete the class.
+As the program reads `trivia.txt` creates a `Question` object for each trivia prompt. Edit `random_choices()` and `check_guess()` in `question.py` to complete the class.
 
-💻 **TODO:** Edit `random_choices()` to return a list of the choices for the question in a different random order every time it is called.
+{{< code-action >}} Edit `random_choices()` to return a list of the choices for the question in a different random order every time it is called.
 
-💻 **TODO:** Edit `check_guess()` to take as input the player’s guess and check to see whether the guess matches the correct answer. If the guess is correct. The function should return True. If the guess is incorrect, the function should return False.
+{{< code-action >}} Edit `check_guess()` to take as input the player’s guess and check to see whether the guess matches the correct answer. If the guess is correct. The function should return True. If the guess is incorrect, the function should return False.
 
 <br>
 
 **Game Logic**
 
-💻 **TODO:** Fill in the `play()` function in game.py. The function should iterate through a list of `Question` objects and use the `View` class to receive input and display information. After each question, it should tell the user if they answered correctly or incorrectly. At the end of the game, it should display the user's score.
+{{< code-action >}} Fill in the `play()` function in game.py. The function should iterate through a list of `Question` objects and use the `View` class to receive input and display information. After each question, it should tell the user if they answered correctly or incorrectly. At the end of the game, it should display the user's score.
 
 <br>
 
 ### **[3] Play Game**
 
-💻 **TODO:** Now that you've got a model for the Trivia Game software, play through a game by running the following command in your terminal:
+{{< code-action >}} Now that you've got a model for the Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
 python game.py t
@@ -329,15 +333,20 @@ To connect the LED to the Raspberry Pi you will need:
 *Although the wires below are color coded, it is not necessary to do so.*
 {{< figure src="images/courses/cs10/unit00/00_fresh_rgbsensor.png" width="100%"  >}}
 
+
+By connecting the `R, G, and B` LED component pins to the GPIO pins of the Raspberry Pi, we are able to send power to each color. The `Ground` LED component pin completes the circuit, allowing power to flow through and power the LED.
+
 <br>
 
-💻 **TODO:** Hook up your LED sensor to your Raspberry Pi
+{{< code-action >}} Hook up your LED sensor to your Raspberry Pi
 
 0.  Connect `1 jumper wire` to the `9, 11, 13, and 15` pins
-0.  Connect the `Pin 9` wire to the `Ground` LED sensor pin
-0.  Connect the `Pin 11` wire to the `R` LED sensor pin
-0.  Connect the `Pin 13` wire to the `G` LED sensor pin
-0.  Connect the `Pin 15` wire to the `B` LED sensor pin
+0.  Connect the `Pin 9` wire to the `Ground` LED component pin
+0.  Connect the `Pin 11` wire to the `R` LED component pin
+0.  Connect the `Pin 13` wire to the `G` LED component pin
+0.  Connect the `Pin 15` wire to the `B` LED component pin
+
+
 
 
 <br>
@@ -345,7 +354,7 @@ To connect the LED to the Raspberry Pi you will need:
 ### **[2] Coding the LED**
 Now that the LED is connected to the Raspberry Pi, we can integrate the LED into the Trivia game. By editing the `PiView` child class in `view.py` you will program the light to display different colors depending on if the user entered the correct or incorrect answer.
 
-The `PiView` child class creates an instance of an LED object which is coded `rgb.py`. By calling the `changecolor()` function on a `RGBLight` object, you can manipulate the color the LED emits. Each `R, G, and B` color pin work together to create one unified color. Each pin can be activated or deactived through binary code.
+The `PiView` child class creates an instance of an LED object which is coded in the `rgb.py` file. By calling the `changecolor()` function on a `RGBLight` object, you can manipulate the color the LED emits. Each `R, G, and B` color pin work together to create one unified color. Each pin can be activated or deactived through binary code.
 
 {{< aside >}}
 Reference the below resources to learn more about RGB light and binary code.
@@ -358,9 +367,9 @@ Reference the below resources to learn more about RGB light and binary code.
 
 *Review `changeColor()` in `rgb.py` and experiment with the function in the `PiView` class.*
 
-💻 **TODO:** Edit `correctAnswer()` to set the color of the LED to green. For each question, the LED should light up green if the user answers correctly.
+{{< code-action >}} Edit `correctAnswer()` to set the color of the LED to green. For each question, the LED should light up green if the user answers correctly.
 
-💻 **TODO:** Edit `wrongAnswer()` to set the color of the LED to red. For each question, the LED should light up red if the user answers incorrectly.
+{{< code-action >}} Edit `wrongAnswer()` to set the color of the LED to red. For each question, the LED should light up red if the user answers incorrectly.
 
 
 
@@ -369,21 +378,27 @@ Reference the below resources to learn more about RGB light and binary code.
 {{< aside >}}
 To learn more about how the GPIO pins communicate with Python, take a look at `rgb.py`. Reference the chart below to better understand how the LED is activated. Note how there is not a specific GPIO function for changing the color of the LED.
 
-| Function |       Input      |   Example Use  | Explanation                                                                                                                      |
-|:--------:|:----------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------|
-|  set mode |      setmode      |  setmode(BOARD)  | Sets GPIO numbering mode                                                           |
-| set pin |      setup      |  setup(pin,GPIO.OUT) | Sets GPIO pin for input                                                           |
-|   set pin output  | output |    output(pin,GPIO.LOW)   | Turns pin on or off                            ||  set mode |      setmode      |  setmode(BOARD)  | Sets GPIO numbering mode                                                            |
-|   cleanup   | cleanup |    cleanup()   | Turns the turtle counter clockwise by the specified angle   
+| Function |      Parameters     |  Explanation | Example Function                                                                                                                      |
+|:--------:|:----------------:|:--------------:|:----------------------------------------------------------------------------------------------------------------------------------:|
+|  setmode(arg) |      BOARD or BCM   |  Sets GPIO numbering mode                                                       |   setmode(BOARD)   |
+| setup(arg,arg) |      PIN number, IN or OUT     |  Sets GPIO pin to receive input or send output |    setup(PIN,GPIO.OUT)                                                       |
+| output(arg,arg) |      PIN number, HIGH or LOW     |  Sets GPIO pin to on or off |    output(PIN,GPIO.HIGH)                                                         |
+|   cleanup()   | None |    Resets all GPIO pins used   | cleanup()
 {{< /aside >}}
 
 <br>
 
 ### **[3] Play Game**
 
-💻 **TODO:** Now that you've got an updated version of your Trivia Game software, play through a game by running the following command in your terminal:
+{{< code-action >}} Now that you've got an updated version of your Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
 python game.py p
 ```
-Did the LED work as you expected? If not, review the hardware and `PiView` class.
+Did the LED work as you expected? If not, review the hardware and the `PiView` class.
+
+### **[4] Deliverables**
+
+Congratulations on completing your first Raspberry Pi project! We hope you enjoyed this introduction to the Raspberry Pi and its many functions.
+
+Please include a photo or video of your Raspberry Pi LED working in your lab repository.
