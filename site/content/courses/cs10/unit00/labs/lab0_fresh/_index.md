@@ -140,10 +140,14 @@ $ cd unit_00
 ```
 
 #### Writing code
+
 The remote connection to the Raspberry Pi also means that there is no graphical interface for text
 editing. You can't run Atom on the Pi, only editors that run inside the Terminal.
 However, there is a way to use a graphical text editor on your computer to edit the files on a remote
 device like your Pi. To do this, we need to connect Atom to the SSH tool you use to access your Pi.
+
+{{< tabs id="SSH Tunneling Setup" >}}
+{{< tab "MacOS" >}}
 
 {{< code-action >}} To set up remote text editing over SSH, run the following
 commands **in a Terminal window on your computer** (you may need to put in the password
@@ -163,7 +167,30 @@ $ sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
 
 Now, whenever Atom is open on your computer and you are connected to your Pi via SSH,
 you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
+{{< /tab >}}
 
+{{< tab "Windows" >}}
+{{< code-action >}} To set up remote text editing over SSH, run the following
+commands **in a Powershell window on your computer** (you may need to put in the password
+for your computer):
+```shell
+$ apm install remote-atom
+$ echo "  `"remote-atom`":`n    launch_at_startup: true" | Out-File -FilePath ~/.atom/config.cson -Append -Encoding ASCII
+$ echo "`nHost raspberrypi`n`tRemoteForward 52698 127.0.0.1:52698`n`tUser user" | Out-File -FilePath ~/.ssh/config -Append -Encoding ASCII
+```
+
+{{< code-action >}} Now, run the following lines **on your Pi over an SSH connection**:
+```shell
+$ sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+$ sudo chmod +x /usr/local/bin/rmate
+$ sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
+```
+
+Now, whenever Atom is open on your computer and you are connected to your Pi via SSH,
+you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
+
+{{< /tab >}}
+{{< /tabs >}}
 {{< aside >}}
 If you would like to try using a text editor in the Terminal, you can read about [vim](https://www.tutorialspoint.com/vim/vim_introduction.htm)
 or [emacs](http://www.jesshamrick.com/2012/09/10/absolute-beginners-guide-to-emacs/),
@@ -182,7 +209,7 @@ two popular command line text editors. Talk to {{< teacher >}} if you have any q
 Now that you have a Python file on your Pi, you can run your very first Python program from
 a Raspberry Pi.
 
-{{< code-action >}} Run the following command:
+{{< code-action >}} Run the following command on your Pi:
 ```shell
 python3 hello_world.py
 ```
