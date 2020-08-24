@@ -241,7 +241,6 @@ Check in with {{< teacher >}} before moving on.
 
 For the first coding project you will create a trivia game.
 
-
 Your tasks:
 
 1. Reacquaint yourself with Python
@@ -262,12 +261,14 @@ git config --global core.editor "ratom --wait"
 git config --global commit.template .commit_template
 git config --global credential.helper store
 ```
+ A respository has been created for you with your Github username.
 
-{{< code-action >}} Create an individual repository for the lab using the following links:
+{{< code-action >}} Clone it to your Pi over SSH using the following command (replace
+`YOUR_GITHUB_USERNAME` with your Github username):
 
-If you are in **CS 1**, [click here](https://classroom.github.com/a/LnM0ebqn).
-
-If you are in **CS 2**, [click here](https://classroom.github.com/a/98E-cm7d).
+```
+$ git clone https://github.com/the-isf-academy/lab-trivia-YOUR_GITHUB_USERNAME.git
+```
 
 <br>
 
