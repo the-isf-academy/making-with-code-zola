@@ -132,7 +132,7 @@ also give you the chance to practice logging in and out of ssh connections.
 3. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
 with the user tou created on the Pi):
     ```shell
-    $ usermod -aG root <YOUR_USER>
+    $ sudo usermod -aG root <YOUR_USER>
     ```
 4. `exit` the current ssh connection and reconnect with your user.
 5. Run the command `groups` and make sure that `root` shows up in the list.
