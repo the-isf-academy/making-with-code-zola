@@ -125,14 +125,14 @@ and you'll need to re-enter the wifi credentials.**
 {{< code-action >}} Before we move on, we need to grant you user account administrative access on your Pi. This will
 also give you the chance to practice logging in and out of ssh connections.
 
-0. Exit your current sssh connection by typing `exit` in your Terminal window.
+0. Exit your current ssh connection by typing `exit` in your Terminal window.
 1. Create a new ssh connection, this time to the `pi` account. You can use the command
 `ssh pi@raspberrypi`
 2. Enter the password `cs10_2020_teacher`
 3. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
 with the user tou created on the Pi):
     ```shell
-    $ sudo usermod -aG root <YOUR_USER>
+    $ sudo usermod -aG sudo <YOUR_USER>
     ```
 4. `exit` the current ssh connection and reconnect with your user.
 5. Run the command `groups` and make sure that `root` shows up in the list.
