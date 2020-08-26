@@ -135,7 +135,7 @@ with the user tou created on the Pi):
     $ sudo usermod -aG sudo <YOUR_USER>
     ```
 4. `exit` the current ssh connection and reconnect with your user.
-5. Run the command `groups` and make sure that `root` shows up in the list.
+5. Run the command `groups` and make sure that `sudo` shows up in the list.
 
 You now have root access which will allow you to install new programs on the pi.
 
