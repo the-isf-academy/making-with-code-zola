@@ -179,8 +179,8 @@ commands **in a Terminal window on your computer** (you may need to put in the p
 for your computer):
 ```shell
 $ sudo apm install remote-atom
-$ echo '  "remote-atom":\n    launch_at_startup: true' >> ~/.atom/config.cson
-$ echo "\nHost raspberrypi\n\tRemoteForward 52698 localhost:52698\n\tUser user" >> ~/.ssh/config
+$ printf '  "remote-atom":\n    launch_at_startup: true' >> ~/.atom/config.cson
+$ printf "Host raspberrypi\n\tRemoteForward 52698 localhost:52698\n\tUser user" >> ~/.ssh/config
 ```
 
 {{< code-action >}} Now, run the following lines **on your Pi over an SSH connection**:
