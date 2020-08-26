@@ -5,7 +5,7 @@ type: resource
 ## Dissecting the command line
 {{< tabs "dissecting-command-line" >}}
 {{< tab "Video Explanation" >}}
-coming soon!
+{{< youtube id="oJzQws-G7WU" >}}
 {{< /tab >}}
 
 {{< tab "Text Explanation" >}}
