@@ -121,6 +121,24 @@ option 2 from the setup, and reentering your wifi credentials.
 and you'll need to re-enter the wifi credentials.**
 {{< /aside >}}
 
+#### sudo Access
+{{< code-action >}} Before we move on, we need to grant you user account administrative access on your Pi. This will
+also give you the chance to practice logging in and out of ssh connections.
+
+0. Exit your current ssh connection by typing `exit` in your Terminal window.
+1. Create a new ssh connection, this time to the `pi` account. You can use the command
+`ssh pi@raspberrypi`
+2. Enter the password `cs10_2020_teacher`
+3. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
+with the user tou created on the Pi):
+    ```shell
+    $ sudo usermod -aG sudo <YOUR_USER>
+    ```
+4. `exit` the current ssh connection and reconnect with your user.
+5. Run the command `groups` and make sure that `root` shows up in the list.
+
+You now have root access which will allow you to install new programs on the pi.
+
 {{< checkpoint >}}
 Stop once you've reached this point and make sure everyone in your group has completed the initial
 Pi setup.
@@ -218,7 +236,7 @@ a Raspberry Pi.
 
 {{< code-action >}} Run the following command on your Pi:
 ```shell
-python3 hello_world.py
+$ python3 hello_world.py
 ```
 
 Congrats! You are all ready to get started on your first Raspberry Pi project!
@@ -252,22 +270,31 @@ Your tasks:
 To get started, we need to configure the git settings on your Pi so you can push and pull
 from GitHub. 
 
-{{< code-action >}} Enter the following command on your Pi over SSH:
+{{< code-action >}} Enter the following command on your Pi over SSH. Replace the `< >` with your
+information:
 
 ```shell
-git config --global user.name <Your name>
-git config --global user.email <Your school email>
-git config --global core.editor "ratom --wait"
-git config --global commit.template .commit_template
-git config --global credential.helper store
+$ git config --global user.name <Your name>
+$ git config --global user.email <Your school email>
+$ git config --global core.editor "ratom --wait"
+$ git config --global commit.template .commit_template
+$ git config --global credential.helper store
 ```
  A respository has been created for you with your Github username.
 
 {{< code-action >}} Clone it to your Pi over SSH using the following command (replace
 `YOUR_GITHUB_USERNAME` with your Github username):
 
-```
+```shell
 $ git clone https://github.com/the-isf-academy/lab-trivia-YOUR_GITHUB_USERNAME.git
+```
+
+{{< code-action >}} Now, use the following commands to install pip and a package
+we'll need for this lab:
+
+```shell
+$ sudo apt install python3-pip
+$ pip333 install RPi.GPIO
 ```
 
 <br>
@@ -334,7 +361,7 @@ In the `game.py` file, the `play()` function only plays one round of the game.
 {{< code-action >}} Now that you've got a model for the Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
-python game.py t
+$ python game.py t
 ```
 Was the gameplay different than you expected? Check you model to see if it still makes sense and change it up if it doesn't.
 
@@ -455,7 +482,7 @@ Steps to Turning Off and On the LED:
 {{< code-action >}} Now that you've got an updated version of your Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
-python game.py p
+$ python game.py p
 ```
 Did the LED work as you expected? If not, review the hardware and the `PiView` class.
 
