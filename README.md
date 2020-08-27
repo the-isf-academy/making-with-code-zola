@@ -2,6 +2,15 @@
 
 TODO project overview
 
+## Install
+1. Clone the making-with-code repository with it's submodules:
+
+        git clone --recurse-submodules https://github.com/cproctor/making-with-code.git
+    
+1. Install hugo:
+
+        brew install hugo
+
 ## Develop
 To develop, start by cloning the repo, installing Hugo (the static site builder we're using for this project), and running a server to host a local version of the site:
 
