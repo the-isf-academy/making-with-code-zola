@@ -64,16 +64,25 @@ Uses the teacher's name, which can be configured via a
 ```
 Even {{</* teacher */>}} sometimes makes mistakes. 
 ```
+Even {{< teacher >}} sometimes makes mistakes.
 
 ### look-action
 Inserts a symbol to indicate that the reader should read or watch something.
 Can be configured via a [site param]({{< ref "dev/config#LookAction" >}}).
+
+```
+{{</* look-action */>}} Check out this great example of [abstraction](https://www.youtube.com/watch?v=oHg5SJYRHA0)!
+```
 
 {{< look-action >}} Check out this great example of [abstraction](https://www.youtube.com/watch?v=oHg5SJYRHA0)!
 
 ### code-action
 Inserts a symbol to indicate that the reader should do something in code or in their Terminal.
 Can be configured via a [site param]({{< ref "dev/config#CodeAction" >}}).
+
+```
+{{</* code-action */>}} Run the following command in your Terminal:
+```
 
 {{< code-action >}} Run the following command in your Terminal:
 ```
@@ -84,7 +93,11 @@ $ telnet towel.blinkenlights.nl
 Inserts a symbol to indicate that the reader should write or draw something on paper or a Google Doc.
 Can be configured via a [site param]({{< ref "dev/config#WriteAction" >}})
 
-{{< write-action >}} Sketch what you think your computer would look like if it had the personality of Scooby Do.
+```
+{{</* write-action */>}} Sketch what you think your computer would look like if it had the personality of Scooby Doo.
+```
+
+{{< write-action >}} Sketch what you think your computer would look like if it had the personality of Scooby Doo.
 
 ### checkpoint
 
@@ -92,18 +105,19 @@ Adds a checkpoint where students should stop working on a lab and check in with
 a teacher. A self-closing tag will use a default message; otherwise a custom
 message may be provided. 
 
-{{< checkpoint />}}
-
 ```
 {{</* checkpoint /*/>}}
 ```
 
-{{< checkpoint >}}
-Take a break.
-{{< /checkpoint >}}
+{{< checkpoint />}}
 
 ```
 {{</* checkpoint */>}}
 Take a break.
 {{</* /checkpoint */>}}
 ```
+
+{{< checkpoint >}}
+Take a break.
+{{< /checkpoint >}}
+

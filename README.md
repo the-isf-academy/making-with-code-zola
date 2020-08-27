@@ -15,9 +15,9 @@ All additions to the website should be developed on a feature branch before they
 
     git checkout -b branch-name
     
-The Hugo will automatically build the local version as you make changes in the branch. If you ever want to go back to see what's live on the web, you can change back to the master branch:
+The Hugo will automatically build the local version as you make changes in the branch. If you ever want to go back to see what's live on the web, you can change back to the production branch:
 
-    git checkout master
+    git checkout production
     
 Don't forget to add/commit/save your work as you go:
 
@@ -26,11 +26,24 @@ Don't forget to add/commit/save your work as you go:
     git push
 
 ## Deploy
-Once you're ready to deploy a change to the website, all you need to do is merge the branch containing your change into the master branch:
+Once you're ready to deploy a change to the website, merge your work branch into
+`dev`:
 
-    git checkout master
-    git merge your-change-branch-name
-    **resolve merge conflicts if they occur and commit your manually merged files**
-    git push
+    git merge dev
+    git checkout dev
+    git merge my-branch
+ 
+Rebuild the site and make sure everything looks ok. Now you're ready to merge
+`dev` into `production`. 
 
-Github will take it from there! With a baked in action, Github will make a publishable version of the site, put it in a special branch called `gh-pages` and publish the site.
+    git checkout production
+    git merge dev
+
+The production branch is automatically deployed to `cs.fablearn.org`. Github is
+set up to invoke a webhook at http://unfold.studio:9000, which is being served
+by [webhook](https://github.com/adnanh/webhook). When this URL is requested, a
+script is invoked which:
+
+- pulls the latest production branch
+- builds the site using the `production` environment
+- pushes the built site to `cs.fablearn.org`
