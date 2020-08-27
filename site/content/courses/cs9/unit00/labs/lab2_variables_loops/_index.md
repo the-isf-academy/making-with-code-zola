@@ -5,8 +5,8 @@ type: labs
 
 # Variables and Loops Lab
 
-In this lab, we will learn how to make the computer do the same instruction over and over. To get started, let's
-talk about how the code we've written works in your computer.
+In this lab, we will learn how to make the computer do the same instruction over and over. 
+To get started, let's talk about how the code we've written works in your computer.
 
 {{< include_resource "resource_code_process" >}}
 
