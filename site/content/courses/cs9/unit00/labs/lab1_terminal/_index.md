@@ -36,7 +36,7 @@ In this lab, we are going to practice using the Terminal.
 (Don't type the `$`.):
 
 ```shell
-$ cd Destop/cs9/unit_00
+$ cd Desktop/cs9/unit_00
 $ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git
 $ ls
 lab_00_terminal_adventure	 
