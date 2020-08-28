@@ -9,33 +9,45 @@ allow us to make even more interesting drawings: conditionals.
 
 {{< include_resource "resource_conditionals" >}}
 
-## Responding to user input
+## A. Responding to user input
+One way to use conditionals in our drawings is to use them to respond to user input.
+
+{{< code-action >}} Create a new file in your `cs9/unit_00` directory called `lab_03.py`
+and paste in this starter code:
 
 ```python
-# CONDITIONALS 
+# A. USER INPUT
 speed(10)
-drawing = input("What would you like me to draw? ")
-size = int(input("How big should I draw it? "))
-if drawing == "square":
-    for i in range(4):
-        forward(size)
-        right(90)
-else:
-    print("Sorry, I don't know how to draw that...")
+while True:
+    drawing = input("What would you like me to draw? ")
+    size = int(input("How big should I draw it? "))
+    if drawing == "square":
+        for i in range(4):
+            forward(size)
+            right(90)
+    elif drawing == "quit":
+        break
+    else:
+        print("Sorry, I don't know how to draw that...")
 ```
 
-### Add a  shape
+{{< code-action >}} Run this program to see how it uses a conditional based on user input.
 
-### while true/break
+This program has a lot of potential, but so far it can only generate one drawing.
 
-### Clear
+{{< code-action >}} Add at least two more branches to the conditional so that the program can
+draw more shapes. An `elif` statement will probably be useful here.
 
-## Modulo minilesson
+{{< include_resource "resource_modulo" >}}
 
-## rainbow
+## B. Rainbow
+Conditionals can also be paired with the modulo operator to cause your code to run in repeated
+patterns.
+
+{{< code-action >}} Copy the code below into your `lab_03.py` file and run it to see what it does,
 
 ```python
-# RAINBOW
+# B. RAINBOW
 speed(10)
 for i in range(5):
     color("red")
@@ -117,14 +129,22 @@ for i in range(5):
     pendown()
 ```
 
-## While mini-lesson
+This code is really long. However, there is a pattern to the rainbow that we could use
+to simplify the code: the rainbow has 7 colors that repeat every time the loop runs for 7
+iterations.
 
-## Hailstone
+{{< code-action >}} Simplify this code using a conditional and the modulo operator.
+
+{{< include_resource "resource_while_loops" >}}
+
+## C. Hailstone sequence
+
+### C.0 Calculating hailstone sequences
 
 ```python
 # HAILSTONE
 num = int(input("What number should I calculate the hailstone sequence of? "))
 ```
 
-## Drawing Hailstone
+### C.1 Drawing Hailstone
 

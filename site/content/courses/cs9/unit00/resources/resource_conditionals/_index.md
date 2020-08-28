@@ -5,17 +5,11 @@ type: resource
 
 ## Intro to conditionals
 
-{{< tabs "code-process" >}}
-{{< tab "Video Explanation" >}}
-Coming soon!
-{{< /tab >}}
-{{< tab "Text Explanation" >}}
-
-### Conditional code execution
 One of the most powerful ways to utilize computation is to respond to differences
 in the context our code is running in by changing the behavior of our code. This
 might sound complicated, but as a human you are very familiar with this kind of response.
 
+### Conditional behavior
 There are many situations where you change your behavior based on the environment. For
 example, if it is raining outside, you wear rain boots. Otherwise, you might wear a
 different kind of shoe like tennis shoes.
@@ -73,13 +67,56 @@ of your code. This is useful for changing what your code does to respond to diff
 of the program.
 
 #### if statements
-`if` statements are the begining to every conditional code block. They work much like
+`if` statements are the begining to every conditional code block. The code written inside the code
+block that follows only runs if the condition after the `if` evaluates to `True`.
 
 ```python
 for i in range(20):
     if i < 10:
-     print("Smaller than 10")
+        print("Smaller than 10")
+```
 
 #### else statements
+`else` statements can be paired with `if` statements to create an alternative block of code to
+execute if the condition fter the `if` evaluates to `False`.
+
+
+What is the difference between the following two programs?
+
+
+```python
+for i in range(20):
+    if i < 10:
+        print("Smaller than 10")
+    print("Greater than or equal to 10")
+```
+
+```python
+for i in range(20):
+    if i < 10:
+        print("Smaller than 10")
+    else:
+        print("Greater than or equal to 10")
+```
 
 #### elif statements
+Finally, `elif` statements ("else if") can be used to create multiple branches of a conditional.
+These statements add another condition to check if the condition above them does not pass.
+
+The following program creates three branches of exectution:
+
+```python
+for i in range(20):
+    if i < 10:
+        print("Smaller than 10")
+    elif i < 15:
+        print("Greater than 9 but less than 15")
+    else:
+        print("Greater than or equal to 15")
+```
+
+This conditional creates the folloing cases for the variable `i`:
+
+1. i < 10
+1. 10 <= i < 15
+1. 15 <= i

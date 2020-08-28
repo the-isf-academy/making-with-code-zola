@@ -1,7 +1,6 @@
 ---
 title: 2. Variables and Loops
 type: labs
-draft: true
 ---
 
 # Variables and Loops Lab
@@ -28,8 +27,9 @@ Let's do some tests to see more about how variables work.
 
 ### A. Variable tests
 
-Create a new file called `lab_02.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) You'll be turning in
-this file at the end of the lab. Copy this starter code:
+Create a new file called `lab_02.py` in your `cs9/unit_00` directory.
+(This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) 
+You'll be turning in this file at the end of the lab. Copy this starter code:
 
 ```python
 # Unit 0 Lab 2
