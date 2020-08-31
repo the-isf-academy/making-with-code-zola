@@ -1,6 +1,7 @@
 ---
 title: "1. HTTP"
 type: lab
+draft: true
 ---
 
 # HTTP: How Computers Communicate

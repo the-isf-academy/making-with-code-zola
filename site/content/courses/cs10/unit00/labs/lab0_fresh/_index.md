@@ -121,6 +121,31 @@ option 2 from the setup, and reentering your wifi credentials.
 and you'll need to re-enter the wifi credentials.**
 {{< /aside >}}
 
+#### sudo Access
+{{< code-action >}} Before we move on, we need to grant you user account administrative access on your Pi. This will
+also give you the chance to practice logging in and out of ssh connections.
+
+0. Exit your current ssh connection by typing `exit` in your Terminal window.
+1. Create a new ssh connection, this time to the `pi` account. You can use the command
+`ssh pi@raspberrypi`
+2. Enter the password `cs10_2020_teacher`
+3. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
+with the user tou created on the Pi):
+    ```shell
+    $ sudo usermod -aG sudo <YOUR_USER>
+    ```
+4. `exit` the current ssh connection and reconnect with your user.
+5. Run the command `groups` and make sure that `root` shows up in the list.
+
+You now have root access which will allow you to install new programs on the pi.
+
+{{< checkpoint >}}
+Stop once you've reached this point and make sure everyone in your group has completed the initial
+Pi setup.
+
+Check in with {{< teacher >}} before moving on.
+{{< /checkpoint >}}
+
 #### File structure
 Because you are remotely connected to your Pi through your Terminal, the Terminal is the only interface
 you have to naviagte the file structure and run programs. Fortunately, you have tons of experience with
@@ -140,10 +165,14 @@ $ cd unit_00
 ```
 
 #### Writing code
+
 The remote connection to the Raspberry Pi also means that there is no graphical interface for text
 editing. You can't run Atom on the Pi, only editors that run inside the Terminal.
 However, there is a way to use a graphical text editor on your computer to edit the files on a remote
 device like your Pi. To do this, we need to connect Atom to the SSH tool you use to access your Pi.
+
+{{< tabs id="SSH Tunneling Setup" >}}
+{{< tab "MacOS" >}}
 
 {{< code-action >}} To set up remote text editing over SSH, run the following
 commands **in a Terminal window on your computer** (you may need to put in the password
@@ -163,7 +192,30 @@ $ sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
 
 Now, whenever Atom is open on your computer and you are connected to your Pi via SSH,
 you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
+{{< /tab >}}
 
+{{< tab "Windows" >}}
+{{< code-action >}} To set up remote text editing over SSH, run the following
+commands **in a Powershell window on your computer** (you may need to put in the password
+for your computer):
+```shell
+$ apm install remote-atom
+$ echo "  `"remote-atom`":`n    launch_at_startup: true" | Out-File -FilePath ~/.atom/config.cson -Append -Encoding ASCII
+$ echo "`nHost raspberrypi`n`tRemoteForward 52698 127.0.0.1:52698`n`tUser user" | Out-File -FilePath ~/.ssh/config -Append -Encoding ASCII
+```
+
+{{< code-action >}} Now, run the following lines **on your Pi over an SSH connection**:
+```shell
+$ sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+$ sudo chmod +x /usr/local/bin/rmate
+$ sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
+```
+
+Now, whenever Atom is open on your computer and you are connected to your Pi via SSH,
+you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
+
+{{< /tab >}}
+{{< /tabs >}}
 {{< aside >}}
 If you would like to try using a text editor in the Terminal, you can read about [vim](https://www.tutorialspoint.com/vim/vim_introduction.htm)
 or [emacs](http://www.jesshamrick.com/2012/09/10/absolute-beginners-guide-to-emacs/),
@@ -182,9 +234,9 @@ two popular command line text editors. Talk to {{< teacher >}} if you have any q
 Now that you have a Python file on your Pi, you can run your very first Python program from
 a Raspberry Pi.
 
-{{< code-action >}} Run the following command:
+{{< code-action >}} Run the following command on your Pi:
 ```shell
-python3 hello_world.py
+$ python3 hello_world.py
 ```
 
 Congrats! You are all ready to get started on your first Raspberry Pi project!
@@ -194,12 +246,18 @@ Notice that you need to explicitly use `python3` to run your files on your Pi,
 not just `python`.
 {{< /aside >}}
 
+{{< checkpoint >}}
+Stop once you've reached this point and make sure everyone in your group has completed the initial
+Pi setup.
+
+Check in with {{< teacher >}} before moving on.
+{{< /checkpoint >}}
+
 # Your First Pi Project
 
 ## **Programming on Pi**
 
 For the first coding project you will create a trivia game.
-
 
 Your tasks:
 
@@ -209,23 +267,52 @@ Your tasks:
 
 ### **[0] Setup**
 
-{{< code-action >}} Create an individual repository for the lab using the following links:
+To get started, we need to configure the git settings on your Pi so you can push and pull
+from GitHub. 
 
-If you are in **CS 1**, [click here](https://classroom.github.com/a/LnM0ebqn).
+{{< code-action >}} Enter the following command on your Pi over SSH. Replace the `< >` with your
+information:
 
-If you are in **CS 2**, [click here](https://classroom.github.com/a/98E-cm7d).
+```shell
+$ git config --global user.name <Your name>
+$ git config --global user.email <Your school email>
+$ git config --global core.editor "ratom --wait"
+$ git config --global commit.template .commit_template
+$ git config --global credential.helper store
+```
+ A respository has been created for you with your Github username.
+
+{{< code-action >}} Clone it to your Pi over SSH using the following command (replace
+`YOUR_GITHUB_USERNAME` with your Github username):
+
+```shell
+$ git clone https://github.com/the-isf-academy/lab-trivia-YOUR_GITHUB_USERNAME.git
+```
+
+{{< code-action >}} Now, use the following commands to install pip and a package
+we'll need for this lab:
+
+```shell
+$ sudo apt install python3-pip
+$ pip333 install RPi.GPIO
+```
 
 <br>
 
 ### **[1] Trivia File**
 
-Customize your `trivia.txt` file to include prompts about yourself. When everyone has completed the lab, we will take turns playing through everyone's game.
+{{< code-action >}} Start by running `python3 game.py` on your Pi over an SSH connection.
 
-The format for the question types can be found in the [README.md](http://)
+This program plays a basic version of the trivia game you will be completing for this lab.
+
+The `trivia.txt` file contains the questions used in the game. When everyone has completed the lab, we will take turns playing through everyone's game.
+
+The format for the question types can be found in the `README.md`.
 
 <br>
 
-{{< code-action >}} Customise `trivia.txt` to questions of your choosing.
+{{< code-action >}} Start by customise `trivia.txt` to questions of your choosing. For now, don't add more than
+3 question (you can add more after you finish the other parts of the lab).
 
 <br>
 
@@ -250,20 +337,20 @@ If you need a refresher on Classes, please reference the below resources.
 
 **Inheritance:** [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
 {{< /aside >}}
+
 <br>
 
+As the program reads `trivia.txt` creates a `Question` object for each trivia prompt. However, the Question
+class has some bugs. 
 
-**Question Class**
-
-As the program reads `trivia.txt` creates a `Question` object for each trivia prompt. Edit `random_choices()` and `check_guess()` in `question.py` to complete the class.
-
+#### [2.A] `random_choices()`
 {{< code-action >}} Edit `random_choices()` to return a list of the choices for the question in a different random order every time it is called.
 
+#### [2.B] `check_guess()`
 {{< code-action >}} Edit `check_guess()` to take as input the player’s guess and check to see whether the guess matches the correct answer. If the guess is correct. The function should return True. If the guess is incorrect, the function should return False.
 
-<br>
-
-**Game Logic**
+#### [2.C] `play()`
+In the `game.py` file, the `play()` function only plays one round of the game.
 
 {{< code-action >}} Fill in the `play()` function in game.py. The function should iterate through a list of `Question` objects and use the `View` class to receive input and display information. After each question, it should tell the user if they answered correctly or incorrectly. At the end of the game, it should display the user's score.
 
@@ -274,22 +361,16 @@ As the program reads `trivia.txt` creates a `Question` object for each trivia pr
 {{< code-action >}} Now that you've got a model for the Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
-python game.py t
+$ python game.py t
 ```
 Was the gameplay different than you expected? Check you model to see if it still makes sense and change it up if it doesn't.
 
+{{< checkpoint >}}
+Stop once you've reached this point and make sure everyone in your group has completed the initial
+Pi setup.
 
-
-
-### setup/git config
-
-```shell
-git config --global user.name <Your name>
-git config --global user.email <Your school email>
-git config --global core.editor "ratom --wait"
-git config --global commit.template .commit_template
-git config --global credential.helper store
-```
+Check in with {{< teacher >}} before moving on.
+{{< /checkpoint >}}
 
 ## **Pi Hardware**
 
@@ -302,10 +383,10 @@ Your tasks:
 2. Play and redesign the trivia game with LED sensor
 
 
-### **[0] Classes, games, *and* hardware**
+### **[4] Classes, games, *and* hardware**
 In this section of the lab, we'll incorporate hardware into our trivia game to create visual feedback.
 
-We will now focus on the `PiView` of the Trivia Game which has the following classes. Please note the addition of the `PiView` and `RBILight` class. Make sure your model includes all of them.
+We will now focus on the `PiView` of the Trivia Game which has the following classes. Please note the addition of the `PiView` and `RBILight` class. {{< write-action >}} Make sure your model includes all of them.
 
 - Game
 - View
@@ -314,7 +395,7 @@ We will now focus on the `PiView` of the Trivia Game which has the following cla
 - Question
 - RGBLight
 
-### **[1] Hardware Set Up**
+### **[5] Hardware Set Up**
 Let's begin by connecting our LED sensor to the Raspberry Pi.
 
 To connect the LED to the Raspberry Pi you will need:
@@ -350,7 +431,7 @@ By connecting the `R, G, and B` LED component pins to the GPIO pins of the Raspb
 
 <br>
 
-### **[2] Coding the LED**
+### **[6] Coding the LED**
 Now that the LED is connected to the Raspberry Pi, we can integrate the LED into the Trivia game. By editing the `PiView` child class in `view.py` you will program the light to display different colors depending on if the user entered the correct or incorrect answer.
 
 The `PiView` child class creates an instance of an LED object which is coded in the `rgb.py` file. By calling the `changecolor()` function on a `RGBLight` object, you can manipulate the color the LED emits. Each `R, G, and B` color pin work together to create one unified color. Each pin can be activated or deactived through binary code.
@@ -367,8 +448,10 @@ Reference the below resources to learn more about RGB light and binary code.
 
 *Review `changeColor()` in `rgb.py` and experiment with the function in the `PiView` class.*
 
+#### 6.A `correctAnswer()`
 {{< code-action >}} Edit `correctAnswer()` to set the color of the LED to green. For each question, the LED should light up green if the user answers correctly.
 
+#### 6.B `wrongAnswer()`
 {{< code-action >}} Edit `wrongAnswer()` to set the color of the LED to red. For each question, the LED should light up red if the user answers incorrectly.
 
 
@@ -394,17 +477,20 @@ Steps to Turning Off and On the LED:
 
 <br>
 
-### **[3] Play Game**
+### **[7] Play Game**
 
 {{< code-action >}} Now that you've got an updated version of your Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
-python game.py p
+$ python game.py p
 ```
 Did the LED work as you expected? If not, review the hardware and the `PiView` class.
 
-### **[4] Deliverables**
-
+# **Deliverables**
 Congratulations on completing your first Raspberry Pi project! We hope you enjoyed this introduction to the Raspberry Pi and its many functions.
 
-Please include a photo or video of your Raspberry Pi LED working in your lab repository.
+To submit this lab please:
+- Make sure your `random_choices()`, `check_guess()`, and `play()` functions pass the test harness. Running
+`python3 test_lab.py` should return no errors.
+- Take a picture of your Pi with the LED connected (and on!). Add this file to your git repository.
+- Commit your code and push to Github.

@@ -33,7 +33,7 @@ the message, it interprets it and prints the file. Your communication never left
 
 {{< tab "Video Explanation" >}}
 
-{{< youtube id="7_LPdttKXPc" autoplay="true" >}}
+{{< youtube id="7_LPdttKXPc" >}}
 
 {{< /tab >}}
 {{< /tabs >}}

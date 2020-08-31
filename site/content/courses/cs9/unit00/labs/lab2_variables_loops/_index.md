@@ -1,16 +1,21 @@
 ---
 title: 2. Variables and Loops
 type: labs
+<<<<<<< HEAD
 
+=======
+>>>>>>> 044f765b2b80e75fd42f1d6d0b7fd7d099298c30
 ---
 
 # Variables and Loops Lab
 
-In this lab, we will learn how to make the computer do the same instruction over and over. To get started, let's
-talk about how the code we've written works in your computer.
+In this lab, we will learn how to make the computer do the same instruction over and over. 
+To get started, let's talk about how the code we've written works in your computer.
 
+## The code process
 {{< include_resource "resource_code_process" >}}
 
+## Python shell
 {{< include_resource "resource_python_shell" >}}
 
 {{< checkpoint >}}
@@ -22,14 +27,16 @@ the order of operations? (Use the Python shell to test!)
 
 {{< /checkpoint >}}
 
+## Variables
 {{< include_resource "resource_variables" >}}
 
 Let's do some tests to see more about how variables work.
 
 ### A. Variable tests
 
-Create a new file called `lab_02.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) You'll be turning in
-this file at the end of the lab. Copy this starter code:
+Create a new file called `lab_02.py` in your `cs9/unit_00` directory.
+(This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) 
+You'll be turning in this file at the end of the lab. Copy this starter code:
 
 ```python
 # Unit 0 Lab 2
@@ -309,7 +316,7 @@ Answer the following check-in questions on your group's Google doc before moving
 
 0. What is a loop?
 0. How do you put code into a loop?
-0. 
+0. What changes over each iteration of a loop? What stays the same?
 {{< /checkpoint >}}
 
 ### E. Loopy drawings
