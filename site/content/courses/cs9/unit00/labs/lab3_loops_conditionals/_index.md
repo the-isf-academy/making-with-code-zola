@@ -249,4 +249,3 @@ hailstone sequence using Turtle.
 For this lab, you should submit the following:
 - The your `lab_03.py` file with the code you wrote for each of the parts
 - Your Google Doc with responses to the checkpoint questions
-
