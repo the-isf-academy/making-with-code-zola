@@ -1,16 +1,6 @@
 ---
 title: 3. Loops and Conditionals
 type: labs
-<<<<<<< HEAD
-resources:
-- name: Scratch loop
-  src: images/courses/cs9/unit00/00_loops_scratch_loop.png
-- name: Turtle loop
-  src: images/courses/cs9/unit00/00_loops_turtle_loop.png
-- name: Turtle var
-  src: images/courses/cs9/unit00/00_loops_turtle_var.png
-=======
->>>>>>> 044f765b2b80e75fd42f1d6d0b7fd7d099298c30
 ---
 
 # Loops and Conditionals
@@ -28,6 +18,7 @@ and paste in this starter code:
 
 ```python
 # A. USER INPUT
+from turtle import *
 speed(10)
 while True:
     drawing = input("What would you like me to draw? ")
@@ -147,6 +138,8 @@ for i in range(5):
     forward(10)
     left(45)
     pendown()
+
+input()
 ```
 
 This code is really long. However, there is a pattern to the rainbow that we could use

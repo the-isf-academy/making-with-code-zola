@@ -14,7 +14,7 @@ different kind of shoe like tennis shoes.
 
 You probably have even more complicated environmental responses as well. For example, if
 you are ordering bubble tea, your order might go like this: if the shop has taro, you get
-taro in your tea. If the shop doesn't have taro but has pearls, you get pearl
+taro in your tea. If the shop doesn't have taro but has pearl, you get pearl
 in your tea. Finally, in the case that the shop doesn't have taro or pearl, you don't order
 any bubble tea.
 
@@ -76,7 +76,7 @@ for i in range(20):
 
 #### else statements
 `else` statements can be paired with `if` statements to create an alternative block of code to
-execute if the condition fter the `if` evaluates to `False`.
+execute if the condition after the `if` evaluates to `False`.
 
 
 What is the difference between the following two programs?
