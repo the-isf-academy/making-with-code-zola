@@ -1,7 +1,10 @@
 ---
 title: The Python shell
 type: resource
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04f571b5a57496cf6ec4eac0a20a1af0dda47094
 ---
 Usually, we write Python code in a file using Atom and then run it using Terminal. There's another way to run
 Python, which is really nice for when you just want to mess around or do a quick test.

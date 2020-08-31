@@ -1,7 +1,10 @@
 ---
 title: 3. Loops and Conditionals
 type: labs
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04f571b5a57496cf6ec4eac0a20a1af0dda47094
 ---
 
 # Loops and Conditionals
@@ -19,6 +22,7 @@ and paste in this starter code:
 
 ```python
 # A. USER INPUT
+from turtle import *
 speed(10)
 while True:
     drawing = input("What would you like me to draw? ")
@@ -138,6 +142,8 @@ for i in range(5):
     forward(10)
     left(45)
     pendown()
+
+input()
 ```
 
 This code is really long. However, there is a pattern to the rainbow that we could use
@@ -226,7 +232,7 @@ Answer the following check-in questions on your group's Google doc before moving
 
 0. What kind of loop did you choose to write the hailstone sequence algorithm? Why did you choose
 this kind of loop?
-0. Why do you think the Collatz conjecture is so hard to prove for all positve integers?
+0. Why do you think the Collatz conjecture is so hard to prove for all positive integers?
 {{< /checkpoint >}}
 
 ### C.1 Drawing Hailstone
