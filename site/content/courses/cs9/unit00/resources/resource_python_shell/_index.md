@@ -1,17 +1,15 @@
 ---
 title: The Python shell
 type: resource
-draft: true
 ---
-## The Python shell
+Usually, we write Python code in a file using Atom and then run it using Terminal. There's another way to run 
+Python, which is really nice for when you just want to mess around or do a quick test.
 
 {{< tabs "python-shell" >}}
 {{< tab "Video Explanation" >}}
 coming soon!
 {{< /tab >}}
 {{< tab "Text Explanation" >}}
-Usually, we write Python code in a file using Atom and then run it using Terminal. There's another way to run 
-Python, which is really nice for when you just want to mess around or do a quick test.
 
 {{< code-action >}} Open Terminal, navigate
 to your computer science directory and type `python`.

@@ -3,3 +3,6 @@ site/resources/*
 *.swp
 *.swo
 docs/*
+.DS_Store
+env/
+.envrc

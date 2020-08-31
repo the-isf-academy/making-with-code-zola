@@ -3,8 +3,6 @@ title: Conditionals
 type: resource
 ---
 
-## Intro to conditionals
-
 One of the most powerful ways to utilize computation is to respond to differences
 in the context our code is running in by changing the behavior of our code. This
 might sound complicated, but as a human you are very familiar with this kind of response.

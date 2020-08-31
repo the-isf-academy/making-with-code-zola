@@ -2,7 +2,6 @@
 title: Modulo
 type: resource
 ---
-## Modulo
 Python has many operators that allow you to perform calculations with values. You've probably
 seen and used the basic ones like `+`(add), `-` (subtract), `*` (multiply), and `/` (divide).
 

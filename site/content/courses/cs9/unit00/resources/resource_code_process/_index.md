@@ -3,14 +3,13 @@ title: Code process
 type: resource
 ---
 
-## The Code Process
+Now that you've got some experience running Python programs, here's a brief overview of what Python does.
 
 {{< tabs "code-process" >}}
 {{< tab "Video Explanation" >}}
 Coming soon!
 {{< /tab >}}
 {{< tab "Text Explanation" >}}
-Now that you've got some experience running Python programs, here's a brief overview of what Python does.
 
 In the first lab, you wrote text into Python files using the text editor Atom.
 

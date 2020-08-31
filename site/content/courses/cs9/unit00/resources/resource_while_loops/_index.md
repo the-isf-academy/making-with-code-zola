@@ -2,10 +2,18 @@
 title: While loops
 type: resource
 ---
-## While loops
+
 In addition to `for` loops which run for a set number of iterations, Python has another type
 of loop. `while` loops iterate until a particular condition is met.
 
+{{< tabs id="While-loops" >}}
+
+{{< tab "Video Explanation" >}}
+
+{{< youtube "xxxx" >}}
+{{< /tab >}}
+
+{{< tab "Text Explanation" >}}
 ### Conditions
 `while` loops use conditions just like `if` statements. You can use operators to compare
 values in or to generate `True` or `False` conditions. Looping until a condition is met
@@ -42,5 +50,7 @@ while True:
     else:
         print("Sorry, I don't know how to draw that...")
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 
