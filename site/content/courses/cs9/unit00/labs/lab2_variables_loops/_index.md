@@ -18,7 +18,7 @@ To get started, let's talk about how the code we've written works in your comput
 Answer the following check-in questions on your group's Google doc before moving on:
 
 0. What does Python3 (the software) do?
-0. When adding, subtracting, multipling, and dividing numbers in Python, what is
+0. When adding, subtracting, multiplying, and dividing numbers in Python, what is
 the order of operations? (Use the Python shell to test!)
 
 {{< /checkpoint >}}
@@ -151,7 +151,7 @@ Answer the following check-in questions on your group's Google doc before moving
 
 0. What is a variable?
 0. How do you declare a variable?
-0. At what point in a program can you use a given variable?
+0. At what point in a program can you use a variable?
 {{< /checkpoint >}}
 
 ## Loops

@@ -225,7 +225,7 @@ Answer the following check-in questions on your group's Google doc before moving
 
 0. What kind of loop did you choose to write the hailstone sequence algorithm? Why did you choose
 this kind of loop?
-0. Why do you think the Collatz conjecture is so hard to prove for all positve integers?
+0. Why do you think the Collatz conjecture is so hard to prove for all positive integers?
 {{< /checkpoint >}}
 
 ### C.1 Drawing Hailstone
