@@ -1,16 +1,7 @@
 ---
 title: 3. Loops and Conditionals
 type: labs
-<<<<<<< HEAD
-resources:
-- name: Scratch loop
-  src: images/courses/cs9/unit00/00_loops_scratch_loop.png
-- name: Turtle loop
-  src: images/courses/cs9/unit00/00_loops_turtle_loop.png
-- name: Turtle var
-  src: images/courses/cs9/unit00/00_loops_turtle_var.png
-=======
->>>>>>> 044f765b2b80e75fd42f1d6d0b7fd7d099298c30
+
 ---
 
 # Loops and Conditionals
@@ -167,7 +158,7 @@ Answer the following check-in questions on your group's Google doc before moving
 {{< include_resource "resource_while_loops" >}}
 
 ## C. Hailstone sequence
-In the last part of this lab, you will be exploring a special sequence known as the 
+In the last part of this lab, you will be exploring a special sequence known as the
 hailstone sequence. This sequence results from the following rules (known as the Collatz
 conjecture):
 
@@ -178,7 +169,7 @@ conjecture):
 - repeat until `n = 1`
 
 The conjecture states that no matter the starting value of `n`, the sequences will always
-reach 1. 
+reach 1.
 
 {{< write-action >}} Try this out: pick a number and perform the calculations. Can you find a
 number that doesn't reach one?

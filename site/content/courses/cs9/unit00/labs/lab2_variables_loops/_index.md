@@ -1,15 +1,11 @@
 ---
 title: 2. Variables and Loops
 type: labs
-<<<<<<< HEAD
-
-=======
->>>>>>> 044f765b2b80e75fd42f1d6d0b7fd7d099298c30
 ---
 
 # Variables and Loops Lab
 
-In this lab, we will learn how to make the computer do the same instruction over and over. 
+In this lab, we will learn how to make the computer do the same instruction over and over.
 To get started, let's talk about how the code we've written works in your computer.
 
 ## The code process
@@ -35,7 +31,7 @@ Let's do some tests to see more about how variables work.
 ### A. Variable tests
 
 Create a new file called `lab_02.py` in your `cs9/unit_00` directory.
-(This should be at `~/Desktop/cs9/unit_00/lab_02.py`.) 
+(This should be at `~/Desktop/cs9/unit_00/lab_02.py`.)
 You'll be turning in this file at the end of the lab. Copy this starter code:
 
 ```python
@@ -63,7 +59,7 @@ print("Variable test 2")
 
 #### A.0 *Variable test 0*
 {{< code-action >}} Start by replacing `"Your name"` with your name (but keep the `""`). Now you
-have *declared* the `name` variable and *assigned* your name as its value. 
+have *declared* the `name` variable and *assigned* your name as its value.
 
 {{< code-action >}} Save the file and run the program like this:
 
@@ -206,11 +202,11 @@ for i in range(10):
 {{< code-action >}} Run your program and see what gets output.
 
 This loop runs 10 times, repeating everything indented to the right of the `for i in range(10):` line.
-`i` is a variable that gets incremented by one every time the loop runs. 
+`i` is a variable that gets incremented by one every time the loop runs.
 
 #### B.1 *Listing more numbers*
 {{< code-action >}} Edit the code to make the loop run a different number of times, maybe 5 or 14.
-Can you figure out how to do it? 
+Can you figure out how to do it?
 
 Notice that the count inside `i` starts at 0 and goes up to the number inside `range()` but
 doesn't include that number.
@@ -354,7 +350,7 @@ num_sides = int(input("How many sides? "))
 ```
 
 {{< code-action >}} Write a loop that draws a polygon with the number of sides
-stored in `num_sides`. Type this code below the existing code in the 
+stored in `num_sides`. Type this code below the existing code in the
 `F. Variable Drawing` section.
 
 ### G. Drawing Fibonacci
@@ -391,7 +387,7 @@ center.
 To get a pinecone or flower effect like the video above described, you'll need to spiral clockwise
 and countercloackwise.
 
-{{< code-action >}} Repeat your spiral code, changing it to make your spirals turn in the other direction. 
+{{< code-action >}} Repeat your spiral code, changing it to make your spirals turn in the other direction.
 
 ## Deliverables
 - Once you've reached the end of the lab (or class time is over), please submit the `lab_02.py` file you have been creating
