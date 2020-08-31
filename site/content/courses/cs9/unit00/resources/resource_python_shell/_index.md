@@ -1,7 +1,7 @@
 ---
 title: The Python shell
 type: resource
-draft: true
+
 ---
 ## The Python shell
 

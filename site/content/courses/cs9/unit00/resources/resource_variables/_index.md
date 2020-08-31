@@ -1,7 +1,7 @@
 ---
 title: Variables
 type: resource
-draft: true
+
 ---
 
 ## Variables
