@@ -8,6 +8,7 @@ may seem complicated at first, it will quickly become your go-to tool for comput
 The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
 
+## Dissecting the command line
 {{< include_resource "resource_dissecting_the_command_line" >}}
 
 {{< aside >}}

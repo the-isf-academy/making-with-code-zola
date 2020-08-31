@@ -2,15 +2,15 @@
 title: Dissecting the command line
 type: resource
 ---
-## Dissecting the command line
+We've already used a lot of commands to help us navigate Terminal. Let's take a deeper look at 
+what we're actually doing when we type commands in the command line.
+
 {{< tabs "dissecting-command-line" >}}
 {{< tab "Video Explanation" >}}
 {{< youtube id="oJzQws-G7WU" >}}
 {{< /tab >}}
 
 {{< tab "Text Explanation" >}}
-We've already used a lot of commands to help us navigate Terminal. Let's take a deeper look at 
-what we're actually doing when we type commands in the command line.
 
 ```shell
 TEA-JWOLF:cs9 jwolf$ ls
