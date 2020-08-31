@@ -1,6 +1,16 @@
 ---
 title: 3. Loops and Conditionals
 type: labs
+<<<<<<< HEAD
+resources:
+- name: Scratch loop
+  src: images/courses/cs9/unit00/00_loops_scratch_loop.png
+- name: Turtle loop
+  src: images/courses/cs9/unit00/00_loops_turtle_loop.png
+- name: Turtle var
+  src: images/courses/cs9/unit00/00_loops_turtle_var.png
+=======
+>>>>>>> 044f765b2b80e75fd42f1d6d0b7fd7d099298c30
 ---
 
 # Loops and Conditionals

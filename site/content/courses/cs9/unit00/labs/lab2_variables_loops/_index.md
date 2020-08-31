@@ -1,6 +1,10 @@
 ---
 title: 2. Variables and Loops
 type: labs
+<<<<<<< HEAD
+
+=======
+>>>>>>> 044f765b2b80e75fd42f1d6d0b7fd7d099298c30
 ---
 
 # Variables and Loops Lab

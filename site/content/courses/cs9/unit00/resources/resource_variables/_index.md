@@ -1,6 +1,10 @@
 ---
 title: Variables
 type: resource
+<<<<<<< HEAD
+
+=======
+>>>>>>> 044f765b2b80e75fd42f1d6d0b7fd7d099298c30
 ---
 One of the most powerful tools of programming is the variable: a storage container for information in your programs.
 
