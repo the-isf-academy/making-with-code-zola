@@ -294,7 +294,7 @@ we'll need for this lab:
 
 ```shell
 $ sudo apt install python3-pip
-$ pip333 install RPi.GPIO
+$ pip3 install RPi.GPIO
 ```
 
 <br>
