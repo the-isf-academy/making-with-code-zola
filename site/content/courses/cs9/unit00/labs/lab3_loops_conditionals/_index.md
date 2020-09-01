@@ -1,10 +1,7 @@
 ---
 title: 3. Loops and Conditionals
 type: labs
-<<<<<<< HEAD
 
-=======
->>>>>>> 04f571b5a57496cf6ec4eac0a20a1af0dda47094
 ---
 
 # Loops and Conditionals
