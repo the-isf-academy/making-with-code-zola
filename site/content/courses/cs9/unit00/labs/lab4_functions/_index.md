@@ -1,7 +1,6 @@
 ---
 title: 4. Functions
 type: labs
-draft: true
 resources:
 - name: test_part_b() output
   src: images/courses/cs9/unit00/00_functions_fig_b.png  
@@ -16,147 +15,51 @@ resources:
 {{< /devnote >}}
 
 ## Starter code
-Create a new file called `lab_03.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_03.py`.) You'll be turning in this file at the end of the lab. Copy this starter code:
+Create a new file called `lab_04.py` in atom (This should be at `~/Desktop/cs9/unit_00/lab_04.py`.) You'll be turning in this file at the end of the lab. Copy this starter code:
 
 {{< expand "Starter code for functions lab" >}}
 
 ```python
-    # Unit 0 Lab 3
-    # Author: Your Name
+# Unit 0 Lab 4
+# Author: PUT YOUR NAME HERE
+#################################
 
-    from turtle import *
-    from random import *
+from turtle import *
 
-    # These constants affect how the program works, so we'll list them all at the top
-    ASK_FOR_PASSWORD = True
-    PASSWORD = "noodles"
-    TEST_PART_B = False
-    TEST_PART_C = False
-
-    # A. CODE BLOCKS
-
-    if ASK_FOR_PASSWORD:
-        guess = input("What's the password? ")
-        if guess == PASSWORD:
-            print("Yesssss!!!!")
-            print("Noodles are delicious.")
-            raise NotImplementedError("I'm going to go eat some noodles.")
-        else:
-            raise ValueError("Wrong password! Now I will crash the program.")
-
-    # B. FUNCTIONS
-
-    def setup(x, y):
-        "Sets up the turtle, ready to draw, at the given coordinates"
-        penup()
-        goto(x, y)
-        pendown()
-        setheading(0)
-
-    def triangle(side_length):
-        "Draws a triangle"
-        for each_side in range(3):
-            forward(side_length)
-            right(120)
-
-    def square(side_length):
-        "Draws a square"
-        # YOUR CODE HERE (B1)
+def setup(x, y):
+    '''Sets up the turtle, ready to draw, 
+    at the given coordinates'''
+    penup()
+    goto(x, y)
+    pendown()
+    speed(0)
 
 
-    def pentagon(side_length):
-        "Draws a pentagon"
-        # YOUR CODE HERE (B2)
+#################################
+
+# A. CODE BLOCKS
 
 
-    def hexagon(side_length):
-        "Draws a hexagon"
-        # YOUR CODE HERE (B3)
+def square():
+    '''Draws a square with a side length of 20'''
+    #YOUR CODE GOES HERE
 
 
-    def polygon(side_length, number_of_sides):
-        "Draws a polygon with any number of sides"
-        # YOUR CODE HERE (B4)
+def drawGrid():
+    '''Draw a grid of squares using nested for loops.
+    Use the function setup() to move the turtle.'''
+    #YOUR CODE GOES HERE
+
+#CALL DRAW GRID FUNCTION HERE
 
 
-    def test_part_b():
-        print("Testing out your functions from part B")
-        speed(0)
-        for x in range(0, 50, 10):
-            for y in range(0, 50, 10):
-                setup(x, y)
-                square(8)
-        setup(-70, -60)
-        for each_side in range(5):
-            pendown()
-            pentagon(20)
-            penup()
-            forward(20)
-            left(360 / 5)
-        setup(-70, 60)
-        for each_side in range(6):
-            pendown()
-            hexagon(20)
-            penup()
-            forward(20)
-            left(360 / 6)
-        setup(100, 50)
-        for n in range(3, 10):
-            polygon(30, n)
-        input("Press enter to continue...")
-
-    if TEST_PART_B:
-        test_part_b()
-
-    # C. COMBINING FUNCTIONS
-
-    def rectangle(width, height):
-        "Draws a rectangle, starting with the width and turning to the right"
-        # YOUR CODE HERE (C1)
+#Hides the turtle pen and keeps it open until key press
+hideturtle()     
+input("Press enter to end drawing...")
+clearscreen()
 
 
-    def fly(distance):
-        "Picks up the pen, moves, and then puts the pen down again"
-        # YOUR CODE HERE (C2)
-
-
-    def draw_tree(size):
-        "Draws a tree, using a rectangle and three triangles. Starts and ends at the top of the tree"
-        branch_sizes = [size * 1.2, size, size * 0.8]
-        trunk_width = size * 0.2
-        fillcolor("brown")
-        right(90)
-        fly(-trunk_width/2)
-        begin_fill()
-        rectangle(trunk_width, branch_sizes[0]*1.3)
-        end_fill()
-        fly(trunk_width/2)
-        left(90)
-        fillcolor("green")
-        for branch_size in branch_sizes:
-            right(150)
-            begin_fill()
-            triangle(branch_size)
-            end_fill()
-            left(150)
-            fly(branch_size / 2)
-
-    def draw_forest(number_of_trees):
-        "Draws a forest of trees"
-        print("Testing part C")
-        speed(4)
-        tree_y_positions = [randint(100, 200) for i in range(number_of_trees)]
-        tree_y_positions = reversed(sorted(tree_y_positions))
-        for y in tree_y_positions:
-            x = randint(-200, 200)
-            tree_size = 250 - y
-            setup(x, y)
-            left(90)
-            draw_tree(tree_size)
-        input("Press enter to continue...")
-
-    if TEST_PART_C:
-        draw_forest(10)
+#################################
 ```
 
 {{< /expand >}}
