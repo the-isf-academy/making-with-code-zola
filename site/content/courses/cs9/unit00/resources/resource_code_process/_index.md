@@ -7,7 +7,7 @@ Now that you've got some experience running Python programs, here's a brief over
 
 {{< tabs "code-process" >}}
 {{< tab "Video Explanation" >}}
-Coming soon!
+{{< youtube id="IJGkblKXlvQ" >}}
 {{< /tab >}}
 {{< tab "Text Explanation" >}}
 
