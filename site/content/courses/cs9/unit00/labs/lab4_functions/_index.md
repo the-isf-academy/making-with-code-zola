@@ -1,6 +1,7 @@
 ---
 title: 4. Functions
 type: labs
+draft: true
 
 resources:
 - name: test_part_b() output
