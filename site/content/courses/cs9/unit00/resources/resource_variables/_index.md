@@ -7,7 +7,7 @@ One of the most powerful tools of programming is the variable: a storage contain
 
 {{< tabs >}}
 {{< tab "Video Explanation" >}}
-coming soon!
+{{< youtube id="DaOVh3WKm_U" >}}
 {{< /tab >}}
 {{< tab "Text Explanation" >}}
 You are probably familiar with variables in math. ("Solve for x: `2x + 4 = 3x`") In math problems, the goal

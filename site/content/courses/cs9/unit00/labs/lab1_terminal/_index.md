@@ -8,6 +8,7 @@ may seem complicated at first, it will quickly become your go-to tool for comput
 The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
 
+## Dissecting the command line
 {{< include_resource "resource_dissecting_the_command_line" >}}
 
 {{< aside >}}
@@ -36,7 +37,7 @@ In this lab, we are going to practice using the Terminal.
 (Don't type the `$`.):
 
 ```shell
-$ cd Destop/cs9/unit_00
+$ cd Desktop/cs9/unit_00
 $ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git
 $ ls
 lab_00_terminal_adventure	 
