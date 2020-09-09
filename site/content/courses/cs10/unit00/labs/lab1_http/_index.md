@@ -1,7 +1,6 @@
 ---
 title: "1. HTTP"
 type: lab
-draft: true
 ---
 
 # HTTP: How Computers Communicate
@@ -33,10 +32,10 @@ computers talk with one another.
 ## The basic rules of HTTP
 
 - Communication starts when one computer (the client) sends a Request to another computer (the server). 
-  Here's a HTTP request (the comments aren't part of it, they are just there for you.)
+  Here's the HTTP request your browser makes every time you go to `cs.fablearn.org`. (The comments aren't part of it, they are just there for you.)
 
   ```shell {linenos=table}
-  GET / HTTP/1.1                              // Send me the root file, /
+  GET /index.html HTTP/1.1                    // I want index.html
   Accept: */*                                 // Any format is fine
   Host: cs.fablearn.org                       // Hey, Im talking to you
   ```
@@ -86,12 +85,12 @@ $ pip install httpie
 which riddles are available for guessing: 
 
 ```shell
-$ http GET 138.68.28.249:5000
+$ http GET 138.68.28.249:5000/riddles/all
 
 HTTP/1.0 200 OK
-Content-Length: 189
+Content-Length: 102
 Content-Type: application/json
-Date: Tue, 18 Aug 2020 21:37:54 GMT
+Date: Wed, 09 Sep 2020 21:06:24 GMT
 Server: Werkzeug/1.0.1 Python/3.5.2
 
 {
@@ -101,22 +100,24 @@ Server: Werkzeug/1.0.1 Python/3.5.2
             "guesses": 0,
             "id": 1,
             "question": "What is black and white and red all over?"
-        },
-    ...
+        }
+    ]
+}
 ```
 
-{{< code-action >}} Do you know the answer? Try posting a guess. Note that the URL is now 
-`138.68.28.249:5000/1` because we are guessing riddle #1. It is common for 
-POST requests to send a payload with the request. In this case, the payload is a
-parameter called `guess`.
+{{< code-action >}} Do you know the answer? Try posting a guess. Note that we are now using
+a different URL, `138.68.28.249:5000/riddles/guess`, because we want to guess the answer
+to a riddle. It is common for POST requests to send a payload with the request. 
+In this case, the payload is a parameter called `id` specifying which riddle we
+are guessing, as well as `guess`.
 
 ```shell
-$ http POST 138.68.28.249:5000/1 guess="A banana"
+$ http POST 138.68.28.249:5000/riddles/guess id=1 guess="A banana"
 
 HTTP/1.0 200 OK
 Content-Length: 134
 Content-Type: application/json
-Date: Tue, 18 Aug 2020 21:43:08 GMT
+Date: Wed, 09 Sep 2020 21:06:54 GMT
 Server: Werkzeug/1.0.1 Python/3.5.2
 
 {
@@ -135,12 +136,12 @@ Oh well. Maybe you can do better. Once you guess the right answer, try adding yo
 to the server. The [riddle documentation](https://github.com/cproctor/riddle_server) will help here, but here 
 is a cheatsheet of all the URL routes:
 
-| Method | URL                    | Action                                                                                               |
-| ------ | ---------------------- | ---------------------------------------------------------------------------------------------------- |
-| `GET`  | `138.68.28.249:5000/`  | Returns a list of all the riddles, without answers.                                                  |
-| `GET`  | `138.68.28.249:5000/x` | Returns the riddle with id `x` if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `138.68.28.249:5000/`  | Creates a new riddle if `question` and `answer` are provided. The new riddle is returned.            |
-| `POST` | `138.68.28.249:5000/x` | Accepts a `guess` for riddle `x` if it exists. The response says whether you were correct. |
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `GET`  | `138.68.28.249:5000/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `138.68.28.249:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `138.68.28.249:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `138.68.28.249:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
 
 {{< checkpoint >}}
 Once everyone in your group has successfully posted a riddle to the
