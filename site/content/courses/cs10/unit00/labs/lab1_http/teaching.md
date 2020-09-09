@@ -3,7 +3,18 @@ title: Teaching the HTTP lab
 type: teaching
 ---
 
+## Setup
+
+Before teaching the lab, you will need to deploy the Riddle server on some
+publicly-accessible machine, and update the lab with its URL. Instructions are
+provided in [the Riddle server README](https://github.com/cproctor/riddle_server).
+(The simplest way to deploy this is to ssh into the server machine, clone the
+repo, install dependencies, and then run `run.sh` in a tmux or screen session so
+you can detach it and leave it running. 
+
 ## Troubleshooting
+
+### Hardware
 
 - If the Pis are not on a LAN (or VPN), it will likely be impossible for
   students to connect to each others' Pis. 
@@ -12,12 +23,11 @@ type: teaching
   For example, on Ubuntu `uwf` is often enabled by default, so you would need to 
   run `sudo ufw allow 5000`.
 
-## If students finish early
+### Software
 
-The Riddle lab code is challenging, but might be approachable. It's a basic
-Flask app, where each view/action is implemented in a function, and a decorator 
-maps them to URL routes. Try challenging groups to add a new route, for example
-`GET /about` might return some information about whose Riddle server this is.
-
-There is also quite a bit of approachable documentation in `riddle_server/model.py`. 
-Some students might be interested in poking around there. 
+- When students are implementing the client api, they need to use
+  `requests.get(url, json=payload)`, not `requests.get(url, data=payload)`.
+  Using the `json` keyword argument will ensure the payload is sent as JSON, not
+  form-encoded (which the server will reject). The code examples provided in
+  `api.py` correctly use `json`, but `data` is more prominent in the `requests`
+  documentation.
