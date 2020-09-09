@@ -1,13 +1,12 @@
 ---
 title: "1. HTTP"
 type: lab
-draft: true
 ---
 
 # HTTP: How Computers Communicate
 
 The Internet may be humanity's most profound invention. A global
-network of computers talking to one another, allowing possible for people all
+network of computers talking to one another, making it possible for people all
 over the world to interact. In this lab, we will start learning about *how*
 computers talk with one another. 
 
@@ -30,57 +29,62 @@ computers talk with one another.
 
 {{< /expand >}}
 
-## The basic rules of HTTP
+## The Basic Rules of HTTP
 
-- Communication starts when one computer (the client) sends a Request to another computer (the server). 
-  Here's a HTTP request (the comments aren't part of it, they are just there for you.)
+Communication starts when one computer (the client) sends a Request to another computer (the server). 
 
-  ```shell {linenos=table}
-  GET / HTTP/1.1                              // Send me the root file, /
-  Accept: */*                                 // Any format is fine
-  Host: cs.fablearn.org                       // Hey, Im talking to you
-  ```
+Everytime you visit a URL, your computer opens a connection with the server at that address and uses **HTTP Protocol** to recieve the content. For example, by visiting "cs.fablearn.org" you initiate a **GET Request** to recieve the *Making with Code* homepage from the server. 
 
-- Unless there is some problem, the server sends a Response. 
-  For example: 
+A **GET Request** contains following: 
 
-  ```shell {linenos=table, linenostart=4}
-  HTTP/1.1 200 OK                                 // This is the Response
-  Content-Length: 2081                            // I am sending a lot
-  Content-Type: text/html                         // I am sending HTML
-  Date: Tue, 18 Aug 2020 19:23:28 GMT             // This is when I sent it
-  Last-Modified: Tue, 18 Aug 2020 15:46:28 GMT    // There is new content
-  
-  <!DOCTYPE html>                                 // Here it comes!
-  <html lang="en">                                // Here is your webpage
-      . . . 
-  <p><em>Making with Code</em> is a new, old 
-  approach to teaching computer science 
-  based in Constructionism.</p>
-      . . .
-  ```
-- `GET` (line 1) is the request **method**. The other common method is `POST`. You 
-  send a `GET` request when you want some content but are not planning to make
-  any changes. You send a `POST` request when you are trying to make a change, 
-  like logging in or making a purchase.
-- `200` (line 4) is the response status code. 
-  - `200` means success.
-  - `300` means you're looking in the wrong place
-  - `400` means you did something wrong.
-  - `500` means, "Sorry, the server broke!" 
-- Lines 2 and 3 are request headers. Lines 5-8 are response headers. They provide
-  more detail about what is being requested and what is being sent back.
+```shell
+GET / HTTP/1.1
+Host: cs.fablearn.org
+```
 
-{{< expand "Wait, but..." >}}
+Another frequently utilized request is a **POST request**. A `POST` request is sent when you are sending data to the server. For example, logging into an account or making an online purchase. 
 
-### But how do these messages even get from one computer to another? 
+A **POST Request** contains following: 
 
-Good question. One important kind of abstraction is **thinking in layers**. That
-means sometimes you have to just accept that the next layer down just works and
-be glad you don't have to worry about it. As it turns out, we will go down to
-this layer in the next lab.
+```shell
+GET / HTTP/1.1
+Host: cs.fablearn.org
+```
 
-{{< /expand >}}
+Once the request has been recieved by the server, it responds with a by sending the client a **HTTP Response Status Code**. If a successful connection has been made, the server sends the content to the client. 
+
+A successful **HTTP Status Code** contains the following:
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: text/html
+```
+
+The `Content-Type` tells your computer what type of data is being recieved. In this instance of "cs.fablearn.org", your computer recieves the HTML, Javacsript, CSS, and image files that make up the homepage of the site. 
+
+{{<expand "Common Status Codes" >}}
+- `200` means success.
+- `300` means you're looking in the wrong place
+- `400` means you did something wrong.
+- `404` means the resource requested could not be found 
+- `500` means, "Sorry, the server broke!" 
+
+{{</expand>}}
+
+<br>
+
+{{< code-action >}} To see status codes in action:
+
+0. Right click on any website and click "Inspect"
+0. Select "Network" from the top tool bar in the devleoper tools
+0. Hard refresh your page with "Command + Shift + R"
+0. Find the URL under "Name"
+0. Under the "Status" column you will see "200", signifiying a sucessful **GET** request
+
+It's important to remember 
+
+
+
 
 ## Let's try it
 
@@ -90,7 +94,7 @@ nice little tool called `http`.
 {{< code-action >}}  Let's install it:
 
 ```shell
-$ pip install httpie
+$ pip3 install httpie
 ```
 
 {{< code-action >}} There is a Riddle server running at `138.68.28.249:5000`. Let's see
@@ -164,8 +168,7 @@ The Riddle server is a pretty simple program. While it is running, it waits for
 requests to come in and responds when they do. Let's set it up on your Raspberry
 Pi.
 
-{{< code-action >}} First, `ssh` into your Pi. Then clone and install the Riddle
-server:
+{{< code-action >}} First clone and install the Riddle server on your personal computer:
 
 ```shell
 cd /opt
