@@ -26,7 +26,7 @@ computers talk with one another.
 - **HTML** stands for "**Hypertext Markup Language**," the grammar of websites.
   HTML is a code full of tags like `<body>` and `<div>`. Putting it all
   together, HTTP describes how comptuers ask each other for content; HTML describes 
-  how they should format the content. 
+  how they should format the content when sending web pages. 
 
 {{< /expand >}}
 
@@ -70,17 +70,6 @@ computers talk with one another.
   - `500` means, "Sorry, the server broke!" 
 - Lines 2 and 3 are request headers. Lines 5-8 are response headers. They provide
   more detail about what is being requested and what is being sent back.
-
-{{< expand "Wait, but..." >}}
-
-### But how do these messages even get from one computer to another? 
-
-Good question. One important kind of abstraction is **thinking in layers**. That
-means sometimes you have to just accept that the next layer down just works and
-be glad you don't have to worry about it. As it turns out, we will go down to
-this layer in the next lab.
-
-{{< /expand >}}
 
 ## Let's try it
 
@@ -168,12 +157,10 @@ Pi.
 server:
 
 ```shell
-cd /opt
-git clone https://github.com/cproctor/riddle_server.git
-cd riddle_server
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
+$ cd cs10/unit_00
+$ git clone https://github.com/cproctor/riddle_server.git
+$ cd riddle_server
+$ pip install -r requirements.txt
 ```
 
 {{< code-action >}} Now run the Riddle server. 
@@ -195,3 +182,69 @@ Once everyone in your group has deployed the Riddle server to their Pi, accessed
 someone else's Riddle server, and had someone access theirs, check in with a
 teacher. 
 {{< /checkpoint >}}
+
+## Writing a client
+
+This riddle server is a lot of fun. But it's not very fun having to write all
+these HTTP requests into the Terminal. What if we had a program which took care
+of making these requests for us? A program like this is called a **client**. Any
+app which uses the Internet is a client; it is constantly making HTTP requests
+to a server to send and receive information. 
+
+Our client is going to have two faces. The `View` will interact with the human
+user and the `API` (application programming interface) will interact with the 
+server. The API takes care of all the connection details, and the View takes
+care of providing a good user experience. 
+
+{{< code-action >}} Starter code for the client is provided in the
+`riddle_server` repo. Download it *onto your laptop*.
+
+```
+$ cd cs10/unit_00
+$ git clone https://github.com/cproctor/riddle_server.git
+$ cd riddle_server/riddle_client
+$ ls
+api.py	view.py
+```
+
+{{< code-action >}} Now try running the client. 
+
+```
+$ python view.py
+```
+
+It runs! Until it doesn't. The view is fully-functional, however the API
+is not. Your job is to finish the API methods which haven't been written yet: 
+
+- `get_riddle`
+- `get_random_riddle`
+- `add_riddle`
+
+You will know it works once you can fully run the view without any crashes. 
+
+Tips:
+- The API uses the [requests](https://requests.readthedocs.io/en/master/)
+  library to send and receive HTTP requests. You can read the documentation, 
+  or you can just copy the usage examples already present in `api.py`.
+- Use the [riddle server documentation](https://github.com/cproctor/riddle_server)
+  to make sure you're using the correct URL and sending the right parameters 
+  for each request. Otherwise you'll be getting errors back from the server.
+
+{{< checkpoint >}}
+Once everyone in your group has a fully-functional client, check in with a
+teacher. 
+{{< /checkpoint >}}
+
+## Improving the client
+
+Once you have a fully-working client, make it better. Here are a few ideas:
+
+- Display the riddles' difficulty. 
+- Keep track of the player's score.
+- Give the player prizes, or let them unlock secret modes, if they get a high
+  enough score.
+- Track the player's correct and incorrect guesses and give the player 
+  riddles of the appropriate difficulty. (Hint: `Riddle.difficulty`, 
+  defined in [riddle_server/riddles/model.py, line 98](https://github.com/cproctor/riddle_server/blob/3412a4a1043fc591dfc46541be9060ad271ae374/riddles/model.py#L98),
+  may be useful. You can calculate a player's skill the same way we calculate a
+  riddle's difficulty.)
