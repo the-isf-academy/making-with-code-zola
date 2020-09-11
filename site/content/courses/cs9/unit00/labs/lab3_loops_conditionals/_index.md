@@ -1,7 +1,6 @@
 ---
 title: 3. Loops and Conditionals
 type: labs
-draft: true
 ---
 
 # Loops and Conditionals
@@ -154,6 +153,7 @@ Answer the following check-in questions on your group's Google doc before moving
 
 0. How would you describe the modulo operator to a friend who has never heard of it before?
 0. What other situations do you think the modulo operator would be useful in?
+
 {{< /checkpoint >}}
 
 ## While loops
