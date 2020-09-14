@@ -25,17 +25,18 @@ computers talk with one another.
 - **HTML** stands for "**Hypertext Markup Language**," the grammar of websites.
   HTML is a code full of tags like `<body>` and `<div>`. Putting it all
   together, HTTP describes how comptuers ask each other for content; HTML describes 
-  how they should format the content. 
+  how they should format the content when sending web pages. 
 
 {{< /expand >}}
 
-## The Basic Rules of HTTP
+## A. The Basic Rules of HTTP
+Every time you visit a URL, your computer opens a connection with the server at that address and uses **HTTP Protocol** to send and recieve the content. 
 
-Communication starts when one computer (the client) sends a Request to another computer (the server). 
+### Requests
+Communication starts when one computer (the client) sends a Request to another computer (the server). For example, by visiting "cs.fablearn.org" you initiate
+a **GET request** to recieve the *Making with Code* homepage from the server. 
 
-Every time you visit a URL, your computer opens a connection with the server at that address and uses **HTTP Protocol** to recieve the content. For example, by visiting "cs.fablearn.org" you initiate a **GET Request** to recieve the *Making with Code* homepage from the server. 
-
-A **GET Request** contains following: 
+A **GET request** contains following: 
 
 ```shell
 GET / HTTP/1.1
@@ -44,23 +45,44 @@ Host: cs.fablearn.org
 
 Another frequently utilized request is a **POST request**. A `POST` Request is sent when you are sending data to the server. For example, logging into an account or making an online purchase. 
 
-In the **POST Request** below, the webpage would contain a form to recieve the user's data. 
+In the **POST request** below, the webpage would contain a form to recieve the user's data. 
 
 ```shell
 POST / HTTP/1.1
 Host: social_media_login.com
 ```
 
-Once the request has been recieved by the server, it responds by sending the client a **HTTP Response Status Code**. If a successful connection has been made, the server sends the content to the client. 
+### Responses
 
-A successful **HTTP Status Code** contains the following:
+Once the request has been recieved by the server, it responds by sending the client a **HTTP response**. If a successful connection has been made, the server sends the content to the client. 
 
-```shell
-HTTP/1.1 200 OK
-Content-Type: text/html
-```
+Here's an example of a **HTTP response** to a successful GET request to the course website:
 
-The `Content-Type` tells your computer what type of data is being recieved. For "cs.fablearn.org", your computer recieves the HTML, Javacsript, CSS, and image files that make up the homepage of the site. 
+  ```shell {linenos=table}
+  HTTP/1.1 200 OK                                 // This is the Response
+  Content-Length: 2081                            // I am sending a lot
+  Content-Type: text/html                         // I am sending HTML
+  Date: Tue, 18 Aug 2020 19:23:28 GMT             // This is when I sent it
+  Last-Modified: Tue, 18 Aug 2020 15:46:28 GMT    // There is new content
+  
+  <!DOCTYPE html>                                 // Here it comes!
+  <html lang="en">                                // Here is your webpage
+      . . . 
+  <p><em>Making with Code</em> is a new, old 
+  approach to teaching computer science 
+  based in Constructionism.</p>
+      . . .
+  ```
+- `200` (line 1) is the response status code. 
+- `Content-Length` (line 2), `Content-Type`(line 3), `Date`(line 4), and `Last-Modified`(line 5) are response headers. They provide
+  more detail about what is being requested and what is being sent back. For example, the `Content-Type` tells your computer what
+  type of data is being recieved. For "cs.fablearn.org", your computer recieves the HTML, Javacsript, CSS, and image files that make
+  up the homepage of the site. 
+- `<!DOCTYPE html>` (line 7) is the beginning of the content sent with the response. This is the HTML of the course website which your
+  browser then renders as a webpage.
+
+### Status Codes
+Status codes are used to signal how the communication between the client and the server is going.
 
 {{<expand "Common HTTP Status Codes" >}}
 - `200` means success.
@@ -106,14 +128,12 @@ This time the mail delivery person is able to retrieve it from the business. You
 
 {{< /aside >}}
 
-<br>
-
-## Let's try it
+## B. Let's try it
 
 In this lab we are going to practice getting and sending HTTP requests. Let's begin by using a
 nice little tool called `httpie`. 
 
-{{< code-action >}}  Let's install it:
+{{< code-action >}}  Install it on your pi or on your personal computer:
 
 ```shell
 $ pip3 install httpie
@@ -123,51 +143,92 @@ $ pip3 install httpie
 which riddles are available for guessing by entering the following into your terminal:
 
 ```shell
-$ http GET 138.68.28.249:5000
+$ http GET 138.68.28.249:5000/riddles/all
+
+HTTP/1.0 200 OK
+Content-Length: 102
+Content-Type: application/json
+Date: Wed, 09 Sep 2020 21:06:24 GMT
+Server: Werkzeug/1.0.1 Python/3.5.2
+
+{
+    "riddles": [
+        {
+            "correct": 0,
+            "guesses": 0,
+            "id": 1,
+            "question": "What is black and white and red all over?"
+        }
+    ]
+}
 ```
 
-{{< code-action >}} Do you know the answer to any of the riddles? Try guessing the answer to a riddle by sending a **POST** request and using the following format:
+{{< code-action >}} Do you know the answer? Try posting a guess. Note that we are now using
+a different URL, `138.68.28.249:5000/riddles/guess`, because we want to guess the answer
+to a riddle. It is common for POST requests to send a payload with the request. 
+In this case, the payload is a parameter called `id` specifying which riddle we
+are guessing, as well as `guess`.
 
 ```shell
-$ http POST 138.68.28.249:5000/1 guess="A banana"
-```
+$ http POST 138.68.28.249:5000/riddles/guess id=1 guess="A banana"
 
-The URL is now `138.68.28.249:5000/1` because we are guessing riddle #1. It is common for POST requests to send a payload with the request. In this case, the payload is a
-parameter called `guess`.
-
-Each POST request will return text in the following format:
-
-```shell
 HTTP/1.0 200 OK
 Content-Length: 149
 Content-Type: application/json
-Date: Wed, 09 Sep 2020 08:30:41 GMT
+Date: Wed, 09 Sep 2020 21:06:54 GMT
 Server: Werkzeug/1.0.1 Python/3.5.2
 
 {
     "correct": false,
-    "guess": "pizza",
+    "guess": "a banana",
     "riddle": {
-        "correct": 2,
-        "guesses": 10,
-        "id": 4,
-        "question": "I'm tall when I'm young and short when I'm old. What am I?"
+        "correct": 0,
+        "guesses": 2,
+        "id": 1,
+        "question": "What is black and white and red all over?"
     }
 }
 ```
 
+
+
+### APIs
+{{< code-action >}} If you haven't already, try visting the Riddle server in your web browser. You should see something like this:
+
+```shell
+{"riddles":[{"correct":0,"guesses":2,"id":1,"question":"What is black and white and red all over?"}]}
+```
+
+Just like with every other website you visit in your browser, to access the Riddle server, your browser sends a GET request to the
+server address. The server resonds with data, and your browser displays it. In this case, the data is all of the riddles in JSON format.
+
+You might notice that this is not a very pretty or readable representation. That's because the Riddle server is not really meant to be accessed
+like a webpage. Instead, it is set up as a standalone API (application programming interface). APIs are often the backend of applications that allow
+you to interact strictly with the application data without worrying about the graphical interface. This kind of interface is particularly useful when
+you are trying to send and recieve large amounts of data or make many HTTP requests to access similar types of data.
+
+For example, [Wikipedia has an API](https://www.mediawiki.org/wiki/API:Main_page) that let's you access information about Wikipedia pages without having
+to go through the graphic interface. If your wanted to see all of the pages that link to a particular wiki page, going through the graphical interface would
+be nearly impossible. However, the API provides an easy way to find this information:
+
+```shell
+$ http GET https://en.wikipedia.org/w/api.php action==query list==backlinks format==json bltitle==Independent_Schools_Foundation_Academy
+```
+
+### Endpoints
+Server APIs often rely on different URL *endpoints* to determine what the API should do.
+
+Here is a cheatsheet of the Riddle endpoints, what parameters they take in their payload, and what they do:
+
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `GET`  | `138.68.28.249:5000/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `138.68.28.249:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `138.68.28.249:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `138.68.28.249:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+
 {{< code-action >}} Continue to guess riddles and also try adding your own riddle 
 to the server. 
-
-The [riddle documentation](https://github.com/cproctor/riddle_server) will help here, but here 
-is a cheatsheet of all the URL routes:
-
-| Method | URL                    | Action                                                                                               |
-| ------ | ---------------------- | ---------------------------------------------------------------------------------------------------- |
-| `GET`  | `138.68.28.249:5000/`  | Returns a list of all the riddles, without answers.                                                  |
-| `GET`  | `138.68.28.249:5000/x` | Returns the riddle with id `x` if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `138.68.28.249:5000/`  | Creates a new riddle if `question` and `answer` are provided. The new riddle is returned.            |
-| `POST` | `138.68.28.249:5000/x` | Accepts a `guess` for riddle `x` if it exists. The response says whether you were correct. |
 
 {{< checkpoint >}}
 
@@ -175,21 +236,148 @@ Once you have successfully posted a riddle to the server, draw a model that illu
 
 {{< /checkpoint >}}
 
-## Your own Riddle server
+## C. Writing a client
+Since the riddle server is an API with no user interface, we end up writing a lot of
+HTTP requests into the Terminal to use it. What if we had a program which took care
+of making these requests for us? A program like this is called a **client**. Any
+app which uses the Internet is a client; it is constantly making HTTP requests
+to a server to send and receive information. 
+
+Just like the trivia game, our client is going to have two faces. The `View` will interact
+with the human user and the `Game` will run the game lagic and interact with the 
+server. Actually, we will use essentially the same `View` as we used for the ``Trivia lab. The
+power of abstraction in action again!
+
+{{< code-action >}} Starter code for the client is provided in the
+`lab-http` repo. Download it *onto your laptop*.
+
+```
+$ cd cs10/unit_00
+$ git clone https://github.com/the-isf-academy-lab-http-YOUR-GITHUB-USERNAME.git
+$ cd lab-http
+$ pip install -r requirements.txt
+$ cd riddle_client
+$ ls
+game.py        rgb.py         test_lab.py    testing_server view.py
+```
+
+{{< code-action >}} Now try running the client. 
+
+```
+$ python3 game.py
+```
+
+It runs! Until it doesn't. The view is fully-functional, however the some of the `Game` class
+functions still need to be written to connect the game to a Riddle server.
+
+Your job is to finish the function which haven't been written yet: 
+
+- `show_riddle`
+- `add_riddle`
+- `guess_riddle`
+
+### C.0 `show_riddle`
+{{< code-action >}} This function should show the riddle to the user given the `id` of the riddle to be displayed.
+
+You can check your implementation of this function by running:
+```python
+python3 test_lab.py -k show
+```
+
+**Tips:**
+- You will need to create a request to the server using the requests library like this:
+    ```python
+    r = requests.get(address, json=payload)
+    ```
+- `address` is the address you want to send the request to. Use the `server_address` property of
+the game class as the base address for your HTTP requests. You will still need to add on an 
+endpoint to achieve the correct functionality.
+- `payload` should be a dictionary containing the parameters you want to send with your HTTP request.
+For example, if you wanted to send the parameter `fruit` with the value `watermelon`, you would use:
+    ```python
+    payload = {
+        "fruit": "watermelon"
+    }
+    ```
+
+### C.1 `add_riddle()`
+{{< code-action >}} This function should add a riddle to the server by getting a question and an answer from the
+user and then sending that information to the server in an HTTP request.
+
+You can check your implementation of this function by running:
+```python
+python3 test_lab.py -k add
+```
+
+### C.2 `guess_riddle()`
+{{< code-action >}} This function should allow the user to guess a riddle and send the guess to the server for checking.
+If the guess was correct, the score should increment and a "correct guess" message should be displayed.
+Otherwise, a "wrong nguess" message should be displayed.
+
+You can check your implementation of this function by running:
+```python
+python3 test_lab.py -k guess
+```
+
+**Tips:**
+- The server will send back a response `r` to your request. You should convert this response to a dictionary
+using:
+    ```python
+    response = r.json()
+    ```
+
+### C.3 Error messages
+The functions you wrote for the previous sections probably assume that the server will
+respond positively to your requests. However, sometimes the server might give an error
+if yhe user tries to put in incorrect riddles or guesses.
+
+{{< code-action >}} Edit yoiur functions above to make sure they display error messages
+if the server responds with an error.
+
+You can test your error messages by running:
+```python
+python3 test_lab.py -k errors
+```
+
+**Tips:**
+- The `r` Response object returned by the server has many different properties that may be useful
+in determining if the request was successful. You can read about the properties of Response objects
+in the [documentation for the Requests library](https://requests.readthedocs.io/en/master/user/quickstart/#response-status-codes). 
+
+{{< checkpoint >}}
+Once everyone in your group has a fully-functional client, check in with a
+teacher. 
+{{< /checkpoint >}}
+
+## D. Optional: Improving the client
+
+Once you have a fully-working client, make it better. Here are a few ideas:
+
+- Display the riddles' difficulty. 
+- Give the player prizes, or let them unlock secret modes, if they get a high
+  enough score.
+- Track the player's correct and incorrect guesses and give the player 
+  riddles of the appropriate difficulty. (Hint: `Riddle.difficulty`, 
+  defined in [riddle_server/riddles/model.py, line 98](https://github.com/cproctor/riddle_server/blob/3412a4a1043fc591dfc46541be9060ad271ae374/riddles/model.py#L98),
+  may be useful. You can calculate a player's skill the same way we calculate a
+  riddle's difficulty.)
+
+## E. Your own Riddle server
 
 The Riddle server is a pretty simple program. While it is running, it waits for
 requests to come in and responds when they do. Let's set it up on your Raspberry
 Pi.
 
-{{< code-action >}} First clone and install the Riddle server on your personal computer:
+{{< code-action >}} First clone and install the Riddle server on your Raspberry Pi:
 
 ```shell
-cd /opt
-git clone https://github.com/cproctor/riddle_server.git
-cd riddle_server
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
+$ cd cs10/unit_00
+$ git clone https://github.com/the-isf-academy-lab-http-YOUR-GITHUB-USERNAME.git
+$ cd lab-http
+$ pip install -r requirements.txt
+$ cd riddle-server
+$ ls
+riddles    riddles.db run.sh
 ```
 
 {{< code-action >}} Now run the Riddle server. 
@@ -211,3 +399,21 @@ Once everyone in your group has deployed the Riddle server to their Pi, accessed
 someone else's Riddle server, and had someone access theirs, check in with a
 teacher. 
 {{< /checkpoint >}}
+
+
+## F. PiView
+Now that you have the Riddle server running on your Pi, you can also run the
+Riddle client on your Pi.
+
+This will allow you to use the `PiView` class from the trivia lab to flash responses
+to user guesses.
+
+{{< code-action >}} Copy the `correct_anser()` and `wrond_answer()` functions from your
+`lab-trivia` code into your `lab-http` code in the `PiView` class.
+
+As an extension, you can also use your Pi to communicate error codes to the user.
+
+{{< code-action >}} Edit the `error()` function of the `PiView` class so that it
+flashes error messages in Morse code.
+
+
