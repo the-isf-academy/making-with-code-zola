@@ -282,7 +282,7 @@ of interesting properties.
 
 {{< look-action >}} Watch this video about how the Fibonacci sequence appears in
 nature:
-{{< youtube id="https://www.youtube.com/watch?v=ahXIMUkSXX0" autoplay="true" >}}
+{{< youtube id="ahXIMUkSXX0" autoplay="true" >}}
 
 We're going to write an algorithm to print out numbers in the Fibonnaci sequence.
 {{< code-action >}} **Type** this code  at `YOUR CODE HERE (D)`.
