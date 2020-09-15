@@ -266,7 +266,7 @@ power of abstraction in action again!
 
 ```
 $ cd cs10/unit_00
-$ git clone https://github.com/the-isf-academy-lab-http-YOUR-GITHUB-USERNAME.git
+$ git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
 $ cd lab-http
 $ pip3 install -r requirements.txt
 $ cd riddle_client
