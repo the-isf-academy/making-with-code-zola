@@ -30,7 +30,7 @@ computers talk with one another.
 {{< /expand >}}
 
 ## A. The Basic Rules of HTTP
-Every time you visit a URL, your computer opens a connection with the server at that address and uses **HTTP Protocol** to send and recieve the content. 
+Every time you visit a URL, your computer opens a connection with the server at that address and uses **HTTP** to send and recieve the content. 
 
 ### Requests
 Communication starts when one computer (the client) sends a *request* to another computer (the server). For example, by visiting "cs.fablearn.org" you initiate
