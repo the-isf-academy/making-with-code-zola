@@ -280,6 +280,7 @@ to run on your personal computer:
 
 ```shell
 $ cd Desktop/cs10/unit_00
+$ git clone https://github.com/willbuckner/rpi-gpio-development-mock.git
 $ sudo python rpi-gpio-development-mock/setup.py install
 ```
 {{< /aside >}}
