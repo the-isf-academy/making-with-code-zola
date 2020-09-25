@@ -204,26 +204,11 @@ Once you've completed your pseudo-code, you can translate it into Python code.
 ```python
 # HAILSTONE
 num = int(input("What number should I calculate the hailstone sequence of? "))
-count = 0
 
 # Put your code here
 
 print("Took " + str(count) + " steps to reach 1.")
 ```
-
-{{< aside >}}
-When you are multiplying or dividing the term during each step of the algorithm, you
-will need to put your operation inside a `int()` statement. For example, if you want
-to divide a number by two, use:
-
-```python
-num = int(num/2)
-```
-
-This is necessary because Python stores integers and decimal numbers in different ways.
-However, in this program you always want to use integers. We'll talk about this more in
-the next unit.
-{{< /aside >}}
 
 {{< checkpoint >}}
 Answer the following check-in questions on your group's Google doc before moving on:
