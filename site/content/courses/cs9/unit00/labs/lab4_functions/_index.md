@@ -74,8 +74,8 @@ Once you have written a function, you must call it. Calling a function tells Pyt
 Look at the code below. Discuss the check-in questions in your group and answer the questions on your Google doc before moving on:
 
 
-0.  What arguement does the `hexagon` function take?
-0.  How is that arguement used in the `hexagon` function?
+0.  What argument does the `hexagon` function take?
+0.  How is that argument used in the `hexagon` function?
 0.  What line of code is the `hexagon` function called?
 0.  What line of code is the `draw_pattern()` function called?
 
