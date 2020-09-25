@@ -10,7 +10,7 @@ of loop. `while` loops iterate until a particular condition is met.
 
 {{< tab "Video Explanation" >}}
 
-{{< youtube "xxxx" >}}
+{{< youtube "D0Nb2Fs3Q8c" >}}
 {{< /tab >}}
 
 {{< tab "Text Explanation" >}}
@@ -33,8 +33,7 @@ this: `while True:`. This can be useful when you want to loops a program repeate
 To stop a loop like this, you can use a `break` statement. Once the program reaches the
 `break`, the loop will exit.
 
-You've actually already seen an example of this kind of loop at the beginning ot the lab,
-{{< ref_lab "lab3_loops_conditionals" >}}.
+You've actually already seen an example of this kind of loop at the beginning of the lab.
 
 ```python
 speed(10)

@@ -1,6 +1,7 @@
 ---
 title: 4. Functions
 type: labs
+draft: true
 resources:
 - name: test_part_b() output
   src: images/courses/cs9/unit00/00_functions_fig_b.png  
