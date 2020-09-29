@@ -45,7 +45,7 @@ def draw_triangle(sideLength):
     #This function draws a triangle
     for i in range(3):
         forward(sideLength)
-        right(60)
+        right(120)
 ```
 
 A few things to note:
