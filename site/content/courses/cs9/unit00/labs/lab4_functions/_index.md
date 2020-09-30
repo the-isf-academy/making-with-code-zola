@@ -43,13 +43,8 @@ Often times we want to reuse a code block in different sections of a program. `F
 def draw_triangle(side_length):
     #This function draws a triangle
     for i in range(3):
-<<<<<<< HEAD
-        forward(sideLength)
-        right(120)
-=======
         forward(side_length)
         left(120)
->>>>>>> dev
 ```
 
 A few things to note:
