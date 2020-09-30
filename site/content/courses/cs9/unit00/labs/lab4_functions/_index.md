@@ -108,7 +108,7 @@ drawPattern()
 
 ## B. Writing Functions
 
-{{< code-action >}} Create a new file in your `cs9/unit_00` directory called `lab_03.py`
+{{< code-action >}} Create a new file in your `cs9/unit_00` directory called `lab_04.py`
 and paste in this starter code:
 {{< expand "Starter Code" >}}
 ```python
