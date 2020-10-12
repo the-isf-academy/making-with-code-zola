@@ -225,6 +225,8 @@ provides an easy way to find this information:
 $ http GET https://en.wikipedia.org/w/api.php action==query list==backlinks format==json bltitle==Independent_Schools_Foundation_Academy
 ```
 
+There are lots of [interesting APIs](https://www.twilio.com/blog/cool-apis) that you can use to make some pretty cool projects.
+
 ### Endpoints
 Server APIs often rely on different URL *endpoints* to determine what the API should do.
 
@@ -255,7 +257,7 @@ app which uses the Internet is a client; it is constantly making HTTP requests
 to a server to send and receive information. 
 
 Just like the trivia game, our client is going to have two faces. The `View` will interact
-with the human user and the `Game` will run the game lagic and interact with the 
+with the human user and the `Game` will run the game logic and interact with the 
 server. Actually, we will use essentially the same `View` as we used for the Trivia lab. The
 power of abstraction in action again!
 
@@ -271,6 +273,16 @@ $ cd riddle_client
 $ ls
 game.py        rgb.py         test_lab.py    testing_server view.py
 ```
+
+{{< aside >}}
+If you haven't already, you will need to install a stub to allow Raspberry Pi programs
+to run on your personal computer:
+
+```shell
+$ cd Desktop/cs10/unit_00
+$ sudo python rpi-gpio-development-mock/setup.py install
+```
+{{< /aside >}}
 
 {{< code-action >}} Now try running the client. 
 
@@ -310,6 +322,11 @@ For example, if you wanted to send the parameter `fruit` with the value `waterme
         "fruit": "watermelon"
     }
     ```
+- `r` is the response the server send back after your request. You should convert this response to a dictionary
+using:
+    ```python
+    response = r.json()
+    ```
 
 ### C.1 `add_riddle()`
 {{< code-action >}} This function should add a riddle to the server by getting a question and an answer from the
@@ -329,13 +346,6 @@ You can check your implementation of this function by running:
 ```python
 python3 test_lab.py -k guess
 ```
-
-**Tips:**
-- The server will send back a response `r` to your request. You should convert this response to a dictionary
-using:
-    ```python
-    response = r.json()
-    ```
 
 ### C.3 Error messages
 The functions you wrote for the previous sections probably assume that the server will

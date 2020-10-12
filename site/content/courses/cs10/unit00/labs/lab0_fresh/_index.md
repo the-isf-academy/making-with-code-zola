@@ -301,7 +301,7 @@ $ pip3 install RPi.GPIO
 
 ### **[1] Trivia File**
 
-{{< code-action >}} Start by running `python3 game.py` on your Pi over an SSH connection.
+{{< code-action >}} Start by running `python3 game.py t` on your Pi over an SSH connection.
 
 This program plays a basic version of the trivia game you will be completing for this lab.
 
@@ -361,7 +361,7 @@ In the `game.py` file, the `play()` function only plays one round of the game.
 {{< code-action >}} Now that you've got a model for the Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
-$ python game.py t
+$ python3 game.py t
 ```
 Was the gameplay different than you expected? Check you model to see if it still makes sense and change it up if it doesn't.
 
@@ -482,7 +482,7 @@ Steps to Turning Off and On the LED:
 {{< code-action >}} Now that you've got an updated version of your Trivia Game software, play through a game by running the following command in your terminal:
 
 ```shell
-$ python game.py p
+$ python3 game.py p
 ```
 Did the LED work as you expected? If not, review the hardware and the `PiView` class.
 
