@@ -22,34 +22,39 @@ In this lab, you will investigate the inner workings of an HTTP server, just lik
 
 ## B. Servers and You!
 
-Imagine yourself in a restaurant. You sit down at your table and look at the menu. After picking out what you want for dinner, it's time to flag down the waiter. This interaction may look something like this...
+Imagine yourself in a restaurant. You sit down at your table and look at the menu. 
+After picking out what you want for dinner, it's time to flag down the waiter. After
+you give your order to the waiter, they take the order to the kitchen where your
+food is prepared based on your order. Finally, the waiter brings your food to you.
 
-{{< youtube "RT74xKW72TE" >}}
+This interaction is a good model for how a web server handles requests.
 
-You're probably thinking, what does that video have to do with what I'm learning in this lab? Well, let's explore this in more detail.
+{{< figure src="images/courses/cs10/unit00/00_server_restaurant.png" width="100%" title="A restaurant is like a server" >}}
 
-The idea behind a computer server is like Grover and the restaurant in the video. A client (like the person in a restaurant) wants to make an order. He flags down a waiter (Grover) and makes a request.
+A client sends a request to the server via HTTP. Based on the details associated 
+with the request, the server performs some action. This might be looking something up,
+making a functional transformation to data, or just logging that the request was made.
+Then, the server constructs a response which contains any information the client request.
+The response als contains information to let the client know what happened while
+the server was executing its function. Finally, the server send the response to the client,
+again via HTTP.
 
-`Can I have two poached eggs on toast?`
+{{< checkpoint >}}
+In the restaurant/server metaphor, what plays the following roles?
 
-The server takes your request, tells the cook to make the food order and when the food is ready, delivers the food to the table.
+- customer
+- waiter
+- order
+- kitchen
+- food
 
-`Here's your two poached corn on toast!`
-
-What happens on the server is like how Grover describes his "Why poached corn and not poached eggs" explanation. The server does a lot of things behind the scenes (algorithms and processes) and, in this case, Grover explains that corn is on the piece of bread because corn is food for chickens and chickens lay eggs. This "corn instead of egg" algorithm is why there's corn on bread instead of eggs. Makes total sense, right? :P
-
-{{< aside >}}
-What kind of error would Grover be making if he was the "Riddle" server?
-{{<expand "Answer" >}}
-The endpoint is most likley coded incorrectly as there are flawed logic and algorithms in his "reasoning".
-
-{{</expand>}}
-{{</ aside >}}
+{{</ checkpoint >}}
 
 
-In this lab, it will be **YOUR** turn to create a server and its API and make sure that it responds properly to server *requests* from a client. **DON'T PULL A GROVER!**
+In this lab, it will be **YOUR** turn to create a server and its API and make sure 
+that it responds properly to server *requests* from a client.
 
-Before that though, we need to learn about a new Python module called **Flask** and a touch of databases in the flavor of **SQLAlchemy**.
+Before that though, we need to learn about a new Python module called **Flask**.
 
 ## C. Flask and SQLAlchemy
 
