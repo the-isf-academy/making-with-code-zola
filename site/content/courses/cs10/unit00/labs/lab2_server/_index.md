@@ -82,7 +82,7 @@ $ git clone https://github.com/the-isf-academy-lab-server-YOUR-GITHUB-USERNAME.g
 
 ### C.2 Creating Your First Flask Server
 
-You can run your own Flask Server easily with the following lines of code to test its functionality.
+You can run your own Flask Server easily with the following lines of code to test its functionality. Copy and paste the code below into a `server.py` file.
 
 ```python
 from flask import Flask
@@ -90,22 +90,22 @@ from flask import Flask
 app = Flask(__name__)
 
 #this line creates a unique HTTP route, you can have multiple routes
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def hello():
     return 'hello'
 ```
 
-To run the actual server, you will need to type the following command in Terminal
+To run your server, you will need to type the following command in Terminal
 
 ```shell
-$ FLASK_APP=<your_file_name>.py flask run
+$ FLASK_APP=server.py flask run
 ```
 and this will run the server in the Terminal window.
 
 To access the server, you can type the following command in a **NEW** Terminal window.
 
 ```shell
-$ http post localhost:5000
+$ http get localhost:5000
 ```
 
 And you'll most likely get back the following:
@@ -120,6 +120,8 @@ Server: Werkzeug/1.0.1 Python/3.8.5
 hello
 ```
 
+You may run this on your web browser as well. The server should return the word 'hello'.
+
 **Congrats! You have run your first web server!!**
 
 But what is going on here? Let's do a deep dive into what's happening.
@@ -129,14 +131,14 @@ But what is going on here? Let's do a deep dive into what's happening.
 Let's examine the following lines of code:
 
 ```shell
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def hello():
     return 'hello'
 ```
 
 A client sends an HTTP request to the HTTP server via a URL address, the flask server will accept the request and processes it. It does so by looking at the URL in the request and **routes** it to the appropriate server code.  
 
-For our simple Flask server, there is only one **route**. It goes to **'/'** (forward slash) and it **ONLY** accepts **HTTP POST requests**. This means any other requests made to the server will result in the server responding back with errors (like '404 page not found' error because there are no other routes or '405 method not allowed' error if the request was a GET request instead).
+For our simple Flask server, there is only one **route**. It goes to **'/'** (forward slash) and it **ONLY** accepts **HTTP GET requests**. This means any other requests made to the server will result in the server responding back with errors (like '404 page not found' error because there are no other routes or '405 method not allowed' error if the request was a POST request instead).
 
 Different routes can be added on the server, such as `/riddles/all` and `/riddles/one` on the Riddle server and they can be made with both **GET** and **POST** HTTP requests. You can even have a route with the same 'address' but one for GET and one for POST. It'll look something like this...
 
