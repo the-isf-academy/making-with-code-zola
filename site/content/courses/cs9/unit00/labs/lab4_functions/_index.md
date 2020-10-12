@@ -186,7 +186,7 @@ The code in part **C** illustrates this. If we want to draw an ice cream cone wi
     - Draw an ice cream cone: `cone()`
     - Draw scoops of ice cream: `icecream_scoop(flavor,numScoops)`
 
-{{< code-action >}} Your job is to write the functions: `draw_icecream()`, `cone()`, and `icecream_scoop()`. Paste in this starter code below into your `lab_03.py` file:
+{{< code-action >}} Your job is to write the functions: `draw_icecream()`, `cone()`, and `icecream_scoop()`. Paste in this starter code below into your `lab_04.py` file:
 
 ```python
 #################################
