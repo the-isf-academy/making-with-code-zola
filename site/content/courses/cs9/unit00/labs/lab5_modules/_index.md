@@ -1,24 +1,23 @@
 ---
 title: 5. Modules
 type: labs
-draft: true
 ---
 
 # Modules Lab
 
-{{< devnote >}}
-Replace the ISF Academy repo links
-{{< /devnote >}}
+In this lab, we will learn how to organize our functions into modules. Modules are files of reusable function. You've already encountered modules before!
 
+## A. What is a module?
+In the previous lab, we used functions to break up a big program into smaller programs. Modules do the same thing, but on a larger scale!
 
-We are going to write a lot of code this year, so we need to keep it organized. The most obvious way to do this is to store code in different files. But what if you want to re-use a function you wrote in a different file? Copy it over?  It feels like there should be a better way. Today we are going to learn how to import code from one module into another. But first, let's get some vocabulary straight:
+So let's say you wrote a function in one file. What if you want to re-use a function you wrote in a different file? Copy it over?  It feels like there should be a better way. Today we are going to learn how to import code from one module into another. But first, let's get some vocabulary straight:
 
 - All python code lives in `files` that end in `.py`. They're just plain text files that you can edit using Atom (or Microsoft Word if you really want. Don't though. You'll regret it.)
 - Like all files, python files live in directories somewhere on your file system. For example, all your homework lives in `/Users/you/Desktop/cs9/unit_00`.
 - Python thinks of each file as a `module`. Each module is its own little bubble world.
 - Python thinks of each directory containing `.py` files as a `package`. A package is a bundle of modules. So your `unit_00` directory is also a package.
 
-## A. Importing
+## B. Importing
 When you want to use something from another module, you need to `import` it. We have actually already been doing this--every one of our programs so far has started with `from turtle import *`. But what is this `turtle`? Where did it come from? Let's use the python shell to find out:
 
 ```shell
@@ -76,9 +75,12 @@ This third way means "go into the turtle module and import everything!" It's qui
 
 You can see that the `eat` function came from `bodily_functions`, but where did that `chicken_sandwich` come from? The `refrigerator`? Or the `trash_can`? By importing just what we need from other modules, we can make it clear where everything came from, and we can make sure we don't import stuff we don't want. (What else did we import from the `trash_can`? Do we want that in our program?)
 
-**STOP! Before you go on, figure out how to open `turtle.py`. Have a look inside and show it to your teacher.**
+{{< checkpoint >}}
 
-## B. Finding modules
+Before you go on, figure out how to open `turtle.py` on your computer using either the finder or the terminal.  Describe the steps you took in order to find `turtle.py`, and include a screenshot of the `turtle.py` file.
+{{< /checkpoint >}}
+
+## C. Finding modules
 There are three places you can import modules from:
 
 - Some modules, like `turtle`, come pre-installed with python. When you import them, python knows where to find them.
@@ -152,17 +154,44 @@ Now we are going to download a package full of fancy drawing functions to turboc
 
 You just downloaded a package called `drawing`. Let's learn about what's included. Run `tree drawing` to see what's inside.
 
-**STOP! Once you have downloaded the `drawing` package and are confident that everyone in your group understands modules and packages, check in with a teacher.**
+{{< checkpoint >}}
+On your Google Doc answer the following questions:
+- What are the three modules inside of the `drawing` package?
+- What does `with no_delay()` do?
+- What does `with restore_state_when_finished()` do?
+- Why do you need to indent the code block after `with`?
+- Inside your cloned `drawing` repo, create a new `lab_05.py` file.
+{{< /checkpoint >}}
 
-## C. Fancy drawings
+
+## D. Fancy drawings
 
 Then read the [package documentation](https://github.com/the-isf-academy/drawing), which describes all the functions.
 
-Create a file called `lab_04.py` in `unit_00`. Work with your group to try out the examples from the `drawing` documentation, and see what else you can figure out. You will turn this file in at the end of class. (You may look at each others' code and write code together during labs. But remember, you may never look at someone else's homework code or show someone yours.)
+Work with your group to try out the examples from the `drawing` documentation, and see what else you can figure out. You will turn this file in at the end of class. (You may look at each others' code and write code together during labs. But remember, you may never look at someone else's homework code or show someone yours.)
 
 You might also be interested in reading the documentation for `turtle` to see what other drawing functions are available.
 
+## E. Animations
+
+Now we are going to download a repository made by a CS9 student from last year, Iris Wong. This project will be similar to what you yourselves will make for the unit project. Make sure you are in `unit_00` and then download it using git:
+
+```shell
+    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/unit-0-drawing-Xuxi917.git
+```
+
+There are quite a few modules being used here! Use `tree`, the `READ.ME`, Atom, and the terminal to do some detective work here: What does her code do, and how is it organized?
+
+{{< checkpoint >}}
+Once you've fully explored her code, answer the following questions:
+- What does her code draw?
+- What command do you use in the terminal to run the still version of her code?
+- What command do you use in the terminal to run the animated version of her code?
+- Iris has four modules in her project. Name the modules here, and describe the purpose of each module in one function.
+- What module would you change in order to adjust the `sf` variable?
+{{< /checkpoint >}}
+
 ## Deliverables
 
-- By the end of class, each student should upload a file called `lab_04.py`.
-- This file should make a drawing using functions from the `drawing` package.
+- By the end of class, each student should upload a file called `lab_05.py`.
+- Your Google Doc with responses to the checkpoint questions
