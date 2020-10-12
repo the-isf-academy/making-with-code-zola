@@ -14,7 +14,25 @@ resources:
 Replace the ISF Academy repo links
 {{< /devnote >}}
 
-In this lab, we'll explore how to plan backwards from a goal, breaking a complicated problem down into simpler steps. This lab will be different from previous labs in that you will not be programming. Instead, you will study a complete project and think about how it works. But first, a brief aside about dictonaries.
+## A. Animations
+
+Now we are going to download a repository made by a CS9 student from last year, Iris Wong. This project will be similar to what you yourselves will make for the unit project. Make sure you are in `unit_00` and then download it using git:
+
+```shell
+    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/unit-0-drawing-Xuxi917.git
+```
+
+There are quite a few modules being used here! Use `tree`, the `READ.ME`, Atom, and the terminal to do some detective work here: What does her code do, and how is it organized?
+
+{{< checkpoint >}}
+Once you've fully explored her code, answer the following questions:
+- What does her code draw?
+- What command do you use in the terminal to run the still version of her code?
+- What command do you use in the terminal to run the animated version of her code?
+- Iris has four modules in her project. Name the modules here, and describe the purpose of each module in one function.
+- What module would you change in order to adjust the `sf` variable?
+{{< /checkpoint >}}
+
 
 ## Aside: Dictionaries
 
