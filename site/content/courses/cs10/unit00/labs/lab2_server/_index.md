@@ -60,7 +60,7 @@ that it responds properly to server *requests* from a client.
 
 Before that though, we need to learn about a new Python module called **Flask**.
 
-## C. Flask and SQLAlchemy
+## C. Flask
 
 Flask is a web microframework made for Python to create "easy" web applications. Web applications, as you have learned in the HTTP lab, rely on HTTP requests, HTTP responses and endpoints. Flask helps to manage these transactions and ensures that endpoints on your web server responds to user requests appropriately.
 
@@ -73,21 +73,13 @@ First, you need to install and update Flask, SQLAlchemy and Flask-SQLAlchemy for
 {{< code-action >}}  Install and update Flask, SQLAlchemy and Flask-SQLAlchemy on your pi or on your personal computer with the following commands:
 
 ```shell
-$ pip3 install -U Flask
-$ pip3 install -U SQLAlchemy
-$ pip3 install -U Flask-SQLAlchemy
+$ pip3 install -r requirements.txt
 ```
 
-Once you have installed these Python packages, you can clone the HTTP server lab git.
-
-```shell
-cd cs10/unit_00
-$ git clone https://github.com/the-isf-academy-lab-server-YOUR-GITHUB-USERNAME.git
-```
 
 ### C.2 Creating Your First Flask Server
 
-You can run your own Flask Server easily with the following lines of code to test its functionality. Copy and paste the code below into a `server.py` file.
+{{< code-action >}} You can run your own Flask Server easily with the following lines of code to test its functionality. Copy and paste the code below into a `simple_server.py` file.
 
 ```python
 from flask import Flask
@@ -100,20 +92,20 @@ def hello():
     return 'hello'
 ```
 
-To run your server, you will need to type the following command in Terminal
+{{< code-action >}} To run your server, you will need to type the following command in Terminal
 
 ```shell
-$ FLASK_APP=server.py flask run
+$ FLASK_APP=simple_server.py flask run
 ```
 and this will run the server in the Terminal window.
 
-To access the server, you can type the following command in a **NEW** Terminal window.
+{{< code-action >}} To access the server, you can type the following command in a **NEW** Terminal window.
 
 ```shell
 $ http get localhost:5000
 ```
 
-And you'll most likely get back the following:
+The server should respond with the following:
 
 ```shell
 HTTP/1.0 200 OK
@@ -147,19 +139,24 @@ For our simple Flask server, there is only one **route**. It goes to **'/'** (fo
 
 Different routes can be added on the server, such as `/riddles/all` and `/riddles/one` on the Riddle server and they can be made with both **GET** and **POST** HTTP requests. You can even have a route with the same 'address' but one for GET and one for POST. It'll look something like this...
 
-```shell
-@app.route('/', methods=['POST'])
-def hello_post():
-    return 'hello from post'
-
+```python
 @app.route('/', methods=['GET'])
 def hello_get():
     return 'hello from get'
+
+@app.route('/', methods=['POST'])
+def hello_post():
+    data = request.get_json()
+    greeting = "Hello {}".format(data['name'])
+    return greeting
 ```
 
 When there's an accepted request and it's properly routed, the server will execute the function below the `@app.route` line of code. So in our case, if a client sends a GET request to '/' on the server, the server will respond with the string 'hello from get'.
 
 This is how Flask works. Pretty simple right?
+
+{{< code-action >}} Try writing your own route in the `simple_server.py` file. This route should look exactly like the `/` route but should use
+a different address. The function of your endpoint can do whatever you'd like.
 
 {{< expand "More on SQLAlchemy" >}}{{< aside >}}
 
@@ -175,6 +172,37 @@ Note: if any of you ever get into web development, Flask and SQLAlchemy are real
 ## D. Creating Your Messaging Client and Server
 
 You are required to code the following four server routes: `register()`, `authenticate()`, `send_message()`, `get_messages()`.
+
+{{< code-action >}} To get started, you can clone the HTTP server lab git.
+
+```shell
+cd cs10/unit_00
+$ git clone https://github.com/the-isf-academy-lab-server-YOUR-GITHUB-USERNAME.git
+```
+
+{{< aside >}}
+Flask has its own native request serializer. It's been imported in the following line of code.
+
+```python
+from flask import Flask, request
+```
+
+At the beginning of your routing functions, you can get the request sent by the user as a
+JSON with the following line of code:
+
+```python
+data = request.get_json()
+```
+{{< /aside >}}
+
+{{< aside >}}
+There are error codes that have been hardcoded into `client.py` and `server.py`.
+
+**These codes should be returned when there are errors with logic or database issues or return SUCCESS when 
+the function has run successfully.**
+
+These error codes will also help debug your code.
+{{< /aside >}}
 
 ### D.1 `register()`
 
@@ -220,7 +248,8 @@ Using the username and password, the server will check if the user exists and if
 
 ### D.5 Helper Functions
 
- There are helper functions that have been coded in server.py that will help you navigate your way around the database. **DON'T REINVENT THE WHEEL! USE THESE HELPER FUNCTIONS!!**
+ There are helper functions that have been coded in server.py that will help you navigate your way around the database. **Keep these helper functions
+ in mind as your write the server routes:**
 
  - `check_username_password(username, password)`
  - `save_message_to_db(sender, recipient, message, timestamp):`
@@ -242,18 +271,8 @@ Here is a cheatsheet of the messaging endpoints, what parameters they take in th
 
 You will need to code the client and server so that it handles all these requests/response on these endpoints.
 
-### D.7 Hints
+## Deliverables
+To submit this lab, make sure you've pushed the following files to Github:
+- `simple_server.py`
+- `server.py`
 
-Flask has its own native request serializer. It's been imported in the following line of code.
-
-```python
-from flask import Flask, request
-```
-
-What this means is that you can use the following line of code to get the JSON out of the response.
-
-```python
-data = request.get_json()
-```
-
-There are error codes that have been hardcoded into `client.py` and `server.py`. These codes should be returned when there are errors with logic or database issues or return SUCCESS when the function has run successfully. These error codes will help debug your code.
