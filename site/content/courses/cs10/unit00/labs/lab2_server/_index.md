@@ -169,6 +169,14 @@ Note: if any of you ever get into web development, Flask and SQLAlchemy are real
 
 {{</ aside >}}{{</ expand >}}
 
+{{< checkpoint >}}
+Answer the following questions with your group:
+
+1. What does the Python package Flask do?
+1. When a server recieves an HTTP request, how does it determine what it should do?
+1. When a server route function returns, where does the return value go?
+{{< /checkpoint >}}
+
 ## D. Creating Your Messaging Client and Server
 
 You are required to code the following four server routes: `register()`, `authenticate()`, `send_message()`, `get_messages()`.
