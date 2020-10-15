@@ -68,10 +68,14 @@ Flask-SQLAlchemy will help us extend Flask's functionality as Flask does not hav
 
 ### C.1 Installing Flask and SQLAlchemy
 
-First, you need to install and update Flask, SQLAlchemy and Flask-SQLAlchemy for this lab.
+{{< code-action >}} To get started, clone the server lab repository.
 
-{{< code-action >}}  Install and update Flask, SQLAlchemy and Flask-SQLAlchemy on your pi or on your personal computer with the following commands:
+```shell
+cd cs10/unit_00
+$ git clone https://github.com/the-isf-academy/lab-server-YOUR-GITHUB-USERNAME.git
+```
 
+{{< code-action >}} Then, install and update Flask, SQLAlchemy and Flask-SQLAlchemy on your pi or on your personal computer with the following commands:
 ```shell
 $ pip3 install -r requirements.txt
 ```
@@ -82,7 +86,7 @@ $ pip3 install -r requirements.txt
 {{< code-action >}} You can run your own Flask Server easily with the following lines of code to test its functionality. Copy and paste the code below into a `simple_server.py` file.
 
 ```python
-from flask import Flask
+from flask import Flask, request
 #this line instantiates the Flask object, you only need to do this once
 app = Flask(__name__)
 
@@ -181,12 +185,6 @@ Answer the following questions with your group:
 
 You are required to code the following four server routes: `register()`, `authenticate()`, `send_message()`, `get_messages()`.
 
-{{< code-action >}} To get started, you can clone the HTTP server lab git.
-
-```shell
-cd cs10/unit_00
-$ git clone https://github.com/the-isf-academy-lab-server-YOUR-GITHUB-USERNAME.git
-```
 
 {{< aside >}}
 Flask has its own native request serializer. It's been imported in the following line of code.
