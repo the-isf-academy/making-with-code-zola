@@ -21,16 +21,51 @@ in the graph.
 {{< /aside >}}
 
 ## A. Graphs
-One common way of representing networks is with graphs. In computer science, a graph is a data structure
-consisting of nodes (known as *vertices*) and the connections between them (known as *edges*).
+One common way of representing networks is with graphs. You are probably familiar with graphs in math as planes where you can plot
+points, lines, and other functions.. In computer science, a graph is a data structure consisting of nodes (known as *vertices*)
+and the connections between them (known as *edges*).
 
-{{< figure src="images/courses/cs10/unit00/00_algorithms_graph.png" width="100%" title="A graph in computer science." >}}
+{{< figure src="images/courses/cs10/unit00/00_algorithms_exgraph.png" width="100%" title="A graph in computer science." >}}
 
 Graphs are used to hold data in many different contexts.
 
 {{< figure src="images/courses/cs10/unit00/00_algorithms_map.png" width="100%" title="Maps can be represented as graphs..." >}}
 
 {{< figure src="images/courses/cs10/unit00/00_algorithms_social.png" width="100%" title="... and so can social networks." >}}
+
+Importantly, graphs are just representations of the connections between points of data. The spatial layout of the graph doesn't
+matter. Actually, graphs are usually represented without a spatial layout at all. One common way to represent graphs is with a
+matrix where each row and column represents one vertex in the graph. If there is a 1 where a row and column meet, those vertices
+are connected by an edge. IF there is a zero, there is not an edge between those vertices. Here's an example using the MTR:
+
+|                | ... | SYP | Sheung Wan | Central | Admiralty | TST | Wan Chai | Ocean Park | Jordan | ... |
+|----------------|-----|-----|------------|---------|-----------|-----|----------|------------|--------|-----|
+| ...            |     |     |            |         |           |     |          |            |        |     |
+| **SYP**        |     | 1   | 1          | 0       | 0         | 0   | 0        | 0          | 0      |     |
+| **Sheung Wan** |     | 1   | 1          | 1       | 0         | 0   | 0        | 0          | 0      |     |
+| **Central**    |     | 0   | 1          | 1       | 1         | 0   | 0        | 0          | 0      |     |
+| **Admiralty**  |     | 0   | 0          | 1       | 1         | 1   | 1        | 1          | 0      |     |
+| **TST**        |     | 0   | 0          | 0       | 1         | 1   | 0        | 0          | 1      |     |
+| **Wan Chai**   |     | 0   | 0          | 0       | 1         | 0   | 1        | 0          | 0      |     |
+| **Ocean Park** |     | 0   | 0          | 0       | 1         | 0   | 0        | 0          | 0      |     |
+| **Jordan**     |     | 0   | 0          | 0       | 0         | 1   | 0        | 0          | 0      |     |
+| ...            |     |     |            |         |           |     |          |            |        |     |
+
+In code, this would noramally be represented without the headers in the table like this:
+
+```python
+mtr = [ ..., 
+        [1, 1, 0, 0, 0, 0, 0, 0],
+	    [1, 1, 1, 0, 0, 0, 0, 0],
+	    [0, 1, 1, 1, 0, 0, 0, 0],
+	    [0, 0, 1, 1, 1, 1, 1, 0],
+	    [0, 0, 0, 1, 1, 0, 0, 1],
+	    [0, 0, 0, 1, 0, 1, 0, 0], 
+	    [0, 0, 0, 1, 0, 0, 0, 0],
+	    [0, 0, 0, 0, 1, 0, 0, 0],
+	    ...
+      ]
+```
 
 Graphs are useful in the context of networking because the global internet can be represented as a big graph. In this
 case, internet connected devices like servers and your computer are vertices while the cables that connect them are edges.
@@ -78,7 +113,7 @@ to operate efficiently without having unnecessary hops between nodes in the netw
 But how does the Pi know how to find another Pi in the network when the network is constantly change and
 could be in any configuration with any number of devices?
 
-Enter graph search algoriths.
+Enter graph search algorithms.
 
 ## B. Graph Search Algorithms
 Search algorithms help us find specific elements of large datasets. Applied to graphs, they can help us find paths
@@ -88,7 +123,14 @@ In this lab, we will explore two search algorithms, Depth-First Search (DFS) and
 
 ### Depth first search
 
+TODO: FIND DFS VIDEO
+
 ### Breadth first search
+
+TODO: FIND BFS VIDEO
+
+### Try it out!
+{{< code-action >}} Try out DFS and BFS on graphs that you make yourself using [this interactive simulation](https://graphonline.ru/en/).
 
 {{< aside >}}
 There are actually many more search algorithms than the two presented here. These are actually two of the most
@@ -102,22 +144,88 @@ questions like this.
 {{< /aside >}}
 
 ## C. Analyzing search algorithms
+BFS and DFS will always be able to find every node in a graph, but that
+doesn't mean they are the same. Because of the differences in the algorithms, BFS and DFS perform differently in under
+different conditions.
 
-### Mazes as graphs
+### Harder, faster, better, stronger
 
-### Pros and cons
+Take this graph for example:
+{{< figure src="images/courses/cs10/unit00/00_algorithms_graph0.png" width="50%" title="Graph 0: X." >}}
+
+Which algorithm do you think will be best at finding a vertex in this graph starting at vertex `A`?
+Are there some vertices that will be easier to find?
+
+{{< code-action >}} Generate this graph in the [simulator](https://graphonline.ru/en/) using the following adjacency matrix
+and try using BFS and DFS to search the graph starting at vertex `0`:
+
+```
+0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+```
+
+{{< write-action >}} Answer the following questions on your lab worksheet:
+
+1. Which nodes does DFS find faster that BFS?
+1. Which nodes does BFS find faster than DFS?
 
 
-If you are stuck, try taking on the following perspectives when creating your mazes:
+Now it's your turn.
 
-* You are the designer of a database and you want your search to run really qucikly. What maze can you make
-where each algorithm performs at its best?
-* You have no control over the maze and it is randomly generated. What algorithm works best?
-* You are a hacker trying to slow down a piece of software that uses BFS or DFS. What maze can
-you make that will cause the algorithm to run really slowly?
+{{< code-action >}} Design a graph (with a start and end point) where DFS performs better than BFS. *Put the adjacency
+matrix representation of your graph on you worksheet and indicate the start and stop vertices.*
+
+{{< code-action >}} Design a graph (with a start and end point) where BFS performs better than DFS. *Put the adjacency
+matrix representation of your graph on you worksheet and indicate the start and stop vertices.*
+
+{{< write-action >}} Answer the following qustions on your worksheet:
+1. With reference to the graphs you created, what general qualities of a search
+(the graph and start/stop vertices) make DFS more efficient than BFS?
+1. With reference to the graphs you created, what general qualities of a search
+(the graph and start/stop vertices) make BFS more efficient than DFS?
+1. For the graphs you created, imagine that a random vertex will be chosen as the end point for a search.
+Will one algorithm be a better choice than the other if you don't know where the end point will be before you choose?
+
+### You take the high road, and I'll take the low road
+Our two different search algorithms sometimes return different paths between vertices. Sometimes this doesn't matter,
+but sometimes it can make a big differnce. For example:
+
+{{< figure src="images/courses/cs10/unit00/00_algorithms_graph1.png" width="50%" title="Graph 1: Loop." >}}
+
+{{< code-action >}} Generate this graph in the [simulator](https://graphonline.ru/en/) using the following adjacency matrix
+and try using BFS and DFS to search the graph starting at vertex `0`:
+
+```
+0, 1, 0, 0, 0, 0, 1, 0,
+1, 0, 1, 0, 0, 0, 0, 0,
+0, 1, 0, 1, 0, 0, 0, 0,
+0, 0, 1, 0, 1, 0, 0, 0,
+0, 0, 0, 1, 0, 1, 0, 0,
+0, 0, 0, 0, 1, 0, 1, 0,
+1, 0, 0, 0, 0, 1, 0, 1,
+0, 0, 0, 0, 0, 0, 1, 0,
+```
+
+{{< write-action >}} Answer the following questions in your lab worksheet:
+1. What is different between the path from vertex `0` to vertex `7` generated by DFS and the one generated by BFS?
+2. What about the algorithms of DFS and BFS cause this difference?
+3. Can you find an example graph and search where BFS generates a longer path than BFS?
+
+### Comparing DFS and BFS
+{{< write-action >}} To wrap up the lab, fill out the chart in your lab worksheet comparing the two different
+search algorithms we covered in this lab, DFS and BFS.
 
 ## Deliverables
-To submit this lab, make sure you've pushed the following files to Github:
-- `simple_server.py`
-- `server.py`
+To submit this lab, make sure you've finalized the Algorithms Lab worksheet in your Google Drive.
 
