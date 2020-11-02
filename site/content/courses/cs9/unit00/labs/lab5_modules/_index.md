@@ -152,13 +152,14 @@ On your Google Doc answer the following questions:
 - What does `with no_delay()` do?
 - What does `with restore_state_when_finished()` do?
 - Why do you need to indent the code block after `with`?
-- Inside your cloned `drawing` repo, create a new `lab_05.py` file.
 {{< /checkpoint >}}
 
 
 ## D. Fancy drawings
 
-Then read the [package documentation](https://github.com/the-isf-academy/drawing), which describes all the functions.
+{{< code-action >}} Inside your cloned `drawing` repo, create a new `lab_05.py` file.
+
+{{< look-action >}} Then read the [package documentation](https://github.com/the-isf-academy/drawing), which describes all the functions.
 
 Work with your group to try out the examples from the `drawing` documentation, and see what else you can figure out. You will turn this file in at the end of class. (You may look at each others' code and write code together during labs. But remember, you may never look at someone else's homework code or show someone yours.)
 
