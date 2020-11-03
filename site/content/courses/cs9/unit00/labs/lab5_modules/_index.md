@@ -99,6 +99,7 @@ TEA-JWOLF:unit_00 jwolf$ brew install tree
 Now, let's have a look at all your work in this class so far. We're going to show a tree of `.`, which means "here" (whatever directory you're currently in).
 
 ```shell
+TEA-JWOLF:unit_00 jwolf$ tree .
 .
 ├── lab-terminal-adventure
 │   ├── adventure
@@ -123,7 +124,7 @@ Now, let's have a look at all your work in this class so far. We're going to sho
 
 ```
 
-From the `unit_00` folder, we can import any of these `.py` files as modules. If they're in the same directory (like `homework_01.py`), we can just write `import homework_01`. Try it now:
+From the `unit_00` folder, we can import any of these `.py` files as modules. If they're in the same directory (like `lab_03.py`), we can just write `import lab_03`. Try it now:
 
 ```shell
 TEA-JWOLF:unit_00 jwolf$ python
@@ -146,7 +147,10 @@ TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/drawing.gi
 
 You just downloaded a package called `drawing`. Let's learn about what's included. Run `tree drawing` to see what's inside.
 
+{{< look-action >}} Read the [package documentation](https://github.com/the-isf-academy/drawing), which describes all the functions.
+
 {{< checkpoint >}}
+
 On your Google Doc answer the following questions:
 - What are the three modules inside of the `drawing` package?
 - What does `with no_delay()` do?
@@ -157,11 +161,7 @@ On your Google Doc answer the following questions:
 
 ## D. Fancy drawings
 
-{{< code-action >}} Inside your cloned `drawing` repo, create a new `lab_05.py` file.
-
-{{< look-action >}} Then read the [package documentation](https://github.com/the-isf-academy/drawing), which describes all the functions.
-
-Work with your group to try out the examples from the `drawing` documentation, and see what else you can figure out. You will turn this file in at the end of class. (You may look at each others' code and write code together during labs. But remember, you may never look at someone else's homework code or show someone yours.)
+{{< code-action >}} Work with your group to try out the examples from the `drawing` documentation, and see what else you can figure out. You will turn this file in at the end of class. (You may look at each others' code and write code together during labs. But remember, you may never look at someone else's homework code or show someone yours.)
 
 You might also be interested in reading the documentation for `turtle` to see what other drawing functions are available.
 
