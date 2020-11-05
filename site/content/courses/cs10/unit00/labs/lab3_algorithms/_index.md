@@ -121,13 +121,7 @@ between different vertices in the graph.
 
 In this lab, we will explore two search algorithms, Depth-First Search (DFS) and Breadth-First Search (BFS).
 
-### Depth first search
-
-TODO: FIND DFS VIDEO
-
-### Breadth first search
-
-TODO: FIND BFS VIDEO
+{{< youtube id="62IcXF_OF3k" >}}
 
 ### Try it out!
 {{< code-action >}} Try out DFS and BFS on graphs that you make yourself using [this interactive simulation](https://graphonline.ru/en/).
