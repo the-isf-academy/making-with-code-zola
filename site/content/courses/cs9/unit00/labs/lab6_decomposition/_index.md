@@ -158,6 +158,7 @@ Now answer the following questions with your team. You will be asked to change p
 ### Animation Mystery 4
 <!---rotate-->
 {{< code-action >}} Run the command `python animate_4.py` in terminal and then discuss the following:
+
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. This animation involves three for-loops, and each for-loop causes a different speed! Why is the second for-loop faster than the first for-loop? Why is the third for-loop faster than the second for-loop?
 2. Change the code so that the animation turns in the opposite direction for all three for-loops. Describe in one sentence which lines of code you changed and how you changed the code.
