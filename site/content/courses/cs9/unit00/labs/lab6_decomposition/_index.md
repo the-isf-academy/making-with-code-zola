@@ -43,23 +43,23 @@ You may recognize who she drew! (Hover over the image to reveal)
   onmouseout="this.src='/images/courses/cs9/unit00/00_decomp_winwin.png';"
 />
 
+{{< checkpoint >}}
 {{< look-action >}} Iris decided to tackle the project by drawing the figure and then the letters as still images. With your group, discuss the `figure.py`, `letters.py`, and `settings.py` modules.
 
-{{< checkpoint >}}
 {{< write-action >}} Answer the following questions in your Google Doc.
 
-#### Figures
+#### Figure.py
 0. How many functions are in the module?
-1. Where is `draw_figure() ` actually used in her project?
+1. `draw_figure() ` is defined in `figure.py`, but where is `draw_figure() ` actually called in her project? (Hint: there are two files.)
 2. Iris wrote an awesome `draw_figure()`function, but it is 190 lines long. Let's think about how we might decompose this code. If you could split `draw_figure()` into multiple smaller functions, what would those functions be? Explain in 2 - 3 sentences.
 
-#### Letters
+#### Letters.py
 0. Why do you think Iris chose to create a separate module for letters? Explain in 1 sentence.
 1. Where is `draw_W() ` actually called in her project?
 
 #### Settings
-0. Many of Iris' functions accept a parameter called `settings.sf`. `sf` stands for size factor. You can change this variable in one file, and the size will get adjusted throughout the drawing. Where is `sf` being defined?
-1. Change `settings.sf` to any number you like. How does this affect her still image when you run `no_animation.py`?
+0. Many of Iris' functions accept a parameter called `sf`. `sf` stands for size factor. You can change this variable in one file, and the size will get adjusted throughout the drawing. Where is `sf` being defined?
+1. Change `settings.SIZEFACTOR` to any number you like. How does this affect her still image when you run `no_animation.py`?
 2. You might also have noticed that this module uses `fillcolor` to fill in shapes. You've seen `fill_color()` before,
 but Iris uses a special code to determine the color of Win Win's shirt. Open the
 [turtle documentation](https://docs.python.org/3.8/library/turtle.html?highlight=turtle#turtle.fillcolor) and read
@@ -87,7 +87,7 @@ There are many ways to animate still images! Let's talk about these four:
 {{< write-action >}} Answer the following questions in your Google Doc.
 
 #### main() function
-0. There is a for-loop in `main()` which repeats for `loop_num` number of times. Go to `settings.loop_num` and change the number for the variable `loop_num`. Then run the code by using `python animation.py`. What does the for-loop do?
+0. There is a for-loop in `main()` which repeats for `settings.NUMREPEATS` number of times. Go to `settings.NUMREPEATS` and change the number for the variable `NUMREPEATS`. Then run the code by using `python animation.py`. What does the for-loop do?
 
 #### draw_stationary() function
 0. Part of her project is being drawn in `draw_stationary()` and part of her project is being drawn in `draw_animation()`. Which parts of her drawing are being drawn in `draw_stationary()`?
@@ -95,8 +95,8 @@ There are many ways to animate still images! Let's talk about these four:
 #### draw_animation() function
 0. The other part of her project is being drawn in `draw_animation()`. The for-loop in `draw_animation()` is responsible for the animation! You can think of an animation as a series of frames that are being flipped through very quickly. Based on the for-loop, how many frames are there in our animation?
 1. Now let's check out the if-statements. This is called frame-based animation; the animations appear based on the frame number. What happens at the 10th frame? What happens at the 50th frame?
-2. Change lines 32, 34, 36, 38, 40, and 42 so that the if-statements are set to different numbers. Try `i = 10` (for line 32), `i = 12` (for line 34), `i = 14` (for line 36), `i = 16` (for line 38), `i = 18` (for line 40), and `i = 20` (for line 42). What happens? Describe in 1 sentence.
-3. Comment out line 44 `screen.update()`. Then run the code by using `python animation.py`. What happens?
+2. Change lines 20, 22, 24, 26, 28, and 30 so that the if-statements are set to different numbers. Try `i = 10` (for line 20), `i = 12` (for line 22), `i = 14` (for line 24), `i = 16` (for line 26), `i = 18` (for line 28), and `i = 20` (for line 30). What happens? Describe in 1 sentence.
+3. Comment out line 32 `screen.update()`. Then run the code by using `python animation.py`. What happens?
 Describe what happened and why you think it happened in 2 sentences.
 
 {{< /checkpoint >}}
