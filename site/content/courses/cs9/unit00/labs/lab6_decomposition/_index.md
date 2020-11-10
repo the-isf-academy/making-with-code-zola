@@ -43,7 +43,7 @@ You may recognize who she drew! (Hover over the image to reveal)
   onmouseout="this.src='/images/courses/cs9/unit00/00_decomp_winwin.png';"
 />
 
-{{< look-action >}} Iris decided to tackle the project by drawing the figure and then the letters as still images. With your group, discuss the `figure.py`, `letters.py`, and `settings.py` modules. 
+{{< look-action >}} Iris decided to tackle the project by drawing the figure and then the letters as still images. With your group, discuss the `figure.py`, `letters.py`, and `settings.py` modules.
 
 {{< checkpoint >}}
 {{< write-action >}} Answer the following questions in your Google Doc.
@@ -61,7 +61,7 @@ You may recognize who she drew! (Hover over the image to reveal)
 0. Many of Iris' functions accept a parameter called `settings.sf`. `sf` stands for size factor. You can change this variable in one file, and the size will get adjusted throughout the drawing. Where is `sf` being defined?
 1. Change `settings.sf` to any number you like. How does this affect her still image when you run `no_animation.py`?
 2. You might also have noticed that this module uses `fillcolor` to fill in shapes. You've seen `fill_color()` before,
-but Iris uses a special code to determine the color of Win Win's shirt. Open the 
+but Iris uses a special code to determine the color of Win Win's shirt. Open the
 [turtle documentation](https://docs.python.org/3.8/library/turtle.html?highlight=turtle#turtle.fillcolor) and read
 about how filling works. Then, change the color of Win Win's shirt, and copy-paste the code into the Google Doc.
 
@@ -81,7 +81,7 @@ There are many ways to animate still images! Let's talk about these four:
 {{< figure src="images/courses/cs9/unit00/00_decomp_frame.gif" width="100%">}}
 {{< /columns >}}
 
-{{< look-action >}} After Iris finishes drawing the still images, she uses one of the above strategies to animate her letters. With your group, discuss the files within the `animation.py` module. 
+{{< look-action >}} After Iris finishes drawing the still images, she uses one of the above strategies to animate her letters. With your group, discuss the files within the `animation.py` module.
 
 {{< checkpoint >}}
 {{< write-action >}} Answer the following questions in your Google Doc.
@@ -97,56 +97,70 @@ There are many ways to animate still images! Let's talk about these four:
 1. Now let's check out the if-statements. This is called frame-based animation; the animations appear based on the frame number. What happens at the 10th frame? What happens at the 50th frame?
 2. Change lines 32, 34, 36, 38, 40, and 42 so that the if-statements are set to different numbers. Try `i = 10` (for line 32), `i = 12` (for line 34), `i = 14` (for line 36), `i = 16` (for line 38), `i = 18` (for line 40), and `i = 20` (for line 42). What happens? Describe in 1 sentence.
 3. Comment out line 44 `screen.update()`. Then run the code by using `python animation.py`. What happens?
-Describe what happened and why you think it happened in 2 sentences. 
+Describe what happened and why you think it happened in 2 sentences.
 
 {{< /checkpoint >}}
 
 ## D. More Animations
 
-Now, we are going to examine a unit project made by another CS9 student from last year, Jethro!
+Here's an animation based on the unit project made by another CS9 student from last year, Jethro!
+
+{{< look-action >}} Notice how the cat's face is stationary while the cat's arm is animated (using a rotation).
 
 
 <img src="https://media.giphy.com/media/wNUofiacijQ8mVnSvU/giphy.gif" style="width:100%"/>
 
 
-Make sure you are in `unit_00` and then download it using git:
+{{< code-action >}} Now, we're going to explore each type of animation by looking at some small mystery examples. Make sure you are in `unit_00` and then download it using git:
 
 ```shell
-    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/unit-0-drawing-yobamos912
+    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/decomposition-lab.git
 ```
 
 {{< checkpoint >}}
 
-Now answer the following questions with your team. You will be asked to change parts of Jethro's code!
-
-### Animation Set Up
-0. What does the for-loop in  `main()` do? Explain in 1 sentence.
-1. How is `draw_stationary()` different from the code in `no_animation.py`? Explain in 1 sentence.
-2. What does `s.whisker_len` do? Where is it being defined? Explain in 1 sentence.
+Now answer the following questions with your team. You will be asked to change parts of the code!
 
 ### Animation Mystery 1
-<!-- - rotation -->
-In animation.py, change `line 68` to `animate_v1()`. Run the code in terminal and then discuss the following:
+<!---frame-based -->
+{{< code-action >}} Run the command `python animate_1.py` in terminal and then discuss the following:
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. Look inside the `animate_v1()` function. What does the first for-loop do? What does the second for-loop do?
-2. Find a way to change the speed of the animation. Copy-paste your code here.
+1. Look inside the `main()` function. How many times is the for-loop running, and how did you find this number?
+2. Notice on line 21 that there's a timer set for `sleeptime` seconds that is being repeated for `num_frame` times. Calculate how long the animation lasts, using these two variables.
+3. Frames Per Second (FPS) is a rate we care about in the field of animation. You can calculate this rate by dividing the total number of frames over the total length of the animation. Calculate the FPS of this animation.
+4. Look inside the `draw_animation()` function. How many times is the for-loop here running, and how did you find this number? What is the difference between `settings.NUMREPEATS` and `settings.NUMFRAMES`?
+5. You will see that there are four conditionals inside the for-loop of `draw_animation()`. Calculate what the numbers in the conditionals are equivalent to: `num_frames/4`, `num_frames/2`, `3*num_frames/4`, `num_frames`.
+6. There are four if-statements, but only three triangles drawn on the screen. What happened to the fourth triangle? Explain in at least once sentence.
+7. Change the last if-statement so that the animation is able to draw and animate all four triangles.
 
 ### Animation Mystery 2
-<!-- - Scale -->
-In animation.py, change `line 68` to `animate_v2()`. Run the code in terminal and then discuss the following:
+<!---scale-->
+{{< code-action >}} Run the command `python animate_2.py` in terminal and then discuss the following:
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. Look inside the `animate_v2()` function. What does the first for-loop do? What does the second for-loop do?
-2. What does the `clear()` function do in line 51? What happens if you remove `clear()`?
+1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`.
+2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for every `i` and `new_size`. (HINT: you can split up the work on this with your tablemates.)
+3. Calculate `max_size`. (HINT: you will need to reference the numbers in `settings.py`)
+4. For the second for-loop, trace through the code and fill out the table for every `j` and `new_size`.(HINT: you can split up the work on this with your tablemates.)
+5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`)
+
 
 ### Animation Mystery 3
-<!-- - translation (failed) -->
-In animation.py, change `line 68` to `animate_v2()`. Run the code in terminal and then discuss the following:
+<!---translate-->
+{{< code-action >}} Run the command `python animate_3.py` in terminal and then discuss the following:
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. Why does the animation fail?
-2. Find a way to fix the animation. Copy-paste your code here.
+1. What does the `clear()` function do in line 18? What happens if you remove `clear()`?
+2. Change the code so that the animation moves five times as far. (HINT: you will need to change two lines of code in `draw_animation()`)
+3. What if you wanted to draw an animating square instead of a triangle? Write a new helper function in `parts.py` called `draw_square()` that takes two parameters: `sidelen` and `color`. Then change line 15 in `animate_3.py` to `draw_square(sidelen, color)`.
+
+### Animation Mystery 4
+<!---rotate-->
+{{< code-action >}} Run the command `python animate_4.py` in terminal and then discuss the following:
+0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
+1. This animation involves three for-loops, and each for-loop causes a different speed! Why is the second for-loop faster than the first for-loop? Why is the third for-loop faster than the second for-loop?
+2. Change the code so that the animation turns in the opposite direction for all three for-loops. Describe in one sentence which lines of code you changed and how you changed the code.
 
 {{< /checkpoint >}}
 
