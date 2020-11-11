@@ -96,7 +96,7 @@ network. Instead, all of devices contribute equally to the network. That way if 
 reconfigure itself and continue functioning. Networks like this are useful for distributed tasks like local communication,
 distributed processing of large tasks, and sensing and responding to changes in environmental factors across a space.
 
-To set your Pi to mech network mode, ssh into your Pi and run the following command:
+To set your Pi to mesh network mode, ssh into your Pi and run the following command:
 
 ```shell
 $ sudo setup-mesh-network
@@ -129,7 +129,7 @@ sudo batctl traceroute raspberrypi-14
 You may notice that the route is always the shortest path between the two Pis. This allows the network
 to operate efficiently without having unnecessary hops between nodes in the network.
 
-But how does the Pi know how to find another Pi in the network when the network is constantly change and
+But how does the Pi know how to find another Pi in the network when the network is constantly changing and
 could be in any configuration with any number of devices?
 
 Enter graph search algorithms.
@@ -216,7 +216,7 @@ Will one algorithm be a better choice than the other if you don't know where the
 
 ### C.2 You take the high road, and I'll take the low road
 Our two different search algorithms sometimes return different paths between vertices. Sometimes this doesn't matter,
-but sometimes it can make a big differnce. For example:
+but sometimes it can make a big difference. For example:
 
 {{< figure src="images/courses/cs10/unit00/00_algorithms_graph1.png" width="50%" title="Graph 1: Loop." >}}
 
