@@ -55,7 +55,7 @@ You may recognize who she drew! (Hover over the image to reveal)
 
 #### Letters.py
 0. Why do you think Iris chose to create a separate module for letters? Explain in 1 sentence.
-1. Where is `draw_W() ` actually called in her project?
+1. Where is `draw_W()` actually called in her project?
 
 #### Settings
 0. Many of Iris' functions accept a parameter called `sf`. `sf` stands for size factor. You can change this variable in one file, and the size will get adjusted throughout the drawing. Where is `sf` being defined?
@@ -119,7 +119,7 @@ Here's an animation based on the unit project made by another CS9 student from l
 
 {{< checkpoint >}}
 
-Now answer the following questions with your team. You will be asked to change parts of the code!
+{{< write-action >}} Now answer the following questions with your team. You will be asked to change parts of the code!
 
 ### Animation Mystery 1
 <!---frame-based -->
@@ -153,15 +153,16 @@ Now answer the following questions with your team. You will be asked to change p
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. What does the `clear()` function do in line 18? What happens if you remove `clear()`?
 2. Change the code so that the animation moves five times as far. (HINT: you will need to change two lines of code in `draw_animation()`)
-3. What if you wanted to draw an animating square instead of a triangle? Write a new helper function in `parts.py` called `draw_square()` that takes two parameters: `sidelen` and `color`. Then change line 15 in `animate_3.py` to `draw_square(sidelen, color)`.
+3. What if you wanted to draw an animating square instead of a triangle? Write a new helper function in `parts.py` called `draw_square()` that takes two parameters: `side_len` and `color_name`. Then change line 15 in `animate_3.py` to `draw_square(side_len, color_name)`.
 
 ### Animation Mystery 4
 <!---rotate-->
 {{< code-action >}} Run the command `python animate_4.py` in terminal and then discuss the following:
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. This animation involves three for-loops, and each for-loop causes a different speed! Why is the second for-loop faster than the first for-loop? Why is the third for-loop faster than the second for-loop?
-2. Change the code so that the animation turns in the opposite direction for all three for-loops. Describe in one sentence which lines of code you changed and how you changed the code.
+1. This animation involves three if-conditional branches, and each branch causes a different speed! Why is the second branch faster than the first
+branch? Why is the third branch faster than the second branch?
+2. Change the code so that the animation turns in the opposite direction for all three conditional branches. Describe in one sentence which lines of code you changed and how you changed the code.
 
 {{< /checkpoint >}}
 
