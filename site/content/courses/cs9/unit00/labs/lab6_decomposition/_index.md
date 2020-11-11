@@ -114,7 +114,7 @@ Here's an animation based on the unit project made by another CS9 student from l
 {{< code-action >}} Now, we're going to explore each type of animation by looking at some small mystery examples. Make sure you are in `unit_00` and then download it using git:
 
 ```shell
-    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/decomposition-lab.git
+    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/lab-decomposition.git
 ```
 
 {{< checkpoint >}}
