@@ -108,7 +108,7 @@ Here's an animation based on the unit project made by another CS9 student from l
 {{< look-action >}} Notice how the cat's face is stationary while the cat's arm is animated (using a rotation).
 
 
-<img src="https://media.giphy.com/media/wNUofiacijQ8mVnSvU/giphy.gif" style="width:100%"/>
+{{< figure src="images/courses/cs9/unit00/00_decomp_jethro.webp" width="100%">}}
 
 
 {{< code-action >}} Now, we're going to explore each type of animation by looking at some small mystery examples. Make sure you are in `unit_00` and then download it using git:
