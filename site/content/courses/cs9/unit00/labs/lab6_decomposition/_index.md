@@ -55,7 +55,7 @@ You may recognize who she drew! (Hover over the image to reveal)
 
 #### Letters.py
 0. Why do you think Iris chose to create a separate module for letters? Explain in 1 sentence.
-1. Where is `draw_W()` actually called in her project?
+1. Where is `letter_w()` actually called in her project?
 
 #### Settings
 0. Many of Iris' functions accept a parameter called `sf`. `sf` stands for size factor. You can change this variable in one file, and the size will get adjusted throughout the drawing. Where is `sf` being defined?
@@ -95,7 +95,7 @@ There are many ways to animate still images! Let's talk about these four:
 #### draw_animation() function
 0. The other part of her project is being drawn in `draw_animation()`. The for-loop in `draw_animation()` is responsible for the animation! You can think of an animation as a series of frames that are being flipped through very quickly. Based on the for-loop, how many frames are there in our animation?
 1. Now let's check out the if-statements. This is called frame-based animation; the animations appear based on the frame number. What happens at the 10th frame? What happens at the 50th frame?
-2. Change lines 20, 22, 24, 26, 28, and 30 so that the if-statements are set to different numbers. Try `i = 10` (for line 20), `i = 12` (for line 22), `i = 14` (for line 24), `i = 16` (for line 26), `i = 18` (for line 28), and `i = 20` (for line 30). What happens? Describe in 1 sentence.
+2. Change lines 20, 22, 24, 26, 28, and 30 so that the if-statements are set to different numbers. Try `i == 10` (for line 20), `i == 12` (for line 22), `i == 14` (for line 24), `i == 16` (for line 26), `i == 18` (for line 28), and `i == 20` (for line 30). What happens? Describe in 1 sentence.
 3. Comment out line 32 `screen.update()`. Then run the code by using `python animation.py`. What happens?
 Describe what happened and why you think it happened in 2 sentences.
 
