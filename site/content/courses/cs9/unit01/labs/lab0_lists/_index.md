@@ -10,6 +10,7 @@ In this mini lab, we will learn about lists, a useful data structure.
 
 We call lists a **data structure** because they give structure to data. They put things in an ordered grouping, so you can access each element at an index. 
 
+
 Start by creating a `unit_01` folder in your `cs9` folder. Then paste the starter code below into a new python file, `lab_00.py`. 
 
 ```python
@@ -79,35 +80,48 @@ In the loop above, `thing` is a variable that we use to store each element withi
 
 *Can you think of another way to print each element of a list?*
 
-## C. Name Generator 
+## C. Transforming Lists 
 
-Now, let's use lists to create a random name generator. Your finished program will output something similar to this:
+Now, we will utilize a functional programming approach to transform lists. You will code the following functions in the `list_transformations.py` file:
+
+{{< code-action >}} `reverse_list()` takes a list of numbers as an arguement and returns a list with the elements in reverse.
+
+{{< code-action >}} `square_list()` takes a list of numbers as an arguement and returns a list with each element squared. 
+
+{{< code-action >}} `capitalize_list()` takes a list of strings as an arguement and returns a list with the first letter of element capitalized. 
+
+{{< code-action >}} `allcaps_list()` takes a list of strings as an arguement and returns a list with each element in all capital letter. 
+
+You can test your functions by running: 
 
 ```shell
----Medieval Generator---
-Galahad Calderon
+python3 list_transformations_view.py 
 ```
 
-##### *Paste the code block below to your lab_00.py file.*
+Correctly written functions will output: 
 
-```python
-#PART C
+```shell
+--Number List Transformations---
+Initial Number List: [5, 10, 20, 15, 30]
+Numbers revered: [30, 15, 20, 10]
+Numbers squared: [25, 100, 400, 225, 900] 
 
-def name_generator():
-    print("---Name Generator---")
-
-    #YOUR CODE GOES HERE
-
-name_generator()
+--Word List Transformations---
+Inital Word list: ['hello', 'banana', 'office', 'pie']
+Words capitalized: ['Hello', 'Banana', 'Office', 'Pie']
+Words all caps: ['HELLO', 'BANANA', 'OFFICE', 'PIE']
 ```
 
-{{< code-action >}} Initalize two lists, one with first names and one with last names. Feel free to come up with your own names or reference this [image](https://i.pinimg.com/564x/7e/1b/66/7e1b6694801dc8c38ce678bb49a47e6c.jpg).
+<br>
 
-{{< code-action >}} Generate a random first name and a random last name. 
+Below are a few helpful functions to transform the elements in the lists. 
 
-You will need to utlize the Python module, **random**. Read the [Library Documentation](https://docs.python.org/3/library/random.html#module-random) to learn more. 
+| Function  | Data Type  | Explanation  |  Example |
+|:-:|:-:|:-:|:-:|
+| append(element)  | lists  | adds an element to the end of a list  |  my_list.append("lemonade") |
+| capitalize()  | strings  | capitalizes the first letter in a string | my_string.capitalize()  |
+| upper()  | strings  | converts all letters in the string to uppercase | my_string.upper()  |
 
-{{< code-action >}} Output the full name to the user
 
 
 ## D. Deliverables
