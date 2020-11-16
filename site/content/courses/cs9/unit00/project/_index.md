@@ -10,12 +10,12 @@ It's up to you to make a drawing you actually care about making. Your teachers w
 
 ## Starter Code
 
-{{< code-action >}} Starter code for the client is provided in the
+{{< code-action >}} Starter code for the project is provided in the
 `project-animation` repo. Download it *onto your laptop*.
 
 ```shell
 $ cd cs9/unit_00
-$ git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
+$ git clone https://github.com/the-isf-academy/project-animation-YOUR-GITHUB-USERNAME.git
 ```
 
 ## Design Document
@@ -31,17 +31,15 @@ Once you have completed the above, meet with a teacher to talk through your plan
     - `project.py` When this program runs, it should draw your project. 
     - `settings.py` This is where you settings for your animation should be stored. 
     - `README.md` This is documentation for your project for other people who may want to use your project.
-    - `assestment.md` This is where you will self-assest your final project. 
+    - `assessment.md` This is where you will self-assest your final project. 
     - At least one additional module (written by you)
 - At least 5 substantial Git commit messages, each explaining what you've changed and why.
 
 
 ## Assessment
-You are responsible for assessing your own project, though your teachers will let you know if they disagree. In assessment.md, you are required to explain how your project should be scored, and to give evidence to support your assessment. 
+You are responsible for assessing your own project, though your teachers will let you know if they disagree. In `assessment.md`, you are required to explain how your project should be scored, and to give evidence to support your assessment. If the rubric says you should have used a loop, then point to where you did so. If the rubric says you should have re-organized your code, point to a commit that shows how you did so.
 
-If the rubric says you should have used a loop, then point to where you did so. If the rubric says you should have re-organized your code, point to a commit that shows how you did so.
-
-To demonstrate your learning you should:
+Since this is your first project, here's a guide for using the rubric:
 - Read the learning claims of the criterion for this unit in the rubric and consider how they relate to the description of the criterion.
 - For each learning claim in the criterion:
     - Evidence: Identify 1-5 elements of your project that provide evidence for your engagement with the criterion.
@@ -60,7 +58,7 @@ In this unit, we explored the imperative programming paradigm as well as the bas
 
 | Learning Claim                                                                                                 | Possible Forms of Evidence                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can read and apply code documentation.                                                                       | At least 2 functions of the turtle library that we did not cover in class by reading the documentation                                                                                                                              |
+| I can read and apply code documentation.                                                                       | At least 2 functions of the turtle library that we did not cover in class found by reading the Turtle documentation                                                                                                                              |
 | I can manipulate control flow to meaningfully affect the outcome of my code. | <li>At least one loop to repeat commands</li><li>At least one conditional to control the animation</li><li>At least one function with at least one input parameter</li><li>At least one context manager to affect the execution of a code block</li>|
 | I effectively use the principles of decomposition and abstraction to make my code more efficient and elegant. | <li>Code decomposed into various helper functions</li><li>At least one function that is reused at least once in the code</li><li>For every function, the turtle starts and ends at the same point and position Code decomposed into at least one module</li>|
 
@@ -69,11 +67,10 @@ In this unit, we explored the imperative programming paradigm as well as the bas
 ### Criterion B: Planning and development
 Students create personally meaningful projects through an iterative design cycle. Students’ work is grounded in a development plan which students create before beginning the project. Students document the development of their projects in order to create a record of decisions, assumptions, and lingering flaws. Students define the intended functionality and develop towards evaluation.
 
-In this unit, you planned a project with a design document and also adjusted the scope of your project, which means you pivoted your project accordingly to meet the deadlines. Additionally, you were introduced to the concept of documentation via README.md files and git commits on Github. 
+In this unit, you planned a project with a design document and also adjusted the scope of your project, which means you pivoted your project accordingly to meet the deadlines. Additionally, you were introduced to the concept of documentation via `README.md` files and git commits on Github. 
 
 | Learning Claim                                                                                                 | Possible Forms of Evidence                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can read and apply code documentation.                                                                       | At least 2 functions of the turtle library that we did not cover in class by reading the documentation                                                                                                                              |
 | I can thoughtfully plan a large computer science project.  | <li>A thorough design document.</li><li>Updates to your project plan to account for challenges during development</li>|
 | I can document the development of my project using version control tools such as GitHub.  | <li>At least 5 regular and descriptive git commits on your project</li><li>A description of a GitHub issue / bug you encountered, as well as an explanation of how you fixed it (you may include links that you used, such as StackOverflow). </li><li>Comments for each of the modules and functions in your project</li>|
 
