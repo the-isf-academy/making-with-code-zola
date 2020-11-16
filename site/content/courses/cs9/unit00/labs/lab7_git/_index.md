@@ -49,11 +49,11 @@ From now on, your homework, labs, and projects will be provided as git repositor
 ### Creating your fork
 
 Your teachers have already created a repository for the unit project. Each
-student will have a fork this repository, so they have their own copy.
+student will have a fork of this repository, so they have their own copy.
 
 {{< code-action >}} First, let us know what your GitHub username is in [this Google Sheet](https://docs.google.com/spreadsheets/d/1DVA3Ug48vpsniiifGkUWSgNPGUqrPFMUCBnWjCr-tWk/edit?usp=sharing).
 
-Then, you should be able to fin your repository in [your GitHub dashboard](https://github.com/).
+Then, you should be able to find your repository in [your GitHub dashboard](https://github.com/).
 It will be named `project-animation-<YOUR-GITHUB_USERNAME>`.
 
 Click it and you should see a screen like the one below.
@@ -85,7 +85,7 @@ history of changes to this repository, from before you forked it.
 git log
 ```
 
-Press `esc` to leave the git log viewer.
+Press `q` to leave the git log viewer.
 
 
 {{< checkpoint >}}
