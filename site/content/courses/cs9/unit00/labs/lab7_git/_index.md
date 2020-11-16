@@ -14,10 +14,10 @@ fix "first day of class" link, replace links to isf repo
 
 ## Set up
 
-- Double-check that git is installed by running `which git` in Terminal.
+- {{< code-action >}} Double-check that git is installed by running `which git` in Terminal.
   You should see the path where git is installed. If you see nothing, check with
   a teacher.
-- Configure git: Type each of these commands into Terminal. Make sure to replace the information inside the `< >` with your information.
+- {{< code-action >}} Configure git: Type each of these commands into Terminal. Make sure to replace the information inside the `< >` with your information.
     - `git config --global user.name <Your name>`
     - `git config --global user.email <Your school email>`
     - `git config --global core.editor "atom --wait"`
@@ -34,9 +34,9 @@ From now on, your homework, labs, and projects will be provided as git repositor
 
 ### Join github
 
-Start by making a github account for yourself.
+*You should have recieved an email inviation to join the ISF GitHub organization. If you did not, let a teacher know.*
 
-You should have recieved an email inviation to join the ISF GitHub organization. **If you did not, let a teacher know.**
+{{< code-action >}} Start by making a github account for yourself.
 
 - Click on the "Join @the-isf-academy" button in the email from GitHub
 - Enter a username, email address, and password.
@@ -51,7 +51,7 @@ You should have recieved an email inviation to join the ISF GitHub organization.
 Your teachers have already created a repository for the unit project. Each
 student will have a fork this repository, so they have their own copy.
 
-First, let us know what your GitHub username is in [this Google Sheet](https://docs.google.com/spreadsheets/d/1DVA3Ug48vpsniiifGkUWSgNPGUqrPFMUCBnWjCr-tWk/edit?usp=sharing).
+{{< code-action >}} First, let us know what your GitHub username is in [this Google Sheet](https://docs.google.com/spreadsheets/d/1DVA3Ug48vpsniiifGkUWSgNPGUqrPFMUCBnWjCr-tWk/edit?usp=sharing).
 
 Then, you should be able to fin your repository in [your GitHub dashboard](https://github.com/).
 It will be named `project-animation-<YOUR-GITHUB_USERNAME>`.
@@ -61,28 +61,28 @@ Click it and you should see a screen like the one below.
 
 ### Cloning your fork
 
-Now you are going to clone your repo, so there's a copy on your computer. If you
+{{< code-action >}} Now you are going to clone your repo, so there's a copy on your computer. If you
 look at the following commands, you'll see that the `git clone` command has a
 `******`. You need to replace this with your repo's URL, which you can get by
 clicking on the green "Clone or download" button.
 
 ```shell
-    cd ~/Documents/cs9/unit_0/
-    git clone ******
+cd ~/Documents/cs9/unit_0/
+git clone ******
 ```
 
-Now you have a directory called `~/Documents/cs9/unit_0/project-animation-yourusername`. Let's go into the project folder and have a look inside:
+Now you have a directory called `~/Documents/cs9/unit_0/project-animation-yourusername`. {{< code-action >}} Let's go into the project folder and have a look inside:
 
 ```shell
-    cd project-animation-yourusername
-    tree .
+cd project-animation-yourusername
+tree .
 ```
 
-There are just a few files in the project right now. You can also see the
+There are just a few files in the project right now. {{< code-action >}} You can also see the
 history of changes to this repository, from before you forked it.
 
 ```shell
-    git log
+git log
 ```
 
 Press `esc` to leave the git log viewer.
@@ -109,7 +109,7 @@ Let's practice.
 ## Step 0: Edit files
 
 Today we are going to start working on the project, starting with the design. 
-Open the `README.md` file using Atom:
+{{< code-action >}} Open the `README.md` file using Atom:
 
 ```shell
 atom README.md
@@ -126,10 +126,10 @@ with descriptions of your project.
 
 To get started, you will link your design document into your `README.md` file.
 
-{{< code-action >}} Find your project design document in your Google Drive.
+{{< code-action >}} Find your project design document in your Google Drive. 
+Copy the url, and paste it into your `README.md` file in Atom.
 
-Copy the url, and paste it into your `README.md` file in Atom. You can use
-the follow syntax to create a hyperlink:
+You can use the follow syntax to create a hyperlink:
 
 ```
 [Here is the link to my design document.](www.url.com)
@@ -146,7 +146,7 @@ option: `Packages > Markdown Preview > Toggle Preview`.
 ## Step 1: Review changes
 
 Once you have made some changes to `README.md`, save your work in Atom and go
-back to the Terminal. Let's use git to see what changes you have made. Type:
+back to the Terminal. Let's use git to see what changes you have made. {{< code-action >}} Type:
 
 ```shell
 git status
@@ -168,7 +168,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Read the whole message. It is telling you that only file that you
-have changed is `README.md`. Yup. But what changes did you make? Let's use
+have changed is `README.md`. Yup. But what changes did you make? {{< code-action >}} Let's use
 another command to get some more detail:
 
 ```shell
@@ -203,16 +203,16 @@ and then run `git status` and `git diff` again.
 
 Now it's time to add these changes to your repository. A *commit* is a
 collection of one or more changes that belong together. For example, if you
-wanted to add a photo of a sketch to your planning document, you would need to
+wanted to add a photo of a sketch to your README document, you would need to
 edit `README.md`, telling it to include the photo. You would also need to add
 the image file itself to the repo. These two changes belong together, so they
 should be part of the same commit.
 
-You will prepare a commit by adding all the files that have changes. Right now,
-it's just `README.md`, so let's add it to a new commit:
+You will prepare a commit by adding all the files that have changes.
+{{< code-action >}} Right now, it's just `README.md`, so let's add it to a new commit:
 
 ```shell
-    git add README.md
+git add README.md
 ```
 
 Run `git status` again, and you will see that `README.md` has gone from red to
@@ -228,19 +228,23 @@ Changes to be committed:
     modified:   README.md
 ```
 
-Now we are ready to finalize the commit. Type `git commit` and you will see an
+Now we are ready to finalize the commit. {{< code-action >}} Type `git commit` and you will see an
 Atom file open. It's time to describe what you did, using a commit message.
 
-Every time you commit code, you need to write a message explaining what you have done. Anybody reading your code (teachers, peers, a future version of you) will read the log of your changes to understand what has been happening on the project. The file that opens contains a template explaining how to write your commit message.
+Every time you commit code, you need to write a message explaining what you have done.
+Anybody reading your code (teachers, peers, a future version of you) will read the 
+log of your changes to understand what has been happening on the project. The file
+that opens contains a template explaining how to write your commit message.
 
 Once you finish, save the file and close it. Run `git log` to see the history of
 your project. You should see your commit right at the top. Congratulations!
 
 ## Step 3: Push
 
-Now it's time to sync the copy of your repo with the copy on github. Type `git
-push`. Reload your repository page on Github (remember the green button?). Click
-on `README.md`; you should see your updated version.
+Now it's time to sync the copy of your repo with the copy on github.
+
+{{< code-action >}} Type `git push`. Reload your repository page on Github (remember the green button?).
+You should see your updated version of your `README.md` at the bottom of the page.
 
 This probably felt like a lot of work just to save your work. That's true. But
 it will get easier as you get used to it, and you will start to see the value of
