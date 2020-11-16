@@ -1,7 +1,6 @@
 ---
 title: 7. Version Control
 type: labs
-draft: true
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
@@ -16,10 +15,9 @@ fix "first day of class" link, replace links to isf repo
 ## Set up
 
 - Double-check that git is installed by running `which git` in Terminal.
-  (We installed git on the [first day of class](lessons/lesson_00_00.md).)
   You should see the path where git is installed. If you see nothing, check with
   a teacher.
-- Configure git: Type each of these commands into Terminal.
+- Configure git: Type each of these commands into Terminal. Make sure to replace the information inside the `< >` with your information.
     - `git config --global user.name <Your name>`
     - `git config --global user.email <Your school email>`
     - `git config --global core.editor "atom --wait"`
@@ -38,7 +36,9 @@ From now on, your homework, labs, and projects will be provided as git repositor
 
 Start by making a github account for yourself.
 
-- Go to [github.com](https://github.com).
+You should have recieved an email inviation to join the ISF GitHub organization. **If you did not, let a teacher know.**
+
+- Click on the "Join @the-isf-academy" button in the email from GitHub
 - Enter a username, email address, and password.
     - Your username should not include your real name.
     - Please use your school email account.
@@ -49,15 +49,15 @@ Start by making a github account for yourself.
 ### Creating your fork
 
 Your teachers have already created a repository for the unit project. Each
-student is going to fork this repository, so they have their own copy.
+student will have a fork this repository, so they have their own copy.
 
-- [If you are in CS1, click this link](https://classroom.github.com/a/KrNLldo1)
-- [If you are in CS2, click this link](https://classroom.github.com/a/SVz6RdzM)
+First, let us know what your GitHub username is in [this Google Sheet](https://docs.google.com/spreadsheets/d/1DVA3Ug48vpsniiifGkUWSgNPGUqrPFMUCBnWjCr-tWk/edit?usp=sharing).
 
-Follow the instructions. Once your fork is created, you will get a link to your
-project. Click it and you should see a screen like the one below.
+Then, you should be able to fin your repository in [your GitHub dashboard](https://github.com/).
+It will be named `project-animation-<YOUR-GITHUB_USERNAME>`.
 
-{{< figure src="images/courses/cs9/unit00/00_git_github.png" width="400px" title="GitHub" >}}
+Click it and you should see a screen like the one below.
+{{< figure src="images/courses/cs9/unit00/00_version_github.png" width="100%" title="GitHub" >}}
 
 ### Cloning your fork
 
@@ -71,10 +71,10 @@ clicking on the green "Clone or download" button.
     git clone ******
 ```
 
-Now you have a directory called `~/Documents/cs9/unit_0/unit-0-drawing-yourname`. Let's go into the project folder and have a look inside:
+Now you have a directory called `~/Documents/cs9/unit_0/project-animation-yourusername`. Let's go into the project folder and have a look inside:
 
 ```shell
-    cd unit-0-drawing-yourname
+    cd project-animation-yourusername
     tree .
 ```
 
@@ -87,9 +87,12 @@ history of changes to this repository, from before you forked it.
 
 Press `esc` to leave the git log viewer.
 
-**Stop. Check in with your group, and make sure everyone has completed the
+
+{{< checkpoint >}}
+Check in with your group, and make sure everyone has completed the
 steps above. Once your whole group is ready, raise your hand to check in with a
-teacher.**
+teacher.
+{{< /checkpoint >}}
 
 # Working with Git
 
@@ -105,100 +108,95 @@ Let's practice.
 
 ## Step 0: Edit files
 
-Today we are going to start working on the project plan, using the file
-`planning.md`. Open it using Atom:
+Today we are going to start working on the project, starting with the design. 
+Open the `README.md` file using Atom:
 
 ```shell
-    atom planning.md
+atom README.md
 ```
 
-There are three sections here: the idea, decomposition, and milestone. Each
+As you've seen before, `README` files are like a guide to what's contained inside
+a repository and how to use it. Once your project is complete, your `README` file
+will serve this purpose.
+
+There are four sections here: Planning, How to use, Settings, and Modules. Each
 section has some text explaining what's expected. You should replace this text
-with your actual project plan.
+with descriptions of your project.
 
-You don't have to write your whole project plan right now, but you need to make
-some changes to practice using git. Under the first section, called "the idea",
-write a short paragraph describing your idea for the final project. If you have
-a bunch of different possible ideas, you can list them like this:
 
-```shell
-    - I was thinking I might draw a detailed self-portrait of my face.
-    - I also thought it might be neat to make a drawing I can use to laser cut a
-      customized rack for my desk at home. It will have holes just the right
-      size for all my favorite pens and pencils.
-    - I like to make T-shirts by cutting out stencils and spray-painting them. I
-      want to draw some shapes I can use to laser-cut templates.
-    - I want to draw the Hong Kong skyline.
+To get started, you will link your design document into your `README.md` file.
+
+{{< code-action >}} Find your project design document in your Google Drive.
+
+Copy the url, and paste it into your `README.md` file in Atom. You can use
+the follow syntax to create a hyperlink:
+
+```
+[Here is the link to my design document.](www.url.com)
 ```
 
-By the way, this file is written in a simple language called Markdown that
+{{< aside >}}
+This file is written in a simple language called Markdown that
 allows you to format text. [Here's a quick guide to
 markdown](https://www.markdownguide.org/cheat-sheet). When you have a `.md` file
 open in Atom, you can preview the rendered version with the following menu
 option: `Packages > Markdown Preview > Toggle Preview`.
+{{< /aside >}}
 
 ## Step 1: Review changes
 
-Once you have made some changes to `planning.md`, save your work in Atom and go
+Once you have made some changes to `README.md`, save your work in Atom and go
 back to the Terminal. Let's use git to see what changes you have made. Type:
 
 ```shell
-    git status
-```shell
+git status
+```
 
 You will see the following message:
 
 ```shell
-    On branch master
-    Your branch is up to date with 'origin/master'.
+On branch master
+Your branch is up to date with 'origin/master'.
 
-    Changes not staged for commit:
-    (use "git add <file>..." to update what will be committed)
-    (use "git checkout -- <file>..." to discard changes in working directory)
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
 
-	    modified:   planning.md
+    modified:   README.md
 
-    no changes added to commit (use "git add" and/or "git commit -a")
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Read the whole message. It is telling you that only file that you
-have changed is `planning.md`. Yup. But what changes did you make? Let's use
+have changed is `README.md`. Yup. But what changes did you make? Let's use
 another command to get some more detail:
 
 ```shell
-    git diff
+git diff
 ```
 
 Now you will see a description of what you have added and what you have removed
-from `planning.md`:
+from `README.md`:
 
 ```shell
-    diff --git a/planning.md b/planning.md
-    index ac006b3..90b0e4f 100644
-    --- a/planning.md
-    +++ b/planning.md
-    @@ -2,10 +2,13 @@
-
-    ## The idea
-
-    -Replace this text with a description of the drawing you want to make. (It would be nice to also explain why you want to make this drawing.) It's helpful, but not required, to include a sketch of what you are planning. If you want to add an image, you can do so like this:
-    -
-    -![A description of the image, in case the person reading is blind](images/sample.jpg)
-    -
-    +- I was thinking I might draw a detailed semf-portrait of my face.
-    +- I also thought it might be neat to make a drawing I can use to laser cut a
-    +  customized rack for my desk at home. It will have holes just the right
-    +  size for all my favorite pens and pencils.
-    +- I like to make T-shirts by cutting out stencils and spray-painting them. I
-    +  want to draw some shapes I can use to laser-cut templates.
-    +- I want to draw the Hong Kong skyline.
-
-    ## Decomposition
+diff --git a/README.md b/README.md
+index 0d8c5de..d0eeb94 100644
+--- a/README.md
++++ b/README.md
+@@ -12,7 +12,7 @@ Here's what is included:
+ - `settings.py` This is where you will store your settings for your animation. Feel free to add more settings to further parameterize your project. 
+ 
+ ## Planning
+-<Insert a link to your planning document here.>
++[Here is a link to my planning document](www.url.com)
+ 
+ ## How to use
+ <Describe how to run your animation here.>
 ```
 
 You should always run `git status` and `git diff` before you add changes to your
 repository, to make sure you're saving the changes you meant to add. If you
-noticed any typos, or want to add something, edit `planning.md` in Atom again,
+noticed any typos, or want to add something, edit `README.md` in Atom again,
 and then run `git status` and `git diff` again.
 
 ## Step 2: Commit
@@ -206,28 +204,28 @@ and then run `git status` and `git diff` again.
 Now it's time to add these changes to your repository. A *commit* is a
 collection of one or more changes that belong together. For example, if you
 wanted to add a photo of a sketch to your planning document, you would need to
-edit `planning.md`, telling it to include the photo. You would also need to add
+edit `README.md`, telling it to include the photo. You would also need to add
 the image file itself to the repo. These two changes belong together, so they
 should be part of the same commit.
 
 You will prepare a commit by adding all the files that have changes. Right now,
-it's just `planning.md`, so let's add it to a new commit:
+it's just `README.md`, so let's add it to a new commit:
 
 ```shell
-    git add planning.md
+    git add README.md
 ```
 
-Run `git status` again, and you will see that `planning.md` has gone from red to
+Run `git status` again, and you will see that `README.md` has gone from red to
 green because it has been added to a new commit.
 
 ```shell
-    On branch master
-    Your branch is up to date with 'origin/master'.
+On branch master
+Your branch is up to date with 'origin/master'.
 
-    Changes to be committed:
-    (use "git reset HEAD <file>..." to unstage)
+Changes to be committed:
+(use "git reset HEAD <file>..." to unstage)
 
-	    modified:   planning.md
+    modified:   README.md
 ```
 
 Now we are ready to finalize the commit. Type `git commit` and you will see an
@@ -242,7 +240,7 @@ your project. You should see your commit right at the top. Congratulations!
 
 Now it's time to sync the copy of your repo with the copy on github. Type `git
 push`. Reload your repository page on Github (remember the green button?). Click
-on `planning.md`; you should see your updated version.
+on `README.md`; you should see your updated version.
 
 This probably felt like a lot of work just to save your work. That's true. But
 it will get easier as you get used to it, and you will start to see the value of
@@ -250,8 +248,10 @@ using git when you start working on bigger projects. If you're not glad you
 learned git five years from now, come see us and we'll give you some extra
 credit or something :)
 
-**Check in with your table group and make sure everyone succeeds in committing a
-change. Once everyone has succeeded, check in with a teacher.**
+{{< checkpoint >}}
+Check in with your table group and make sure everyone succeeds in committing a
+change. Once everyone has succeeded, check in with a teacher.
+{{< /checkpoint >}}
 
 ## Deliverables
 There is no file to turn in for this lab. Instead, you are expected to complete
