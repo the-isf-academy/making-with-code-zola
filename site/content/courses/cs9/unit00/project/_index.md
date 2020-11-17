@@ -35,20 +35,42 @@ Once you have completed the above, meet with a teacher to talk through your plan
     - At least one additional module (written by you)
 - At least 5 substantial Git commit messages, each explaining what you've changed and why.
 
+## Timeline
+### cs9.1
+{{< figure src="images/courses/cs9/unit00/00_project_cs9_1.png" width="100%" >}}
+### cs9.2
+{{< figure src="images/courses/cs9/unit00/00_project_cs9_2.png" width="100%" >}}
 
 ## Assessment
-You are responsible for assessing your own project, though your teachers will let you know if they disagree. In `assessment.md`, you are required to explain how your project should be scored, and to give evidence to support your assessment. If the rubric says you should have used a loop, then point to where you did so. If the rubric says you should have re-organized your code, point to a commit that shows how you did so.
+You are responsible for assessing your own project, though your teachers will let you know if they
+disagree. In `assessment.md`, you are required to explain how your project should be scored, and
+to give evidence to support your assessment. The rubric is based on claims that you should be able
+to make about your learning in this unit. Each of these claims comes with examples of evidence that
+would show that you can make the claim about your learning.
+
+**To do well in this project, you should be able to concretely justify that you have achieved each of
+the learning claims.** So, if the rubric says you should be able to manipulate control flow and that 
+an example of doing that would be to use a loop, then you should use loops in your project and point
+to them in your self-assessment.
+If the rubric says you should be able to thoughtfiully plan a large project and that an example of that
+is a thorough design document, you should create a detailed design document and discuss in your self-assessment
+how this design document helped you create your project.
 
 Since this is your first project, here's a guide for using the rubric:
-- Read the learning claims of the criterion for this unit in the rubric and consider how they relate to the description of the criterion.
+- Read the learning claims of the criterion for this unit in the rubric and consider how they relate to
+the description of the criterion.
 - For each learning claim in the criterion:
-    - Evidence: Identify 1-5 elements of your project that provide evidence for your engagement with the criterion.
-    - Reasoning: Provide specific reasoning that presents how the piece(s) of evidence you identified support the claim about your engagement with the criterion.
-- Determine the level between 1-8 that represents your overall engagement with the criterion based on the evidence and reasoning you provided for the learning claims of the criterion.
+    - Evidence: Identify 1-5 elements of your project that provide evidence for the learning claim.
+    - Reasoning: Provide specific reasoning that presents how the piece(s) of evidence you identified
+    support the claim about your learning.
+- Determine the level between 1-8 that represents your overall learning in the criterion based on the
+evidence and reasoning you provided for the learning claims of the criterion.
 
 ## Rubric 
 
-Each project will be assessed with a rubric tailored to the skills and concepts the project targets. This project is focused on developing the skills learned throughout the drawing unit. 
+Each project will be assessed with a rubric tailored to the skills and concepts the project targets.
+This project is focused on developing the skills learned throughout the drawing unit. 
+
 
 ### Criterion A: Knowing, understanding, and computational thinking 
 
