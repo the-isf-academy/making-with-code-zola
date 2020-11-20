@@ -67,7 +67,7 @@ look at the following commands, you'll see that the `git clone` command has a
 clicking on the green "Clone or download" button.
 
 ```shell
-cd ~/Documents/cs9/unit_0/
+cd ~/Desktop/cs9/unit_0/
 git clone ******
 ```
 
