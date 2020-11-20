@@ -97,7 +97,7 @@ In this unit, you planned a project with a design document and also adjusted the
 | I can document the development of my project using version control tools such as GitHub.  | <li>At least 5 regular and descriptive git commits on your project</li><li>A description of a GitHub issue / bug you encountered, as well as an explanation of how you fixed it (you may include links that you used, such as StackOverflow). </li><li>Comments for each of the modules and functions in your project</li>|
 
 
-### Criterion C: Reflection on Tech and Society
+### Criterion D: Reflection on Tech and Society
 Students demonstrate an understanding of their responsibility to society as technology creators by evaluating the implications of their work. Students investigate the applications of their work to specific problems or issues.
 Throughout the unit, you explored what it means to express yourself and your identity via digital art. 
 
