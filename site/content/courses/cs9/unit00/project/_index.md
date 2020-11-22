@@ -80,9 +80,9 @@ In this unit, we explored the imperative programming paradigm as well as the bas
 
 | Learning Claim                                                                                                 | Possible Forms of Evidence                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can read and apply code documentation.                                                                       | At least 2 functions of the turtle library that we did not cover in class found by reading the Turtle documentation                                                                                                                              |
-| I can manipulate control flow to meaningfully affect the outcome of my code. | <li>At least one loop to repeat commands</li><li>At least one conditional to control the animation</li><li>At least one function with at least one input parameter</li><li>At least one context manager to affect the execution of a code block</li>|
-| I effectively use the principles of decomposition and abstraction to make my code more efficient and elegant. | <li>Code decomposed into various helper functions</li><li>At least one function that is reused at least once in the code</li><li>For every function, the turtle starts and ends at the same point and position Code decomposed into at least one module</li>|
+| I can read and apply code documentation.                                                                       | <ul><li>At least 2 functions of the turtle library that we did not cover in class found by reading the Turtle documentation </li></ul>                                                                                                                             |
+| I can manipulate control flow to meaningfully affect the outcome of my code. | <ul><li>At least one loop to repeat commands</li><li>At least one conditional to control the animation</li><li>At least one function with at least one input parameter</li><li>At least one context manager to affect the execution of a code block</li></ul>|
+| I effectively use the principles of decomposition and abstraction to make my code more efficient and elegant. | <ul><li>Code decomposed into various helper functions</li><li>At least one function that is reused at least once in the code</li><li>For every function, the turtle starts and ends at the same point and position Code decomposed into at least one module</li></ul>|
 
 
 
@@ -93,8 +93,8 @@ In this unit, you planned a project with a design document and also adjusted the
 
 | Learning Claim                                                                                                 | Possible Forms of Evidence                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can thoughtfully plan a large computer science project.  | <li>A thorough design document.</li><li>Updates to your project plan to account for challenges during development</li>|
-| I can document the development of my project using version control tools such as GitHub.  | <li>At least 5 regular and descriptive git commits on your project</li><li>A description of a GitHub issue / bug you encountered, as well as an explanation of how you fixed it (you may include links that you used, such as StackOverflow). </li><li>Comments for each of the modules and functions in your project</li>|
+| I can thoughtfully plan a large computer science project.  | <ul><li>A thorough design document.</li><li>Updates to your project plan to account for challenges during development</li></ul>|
+| I can document the development of my project using version control tools such as GitHub.  | <ul><li>At least 5 regular and descriptive git commits on your project</li><li>A description of a GitHub issue / bug you encountered, as well as an explanation of how you fixed it (you may include links that you used, such as StackOverflow). </li><li>Comments for each of the modules and functions in your project</li></ul>|
 
 
 ### Criterion D: Reflection on Tech and Society
@@ -103,5 +103,5 @@ Throughout the unit, you explored what it means to express yourself and your ide
 
 | Learning Claim                                                                         | Possible Forms of Evidence                                                                      |
 |----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| I chose a theme that is personally meaningful to me to animate.                        | A final animation that is related to the theme you were inspired by in your planning document.  |
-| I drew from another animation/GIF/drawing to inform my own drawing/animation process.  | A picture, piece of text, animation or video that informed your animation/drawing process.      |
+| I chose a theme that is personally meaningful to me to animate.                        | <ul><li>A final animation that is related to the theme you were inspired by in your planning document.</li></ul>  |
+| I drew from another animation/GIF/drawing to inform my own drawing/animation process.  | <ul><li>A picture, piece of text, animation or video that informed your animation/drawing process.</li></ul>      |
