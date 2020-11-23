@@ -10,6 +10,8 @@ translating messages, finding weather forecasts – the sky is the limit for wha
 However, focus on getting a bot that provides a simple service working first, and then scale up to
 include more complicated services.
 
+{{< figure src="images/courses/cs10/unit00/00_project_model.png" width="100%" >}}
+
 ## Starter Code
 
 {{< code-action >}} Starter code for the project is provided in the
@@ -65,9 +67,9 @@ to make about your learning in this unit. Each of these claims comes with exampl
 would show that you can make the claim about your learning.
 
 **To do well in this project, you should be able to concretely justify that you have achieved each of
-the learning claims.** So, if th erubric says you should be able to understand HTTP communication and
+the learning claims.** So, if the rubric says you should be able to understand HTTP communication and
 that an example of that is making an HTTP request to an external service, then you should make an HTTP
-request in your project and poing to it in your self-assessment.
+request in your project and point to it in your self-assessment.
 If the rubric says you should be able to thoughtfully plan a large project and that an example of that
 is a thorough design document, you should create a detailed design document and discuss in your self-assessment
 how this design document helped you create your project.
