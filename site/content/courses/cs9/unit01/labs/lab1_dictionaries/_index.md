@@ -5,70 +5,26 @@ type: labs
 
 # Dictionaries 
 
-In this mini lab, we will learn about dictionaries, another data structure. Paste the starter code below into a new python file, lab_01.py.
+In this mini lab, we will learn about dictionaries, another data structure. 
 
-```python
-# Unit 1 Lab 1
-# Author: Your Name
-
-#PART A
-zodiac_year_list = [
-    'monkey','rooster', 'dog', 'pig', 'rat', 'ox',
-    'tiger', 'rabbit', 'dragon', 'snake', 'horse', 'sheep'
-]
-
-animal_dict = {
-    "rat": "鼠",
-    "ox": "牛",
-    "tiger": "虎",
-    "rabbit": "兔",
-    "dragon": "龙",
-    "snake": "蛇",
-    "horse": "马",
-    "sheep": "羊",
-    "monkey": "猴",
-    "rooster": "鸡",
-    "dog": "狗",
-    "pig": "猪"
-}
-
-def my_zodiac_year(birth_year):
-    zodiac_cycle_position = birth_year % 12
-    birth_year_animal = zodiac_year_list[zodiac_cycle_position]
-    print("I was born in the year of the {}.".format(birth_year_animal))
-
-#PART B
-def create_character_traits():
-    return {
-        "courage": 8,
-        "beauty": 4,
-        "strength": 7,
-        "empathy": 5
-    }
-
-def describe_character(traits):
-        if traits["strength"] > traits["courage"]:
-            print("You are a coward.")
-        elif traits["strength"] == traits["courage"]:
-            print("You are wise, matching your strength to your courage.")
-        else:
-            print("You are foolhardy.")
-
+{{< code-action >}} Start by cloning your `lab-dictionaries` repositor in your `cs9` folder. 
+```shell
+cd cs9/unit_00
+git clone https://github.com/the-isf-academy/lab-dictionaries-YOUR-GITHUB-USERNAME.git
 ```
-
 
 ### A: High 🗝 Useful Data Structure
 
 You already know about lists, which are a great way to store things that naturally come one after another, like subway stops on a subway line, or homework assignments in a class. 
 
-{{< code-action >}} After reading the function `my_zodiac_year` (lines 23-26)
-- Open a Python shell and import `my_zodiac_year` from the `lab_05.py` file. 
+{{< code-action >}} After reading the function `my_zodiac_year` in `dictionaries.py`
+- Open a Python shell and import `my_zodiac_year` from the `dictionaries.py` file. 
 
 - Run the `my_zodiac_year` function passing in your birth year as the argument
 
 ```shell
 python3 
->>> from lab_05 import my_zodiac_year
+>>> from dictionaries import my_zodiac_year
 >>> my_zodiac_year(1995)
 I was born in the year of the pig.
 ```
@@ -81,13 +37,13 @@ To access the values of a dictionary like the `animal_dict`, use the following s
 
 {{< code-action >}} `quit()` the python shell
 
-{{< code-action >}} Print the Chinese translation of the English Sentence "I was born in the year of the <insert animal>", below the `print` statement in the `my_zodiac_year` function of `PART A` in the `lab_05.py` file. 
+{{< code-action >}} Print the Chinese translation of the English Sentence "I was born in the year of the <insert animal>", below the `print` statement in the `my_zodiac_year` function of `PART A` in the `dictionaries.py` file. 
 Access the character for your `birth_year_animal` by accessing the value in the `animal_dict`.
 
 {{< code-action >}} Open a new python shell and import and run the `my_zodiac_year` function again with your new code. Now you should see something like:
 
 ```shell
->>> from lab_05 import my_zodiac_year
+>>> from dictionaries import my_zodiac_year
 >>> my_zodiac_year(1995)
 I was born in the year of the pig.
 我出生在猪年
@@ -109,10 +65,10 @@ def create_character_traits():
     }
 ```
 
-{{< code-action >}} Open a python shell and import the `describe_character` and `create_character_traits` functions from the `lab_05.py` file. Create a `character_traits` dictionary using the `create_character_traits` function and run the `describe_character` function:
+{{< code-action >}} Open a python shell and import the `describe_character` and `create_character_traits` functions from the `dictionaries.py` file. Create a `character_traits` dictionary using the `create_character_traits` function and run the `describe_character` function:
 
 ```shell
->>> from lab_05 import describe_character, create_character_traits
+>>> from dictionaries import describe_character, create_character_traits
 >>> character_traits = create_character_traits()
 >>> describe_character(character_traits)
 You are foolhardy.
@@ -154,31 +110,17 @@ We have the following sports games:
 - Fifa
 - NBA 2K
 ```
-##### *Paste the code block below to your lab_01.py file.*
 
-```python
-#PART C
 
-game_library =  #Initalize your game library here
+{{< code-action >}} Start by initalizing a dictionary with genres as the keys and a list of games as the values. 
 
-def find_game():
-    print("--Welcome to the CS 9 Game Library--")
-    print("We have the following genres:")
-    
-    #YOUR CODE GOES HERE
-     
-find_game()
-```
-
-{{< code-action >}} Initalize the varibale `game_library` as a dictionary with genres as the keys and a list of games as the values. 
-
-{{< code-action >}} In the function `find_game`, output the genres and ask to select a genre. 
+{{< code-action >}} Write a function that will print the genres to the terminal and ask the user to select one. 
 
 {{< code-action >}} Output the games available in the user's selected genre. 
 
 ## D. Deliverables
-For this lab, you should submit the following:
+For this lab, you should push your respository with the following:
 
-- The your lab_01.py file with the code you wrote for each of the parts
+- The your dictionaries.py file with the code you wrote for each of the parts
 - Your Google Doc with responses to the checkpoint questions
 

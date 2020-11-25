@@ -11,28 +11,14 @@ In this mini lab, we will learn about lists, a useful data structure.
 We call lists a **data structure** because they give structure to data. They put things in an ordered grouping, so you can access each element at an index. 
 
 
-Start by creating a `unit_01` folder in your `cs9` folder. Then paste the starter code below into a new python file, `lab_00.py`. 
-
-```python
-# Unit 1 Lab 0
-# Author: Your Name
-
-from turtle import *
-import random
-
-#PART A
-
-##Variables
-my_name = ""    
-friend_name = ""
-
-## List Experiments
-cs1_dessert_list = ["ice cream", "brownies", "mochi", "timtams", "creme brulee", "mango sago", "pumpkin pie", "tiramisu", "cheesecake"]
-
-print("help! I am trapped inside the computer!")
+{{< code-action >}} Start by cloning your `lab-lists` repositor in your `cs9` folder. 
+```shell
+cd cs9/unit_00
+git clone https://github.com/the-isf-academy/lab-lists-YOUR-GITHUB-USERNAME.git
 ```
 
-{{< code-action >}} To start, change the value of the variables `my_name` and `friend_name` to anything you want. Something like:
+
+{{< code-action >}} To start, open the file `list-exercises.py` and change the value of the variables `my_name` and `friend_name` to anything you want. Something like:
 
 ```python
 #VARIABLES
@@ -78,7 +64,24 @@ In the loop above, `thing` is a variable that we use to store each element withi
 
 {{< code-action >}} Try changing `thing` to a more descriptive word in both lines, like `sweet` or `dessert_item` and see if the output changes.
 
-*Can you think of another way to print each element of a list?*
+
+## C. LOOPING THROUGH PART OF A LIST
+To give you more options, you can specify a range for your for-loop.
+
+```python
+print("But then they realized they ran out of money, so they can only buy 4 desserts. They decide to buy...")
+for i in range(1, 6):
+    print(cs1_dessert_list[i])
+```
+
+**Oops! This code has an error!**
+
+The first four desserts in the cs1_dessert_list list are ice cream, brownies, mochi, and timtams.
+But our code prints out mango sago, pumpking pie, tiramisu, and cheesecake. 
+
+{{< code-action >}} Change the code to print out the first 4 desserts only.
+
+
 
 ## C. Transforming Lists 
 
@@ -86,13 +89,14 @@ Now, we will utilize a functional programming approach to transform lists. You w
 
 {{< code-action >}} `reverse_list()` takes a list of numbers as an arguement and returns a list with the elements in reverse.
 
+{{< code-action >}} `sort_list()` takes a list of strings or numbers as an arguement and returns a list with each element in alphabetical or ascending order. 
+
 {{< code-action >}} `square_list()` takes a list of numbers as an arguement and returns a list with each element squared. 
 
 {{< code-action >}} `capitalize_list()` takes a list of strings as an arguement and returns a list with the first letter of element capitalized. 
 
-{{< code-action >}} `allcaps_list()` takes a list of strings as an arguement and returns a list with each element in all capital letter. 
 
-You can test your functions by running: 
+You can test your functions by running `list_transformations_view.py`: 
 
 ```shell
 python3 list_transformations_view.py 
@@ -102,14 +106,16 @@ Correctly written functions will output:
 
 ```shell
 --Number List Transformations---
-Initial Number List: [5, 10, 20, 15, 30]
-Numbers revered: [30, 15, 20, 10]
-Numbers squared: [25, 100, 400, 225, 900] 
+Initial Number List: [25, 10, 20, 15, 5]
+Numbers revered: [5, 15, 20, 10, 25]
+Numbers sorted: [5, 10, 15, 20, 25]
+Numbers squared: [25, 100, 225, 400, 625] 
 
 --Word List Transformations---
 Inital Word list: ['hello', 'banana', 'office', 'pie']
-Words capitalized: ['Hello', 'Banana', 'Office', 'Pie']
-Words all caps: ['HELLO', 'BANANA', 'OFFICE', 'PIE']
+Words reversed: ['pie', 'office', 'banana', 'hello']
+Words sorted: ['banana', 'hello', 'office', 'pie']
+Words capitalized: ['Banana', 'Hello', 'Office', 'Pie']
 ```
 
 <br>
@@ -120,13 +126,15 @@ Below are a few helpful functions to transform the elements in the lists.
 |:-:|:-:|:-:|:-:|
 | append(element)  | lists  | adds an element to the end of a list  |  my_list.append("lemonade") |
 | capitalize()  | strings  | capitalizes the first letter in a string | my_string.capitalize()  |
-| upper()  | strings  | converts all letters in the string to uppercase | my_string.upper()  |
+| sort()  | strings, numbers  | organizes elements in a list | my_list.sort()  |
 
 
 
 ## D. Deliverables
-For this lab, you should submit the following:
+For this lab, you should push your respository with the following:
 
-- The your lab_0.py file with the code you wrote for each of the parts
+- list-exercises.py
+- list_transformations.py
+- list_transformations_view.py 
 - Your Google Doc with responses to the checkpoint questions
 
