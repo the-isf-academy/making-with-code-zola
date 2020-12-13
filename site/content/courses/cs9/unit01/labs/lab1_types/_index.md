@@ -8,42 +8,80 @@ replace links to isf repo <br>
 fix modulo link (functions lesson in unit 0)
 {{< /devnote >}}
 
+In the [functional programming lab]({{< ref "/courses/cs9/unit01/labs/lab0_functional_programming">}}), we started 
+focusing on how functions transform their inputs into outputs. Let's visualize
+this:
+
+![Functional view of the double function](fig1.png)
+
+We're not so focused on how the function gets its work done as we are on what
+goes in and what comes out. This unlocks a powerful new way of breaking down
+problems: we can think about how functions could be connected together. How do
+you quadruple a number? Just double it, and then double the result: 
+
+![Functional view of the quadruple function](fig2.png)
+
+This might not seem like a very big deal. It's too easy. But you will soon see
+that much more difficult problems can often be broken down into simpler
+functions by thinking about how each function transforms an input into an
+output.
 
 ## Part 1: Thinking about types
 
-In this part, we'll do some thinking but no programming.
+But how can we talk precisely about what goes in to functions and what comes
+out? You have already met a bunch of different kinds of objects in Python: `1`,
+`2.55`, `True`, `"avuncular"`, `None`. Each of these has a **type**. When we
+talk about what goes in to functions and what comes out, we won't talk about
+particular inputs (who cares if you double `7` or `9`? The point is you can't
+double `False`). We'll talk about the **types** of objects that functions
+operate on. Everything has a type. Here are a few types that you already know:
 
-✏️ **Work with your table to fill in the following table. For each function describe what type the function would take as an input, and what type the function would return as output.**
+| Type     | Examples        | Description                                                                                                                          |
+| -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `int`    | 145, -200       | Integers, just like you know them from math class :)                                                                                 |
+| `float`  | 1.1115, 9.08    | Decimal numbers. They're called `float` because of [how they are stored](https://en.wikipedia.org/wiki/Floating-point_arithmetic)    |
+| `str`    | "apple", "x"    | Strings, or sequences of characters. Careful! `5` is an `int` but `"5"` is a `str`.                                                  |
+| `bool`   | `True`, `False` | Booleans, or True/False values. Named for George Boole, who spent a lot of time thinking about them.                                 |
+| `list`   | `[1, 2, 3]`     | A `list` holds other objects.                                                                                                        |
+
+FYI, every type is also a function which turns its argument into that type, if
+it's possible. So `int(3.33333)` becomes `3`, `str(True)` becomes `"True"`, and
+`bool(0)` becomes `False`. But `list(False)` is an error, because there's no
+sensible way to turn `False` into a list. 
+Python's attitude toward types is pretty casual; even if
+something is not quite the right type, we'll make it work if we can. Other
+languages are *much* stricter, requiring every variable to specify its type, and
+requiring every function to specify what type it accepts and what type it
+returns. There are tradeoffs, and you'll probably develop an opinion on which
+you prefer once you learn a few more programming languages. 
+
+{{< write-action >}} **Work with your table to fill in the following table. For each function describe what type the function would take as an input, and what type the function would return as output.**
 
 | Function                                                         | Input type(s) | Output type |
 |------------------------------------------------------------------|---------------|-------------|
-| Square root of a number                                          |               |             |
-| Multiplication of two numbers                                    |               |             |
-| `>`                                                              |               |             |
-| `not`                                                            |               |             |
+| Square root of a number                                          | float         | float       |
+| Multiplication of two integers                                   |               |             |
 | Average of a list of numbers                                     |               |             |
 | A function that gives all the factors of a number                |               |             |
 | A function to check if a word is a curse word                    |               |             |
 | A function that assigns a friendliness score to a sentence       |               |             |
 | A function that takes a website URL and returns the page content |               |             |
 | A function that counts the number of sentences in a paragraph    |               |             |
+| `>`                                                              |               |             |
+| `not`                                                            |               |             |
 
 You may either write this table on paper, or copy it into a document on your computer. You won't turn this in. Once you are confident in your answers (and confident everyone in your group can explain them) check with a teacher.
 
-
 ## Part 2: Jotto
 
-In this part, we are going to write a bunch of functions and use them to write a
-simple word game called [Jotto](https://en.wikipedia.org/wiki/Jotto). Your goal
-is to guess a secret five-letter word. Each time you guess, you will be told
+In this part, you are going to program a word game called [Jotto](https://en.wikipedia.org/wiki/Jotto), where
+the goal is to guess a secret five-letter word. Each time the player guesses, they will be told
 how many of the letters are correct (even if they're not in the right place).
-
 
 {{< local >}}
 {{< expand "Collaborating with GitHub" >}}
 
 For this lab, use the following link to create a repo for your lab work. This will be a group assignment, so you will form a team with your table group and share one Github repository.
-
 
 If you are in **CS 1**, [click here](https://classroom.github.com/a/r13vhXjj).
 
@@ -74,7 +112,30 @@ You will likely run into this over the course of this lab. Try it out on your ow
 
 {{< expand "Writing the game" >}}
 
-The game itself is in `lab_01_01.py`, and is coded in just a dozen lines. The reason this is so short is that it relies on some powerful helper functions defined in `helper_functions.py`. This is where you come in! It's your job to complete these help functions. Once you complete them, `lab_01_01.py` should work.
+The game itself is in `lab_01_01.py`, and is coded in just a dozen lines. The reason this is so short is that it relies on some powerful helper functions defined in `helper_functions.py`. This is where you come in! It's your job to complete these helper functions. Once you complete them, `lab_01_01.py` should work. If you think about Jotto the way you thought about programs in the first unit, you might describe it like this:
+
+```
+To play Jotto:
+    Get the 10,000 most common English words. 
+    Filter all the words to find legal words (five letters, no duplicates)
+    Choose one legal word as the secret word.
+    Ask the player to guess a word. 
+    Until the guess equals the secret word:
+        Tell the player how many letters the guessed word shares with the secret word.
+        Ask the player to guess another word. 
+    Congratulate the player.
+```
+
+Actually, this almost exactly matches the code in `lab_01_01.py`. If we think about this in 
+functional terms, we can see that we really just need to write a few functions:
+
+![Functional view of Jotto](fig3.png)
+
+And the trickiest function, `get_five_letter_words_without_duplicate_letters`,
+could be broken down even more, using two more functions: 
+        
+![Decomposing get_five_letter_words_without_duplicate_letters](fig4.png)
+
 
 💻 **Collaborate with each member of your group to write each function in `helper_functions.py`. Once your group has come to a consensus on a function and tested your solution, one member will push their code to Github. Then, everyone else can use git pull to get the code in your local lab directory.**
 
