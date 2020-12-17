@@ -1,5 +1,5 @@
 ---
-title: 0. Lists
+title: 1. Lists
 type: labs
 ---
 
@@ -13,12 +13,12 @@ We call lists a **data structure** because they give structure to data. They put
 
 {{< code-action >}} Start by cloning your `lab-lists` repositor in your `cs9` folder. 
 ```shell
-cd cs9/unit_00
+cd cs9/unit_01
 git clone https://github.com/the-isf-academy/lab-lists-YOUR-GITHUB-USERNAME.git
 ```
 
 
-{{< code-action >}} To start, open the file `list-exercises.py` and change the value of the variables `my_name` and `friend_name` to anything you want. Something like:
+{{< code-action >}} To start, open the file `list_exercises.py` and change the value of the variables `my_name` and `friend_name` to anything you want. Something like:
 
 ```python
 #VARIABLES
@@ -35,17 +35,6 @@ friend_name = "Eva"
 0. len(cs1_dessert_list)
 0. cs1_dessert_list[100] (Error! Why?)
 0. my_name + " likes to eat " + cs1_dessert_list[0] + " but " + friend_name + " likes to eat " + cs1_dessert_list[1]
-
-
-{{< checkpoint >}}
-Answer the following check-in questions on your group's Google doc before moving on. 
-
-
-0. How do you print a specific elemement in a list?
-0. How do you print the length of a list? 
-0. Why did cs1_dessert_list[100] result in an error? 
-
-{{< /checkpoint >}}
 
 
 ## B. Looping through a list
@@ -65,7 +54,7 @@ In the loop above, `thing` is a variable that we use to store each element withi
 {{< code-action >}} Try changing `thing` to a more descriptive word in both lines, like `sweet` or `dessert_item` and see if the output changes.
 
 
-## C. LOOPING THROUGH PART OF A LIST
+## C. Looping Through Part of a List 
 To give you more options, you can specify a range for your for-loop.
 
 ```python
@@ -83,28 +72,48 @@ But our code prints out mango sago, pumpking pie, tiramisu, and cheesecake.
 
 
 
-## C. Transforming Lists 
+## D. Transforming Lists 
 
-Now, we will utilize a functional programming approach to transform lists. You will code the following functions in the `list_transformations.py` file:
+Now, we will utilize a functional programming approach to transform lists. 
 
-{{< code-action >}} `reverse_list()` takes a list of numbers as an arguement and returns a list with the elements in reverse.
-
-{{< code-action >}} `sort_list()` takes a list of strings or numbers as an arguement and returns a list with each element in alphabetical or ascending order. 
-
-{{< code-action >}} `square_list()` takes a list of numbers as an arguement and returns a list with each element squared. 
-
-{{< code-action >}} `capitalize_list()` takes a list of strings as an arguement and returns a list with the first letter of element capitalized. 
+{{< figure src="images/courses/cs9/unit00/00_functions_grid.png" width="400px">}}
 
 
-You can test your functions by running `list_transformations_view.py`: 
+You will code the following functions in the `list_transformations.py` file:
 
-```shell
-python3 list_transformations_view.py 
-```
+{{< code-action >}} `reverse_list()` 
+- Paramter: a list of any data type 
+- Output: a new list with the elements in reverse
 
-Correctly written functions will output: 
+{{< code-action >}} `square_list()` 
+- Parameter: a list of numeric items 
+- Output: a new list with each element squared
 
-```shell
+{{< code-action >}} `capitalize_list()` 
+- Parameter: a list of strings
+- Output: a new list with the first letter of each item capitalized
+
+{{< code-action >}} `sort_list()` 
+- Parameter: a list of numeric items or a list of strings
+- Output: a new list with items organized numerically or alphabetically 
+
+<br>
+
+Here are a few helpful functions to transform the elements in the lists. 
+
+| Function  | Data Type  | Explanation  |  Example |
+|:-:|:-:|:-:|:-:|
+| append(element)  | lists  | adds an element to the end of a list  |  my_list.append("lemonade") |
+| capitalize()  | strings  | capitalizes the first letter in a string | my_string.capitalize()  |
+| sort()  | strings, numbers  | organizes elements in a list | my_list.sort()  |
+
+<br>
+
+Correctly written functions will output the below when `list_transformations_test.py` is ran.
+
+```shell 
+> python list_transformations_test.py
+
 --Number List Transformations---
 Initial Number List: [25, 10, 20, 15, 5]
 Numbers revered: [5, 15, 20, 10, 25]
@@ -120,21 +129,35 @@ Words capitalized: ['Banana', 'Hello', 'Office', 'Pie']
 
 <br>
 
-Below are a few helpful functions to transform the elements in the lists. 
-
-| Function  | Data Type  | Explanation  |  Example |
-|:-:|:-:|:-:|:-:|
-| append(element)  | lists  | adds an element to the end of a list  |  my_list.append("lemonade") |
-| capitalize()  | strings  | capitalizes the first letter in a string | my_string.capitalize()  |
-| sort()  | strings, numbers  | organizes elements in a list | my_list.sort()  |
 
 
 
-## D. Deliverables
-For this lab, you should push your respository with the following:
+{{< checkpoint >}}
+Answer the following exit questions on your Google doc before submitting this lab:
 
-- list-exercises.py
-- list_transformations.py
-- list_transformations_view.py 
+0. What is a list and why is it useful? 
+0. What are the benefits of using a functional programming approach to list transformations?
+0. How could you have utilized lists in your Unit 0 project?
+
+
+{{< /checkpoint >}}
+
+## E. Deliverables
+For this lab, you should submit the following:
+
+- `lab-lists` repository
+    - list_exercises.py
+    - list_transformations.py
+    - list_transformations_view.py 
 - Your Google Doc with responses to the checkpoint questions
+
+## F. Extension
+In section D, you utilized the `sort()` function to organize elements of a list. Python takes care of the logic behind the sorting for you. All you have to do is tell Python which list to sort. 
+
+The extention activity is is for you to think through the logic of the sorting algothirm. In your Google Doc, write pseudocode for the `sort()` function. 
+
+Some questions to consider:
+- What are the steps involved in sorting a list of items? 
+- What if the list contains numbers? What if the list contains strings? 
+- What if the list contains numbers and strings? 
 
