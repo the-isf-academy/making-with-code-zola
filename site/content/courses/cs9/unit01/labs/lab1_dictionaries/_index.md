@@ -201,7 +201,9 @@ For this lab, you should submit the following:
     - `libraryu_test.py`
 - Your Google Doc with responses to the checkpoint questions
 
-## D. Extension
+## E. Extension
+As the CS game library currently stands, for each game the only available data is  game title and the genre. Typically, libraries contain many more instances of metadata for each resource. For example, book metadata contains the title, author, date published, and more. 
 
+The extension actvitiy is to create a model for a more complex . Each game must 
 
 
