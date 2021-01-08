@@ -55,7 +55,7 @@ requiring every function to specify what type it accepts and what type it
 returns. There are tradeoffs, and you'll probably develop an opinion on which
 you prefer once you learn a few more programming languages. 
 
-{{< write-action >}} **Work with your table to fill in the following table. For each function describe what type the function would take as an input, and what type the function would return as output.**
+{{< write-action >}} **Work with your group in your Google Slide to following table. For each function describe what type the function would take as an input, and what type the function would return as output.**
 
 | Function                                                         | Input type(s) | Output type |
 |------------------------------------------------------------------|---------------|-------------|
@@ -70,7 +70,7 @@ you prefer once you learn a few more programming languages.
 | `>`                                                              |               |             |
 | `not`                                                            |               |             |
 
-You may either write this table on paper, or copy it into a document on your computer. You won't turn this in. Once you are confident in your answers (and confident everyone in your group can explain them) check with a teacher.
+Once you are confident in your answers (and confident everyone in your group can explain them) check with a teacher.
 
 ##  Part 2: Building sentences with grammar
 
@@ -83,6 +83,13 @@ functions like `add` and `subtract`, which combine numbers, we will use
 functions like `noun_phrase`, which combines words into parts of speech. 
 
 ![Functional view of syntax](fig4.png)
+
+Here's an example of how we can use these functions to build a sentence. 
+These functions are very strict about what kinds of inputs they accept, because
+we want to make sure we don't create ill-formed sentences like "The my mouse
+hungry milk milk milk."
+
+![Building sentences](fig5.png)
 
 {{< expand "A little bit of English grammar" >}}
 The diagram above shows that the function `noun_phrase` combines an adjective
@@ -104,13 +111,6 @@ and "chase." So to make a full `VerbPhrase`, we need to comine a
 Finally, `sentence` makes a `Sentence` from a `NounPhrase` and a `VerbPhrase`.
 Your chewing sounds annoy my hungry little mouse. 
 {{< /expand >}}
-
-Here's an example of how we can use these functions to build a sentence. 
-These functions are very strict about what kinds of inputs they accept, because
-we want to make sure we don't create ill-formed sentences like "The my mouse
-hungry milk milk milk."
-
-![Building sentences](fig5.png)
 
 ### Checking types in Python
 
@@ -175,14 +175,15 @@ editing functions in one file; they could probably collaborate effectively
 without it. Depends when we want to cross that bridge.
 {{< /devnote >}}
 
-{{< expand "Working together with Git" >}}
+### *Working with Git*
 
 For this lab, use the following link to create a repo for your lab work. This will be a group assignment, so you will form a team with your table group and share one Github repository.
 
 - If you are in **CS 1**, [click here](#TODO).
 - If you are in **CS 2**, [click here](#TODO).
 
-💻 **Clone the lab repo into your `unit_01` directory and `cd` inside.**
+{{< code-action >}} **Create a `unit_01` directory in your `cs9` folder and clone the lab repository in it.** 
+To create a new directory use the command: `mkdir folder_name`. 
 
 This lab will probably be the first time you use Github as a team. The basic workflow is still the same, with one slight change:
 
@@ -194,22 +195,264 @@ This lab will probably be the first time you use Github as a team. The basic wor
 
 Because multiple people will be working on the same project, you will not be the only one changing the project. This means that sometimes there will be code on Github which you do not have in your local repository.
 
-When you begin working on a project after taking a break and before you begin the workflow above, use `git pull` to pull any new changes from Github to your local repository.
+When you begin working on a project after taking a break, use `git pull` to pull any new changes from Github to your local repository.
 
-💻 **Have one member of your group make a change to the grammar.py file and then make sure everyone can get the changes in their local repositories**
+{{< code-action >}} **Have one member of your group make a change to the grammar.py file and then make sure everyone can get the changes in their local repositories**
 
 If you've already got code written, this will merge your code with code your teammates put on GitHub. Sometimes, changes to your teammates' code will conflict with the changes you made. In this case, you'll need to use Atom to select which changes you want to use.
 
 You will likely run into this over the course of this lab. Try it out on your own, and let the teaching team know if you get stuck.
 
-{{< /expand >}}
+<hr>
 
-{{< expand "Random words" >}}
+### 3a: Love poems
 
-{{< code-action >}} Before we start coding, let's get familiar with the functions provided in
-`vocabulary.py`. Run `python -i vocabulary.py`. This loads everything in `vocabulary` and then enters 
-interactive mode. Try the following. (You'll get different results, of course,
-because they are random.)
+The repository you cloned contains four Python files:
+
+- `grammar.py` has a bunch of functions for combining and transforming
+  grammatical types. **These are unfinished; it's your job to write them.**
+- `poetry.py` has functions for writing beautiful auto-poems. Once `grammar.py`
+  is complete, you will be able to generate poems.
+- `vocabulary.py` has a bunch of functions for picking random words. This is explored in the extension activity. 
+- `grammatical_types.py` defines types like `Noun`, `Adjective`, and `TransitiveVerb`.
+  You won't edit this file, but it is useful as a reference for parts of speech.
+
+
+{{< code-action >}} **Open `grammar.py` in Atom.** This module is full of functions
+which transform parts of speech. Let's look at the first function:
+
+```python3 {linenos=table}
+def pluralize(noun):
+    "Noun -> PluralNoun"
+    assert type(noun) == Noun
+    if noun.endswith("s") or noun.endswith("ch") or noun.endswith("sh"):
+        return PluralNoun(noun + 'es')
+    else:
+        return PluralNoun(noun + 's')
+```
+
+- The *docstring* (line 2) describes this function's *type signature*, or what goes in and
+  what comes out. `pluralize` receives a `Noun` and returns a `PluralNoun`.
+- Line 3 checks the input type. If it's not a `Noun`, the program crashes.
+- Line 4 contains a conditional checking the final letters of the noun. Most English nouns 
+  are pluralized by adding
+  "s" ("tree" becomes "trees"). But nouns ending in "s", "ch", or "sh" are pluralized 
+  by adding "es" ("beach" becomes "beaches").
+- Lines 5 and 7 create a new `PluralNoun` using the appropriate ending. All the grammatical types are
+  subclasses of `str`, so they can be combined like normal strings using the `+`
+  operator. 
+
+{{< code-action >}} **Now open `poetry.py` in Atom.** Let's look at `love_poem`:
+
+```python3 {linenos=table}
+def love_poem():
+    "() -> Poem"
+    poem = Poem()
+    poem.append("roses are red")
+    poem.append("violets are blue")
+    poem.append(pluralize(random_word(Noun)) + " are " + random_word(Adjective))
+    poem.append("and so are you.")
+    return poem
+```
+- The docstring (line 2) says this function takes no inputs and returns a
+  `Poem`.
+- `pluralize` is already finished, and it's the only function other than
+  `random_word` we'll need. So this function will work!
+- See if you can predict what this function will do. 
+
+{{< code-action >}} **Let's try it out! Run `python -i poetry.py` to load the
+`poetry` module.** Now let's have some love poems!
+
+```python3
+>>> print(love_poem())
+Roses are red
+Violets are blue
+Evenings are poisonous
+And so are you.
+```
+<hr>
+
+### 3b: Couplet
+
+Before we can run `couplet`, the next kind of poem, we'll need to implement a
+few more grammar rules in `grammar.py`. Your group will need to complete the following functions:
+- `noun_phrase`
+- `determine_noun_phrase`
+- `make_definite`
+- `make_indefinite`
+
+{{< write-action >}} **Before coding, create a function diagram with an example use case for each grammar rule in your group's Google Slide.**
+
+
+{{< code-action >}} **noun_phrase**
+
+```python3
+>>> noun_phrase(Adjective("spooky"), Noun("closet"))
+"spooky closet"
+```
+
+- Check that the first argument is an `Adjective`.
+- Check that the second argument is a `NounPhrase`.
+- Return a `NounPhrase` containing the adjective added to the noun (don't forget a
+  space between them).
+
+{{< code-action >}} **determine_noun_phrase**
+
+```python3
+>>> determine_noun_phrase(Determiner("that"), Noun("eagle"))
+"that eagle"
+```
+
+- Check that the first argument is a `Determiner`.
+- Check that the second argument is a `NounPhrase`.
+- Return a `DeterminedNounPhrase` containing the determiner added to the noun phrase 
+  (again, don't forget a space between them).
+
+{{< code-action >}} **make_definite**
+
+```python3
+>>> make_definite(NounPhrase("evil squirrel"))
+"the evil squirrel"
+```
+
+- Check that the first argument is a `NounPhrase`.
+- Use `determine_noun_phrase` to combine the noun phrase with 
+  `Determiner("the")`.
+
+{{< code-action >}} **make_indefinite**
+
+```python3
+>>> make_indefinite(NounPhrase("evil squirrel"))
+"an evil squirrel"
+>>> make_indefinite(NounPhrase("squirrel"))
+"a squirrel"
+```
+- Check that the first argument is a `NounPhrase`.
+- Check whether the noun phrase starts with a vowel sound 
+  (using `starts_with_vowel_sound`, described above). 
+  - If so, use `Determiner("an")`
+  - If not, use `Determiner("a")`
+- Use `determine_noun_phrase` to combine the noun phrase with 
+  the determiner.
+
+{{< code-action >}} **Once these functions are finished, run `python -i poetry.py`
+again and try out the `couplet` function.**
+
+```python3
+>>> print(couplet())
+```
+<hr>
+
+### 3c:Limerick
+
+There's one more kind of poem, a limerick. We'll need to implement a few more
+grammar rules. Your group will need to complete the following functions:
+- `verb_phrase`
+- `pase_tense_transitive`
+- `past_tense_intrasitive`
+- `verb_phrase_ntrasitive`
+
+{{< write-action >}}  **Before coding, create a function diagram with an example use case for each grammar rule in your group's Google Slide.**
+
+{{< code-action >}} **verb_phrase**
+
+```python3
+>>> verb_phrase(Adverb("easily"), VerbPhrase("crushed her enemies"))
+"easily crushed her enemies"
+```
+
+- Check that the first argument is an `Adverb`.
+- Check that the second argument is a `VerbPhrase`.
+- Combine them into a `VerbPhrase`.
+
+{{< code-action >}} **past_tense_transitive**
+
+```python3
+>>> past_tense_transitive(VerbTransitive("avoid")
+"avoided"
+```
+
+- Check that the first argument is a `TransitiveVerb`. Make sure it's not a 
+  `PastTenseTransitiveVerb` or you might accidentally conjugate a verb twice, 
+  resulting in something like "avoideded".
+- Choose an appropriate ending to conjugate the verb in the past tense. 
+  If the verb ends in 'e', add 'd'. Otherwise, add 'ed'.
+- This won't work for irregular verbs (e.g. the past tense of 'go' is 'went'), 
+  but let's just ignore that for now. You can come back later and add logic for 
+  some irregular verbs if you're feeling ambitious.
+- Return a `PastTenseTransitiveVerb` consisting of the verb plus its new ending.
+
+
+{{< code-action >}} **past_tense_intransitive**
+
+```python3
+>>> past_tense_transitive(VerbTransitive("molt")
+"molted"
+```
+
+- Check that the first argument is an `IntransitiveVerb`. Again, make sure it's not a 
+  `PastTenseIntransitiveVerb`.
+- Choose an appropriate ending to conjugate the verb in the past tense. 
+  If the verb ends in 'e', add 'd'. Otherwise, add 'ed'. Again, don't worry
+  about irregular verbs. The English language has only itself to blame for this
+  mess.
+- Return a `PastTenseIntransitiveVerb` consisting of the verb plus its new ending.
+
+{{< code-action >}} **verb_phrase_transitive**
+
+Intransitive verbs like "quit" are already verb phrases because they can
+form complete sentences (I quit). But transitive verbs like "take" need a noun phrase.
+You can't just take, you have to take something. 
+
+```python3
+>>> verb = past_tense_transitive(TransitiveVerb("transform"))
+>>> np = make_definite(noun_phrase(Adjective("evil"), Noun("squirrel")))
+>>> verb_phrase_transitive(verb, np)
+"transformed the evil squirrel"
+```
+- Check that the first argument is a `TransitiveVerb`.
+- Check that the second argument is a `NounPhrase`.
+- Return a VerbPhrase consisting of the verb and the noun phrase.
+
+{{< code-action >}} **Once these functions are finished, run `python -i poetry.py`
+again and try out the `limerick` function.** Note that `limerick` has three
+arguments, a name and two pronouns.
+
+```python3
+>>> print(limerick("Alex", "he", "his"))
+```
+
+<hr>
+
+## Deliverables
+
+You now have a powerful set of tools to write auto-poetry. See what else you can
+come up with. We'll share the best poems your computers are able to come up
+with!
+
+For this lab, you should submit the following:
+- The Git Repo
+- Your Google Slide
+
+*By the way, if you found this lab interesting, you might be interested in
+exploring computational linguistics, or using CS to explore how language works.
+This lab just scratched the tiniest layer of the surface of this wonderful
+field. Here, we generated sentences. What about the reverse, trying to
+understand language produced by humans?*  
+
+
+<hr>
+
+## Extention: A New Kind of Generator
+
+Let's take a look at `poetry.py`. Each poem is its own function utilizing the functions from `grammar.py`. The extension activity to create a new phrase generator of your creation. It can be anything from a haiku generator, to a compliement generater, to an insult generator. It's up to you!
+
+{{< code-action >}} **Create a new type of phrase generator by implementing the grammar rules in `grammar.py` and the random word functionality in `vocabulary.py`.**
+
+
+### Random Words
+
+Takea look at the functions provided in `vocabulary.py`. Run `python -i vocabulary.py`. This loads everything in `vocabulary` and then enters interactive mode. Try the following. (You'll get different results, of course, because they are random.)
 
 ```python3
 >>> random_word(Noun)
@@ -227,7 +470,7 @@ NoWordError: Couldn't find a Noun with conditions: rhymes with orange
 
 Whoa! `random_word` is super powerful. Here is `random_word`'s type signature:
 
-### random_word
+**random_word**
 
 Returns one or more random words, matching the specified conditions.
 
@@ -251,9 +494,10 @@ Returns one or more random words, matching the specified conditions.
 
 ---
 
-There are some other useful functions in `vocabulary`:
+There are some other useful functions in `vocabulary.py`:
 
-### rhyming_pair
+{{< expand "rhyming_pair" >}}
+
 
 Returns two rhyming words of the specified types.
 
@@ -282,7 +526,9 @@ Returns two rhyming words of the specified types.
 - Two words of *(first_word_type, second_word_type)*. See the example usage for
   how to capture each return value in a separate variable. 
 
-### count_syllables
+{{< /expand >}}
+
+{{< expand "count_syllables" >}}
 
 ```python3 
 >>> count_syllables("bogus")
@@ -295,7 +541,7 @@ Returns two rhyming words of the specified types.
 #### Returns
 - An *int*, the number of syllables
 
-### get_meter
+**get_meter**
 
 ```python3
 >>> get_meter("animal")
@@ -315,7 +561,10 @@ Returns two rhyming words of the specified types.
   syllables. The examples above show that the words are pronounced 'A-ni-mal'
   ('100'), 'HE-li-Cop-ter' ('1020'), and 'In-ex-CUS-a-ble' ('20100').
 
-### starts_with_vowel_sound
+{{< /expand >}}
+
+
+{{< expand "starts_with_vowel_sound" >}}
 
 ```python3
 >>> starts_with_vowel_sound("horrible hounds")
@@ -330,225 +579,7 @@ True
 #### Returns
 - *bool*, `True` when the first word of `text` starts with a vowel sound.
   `False` otherwise.
-
 {{< /expand >}}
 
-{{< expand "Love poems" >}}
-
-The repository you cloned contains four Python files:
-
-- `vocabulary.py` has a bunch of functions for picking random words. You just
-  played with these.
-- `grammatical_types.py` defines types like `Noun`, `Adjective`, and `TransitiveVerb`.
-  You won't edit this file, but it is useful as a reference for parts of speech.
-- `grammar.py` has a bunch of functions for combining and transforming
-  grammatical types. **These are unfinished; it's your job to write them.**
-- `poetry.py` has functions for writing beautiful auto-poems. Once `grammar.py`
-  is complete, you will be able to generate poems.
 
 
-{{< code-action >}} Open `grammar.py` in Atom. This module is full of functions
-which transform parts of speech. Let's look at the first function: 
-
-```python3 {linenos=table}
-def pluralize(noun):
-    "Noun -> PluralNoun"
-    assert type(noun) == Noun
-    if noun.endswith("s") or noun.endswith("ch") or noun.endswith("sh"):
-        return PluralNoun(noun + 'es')
-    else:
-        return PluralNoun(noun + 's')
-```
-
-- The *docstring* (line 2) describes this function's *type signature*, or what goes in and
-  what comes out. `pluralize` receives a `Noun` and returns a `PluralNoun`.
-- Line 3 checks the input type. If it's not a `Noun`, the program crashes.
-- Line 4 contains a conditional checking the final letters of the noun. Most English nouns 
-  are pluralized by adding
-  "s" ("tree" becomes "trees"). But nouns ending in "s", "ch", or "sh" are pluralized 
-  by adding "es" ("beach" becomes "beaches").
-- Lines 5 and 7 create a new `PluralNoun` using the appropriate ending. All the grammatical types are
-  subclasses of `str`, so they can be combined like normal strings using the `+`
-  operator. 
-
-{{< code-action >}} Now open `poetry.py` in Atom. Let's look at `love_poem`:
-
-```python3 {linenos=table}
-def love_poem():
-    "() -> Poem"
-    poem = Poem()
-    poem.append("roses are red")
-    poem.append("violets are blue")
-    poem.append(pluralize(random_word(Noun)) + " are " + random_word(Adjective))
-    poem.append("and so are you.")
-    return poem
-```
-- The docstring (line 2) says this function takes no inputs and returns a
-  `Poem`.
-- `pluralize` is already finished, and it's the only function other than
-  `random_word` we'll need. So this function will work!
-- See if you can predict what this function will do. 
-
-{{< code-action >}} Let's try it out! Run `python -i poetry.py` to load the
-`poetry` module. Now let's have some love poems!
-
-```python3
->>> print(love_poem())
-Roses are red
-Violets are blue
-Evenings are poisonous
-And so are you.
-```
-
-{{< /expand >}}
-
-{{< expand "Couplet" >}}
-
-Before we can run `couplet`, the next kind of poem, we'll need to implement a
-few more grammar rules in `grammar.py`. Here's what you need to do:
-
-### noun_phrase
-
-```python3
->>> noun_phrase(Adjective("spooky"), Noun("closet"))
-"spooky closet"
-```
-
-- Check that the first argument is an `Adjective`.
-- Check that the second argument is a `NounPhrase`.
-- Return a `NounPhrase` containing the adjective added to the noun (don't forget a
-  space between them).
-
-### determine_noun_phrase
-
-```python3
->>> determine_noun_phrase(Determiner("that"), Noun("eagle"))
-"that eagle"
-```
-
-- Check that the first argument is a `Determiner`.
-- Check that the second argument is a `NounPhrase`.
-- Return a `DeterminedNounPhrase` containing the determiner added to the noun phrase 
-  (again, don't forget a space between them).
-
-### make_definite
-
-```python3
->>> make_definite(NounPhrase("evil squirrel"))
-"the evil squirrel"
-```
-
-- Check that the first argument is a `NounPhrase`.
-- Use `determine_noun_phrase` to combine the noun phrase with 
-  `Determiner("the")`.
-
-### make_indefinite
-
-```python3
->>> make_indefinite(NounPhrase("evil squirrel"))
-"an evil squirrel"
->>> make_indefinite(NounPhrase("squirrel"))
-"a squirrel"
-```
-- Check that the first argument is a `NounPhrase`.
-- Check whether the noun phrase starts with a vowel sound 
-  (using `starts_with_vowel_sound`, described above). 
-  - If so, use `Determiner("an")`
-  - If not, use `Determiner("a")`
-- Use `determine_noun_phrase` to combine the noun phrase with 
-  the determiner.
-
-{{< code-action >}} Once these functions are finished, run `python -i poetry.py`
-again and try out the `couplet` function.
-
-```python3
->>> print(couplet())
-```
-{{< /expand >}}
-
-{{< expand "Limerick" >}}
-
-There's one more kind of poem, a limerick. We'll need to implement a few more
-grammar rules. 
-
-### verb_phrase
-
-```python3
->>> verb_phrase(Adverb("easily"), VerbPhrase("crushed her enemies"))
-"easily crushed her enemies"
-```
-
-- Check that the first argument is an `Adverb`.
-- Check that the second argument is a `VerbPhrase`.
-- Combine them into a `VerbPhrase`.
-
-### past_tense_transitive
-
-```python3
->>> past_tense_transitive(VerbTransitive("avoid")
-"avoided"
-```
-
-- Check that the first argument is a `TransitiveVerb`. Make sure it's not a 
-  `PastTenseTransitiveVerb` or you might accidentally conjugate a verb twice, 
-  resulting in something like "avoideded".
-- Choose an appropriate ending to conjugate the verb in the past tense. 
-  If the verb ends in 'e', add 'd'. Otherwise, add 'ed'.
-- This won't work for irregular verbs (e.g. the past tense of 'go' is 'went'), 
-  but let's just ignore that for now. You can come back later and add logic for 
-  some irregular verbs if you're feeling ambitious.
-- Return a `PastTenseTransitiveVerb` consisting of the verb plus its new ending.
-
-
-### past_tense_intransitive
-
-```python3
->>> past_tense_transitive(VerbTransitive("molt")
-"molted"
-```
-
-- Check that the first argument is an `IntransitiveVerb`. Again, make sure it's not a 
-  `PastTenseIntransitiveVerb`.
-- Choose an appropriate ending to conjugate the verb in the past tense. 
-  If the verb ends in 'e', add 'd'. Otherwise, add 'ed'. Again, don't worry
-  about irregular verbs. The English language has only itself to blame for this
-  mess.
-- Return a `PastTenseIntransitiveVerb` consisting of the verb plus its new ending.
-
-### verb_phrase_transitive
-
-Intransitive verbs like "quit" are already verb phrases because they can
-form complete sentences (I quit). But transitive verbs like "take" need a noun phrase.
-You can't just take, you have to take something. 
-
-```python3
->>> verb = past_tense_transitive(TransitiveVerb("transform"))
->>> np = make_definite(noun_phrase(Adjective("evil"), Noun("squirrel")))
->>> verb_phrase_transitive(verb, np)
-"transformed the evil squirrel"
-```
-- Check that the first argument is a `TransitiveVerb`.
-- Check that the second argument is a `NounPhrase`.
-- Return a VerbPhrase consisting of the verb and the noun phrase.
-
-{{< code-action >}} Once these functions are finished, run `python -i poetry.py`
-again and try out the `limerick` function. Note that `limerick` has three
-arguments, a name and two pronouns. 
-
-```python3
->>> limerick("Alex", "he", "his")
-```
-
-{{< /expand >}}
-
-{{< expand "More poems" >}}
-You now have a powerful set of tools to write auto-poetry. See what else you can
-come up with. We'll share the best poems your computers are able to come up
-with!
-
-By the way, if you found this lab interesting, you might be interested in
-exploring computational linguistics, or using CS to explore how language works.
-This lab just scratched the tiniest layer of the surface of this wonderful
-field. Here, we generated sentences. What about the reverse, trying to
-understand language produced by humans?  
-{{< /expand >}}
