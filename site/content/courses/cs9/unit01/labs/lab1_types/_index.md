@@ -447,7 +447,7 @@ understand language produced by humans?*
 
 Let's take a look at `poetry.py`. Each poem is its own function utilizing the functions from `grammar.py`. The extension activity to create a new phrase generator of your creation. It can be anything from a haiku generator, to a compliement generater, to an insult generator. It's up to you!
 
-{{< code-action >}} **Create a new type of phrase generator by implementing the grammar rules in `grammar.py` and the random word functionality in `vocabulary.py`.**
+{{< code-action >}} **Create a new type of phrase generator by implementing the grammar rules in `grammar.py` and the random word functionality in `vocabulary.py`. Be sure to reference `poetry.py` for syntax and formatting tips.**
 
 
 ### Random Words
