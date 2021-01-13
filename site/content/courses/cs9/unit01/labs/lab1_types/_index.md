@@ -8,9 +8,18 @@ replace links to isf repo <br>
 fix modulo link (functions lesson in unit 0)
 {{< /devnote >}}
 
-In the [functional programming lab]({{< ref "/courses/cs9/unit01/labs/lab0_functional_programming">}}), we started 
-focusing on how functions transform their inputs into outputs. Here is a
-visualization of the function `double`. We are not so focused on how the function gets its 
+In this lab we'll explore the idea of functional programming and data types. In functional programming, we think of functions as transformations. They take any number of **arguments** and they change them into a **return value**.
+
+Remember the structure of a Python function?
+
+```python
+def double(number):
+  return 2 * number
+```
+
+Here, `number` is the argument and `2 * number` is the return value. As its name suggests, this function returns twice `number`.
+
+Here is a visualization of the function `double`. We are not so focused on how the function gets its 
 work done as we are on what goes in and what comes out:
 
 ![Functional view of the double function](fig1.png)
