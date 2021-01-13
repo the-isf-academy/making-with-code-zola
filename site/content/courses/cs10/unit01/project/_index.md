@@ -110,9 +110,9 @@ our test harness for functionality and speed.
 
 | Score | Functionality                     | Speed                     |
 |-------|-----------------------------------|---------------------------|
-| 8     | all basic queue functions working | in the top 80% of queues\* |
-| 7     | all basic queue functions working | in the top 60% of queues\* |
-| 6     | all basic queue functions working | in the top 40% of queues\* |
+| 8     | all basic queue functions working | queue performs in the top 80% of queues in the class\* |
+| 7     | all basic queue functions working | queue speed improves by at least 5%\*\* |
+| 6     | all basic queue functions working | queue speed improves by at least 2%\*\* |
 | 5     | all basic queue functions working | –                         |
 | 4     | 3 working queue functions         | –                         |
 | 3     | 2 working queue functions         | –                         |
@@ -121,10 +121,21 @@ our test harness for functionality and speed.
 
 
 \* Queue ranking will be determined by adding each queue's iterations per
-second on each of the four basic function tests to generate a queue score.
+second on each of the Basic speed tests to generate a queue score.
 Then, we will take the percentile ranking of each queue (based on the queue 
 score) in the distribution of queues which passed all of the basic
 functionality tests.
+
+\*\* Queue performance improvements will be judged based on the difference in the time
+it takes for a queue to run all of the Basic speed tests on your first run and the time
+it takes on your last run.
+
+#### Extra Credit
+For each additional function you successfully to implement from the extension interface we will
+add 1 to your speed improvement score.
+
+So, if your queue speed improves by 1% and you implement 1 of the extension functions, you will
+reach the 6 tier.
 
 ### Criterion B: Planning and development
 > Students create personally meaningful projects through an iterative design cycle. Students’ work is
@@ -138,7 +149,7 @@ skills.
 
 | Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can thoughtfully plan a large computer science project.                       | <ul><li>A thorough ideation document.</li> <li>Updates to your project plan to account for challenges or discoveries during development</li></ul>                                                                                                                                                                                         |
+| I can thoughtfully plan a large computer science project.                       | <ul><li>An ideation document that demonstrates your thinking about a variety of approaches to the problem.</li> <li>Updates to your ideation document to account for challenges or discoveries during development</li></ul>                                                                                                                                                                                         |
 | I can iteratively develop a project using version control tools such as GitHub. | <ul><li>At least 5 regular and descriptive git commits on your project</li> <li>A stub function you wrote to stand in for a function that had not yet been developed.</li> <li>A transition from a basic set of interface functions to a more robust set (either in number or efficiency)</li></ul> |
 | I can document my software so that it is readable and usable by others.         | <ul><li>Comments for each of the functions you write for your queue's interface</li></ul>                                                                                                                                                                                                                                    |
 
@@ -156,3 +167,16 @@ use cases so that your queue works under a variety of circumstances.
 |---------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | I can identify different scenarios in which my code may be used and outline the expected functionality of my code in these instances. | <ul><li>A list of general use cases for each of your queue's functions including the expected functionality of your queue in those cases</li> <li>An identification of the edge cases (erroneous or malicious uses of your software that fall outside of the basic use cases)</li></ul> |
 | I can develop a testing strategy to ensure my code works as expected.                                                                 | <ul><li>A list of tests you will run to make sure your code works based on your use cases and responses</li> <li>Changes your made after finishing development and running your tests</li></ul>                                                                            |
+### Criterion D: Reflection on Tech and Society
+> Students demonstrate an understanding of their responsibility to society as technology creators by
+> evaluating the implications of their work. Students investigate the applications of their work to 
+> specific problems or issues.
+
+At times during development, we need to make choices about what functionalities to prioritize. These choices
+will result in improvements in some areas while resulting in degredation of others. To make these decisions,
+we must consider on practical use cases of our queues to guide our choices in development.
+
+| Learning Claim                                                                         | Possible Forms of Evidence                                                                      |
+|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| I identified a realistic use case of my queue.                        | <ul><li>A through descriprion of a possible use case of your queue with a discussion of the rationale for using a queue in your ideation document.</li></ul>  |
+| I considered the ways my chosen use case should impact the functionality of my queue and my development was influenced by these considerations.  | <ul><li>A discussion of your chosen use case's priorities for a queue ADT in your ideation document.</li><li>A function that you chose to prioritize over another function for speed improvements.</li><li>A function from the extension interface that you chose to develop to serve your use case.</li></ul>      |
