@@ -53,6 +53,9 @@ This will help other students who may want to use your bot's service.
 **You can find more documentation about what each of the files should contain within the README.md file in the
 `bot_server` directory.**
 
+### Example Bot
+Here is an example bot, [Calc Bot](https://github.com/the-isf-academy/project-networking-wolfj95), that performs the services of a basic calculator.
+
 ## Timeline
 ### cs10.1
 {{< figure src="images/courses/cs10/unit00/00_project_cs10_1.png" width="100%" >}}
