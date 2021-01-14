@@ -1,5 +1,5 @@
 ---
-title: "Unit 01: Data Structures"
+title: "Unit 01: ADTs"
 bookCollapseSection: true
 type: unit
 ---

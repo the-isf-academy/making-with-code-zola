@@ -1,13 +1,11 @@
 ---
-Title: Data Stuctures Project
+Title: ADTs Project
 ---
 
-# Unit 01 Data Structures Project
+# Unit 01 ADTs Project
 
 For this project, you will implement a queue that will be used
 to serve orders to an imaginary internet shopping company.
-
-{{< figure src="images/courses/cs10/unit00/00_project_model.png" width="100%" >}}
 
 ## Starter Code
 
@@ -62,9 +60,20 @@ contain within the README.md file in the project directory.**
 
 ## Timeline
 ### cs10.1
-{{< figure src="images/courses/cs10/unit01/01_project_cs10_1.png" width="100%" >}}
+
+| Stage               | Date                                          |
+|---------------------|-----------------------------------------------|
+| Project Introduced  | January 19, 2021                              |
+| Code Due            | February 3, 2021 (end  of Block 3 class)      |
+| Self-Assessment Due | February 5, 2021 (beginning of Block 1 class) |
+
 ### cs10.2
-{{< figure src="images/courses/cs10/unit01/01_project_cs10_2.png" width="100%" >}}
+
+| Stage               | Date                                          |
+|---------------------|-----------------------------------------------|
+| Project Introduced  | January 14, 2021                              |
+| Code Due            | February 2, 2021 (end of Block 1 class)       |
+| Self-Assessment Due | February 4, 2021 (beginning of Block 4 class) |
 
 ## Assessment
 The assessment for this project will be slightly different than
