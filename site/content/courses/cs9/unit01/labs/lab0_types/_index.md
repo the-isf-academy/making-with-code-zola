@@ -1,5 +1,5 @@
 ---
-title: 1. Types Lab
+title: 0. Types Lab
 ---
 
 # Types Lab
