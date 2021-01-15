@@ -1,6 +1,7 @@
 ---
 title: 6. Minimizing Loss Lab
 resources:
+draft: true
 ---
 {{< devnote >}}
 CS1/CS2 links

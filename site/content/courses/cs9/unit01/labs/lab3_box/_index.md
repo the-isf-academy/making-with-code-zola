@@ -1,6 +1,7 @@
 ---
 title: 3. Box and Whisker Lab
 resources:
+draft: true
 ---
 {{< devnote >}}
 CS1 / CS2 links

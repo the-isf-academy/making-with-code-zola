@@ -3,7 +3,7 @@ title: 2. Scatter Plot Lab
 resources:
 - name: Scatter plot example
   src: images/courses/cs9/unit01/01_02_scatter_plot.png
-
+draft: true
 ---
 # 2. Scatter Plot Lab
 

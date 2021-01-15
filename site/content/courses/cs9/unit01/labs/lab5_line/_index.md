@@ -3,7 +3,7 @@ title: 5. Summary Lines Lab
 resources:
 - name: Line
   src: images/courses/cs9/unit01/01_05_line.png
-
+draft: true
 ---
 {{< devnote >}}
 CS1/CS2 links

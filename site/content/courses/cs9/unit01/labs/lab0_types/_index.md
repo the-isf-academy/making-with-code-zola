@@ -186,31 +186,28 @@ without it. Depends when we want to cross that bridge.
 
 ### *Working with Git*
 
-For this lab, use the following link to create a repo for your lab work. This will be a group assignment, so you will form a team with your table group and share one Github repository.
+For this lab, use the following link to create a repo for your lab work. This will be an individual assignment, but you will work in a team with your table group.
 
-- If you are in **CS 1**, [click here](#TODO).
-- If you are in **CS 2**, [click here](#TODO).
-
-{{< code-action >}} **Create a `unit_01` directory in your `cs9` folder and clone the lab repository in it.** 
+{{< code-action >}} **First, create a `unit_01` directory in your `cs9` folder and clone the lab repository in it.** 
 To create a new directory use the command: `mkdir folder_name`. 
 
-This lab will probably be the first time you use Github as a team. The basic workflow is still the same, with one slight change:
+{{< code-action >}} Starter code for the project is provided in the
+`project-queue` repo. Download it *onto your laptop*.
 
-+ `git pull` to get any new changes from the Github repo
+```shell
+$ cd cs9/unit_01
+$ git clone https://github.com/the-isf-academy/lab-types-YOUR-GITHUB-USERNAME.git
+```
+
+{{< expand "Reminder: Basic Git Workflow" >}}
+The basic workflow is still the same:
+
 + `git status` to determine what has change
 + `git add` to add the files you've edited
 + `git commit` to write a message about what you've changed
 + `git push` to push your changes to Github
 
-Because multiple people will be working on the same project, you will not be the only one changing the project. This means that sometimes there will be code on Github which you do not have in your local repository.
-
-When you begin working on a project after taking a break, use `git pull` to pull any new changes from Github to your local repository.
-
-{{< code-action >}} **Have one member of your group make a change to the grammar.py file and then make sure everyone can get the changes in their local repositories**
-
-If you've already got code written, this will merge your code with code your teammates put on GitHub. Sometimes, changes to your teammates' code will conflict with the changes you made. In this case, you'll need to use Atom to select which changes you want to use.
-
-You will likely run into this over the course of this lab. Try it out on your own, and let the teaching team know if you get stuck.
+{{< /expand >}}
 
 <hr>
 
@@ -352,7 +349,7 @@ again and try out the `couplet` function.**
 ```
 <hr>
 
-### 3c:Limerick
+### 3c: Limerick
 
 There's one more kind of poem, a limerick. We'll need to implement a few more
 grammar rules. Your group will need to complete the following functions:

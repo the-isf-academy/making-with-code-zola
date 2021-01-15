@@ -1,6 +1,7 @@
 ---
 title:  Functional Programming Lab
 resources:
+draft: true
 ---
 
 # Functional Programming Lab

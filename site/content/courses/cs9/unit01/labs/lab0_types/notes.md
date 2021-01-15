@@ -1,3 +1,8 @@
+---
+title: Teaching notes (Hong Kong, 2019-2020)
+type: notes
+---
+
 # Types lab
 
 - Could we refactor this to focus on function execution as where types come from
