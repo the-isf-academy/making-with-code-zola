@@ -324,6 +324,7 @@ few more grammar rules in `grammar.py`. Your group will need to complete the fol
 - Check that the first argument is a `NounPhrase`.
 - Use `determine_noun_phrase` to combine the noun phrase with 
   `Determiner("the")`.
+- Return the `DeterminedNounPhrase` you created.
 
 {{< code-action >}} **make_indefinite**
 
@@ -340,6 +341,7 @@ few more grammar rules in `grammar.py`. Your group will need to complete the fol
   - If not, use `Determiner("a")`
 - Use `determine_noun_phrase` to combine the noun phrase with 
   the determiner.
+- Return the `DeterminedNounPhrase` you created.
 
 {{< code-action >}} **Once these functions are finished, run `python -i poetry.py`
 again and try out the `couplet` function.**
@@ -370,6 +372,7 @@ grammar rules. Your group will need to complete the following functions:
 - Check that the first argument is an `Adverb`.
 - Check that the second argument is a `VerbPhrase`.
 - Combine them into a `VerbPhrase`.
+- Return the `VerbPhrase` you created.
 
 {{< code-action >}} **past_tense_transitive**
 
