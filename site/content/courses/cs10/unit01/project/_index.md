@@ -119,9 +119,9 @@ our test harness for functionality and speed.
 
 | Score | Functionality                     | Speed                     |
 |-------|-----------------------------------|---------------------------|
-| 8     | all basic queue functions working | queue performs in the top 80% of queues in the class\* |
-| 7     | all basic queue functions working | queue speed improves by at least 5%\*\* |
-| 6     | all basic queue functions working | queue speed improves by at least 2%\*\* |
+| 8     | all basic queue functions working | queue performs in the top 80% of queues in the class\* OR throughput score > 60%\*\*|
+| 7     | all basic queue functions working | throughput score > 50%\*\* |
+| 6     | all basic queue functions working | throughput score > 45%\*\* |
 | 5     | all basic queue functions working | –                         |
 | 4     | 3 working queue functions         | –                         |
 | 3     | 2 working queue functions         | –                         |
@@ -129,21 +129,24 @@ our test harness for functionality and speed.
 | 1     | no working queue functions        | –                         |
 
 
-\* Queue ranking will be determined by adding each queue's iterations per
-second on each of the Basic speed tests to generate a queue score.
-Then, we will take the percentile ranking of each queue (based on the queue 
+\* Queue ranking will be determined by taking the percentile ranking of each queue (based on the throughput
 score) in the distribution of queues which passed all of the basic
 functionality tests.
 
-\*\* Queue performance improvements will be judged based on the difference in the time
-it takes for a queue to run all of the Basic speed tests on your first run and the time
-it takes on your last run.
+\*\* Throughput refers to the number of requests served per second in a percentage relative to the
+target performance. To calculate the throughput score, we average the throughput for each basic function
+of the queue using a weighted average. The weights prioritize the amount of time each function takes and 
+are determined using the following formula:
+
+```
+function_throughput_weight = (1/12) + (2/3)*(function_target_throughput/sum(all_functions_target_throughput))
+```
 
 #### Extra Credit
-For each additional function you successfully to implement from the extension interface we will
-add 1 to your speed improvement score.
+Each additional function you successfully to implement from the extension interface will raise
+your score to the next band (not to exceed 8).
 
-So, if your queue speed improves by 1% and you implement 1 of the extension functions, you will
+So, if your implement all the basic functions plus one extnesion function, you will
 reach the 6 tier.
 
 ### Criterion B: Planning and development
