@@ -119,28 +119,29 @@ our test harness for functionality and speed.
 
 | Score | Functionality                     | Speed                     |
 |-------|-----------------------------------|---------------------------|
-| 8     | all basic queue functions working | queue performs in the top 80% of queues in the class\* OR throughput score > 60%\*\*|
-| 7     | all basic queue functions working | throughput score > 50%\*\* |
-| 6     | all basic queue functions working | throughput score > 45%\*\* |
+| 8     | all basic queue functions working | all basic functions reach target speed\* OR queue performs in the top 80% of queues in the class\*\*|
+| 7     | all basic queue functions working | 3 functions reach target speed\* |
+| 6     | all basic queue functions working | 2 functions reach target speed\* |
 | 5     | all basic queue functions working | –                         |
 | 4     | 3 working queue functions         | –                         |
 | 3     | 2 working queue functions         | –                         |
 | 2     | 1 working queue function          | –                         |
 | 1     | no working queue functions        | –                         |
 
+\* To fall within the target speed, your queue functions should perform within or below the following speed
+bands:
 
-\* Queue ranking will be determined by taking the percentile ranking of each queue (based on the throughput
+|         | Append       | Pop          | Insert_random | Length           |
+|---------|--------------|--------------|---------------|------------------|
+| High    | 0.186 sec/it | 0.084 sec/it | 20.107 sec/it | 9.219E-06 sec/it |
+| Average | 0.156 sec/it | 0.070 sec/it | 15.880 sec/it | 7.780E-06 sec/it |
+| Low     | 0.126 sec/it | 0.055 sec/it | 11.652 sec/it | 6.342E-06 sec/it |
+
+\*\* Queue ranking will be determined by taking the percentile ranking of each queue (based on the throughput
 score) in the distribution of queues which passed all of the basic
-functionality tests.
-
-\*\* Throughput refers to the number of requests served per second in a percentage relative to the
-target performance. To calculate the throughput score, we average the throughput for each basic function
-of the queue using a weighted average. The weights prioritize the amount of time each function takes and 
-are determined using the following formula:
-
-```
-function_throughput_weight = (1/12) + (2/3)*(function_target_throughput/sum(all_functions_target_throughput))
-```
+functionality tests. Throughput refers to the number of requests served per second in a percentage relative
+to the target performance. To calculate the throughput score, we average the throughput for each basic function
+of the queue using a weighted average. The weights prioritize the amount of time each function takes.
 
 #### Extra Credit
 Each additional function you successfully to implement from the extension interface will raise
