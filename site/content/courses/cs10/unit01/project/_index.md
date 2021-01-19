@@ -128,14 +128,12 @@ our test harness for functionality and speed.
 | 2     | 1 working queue function          | –                         |
 | 1     | no working queue functions        | –                         |
 
-\* To fall within the target speed, your queue functions should perform within or below the following speed
-bands:
+\* To reach the target speed, your queue functions should perform below the following speed
+targets:
 
-|         | Append       | Pop          | Insert_random | Length           |
-|---------|--------------|--------------|---------------|------------------|
-| High    | 0.186 sec/it | 0.084 sec/it | 20.107 sec/it | 9.219E-06 sec/it |
-| Average | 0.156 sec/it | 0.070 sec/it | 15.880 sec/it | 7.780E-06 sec/it |
-| Low     | 0.126 sec/it | 0.055 sec/it | 11.652 sec/it | 6.342E-06 sec/it |
+|        | Append         | Pop            | Insert_random  | Length            |
+|--------|----------------|----------------|----------------|-------------------|
+| Target | 0.01860 sec/it | 0.00840 sec/it | 2.01066 sec/it | 9.2185E-07 sec/it |
 
 \*\* Queue ranking will be determined by taking the percentile ranking of each queue (based on the throughput
 score) in the distribution of queues which passed all of the basic
