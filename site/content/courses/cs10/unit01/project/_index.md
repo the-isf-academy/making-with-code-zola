@@ -141,6 +141,8 @@ functionality tests. Throughput refers to the number of requests served per seco
 to the target performance. To calculate the throughput score, we average the throughput for each basic function
 of the queue using a weighted average. The weights prioritize the amount of time each function takes.
 
+[Check out the state of the race by following the cs10 Twitter Bot!](https://twitter.com/shuyuancs)
+
 #### Extra Credit
 Each additional function you successfully to implement from the extension interface will raise
 your score to the next band (not to exceed 8).
