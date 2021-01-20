@@ -191,8 +191,8 @@ For this lab, use the following link to create a repo for your lab work. This wi
 {{< code-action >}} **First, create a `unit_01` directory in your `cs9` folder and clone the lab repository in it.** 
 To create a new directory use the command: `mkdir folder_name`. 
 
-{{< code-action >}} Starter code for the project is provided in the
-`project-queue` repo. Download it *onto your laptop*.
+{{< code-action >}} Starter code for the lab is provided in the
+`lab-types` repo. Download it *onto your laptop*.
 
 ```shell
 $ cd cs9/unit_01
