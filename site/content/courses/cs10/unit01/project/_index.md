@@ -131,7 +131,7 @@ our test harness for functionality and speed.
 \* To reach the target speed, your queue functions should perform below the following speed
 targets:
 
-|        | Append         | Pop            | Insert_random  | Length            |
+|        | Append         | Popleft        | Insert_random  | Length            |
 |--------|----------------|----------------|----------------|-------------------|
 | Target | 0.01860 sec/it | 0.00840 sec/it | 2.01066 sec/it | 9.2185E-07 sec/it |
 
