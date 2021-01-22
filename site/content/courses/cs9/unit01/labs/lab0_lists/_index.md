@@ -4,7 +4,7 @@ type: labs
 ---
 
 # Lists
-In this mini lab, we will learn about lists, a useful data structure. 
+In this lab, we will learn about lists, a useful data structure. 
 
 ## A. What is a list?
 
@@ -18,7 +18,7 @@ git clone https://github.com/the-isf-academy/lab-lists-YOUR-GITHUB-USERNAME.git
 ```
 
 
-{{< code-action >}} To start, open the file `list_exercises.py` and change the value of the variables `my_name` and `friend_name` to anything you want. Something like:
+{{< code-action >}} To start, open the file `list_intro.py` and change the value of the variables `my_name` and `friend_name` to anything you want. Something like:
 
 ```python
 #VARIABLES
@@ -26,7 +26,7 @@ my_name = "Wall-E"
 friend_name = "Eva"
 ```
 
-{{< code-action >}} The program currently prints out "help! I am trapped inside the computer!". Replace that string with the following objects one at a time. For each one, save your program and run it to see what the output.
+{{< code-action >}} The program currently prints out "help! I am trapped inside the computer!". **Replace that string with the following objects one at a time.** For each one, save your program and run it to see what the output.
 
 0. cs1_dessert_list
 0. cs1_dessert_list[0]
@@ -39,11 +39,9 @@ friend_name = "Eva"
 
 ## B. Looping through a list
 
-##### *Paste the code block below to your lab_00.py file.*
+*Paste the code block below into the 'Part B' section of your list_intro.py file.*
 
 ```python
-#PART B
-
 print("Mr. Wolf, Ms. Brown, and Mr. Chau go to the store for dessert. They decide to buy...")
 for thing in cs1_dessert_list:
     print(item)
@@ -51,11 +49,14 @@ for thing in cs1_dessert_list:
 
 In the loop above, `thing` is a variable that we use to store each element within cs1_desserts as we loop through one by one. `thing` is not a very descriptive variable name - there are lots of things in the world. How will we know what thing the variable is storing?
 
-{{< code-action >}} Try changing `thing` to a more descriptive word in both lines, like `sweet` or `dessert_item` and see if the output changes.
+{{< code-action >}} **Try changing `thing` to a more descriptive word in both lines**, like `sweet` or `dessert_item` and see if the output changes.
 
 
 ## C. Looping Through Part of a List 
 To give you more options, you can specify a range for your for-loop.
+
+*Paste the code block below into the 'Part C' section of your list_intro.py file.*
+
 
 ```python
 print("But then they realized they ran out of money, so they can only buy 4 desserts. They decide to buy...")
@@ -68,7 +69,7 @@ for i in range(1, 6):
 The first four desserts in the cs1_dessert_list list are ice cream, brownies, mochi, and timtams.
 But our code prints out mango sago, pumpking pie, tiramisu, and cheesecake. 
 
-{{< code-action >}} Change the code to print out the first 4 desserts only.
+{{< code-action >}} **Change the code to print out the first 4 desserts only.**
 
 
 
@@ -76,26 +77,26 @@ But our code prints out mango sago, pumpking pie, tiramisu, and cheesecake.
 
 Now, we will utilize a functional programming approach to transform lists. 
 
-{{< figure src="images/courses/cs9/unit00/00_functions_grid.png" width="400px">}}
+{{< figure src="images/courses/cs9/unit01/01_list_function_diagram.png" width="600px">}}
 
 
 You will code the following functions in the `list_transformations.py` file:
 
 {{< code-action >}} `reverse_list()` 
-- Paramter: a list of any data type 
-- Output: a new list with the elements in reverse
+- Takes a list of any data type as an arguement 
+- Returns a new list with the elements in reverse
 
 {{< code-action >}} `square_list()` 
-- Parameter: a list of numeric items 
-- Output: a new list with each element squared
+- Takes a list of numeric items as an arguement
+- Returns a new list with each element squared
 
 {{< code-action >}} `capitalize_list()` 
-- Parameter: a list of strings
-- Output: a new list with the first letter of each item capitalized
+- Takes a list of strings as an arguement
+- Returns a new list with the first letter of each item capitalized
 
 {{< code-action >}} `sort_list()` 
-- Parameter: a list of numeric items or a list of strings
-- Output: a new list with items organized numerically or alphabetically 
+- Takes a list of numeric items or a list of strings as an arguement
+- Returns a new list with items organized numerically or alphabetically 
 
 <br>
 
@@ -143,10 +144,10 @@ Answer the following exit questions on your Google doc before submitting this la
 {{< /checkpoint >}}
 
 ## E. Deliverables
-For this lab, you should submit the following:
+For this lab, you should submit the following...
 
-- `lab-lists` repository
-    - list_exercises.py
+- `lab-lists` repository containing the following: 
+    - list_intro.py
     - list_transformations.py
     - list_transformations_view.py 
 - Your Google Doc with responses to the checkpoint questions
