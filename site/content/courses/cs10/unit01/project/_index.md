@@ -47,12 +47,12 @@ changed and why.
 Additionally, as an extension and for extra credit, you can implment the
 following additional interfaces for your queue in `queue.py`:
 - `remove()` - Removes the first instance of a value from the queue.
-Throws an error if the value doesn't exist in the list.
+Throws an error if the value doesn't exist in the queue.
 - `index()` - Finds the first instance of a value within the queue and 
 returns the index of the value.
 - `count()` - Counts the number of times a value appears in the queue and 
 returns the count.
-- `__getitem__()` - operator overload to get the item in the list at
+- `__getitem__()` - operator overload to get the item in the queue at
 a particular index.
 
 **You can find more documentation about what each of the files should 
