@@ -60,7 +60,7 @@ Once completed, press `ESC` button.
 
 Now, install some extensions to make your notebooks nicer:
 
-    $ jupyter-notebook nbextension enable toc2/main && jupyter nbextension enable collapsible_headings/main && jupyter nbextension enable hide_input/main && jupyter nbextension enable varInspector/main && jupyter nbextension enable hinterland/hinterland && jupyter nbextension enable python-markdown/main && jupyter nbextension enable spellchecker/main && jupyter nbextension enable exercise2/main
+    $ jupyter-notebook  nbextension enable toc2/main && jupyter-notebook nbextension enable collapsible_headings/main && jupyter-notebook nbextension enable hide_input/main && jupyter-notebook nbextension enable varInspector/main && jupyter-notebook nbextension enable hinterland/hinterland && jupyter-notebook nbextension enable python-markdown/main && jupyter-notebook nbextension enable spellchecker/main && jupyter-notebook nbextension enable exercise2/main
 
 {{< /tab >}}
 {{< /tabs >}}
