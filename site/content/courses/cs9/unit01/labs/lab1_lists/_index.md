@@ -28,13 +28,13 @@ friend_name = "Eva"
 
 {{< code-action >}} The program currently prints out "help! I am trapped inside the computer!". **Replace that string with the following objects one at a time.** For each one, save your program and run it to see what the output.
 
-0. cs1_dessert_list
-0. cs1_dessert_list[0]
-0. cs1_dessert_list[3]
-0. cs1_dessert_list[-1]
-0. len(cs1_dessert_list)
-0. cs1_dessert_list[100] (Error! Why?)
-0. my_name + " likes to eat " + cs1_dessert_list[0] + " but " + friend_name + " likes to eat " + cs1_dessert_list[1]
+0. `cs1_dessert_list`
+0. `cs1_dessert_list[0]`
+0. `cs1_dessert_list[3]`
+0. `cs1_dessert_list[-1]`
+0. `len(cs1_dessert_list)`
+0. `cs1_dessert_list[100]`
+0. `my_name + " likes to eat " + cs1_dessert_list[0] + " but " + friend_name + " likes to eat " + cs1_dessert_list[1]`
 
 
 ## B. Looping through a list
