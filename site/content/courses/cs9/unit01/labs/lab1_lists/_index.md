@@ -11,7 +11,7 @@ In this lab, we will learn about lists, a useful data structure.
 We call lists a **data structure** because they give structure to data. They put things in an ordered grouping, so you can access each element at an index. 
 
 
-{{< code-action >}} Start by cloning your `lab-lists` repositor in your `cs9` folder. 
+{{< code-action >}} Start by cloning your `lab-lists` repository in your `cs9` folder. 
 ```shell
 cd cs9/unit_01
 git clone https://github.com/the-isf-academy/lab-lists-YOUR-GITHUB-USERNAME.git
@@ -60,14 +60,14 @@ To give you more options, you can specify a range for your for-loop.
 
 ```python
 print("But then they realized they ran out of money, so they can only buy 4 desserts. They decide to buy...")
-for i in range(1, 6):
+for i in range(1, 5):
     print(cs1_dessert_list[i])
 ```
 
 **Oops! This code has an error!**
 
 The first four desserts in the cs1_dessert_list list are ice cream, brownies, mochi, and timtams.
-But our code prints out mango sago, pumpking pie, tiramisu, and cheesecake. 
+But our code prints out brownies, mochi, timtams, and creme brulee. 
 
 {{< code-action >}} **Change the code to print out the first 4 desserts only.**
 
@@ -82,9 +82,6 @@ Now, we will utilize a functional programming approach to transform lists.
 
 You will code the following functions in the `list_transformations.py` file:
 
-{{< code-action >}} `reverse_list()` 
-- Takes a list of any data type as an arguement 
-- Returns a new list with the elements in reverse
 
 {{< code-action >}} `square_list()` 
 - Takes a list of numeric items as an arguement
@@ -93,6 +90,10 @@ You will code the following functions in the `list_transformations.py` file:
 {{< code-action >}} `capitalize_list()` 
 - Takes a list of strings as an arguement
 - Returns a new list with the first letter of each item capitalized
+
+{{< code-action >}} `reverse_list()` 
+- Takes a list of any data type as an arguement 
+- Returns a new list with the elements in reverse
 
 {{< code-action >}} `sort_list()` 
 - Takes a list of numeric items or a list of strings as an arguement
