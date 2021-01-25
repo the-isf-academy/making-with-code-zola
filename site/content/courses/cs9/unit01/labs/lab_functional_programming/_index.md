@@ -2,6 +2,7 @@
 title: Functional Programming Lab
 draft: true
 resources:
+draft: true
 ---
 
 # Functional Programming Lab

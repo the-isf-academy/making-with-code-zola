@@ -2,6 +2,7 @@
 title: 4. Summary Statistics Lab
 draft: true
 resources:
+draft: true
 ---
 {{< devnote >}}
 CS1/CS2 links, refers to ISF social media survey
