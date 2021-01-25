@@ -1,5 +1,6 @@
 ---
 title: 4. Summary Statistics Lab
+draft: true
 resources:
 ---
 {{< devnote >}}

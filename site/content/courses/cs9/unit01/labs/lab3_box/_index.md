@@ -1,5 +1,6 @@
 ---
 title: 3. Box and Whisker Lab
+draft: true
 resources:
 ---
 {{< devnote >}}

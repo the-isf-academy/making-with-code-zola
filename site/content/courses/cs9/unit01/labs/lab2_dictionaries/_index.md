@@ -1,6 +1,6 @@
 ---
 title: 2. Dictionaries
-draft: True
+draft: true
 type: labs
 ---
 
