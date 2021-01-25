@@ -358,7 +358,7 @@ grammar rules. Your group will need to complete the following functions:
 - `verb_phrase`
 - `pase_tense_transitive`
 - `past_tense_intrasitive`
-- `verb_phrase_ntrasitive`
+- `verb_phrase_intrasitive`
 
 {{< write-action >}}  **Before coding, create a function diagram with an example use case for each grammar rule in your group's Google Slide.**
 
@@ -395,7 +395,7 @@ grammar rules. Your group will need to complete the following functions:
 {{< code-action >}} **past_tense_intransitive**
 
 ```python3
->>> past_tense_transitive(VerbTransitive("molt")
+>>> past_tense_intransitive(VerbTransitive("molt")
 "molted"
 ```
 

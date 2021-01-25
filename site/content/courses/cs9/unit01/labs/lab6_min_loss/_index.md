@@ -1,5 +1,6 @@
 ---
 title: 6. Minimizing Loss Lab
+draft: true
 resources:
 draft: true
 ---
