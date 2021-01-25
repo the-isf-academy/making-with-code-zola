@@ -1,13 +1,12 @@
 ---
 title: 4. Summary Statistics Lab
 resources:
-draft: true
 ---
 {{< devnote >}}
 CS1/CS2 links, refers to ISF social media survey
 {{< /devnote >}}
 
-# 4. Summary Statistics Lab
+# Summary Statistics Lab
 
 ## Set Up
 
@@ -41,18 +40,3 @@ These parts should be completed in your individual repos, but do ask your table 
    Specifically, you will be implementing mean, median, mode.  
 ### 3. Calculate the Measures of Spread.  
    Specifically, you will be implementing the interquartile range and percentile.
-### 4. Generate Data Visualizations.
-   Specifically, you will be able to generate a box plot, bar graph, scatter plot, and histogram.
-
-## Part 5: Answer questions
-
-You will complete this part together with your group. Split up the four subquestions among the four of you.
-
-### A. Who took our survey?
-For this part, you will be analyzing the grade levels of survey respondents.
-
-### B.How long do ISF students spend on social media everyday?
-For this part, you will be analyzing the number of hours that survey respondents spend on social media.
-
-### C.Question of your group's choice.
-For this part, you will pick another piece of the data from the social media dataset, choose four ways to summarize the data, and record your insights.
