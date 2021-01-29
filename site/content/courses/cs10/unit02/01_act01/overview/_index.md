@@ -1,33 +1,23 @@
 ---
-Title: Overview
+Title: 0. Overview
 ---
 
-# Act I: Introduction to User-Centered Design
+# Act I: Human Centered Design
 
-For Act I, you will form small groups ... 
+Act I will focus on planning and outling a Web Application for the ISF community. We'll follow a human center design cylce that focuses on ideation, defining, and prototyping. Each section will build on itself, cumulinating in a fully function design prototype. This Act will conclude with a school-wide Pitch event where each group will present their application to the ISF community. 
 
-
-## Planning Documents
-This project will require you to explore the theory behind efficient data
-structure design. You will likely changes your plans frequently as you
-try out different ideas for how to make your queue faster. 
-
-As such, rather than a planning document, this project comes with an ideating document to
-help you keep track of your ideas for designing your queue.
-*You can find your ideating doc in your Google Drive folder called "cs10 -
-Unit 00 Data Structure Project: Ideating Document".*
-
-As we go through the development of a basic queue in class together, you
-can start by using this document to take notes on how we design the queue,
-the interfaces it implements, and ideas for how to make them better.
+Each stage requires materials from the previosu stage. It is vital that each group meets the deliverable(s) expected each day. If you have successfully followed out timeline, you will be well prepared for the Pitch event. 
 
 ## Deliverables 
 
-- Ideation Google Doc
-- User Stories and Personas Google Sheet 
-- Wireframe
-- Digital Prototype
-- Pitch Presentation
+- Ideation 
+    - Google Doc with Finalized Problem & Solution 
+- Define 
+    - Google Sheet with User Stories & Taks
+- Prototype
+    - Wireframe
+    - Digital Prototype
+    - Pitch Presentation
 
 
 ## Timeline
@@ -61,23 +51,19 @@ the interfaces it implements, and ideas for how to make them better.
 
 ## Assessment
 
-The assessment for this project will be slightly different than
-for your other projects. In `assessment.md`, you are required to explain
+For Act I of this project, you will be assessed on Criterion B and Criterion D. 
+
+Each individual will submit a self assestment google doc, in which you are required to explain
 how your project should be scored, and to give evidence to support your
 assessment.
 
-For criterion A, the rubruc is based on the performance of your queue.
+For Criterion B, the rubric is based on your group's ability to throughly plan your web app with each deliverable. 
 
-For criteria B and C, the rubric is based on claims that you should be able 
-to make about your learning in this unit. Each of these claims comes with
-examples of evidence that would show that you can make the claim about your
-learning.
+For Criterion D, the rubric is based on your reflection of how your app will impact the ISF community. 
 
-**To do well in this project, you should pass the test harness requirements
-for criterion A and be able to concretely justify that you have achieved
-each of the learning claims for criteria B and C.**
+**To do well in this project, we reccomond you meet the deliverable goal for each class. This project builds on itself, so the best way to succeed to manage your time wisely.**
 
-As a reminder, here's a guide for using the rubric for Criteria B and C:
+As a reminder, here's a guide for using the rubric:
 - Read the learning claims of the criterion for this unit in the rubric and consider how they relate to
 the description of the criterion.
 - For each learning claim in the criterion:
@@ -91,7 +77,7 @@ evidence and reasoning you provided for the learning claims of the criterion.
 ## Rubric 
 
 Each project will be assessed with a rubric tailored to the skills and concepts the project targets.
-This project is focused on developing the skills learned throughout the drawing unit. 
+This project is focused on developing the skills to plan a large scale computer science project. 
 
 
 ### Criterion B: Planning and development

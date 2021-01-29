@@ -1,28 +1,8 @@
 ---
-Title: User Stories
+Title: 1. Ideation
 ---
 
-# User Stories
-
-
-## Planning Documents
-This project will require you to explore the theory behind efficient data
-structure design. You will likely changes your plans frequently as you
-try out different ideas for how to make your queue faster. 
-
-As such, rather than a planning document, this project comes with an ideating document to
-help you keep track of your ideas for designing your queue.
-*You can find your ideating doc in your Google Drive folder called "cs10 -
-Unit 00 Data Structure Project: Ideating Document".*
-
-As we go through the development of a basic queue in class together, you
-can start by using this document to take notes on how we design the queue,
-the interfaces it implements, and ideas for how to make them better.
-
-## Deliverables 
-
-- Ideation Google Doc
-- User Stories and Personas Google Sheet 
+# Ideation
 
 ## Timeline
 ### cs10.1
@@ -53,7 +33,18 @@ the interfaces it implements, and ideas for how to make them better.
 | 18 March    | Presentation Practice             | Design Prototype & Slideshow |
 | 22 March    | PITCH                             | Pitch Materials              |
 
+## Identify Problems
+
+
+## Observe
+
+
+## Identify Solutions
+
+## Finalize Problem and Solutions
 
 
 
+## Deliverables 
 
+- Ideation Section of Google Doc
