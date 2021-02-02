@@ -95,6 +95,8 @@ window that pops up, click on the file `jupyter_intro.ipynb`.
 
 {{< code-action >}} Walk through the intro to learn how to use Jupyter.
 
+{{< figure src="images/courses/cs9/unit01/01_sumstats_jupyter.gif" width="100%" title="Opening a Jupyter Notebook" >}}
+
 ## C. Summary Statistics
 How do you make sense of lots of data? Let's summarize it with statistics!
 
