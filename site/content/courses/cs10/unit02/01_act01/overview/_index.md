@@ -4,23 +4,31 @@ Title: 0. Overview
 
 # Act I: Human Centered Design
 
-Act I will focus on planning and outling a Web Application for the ISF community. We'll follow a human center design cylce that focuses on ideation, defining, and prototyping. Each section will build on itself, cumulinating in a fully function design prototype. This Act will conclude with a school-wide Pitch event where each group will present their application to the ISF community. 
+Act I will focus on planning and outlining a Web Application for the ISF community. We'll follow a human center design cycle that focuses on ideating, defining, and designing. Each section will provide you with the tools and resources to thoroughly plan a project of this scale. 
 
-Each stage requires materials from the previosu stage. It is vital that each group meets the deliverable(s) expected each day. If you have successfully followed out timeline, you will be well prepared for the Pitch event. 
+This Act will culminate in a school-wide Pitch event where each group will present a working prototype fo their app to the ISF community. 
+
 
 ## Deliverables 
 
-- Ideation 
+Each stage of the design cycle will have specific deliverables. 
+
+- Ideate
     - Google Doc with Finalized Problem & Solution 
 - Define 
-    - Google Sheet with User Stories & Taks
-- Prototype
+    - Google Sheet with User Stories & Tasks
+- Design 
     - Wireframe
     - Digital Prototype
     - Pitch Presentation
+- Self Assessment Form 
 
 
 ## Timeline
+
+Each stage of the design cycle requires materials from the previous stage. It is vital that each group meets the deliverable(s) expected each day. By successfully following the timeline you will be well prepared for the Pitch event and the subsequent Acts. 
+
+
 ### cs10.1
 
 | Date        | Focus                             | Deliverable(s)               |
@@ -31,7 +39,7 @@ Each stage requires materials from the previosu stage. It is vital that each gro
 | 09 March    | Mini-lesson: Sketches/Wireframing | User Stories                 |
 |             | Group Meetings with teachers      |                              |
 | 10 March    | Mini-lesson: HCI/ Design          | Wireframe                    |
-| 17 March    | Work Day: Protype & Pitches       | Prototype Draft              |
+| 17 March    | Work Day: Prototype & Pitches       | Prototype Draft              |
 | 19 March    | Presentation Practice             | Design Prototype & Slideshow |
 | 22 March    | PITCH                             | Pitch Materials              |
 
@@ -45,7 +53,7 @@ Each stage requires materials from the previosu stage. It is vital that each gro
 | 08 March    | Mini-lesson: Sketches/Wireframing | User Stories                 |
 |             | Group Meetings with teachers      |                              |
 | 09 March    | Mini-lesson: HCI/ Design          | Wireframe                    |
-| 11 March    | Work Day: Protype & Pitches       | Prototype Draft              |
+| 11 March    | Work Day: Protoype & Pitches       | Prototype Draft              |
 | 18 March    | Presentation Practice             | Design Prototype & Slideshow |
 | 22 March    | PITCH                             | Pitch Materials              |
 
@@ -53,15 +61,15 @@ Each stage requires materials from the previosu stage. It is vital that each gro
 
 For Act I of this project, you will be assessed on Criterion B and Criterion D. 
 
-Each individual will submit a self assestment google doc, in which you are required to explain
-how your project should be scored, and to give evidence to support your
-assessment.
-
-For Criterion B, the rubric is based on your group's ability to throughly plan your web app with each deliverable. 
+For Criterion B, the rubric is based on your group's ability to thoroughly plan a web application. Each deliverable will support your overall plan and act as evidence for this criterion.  
 
 For Criterion D, the rubric is based on your reflection of how your app will impact the ISF community. 
 
-**To do well in this project, we reccomond you meet the deliverable goal for each class. This project builds on itself, so the best way to succeed to manage your time wisely.**
+Each individual will submit a self assessment Google Form, in which you are required to explain
+how your project should be scored, and to give evidence to support your
+assessment. Additionally, you will self-reflect on the working relationship with your group members. 
+
+**To do well in this project, we recommend you meet the deliverable goal for each class. This project builds on itself, so the best way to succeed to manage your time wisely.**
 
 As a reminder, here's a guide for using the rubric:
 - Read the learning claims of the criterion for this unit in the rubric and consider how they relate to
@@ -77,7 +85,7 @@ evidence and reasoning you provided for the learning claims of the criterion.
 ## Rubric 
 
 Each project will be assessed with a rubric tailored to the skills and concepts the project targets.
-This project is focused on developing the skills to plan a large scale computer science project. 
+This Act is focused on developing the skills to plan a large scale computer science project. 
 
 
 ### Criterion B: Planning and development
@@ -102,7 +110,7 @@ skills.
 > specific problems or issues.
 
 At times during development, we need to make choices about what functionalities to prioritize. These choices
-will result in improvements in some areas while resulting in degredation of others. To make these decisions,
+will result in improvements in some areas while resulting in degradation of others. To make these decisions,
 we must consider on practical use cases of our queues to guide our choices in development.
 
 | Learning Claim                                                                         | Possible Forms of Evidence                                                                      |

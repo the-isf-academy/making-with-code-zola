@@ -1,8 +1,8 @@
 ---
-Title: 1. Ideation
+Title: 1. Ideate
 ---
 
-# Ideation
+# Ideate
 
 ## Timeline
 ### cs10.1

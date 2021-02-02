@@ -1,5 +1,5 @@
 ---
-Title: 3. Prototype
+Title: 3. Design
 ---
 
 # Prototype
