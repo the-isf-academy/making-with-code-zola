@@ -111,22 +111,10 @@ Here are a few helpful functions to transform the elements in the lists.
 
 <br>
 
-Correctly written functions will output the below when `list_transformations_test.py` is ran.
+{{< code-action >}} Run `list_transformations_test.py` to test your functions on lists of different data types.
 
 ```shell 
-> python list_transformations_test.py
-
---Number List Transformations---
-Initial Number List: [25, 10, 20, 15, 5]
-Numbers revered: [5, 15, 20, 10, 25]
-Numbers sorted: [5, 10, 15, 20, 25]
-Numbers squared: [25, 100, 225, 400, 625] 
-
---Word List Transformations---
-Inital Word list: ['hello', 'banana', 'office', 'pie']
-Words reversed: ['pie', 'office', 'banana', 'hello']
-Words sorted: ['banana', 'hello', 'office', 'pie']
-Words capitalized: ['Banana', 'Hello', 'Office', 'Pie']
+python list_transformations_test.py
 ```
 
 <br>
