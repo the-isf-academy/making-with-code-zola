@@ -47,12 +47,12 @@ changed and why.
 Additionally, as an extension and for extra credit, you can implment the
 following additional interfaces for your queue in `queue.py`:
 - `remove()` - Removes the first instance of a value from the queue.
-Throws an error if the value doesn't exist in the list.
+Throws an error if the value doesn't exist in the queue.
 - `index()` - Finds the first instance of a value within the queue and 
 returns the index of the value.
 - `count()` - Counts the number of times a value appears in the queue and 
 returns the count.
-- `__getitem__()` - operator overload to get the item in the list at
+- `__getitem__()` - operator overload to get the item in the queue at
 a particular index.
 
 **You can find more documentation about what each of the files should 
@@ -117,16 +117,25 @@ This project is focused on developing the skills learned throughout the drawing 
 Your score for criterion A will be based on your queue's performace on with
 our test harness for functionality and speed.
 
+<style>
+ins {
+    text-decoration: none;
+    background-color: #d4fcbc;
+}
+</style>
+
 | Score | Functionality                     | Speed                     |
 |-------|-----------------------------------|---------------------------|
-| 8     | all basic queue functions working | all basic functions reach target speed\* OR queue performs in the top 80% of queues in the class\*\*|
-| 7     | all basic queue functions working | 3 functions reach target speed\* |
-| 6     | all basic queue functions working | 2 functions reach target speed\* |
-| 5     | all basic queue functions working | –                         |
-| 4     | 3 working queue functions         | –                         |
-| 3     | 2 working queue functions         | –                         |
-| 2     | 1 working queue function          | –                         |
-| 1     | no working queue functions        | –                         |
+| 8     | all basic queue functions working | <del>all basic functions reach target speed\*</del> <br> <ins>3 functions reach target speed\*</ins> OR queue performs in the top 80% of queues in the class\*\*|
+| 7     | all basic queue functions working | <del>3 functions reach target speed\*</del> <br> <ins>2 functions reach target speed\*</ins>|
+| 6     | all basic queue functions working | <del>2 functions reach target speed\*</del> <br> <ins>–</ins>|
+| 5     | <del>all basic queue functions working</del> <br> <ins>3 working queue functions</ins> | –                         |
+| 4     | <del>3 working queue functions</del> <br> <ins> 2 working queue functions</ins>        | –                         |
+| 3     | <del>2 working queue functions</del> <br> <ins> 1 working queue function</ins>         | –                         |
+| 2     | <del>1 working queue function</del> <br> <ins>no working queue functions</ins>         | –                         |
+| 1     | <del>no working queue functions</del> <br> <ins>–</ins>       | –                      |
+
+*Updated: 29/1/2021*
 
 \* To reach the target speed, your queue functions should perform below the following speed
 targets:
