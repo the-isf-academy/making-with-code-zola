@@ -34,7 +34,7 @@ session, up to 100 ideas are generated in 60 minutes. Crank the ideas out quickl
 
 ## Define the Problem 
 
-We'll start by brainstorming current problems faced by members of the ISF community. This could be specific to students, teachers, or parents. It could be specific to only Grade 10s or it could be applicable to all secondary students. As members of this community you are perfectly situated to identify areas for improvement.  
+We'll start by brainstorming current problems faced by members of the ISF community. This could be specific to students, teachers, or parents. It could be specific to only Grade 10s or it could be applicable to all secondary students. It could be applicable to a single course or an entire department. As members of this community you are uniquely positioned to identify areas for improvement.  
 
 A few questions to consider... 
 - Where are points of friction or frustration in your life as a student? For a teacher? A parent? A local community member? 
@@ -43,9 +43,9 @@ A few questions to consider...
 
 ## Research
 
-In human centered design, empathizing with the intended stakeholders is a key step in the ideation phase. By imaging how individuals feel, think, and behave in light of the defined problem, you can better understand the root of the issue of thus be better positioned to generate a quality solution. 
+In human centered design, empathizing with the intended stakeholders is a key step in the ideation phase. By imaging how individuals think, feel, and behave in light of the problem, you can better understand the root of the issue. With a more diverse outlook on the problem, you are better positioned to generate a quality solution. 
 
-> Researchers explored how cognitive empathy and considering multiple perspectives can aid in creativity whilst also lead to new and productive ideas. 
+> Researchers explored how cognitive empathy can aid in creativity whilst also leading to new and productive ideas. 
 >
 > "... we propose that managers interested in fueling creativity
 will find it advantageous to create conditions that
@@ -58,28 +58,43 @@ others’ lives."
 >
 > [*"The Necessity of Others is the Mother of Invention: Intrinsic and Prosocial Motivations, Perceptive Talking, and Creativity" by Adam Grant and James W. Berry*](http://selfdeterminationtheory.org/SDT/documents/2011_GrantBerry_AM.pdf)
 
+Your research to be in the form of interviews and/or observations. You will record your notes in your Ideation Google Doc. 
+
 A few questions to consider...
 - Who will benefit from a solution to your problem? 
 - Who are the key stakeholders?
 - What are the needs and motivations of the stakeholders? 
+- Imagine the problem from the perspective of each stakeholder 
 
 ## Identify Solutions
 
+With the research in 
+
+
+A few questions to consider...
+- How do the stakeholders currently solve the problem? 
+- Why is the problem important to each stakeholder? 
+- How might we address the problem? 
 
 
 
-Leading questions...
-- How do you currently solve the problem? 
+## Finalize Problem and Solution
 
+At this stage you will finalize your idea for the web application. Taking into account the various brainstorm sessions and the research conducted, work to specify your idea in the framework of problem & solution. 
 
+A few questions to consider...
+- Can your initial problem be reframed? 
+- What is the key problem being addressed? 
+- Can your problem or solution be specified? 
 
-## Finalize Problem and Solutions
+When your group reaches a conclusion, answer the following questions in your Ideation Google Doc:
+- What problem are you solving? 
+- What is your solution? 
+- In one sentence, what are you building? 
+- Who will benefit from your service? 
+- What are the ethical implications of your service? 
 
-The goal of this stage is to choose a problem and a solution based on your brainstorm and research. 
-
-Can your initial problem be reframed? What is the key problem being addressed? 
-
-- Why is this problem important? 
+It's okay if throughout this Act your problem and solution evolve. Just be sure to update your Ideation document to reflect the iterations. 
 
 
 ## Timeline
@@ -102,6 +117,6 @@ Can your initial problem be reframed? What is the key problem being addressed?
 
 
 ## Deliverables
-
+The following deliverables are expected by the start of the 3rd class. *(25 Feb for cs10.1, 24 Feb for cs10.2)*
 - Jam Board  
 - Ideation Google Doc with Finalized Problem & Solution
