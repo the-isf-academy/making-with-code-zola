@@ -1,5 +1,6 @@
 ---
 Title: 2. Define
+draft: true
 ---
 
 # Define

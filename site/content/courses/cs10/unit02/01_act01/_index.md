@@ -1,5 +1,6 @@
 ---
 Title: Act I
+draft: true
 ---
 
 # Act I: Human Centered Design
