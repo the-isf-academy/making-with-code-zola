@@ -2,12 +2,12 @@
 Title: 1. Ideate
 ---
 
-# Ideate
+## Ideate
 
 In this stage we will focus on outlining the web applications through a human centered design process. 
 
 
-## Brainstorming 
+### Brainstorming 
 
 Throughout this Act, brainstorming is key. Especially at this early stage of development, it's important to generate a large quantity of ideas without fear of judgement. 
 
@@ -32,16 +32,15 @@ session, up to 100 ideas are generated in 60 minutes. Crank the ideas out quickl
 
 
 
-## Define the Problem 
+### Define the Problem 
 
 We'll start by brainstorming current problems faced by members of the ISF community. This could be specific to students, teachers, or parents. It could be specific to only Grade 10s or it could be applicable to all secondary students. It could be applicable to a single course or an entire department. As members of this community you are uniquely positioned to identify areas for improvement.  
 
 A few questions to consider... 
 - Where are points of friction or frustration in your life as a student? For a teacher? A parent? A local community member? 
 - What are potential areas of improvement for a teacher, a parent, or local community member?  
-- Anymore questions???
 
-## Research
+### Research
 
 In human centered design, empathizing with the intended stakeholders is a key step in the ideation phase. By imaging how individuals think, feel, and behave in light of the problem, you can better understand the root of the issue. With a more diverse outlook on the problem, you are better positioned to generate a quality solution. 
 
@@ -66,10 +65,9 @@ A few questions to consider...
 - What are the needs and motivations of the stakeholders? 
 - Imagine the problem from the perspective of each stakeholder 
 
-## Identify Solutions
+### Identify Solutions
 
-With the research in 
-
+Taking into account the research you conducted, brainstorm potential solutions for the identified problem. 
 
 A few questions to consider...
 - How do the stakeholders currently solve the problem? 
@@ -78,7 +76,7 @@ A few questions to consider...
 
 
 
-## Finalize Problem and Solution
+### Finalize Problem and Solution
 
 At this stage you will finalize your idea for the web application. Taking into account the various brainstorm sessions and the research conducted, work to specify your idea in the framework of problem & solution. 
 
@@ -101,22 +99,19 @@ It's okay if throughout this Act your problem and solution evolve. Just be sure 
 ### cs10.1
 
 | Date        | Focus                             | Deliverable(s)               |
-|-------------|-----------------------------------|------------------------------|
-| 23 February | Group Formation/Brainstorm        | Google Form                  |
-| 24 February | Finalize Problem & Solution       | Interviews/Observations      |
-|             | Mini-lesson: Epics                |                              |
-
+|--------------------|-----------------------------------|-------------------------|
+| 23 Feb | Group Formation/Brainstorm        | Google Form                  |
+| 24 Feb | Finalize Problem & Solution  | Problem/Solution             |
+| 02 Mar    | Mini Lesson: User Stories & Tasks      | User Interviews/Ideation Google Doc              |
 
 ### cs10.2
 
 | Date        | Focus                             | Deliverable(s)               |
-|-------------|-----------------------------------|------------------------------|
-| 22 February | Group Formation/Brainstorm        | Google Form                  |
-| 23 February | Finalize Problem & Solution       | Interviews/Observations      |
-|             | Mini-lesson: Epics                |                              |
-
+|-------------|-----------------------------------|-----------------------|
+| 22 Feb | Group Formation/Brainstorm        | Google Form                  |
+| 23 Feb | Finalize Problem & Solution  | Problem/Solution             |
+| 25 February | Mini Lesson: User Stories & Tasks       | User Interviews/Ideation Google Doc              |
 
 ## Deliverables
-The following deliverables are expected by the start of the 3rd class. *(25 Feb for cs10.1, 24 Feb for cs10.2)*
-- Jam Board  
+The following deliverables are expected by the start of the 3rd class. *(02 March for cs10.1, 25 February for cs10.2)*
 - Ideation Google Doc with Finalized Problem & Solution
