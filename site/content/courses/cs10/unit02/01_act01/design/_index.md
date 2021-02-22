@@ -1,5 +1,6 @@
 ---
 Title: 3. Design
+draft: true
 ---
 
 # Prototype
