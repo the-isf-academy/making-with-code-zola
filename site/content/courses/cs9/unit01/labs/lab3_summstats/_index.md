@@ -1,7 +1,6 @@
 ---
 title: 3. Summary Statistics
 resources:
-draft: true
 ---
 
 # Summary Statistics Lab
