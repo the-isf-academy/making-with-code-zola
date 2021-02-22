@@ -1,6 +1,5 @@
 ---
 Title: 1. Ideate
-draft: true
 ---
 
 ## Ideate
