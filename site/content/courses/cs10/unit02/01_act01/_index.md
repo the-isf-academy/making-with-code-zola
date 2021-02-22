@@ -24,6 +24,7 @@ Each stage of the design cycle will have specific deliverables.
     - Digital Prototype
     - Pitch Presentation
 - Self Assessment Form 
+- Pitch Reflection Google Doc
 
 
 ## Timeline
@@ -116,9 +117,8 @@ The Pitch event requires you to reflect upon the process of outlining your web a
 
 | Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can thoughtfully plan a large computer science project.                       | <ul><li> Ideation document that demonstrates your iterative approach to developing a web application outline</li><li>Google sheet with a detailed breakdown of the user stories and features of your app</li><ul>                                                                                                                                                                                         |
-| I can iteratively develop a project. | <ul><li>Updates to your ideation document and Google Sheet to account for challenges or discoveries during development</li><li>A transition from a basic sketch prototype to a working digital prototype</li></ul> |
-| I can document my software so that it is readable and usable by others.         | <ul><li>Comments for each of the functions you write for your queue's interface</li></ul>                                                                                                                                                                                                                                    |
+| I can iteratively develop a project.       | <ul><li> Reflection document with feedback from the pitch event</li><li>Reflection document with ideas for implementing the feedback from the pitch into your current idea<li><ul>                                                                                |
+
 
 ### Criterion D: Reflection on Tech and Society
 > Students demonstrate an understanding of their responsibility to society as technology creators by
