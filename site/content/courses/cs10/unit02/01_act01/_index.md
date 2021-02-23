@@ -117,7 +117,7 @@ The Pitch event requires you to reflect upon the process of outlining your web a
 
 | Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can iteratively develop a project.       | <ul><li> Reflection document with feedback from the pitch event</li><li>Reflection document with ideas for implementing the feedback from the pitch into your current idea<li><ul>                                                                                |
+| I can iteratively develop a project.       | <ul><li> Reflection document with feedback from the pitch event</li><li>Reflection document with ideas for implementing the feedback from the pitch into your current idea</li><ul>                                                                                |
 
 
 ### Criterion D: Reflection on Tech and Society
