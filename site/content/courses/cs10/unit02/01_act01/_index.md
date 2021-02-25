@@ -1,6 +1,5 @@
 ---
 Title: Act I
-draft: true
 ---
 
 # Act I: Human Centered Design
@@ -17,8 +16,7 @@ This Act will culminate in a school-wide Pitch event where each group will prese
 Each stage of the design cycle will have specific deliverables. 
 
 - Ideate
-    - Jam Board
-    - Google Doc with Finalized Problem & Solution 
+    - Ideation Google Doc
 - Define 
     - Google Sheet with User Stories & Tasks
 - Design 
@@ -26,6 +24,7 @@ Each stage of the design cycle will have specific deliverables.
     - Digital Prototype
     - Pitch Presentation
 - Self Assessment Form 
+- Pitch Reflection Google Doc
 
 
 ## Timeline
@@ -38,28 +37,28 @@ Each stage of the design cycle requires materials from the previous stage. It is
 | Date        | Focus                             | Deliverable(s)               |
 |--------------------|-----------------------------------|-------------------------|
 | 23 Feb | Group Formation/Brainstorm        | Google Form                  |
-| 24 Feb | User Interviews and User Stories  | Problem/Solution             |
-| 05 Mar    | Work Day/Peer Presentation        | User Interviews              |
-| 09 Mar    | Mini-lesson: Sketches/Wireframing | User Stories                 |
+| 24 Feb | Finalize Problem & Solution  | Problem/Solution             |
+| 02 Mar    | Mini Lesson: User Stories & Tasks      | User Interviews/Ideation Google Doc              |
+| 03 Mar    | Mini-lesson: Sketches/Wireframing | User Stories Google Sheet             |
 |             | Group Meetings with teachers      |                              |
-| 10 Mar    | Mini-lesson: HCI/ Design          | Wireframe                    |
-| 17 Mar    | Work Day: Prototype & Pitches       | Prototype Draft              |
-| 19 Mar    | Presentation Practice             | Design Prototype & Slideshow |
-| 22 Mar    | PITCH                             | Pitch Materials              |
+| 05 Mar    | Mini-lesson: HCI/ Design          | Wireframe                    |
+| 09 Mar    | Work Day: Prototype & Pitches       | Prototype Draft              |
+| 10 Mar    | Presentation Practice             | Design Prototype & Slideshow |
+| 17 Mar    | PITCH                             | Pitch Materials              |
 
 ### cs10.2
 
 | Date        | Focus                             | Deliverable(s)               |
 |-------------|-----------------------------------|-----------------------|
 | 22 Feb | Group Formation/Brainstorm        | Google Form                  |
-| 23 Feb | User Interviews and User Stories  | Problem/Solution             |
-| 25 February | Work Day/Peer Presentation        | User Interviews              |
-| 08 March    | Mini-lesson: Sketches/Wireframing | User Stories                 |
+| 23 Feb | Finalize Problem & Solution  | Problem/Solution             |
+| 25 February | Mini Lesson: User Stories & Tasks       | User Interviews/Ideation Google Doc              |
+| 02 March    | Mini-lesson: Sketches/Wireframing | User Stories Google Sheet                |
 |             | Group Meetings with teachers      |                              |
-| 09 Mar   | Mini-lesson: HCI/ Design          | Wireframe                    |
-| 11 Mar    | Work Day: Protoype & Pitches       | Prototype Draft              |
-| 18 Mar    | Presentation Practice             | Design Prototype & Slideshow |
-| 22 Mar    | PITCH                             | Pitch Materials              |
+| 08 Mar   | Mini-lesson: HCI/ Design          | Wireframe                    |
+| 09 Mar    | Work Day: Protoype & Pitches       | Prototype Draft              |
+| 11 Mar    | Presentation Practice             | Design Prototype & Slideshow |
+| 18 Mar    | PITCH                             | Pitch Materials              |
 
 ## Assessment
 
@@ -108,7 +107,7 @@ skills.
 |---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | I can thoughtfully plan a large computer science project.                       | <ul><li> Ideation document that demonstrates your iterative approach to developing a web application outline</li><li>Google sheet with a detailed breakdown of the user stories and features of your app</li><ul>                                                                                                                                                                                         |
 | I can iteratively develop a project. | <ul><li>Updates to your ideation document and Google Sheet to account for challenges or discoveries during development</li><li>A transition from a basic sketch prototype to a working digital prototype</li></ul> |
-| I can document my software so that it is readable and usable by others.         | <ul><li>Comments for each of the functions you write for your queue's interface</li></ul> 
+
 
 ### Criterion C: Evaluation
 > Students produce evidence of a testing plan that evaluates the main areas of functionality of the product and reflect on the development process as well as a proposal for further development to improve the shortcomings of the current product.
@@ -118,9 +117,8 @@ The Pitch event requires you to reflect upon the process of outlining your web a
 
 | Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can thoughtfully plan a large computer science project.                       | <ul><li> Ideation document that demonstrates your iterative approach to developing a web application outline</li><li>Google sheet with a detailed breakdown of the user stories and features of your app</li><ul>                                                                                                                                                                                         |
-| I can iteratively develop a project. | <ul><li>Updates to your ideation document and Google Sheet to account for challenges or discoveries during development</li><li>A transition from a basic sketch prototype to a working digital prototype</li></ul> |
-| I can document my software so that it is readable and usable by others.         | <ul><li>Comments for each of the functions you write for your queue's interface</li></ul>                                                                                                                                                                                                                                    |
+| I can iteratively develop a project.       | <ul><li> Reflection document with feedback from the pitch event</li><li>Reflection document with ideas for implementing the feedback from the pitch into your current idea</li><ul>                                                                                |
+
 
 ### Criterion D: Reflection on Tech and Society
 > Students demonstrate an understanding of their responsibility to society as technology creators by
