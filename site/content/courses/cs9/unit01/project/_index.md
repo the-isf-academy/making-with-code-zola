@@ -60,10 +60,6 @@ To do this, you will need to consider:
 - what platform that audience uses (digital? physical?)
 - how to best communicate your results and discussion with that audience
 
-## Assessment (assessment.md)
-As with the Drawing unit project, you will be assessing your own project through a written reflection.
-Scroll down for more information in the Assessment subsection!
-
 ## Deliverables 
 
 - A proposal document in your Google Drive folder 
