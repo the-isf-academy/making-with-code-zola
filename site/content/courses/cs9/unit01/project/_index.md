@@ -72,7 +72,7 @@ To do this, you will need to consider:
 
 ## Example Project
 Here is an [example project proposal](https://docs.google.com/document/d/1bx8hcyBM8RntT2Qa8nGFAoOSiIPRXHM8KCpq3kwzDmw/edit)
-and an [example repository](https://github.com/the-isf-academy/unit-1-project-teaching-team) containing
+and an [example repository](https://github.com/the-isf-academy/project-data-science-teaching-team) containing
 all of the elements of a complete project (minus the research communication).
 
 ## Timeline
