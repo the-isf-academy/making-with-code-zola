@@ -76,7 +76,20 @@ and an [example repository](https://github.com/the-isf-academy/unit-1-project-te
 all of the elements of a complete project (minus the research communication).
 
 ## Timeline
-Coming soon!
+### cs9.1
+- [Milestone 1] March 15, 2021 - Finalize proposal
+- [Milestone 2] March 19, 2021 - 1 subquestion completed
+- [Milestone 3] March 26 - 2 subquestions completed
+- **[Due Date] March 29, 2021 - All deliverables due**
+
+{{< figure src="images/courses/cs9/unit01/01_project_calendar_cs9_1.png" width="100%" >}}
+### cs9.2
+- [Milestone 1] March 12, 2021 - Finalize proposal
+- [Milestone 2] March 18, 2021 - 1 subquestion completed
+- [Milestone 3] March 23, 2021 - 2 subquestions completed
+- **[Due Date] March 26, 2021 - All deliverables due**
+
+{{< figure src="images/courses/cs9/unit01/01_project_calendar_cs9_2.png" width="100%" >}}
 
 ## Assessment
 You are responsible for assessing your own project, though your teachers will let you know if they
