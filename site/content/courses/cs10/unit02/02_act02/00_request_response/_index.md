@@ -335,6 +335,8 @@ it's actually a pretty complicated pattern and it's completely new to you!)
 
 ## Wrapping up
 
+Press `Control + C` to kill your server. 
+
 In this lesson, you learned the basic structure of a Django app, by looking at
 the files and tracing their execution as they handled a basic request and
 response lifecycle. 
