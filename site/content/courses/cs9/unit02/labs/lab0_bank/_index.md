@@ -122,9 +122,12 @@ In this lab we have included a testing script. The testing script for this lab i
 
 
 
-##  Transfer money
+##  Transferring Money
 
 To improve the functionality of their banking system, BISF wants you to implement a `transfer()` function at the end of the `Bank` class. BISF has already defined this function in the banking system's documentation. [Check out the documentation](https://cs.fablearn.org/docs/central/bank.html#bank.transfer) to see the specifics of the function you should implement.
+
+{{< write-action >}} **Add the `transfer()` function to the model in your Google Doc.** Be sure to refer to the documentation for the parameters. 
+
 
 {{< code-action >}} **Write the `transfer()` function and test it by running `python test_lab.py -k transfer`.**
 
