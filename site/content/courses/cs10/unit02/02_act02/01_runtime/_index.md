@@ -222,9 +222,9 @@ copy-pasting.
 
 New settings: `colorama/settings/base.py`
 ```python {linenos=table, hl_lines=["1-3"],linenostart=170}
-HUES_TO_SHOW = [-0.16, -0.8, 0, 0.8, 1.6]
-SATURATIONS_TO_SHOW = [-0.16, -0.8, 0, 0.8, 1.6]
-VALUES_TO_SHOW = [-0.16, -0.8, 0, 0.8, 1.6]
+HUES_TO_SHOW = [-0.16, -0.08, 0, 0.08, 0.16]
+SATURATIONS_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
+VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
 ```
 
 New color detail template: `colors_app/templates/colors_app/color_detail.html`
