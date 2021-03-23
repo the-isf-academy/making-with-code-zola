@@ -1,5 +1,5 @@
 ---
-title: 3. Summary Statistics Lab
+title: 3. Summary Statistics
 resources:
 ---
 
