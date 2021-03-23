@@ -10,7 +10,7 @@ you're going to learn a professional web application framework called
 
 You have already learned about [web applications]({{< ref "courses/cs10/unit00/labs/lab2_server/_index.md" >}}) (servers), programs which receive requests and send responses. Every time you use the internet, you're communicating with servers. Every time you use an app, the app is communicating with servers for you. 
 
-![A client and server](client_server.jpg)
+{{< figure src="images/courses/cs10/unit02/02_client_server.jpg" width="100%" title="A client and server" >}}
 
 Professional computer scientists generally don't write web applications from
 scratch. The reality is that many web apps use a lot of similar pieces. A

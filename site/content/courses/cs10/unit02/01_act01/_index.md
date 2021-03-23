@@ -23,8 +23,7 @@ Each stage of the design cycle will have specific deliverables.
     - Wireframe
     - Digital Prototype
     - Pitch Presentation
-- Self Assessment Form 
-- Pitch Reflection Google Doc
+- Self Assessment Document and Form 
 
 
 ## Timeline
@@ -117,7 +116,7 @@ The Pitch event requires you to reflect upon the process of outlining your web a
 
 | Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can iteratively develop a project.       | <ul><li> Reflection document with feedback from the pitch event</li><li>Reflection document with ideas for implementing the feedback from the pitch into your current idea</li><ul>                                                                                |
+| I can iteratively develop a project.       | <ul><li>Feedback from the pitch event (Google form results and notes from panellists)</li><li>Reflection on how to implemente the feedback from the pitch into your current application.</li><ul>                                                                                |
 
 
 ### Criterion D: Reflection on Tech and Society
