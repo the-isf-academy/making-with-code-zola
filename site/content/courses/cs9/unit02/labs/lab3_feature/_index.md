@@ -1,5 +1,6 @@
 ---
 title: 3. Feature Lab
+draft: True
 resources:
 - name: branch
   src: images/courses/cs9/unit02/02_03_feature_branch.png
