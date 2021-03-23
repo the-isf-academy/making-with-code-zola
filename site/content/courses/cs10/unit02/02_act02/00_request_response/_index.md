@@ -14,8 +14,8 @@ questions. (And we want you to be ready for the rest of the unit.)
 {{< code-action >}} Let's get started by checking out the sample app. 
  
 ```shell
-$ git clone https://github.com/the-isf-academy/cs10_webapp_base
-$ cd cs10_webapp_base
+$ git clone https://github.com/the-isf-academy/lab-colorama-YOUR-GITHUB-USERNAME.git
+$ cd lab-colorama
 $ pip install -r requirements.txt
 ```
 
@@ -33,7 +33,7 @@ anything.
 $ python manage.py help
 ```
 ---
-## Part I: Hello
+## A. Hello
 
 {{< code-action >}} Let's start up the app and test it out. The first command 
 prepares the database (more on this later); the second command starts the server
@@ -50,11 +50,11 @@ navigate to [http://localhost:8000](http://localhost:8000).
 Each student should individually answer this question, and the questions later
 in this lab. 
 
-Q1. What is the name of the color shown on the web page?
+- A.0: **What is the name of the color shown on the web page?**
 
 {{</ checkpoint >}}
 
-## How the parts fit together
+## B. How the parts fit together
 
 Let's see how the parts of the app worked together to show this page. When a
 request first arrives, its URL is separated into a host name and a path. In
@@ -190,7 +190,12 @@ apps to have state: if you create an object, other users will also see it and it
 will still be there if you come back later. We'll come back to this idea
 shortly. 
 
-![Request/response lifecycle diagram](request_response.jpg)
+{{< figure src="images/courses/cs10/unit02/02_request_response.jpg" width="100%" title="Request/response lifecycle diagram" >}}
+
+{{< aside >}}
+If you want a refersher on classes in Python, you can check out [this resource from the
+cs9 Games unit](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_2).
+{{</ aside >}}
 
 Before we go on, a few reflections: 
 - You've been opening a lot of small files. Get ready for more of this. It takes
@@ -208,26 +213,26 @@ Before we go on, a few reflections:
 
 {{< checkpoint >}}
 
-- Q2. When you go to the [home page](http://localhost:8000), it says "Hello
+- B.0: When you go to the [home page](http://localhost:8000), it says "Hello
   stranger" at the top. However, if you look at the template 
   `colors_app/templates/colors_app/index.html`, the word "stranger" does not
-  appear. Explain how the word "stranger" ends up on the page. Then, without
+  appear. **Explain how the word "stranger" ends up on the page. Then, without
   changing the template, change the home page so that it says hello to you
-  instead. 
-- Q3. Figure out how to change the color swatch on the home page to a different
-  color. Explain how to do it. 
-- Q4. If you didn't already check it out, go to the [random color page](http://localhost:8000/colors/random).
+  instead.**
+- B.1: Figure out how to change the color swatch on the home page to a different
+  color. **Explain how to do it.** 
+- B.2: If you didn't already check it out, go to the [random color page](http://localhost:8000/colors/random).
   You'll notice that the color swatch changes every time you load the page, and 
-  the background changes to an opposite color. Explain how this works. (Hint:
+  the background changes to an opposite color. **Explain how this works.** *(Hint:
   We previously noticed that `/colors/random` is served by `colors_app.views.random_color_view`,
   so start there. Figure out which template is being used. Look in the
   template to figure out how the background color gets set. Make sure you
-  explain how the `Color` model is involved too.)
+  explain how the `Color` model is involved too.)*
 
 {{</ checkpoint >}}
 
 --- 
-## Part II: Saving stuff
+## C. Saving stuff
 
 Now we're going to extend the app to let users create their own colors. And
 whereas our views were previously functions, now our views are going to be classes. 
@@ -313,24 +318,24 @@ All this logic is *generic*; when the class is given a few necessary parameters,
 it can do the rest because it's following the same old pattern. (Even though
 it's actually a pretty complicated pattern and it's completely new to you!)
 
-![POST Request/response lifecycle diagram](post_request_response.jpg)
+{{< figure src="images/courses/cs10/unit02/02_post_request_response.jpg" width="100%" title="POST Request/response lifecycle diagram" >}}
 
 {{< checkpoint >}}
 
-- Q5. There is currently no link from the homepage to the color list, or the
+- C.0: There is currently no link from the homepage to the color list, or the
   form to add new colors. You have to enter the URL directly to get to these
   pages, and 99% of users (you no longer included) even know how to enter URLs
-  directly. Add a link to the home page taking the user to the color list page. 
-  (Hint: There's already a link from the home page to the random color page. Use the same pattern.)
-  Explain what you did. 
-- Q6. There's also no link away from the random color page; you're 
-  stuck looping through random colors forever. Decide where the random color
-  page should link to add add an appropriate link. Where did you decide to link to?
-- Q7. Make five or six new colors, if you haven't already. Then look at the color list page. 
+  directly. **Add a link to the home page taking the user to the color list page.**
+  *(Hint: There's already a link from the home page to the random color page. Use the same pattern.)*
+  **Explain what you did.** 
+- C.1: There's also no link away from the random color page; you're 
+  stuck looping through random colors forever. **Decide where the random color
+  page should link to add add an appropriate link. Where did you decide to link to?**
+- C.2: Make five or six new colors, if you haven't already. Then look at the color list page. 
   The colors are currently sorted alphabetically (with all the upper-case names first
-  and then the lower-case names). Figure out how to change this page so that
+  and then the lower-case names). **Figure out how to change this page so that
   colors are instead sorted by how much red they contain. Explain what you had
-  to do. 
+  to do.**
 {{</ checkpoint >}}
 
 ## Wrapping up
