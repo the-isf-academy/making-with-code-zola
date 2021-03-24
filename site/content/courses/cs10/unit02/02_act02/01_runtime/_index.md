@@ -1,6 +1,5 @@
 ---
 title: 2. Runtime Lifecycle
-draft: true
 ---
 
 # Django Runtime
@@ -23,7 +22,7 @@ Start the server in a Terminal window:
 $ python manage.py runserver
 ```
 
-## Django management commands
+## A. Django management commands
 
 Every time you run Django, you run `manage.py` with some command. In Part I, you
 ran two management commands, `migrate` and `runserver`.
@@ -103,7 +102,7 @@ $ python manage.my migrate
 $ python manage.py loaddata wikipedia_colors.json
 ```
 
-![Screenshot of app full of colors](colors.png)
+{{< figure src="images/courses/cs10/unit02/02_colors.png" width="100%" title="Screenshot of app full of colors" >}}
 
 ### Django Shell
 
@@ -124,7 +123,7 @@ $ python manage.py shell
 >>> Color.objects.last()
 <Color Zinnwaldite Brown (44, 22, 8)>
 >>> Color.objects.filter(red=255).count()
-255
+110
 >>> Color.objects.filter(green__gt=200).count() # green > 200
 186
 >>> Color.objects.filter(name__startswith="R").count()
@@ -141,20 +140,23 @@ template.
 
 {{< checkpoint >}}
 
-- Q1. How many colors start with the letter 'M'?
-- Q2. How many colors have maximum blue and maximum green?
-- Q3. Of the colors with maximum blue and maximum green, which color is brightest?
+- A.0: How many colors start with the letter 'M'?
+- A.1: How many colors have maximum blue and maximum green?
+- A.2: Of the colors with maximum blue and maximum green, which color is lightest?
   Which is darkest? 
-- Q4. Give the names of all colors containing only blue. Sort them by how much
+- A.3: Give the names of all colors containing only blue. Sort them by how much
   blue they contain. 
 
 {{</checkpoint>}}
 
 ### Messing with color
-<div>
-  <img width="48%" src="rgb.png">
-  <img width="48%" src="hsv.png">
-</div>
+{{< columns >}}
+{{< figure src="images/courses/cs10/unit02/02_rgb.png" width="100%" title="Visualizing RGB color definition" >}}
+<--->
+{{< figure src="images/courses/cs10/unit02/02_hsv.png" width="100%" title="Visualizing HSV color definition" >}}
+{{< /columns >}}
+
+
 
 `Color` also has some custom methods, which we implemented in `colors_app/models.py`.
 As it turns out, red/green/blue is not a very convenient color space for finding
@@ -169,13 +171,16 @@ then translate the result back into RGB. Each returns a new `Color`.
 >>> red.hex_code()
 '#ff0000'
 >>> red.inverted()
+<Color red inverted (0, 255, 255)>
+>>> red.inverted().hex_code()
 '#00ffff'
 >>> red_hue = red.adjust_hue(0.5, name="red hue")
-<Color  (0.0, 255.0, 255.0)>
+>>> red_hue
+<Color  (0, 255, 255)>
 >>> red_sat = red.adjust_saturation(-0.5, name="red sat")
-<Color  (255.0, 127.5, 127.5)>
+<Color  (255, 127, 127)>
 >>> red_val = red.adjust_value(-0.5, name="red val")
-<Color  (127.5, 0.0, 0.0)>
+<Color  (127, 0, 0)>
 >>> red_hue.save()
 >>> red_sat.save()
 >>> red_val.save()
@@ -186,9 +191,9 @@ then translate the result back into RGB. Each returns a new `Color`.
 The next two questions ask about how colors look to you. (Since you saved your reds, 
 you can see them down at the end of the [color list page](http://localhost:8000/colors))
 
-- Q5. Adjusting red's hue by 0.5 moved the color halfway around the circle.
+- A.4: Adjusting red's hue by 0.5 moved the color halfway around the circle.
   Describe how the resulting color looks to you. 
-- Q6. Describe the perceptual difference between reducing red's saturation by 0.5
+- A.5: Describe the perceptual difference between reducing red's saturation by 0.5
   and reducing red's value by 0.5. 
 
 {{</checkpoint>}}
@@ -196,7 +201,7 @@ you can see them down at the end of the [color list page](http://localhost:8000/
 If you're sad that we juet messed up your Wikipedia colors with these reds, you
 can just run `red_hue.delete()`, etc. or run `Color.objects.last().delete()` three times.
 
-# Adding color palettes to the app
+## B. Adding color palettes to the app
 
 Now let's add a new feature to the app: a page for each color which shows a
 color palette of colors that go nicely together. This is going to require
@@ -221,14 +226,18 @@ web apps.
 understand it all yet. We highly recommend typing this in yourself rather than
 copy-pasting.
 
-New settings: `colorama/settings/base.py`
+{{< aside >}}
+The highlighted lines of the code below show the changes you need to make!
+{{</ aside >}}
+
+{{< code-action >}} Add to the bottom of the settings file: `colorama/settings/base.py`
 ```python {linenos=table, hl_lines=["1-3"],linenostart=170}
 HUES_TO_SHOW = [-0.16, -0.08, 0, 0.08, 0.16]
 SATURATIONS_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
 VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
 ```
 
-New color detail template: `colors_app/templates/colors_app/color_detail.html`
+{{< code-action >}} Create a new file for the color detail template: `colors_app/templates/colors_app/color_detail.html`
 ```html {linenos=table, hl_lines=["1-25"]}
 {% extends "base.html" %}
 {% load static %}
@@ -257,7 +266,7 @@ New color detail template: `colors_app/templates/colors_app/color_detail.html`
 {% endblock %}
 ```
 
-Add links to color list template: `colors_app/templates/colors_app/color_list.html`
+{{< code-action >}} Add links to thr color list template: `colors_app/templates/colors_app/color_list.html`
 ```python {linenos=table, hl_lines=[2, 6],linenostart=17}
      {% for color in object_list %}
        <a href="{% url 'colors_app:color_detail' color.id %}">
@@ -268,7 +277,7 @@ Add links to color list template: `colors_app/templates/colors_app/color_list.ht
      {% endfor %}
 ```
 
-Add a view to handle the color detail route: `colors_app/class_based_views.py`:
+{{< code-action >}} Add a view to handle the color detail route: `colors_app/class_based_views.py`:
 ```python {linenos=table, hl_lines=[5, "18-36"]}
 from django.views.generic import DetailView, ListView, CreateView
 from django.urls import reverse_lazy
@@ -308,7 +317,7 @@ class ColorDetailView(DetailView):
         return context
 ```
 
-Add a URL route: `colors_app/urls.py`:
+{{< code-action >}}Add a URL route: `colors_app/urls.py`:
 ```python {linenos=table, hl_lines=[3, 11]}
 from django.urls import path
 from colors_app import views
@@ -329,22 +338,22 @@ decent color palette generator.
 
 {{<checkpoint>}}
 
-- Q7. Choose a color pallete that you particularly like. What are the hex color
+- B.0: Choose a color palette that you particularly like. What are the hex color
   values? 
-- Q8. Try changing `HUES_TO_SHOW` in `colorama/settings/base.py` to display a
+- B.1: Try changing `HUES_TO_SHOW` in `colorama/settings/base.py` to display a
   different number of hues or a different range of adjustment values. You should see the 
   effects on the color detail pages. What setting of `HUES_TO_SHOW` do you like
   best? 
-- Q9. We also defined settings for `SATURATIONS_TO_SHOW` and `VALUES_TO_SHOW`,
-  but we're not showing palletes of saturations or values on the color detail
+- B.2: We also defined settings for `SATURATIONS_TO_SHOW` and `VALUES_TO_SHOW`,
+  but we're not showing palettes of saturations or values on the color detail
   pages. Explain the changes you would need to make to show a palette of
   saturations and a palette of values on the color detail page under the 
   palette of hues.
 
 {{</checkpoint>}}
 
-## If you finish early...
+## C. If you finish early...
 
-Implement the changes you described in Q9 :)
+Implement the changes you described in B.2 :)
 
 
