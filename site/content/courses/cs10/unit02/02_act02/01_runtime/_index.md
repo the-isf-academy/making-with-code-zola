@@ -79,7 +79,7 @@ page](http://localhost:8000/colors) crashes. We can apply database migrations
 (more on this later) to re-initialize the database:
 
 ```shell
-$ python manage.my migrate
+$ python manage.py migrate
 ```
 
 Now you have a fresh clean database. The [color list page](http://localhost:8000/colors)
