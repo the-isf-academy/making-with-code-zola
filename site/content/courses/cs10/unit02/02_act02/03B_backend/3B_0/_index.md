@@ -1,10 +1,8 @@
 ---
-title: 3.B.0
+title: 3.B.0 Databases and Models
 ---
 
-
-
-## Mini-Lesson 1: Introduction to Databases and Models
+## Databases and Models
 
 When looking at databases for the first time, one may think a database is just a fancy spreadsheet. In a spreadsheet, there is a screen full of little rectangles, and in these rectangles, we can enter and store data. When we look at a database using a database viewer, it can look very similar to a spreadsheet.
 
