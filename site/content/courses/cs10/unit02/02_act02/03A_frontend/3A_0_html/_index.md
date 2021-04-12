@@ -57,10 +57,203 @@ elements, but the idea behind them is the same across the internet.
     * line break (`<br>`)
 
 ## B. Getting Started on the Todo App
+As you work through the basics of frontend web development, you'll be building a basic todo application. As the frontend developer, you'll be designing the HTML templates and
+page styles. After you finish this tutorial, you'll have an example app you can use as a model for your own team's web app.
+
+In this lesson, you will make templates for each of the pages that will ultimately be in the todo app.
 
 ### App overview
+The todo app will have 6 main views:
+
+| View Name             	| URL Route            	| Description                                                                                                                                                        	|
+|-----------------------	|----------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `IndexView()`         	| /                    	| The first page that user's see when they visit your app. Gives the user the option to log in or register for a new account.                                        	|
+| `TaskDashboardView()` 	| dashboard/           	| Shows all the tasks assigned to the user.                                                                                                                          	|
+| `TaskFormView()`      	| newtask/             	| Shows a form that collects information about a new task.                                                                                                           	|
+| `EditTaskView()`      	| updatetask/<int:pk>/ 	| Shows a form that lets the user update or delete a task.                                                                                                           	|
+| `CreateAccountView()` 	| register/            	| Shows a form that collects information about a new user.                                                                                                           	|
+| `LoginView()`         	| accounts/login/      	| Shows a form that collects login information and attempts to log a user in. *This view is managed by the Django account plugin and you shouldn't have to edit it.* 	|
+
+To add each of these views, you will need to follow the steps you learned in the previous labs about adding pages to a Django app:
+
+1. Create a view for the page. We will use class-based views for the views in this tutorial.
+1. Add the URL for the page that tells Django which view to use for that URL route.
+1. Create a template for the view using HTML.
 
 ### Example
+Here's an example of how to do this to create the new task page. This page will look like this after we finish:
+
+{{< figure src="images/courses/cs10/unit02/03A_0_newtask.png" width="100%" title="New Task Page" >}}
+ 
+
+Follow along in your own repository.
+
+#### Add the view
+{{< code-action >}} In `staerter_app/views.py`, create a class for the new task page:
+
+```python {linenos=table, hl_lines=[16,17]}
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic import ListView, FormView, UpdateView, TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+#models
+from .models import Task
+
+from django.contrib.auth import login, authenticate
+
+
+# Create your views here.
+class IndexView(TemplateView):
+    template_name = 'starter_app/indexView.html'
+
+class TaskFormView(TemplateView):
+    template_name = 'starter_app/taskFormView.html'
+```
+
+#### Add the URL route
+Now that we have the view, we need to Django to route requests for this page to to `NewTaskView()`.
+
+{{< code-action >}} Add the following line of code to the `starter_app/urls.py` file:
+
+```python {linenos=table, hl_lines=[7]}
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.IndexView.as_view(), name='index'),
+    path('newtask/', views.TaskFormView.as_view(), name='new-task'),
+]
+```
+
+#### Add the HTML template
+Try running your Django server using `python manage.py runserver` and visit the new task page ([http://127.0.0.1:8000/newtask/](http://127.0.0.1:8000/newtask/)).
+You should see an error telling you that the template does not exist. This means we're ready for the final step, making the template
+for the page!
+
+{{< code-action >}} Create a new file called `taskFormView.html` in the `starter_app/templates/starter_app/` directory
+and add the code for the base template:
+
+```python {linenos=table, hl_lines=["1-5"]}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% endblock %}
+```
+All of you Django templates for views will start like this, so let's see what happening here.
+
+First, we are telling Django to extend the base template. Django templates are powerful because they can build on
+top of each other. Here, we are building on top of a base template that sets up a foundation for some styling and for
+page metadata.
+
+Second, we are creating a content block. Block are how Django puts together templates. The content we put in the content
+block in this file will get inserted in the content section of the base template. We'll see more of this kind of block-based
+templating later in the tutorial.
+
+#### Add the content of the page
+According to the image, this page has two parts: a header that says "New Task" and a form to collect the details of a new task.
+
+{{< code-action >}} First, lets add the header and a div to contain the form:
+
+```python {linenos=table, hl_lines=["4-8"]}
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h4>New Task</h4>
+    <div>
+    </div>
+</div>
+{% endblock %}
+```
+
+We add all of this inside a div element because the form and its title are related elements: they make up our idea of
+the form.
+
+{{< code-action >}} Next, add the code to generate the form using HTML form elements:
+
+```python {linenos=table, hl_lines=["7-16"]}
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h4>New Task</h4>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <label for="title">Task:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <br>
+            <label for="due-date">Due Date:</label><br>
+            <input type="date" id="due-date" name="due-date"><br>
+            <br>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+```
+
+You can [read more about the form element here](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form), 
+but the basics of what we're doing are as follows: All of the form components are wrapped in a form element tag (`<form>`).
+This tag includes a `method` attribute that tells your browser to send a POST HTTP request with the data of the form once
+the user clicks submit.
+
+Inside the form are three elements:
+* a text input field (and it's label) for the task title
+* a date input field (and it's label) for the due date
+* a button to submit the form
+
+These elements are broken up with line break (`<br>`) to visually divide the different parts of the form.
 
 ### Now you try
+Congrats! 🎊 You just made your first Django page from scratch!
+
+Now, your task is to make a page for each of the pages we need in the todo app. To do this, you will
+probably need to look through how to use some new HTML elements. You can refer to [the HTML refernce guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+to help figure out how to use them.
+
+#### Index Page
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `IndexView()`         	| /                    	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_index.png" width="100%" title="Index Page" >}}
+
+*Hint: You'll want to checkout the `<button>` component for this page.*
+
+#### Dashboard Page
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `TaskDashboardView()`    	| dashboard/           	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_dashboard.png" width="100%" title="Dashboard Page" >}}
+
+*Hint: The list HTML elements will come in handy on this page.*
+
+#### Edit Task Page
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `EditTaskView()`      	| updatetask/int:pk/   	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_edittask.png" width="100%" title="Edit Task Page" >}}
+
+*Hint: This one will be very similar to the new task page!*
+
+#### Create Account View
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `CreateAccountView()`    	| register/           	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_createaccount.png" width="100%" title="Create Account Page" >}}
+
+*Hint: Use the form elements from the task pages to help get started on this one.*
+
+#### Login View
+
+{{< figure src="images/courses/cs10/unit02/03A_0_login.png" width="100%" title="Login Page" >}}
+
+*No need to do anything for this one! We'll let Django handle it for us.*
 
