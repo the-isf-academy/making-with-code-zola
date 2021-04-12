@@ -2,358 +2,83 @@
 title: 3.B.0
 ---
 
-# Django Runtime
 
-In our first Django lab, we learned about the request/response lifecycle, how
-Django's many different parts work together to serve responses to clients. 
-In this second lab on Django, we will consider a longer lifecycle, how Django
-works as a Python program from startup to shutdown. You will also learn about
-different ways of running Django, and we'll go into a bit more detail about
-requests and responses. 
 
-{{< write-action >}} **At the end of the lab, each student will 
-turn in the answers to the questions in the lab.** 
+## Mini-Lesson 1: Introduction to Databases and Models
 
-This lab picks up where [Part I](courses/cs10/unit_02/00_request_response/_index.md) 
-left off, so you should have the Colorama app checked out on your computer. 
-Start the server in a Terminal window:
+When looking at databases for the first time, one may think a database is just a fancy spreadsheet. In a spreadsheet, there is a screen full of little rectangles, and in these rectangles, we can enter and store data. When we look at a database using a database viewer, it can look very similar to a spreadsheet.
 
-```shell
-$ python manage.py runserver
-```
+Here's an example of MS Access (database) and MS Excel (spreadsheet).
 
-## A. Django management commands
 
-Every time you run Django, you run `manage.py` with some command. In Part I, you
-ran two management commands, `migrate` and `runserver`.
-You also saw many more, when you ran `python manage.py --list`.  (You can learn
-more about any command by running `python manage.py runserver --help`.) Let's
-explore a few more commands. 
+MS Access (Database) | MS Excel (Spreadsheet)
+---------------------|-----------------------
+<img src="/images/courses/cs10/unit02/ms_access.jpg" width="400"> | <img src="/images/courses/cs10/unit02/ms_excel.png" width="400">
+Can you spot the differences?
 
-### Database management
+Even though databases and spreadsheets may look similar, they actually are very different. What are these differences?
 
-Your app stores its state in a database. In other words, all its
-records--usernames, content, never-ending records of every detail of user 
-behavior, financial details (for apps like PayPal), your sexual orientation and who 
-you find attractive (for dating apps), whether you have cancer (electronic medical 
-records)... your whole online life. If anyone ever got access to your app's database, 
-it could be a disaster for your users. 
-Unfortunately, this happens all the time. (This is a great reason for using a 
-framework like Django rather than trying to do it all yourself.)
+Here's an example:
 
-Somewhat less disastrous is the situation where an app accidentally loses its
-own database, because of a careless programmer mistake (done that!), because a
-hard drive fails, or perhaps because you forgot to pay your web hosting bill
-(happened to a friend!) Users would find that their account no longer exist, nor
-does any of their content. After a restart, the app would behave as if it had
-just been launched for the first time. For apps in production (meaning they are
-available to real-world users), regular database backups are essential. That
-way, even if disaster strikes, at least you can restore the app to the way it
-was this morning, or last week, or whenever you last backed up the database. 
+Say we want to keep track of the food that we ate in a spreadsheet. We enter the type of food we ate in a column and its portion size in another column. Say we ate a banana. We keep track of the banana and type "Banana" in the first column and "one banana" as a portion in the second column. Then in another meal, we ate rice and we type "250g". Then in another meal, we ate grapes, and we type 5 (as in the number 5). Our data will look something like this in a spreadsheet.
 
-Django has some nice built-in tools for database backups, which will provide us
-with a chance to practice using some new management commands.
+<img src="/images/courses/cs10/unit02/food_eaten_data.png" width="300">
 
-{{< code-action >}} Back up your app's database. Note that the `>` redirects the
-output of a command into a file. (Try `dumpdata` without `> backup.json`; you'll
-see all the data printed to your Terminal window). 
+Say we are really looking at being healthier and we collect our eating data for a month. We would store all of our data in our spreadsheet just like what we have in the image. Awesome!
 
-```shell
-$ python manage.py dumpdata > backup.json
-```
+Now, we want to create a program that can figure out the calorie count of what we ate during that month. Have some category breakdowns... and a nice dashboard...
 
-Now that you have a backup of your database, let's test it, shall we? 
+**Houston, we have a problem!**
 
-{{< code-action >}} Delete your app's database.
-(Careful! This is permanent. Your backup should work, but we're only suggesting
-this because we assume you won't be heart-broken if you lose the colors you
-previously created.)
+Do you know what the problem is? *Hint: Look at the data...*
 
-```shell 
-$ rm colorama/db.sqlite3
-```
+If you look at the data in the ***Portion*** column, we have both strings and integers. In addition to this, we have to figure out what the strings and numbers are and what they represent.
 
-Let's see what happened. [The homepage](http://localhost:8000) still works
-because its view doesn't access the database. But the [color list
-page](http://localhost:8000/colors) crashes. We can apply database migrations
-(more on this later) to re-initialize the database:
+This situation that we have here is very difficult to deal with programmatically. In fact, unless we create our program to handle each food individually, and then deal with every variation of food portion typed out for that food ("5 grapes", 250 (grams of grapes, as in the integer), "ate grapes until I puked", etc), we won't be able to get an accurate picture from our data and our app will fail.
 
-```shell
-$ python manage.py migrate
-```
+So what can we do about this? Enter Models and Business Logic.
 
-Now you have a fresh clean database. The [color list page](http://localhost:8000/colors)
-should load, but there won't be any colors. Now let's restore data from your
-backup:
+## Databases, Models, Business Logic and their Importance
 
-```shell
-$ python manage.py loaddata backup.json
-```
+In this example, the calorie count idea was decided on after the fact and because of this we never thought about how data was collected. Our collected data ended up to be pretty difficult to use programmatically. However, if we had some foresight on our data design before we start coding, the data entered into our database wouldn't be like in our example. The data in ***Portion*** will be **clean and useable** unlike what it is now.
 
-Double-check the [color list page](http://localhost:8000/colors); all your
-colors should be back. 
+If only we can find a person that can make sure that this doesn't happen... That's right! There's the Software Architect!
 
-{{< code-action >}} Now delete your colors again and instead load in
-[all the colors listed on Wikipedia](https://en.wikipedia.org/wiki/Lists_of_colors).
+This is where we as a Software Architect are so important. The Software Architect is the person making important decisions about the app's data (and the important bits and bobs of the app). For our app, Software Architects define what the data is and create *Models* and *Business Logic* before the actual coding.
 
-```shell 
-$ rm colorama/db.sqlite3
-$ python manage.my migrate
-$ python manage.py loaddata wikipedia_colors.json
-```
+### Models
 
-{{< figure src="images/courses/cs10/unit02/02_colors.png" width="100%" title="Screenshot of app full of colors" >}}
+A *database model* is defined as the logical design and structure of a database and defines how data will be stored, accessed and updated in a database management system.
 
-### Django Shell
-
-Django's shell is particularly useful for working with
-models. The shell is a regular Python shell, but it's loaded in the context of
-your app and its data. 
-
-{{< code-action >}} Let's explore some of the capabilities of `Color`.
-First, we'll see some built-in capabilities of any Django model object. 
-
-```python
-$ python manage.py shell
->>> from colors_app.models import Color
->>> Color.objects.count()
-865
->>> Color.objects.first()
-<Color Air Force Blue (Raf) (93, 138, 168)>
->>> Color.objects.last()
-<Color Zinnwaldite Brown (44, 22, 8)>
->>> Color.objects.filter(red=255).count()
-110
->>> Color.objects.filter(green__gt=200).count() # green > 200
-186
->>> Color.objects.filter(name__startswith="R").count()
-59
->>> Color.objects.filter(red=255, blue=0).order_by("green")[0:4]
-<QuerySet [<Color Red (255, 0, 0)>, <Color Candy Apple Red (255, 8, 0)>, 
-<Color Scarlet (255, 36, 0)>, <Color Ferrari Red (255, 40, 0)>]>
-```
-
-Usually, these kinds of model queries will be used within your app's views. For
-example, if you built a search page, the request might contain values for red,
-green, or blue. The view would execute the query and format the result using a
-template. 
+So the Software Architect designs good database models and uses them so that data, like the data in ***Portions***, will be a specific type of data when it's entered into the database. That way our data is clean and we don't need to code our app to handle an **infinite number of use cases**. Hooray!
 
 {{< checkpoint >}}
+For the calorie counting app in our example, what do you think the type of values in ***Portion*** should be?
 
-- A.0: How many colors start with the letter 'M'?
-- A.1: How many colors have maximum blue and maximum green?
-- A.2: Of the colors with maximum blue and maximum green, which color is lightest?
-  Which is darkest? 
-- A.3: Give the names of all colors containing only blue. Sort them by how much
-  blue they contain. 
+If you guessed integer values, you are correct! Integers would be more appropriate than strings here as numbers can be more easily quantifiable. We can also use integers in mathematical calculations. (How do we quantify and calculate "Ate so much of X that I puked"!?!?)
+{{</checkpoint >}}
 
-{{</checkpoint>}}
+Ok, we decided that the data will be an integer value. Great! But we need to be careful with this decision as numbers need to be differentiated too. There's still a difference between 1 as a whole apple, 1 as a portion of apples and 1 as in one gram of apple even though they all are represented by the number one. So how do we do this?
 
-### Messing with color
-{{< columns >}}
-{{< figure src="images/courses/cs10/unit02/02_rgb.png" width="100%" title="Visualizing RGB color definition" >}}
-<--->
-{{< figure src="images/courses/cs10/unit02/02_hsv.png" width="100%" title="Visualizing HSV color definition" >}}
-{{< /columns >}}
+### Business Logic
 
+Now, we use some Business Logic (or sets of business rules) and decide what our data really is. We need to decide what the number in the ***Portion*** column represents because, like in the example, 1 can mean a lot of things.
 
+Once we make a decision to the Business Logic, we need to make sure it's consistent throughout the app. Let's say our Business Logic determined that the number in ***Portion*** is "grams" (1 meaning 1g of apple), our frontend cannot display the number 1 as "one apple" or "1 portion or apple". Similarly, we shouldn't expect the app to handle a user entering 1 into the database (thinking it's a portion of apples) and suddenly our app magically knows the user really meant 1 "portion of apples" when in fact it's 1 gram. If this happens, we're back at the same problem as before where we need to deal with all possible combinations of data entry. YUCK!
 
-`Color` also has some custom methods, which we implemented in `colors_app/models.py`.
-As it turns out, red/green/blue is not a very convenient color space for finding
-related colors. Hue/saturation/value works much better. In the images above, see
-how you can just rotate the hue to get related colors of the same saturation and
-value? The methods below
-translate our RGB colors into HSV, adjust the hue, saturation, or value, and
-then translate the result back into RGB. Each returns a new `Color`.
+So Software Architects design Business Logic along with models and databases to make sure that data has meaning and flows consistently throughout the app.
 
-```python
->>> red = Color(name="red", red=255, green=0, blue=0)
->>> red.hex_code()
-'#ff0000'
->>> red.inverted()
-<Color red inverted (0, 255, 255)>
->>> red.inverted().hex_code()
-'#00ffff'
->>> red_hue = red.adjust_hue(0.5, name="red hue")
->>> red_hue
-<Color  (0, 255, 255)>
->>> red_sat = red.adjust_saturation(-0.5, name="red sat")
-<Color  (255, 127, 127)>
->>> red_val = red.adjust_value(-0.5, name="red val")
-<Color  (127, 0, 0)>
->>> red_hue.save()
->>> red_sat.save()
->>> red_val.save()
-```
+### Conclusion
 
-{{< checkpoint >}}
+Before we actually code our app, we want to design our data so that we don't have to code for 1000+ use cases. We also don't want to fix any data related errors half way into our development cycles because the someone says they want to change our data and business logic half way into our development.
 
-The next two questions ask about how colors look to you. (Since you saved your reds, 
-you can see them down at the end of the [color list page](http://localhost:8000/colors))
+As a Software Architect, we decide on what type of data the data is, and decide the Business Logic associated with that the data. And these decisions don't change in the middle of our development cycle because if these decisions are changed, then code will need to change, and that's a waste of time and money.
 
-- A.4: Adjusting red's hue by 0.5 moved the color halfway around the circle.
-  Describe how the resulting color looks to you. 
-- A.5: Describe the perceptual difference between reducing red's saturation by 0.5
-  and reducing red's value by 0.5. 
+The mantra for Software Architects to member would be: **Why fix bugs when we can design these problems away!**
 
-{{</checkpoint>}}
+You see the importance of the Software Architect? Software Architects are paid to think and come up with designs that are infallible **first**. They think of solutions that, not only are great designs, but also save time and money during the development cycle. This is why Software Architects get paid the big bucks compared to a CSS/Javascript Monkey.
 
-If you're sad that we juet messed up your Wikipedia colors with these reds, you
-can just run `red_hue.delete()`, etc. or run `Color.objects.last().delete()` three times.
-
-## B. Adding color palettes to the app
-
-Now let's add a new feature to the app: a page for each color which shows a
-color palette of colors that go nicely together. This is going to require
-extending the app at every level we've studied so far. We'll start at the
-"outside" with URL routing, and work our way "in" to the models. 
-
-- **We need to add a URL route** for showing a color. Wo avoid ambiguity, we'll 
-  refer to colors by the unique ID each is assigned by the database. These URLs
-  will have the form `colors/23`, `colors/155`, etc. 
-- **We need a new view** to handle these URLs. 
-- **We'll update the color list template** so that each color swatch is a link to
-  that color's page.
-- **We need a new template** for showing a color.
-- **We need to use some settings** to specify how many colors should be shown in the
-  palette. 
-
-Even though we planned this new feature from the outside in, we're going to
-implement it from the inside out. This is a common way to work while designing
-web apps. 
-
-{{< code-action >}} Make the following changes to your files. You won't
-understand it all yet. We highly recommend typing this in yourself rather than
-copy-pasting.
-
-{{< aside >}}
-The highlighted lines of the code below show the changes you need to make!
-{{</ aside >}}
-
-{{< code-action >}} Add to the bottom of the settings file: `colorama/settings/base.py`
-```python {linenos=table, hl_lines=["1-3"],linenostart=170}
-HUES_TO_SHOW = [-0.16, -0.08, 0, 0.08, 0.16]
-SATURATIONS_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
-VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
-```
-
-{{< code-action >}} Create a new file for the color detail template: `colors_app/templates/colors_app/color_detail.html`
-```html {linenos=table, hl_lines=["1-25"]}
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
-  <div class="row">
-    <div class="col text-center">
-      <h1>{{color.name}}</h1>
-      <p>{{color.hex_code}}</p>
-      <p>
-        <a href="{% url 'colors_app:color_list' %}">
-          Back to the color list        
-        </a>  
-      </p>
-    </div>      
-  </div>
-  <h2>Hues</h2>
-  <div class="swatches">
-    {% for color in hues %}
-      <div class="swatch">
-        {% include "colors_app/swatch.html" %}
-      </div>      
-    {% endfor %}
-  </div>
-  <script src="{% static 'colors_app/offset_swatches.js' %}"></script>
-{% endblock %}
-```
-
-{{< code-action >}} Add links to thr color list template: `colors_app/templates/colors_app/color_list.html`
-```python {linenos=table, hl_lines=[2, 6],linenostart=17}
-     {% for color in object_list %}
-       <a href="{% url 'colors_app:color_detail' color.id %}">
-       <div class="swatch">
-         {% include "colors_app/swatch.html" %}
-       </div>  
-       </a>
-     {% endfor %}
-```
-
-{{< code-action >}} Add a view to handle the color detail route: `colors_app/class_based_views.py`:
-```python {linenos=table, hl_lines=[5, "18-36"]}
-from django.views.generic import DetailView, ListView, CreateView
-from django.urls import reverse_lazy
-from colors_app.models import Color
-from colors_app.forms import ColorForm
-from django.conf import settings
-
-class ColorListView(ListView):
-    model = Color
-    template_name = "colors_app/color_list.html"
-    queryset = Color.objects.order_by("name")
-
-class NewColorView(CreateView):
-    model = Color
-    form_class = ColorForm
-    template_name = "colors_app/color_form.html"
-    success_url = reverse_lazy("colors_app:color_list")
-
-class ColorDetailView(DetailView):
-    model = Color
-    template_name = "colors_app/color_detail.html"
-      
-    def get_context_data(self, *args, **kwargs):
-        "Adds properties to the context dict sent to the template" 
-        context = super().get_context_data(*args, **kwargs)
-        color = self.get_object()
-        hues = []
-        for adjustment in settings.HUES_TO_SHOW:
-            if adjustment == 0:
-                hues.append(color)
-            else:
-                hue = color.adjust_hue(adjustment)
-                hue.name = hue.hex_code()
-                hues.append(hue)
-        context['color'] = color
-        context['hues'] = hues
-        return context
-```
-
-{{< code-action >}}Add a URL route: `colors_app/urls.py`:
-```python {linenos=table, hl_lines=[3, 11]}
-from django.urls import path
-from colors_app import views
-from colors_app.class_based_views import NewColorView, ColorListView, ColorDetailView
-
-app_name = "colors_app"
-urlpatterns = [
-    path('', views.home_view, name="index"),
-    path('colors/random', views.random_color_view, name="random_color"),
-    path('colors/new', NewColorView.as_view(), name='new_color'),
-    path('colors', ColorListView.as_view(), name='color_list'),
-    path('colors/<int:pk>', ColorDetailView.as_view(), name='color_detail'),
-]
-```
-
-Congratulations! You just added a new feature to the app, and you have a pretty
-decent color palette generator.
-
-{{<checkpoint>}}
-
-- B.0: Choose a color palette that you particularly like. What are the hex color
-  values? 
-- B.1: Try changing `HUES_TO_SHOW` in `colorama/settings/base.py` to display a
-  different number of hues or a different range of adjustment values. You should see the 
-  effects on the color detail pages. What setting of `HUES_TO_SHOW` do you like
-  best? 
-- B.2: We also defined settings for `SATURATIONS_TO_SHOW` and `VALUES_TO_SHOW`,
-  but we're not showing palettes of saturations or values on the color detail
-  pages. Explain the changes you would need to make to show a palette of
-  saturations and a palette of values on the color detail page under the 
-  palette of hues.
-
-{{</checkpoint>}}
-
-## C. If you finish early...
-
-Implement the changes you described in B.2 :)
+![Gorilla getting Code Monkey's bananas](/images/courses/cs10/unit02/Codemonkey.png)
 
 
+I hope this introduction has given some insight into databases, models, business logic and also how important this role is. In the next mini-lesson, we will look at how we use models with Django and real code.
