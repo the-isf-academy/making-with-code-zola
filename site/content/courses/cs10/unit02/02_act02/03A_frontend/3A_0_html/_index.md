@@ -81,14 +81,14 @@ python manage.py runserver
 ### App overview
 The todo app will have 6 main views:
 
-| View Name             	| URL Route            	| Description                                                                                                                                                        	|
-|-----------------------	|----------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| `IndexView()`         	| /                    	| The first page that user's see when they visit your app. Gives the user the option to log in or register for a new account.                                        	|
-| `TaskDashboardView()` 	| dashboard/           	| Shows all the tasks assigned to the user.                                                                                                                          	|
-| `TaskFormView()`      	| newtask/             	| Shows a form that collects information about a new task.                                                                                                           	|
-| `EditTaskView()`      	| updatetask/<int:pk>/ 	| Shows a form that lets the user update or delete a task.                                                                                                           	|
-| `CreateAccountView()` 	| register/            	| Shows a form that collects information about a new user.                                                                                                           	|
-| `LoginView()`         	| accounts/login/      	| Shows a form that collects login information and attempts to log a user in. *This view is managed by the Django account plugin and you shouldn't have to edit it.* 	|
+| View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
+|-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `IndexView()`         	| /                    	| index         | `indexView.html`          | The first page that user's see when they visit your app. Gives the user the option to log in or register for a new account.                                        	|
+| `TaskDashboardView()` 	| dashboard/           	| dashboard     | `dashboardView.html`      | Shows all the tasks assigned to the user.                                                                                                                          	|
+| `TaskFormView()`      	| newtask/             	| new-task      | `taskFormView.html`       | Shows a form that collects information about a new task.                                                                                                           	|
+| `EditTaskView()`      	| updatetask/<int:pk>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
+| `CreateAccountView()` 	| register/            	| register      | `createAccountView.html`  | Shows a form that collects information about a new user.                                                                                                           	|
+| `LoginView()`         	| accounts/login/      	| login         |  `login.html`             |Shows a form that collects login information and attempts to log a user in. *This view is managed by the Django account plugin and you shouldn't have to edit it.* 	|
 
 To add each of these views, you will need to follow the steps you learned in the previous labs about adding pages to a Django app:
 
@@ -240,7 +240,8 @@ to help figure out how to use them.
 
 {{< figure src="images/courses/cs10/unit02/03A_0_index.png" width="100%" title="Index Page" >}}
 
-*Hint: You'll want to checkout the `<button>` component for this page.*
+*Hint: HTML `<button>` elements don't naturally act as links. To make your buttons link to the
+appropriate pages, you will also need to use link elements (`<a>`) for this page.*
 
 #### Dashboard Page
 | View Name             	| URL Route            	|
