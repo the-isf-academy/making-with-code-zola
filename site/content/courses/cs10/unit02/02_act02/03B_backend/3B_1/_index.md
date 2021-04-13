@@ -4,22 +4,22 @@ title: 3.B.1 Django and Models
 
 ## Before We Begin...
 
-{{< code-action >}} Before we get started, please download the CS10 Webapp base code repo on GitHub. Then go into the directory and start the webapp server.
+{{< code-action >}} Before we get started, please clone the CS10 Webapp backend repo on GitHub, then go into the directory and install the missing packages using pip or pip3.
 
 ```shell
-$ cd cs10/unit_02
-$ git clone https://github.com/the-isf-academy/cs10_webapp_backend
-$ cd cs10_webapp_backend
-$ python manage.py runserver
-```
-
-Install the missing packages using pip.
-
-```shell
+cd cs10/unit_02
+git clone https://github.com/the-isf-academy/cs10_webapp_backend
+cd cs10_webapp_backend
 pip3 install -r requirements.txt
 ```
 
-We can access the To-Do App on *localhost:8000* but it won't run yet. We're missing a lot of code that will be introduced here.
+After you have installed the requirements, you can start the server by typing the following in Terminal:
+
+```shell
+python manage.py runserver
+```
+
+Doing this now will result in a lot of errors and the server won't start. That's because we're missing a lot of code that will be introduced here so please remember this step for later when we are at the end of this lesson.
 
 ## Defining a Model in Django
 
