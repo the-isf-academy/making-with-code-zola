@@ -13,17 +13,13 @@ $ cd cs10_webapp_backend
 $ python manage.py runserver
 ```
 
-If the server doesn't start, it means there's a requirement missing. Install the missing packages using pip.
+Install the missing packages using pip.
 
 ```shell
 pip3 install -r requirements.txt
 ```
 
-Once the server is running, you can access the Task App site on *localhost:8000*
-
-You can also access the admin page of the site on *localhost:8000/admin* (more on this later)
-
-Get familiar with site and all its functionality to get a feel of how everything works and get some dummy data into the system.
+We can access the To-Do App on *localhost:8000* but it won't run yet. We're missing a lot of code that will be introduced here.
 
 ## Defining a Model in Django
 
@@ -162,5 +158,7 @@ Let's step through "Adding a new task" use case through the lens of a HTTP reque
 The interaction looks something like this...
 
 ![](/images/courses/cs10/unit02/newtask.png)
+
+Now that we have put together our To-Do app, we can save all our files and start the server. We should be able to access the To-Do app on **localhost:8000**. See top of page for instructions for this.
 
 I hope this tutorial has been helpful in understanding how we can create Models in Django and work with them in forms and views. The next tutorial will look at some tools that we can use to look at our data.
