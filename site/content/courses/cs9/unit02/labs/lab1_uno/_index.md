@@ -3,7 +3,7 @@ title: 1. Uno Lab
 resources:
 - name: Uno
   src: images/courses/cs9/unit02/02_01_uno.jpg
-draft: True
+draft: False
 ---
 {{< devnote >}}
 CS1/CS2 links
