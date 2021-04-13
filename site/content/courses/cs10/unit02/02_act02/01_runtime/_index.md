@@ -98,7 +98,7 @@ colors should be back.
 
 ```shell 
 $ rm colorama/db.sqlite3
-$ python manage.my migrate
+$ python manage.py migrate
 $ python manage.py loaddata wikipedia_colors.json
 ```
 
