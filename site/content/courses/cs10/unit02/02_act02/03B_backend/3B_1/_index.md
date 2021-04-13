@@ -149,17 +149,17 @@ When a user enters a new task in the New Task page and clicks on "Save", the dat
 
 ## Putting it Together
 
-Let's look at how Models are used in Django step by step through the lens of a HTTP request/response:
+Let's step through "Adding a new task" use case through the lens of a HTTP request/response:
 
-- A user hits the web app and the Django server receives HTTP request.
-- Django takes the HTTP request and routes the user according to routes defined in *urls.py*.
-- Django will look in *urls.py* and the class.as_view in the file and prepares the view and template
-- Django gathers all the parts it needs to build the webpage and sends it to the user
-- Once the response gets rendered on the user's web browser, the user can see the form and do data entry on it.
-- When the user enters and submits data from the form, that data gets stored into a database in the appropriate table and fields
-- The user will then be rerouted after saving (optional)
+- A user hits the webpage and the Django server receives HTTP request.
+- Django takes the HTTP request and routes the user according to routes defined in *urls.py*. In this case, /newtask/
+- Django finds all the parts (Models, Views, Templates, etc) it needs to build the webpage for newtask
+- Once Django gathers everything it needs, Django sends the webpage to the user as a HTTP response
+- The response is received by our browser and the browser renders the form
+- We add a new task and submit the form. That data gets POSTed back to the server
+- The server receives the POSTed data and then saves the data into the database in the appropriate table and fields based on the Model
 
-The interaction looks like this...
+The interaction looks something like this...
 
 ![](/images/courses/cs10/unit02/newtask.png)
 
