@@ -8,8 +8,8 @@ title: 3.B.1 Django and Models
 
 ```shell
 cd cs10/unit_02
-git clone https://github.com/the-isf-academy/cs10_webapp_backend
-cd cs10_webapp_backend
+git clone https://github.com/the-isf-academy/cs10_webapp_backend-YOUR-GITHUB-USERNAME.git
+cd cs10_webapp_backend-YOUR-GITHUB-USERNAME
 pip3 install -r requirements.txt
 ```
 
@@ -56,7 +56,7 @@ Let's look at this code in detail:
 - *from django.db import models* enables all of Django's model library code to be used
 - There are a couple of django.utils time-based imports
 - The *Task* class inherits from Django's Model class. This class definition tells Django that this is a model, and during migration, Django will create the table in the database with the class attributes as database fields
-- the class attributes (*task_assigned_to, label, notes, etc*) defines fields (or columns) for the Task table.
+- the class attributes (*title, label, notes, etc*) defines fields (or columns) for the Task table.
 - in these class attributes, CharField(max_length=30) defines the type of data the variable will store. CharField(max_length=30) stores a string with a maximum of 30 characters into the database. There are many other field types like IntegerField, DateField, BooleanField, etc. Unlike variables in Python, variables for SQL (the database programming language) are not mutable and cannot change data types.
 
 Django helps map Python to SQL using thees class attributes. For more information, go to the Django reference for Field types is here.

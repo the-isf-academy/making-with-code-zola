@@ -78,5 +78,8 @@ You see the importance of the Software Architect? Software Architects are paid t
 
 ![Gorilla getting Code Monkey's bananas](/images/courses/cs10/unit02/Codemonkey.png)
 
+{{< checkpoint >}}
+Now that we have read about databases and models, how will you take this learning and apply it to your own web app?
+{{</checkpoint >}}
 
 I hope this introduction has given some insight into databases, models, business logic and also how important this role is. In the next mini-lesson, we will look at how we use models with Django and real code.
