@@ -7,9 +7,9 @@ title: 3.A.0 HTML
 As frontend programmers, you'll be getting very familiar with the language for writing web pages: *HTML* or *hyper text markup language*.
 HTML is a langauge, but it's not a programming language like Python. Instead, it's a language used by your web browwser to determine how 
 to display web content. You've actually already used a langauge like this every time you've read a page on this website or written your
-self-assement for a project – MarkDown in a language for rendering content too.
+self-assement for a project – MarkDown is a language for rendering content too.
 
-On the internet, HTML runs deep. All webpages are just HTML documents send to your computer and interpreted by your web browser.
+On the internet, HTML runs deep. All webpages are just HTML documents sent to your computer and interpreted by your web browser.
 
 ## A. HTML Basics
 HTML documents are made up of different nested elements. This just means that some HTML elements can contain other elements (like a box
@@ -89,7 +89,7 @@ Here's an example of how to do this to create the new task page. This page will 
 Follow along in your own repository.
 
 #### Add the view
-{{< code-action >}} In `staerter_app/views.py`, create a class for the new task page:
+{{< code-action >}} In `starter_app/views.py`, create a class for the new task page:
 
 ```python {linenos=table, hl_lines=[16,17]}
 from django.shortcuts import render
@@ -148,9 +148,9 @@ First, we are telling Django to extend the base template. Django templates are p
 top of each other. Here, we are building on top of a base template that sets up a foundation for some styling and for
 page metadata.
 
-Second, we are creating a content block. Block are how Django puts together templates. The content we put in the content
-block in this file will get inserted in the content section of the base template. We'll see more of this kind of block-based
-templating later in the tutorial.
+Second, we are creating a content block. Blocks are how Django puts together templates. The content we put between the `{% block content %}`
+and the `{% endblock %}` tags in this file will get inserted in the content section of the `base.html` template. We'll see more of this
+kind of block-based templating later in the tutorial.
 
 #### Add the content of the page
 According to the image, this page has two parts: a header that says "New Task" and a form to collect the details of a new task.
@@ -202,9 +202,9 @@ This tag includes a `method` attribute that tells your browser to send a POST HT
 the user clicks submit.
 
 Inside the form are three elements:
-* a text input field (and it's label) for the task title
-* a date input field (and it's label) for the due date
-* a button to submit the form
+* a text `<input>` field (and it's `<label>`) for the task title
+* a date `<input>` field (and it's `<label>`) for the due date
+* a `<button>` to submit the form
 
 These elements are broken up with line break (`<br>`) to visually divide the different parts of the form.
 
@@ -214,6 +214,8 @@ Congrats! 🎊 You just made your first Django page from scratch!
 Now, your task is to make a page for each of the pages we need in the todo app. To do this, you will
 probably need to look through how to use some new HTML elements. You can refer to [the HTML refernce guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 to help figure out how to use them.
+
+{{< code-action >}} Use the information and screenshots below to create each of the pages.
 
 #### Index Page
 | View Name             	| URL Route            	|
