@@ -66,9 +66,9 @@ Once we make a decision to the Business Logic, we need to make sure it's consist
 
 So Software Architects design Business Logic along with models and databases to make sure that data has meaning and flows consistently throughout the app.
 
-{{checkpoint}}
+{{< checkpoint >}}
 Now add a label to your table to describe the what the data should be in the **Portion** field in your table.
-{{/checkpoint}}
+{{< /checkpoint >}}
 
 ### Conclusion
 

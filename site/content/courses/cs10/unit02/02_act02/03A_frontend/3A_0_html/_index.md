@@ -62,6 +62,22 @@ page styles. After you finish this tutorial, you'll have an example app you can 
 
 In this lesson, you will make templates for each of the pages that will ultimately be in the todo app.
 
+### Setup
+{{< code-action >}} Before we get started, clone the cs10 Webapp frontend repo on GitHub, then go into the directory and install the missing packages using pip or pip3.
+
+```shell
+cd cs10/unit_02
+git clone https://github.com/the-isf-academy/cs10_webapp_frontend-YOUR-GITHUB-USERNAME.git
+cd cs10_webapp_frontend-YOUR-GITHUB-USERNAME
+pip3 install -r requirements.txt
+```
+
+After you have installed the requirements, you can start the server by typing the following in Terminal:
+
+```shell
+python manage.py runserver
+```
+
 ### App overview
 The todo app will have 6 main views:
 
