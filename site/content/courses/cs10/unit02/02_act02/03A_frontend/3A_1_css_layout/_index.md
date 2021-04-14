@@ -1,360 +1,473 @@
 ---
 title: 3.A.1 CSS Layout
-draft: true
 ---
 
-# Django Runtime
+# Intro to CSS Layouts
+Now that you have the basic map of your site laid out, it's time to learn how to make it more usable by adding some style to your pages.
+To add style, we'll use CSS...
 
-In our first Django lab, we learned about the request/response lifecycle, how
-Django's many different parts work together to serve responses to clients. 
-In this second lab on Django, we will consider a longer lifecycle, how Django
-works as a Python program from startup to shutdown. You will also learn about
-different ways of running Django, and we'll go into a bit more detail about
-requests and responses. 
+## HTML + CSS
 
-{{< write-action >}} **At the end of the lab, each student will 
-turn in the answers to the questions in the lab.** 
+### classes
 
-This lab picks up where [Part I](courses/cs10/unit_02/00_request_response/_index.md) 
-left off, so you should have the Colorama app checked out on your computer. 
-Start the server in a Terminal window:
+### Elements
+width/padding/margin
 
-```shell
-$ python manage.py runserver
+## Bootstrap
+Styling HTMl elements can be really difficult and involve a lot of code to make sure that your site uses a consistent style that works
+well on a variety of screen sizes (this is known as responsive web development). To help with this, we'll be using a predefined CSS
+toolkit that simplifies and standardizes styles across your webapp.
+
+### Containers
+
+In Bootstrap, layouts are defined by `container` elements. You can turn any `<div>` into a container simply by adding the `container`
+class to the div:
+
+```html
+<div class="container">
+    <p> I'm a container!</p>
+</div>
 ```
 
-## A. Django management commands
+Once a div becomes a container, the width of the div gets limited based on the screen size. This means that content won't overflow on
+smaller devices and content won't become really streched on larger devices. Let's see this in action:
 
-Every time you run Django, you run `manage.py` with some command. In Part I, you
-ran two management commands, `migrate` and `runserver`.
-You also saw many more, when you ran `python manage.py --list`.  (You can learn
-more about any command by running `python manage.py runserver --help`.) Let's
-explore a few more commands. 
+{{< code-action >}} Add the following lines of code to your `starter_app/dashbaordView.html` file to make the
+div contain the tasks a container with a dark background:
 
-### Database management
-
-Your app stores its state in a database. In other words, all its
-records--usernames, content, never-ending records of every detail of user 
-behavior, financial details (for apps like PayPal), your sexual orientation and who 
-you find attractive (for dating apps), whether you have cancer (electronic medical 
-records)... your whole online life. If anyone ever got access to your app's database, 
-it could be a disaster for your users. 
-Unfortunately, this happens all the time. (This is a great reason for using a 
-framework like Django rather than trying to do it all yourself.)
-
-Somewhat less disastrous is the situation where an app accidentally loses its
-own database, because of a careless programmer mistake (done that!), because a
-hard drive fails, or perhaps because you forgot to pay your web hosting bill
-(happened to a friend!) Users would find that their account no longer exist, nor
-does any of their content. After a restart, the app would behave as if it had
-just been launched for the first time. For apps in production (meaning they are
-available to real-world users), regular database backups are essential. That
-way, even if disaster strikes, at least you can restore the app to the way it
-was this morning, or last week, or whenever you last backed up the database. 
-
-Django has some nice built-in tools for database backups, which will provide us
-with a chance to practice using some new management commands.
-
-{{< code-action >}} Back up your app's database. Note that the `>` redirects the
-output of a command into a file. (Try `dumpdata` without `> backup.json`; you'll
-see all the data printed to your Terminal window). 
-
-```shell
-$ python manage.py dumpdata > backup.json
-```
-
-Now that you have a backup of your database, let's test it, shall we? 
-
-{{< code-action >}} Delete your app's database.
-(Careful! This is permanent. Your backup should work, but we're only suggesting
-this because we assume you won't be heart-broken if you lose the colors you
-previously created.)
-
-```shell 
-$ rm colorama/db.sqlite3
-```
-
-Let's see what happened. [The homepage](http://localhost:8000) still works
-because its view doesn't access the database. But the [color list
-page](http://localhost:8000/colors) crashes. We can apply database migrations
-(more on this later) to re-initialize the database:
-
-```shell
-$ python manage.py migrate
-```
-
-Now you have a fresh clean database. The [color list page](http://localhost:8000/colors)
-should load, but there won't be any colors. Now let's restore data from your
-backup:
-
-```shell
-$ python manage.py loaddata backup.json
-```
-
-Double-check the [color list page](http://localhost:8000/colors); all your
-colors should be back. 
-
-{{< code-action >}} Now delete your colors again and instead load in
-[all the colors listed on Wikipedia](https://en.wikipedia.org/wiki/Lists_of_colors).
-
-```shell 
-$ rm colorama/db.sqlite3
-$ python manage.my migrate
-$ python manage.py loaddata wikipedia_colors.json
-```
-
-{{< figure src="images/courses/cs10/unit02/02_colors.png" width="100%" title="Screenshot of app full of colors" >}}
-
-### Django Shell
-
-Django's shell is particularly useful for working with
-models. The shell is a regular Python shell, but it's loaded in the context of
-your app and its data. 
-
-{{< code-action >}} Let's explore some of the capabilities of `Color`.
-First, we'll see some built-in capabilities of any Django model object. 
-
-```python
-$ python manage.py shell
->>> from colors_app.models import Color
->>> Color.objects.count()
-865
->>> Color.objects.first()
-<Color Air Force Blue (Raf) (93, 138, 168)>
->>> Color.objects.last()
-<Color Zinnwaldite Brown (44, 22, 8)>
->>> Color.objects.filter(red=255).count()
-110
->>> Color.objects.filter(green__gt=200).count() # green > 200
-186
->>> Color.objects.filter(name__startswith="R").count()
-59
->>> Color.objects.filter(red=255, blue=0).order_by("green")[0:4]
-<QuerySet [<Color Red (255, 0, 0)>, <Color Candy Apple Red (255, 8, 0)>, 
-<Color Scarlet (255, 36, 0)>, <Color Ferrari Red (255, 40, 0)>]>
-```
-
-Usually, these kinds of model queries will be used within your app's views. For
-example, if you built a search page, the request might contain values for red,
-green, or blue. The view would execute the query and format the result using a
-template. 
-
-{{< checkpoint >}}
-
-- A.0: How many colors start with the letter 'M'?
-- A.1: How many colors have maximum blue and maximum green?
-- A.2: Of the colors with maximum blue and maximum green, which color is lightest?
-  Which is darkest? 
-- A.3: Give the names of all colors containing only blue. Sort them by how much
-  blue they contain. 
-
-{{</checkpoint>}}
-
-### Messing with color
-{{< columns >}}
-{{< figure src="images/courses/cs10/unit02/02_rgb.png" width="100%" title="Visualizing RGB color definition" >}}
-<--->
-{{< figure src="images/courses/cs10/unit02/02_hsv.png" width="100%" title="Visualizing HSV color definition" >}}
-{{< /columns >}}
-
-
-
-`Color` also has some custom methods, which we implemented in `colors_app/models.py`.
-As it turns out, red/green/blue is not a very convenient color space for finding
-related colors. Hue/saturation/value works much better. In the images above, see
-how you can just rotate the hue to get related colors of the same saturation and
-value? The methods below
-translate our RGB colors into HSV, adjust the hue, saturation, or value, and
-then translate the result back into RGB. Each returns a new `Color`.
-
-```python
->>> red = Color(name="red", red=255, green=0, blue=0)
->>> red.hex_code()
-'#ff0000'
->>> red.inverted()
-<Color red inverted (0, 255, 255)>
->>> red.inverted().hex_code()
-'#00ffff'
->>> red_hue = red.adjust_hue(0.5, name="red hue")
->>> red_hue
-<Color  (0, 255, 255)>
->>> red_sat = red.adjust_saturation(-0.5, name="red sat")
-<Color  (255, 127, 127)>
->>> red_val = red.adjust_value(-0.5, name="red val")
-<Color  (127, 0, 0)>
->>> red_hue.save()
->>> red_sat.save()
->>> red_val.save()
-```
-
-{{< checkpoint >}}
-
-The next two questions ask about how colors look to you. (Since you saved your reds, 
-you can see them down at the end of the [color list page](http://localhost:8000/colors))
-
-- A.4: Adjusting red's hue by 0.5 moved the color halfway around the circle.
-  Describe how the resulting color looks to you. 
-- A.5: Describe the perceptual difference between reducing red's saturation by 0.5
-  and reducing red's value by 0.5. 
-
-{{</checkpoint>}}
-
-If you're sad that we juet messed up your Wikipedia colors with these reds, you
-can just run `red_hue.delete()`, etc. or run `Color.objects.last().delete()` three times.
-
-## B. Adding color palettes to the app
-
-Now let's add a new feature to the app: a page for each color which shows a
-color palette of colors that go nicely together. This is going to require
-extending the app at every level we've studied so far. We'll start at the
-"outside" with URL routing, and work our way "in" to the models. 
-
-- **We need to add a URL route** for showing a color. Wo avoid ambiguity, we'll 
-  refer to colors by the unique ID each is assigned by the database. These URLs
-  will have the form `colors/23`, `colors/155`, etc. 
-- **We need a new view** to handle these URLs. 
-- **We'll update the color list template** so that each color swatch is a link to
-  that color's page.
-- **We need a new template** for showing a color.
-- **We need to use some settings** to specify how many colors should be shown in the
-  palette. 
-
-Even though we planned this new feature from the outside in, we're going to
-implement it from the inside out. This is a common way to work while designing
-web apps. 
-
-{{< code-action >}} Make the following changes to your files. You won't
-understand it all yet. We highly recommend typing this in yourself rather than
-copy-pasting.
-
-{{< aside >}}
-The highlighted lines of the code below show the changes you need to make!
-{{</ aside >}}
-
-{{< code-action >}} Add to the bottom of the settings file: `colorama/settings/base.py`
-```python {linenos=table, hl_lines=["1-3"],linenostart=170}
-HUES_TO_SHOW = [-0.16, -0.08, 0, 0.08, 0.16]
-SATURATIONS_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
-VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
-```
-
-{{< code-action >}} Create a new file for the color detail template: `colors_app/templates/colors_app/color_detail.html`
-```html {linenos=table, hl_lines=["1-25"]}
+```html {linenos=table, hl_lines=[4,11]}
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
-  <div class="row">
-    <div class="col text-center">
-      <h1>{{color.name}}</h1>
-      <p>{{color.hex_code}}</p>
-      <p>
-        <a href="{% url 'colors_app:color_list' %}">
-          Back to the color list        
-        </a>  
-      </p>
-    </div>      
-  </div>
-  <h2>Hues</h2>
-  <div class="swatches">
-    {% for color in hues %}
-      <div class="swatch">
-        {% include "colors_app/swatch.html" %}
-      </div>      
-    {% endfor %}
-  </div>
-  <script src="{% static 'colors_app/offset_swatches.js' %}"></script>
+<div class="container bg-dark">
+    <h4>Tasks</h4>
+  <ul>
+      <li> <a href="{% url 'update-task' pk=1 %}">Task 1 </a></li>
+      <li> <a href="{% url 'update-task' pk=2 %}">Task 2</a></li>
+      <li> <a href="{% url 'update-task' pk=3 %}">Task 3</a></li>
+  </ul>
+</div>
+
 {% endblock %}
 ```
 
-{{< code-action >}} Add links to thr color list template: `colors_app/templates/colors_app/color_list.html`
-```python {linenos=table, hl_lines=[2, 6],linenostart=17}
-     {% for color in object_list %}
-       <a href="{% url 'colors_app:color_detail' color.id %}">
-       <div class="swatch">
-         {% include "colors_app/swatch.html" %}
-       </div>  
-       </a>
-     {% endfor %}
+{{< code-action >}} Now try changed the size of your browser window to make it bigger and smaller.
+
+Notice how the dark background gets smaller at the window gets smaller and bigger as the window gets
+bigger? That's the power of the Bootstrap container in action!
+
+Containers are very powerful and can be used to make highly customizable webpage layouts using the [Bootstrap
+Grid system](https://getbootstrap.com/docs/4.6/layout/grid/). You may want to read more about this later
+if you need to make a special layout for one of your pages.
+
+### Flex Box
+However, Bootstrap is mostly build on an automative system for intuitively organizing content within containers
+called the Flexbox layout.
+
+{{< look-action >}} Watch this brief video describing how the Flexbox layout works:
+{{< youtube "K74l26pE4YA" >}}
+
+Now, let's use the flexbox layout to add some style the the tasks in our tasklist.
+
+{{< code-action >}} First, let's change the task elements so that they look more like contained objects
+than lines of text. To do this, we'll apply the `list-group` class to our task list element and the 
+`list-group-item` to each of the task items in our list:
+
+```html {linenos=table, hl_lines=[6, 7, 10, 13]}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h4>Tasks</h4> 
+  <ul class="list-group">
+    <li class="list-group-item">
+      <a href="{% url 'update-task' pk=1 %}">Task 1 </a>
+    </li>
+    <li class="list-group-item">
+      <a href="{% url 'update-task' pk=2 %}">Task 2 </a>
+    </li>
+    <li class="list-group-item">
+      <a href="{% url 'update-task' pk=3 %}">Task 3 </a>
+    </li>
+  </ul>
+</div>
+
+{% endblock %}
 ```
 
-{{< code-action >}} Add a view to handle the color detail route: `colors_app/class_based_views.py`:
-```python {linenos=table, hl_lines=[5, "18-36"]}
-from django.views.generic import DetailView, ListView, CreateView
-from django.urls import reverse_lazy
-from colors_app.models import Color
-from colors_app.forms import ColorForm
-from django.conf import settings
+{{< code-action >}} Next, let's add some more content to our tasks:
 
-class ColorListView(ListView):
-    model = Color
-    template_name = "colors_app/color_list.html"
-    queryset = Color.objects.order_by("name")
+```html {linenos=table, hl_lines=["8-14", "17-23", "26-32"]}
+{% extends "base.html" %}
 
-class NewColorView(CreateView):
-    model = Color
-    form_class = ColorForm
-    template_name = "colors_app/color_form.html"
-    success_url = reverse_lazy("colors_app:color_list")
+{% block content %}
+<div class="container">
+    <h4>Tasks</h4> 
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h5 class="mb-1">Task</h5>
+      <p><strong>Date Due:</strong> Date holder</p>
+      <p><i>Label</i></p>
+      <p>Notes: notes holder</p>
+      <a href="{% url 'update-task' pk=1 %}">
+        Update
+      </a>
+    </li>
+    <li class="list-group-item">
+      <h5 class="mb-1">Task</h5>
+      <p><strong>Date Due:</strong> Date holder</p>
+      <p><i>Label</i></p>
+      <p>Notes: notes holder</p>
+      <a href="{% url 'update-task' pk=1 %}">
+        Update
+      </a>
+    </li>
+    <li class="list-group-item">
+      <h5 class="mb-1">Task</h5>
+      <p><strong>Date Due:</strong> Date holder</p>
+      <p><i>Label</i></p>
+      <p>Notes: notes holder</p>
+      <a href="{% url 'update-task' pk=1 %}">
+        Update
+      </a>
+    </li>
+  </ul>
+</div>
 
-class ColorDetailView(DetailView):
-    model = Color
-    template_name = "colors_app/color_detail.html"
-      
-    def get_context_data(self, *args, **kwargs):
-        "Adds properties to the context dict sent to the template" 
-        context = super().get_context_data(*args, **kwargs)
-        color = self.get_object()
-        hues = []
-        for adjustment in settings.HUES_TO_SHOW:
-            if adjustment == 0:
-                hues.append(color)
-            else:
-                hue = color.adjust_hue(adjustment)
-                hue.name = hue.hex_code()
-                hues.append(hue)
-        context['color'] = color
-        context['hues'] = hues
-        return context
+{% endblock %}
 ```
 
-{{< code-action >}}Add a URL route: `colors_app/urls.py`:
-```python {linenos=table, hl_lines=[3, 11]}
+There's a lot of content for each task, and it is a little ahrd to read since everything is aligned to the left. Let's
+use a flexbox to rearrange some of the content.
+
+{{< code-action >}} Make a flexbox for the task name and the due date that spreads the content out across the element:
+
+```html {linenos=table, hl_lines=[8, 11, 20, 23, 32, 35]}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h4>Tasks</h4> 
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <h5 class="mb-1">Task</h5>
+        <p><strong>Date Due:</strong> Date holder</p>
+      </div>
+      <p><i>Label</i></p>
+
+      <p>Notes: notes holder</p>
+      <a href="{% url 'update-task' pk=1 %}">
+        Update
+      </a>
+    </li>
+    <li class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <h5 class="mb-1">Task</h5>
+        <p><strong>Date Due:</strong> Date holder</p>
+      </div>
+      <p><i>Label</i></p>
+
+      <p>Notes: notes holder</p>
+      <a href="{% url 'update-task' pk=1 %}">
+        Update
+      </a>
+    </li>
+    <li class="list-group-item">
+      <div class="d-flex justify-content-between">
+        <h5 class="mb-1">Task</h5>
+        <p><strong>Date Due:</strong> Date holder</p>
+      </div>
+      <p><i>Label</i></p>
+
+      <p>Notes: notes holder</p>
+      <a href="{% url 'update-task' pk=1 %}">
+        Update
+      </a>
+    </li>
+  </ul>
+</div>
+
+{% endblock %}
+```
+
+These tasks are starting to look a lot better already!
+
+There are [many more ways you can use flexboxs to create page layouts](https://getbootstrap.com/docs/4.6/utilities/flex/). 
+We reccomend trying to make layouts with flexboxes first and then falling back to the Bootstrap grid system if you can't
+get what you want from the flexbox features.
+
+## Next
+
+As frontend programmers, you'll be getting very familiar with the language for writing web pages: *HTML* or *hyper text markup language*.
+HTML is a langauge, but it's not a programming language like Python. Instead, it's a language used by your web browwser to determine how 
+to display web content. You've actually already used a langauge like this every time you've read a page on this website or written your
+self-assement for a project – MarkDown is a language for rendering content too.
+
+On the internet, HTML runs deep. All webpages are just HTML documents sent to your computer and interpreted by your web browser.
+
+## A. HTML Basics
+HTML documents are made up of different nested elements. This just means that some HTML elements can contain other elements (like a box
+inside of a box).
+
+### The Monster (HTML) Mash
+
+{{< write-action >}} To help get a sense of this, work through the following slideshow to make monsters HTML style:
+{{< gdocs src="https://docs.google.com/presentation/d/e/2PACX-1vRYznPe1JhFJ6KoHe5RKLG_vlu3Ujr8l9YyDL1IstA9pTd1xR-7dAaASor4qLXBYth7WORVITBap4oH/embed?start=false&loop=false&delayms=5000" >}}
+
+### HTML Everywhere
+Web programmers make web sites just like you made the monsters above (just with different elements. Let's try to figure out what elements websites are
+made of.
+
+{{< code-action >}} Go to any website (even this one) and open the inspector by right clicking on the page and selecting "Inspect Element". This
+will open a new panel of your browser to reveal the HTML that makes up the page you're currently viewing.
+
+{{< write-action >}} Make a table of HTML elements that sepatates them by whether they can contain other elements. Use the table at the end
+of the monster slideshow above as an example.
+
+{{< look-action >}} Once you've tried categorizing the elements you found, check out [this reference guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+to see all of the kinds of elements you can include in webpages.
+
+### HTML For Django
+That's a lot of elements! While it is useful to eventually understand and be able to use them all, for now we'll let Django handle a lot
+of what we do with HTML. For our purposes, the following HTML elements will be most important:
+
+* `<div>` - All "blocks" of content on your page should be wrapped in a `<div>` tag. If elements beside each other are related in any way (i.e.
+parts of a form, paragraphs in a block of text, a section of headers and text, etc.) you should put all of that content in a div. Further, you
+will probably end up putting your divs inside other divs (i.e. a div containing many other divs that contain different sections of your homepage).
+It's important that you use divs frequently because they will be the most useful way to add style to related elements.
+* **text elements** - these will make up the bulk of the content of your web pages.
+    * headers (i.e. `<h1>`)
+    * paragraphs (`<p>`)
+* **structural elements** - this helps quickly organize information on your web pages.
+    * ordered lists (`<ol>`)
+    * unordered lists (`<ul>`)
+    * tables (`<table>`)
+    * forms (`<form>`)
+* **style elements** - these add different kinds of styles to your web content. You can define what the style actually looks like for these
+elements, but the idea behind them is the same across the internet.
+    * links (`<a>`)
+    * strong (usually **bolded**) text (`<strong>`)
+    * idiomatic (usually *italicized* text (`<i>`)
+    * line break (`<br>`)
+
+## B. Getting Started on the Todo App
+As you work through the basics of frontend web development, you'll be building a basic todo application. As the frontend developer, you'll be designing the HTML templates and
+page styles. After you finish this tutorial, you'll have an example app you can use as a model for your own team's web app.
+
+In this lesson, you will make templates for each of the pages that will ultimately be in the todo app.
+
+### Setup
+{{< code-action >}} Before we get started, clone the cs10 Webapp frontend repo on GitHub, then go into the directory and install the missing packages using pip or pip3.
+
+```shell
+cd cs10/unit_02
+git clone https://github.com/the-isf-academy/cs10_webapp_frontend-YOUR-GITHUB-USERNAME.git
+cd cs10_webapp_frontend-YOUR-GITHUB-USERNAME
+pip3 install -r requirements.txt
+```
+
+After you have installed the requirements, you can start the server by typing the following in Terminal:
+
+```shell
+python manage.py runserver
+```
+
+### App overview
+The todo app will have 6 main views:
+
+| View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
+|-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `IndexView()`         	| /                    	| index         | `indexView.html`          | The first page that user's see when they visit your app. Gives the user the option to log in or register for a new account.                                        	|
+| `TaskDashboardView()` 	| dashboard/           	| dashboard     | `dashboardView.html`      | Shows all the tasks assigned to the user.                                                                                                                          	|
+| `TaskFormView()`      	| newtask/             	| new-task      | `taskFormView.html`       | Shows a form that collects information about a new task.                                                                                                           	|
+| `EditTaskView()`      	| updatetask/<int:pk>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
+| `CreateAccountView()` 	| register/            	| register      | `createAccountView.html`  | Shows a form that collects information about a new user.                                                                                                           	|
+| `LoginView()`         	| accounts/login/      	| login         |  `login.html`             |Shows a form that collects login information and attempts to log a user in. *This view is managed by the Django account plugin and you shouldn't have to edit it.* 	|
+
+To add each of these views, you will need to follow the steps you learned in the previous labs about adding pages to a Django app:
+
+1. Create a view for the page. We will use class-based views for the views in this tutorial.
+1. Add the URL for the page that tells Django which view to use for that URL route.
+1. Create a template for the view using HTML.
+
+### Example
+Here's an example of how to do this to create the new task page. This page will look like this after we finish:
+
+{{< figure src="images/courses/cs10/unit02/03A_0_newtask.png" width="100%" title="New Task Page" >}}
+ 
+
+Follow along in your own repository.
+
+#### Add the view
+{{< code-action >}} In `starter_app/views.py`, create a class for the new task page:
+
+```python {linenos=table, hl_lines=[16,17]}
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic import ListView, FormView, UpdateView, TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+#models
+from .models import Task
+
+from django.contrib.auth import login, authenticate
+
+
+# Create your views here.
+class IndexView(TemplateView):
+    template_name = 'starter_app/indexView.html'
+
+class TaskFormView(TemplateView):
+    template_name = 'starter_app/taskFormView.html'
+```
+
+#### Add the URL route
+Now that we have the view, we need to Django to route requests for this page to to `NewTaskView()`.
+
+{{< code-action >}} Add the following line of code to the `starter_app/urls.py` file:
+
+```python {linenos=table, hl_lines=[7]}
 from django.urls import path
-from colors_app import views
-from colors_app.class_based_views import NewColorView, ColorListView, ColorDetailView
 
-app_name = "colors_app"
+from . import views
+
 urlpatterns = [
-    path('', views.home_view, name="index"),
-    path('colors/random', views.random_color_view, name="random_color"),
-    path('colors/new', NewColorView.as_view(), name='new_color'),
-    path('colors', ColorListView.as_view(), name='color_list'),
-    path('colors/<int:pk>', ColorDetailView.as_view(), name='color_detail'),
+    path('', views.IndexView.as_view(), name='index'),
+    path('newtask/', views.TaskFormView.as_view(), name='new-task'),
 ]
 ```
 
-Congratulations! You just added a new feature to the app, and you have a pretty
-decent color palette generator.
+#### Add the HTML template
+Try running your Django server using `python manage.py runserver` and visit the new task page ([http://127.0.0.1:8000/newtask/](http://127.0.0.1:8000/newtask/)).
+You should see an error telling you that the template does not exist. This means we're ready for the final step, making the template
+for the page!
 
-{{<checkpoint>}}
+{{< code-action >}} Create a new file called `taskFormView.html` in the `starter_app/templates/starter_app/` directory
+and add the code for the base template:
 
-- B.0: Choose a color palette that you particularly like. What are the hex color
-  values? 
-- B.1: Try changing `HUES_TO_SHOW` in `colorama/settings/base.py` to display a
-  different number of hues or a different range of adjustment values. You should see the 
-  effects on the color detail pages. What setting of `HUES_TO_SHOW` do you like
-  best? 
-- B.2: We also defined settings for `SATURATIONS_TO_SHOW` and `VALUES_TO_SHOW`,
-  but we're not showing palettes of saturations or values on the color detail
-  pages. Explain the changes you would need to make to show a palette of
-  saturations and a palette of values on the color detail page under the 
-  palette of hues.
+```python {linenos=table, hl_lines=["1-5"]}
+{% extends "base.html" %}
 
-{{</checkpoint>}}
+{% block content %}
 
-## C. If you finish early...
+{% endblock %}
+```
+All of you Django templates for views will start like this, so let's see what happening here.
 
-Implement the changes you described in B.2 :)
+First, we are telling Django to extend the base template. Django templates are powerful because they can build on
+top of each other. Here, we are building on top of a base template that sets up a foundation for some styling and for
+page metadata.
 
+Second, we are creating a content block. Blocks are how Django puts together templates. The content we put between the `{% block content %}`
+and the `{% endblock %}` tags in this file will get inserted in the content section of the `base.html` template. We'll see more of this
+kind of block-based templating later in the tutorial.
+
+#### Add the content of the page
+According to the image, this page has two parts: a header that says "New Task" and a form to collect the details of a new task.
+
+{{< code-action >}} First, lets add the header and a div to contain the form:
+
+```python {linenos=table, hl_lines=["4-8"]}
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h4>New Task</h4>
+    <div>
+    </div>
+</div>
+{% endblock %}
+```
+
+We add all of this inside a div element because the form and its title are related elements: they make up our idea of
+the form.
+
+{{< code-action >}} Next, add the code to generate the form using HTML form elements:
+
+```python {linenos=table, hl_lines=["7-16"]}
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h4>New Task</h4>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <label for="title">Task:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <br>
+            <label for="due-date">Due Date:</label><br>
+            <input type="date" id="due-date" name="due-date"><br>
+            <br>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+```
+
+You can [read more about the form element here](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form), 
+but the basics of what we're doing are as follows: All of the form components are wrapped in a form element tag (`<form>`).
+This tag includes a `method` attribute that tells your browser to send a POST HTTP request with the data of the form once
+the user clicks submit.
+
+Inside the form are three elements:
+* a text `<input>` field (and it's `<label>`) for the task title
+* a date `<input>` field (and it's `<label>`) for the due date
+* a `<button>` to submit the form
+
+These elements are broken up with line break (`<br>`) to visually divide the different parts of the form.
+
+### Now you try
+Congrats! 🎊 You just made your first Django page from scratch!
+
+Now, your task is to make a page for each of the pages we need in the todo app. To do this, you will
+probably need to look through how to use some new HTML elements. You can refer to [the HTML refernce guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+to help figure out how to use them.
+
+{{< code-action >}} Use the information and screenshots below to create each of the pages.
+
+#### Index Page
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `IndexView()`         	| /                    	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_index.png" width="100%" title="Index Page" >}}
+
+*Hint: HTML `<button>` elements don't naturally act as links. To make your buttons link to the
+appropriate pages, you will also need to use link elements (`<a>`) for this page.*
+
+#### Dashboard Page
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `TaskDashboardView()`    	| dashboard/           	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_dashboard.png" width="100%" title="Dashboard Page" >}}
+
+*Hint: The list HTML elements will come in handy on this page.*
+
+#### Edit Task Page
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `EditTaskView()`      	| updatetask/int:pk/   	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_edittask.png" width="100%" title="Edit Task Page" >}}
+
+*Hint: This one will be very similar to the new task page!*
+
+#### Create Account View
+| View Name             	| URL Route            	|
+|-----------------------	|----------------------	|
+| `CreateAccountView()`    	| register/           	| 
+
+{{< figure src="images/courses/cs10/unit02/03A_0_createaccount.png" width="100%" title="Create Account Page" >}}
+
+*Hint: Use the form elements from the task pages to help get started on this one.*
+
+#### Login View
+
+{{< figure src="images/courses/cs10/unit02/03A_0_login.png" width="100%" title="Login Page" >}}
+
+*No need to do anything for this one! We'll let Django handle it for us.*
 
