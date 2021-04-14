@@ -51,10 +51,10 @@ A *database model* is defined as the logical design and structure of a database 
 So the Software Architect designs good database models and uses them so that data, like the data in ***Portions***, will be a specific type of data when it's entered into the database. That way our data is clean and we don't need to code our app to handle an **infinite number of use cases**. Hooray!
 
 {{< checkpoint >}}
-For the calorie counting app in our example, what do you think the type of values in ***Portion*** should be?
+For the calorie counting app in our example, what do you think the type of values in ***Portion*** should be? Create a table in a spreadsheet that has good data, unlike the situation that we have now.
+{{</checkpoint >}}
 
 If you guessed integer values, you are correct! Integers would be more appropriate than strings here as numbers can be more easily quantifiable. We can also use integers in mathematical calculations. (How do we quantify and calculate "Ate so much of X that I puked"!?!?)
-{{</checkpoint >}}
 
 Ok, we decided that the data will be an integer value. Great! But we need to be careful with this decision as numbers need to be differentiated too. There's still a difference between 1 as a whole apple, 1 as a portion of apples and 1 as in one gram of apple even though they all are represented by the number one. So how do we do this?
 
@@ -66,6 +66,10 @@ Once we make a decision to the Business Logic, we need to make sure it's consist
 
 So Software Architects design Business Logic along with models and databases to make sure that data has meaning and flows consistently throughout the app.
 
+{{< checkpoint >}}
+Now add a label to your table to describe the what the data should be in the **Portion** field in your table.
+{{< /checkpoint >}}
+
 ### Conclusion
 
 Before we actually code our app, we want to design our data so that we don't have to code for 1000+ use cases. We also don't want to fix any data related errors half way into our development cycles because the someone says they want to change our data and business logic half way into our development.
@@ -74,7 +78,7 @@ As a Software Architect, we decide on what type of data the data is, and decide 
 
 The mantra for Software Architects to member would be: **Why fix bugs when we can design these problems away!**
 
-You see the importance of the Software Architect? Software Architects are paid to think and come up with designs that are infallible **first**. They think of solutions that, not only are great designs, but also save time and money during the development cycle. This is why Software Architects get paid the big bucks compared to a CSS/Javascript Monkey.
+You see the importance of the Software Architect? Software Architects are paid to think and come up with designs that are infallible **first**. They think of solutions that, not only are great designs, but also save time and money during the development cycle.
 
 ![Gorilla getting Code Monkey's bananas](/images/courses/cs10/unit02/Codemonkey.png)
 
