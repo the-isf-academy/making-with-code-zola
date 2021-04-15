@@ -86,6 +86,11 @@ python3 manage.py migrate
 
 Once we do this, our database will be ready to be used by our app.
 
+Let's try running the server. 
+```shell
+python3 manage.py runserver
+```
+
 Let's see how the model is used in Django.
 
 ## Django Models with Django Views

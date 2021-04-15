@@ -74,11 +74,7 @@ Just make sure to refresh the admin page to see the changes.
 
 ## Remember Uncle Ben...
 
-As the owners and administrators of your website, you have access to your user's accounts and all of your user's data. We literally have a "God" view of everything that is entered into our database. For example:
-
-- We have powers to lock users out of their accounts or simply delete them off the app.
-- We have powers to see the personal lives of people using the app through their data entered into the system.
-- We have powers to change people's voice by modify their posts.
+As the owners and administrators of your website, you have access to your user's accounts and all of your user's data. We literally have a "God" view of everything that is entered into our database.
 
 There are lots of ethical questions that need to be considered when building an app, and because of this, always remember the quote from Uncle Ben to Peter Parker...   
 
