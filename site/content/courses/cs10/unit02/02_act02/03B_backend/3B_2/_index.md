@@ -31,16 +31,13 @@ INSTALLED_APPS = [
 
 If this code isn't in **base.py**, you will need to copy and paste this code in. Django should have already added this for us by default.
 
-The second place to check is the **urls.py** file in the starter_app directory. We need to make sure there a configured route (or path) for the admin site. The code should look like
+Next, we need to activate the admin portal. Add the following code to your `admin.py` file. 
 
 ```shell
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    #other routes go here
-    ]
+from django.contrib import admin
 ```
 
-To disable the admin page, comment out the route to the admin page and restart the server.
+To disable the admin page, comment out the import statement.
 
 ## Creating a Superuser Account
 
@@ -58,17 +55,14 @@ Django will then prompt you to enter a username and password and that user will 
 
 By default, the Django admin site doesn't allow us to do much. We can play around with user groups and user accounts.
 
-If we want to look at our Task data, we can register our models in *admin.py* and Django will give access to our data through the admin page. The *admin.py* file can be found in the starter_app directory.
+If we want to look at our Task data, we can register our models in `admin.py` and Django will give access to our data through the admin page. The `admin.py` file can be found in the starter_app directory.
 
 Let's register the Task model so we can see our Task data in the database from within the admin page.
 
 ```shell
 from .models import Task
 
-@admin.register(Task)
-class RequestDemoAdmin(admin.ModelAdmin):
-  list_display = [field.name for field in Task._meta.get_fields()]
-
+admin.site.register(Task)
 ```
 These lines of code will enable us to access the data in the Task table. We can create/update/delete tasks here as well.
 
