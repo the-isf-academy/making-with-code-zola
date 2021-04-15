@@ -4,8 +4,6 @@ Title: 3.B.2 Using the Admin Page
 
 # Using the Admin Page
 
-## Finding the Admin Page
-
 Now that we have successfully added data into our app, it would be great if we had some way to access it.
 
 Well, Django has a build-in administration page that allows us to look at the data in our database! 
