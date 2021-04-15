@@ -8,13 +8,7 @@ Title: 3.B.2 Using the Admin Page
 
 Now that we have successfully added data into our app, it would be great if we had some way to access it.
 
-Well, Django has a build-in administration page that allows us to look at the data in our database! Our Task app has one and can be accessed by going to
-
-```shell
-https://localhost:8000/admin/
-```
-
-If you go to this URL, there will be a webpage where we can log in to the admin site. We will need Superuser access for this. More on that below.
+Well, Django has a build-in administration page that allows us to look at the data in our database! 
 
 ## Enabling/Disabling the Admin Page on Django
 
@@ -37,7 +31,9 @@ Next, we need to activate the admin portal. Add the following code to your `admi
 from django.contrib import admin
 ```
 
-To disable the admin page, comment out the import statement.
+**We can now access the admin portal by going to: `https://localhost:8000/admin/`.**
+
+If you go to this URL, there will be a webpage where we can log in to the admin site. We will need Superuser access for this. More on that below.
 
 ## Creating a Superuser Account
 
