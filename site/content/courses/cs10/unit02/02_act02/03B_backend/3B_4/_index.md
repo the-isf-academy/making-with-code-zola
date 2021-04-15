@@ -20,13 +20,7 @@ Our User and Task models look like this:
 
 Note that the id field in the Users table and the id field in the Task table are different IDs.
 
-We want to somehow connect User and Task tables together to convert our simple database to a relational base?
-
-{{<checkpoint>}}
-How can we connect our User and Task tables together to convert our simple database to a relational base?
-{{</checkpoint>}}
-
-If you said, "Let's make a new database." that's on the right track but we don't need to make a new database. What we do need to do is to modify our database to accommodate this "link".
+We want to somehow connect User and Task tables together to convert our simple database to a relational base? If you said, "Let's make a new database." that's on the right track but we don't need to make a new database. What we can do is to modify our current database to accommodate this "link". It's quite easy to do.
 
 {{<checkpoint>}}
 What would be the best data to use to accommodate this link?
@@ -53,12 +47,13 @@ class Task(models.Model):
 
 Let's go over these lines of code in detail.
 
-- *task_user* will set a *ForeignKey* in our Task table which will be the field that "links" the Task and User tables together. We are using the default User model from Django. There more detailed explanation of what *ForeignKey* does in the Django documentation.
-- The option *on_delete* will mean that if the task_user is deleted, the task is also deleted.
-- By default, the value is 1 which would be the first user in the system. It's there to make sure the key isn't null or blank.
-- *task_assigned_by* and *task_assigned_to* are strings with a length of 30.
-- *task_assigned_to* has blank=True which means the field on the Model form can be blank
+- *task_user* will set a *ForeignKey* in our Task table which will be the field that "links" the Task and User tables together. We are using the default User model from Django. There more detailed explanation of what *ForeignKey* does in the Django documentation. The jist of *ForeignKey* is that it sets up many-to-one relationships between (many) Tasks and (one) User.
+- The parameters for *ForeignKey* can be looked up in Django's documentation.
+- *task_assigned_by* and *task_assigned_to* are strings with a length of 30. We have seen this before.
+- *task_assigned_to* has blank=True which means the field on the Model form can be blank. (Probably not advisable for this field as we don't want to not assign the task to anyone)
 - *task_assigned_by* has editable=False which means the field on the Model form is not editable and invisible. There's no need to put this in *forms.py*.
+
+The next thing to modify is to enable users to enter this data in the form. To do that we need to modify *forms.py*.
 
 ## Modify Forms
 
@@ -70,11 +65,15 @@ Now let's open *forms.py* and make a slight modification to our form so that tas
           'task_assigned_to',
         )
 ```
-This will enable the New Task form to have the Task Assigned To field.
+This will enable the New Task form to have the Task Assigned To field. Since we are using Model forms, there's not much to do here.
+
+Next we need to modify the dashboard so that we can take advantage of seeing assigned tasks and hide ones that aren't for the user.
 
 ## Modify Views
 
-Lastly, we need to update the dashboard so that we only see the tasks assigned to the logged in user. Let's open *views.py* and add some code in *TaskDashboard*.
+The only thing we need to see are tasks assigned to the logged in user. We need to hide the other tasks away. To do this, we can use *data.filter* and filter our data for only tasks assigned to the username.
+
+Let's open *views.py* and add some code in *TaskDashboard*.
 
 ```shell
   # comment or delete the line below
@@ -87,29 +86,38 @@ Lastly, we need to update the dashboard so that we only see the tasks assigned t
 ```
 Let's examine this code:
 -The filter line of code will filter all the tasks that are for the user that is in self.request (aka, the user currently logged in).
--the context (or the user's tasks) will be sorted by due_date
+-the context (or the user's tasks) will be sorted by due_date and this is what will be seen in the web page.
+
+Excellent! All the file changes have been made. We can migrate the changes on the database.
 
 ## Run Migrations and Restart
 
-After we make these changes to Task, we will need to do a makemigrations and migrate. Shut down the server, run the makemigrations and migrate commands, and restart the server.
+To migrate, shut down the server, run the makemigrations and migrate commands, and restart the server.
 
 ```shell
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
 ```
-After we run the migration, that Task table will be update and will look like this
 
-When we restart the server, we should see the following changes:
-- The tasks on the Dashboard will only show the authenticated user's tasks and not everyone's tasks.
-- The New Task page will show a new field where a user can be assigned. This field can be left blank and the task will be "lost" and can only be recovered in the admin page.
-
+After we run the migration, that Task table will be updated.
 
 {{<checkpoint>}}
 Once you have made all the updates, log in and add a new task to yourself and to a different user of the system. Check that the tasks are showing up in the right places for the right people.
 {{</checkpoint>}}
 
+When we restart the server, we should see the following changes:
+- The tasks on the Dashboard will only show the authenticated user's tasks and not everyone's tasks.
+- The New Task page will show a new field where a user can be assigned. This field can be left blank and the task will be "lost" and can only be recovered in the admin page.
+
+If the Dashboard does not show this, try to complete the steps again.
 
 ## Conclusion
+
+We have create a link or relation between the User table and Task table. We can use this relation to assigns tasks to different users in our To-Do app making our app work in a multi-user environment.
+
+We have learned to update Django models, forms and views to take advantage of relational databases so that users can assign tasks to others.
+
+With this basic understanding of how tables are joined in Django, we have opened up many more opportunities where we can have one-to-one relationships but also one-to-many and many-to-many relationships, similar to the To-Do app.
 
 The scope of this project is quite limited but the sky's the limit. You can do a so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so anything is possible.
