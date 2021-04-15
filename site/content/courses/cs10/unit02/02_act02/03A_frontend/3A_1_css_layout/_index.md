@@ -4,19 +4,37 @@ title: 3.A.1 CSS Layout
 
 # Intro to CSS Layouts
 Now that you have the basic map of your site laid out, it's time to learn how to make it more usable by adding some style to your pages.
-To add style, we'll use CSS...
+To add style, we'll use CSS to tell web browsers how to represent the content we've defined semantically in our HTML documents.
 
-## HTML + CSS
+## A. HTML + CSS
+CSS stands for Cascading Style Sheets. CSS styles are predefined ways in which a web browser can represent pieces of content, from bolding
+them to causing them to fade into view with an animation. As you can imagine, there are many different ways to style content and sometimes
+we want to style content in multiple ways. This is where the "cascading" part comes in. We can apply multiple styles to a single element
+and these styles will be interpreted in a predefined way. For example, this allows us to say that all paragraph text in an HTML document
+should be represented with the font `arial` but also that certain paragraph elements should be represented with the font `arial-bold`.
 
-### classes
+### Classes
+One way to apply styles to classes is to use what's called "in-line style" where we write style rules directly on our HTML elements. This
+is useful in some circumstances, but mostly it limits our ability to write abstract code and makes our code look messy. Instead, we
+normally use CSS classes to apply styles. To write a CSS class, we choose a name and then choose a particular set of CSS styles that should
+go with that name. For example, the `footnote` class may have styles to make it smaller, italicized, and appear at the bottom of a page. Then,
+we can add that class on to any HTML element and those styles will be used:
+```html
+<p>
+    I think that spiders are really interesting.
+    <span class="footnote"> By this I mean that I 
+    really hate spiders and they scare me a lot. </span>
+    Spiders are key species in many ecosystems.
+    ...
+</p>
+```
+Note that these classes are not the same as Python classes, but they're based on the same idea.
 
-### Elements
-width/padding/margin
-
-## Bootstrap
-Styling HTMl elements can be really difficult and involve a lot of code to make sure that your site uses a consistent style that works
+## B. Bootstrap
+Styling HTML elements can be really difficult and involve a lot of code to make sure that your site uses a consistent style that works
 well on a variety of screen sizes (this is known as responsive web development). To help with this, we'll be using a predefined CSS
-toolkit that simplifies and standardizes styles across your webapp.
+toolkit that simplifies and standardizes styles across your webapp. For this lab, we will only be using CSS classes pre-defined by in
+the Bootstrap framework. However, you will also learn how to write your own CSS classes in a future lab.
 
 ### Containers
 
@@ -60,7 +78,7 @@ Containers are very powerful and can be used to make highly customizable webpage
 Grid system](https://getbootstrap.com/docs/4.6/layout/grid/). You may want to read more about this later
 if you need to make a special layout for one of your pages.
 
-### Flex Box
+### Flexbox
 However, Bootstrap is mostly build on an automative system for intuitively organizing content within containers
 called the Flexbox layout.
 
@@ -193,281 +211,293 @@ use a flexbox to rearrange some of the content.
 
 These tasks are starting to look a lot better already!
 
+{{< figure src="images/courses/cs10/unit02/03A_1_styled_dashboard.png" width="100%" title="Dashboard with New and Improved Tasks, courtesy of CSS" >}}
+
 There are [many more ways you can use flexboxs to create page layouts](https://getbootstrap.com/docs/4.6/utilities/flex/). 
 We reccomend trying to make layouts with flexboxes first and then falling back to the Bootstrap grid system if you can't
 get what you want from the flexbox features.
 
-## Next
+### Navbar
+Now that you know some layout basics, let's add something a little more complicated: a navbar for your site. This will
+be essential for directing a user's experience on your app and giving them a consistent feel across the site. To accomplish
+this, the navbar will need to be on every page of your site. One way to do this would be to add the code to every page
+template you make. However, imagine what would happen if you needed to change a small part of the navbar code: you'd
+have to go through and change every single page. 🤢
 
-As frontend programmers, you'll be getting very familiar with the language for writing web pages: *HTML* or *hyper text markup language*.
-HTML is a langauge, but it's not a programming language like Python. Instead, it's a language used by your web browwser to determine how 
-to display web content. You've actually already used a langauge like this every time you've read a page on this website or written your
-self-assement for a project – MarkDown is a language for rendering content too.
+#### Base template
 
-On the internet, HTML runs deep. All webpages are just HTML documents sent to your computer and interpreted by your web browser.
+Django offers a much easier way to do this with templating. Remember how all of your templates have extended the `base.html`
+template? If we want to change something about every page on the site, we can just change the base template!
 
-## A. HTML Basics
-HTML documents are made up of different nested elements. This just means that some HTML elements can contain other elements (like a box
-inside of a box).
+{{< code-action >}} Open the base template file `cs10_webapp_base/templates/base.html` and include a new block for the navbar:
 
-### The Monster (HTML) Mash
-
-{{< write-action >}} To help get a sense of this, work through the following slideshow to make monsters HTML style:
-{{< gdocs src="https://docs.google.com/presentation/d/e/2PACX-1vRYznPe1JhFJ6KoHe5RKLG_vlu3Ujr8l9YyDL1IstA9pTd1xR-7dAaASor4qLXBYth7WORVITBap4oH/embed?start=false&loop=false&delayms=5000" >}}
-
-### HTML Everywhere
-Web programmers make web sites just like you made the monsters above (just with different elements. Let's try to figure out what elements websites are
-made of.
-
-{{< code-action >}} Go to any website (even this one) and open the inspector by right clicking on the page and selecting "Inspect Element". This
-will open a new panel of your browser to reveal the HTML that makes up the page you're currently viewing.
-
-{{< write-action >}} Make a table of HTML elements that sepatates them by whether they can contain other elements. Use the table at the end
-of the monster slideshow above as an example.
-
-{{< look-action >}} Once you've tried categorizing the elements you found, check out [this reference guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-to see all of the kinds of elements you can include in webpages.
-
-### HTML For Django
-That's a lot of elements! While it is useful to eventually understand and be able to use them all, for now we'll let Django handle a lot
-of what we do with HTML. For our purposes, the following HTML elements will be most important:
-
-* `<div>` - All "blocks" of content on your page should be wrapped in a `<div>` tag. If elements beside each other are related in any way (i.e.
-parts of a form, paragraphs in a block of text, a section of headers and text, etc.) you should put all of that content in a div. Further, you
-will probably end up putting your divs inside other divs (i.e. a div containing many other divs that contain different sections of your homepage).
-It's important that you use divs frequently because they will be the most useful way to add style to related elements.
-* **text elements** - these will make up the bulk of the content of your web pages.
-    * headers (i.e. `<h1>`)
-    * paragraphs (`<p>`)
-* **structural elements** - this helps quickly organize information on your web pages.
-    * ordered lists (`<ol>`)
-    * unordered lists (`<ul>`)
-    * tables (`<table>`)
-    * forms (`<form>`)
-* **style elements** - these add different kinds of styles to your web content. You can define what the style actually looks like for these
-elements, but the idea behind them is the same across the internet.
-    * links (`<a>`)
-    * strong (usually **bolded**) text (`<strong>`)
-    * idiomatic (usually *italicized* text (`<i>`)
-    * line break (`<br>`)
-
-## B. Getting Started on the Todo App
-As you work through the basics of frontend web development, you'll be building a basic todo application. As the frontend developer, you'll be designing the HTML templates and
-page styles. After you finish this tutorial, you'll have an example app you can use as a model for your own team's web app.
-
-In this lesson, you will make templates for each of the pages that will ultimately be in the todo app.
-
-### Setup
-{{< code-action >}} Before we get started, clone the cs10 Webapp frontend repo on GitHub, then go into the directory and install the missing packages using pip or pip3.
-
-```shell
-cd cs10/unit_02
-git clone https://github.com/the-isf-academy/cs10_webapp_frontend-YOUR-GITHUB-USERNAME.git
-cd cs10_webapp_frontend-YOUR-GITHUB-USERNAME
-pip3 install -r requirements.txt
-```
-
-After you have installed the requirements, you can start the server by typing the following in Terminal:
-
-```shell
-python manage.py runserver
-```
-
-### App overview
-The todo app will have 6 main views:
-
-| View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
-|-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| `IndexView()`         	| /                    	| index         | `indexView.html`          | The first page that user's see when they visit your app. Gives the user the option to log in or register for a new account.                                        	|
-| `TaskDashboardView()` 	| dashboard/           	| dashboard     | `dashboardView.html`      | Shows all the tasks assigned to the user.                                                                                                                          	|
-| `TaskFormView()`      	| newtask/             	| new-task      | `taskFormView.html`       | Shows a form that collects information about a new task.                                                                                                           	|
-| `EditTaskView()`      	| updatetask/<int:pk>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
-| `CreateAccountView()` 	| register/            	| register      | `createAccountView.html`  | Shows a form that collects information about a new user.                                                                                                           	|
-| `LoginView()`         	| accounts/login/      	| login         |  `login.html`             |Shows a form that collects login information and attempts to log a user in. *This view is managed by the Django account plugin and you shouldn't have to edit it.* 	|
-
-To add each of these views, you will need to follow the steps you learned in the previous labs about adding pages to a Django app:
-
-1. Create a view for the page. We will use class-based views for the views in this tutorial.
-1. Add the URL for the page that tells Django which view to use for that URL route.
-1. Create a template for the view using HTML.
-
-### Example
-Here's an example of how to do this to create the new task page. This page will look like this after we finish:
-
-{{< figure src="images/courses/cs10/unit02/03A_0_newtask.png" width="100%" title="New Task Page" >}}
- 
-
-Follow along in your own repository.
-
-#### Add the view
-{{< code-action >}} In `starter_app/views.py`, create a class for the new task page:
-
-```python {linenos=table, hl_lines=[16,17]}
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.generic import ListView, FormView, UpdateView, TemplateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-
-#models
-from .models import Task
-
-from django.contrib.auth import login, authenticate
+```html {linenos=table, hl_lines=[26]}
+{% load static %}
 
 
-# Create your views here.
-class IndexView(TemplateView):
-    template_name = 'starter_app/indexView.html'
+<!doctype html>
+<html lang="en">
 
-class TaskFormView(TemplateView):
-    template_name = 'starter_app/taskFormView.html'
-```
+<head>
+{% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-#### Add the URL route
-Now that we have the view, we need to Django to route requests for this page to to `NewTaskView()`.
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-{{< code-action >}} Add the following line of code to the `starter_app/urls.py` file:
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type ="text/css" href="{% static 'cs10_webapp_base/styles.css' %}">
 
-```python {linenos=table, hl_lines=[7]}
-from django.urls import path
-
-from . import views
-
-urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('newtask/', views.TaskFormView.as_view(), name='new-task'),
-]
-```
-
-#### Add the HTML template
-Try running your Django server using `python manage.py runserver` and visit the new task page ([http://127.0.0.1:8000/newtask/](http://127.0.0.1:8000/newtask/)).
-You should see an error telling you that the template does not exist. This means we're ready for the final step, making the template
-for the page!
-
-{{< code-action >}} Create a new file called `taskFormView.html` in the `starter_app/templates/starter_app/` directory
-and add the code for the base template:
-
-```python {linenos=table, hl_lines=["1-5"]}
-{% extends "base.html" %}
-
-{% block content %}
+    <link rel="icon" href="{% static "cs10_webapp_base/favicon.png" %}">
+    <title>Starter App</title>
 
 {% endblock %}
-```
-All of you Django templates for views will start like this, so let's see what happening here.
+</head>
+<body>
+  {% include 'starter_app/navbar.html' %}
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
 
-First, we are telling Django to extend the base template. Django templates are powerful because they can build on
-top of each other. Here, we are building on top of a base template that sets up a foundation for some styling and for
-page metadata.
 
-Second, we are creating a content block. Blocks are how Django puts together templates. The content we put between the `{% block content %}`
-and the `{% endblock %}` tags in this file will get inserted in the content section of the `base.html` template. We'll see more of this
-kind of block-based templating later in the tutorial.
-
-#### Add the content of the page
-According to the image, this page has two parts: a header that says "New Task" and a form to collect the details of a new task.
-
-{{< code-action >}} First, lets add the header and a div to contain the form:
-
-```python {linenos=table, hl_lines=["4-8"]}
-{% extends "base.html" %}
-
-{% block content %}
-<div>
-    <h4>New Task</h4>
-    <div>
-    </div>
-</div>
-{% endblock %}
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
 ```
 
-We add all of this inside a div element because the form and its title are related elements: they make up our idea of
-the form.
+This will tell Django to look for a file called `navbar.html` in the `templates/starter_app/` directory and insert HTML into the base webpage. Now, all
+we need to do is create HTML for a navbar in the `navbar.html` file.
 
-{{< code-action >}} Next, add the code to generate the form using HTML form elements:
+{{< aside >}}
+Did you notice the `{% block content %}` and `{% endblock %}` tags on lines 28 and 29? This is where Django has been inserting the content we've
+been writing in the page templates so far!
+{{< /aside >}}
 
-```python {linenos=table, hl_lines=["7-16"]}
-{% extends "base.html" %}
+Fortunately, Bootstrap has built-in components for making a navbar.
 
-{% block content %}
-<div>
-    <h4>New Task</h4>
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            <label for="title">Task:</label><br>
-            <input type="text" id="title" name="title"><br>
-            <br>
-            <label for="due-date">Due Date:</label><br>
-            <input type="date" id="due-date" name="due-date"><br>
-            <br>
-            <button type="submit">Save</button>
-        </form>
-    </div>
-</div>
-{% endblock %}
+{{< code-action >}} Create a new file `starter_app/navbar.html` and add the following code:
+```html {linenos=table, hl_lines=["1-2"]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+</nav>
 ```
 
-You can [read more about the form element here](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form), 
-but the basics of what we're doing are as follows: All of the form components are wrapped in a form element tag (`<form>`).
-This tag includes a `method` attribute that tells your browser to send a POST HTTP request with the data of the form once
-the user clicks submit.
+Refresh the page, and you should see a little dark grey bar at the top of your page. That's your navbar! Now,
+let's add some content to it.
 
-Inside the form are three elements:
-* a text `<input>` field (and it's `<label>`) for the task title
-* a date `<input>` field (and it's `<label>`) for the due date
-* a `<button>` to submit the form
+{{< code-action >}} First, let's add a home button to the bar (called the "brand"):
 
-These elements are broken up with line break (`<br>`) to visually divide the different parts of the form.
+```html {linenos=table, hl_lines=["2-4"]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
+</nav>
+```
 
-### Now you try
-Congrats! 🎊 You just made your first Django page from scratch!
+Try going to other pages on your app and you'll now see that you can access the dashboard from
+any page by clicking the home link! Let's add some more functionality to our web app by
+adding some more links on the nav bar in a menu.
 
-Now, your task is to make a page for each of the pages we need in the todo app. To do this, you will
-probably need to look through how to use some new HTML elements. You can refer to [the HTML refernce guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-to help figure out how to use them.
+{{< code-action >}} Add menu options to explicitly link to the dashboard, the new task page, and the logout page:
+```html {linenos=table, hl_lines=["5-14"]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'new-task' %}">New Task</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+      </li>
+    </ul>
+</nav>
+```
 
-{{< code-action >}} Use the information and screenshots below to create each of the pages.
+Notice that we create a nav menu using an unordered list HTML element. Semantically, this makes sense
+because menus are just list of options of place you can go on a site. Using the semantic list structure
+will improve our site in two ways. First, it will help people using a screen reader to understand what
+is happening with this content because the menu options will be presented as a list. Second, it will
+improve something called SEO (Search Engine Optimization). This means that when a search engine like
+Google looks through our app, it can rely on the semantic structure of the menu to understand what our
+app can do.
 
-#### Index Page
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `IndexView()`         	| /                    	| 
+#### Return of the flex
 
-{{< figure src="images/courses/cs10/unit02/03A_0_index.png" width="100%" title="Index Page" >}}
+Next, let's add some structure to our navbar. In many site, logout is separated from the other
+menu options to keep users from accidentally logging out. So, let's try moving the logout button
+to the right side of our navbar. To do this, we'll use our handy-dandy flexboxes. Bootstrap nav
+components are already set as flex boxes, so we can just add the properties we want.
 
-*Hint: HTML `<button>` elements don't naturally act as links. To make your buttons link to the
-appropriate pages, you will also need to use link elements (`<a>`) for this page.*
+We want to push the last element in our navbar menu all the way to the right of the page. To accomplish
+this, we need to change the space around the element rather than the element itself. Every element in HTML
+uses follows the CSS Box Model which includes 3 different ways to change the space around an element:
 
-#### Dashboard Page
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `TaskDashboardView()`    	| dashboard/           	| 
+{{< figure src="images/courses/cs10/unit02/03A_1_box.png" width="100%" title="CSS Box Model" >}}
 
-{{< figure src="images/courses/cs10/unit02/03A_0_dashboard.png" width="100%" title="Dashboard Page" >}}
+- *Content* - The content of the box, where text and images appear
+- *Padding* - Clears an area around the content. The padding is transparent
+- *Border* - A border that goes around the padding and content
+- *Margin* - Clears an area outside the border. The margin is transparent
 
-*Hint: The list HTML elements will come in handy on this page.*
+We can set values for each of these spaces to determine how big they will be. Further, we can specify
+different values for the top, right, bottom, and left versions of each of these space (i.e. margin-top,
+padding-left).
 
-#### Edit Task Page
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `EditTaskView()`      	| updatetask/int:pk/   	| 
+Since we want to move the logout button all the way to the right, we want to change the left margin around the
+element to take up as much space as there is available in the navbar. Bootstrap flexbox has a cool utility
+feature that will automatically set the size of the margin depending on how much space there is available.
 
-{{< figure src="images/courses/cs10/unit02/03A_0_edittask.png" width="100%" title="Edit Task Page" >}}
+{{< code-action >}} First, let's tell the menu to grow as big as possible by adding the `flex-grow` class:
+```html {linenos=table, hl_lines=[3]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'new-task' %}">New Task</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+</nav>
+```
 
-*Hint: This one will be very similar to the new task page!*
+{{< code-action >}} Then, let's tell the logout menu option to automatically add as much left margin as possible
+by adding the `ml-auto` class:
 
-#### Create Account View
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `CreateAccountView()`    	| register/           	| 
+```html {linenos=table, hl_lines=[10]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'new-task' %}">New Task</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+</nav>
+```
 
-{{< figure src="images/courses/cs10/unit02/03A_0_createaccount.png" width="100%" title="Create Account Page" >}}
+#### Responsive design
+Our navbar is looking pretty great now! However, what happens if you make the page smaller, maybe the size
+of a mobile device screen? Things start to look a little funky, right?
 
-*Hint: Use the form elements from the task pages to help get started on this one.*
+Many (most?) people will probably want to access our webapp from a mobile device, so we need to make sure that
+our site works well and looks good at all window sizes. Fortunately, Bootstrap is built on the principle of
+"mobile-first" development, meaning that all bootstrap components are designed to respond well to different
+screen sizes (know as responsive design).
 
-#### Login View
+To make our navbar look and work a little better, we can add CSS so that the nav manu collapses into a [burger
+menu](https://www.w3schools.com/howto/howto_js_mobile_navbar.asp) once the window gets smaller than a certain size.
 
-{{< figure src="images/courses/cs10/unit02/03A_0_login.png" width="100%" title="Login Page" >}}
+{{< code-action >}} To do this, all we need to do is add the `navbar-collapse` and `collapse` classes to the menu
+we want to collapse:
 
-*No need to do anything for this one! We'll let Django handle it for us.*
+```html {linenos=table, hl_lines=[3]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
+        <ul class="navbar-nav flex-grow-1 navbar-collapse collapse">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'new-task' %}">New Task</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+</nav>
+```
+
+Play around with the window size, and you'll see that the menu disappears when the window gets smaller! But where
+did it go?
+
+{{< code-action >}} We need to add a button to serve as the menu button:
+
+```html {linenos=table, hl_lines=["3-5"]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav flex-grow-1 navbar-collapse collapse">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'new-task' %}">New Task</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+</nav>
+```
+
+One small thing: the logout button is still getting pushed all the way to the left in the
+menu when the screen is smaller. This doesn't look so great :/ We can fix this by using CSS
+to tell the element to only add margin when the window size is larger than a certain *breakpoint*.
+If you look at the nav element classes on line 1 above, you'll see that the navbar is set to
+expand at the `md` or medium screen size breakpoint because of the class `navbar-expand-md`.
+
+{{< code-action >}} We can add this same breakpoint to the auto margin class on the logout button by
+changing the `ml-auto` class to be `ml-md-auto`:
+```html {linenos=table, hl_lines=[13]}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav flex-grow-1 navbar-collapse collapse">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'dashboard' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'new-task' %}">New Task</a>
+          </li>
+          <li class="nav-item ml-md-auto">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+</nav>
+```
+
+Now, we have a navbar that works well and looks good on all screen sizes!
+{{< figure src="images/courses/cs10/unit02/03A_1_navbar.png" width="100%" title="Dashboard with Bootstrap Navbar" >}}
+
+## C. Now you try
+There are many ways to use Bootstrap layouts like containers and Flexboxes to structure your webpages. You can
+explore the [Bootstrap layout documentation](https://getbootstrap.com/docs/4.0/layout/overview/) to learn more,
+especially when you realize you need to find a way to create a particular layout.
+
+For now, use your newly found knowledge of Bootstrap layouts to improve the designs of the other pages of our
+task app. Here are some screenshots you can use as guides, but feel free to design them however you like!
+
+### Index
+{{< figure src="images/courses/cs10/unit02/03A_1_styled_index.png" width="100%" title="Example Styled Index Page" >}}
+
+### New Task
+{{< figure src="images/courses/cs10/unit02/03A_1_styled_new_task.png" width="100%" title="Example Styled New Task Page" >}}
+
+### Update task
+{{< figure src="images/courses/cs10/unit02/03A_1_styled_update_task.png" width="100%" title="Example Styled Update Task Page" >}}
+
+### Register
+{{< figure src="images/courses/cs10/unit02/03A_1_styled_register.png" width="100%" title="Example Styled Account Registration Page" >}}
 
