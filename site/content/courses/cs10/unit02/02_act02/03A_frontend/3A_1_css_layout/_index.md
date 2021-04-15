@@ -11,12 +11,12 @@ CSS stands for Cascading Style Sheets. CSS styles are predefined ways in which a
 them to causing them to fade into view with an animation. As you can imagine, there are many different ways to style content and sometimes
 we want to style content in multiple ways. This is where the "cascading" part comes in. We can apply multiple styles to a single element
 and these styles will be interpreted in a predefined way. For example, this allows us to say that all paragraph text in an HTML document
-should be represented with the font `arial` but also that certain paragraph elements should be represented with the font `arial-bold`.
+should be represented in black but also that certain paragraph elements should be represented in blue.
 
 ### Classes
-One way to apply styles to classes is to use what's called "in-line style" where we write style rules directly on our HTML elements. This
+One way to apply styles to elements is to use what's called "in-line style" where we write style rules directly on our HTML elements. This
 is useful in some circumstances, but mostly it limits our ability to write abstract code and makes our code look messy. Instead, we
-normally use CSS classes to apply styles. To write a CSS class, we choose a name and then choose a particular set of CSS styles that should
+normally use CSS classes which we define in a separate CSS document to apply styles. To write a CSS class, we choose a name and then choose a particular set of CSS styles that should
 go with that name. For example, the `footnote` class may have styles to make it smaller, italicized, and appear at the bottom of a page. Then,
 we can add that class on to any HTML element and those styles will be used:
 ```html
@@ -30,7 +30,7 @@ we can add that class on to any HTML element and those styles will be used:
 ```
 Note that these classes are not the same as Python classes, but they're based on the same idea.
 
-## B. Bootstrap
+## B. CSS Layout
 Styling HTML elements can be really difficult and involve a lot of code to make sure that your site uses a consistent style that works
 well on a variety of screen sizes (this is known as responsive web development). To help with this, we'll be using a predefined CSS
 toolkit that simplifies and standardizes styles across your webapp. For this lab, we will only be using CSS classes pre-defined by in
@@ -51,7 +51,7 @@ Once a div becomes a container, the width of the div gets limited based on the s
 smaller devices and content won't become really streched on larger devices. Let's see this in action:
 
 {{< code-action >}} Add the following lines of code to your `starter_app/dashbaordView.html` file to make the
-div contain the tasks a container with a dark background:
+div contain the tasks in a container with a dark background:
 
 ```html {linenos=table, hl_lines=[4,11]}
 {% extends "base.html" %}
@@ -69,9 +69,9 @@ div contain the tasks a container with a dark background:
 {% endblock %}
 ```
 
-{{< code-action >}} Now try changed the size of your browser window to make it bigger and smaller.
+{{< code-action >}} Now try changing the size of your browser window to make it bigger and smaller.
 
-Notice how the dark background gets smaller at the window gets smaller and bigger as the window gets
+Notice how the dark background gets smaller as the window gets smaller and bigger as the window gets
 bigger? That's the power of the Bootstrap container in action!
 
 Containers are very powerful and can be used to make highly customizable webpage layouts using the [Bootstrap
@@ -136,7 +136,7 @@ than lines of text. To do this, we'll apply the `list-group` class to our task l
       <p><strong>Date Due:</strong> Date holder</p>
       <p><i>Label</i></p>
       <p>Notes: notes holder</p>
-      <a href="{% url 'update-task' pk=1 %}">
+      <a href="{% url 'update-task' pk=2 %}">
         Update
       </a>
     </li>
@@ -145,7 +145,7 @@ than lines of text. To do this, we'll apply the `list-group` class to our task l
       <p><strong>Date Due:</strong> Date holder</p>
       <p><i>Label</i></p>
       <p>Notes: notes holder</p>
-      <a href="{% url 'update-task' pk=1 %}">
+      <a href="{% url 'update-task' pk=3 %}">
         Update
       </a>
     </li>
@@ -155,7 +155,7 @@ than lines of text. To do this, we'll apply the `list-group` class to our task l
 {% endblock %}
 ```
 
-There's a lot of content for each task, and it is a little ahrd to read since everything is aligned to the left. Let's
+There's a lot of content for each task, and it is a little hard to read since everything is aligned to the left. Let's
 use a flexbox to rearrange some of the content.
 
 {{< code-action >}} Make a flexbox for the task name and the due date that spreads the content out across the element:
@@ -293,7 +293,7 @@ let's add some content to it.
 
 {{< code-action >}} First, let's add a home button to the bar (called the "brand"):
 
-```html {linenos=table, hl_lines=["2-4"]}
+```html {linenos=table, hl_lines=[2]}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
 </nav>
@@ -304,7 +304,7 @@ any page by clicking the home link! Let's add some more functionality to our web
 adding some more links on the nav bar in a menu.
 
 {{< code-action >}} Add menu options to explicitly link to the dashboard, the new task page, and the logout page:
-```html {linenos=table, hl_lines=["5-14"]}
+```html {linenos=table, hl_lines=["3-13"]}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'dashboard' %}">Tasks</a>
     <ul class="navbar-nav">
@@ -331,14 +331,14 @@ app can do.
 
 #### Return of the flex
 
-Next, let's add some structure to our navbar. In many site, logout is separated from the other
+Next, let's add some structure to our navbar. In many sites, logout is separated from the other
 menu options to keep users from accidentally logging out. So, let's try moving the logout button
 to the right side of our navbar. To do this, we'll use our handy-dandy flexboxes. Bootstrap nav
 components are already set as flex boxes, so we can just add the properties we want.
 
 We want to push the last element in our navbar menu all the way to the right of the page. To accomplish
 this, we need to change the space around the element rather than the element itself. Every element in HTML
-uses follows the CSS Box Model which includes 3 different ways to change the space around an element:
+follows the CSS Box Model which includes 3 different ways to change the space around an element:
 
 {{< figure src="images/courses/cs10/unit02/03A_1_box.png" width="100%" title="CSS Box Model" >}}
 
@@ -450,7 +450,7 @@ did it go?
 </nav>
 ```
 
-One small thing: the logout button is still getting pushed all the way to the left in the
+One small thing: the logout button is still getting pushed all the way to the right in the
 menu when the screen is smaller. This doesn't look so great :/ We can fix this by using CSS
 to tell the element to only add margin when the window size is larger than a certain *breakpoint*.
 If you look at the nav element classes on line 1 above, you'll see that the navbar is set to
@@ -483,7 +483,7 @@ Now, we have a navbar that works well and looks good on all screen sizes!
 
 ## C. Now you try
 There are many ways to use Bootstrap layouts like containers and Flexboxes to structure your webpages. You can
-explore the [Bootstrap layout documentation](https://getbootstrap.com/docs/4.0/layout/overview/) to learn more,
+explore the [Bootstrap layout documentation](https://getbootstrap.com/docs/4.6/layout/overview/) to learn more,
 especially when you realize you need to find a way to create a particular layout.
 
 For now, use your newly found knowledge of Bootstrap layouts to improve the designs of the other pages of our
