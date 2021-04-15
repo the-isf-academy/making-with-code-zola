@@ -234,9 +234,10 @@ to help figure out how to use them.
 {{< code-action >}} Use the information and screenshots below to create each of the pages.
 
 #### Index Page
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `IndexView()`         	| /                    	| 
+| View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
+|-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `IndexView()`         	| /                    	| index         | `indexView.html`          | The first page that user's see when they visit your app. Gives the user the option to log in or register for a new account.                                        	|
+
 
 {{< figure src="images/courses/cs10/unit02/03A_0_index.png" width="100%" title="Index Page" >}}
 
@@ -244,27 +245,27 @@ to help figure out how to use them.
 appropriate pages, you will also need to use link elements (`<a>`) for this page.*
 
 #### Dashboard Page
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `TaskDashboardView()`    	| dashboard/           	| 
+| View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
+|-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `TaskDashboardView()` 	| dashboard/           	| dashboard     | `dashboardView.html`      | Shows all the tasks assigned to the user.                                                                                                                          	|
 
 {{< figure src="images/courses/cs10/unit02/03A_0_dashboard.png" width="100%" title="Dashboard Page" >}}
 
 *Hint: The list HTML elements will come in handy on this page.*
 
 #### Edit Task Page
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `EditTaskView()`      	| updatetask/int:pk/   	| 
+| View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
+|-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `EditTaskView()`      	| updatetask/<int:pk>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
 
 {{< figure src="images/courses/cs10/unit02/03A_0_edittask.png" width="100%" title="Edit Task Page" >}}
 
 *Hint: This one will be very similar to the new task page!*
 
 #### Create Account View
-| View Name             	| URL Route            	|
-|-----------------------	|----------------------	|
-| `CreateAccountView()`    	| register/           	| 
+| View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
+|-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| `CreateAccountView()` 	| register/            	| register      | `createAccountView.html`  | Shows a form that collects information about a new user.                                                                                                           	|
 
 {{< figure src="images/courses/cs10/unit02/03A_0_createaccount.png" width="100%" title="Create Account Page" >}}
 
