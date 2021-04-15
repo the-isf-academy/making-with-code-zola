@@ -2,6 +2,8 @@
 title: 3.B.1 Django and Models
 ---
 
+# Django and Models
+
 ## Before We Begin...
 
 {{< code-action >}} Before we get started, please clone the CS10 Webapp backend repo on GitHub, then go into the directory and install the missing packages using pip or pip3.
