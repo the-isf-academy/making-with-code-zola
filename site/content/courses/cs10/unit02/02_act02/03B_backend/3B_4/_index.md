@@ -4,21 +4,53 @@ Title: 3.B.4 Relational Databases
 
 # Relational Databases
 
-So far, we have a To-Do app that allows us to keep track of tasks and users. People log in and post a new task and everyone can see all the tasks in the system. But what if we don't want that? (and we don't because that would be boring...)
+So far, we have a To-Do app that allows us to keep track of tasks and users. People log in, post a new task on the system and everyone can see all the tasks. We have successfully built a "Job Post" website where everyone can see all the "Jobs".
 
-We want to assign tasks to users in the system. We also only want to see see tasks that has been assigned by us and to us.
+But that's not the vision of the To-Do app.
 
-Somehow we need to connect the users in the database with task data and in this lesson, we'll look at how we can do that.
+What we want to To-Do app is to be able to create tasks and assign them to people.
+
+Here are some issues that we need to take care of.
+
+1. We can't assign tasks to other users. We can only post "tasks" publicly.
+2. We don't want everyone to see the Tasks assigned to other users.
+3. We don't want everyone to see who Tasks were assigned by.
+
+Essentially, we want to make sure that tasks are private to users. How can we do this?
+
+{{<checkpoint>}}
+Our User and Tasks Tables looks like this.
+![Users and Tasks Table](/images/courses/cs10/unit02/users_tasks.png)
+
+What changes can we make to "link" the two tables together?
+
+{{</checkpoint>}}
+
+If you answered, "Why don't we make a big table with all the data in it", this solution can potentially work. Your table could look like this.
+
+![Users and Tasks Table](/images/courses/cs10/unit02/users_tasks_combined.png)
+
+Technically speaking, we *can* make this table and use to to solve our Task-to-User problem. But there are problems here.
+
+{{<checkpoint>}}
+What is wrong with using this "new" User_Task table?
+{{</checkpoint>}}
+
+Here are a couple of expensive 'wrongs' about this table:
+- We are duplicating the User table and its data in another table. This is very expensive in terms of space.
+- Because we duplicated the User table into the Task table, the table is needlessly big and searching through a big database table is expensive, performance-wise.
+
+Just these two issues should raise some alarm bells for us as programmers. In other words, we can do better. But how?
+
+Read more to find the answer...
 
 ## What is a Relational Database
 
-A ***relational database*** is a database where there are tables that can be linked together with common data. In our current system, Users and Task are tables that have no common data between them. This means we have a ***simple database***.
+Right now, our system have two tables that have no data connections with each other. This is what is called a ***simple database***. A ***simple database*** is a database where tables are distinct data collections with no data connections between the tables.
 
-Our User and Task models look like this:
+For us to solve our initial problem, we need to connect the User and Task tables together. We need a ***relational database***. A ***relational database*** is a database where there are tables that can be linked together with common data.
 
-![Users and Tasks Table](/images/courses/cs10/unit02/users_tasks.png)
-
-Note that the id field in the Users table and the id field in the Task table are different IDs.
+(Note: the id field in the Users table and the id field in the Task table are different IDs)
 
 We want to somehow connect User and Task tables together to convert our simple database to a relational base? If you said, "Let's make a new database." that's on the right track but we don't need to make a new database. What we can do is to modify our current database to accommodate this "link". It's quite easy to do.
 
