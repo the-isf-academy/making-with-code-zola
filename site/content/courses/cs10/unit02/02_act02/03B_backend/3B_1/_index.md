@@ -173,3 +173,9 @@ The interaction looks something like this...
 Now that we have put together our To-Do app, we can save all our files and start the server. We should be able to access the To-Do app on **localhost:8000**. See top of page for instructions for this.
 
 I hope this tutorial has been helpful in understanding how we can create Models in Django and work with them in forms and views. The next tutorial will look at some tools that we can use to look at our data.
+
+{{< checkpoint >}}
+
+Before moving onto to `3.B.2`, answer the section 'A & B' questions in your `Django Backend Worksheet` Google Doc. 
+
+{{</checkpoint >}}
