@@ -180,6 +180,6 @@ I hope this tutorial has been helpful in understanding how we can create Models 
 
 {{< checkpoint >}}
 
-Before moving onto to `3.B.2`, answer the section 'A & B' questions in your `Django Backend Worksheet` Google Doc. 
+Answer the section 'A & B' questions in your `Django Backend Worksheet` Google Doc. 
 
 {{</checkpoint >}}

@@ -77,6 +77,6 @@ There are lots of ethical questions that need to be considered when building an 
 
 {{< checkpoint >}}
 
-Before moving onto to `3.B.3`, answer the section 'C' questions in your `Django Backend Worksheet` Google Doc. 
+Answer the section 'C' questions in your `Django Backend Worksheet` Google Doc. 
 
 {{</checkpoint >}}
