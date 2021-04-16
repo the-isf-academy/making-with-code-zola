@@ -73,7 +73,7 @@ In the To-Do App example, the New Task page uses a Django Model form and some of
 
 But what if we want to add custom validation on our forms? Well, we can create code that does this. Let's investigate this with a slightly modified example from the Django documentation.
 
-```shell
+```python
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -103,9 +103,9 @@ RegexValidator uses regular expressions (Regex), which is a fancy way of saying 
 
 How do we use Regex in Django? Let's use Regex to validate the title of the New Task form to be only capital letters.
 
-Let's open *models.py* and import some modules.
+{{< code-action >}} Let's open `models.py` and import some modules.
 
-```shell
+```python
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -115,24 +115,24 @@ import re
 
 We are importing the same two lines as the Django example but we are also importing two other things: the Django RegexValidator and the *re* module, which is the Python Regex module.
 
-Next, let's create the validator function.
+{{< code-action >}} Next, let's create the validator function.
 
-```shell
+```python
 def validate_caps(value):
     reg = re.compile('[A-Z]')
     if not reg.match(value):
         raise ValidationError(_('Must be capital letters'))
 ```
 
-In the validation function *validate_caps*, we are using the regular expression '[A-Z]' (which is to say only capital letters), and comparing that with the input value. If the input value doesn't match, raise a ValidationError on the screen.  
+In the validation function `validate_caps`, we are using the regular expression '[A-Z]' (which is to say only capital letters), and comparing that with the input value. If the input value doesn't match, raise a ValidationError on the screen.  
 
-Great! Let's use this validator function in the title field.
+{{< code-action >}} Great! Let's use this validator function in the title field.
 
-```shell
+```python
 title = models.CharField(max_length=30, validators=[validate_caps])
 ```
 
-The validators option will tell Django to use *validate_caps* on form submissions.
+The validators option will tell Django to use `validate_caps()` on form submissions.
 
 {{<checkpoint>}}
 

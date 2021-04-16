@@ -12,7 +12,8 @@ Well, Django has a build-in administration page that allows us to look at the da
 
 Just like other parts of our app, the Administration page is a route that is configured in Django. With Django's default project setup, the panel is automatically enabled. 
 
-To confirm the admin panel is ready to go, first check the `base.py` file under the `cs10_webapp_base/settings` directory. We need to make sure there the admin interface is installed. If this code isn't in `base.py`, you will need to copy and paste this code in. Django should have already added this for us by default.
+
+{{< code-action >}} To confirm the admin panel is ready to go, first check the `base.py` file under the `cs10_webapp_base/settings` directory. We need to make sure there the admin interface is installed. If this code isn't in `base.py`, you will need to copy and paste this code in. Django should have already added this for us by default.
 
 ```python {hl_lines=["2"]}
 INSTALLED_APPS = [
@@ -21,15 +22,14 @@ INSTALLED_APPS = [
 ]
 ```
 
-
-
-Next, we need to confirm the following import statement is in the `admin.py` file. If not, add it in. 
+{{< code-action >}} Next, we need to confirm the following import statement is in the `admin.py` file. If not, add it in. 
 
 ```shell
 from django.contrib import admin
 ```
 
-**We can now access the admin portal by going to: <br> `https://localhost:8000/admin/`.**
+
+{{< code-action >}} **We can now access the admin portal by going to: `https://localhost:8000/admin/`.**
 
 If you go to this URL, there will be a webpage where we can log in to the admin site. We will need Superuser access for this. 
 
@@ -37,7 +37,8 @@ If you go to this URL, there will be a webpage where we can log in to the admin 
 
 We've successfully checked that the admin site is ready to go but we can't log in! We need to create a Superuser account to log into the admin site.
 
-To create a Superuser for our website, quit the Django server and in the same path, type in Terminal:
+
+{{< code-action >}} To create a Superuser for our website, quit the Django server and in the same path, type in Terminal:
 
 ```shell
 python3 manage.py createsuperuser
@@ -51,7 +52,8 @@ By default, the Django admin site doesn't allow us to do much. We can play aroun
 
 If we want to look at our Task data, we can register our models in `admin.py` and Django will give access to our data through the admin page. The `admin.py` file can be found in the `starter_app` directory.
 
-Let's register the Task model so we can see our Task data from within the admin page.
+
+{{< code-action >}} Let's register the Task model so we can see our Task data from within the admin page.
 
 ```python {hl_lines=["2-4"]}
 from django.contrib import admin
