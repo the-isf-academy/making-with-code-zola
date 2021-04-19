@@ -73,7 +73,7 @@ In the To-Do App example, the New Task page uses a Django Model form and some of
 
 But what if we want to add custom validation on our forms? Well, we can create code that does this. Let's investigate this with a slightly modified example from the Django documentation.
 
-```shell
+```python
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -103,44 +103,76 @@ RegexValidator uses regular expressions (Regex), which is a fancy way of saying 
 
 How do we use Regex in Django? Let's use Regex to validate the title of the New Task form to be only capital letters.
 
-Let's open *models.py* and import some modules.
+{{< code-action >}} Start by creating a `validators.py` file in the `starter_app` directory. Add the following code to the file. 
 
-```shell
+```python
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-
 from django.core.validators import RegexValidator
 import re
+
+def validate_caps(value):
+    reg = re.compile('[A-Z]')
+    for letter in value:
+        if not reg.match(letter):
+            raise ValidationError(_('Must be all capital letters'))
 ```
 
 We are importing the same two lines as the Django example but we are also importing two other things: the Django RegexValidator and the *re* module, which is the Python Regex module.
 
-Next, let's create the validator function.
+In the validation function `validate_caps`, we are using the regular expression '[A-Z]' (which is to say only capital letters), and comparing that with the input value. If the input value doesn't match, raise a ValidationError on the screen.  
 
-```shell
-def validate_caps(value):
-    reg = re.compile('[A-Z]')
-    if not reg.match(value):
-        raise ValidationError(_('Must be capital letters'))
+Now that we've written the validation function, let's add it into our model. 
+
+{{< code-action >}} Open `models.py`. First, import the `validate_caps()` function and then add the `validators` parameter to the `title` field. 
+
+The validators option will tell Django to use `validate_caps()` on form submissions.
+
+
+```python {hl_lines=["5","9"]}
+import datetime
+from django.db import models
+from django.utils import timezone
+from django.utils.timezone import now
+from .validators import validate_caps
+
+
+class Task(models.Model):
+    title = models.CharField(max_length=30, validators=[validate_caps])
+    label = models.CharField(max_length=8)
+    notes = models.TextField(editable=True, max_length=200)
+
+    due_date = models.DateField('Date Due', editable=True)
+    pub_date = models.DateTimeField('Date Created',default=now, editable=False)
+    archive = models.BooleanField(default=False)
+
+
+    def __str__(self):
+        return self.title
+
+    def date_created(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 ```
 
-In the validation function *validate_caps*, we are using the regular expression '[A-Z]' (which is to say only capital letters), and comparing that with the input value. If the input value doesn't match, raise a ValidationError on the screen.  
+{{< code-action >}} Run the server and check if the validation is working. Now, when submitting a new task, the title must begin with a capital letter. The validation is applied to the form and works like a charm!
 
-Great! Let's use this validator function in the title field.
 
-```shell
-title = models.CharField(max_length=30, validators=[validate_caps])
-```
+## Custom Validation 
 
-The validators option will tell Django to use *validate_caps* on form submissions.
+The ability to write custom validations is an incredibly powerful tool. Let's explore what it can do by creating a content filter. 
 
-{{<checkpoint>}}
+{{< code-action >}} Write and add a validator to the Task's text fields that prevents users from submitting tasks with the words below. 
 
-After making these changes to models.py, create a new task. What do you notice?
+*Banned words: 'pizza', 'dumplings', 'lemonade', 'mochi', 'hummus'*
 
-{{</checkpoint>}}
+{{< checkpoint >}}
 
-You can see that in order to submit the new task, the title must be in caps. So the validation is applied to the form and works like a charm.
+Answer the following questions in your `Django Backend Worksheet` Google Doc.
+
+0. Will you add data validation into your own app? If so, in what aspect of the model? 
+0. What are the ethical considerations of data validation? 
+
+{{</checkpoint >}}
 
 ## Wrapping Up
 

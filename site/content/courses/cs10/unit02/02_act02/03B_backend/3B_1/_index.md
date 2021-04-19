@@ -15,7 +15,7 @@ cd cs10_webapp_backend-YOUR-GITHUB-USERNAME
 pip3 install -r requirements.txt
 ```
 
-After you have installed the requirements, you can start the server by typing the following in Terminal:
+After you have installed the requirements, try start the server by typing the following in Terminal:
 
 ```shell
 python manage.py runserver
@@ -25,11 +25,11 @@ Doing this now will result in a lot of errors and the server won't start. That's
 
 ## Defining a Model in Django
 
-A **model** is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Each model maps to a single database table.
+A **model** is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Each model maps to a single database table. We define our models in the `models.py` file.
 
-We define our models in the *models.py* file. Open the *models.py* file in the *starter_app* folder and add the following code.
+{{< code-action >}} Open the `models.py` file in the `starter_app` folder and add the following code.
 
-```shell
+```python
 import datetime
 
 from django.db import models
@@ -73,7 +73,9 @@ Looking at *models.py* , we have a bunch of Django imports and the Task model. W
 
 ## Django Migrations
 
-Before doing anything database related with our model, we need to do a migration. Performing a Migration tells Django to (re)build the necessary tables and their fields in our database. We run the migration by typing in the command prompt:
+Before doing anything database related with our model, we need to do a migration. Performing a Migration tells Django to (re)build the necessary tables and their fields in our database. 
+
+{{< code-action >}} Run the migration by typing in the command prompt:
 
 ```shell
 python3 manage.py migrate
@@ -88,7 +90,7 @@ python3 manage.py migrate
 
 Once we do this, our database will be ready to be used by our app.
 
-Let's try running the server. 
+{{< code-action >}} Let's try running the server. 
 ```shell
 python3 manage.py runserver
 ```
@@ -99,7 +101,7 @@ Let's see how the model is used in Django.
 
 Django can use Models in views to grab data from the database and display the data on the screen.
 
-Let's open *views.py*.
+{{< code-action >}} Let's open `views.py`.
 
 There are a number of view classes in *views.py* that uses the *Task* model. The view will create a Task object which will then get "Task" data from the *Task* table in the database. One such class is *TaskDashboard*.
 
@@ -114,9 +116,9 @@ We won't be looking at views in detail. Just know that views use models.
 
 Django can also use Models to automatically create HTML webforms.
 
-Now, let's open *forms.py* and copy the following code into the file.
+{{< code-action >}} Now, let's open `forms.py` and copy the following code into the file.
 
-```shell
+```python
 from django import forms
 from .models import Task
 
@@ -138,9 +140,10 @@ The *Meta* class is a inner class that has helper functions that changes the beh
 
 This is the basic template for creating forms using models in Django.
 
-If we open *urls.py*, we can add the following line of code to use TaskForm as a view.
+{{< code-action >}} Open `urls.py`, we can add the following line of code to use TaskForm as a view.
 
-```shell
+
+```python
 path('newtask/', views.TaskForm.as_view(), name='new-task'),
 
 ```
@@ -170,6 +173,13 @@ The interaction looks something like this...
 
 ![](/images/courses/cs10/unit02/newtask.png)
 
-Now that we have put together our To-Do app, we can save all our files and start the server. We should be able to access the To-Do app on **localhost:8000**. See top of page for instructions for this.
+
+{{< code-action >}} Now that we have put together our To-Do app, we can save all our files and start the server. We should be able to access the To-Do app on **localhost:8000**. *See top of page for instructions for this.*
 
 I hope this tutorial has been helpful in understanding how we can create Models in Django and work with them in forms and views. The next tutorial will look at some tools that we can use to look at our data.
+
+{{< checkpoint >}}
+
+Answer the section 'A & B' questions in your `Django Backend Worksheet` Google Doc. 
+
+{{</checkpoint >}}
