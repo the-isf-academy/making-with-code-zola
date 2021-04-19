@@ -86,7 +86,7 @@ The todo app will have 6 main views:
 | `IndexView()`         	| /                    	| index         | `indexView.html`          | The first page that user's see when they visit your app. Gives the user the option to log in or register for a new account.                                        	|
 | `TaskDashboardView()` 	| dashboard/           	| dashboard     | `dashboardView.html`      | Shows all the tasks assigned to the user.                                                                                                                          	|
 | `TaskFormView()`      	| newtask/             	| new-task      | `taskFormView.html`       | Shows a form that collects information about a new task.                                                                                                           	|
-| `EditTaskView()`      	| updatetask/<int:pk>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
+| `EditTaskView()`      	| updatetask/\<int:pk\>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
 | `CreateAccountView()` 	| register/            	| register      | `createAccountView.html`  | Shows a form that collects information about a new user.                                                                                                           	|
 | `LoginView()`         	| accounts/login/      	| login         |  `login.html`             |Shows a form that collects login information and attempts to log a user in. *This view is managed by the Django account plugin and you shouldn't have to edit it.* 	|
 
@@ -256,7 +256,7 @@ appropriate pages, you will also need to use link elements (`<a>`) for this page
 #### Edit Task Page
 | View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
 |-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| `EditTaskView()`      	| updatetask/<int:pk>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
+| `EditTaskView()`      	| updatetask/\<int:pk\>/ 	| update-task   | `updateTaskView.html`     | Shows a form that lets the user update or delete a task.                                                                                                           	|
 
 {{< figure src="images/courses/cs10/unit02/03A_0_edittask.png" width="100%" title="Edit Task Page" >}}
 
