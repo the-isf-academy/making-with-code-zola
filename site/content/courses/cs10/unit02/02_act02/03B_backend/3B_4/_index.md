@@ -117,8 +117,8 @@ Let's open *views.py* and add some code in *TaskDashboard*.
 
 ```
 Let's examine this code:
--The filter line of code will filter all the tasks that are for the user that is in self.request (aka, the user currently logged in).
--the context (or the user's tasks) will be sorted by due_date and this is what will be seen in the web page.
+- The data.filter line of code will filter all the tasks that are for the user that is in self.request (aka, the user currently logged in).
+- The context (or the user's tasks) will be sorted by due_date and this is what will be seen in the web page.
 
 Excellent! All the file changes have been made. We can migrate the changes on the database.
 
@@ -144,12 +144,35 @@ When we restart the server, we should see the following changes:
 
 If the Dashboard does not show this, try to complete the steps again.
 
+## Resetting the Database
+
+When we test code and make a lot of edits to our database, we will be adding data at different database migration points. If we do this, there will be a high chance that we will add erroneous data that will no longer be consistent with whatever the current database architecture is.
+
+If things get too messy, we would want to delete the database, delete our migrations and start fresh.
+
+Here's how we do this.
+
+0. Stop the server
+1. Delete our database file. (/cs10_webapp_base/db.sqlite3)
+2. Delete everything in the /starter_app/migrations folder. **Do not delete the folder!**
+3. Run migrate to rebuild the database
+4. Create a superuser
+5. Restart the server
+
+Performing these steps will reset our database with one superuser. With the superuser, we can access the admin page.
+
 ## Conclusion
 
 We have create a link or relation between the User table and Task table. We can use this relation to assigns tasks to different users in our To-Do app making our app work in a multi-user environment.
 
 We have learned to update Django models, forms and views to take advantage of relational databases so that users can assign tasks to others.
 
-With this basic understanding of how tables are joined in Django, we have opened up many more opportunities where we can have one-to-one relationships but also one-to-many and many-to-many relationships, similar to the To-Do app.
+With this basic understanding of how tables are joined in Django, we have opened up many more opportunities where we can have more than one-to-one relationships but also one-to-many and many-to-many relationships, similar to many real world apps.
 
-The scope of this project is quite limited but the sky's the limit. You can do a so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so anything is possible.
+The scope of this project is quite limited but the sky's the limit. You can do so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so the possibilities are endless.
+
+Here's a start to that exploration...
+
+{{<checkpoint>}}
+Go back and review the 5 Backend mini-lessons and *some* of the Frontend lessons. After you have reviewed, add a contact list to our To-Do app to make it bigger and better!
+{{</checkpoint>}}
