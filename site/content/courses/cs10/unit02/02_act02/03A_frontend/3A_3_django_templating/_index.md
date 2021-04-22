@@ -274,7 +274,7 @@ class EditTaskView(LoginRequiredMixin,TemplateView):
     template_name = 'starter_app/updateTaskView.html'
 ```
 
-{{< code-action >}} Finally, add a class function that filters the data so that
+{{< code-action >}} Finally, add a class method that filters the data so that
 we only get the unarchived tasks for the user who is logged in:
 
 ```python {linenos=table, hl_lines=["24-34"]}
@@ -322,7 +322,7 @@ class EditTaskView(LoginRequiredMixin,TemplateView):
 
 Now that we have data about our tasks, we can create HTML elements for each of them. The HTML
 for each task looks very similar, and we know what to do when we see repetitive code: use a for loop!
-The Django template language provides a for loop to repeat HTML code multiple times:
+The Django template language provides a for loop to repeat HTML code multiple times.
 
 {{< code-action >}} Insert a for loop in `dashboardView.html` to repeat the task HTML for each task in
 our data:
@@ -364,4 +364,80 @@ our data:
 {% endblock %}
 ```
 
+Now, you should see a task on the dashboard for each of the tasks you created in the shell at the start of this section!
+
 ### Variables
+
+The last step for completing our task dashboard is to populate each task on our dashboard with data from our database.
+Each time a view gets rendered, Django sets up a *context* object for the requested view. This context will hold whatever
+data we tell it to in the associated view class. We set up our context data in the last section to hold a list of tasks called `user_tasks`.
+Then, in the dashboard template, we used a for loop to iterate through each task in the list. Just like in Python, this loop set
+up a variable for each object in the list. In this case, we called the variable `task` since each element in the list is one task.
+Now, we can access properties of the object in the `task` variable just like we access properties of objects in Python: `task.title`.
+
+{{< code-action >}} Update the `dashboardView.html` template so that it uses the title from each task to fill out the header section
+of the task list item:
+```html {linenos=table, hl_lines=[18]}
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" type ="text/css" href="{% static 'starter_app/custom.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container" style="width: 75%; margin-bottom: 50px">
+    <h4>Tasks</h4>
+
+  <ul class="list-group">
+    {% for task in user_tasks %}
+        <li class="list-group-item">
+          <div class="d-flex w-100 justify-content-between">
+              <h5>{{ task.title }}</h5>
+            <p class="due-soon"><strong>Date Due:</strong> Date holder</p>
+          </div>
+          <p class="badge badge-info">Label</p>
+
+          <p>Notes: notes holder</p>
+          <a href="{% url 'update-task' pk=1 %}">
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+              Update
+            </button>
+          </a>
+        </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
+```
+
+Great! Now we just need to get the other properties from each task to finish filling out the HTML element.To figure out
+what these properties are, we need to look into the *model* for the data. *Models* are templates to add structure to the
+data used by our web app. The backend engineer is responsible for setting up the model for the data used in our app. Currently,
+our web app has a model for Users and for Tasks. 
+
+{{< code-action >}} Find the model for the `Task` object in `models.py` and use the properties to finish adding task-specific
+details to the `dashboardView.html` template.
+
+*Note: all objects also have an ID property (like `task.id`) so that you can uniquely identify each data object. This will
+come in handy to make sure that the update button in the task list item links to the correct place.*
+
+### Challenge: Due Next
+As a challenge let's try to apply the style for the task which is due next that we created in the last lab. Remember that you can 
+add this style by setting the ID of the element to `due-next` like this:
+```html
+<p id="due-next"><strong>Date Due:</strong> {{ task.due_date }}</p>
+```
+
+However, you will need to figure out how to apply this style to only the single element which
+is due next. If there are multiple tasks with the same due date, you can just choose one of the
+tasks.
+
+*Hints:*
+- Consider how the tasks are presented by the for loop. Which task will be the
+one with the nearest due date?
+- Look through the [Django template tags and filters](https://docs.djangoproject.com/en/3.1/ref/templates/builtins/) and
+you should find some helpful tools.
