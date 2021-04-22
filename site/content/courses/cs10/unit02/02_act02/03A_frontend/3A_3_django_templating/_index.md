@@ -3,8 +3,8 @@ title: 3.A.3 Django Templates
 ---
 
 # Intro to Django Template Language
-You new have a foundational understanding of the core elements of web development: HTML and CSS. In this lesson, you will build on
-that knowledge to learn how to use Django to make dynamic web pages that form your interactive web app.
+You now have a foundational understanding of the core elements of web development: HTML and CSS. In this lesson, you will build on
+that knowledge to learn how to use Django to make your web pages dynamic.
 
 ## A. Users and authentication
 So far, the todo app works the same for every person who visits the site. However, to actually make our todo app work, we need to
@@ -18,7 +18,7 @@ Managing user sessions is a really interesting and complex task in modern web de
 occur entirely through HTTP requests, but web browsers do a lot of extra work to store information about logins to send along with
 regular HTTP requests.
 
-If you're interested in learning more about user sessions, you can check out this resource:
+If you're interested in learning more about user sessions, you can check out [this resource from the Django documentation](https://django-book.readthedocs.io/en/latest/chapter14.html).
 
 {{< /aside >}}
 
@@ -99,11 +99,11 @@ then logging in and visiting the page. Notice the difference?
 {{< code-action >}} Add the `LoginRequiredMixin` to all the views you want to restrict access to.
 
 {{< aside >}}
-Notice that we are using *multiple inheritances* with the `LoginRequiredMixin`. Our view classes are now extending
+Notice that we are using *multiple inheritance* with the `LoginRequiredMixin`. Our view classes are now extending
 two different parents: the `TemplateView` class and the `LoginRequiredMixin`. Thus, our class can take the properties
 and methods of both parents.
 
-If you'd like a more in-depth view on inheritance in Python, check out this resource:
+If you'd like a more in-depth review of multiple inheritance in Python, check out [this resource](https://www.programiz.com/python-programming/multiple-inheritance).
 
 {{< /aside >}}
 
@@ -113,7 +113,7 @@ We've now taken care of how visitors can or cannot access different parts of our
 it's still a bit hard to tell whether you are logged in or not. Additionally, it's kind of annoying as a user to have so
 many buttons on the navbar that don't do anything.
 
-So, let's update our navbar so that it displays differently when the user is logged-in versus when they are not logged-in.
+Let's update our navbar so that it displays differently when the user is logged-in versus when they are not logged-in.
 In Python, doing this would be pretty straightforward. We could simply use a conditional and some code like this:
 ```python
 if user.is_logged_in:
@@ -126,7 +126,7 @@ Unfortunately, with basic HTML this kind of conditonal code is not possible. HTM
 
 However, Django includes a special template language that is a hybrid
 between HTML and Python that can do just this. Even better, this langauge is so intuitive that you've actually been writing
-in it the whole time already! All of the template pages you've written can include special code that tells Django how to
+in it the whole time! All of the template pages you've written can include special code that tells Django how to
 render the pages.
 
 Let's see how this works by updating our navbar so that is appears differently depending on whether a user is logged-in.
@@ -160,8 +160,8 @@ Now, when you visit the todo app you'll see that the navbar has changed! Try log
 
 What's happening here should look pretty familiar to you: we're using an `if` statement to tell Django to use some
 HTML content if the current `user` object `is_authenticated`. Then, we're using an `else` statement to tell Django
-what content to use in any other case (i.e. the user is not authrnticated). Finally, because of the conventions of
-HTML, we need to tell Django where the end of our `if` statement is since the indendation doesn't matter (which would
+what content to use in any other case (i.e. the user is not authenticated). Finally, because of the conventions of
+HTML, we need to tell Django where the end of our `if` statement is since the indentation doesn't matter (which would
 signal the end of an `if` in Python.
 
 ## B. Dyanmic templates
@@ -173,7 +173,7 @@ You can read about the different feature of the Django template language in [the
 For now, let's explore a few key components: loops and variables.
 
 ### Loops
-It's about time that our todo app actually start showing us real todo tasks rather than the placeholder ones we've had in
+It's finally time for our todo app to actually show us real todo tasks rather than the placeholder ones we've had in
 the template so far. Let's put some tasks in our database so we have something to work with:
 
 {{< code-action >}} Open another Django shell:
@@ -191,9 +191,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 beginning of the lab):
 ```shell
 >>> from django.contrib.auth.models import User
->>> student = User.objects.first()
->>> student
-<User: student_user>
+>>> our_user = User.objects.first()
+>>> our_user
+<User: USERNAME>
 ```
 
 {{< code-action >}} Then, we can create the task and save it in our database (*Again, don't forget to replace
@@ -426,13 +426,13 @@ details to the `dashboardView.html` template.
 come in handy to make sure that the update button in the task list item links to the correct place.*
 
 ### Challenge: Due Next
-As a challenge let's try to apply the style for the task which is due next that we created in the last lab. Remember that you can 
+As a challenge, let's try to apply the style for the task which is due next that we created in the last lab. Remember that you can 
 add this style by setting the ID of the element to `due-next` like this:
 ```html
 <p id="due-next"><strong>Date Due:</strong> {{ task.due_date }}</p>
 ```
 
-However, you will need to figure out how to apply this style to only the single element which
+However, you will need to figure out how to apply this style to the single element which
 is due next. If there are multiple tasks with the same due date, you can just choose one of the
 tasks.
 

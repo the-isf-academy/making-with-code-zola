@@ -29,7 +29,7 @@ from django.contrib import admin
 ```
 
 
-{{< code-action >}} **We can now access the admin portal by going to: `https://localhost:8000/admin/`.**
+{{< code-action >}} **We can now access the admin portal by going to: `http://127.0.0.1:8000/admin/`.**
 
 If you go to this URL, there will be a webpage where we can log in to the admin site. We will need Superuser access for this. 
 
