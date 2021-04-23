@@ -31,29 +31,29 @@ customize it to work just the way you want it to. Using tool kits like this can
 help you write powerful programs. 
 
 The down side is that you are working with lots and lots of code that you didn't
-write. In fact, Quest is built using another framework called
+write. In fact, *Quest* is built using another framework called
 [Arcade](https://arcade.academy) for making games of all kinds. Arcade is built on 
 top of a framework called [Pyglet](http://pyglet.org/) for making desktop apps
 which use the keyboard and mouse, and Pyglet depends on many more layers of 
 lower-level stuff. This can quickly get overwhelming, which is why we rely on
-**abstraction**. Quest is limited, but it's simple. Its goal is to let you make
+**abstraction**. *Quest* is limited, but it's simple. Its goal is to let you make
 a certain kind of game without having to learn about all the underlying parts. 
 
 ### Reading documentation
 
 Now that you're working with lots of code written by other people, you need to
 learn how to read documentation. [Here's a link to the documentation for
-Quest](http://cs.fablearn.org/docs/quest/); keep this open in a new tab. 
+*Quest*](http://cs.fablearn.org/docs/quest/); keep this open in a new tab. 
 
 {{< look-action >}} In fact, before you go any further, have a quick skim over
-the Quest documentation. The
+the *Quest* documentation. The
 [Reference](http://cs.fablearn.org/docs/quest/api/index.html) section provides a
 list of all the classes in *Quest*. All the contributed modules were written by
 CS9 students in previous years!
 
 ## Let's play some games
 
-{{{< code-action >}} Let's install the Quest framework and try it out. (Note
+{{< code-action >}} Let's install the *Quest* framework and try it out. (Note
 that we are using `pip` to install Quest, but unlike in the past, we are using
 the `--editable` flag so that all of the framework's code is installed right
 here where you can mess around with it. 
@@ -76,7 +76,7 @@ Make sure everyone in your group got *Quest* working and was able to play the
 example games. 
 {{< /checkpoint >}}
 
-## Exploring the Quest Framework
+## Exploring the *Quest* Framework
 
 {{< write-action >}} Open [this Google Doc](https://docs.google.com/document/d/1IHKx9NzngqrQr9RFKdR_ubTxFs311b8dzMOKNl63fA0/edit?usp=sharing) and make a copy for your group. Make sure everyone has access to the doc and that all their names are on it. Write an answer to each numbered question below in your Doc.
 
@@ -108,7 +108,7 @@ Now we are going to read the code for the game we just played. You can either
 - Or read the code [on the documentation
   website](http://cs.fablearn.org/docs/quest/_modules/quest/examples/island.html#IslandAdventure)
 
-👀 First, skim the whole file. First there are a whole bunch of import statements:
+👀 First, skim the whole file. First there are a whole bunch of import statements importing *Quest* classes:
 
 ```python
     from quest.game import QuestGame
@@ -172,7 +172,7 @@ However, how does a human player control a character's movement? Where is the us
 ```shell
     python -m quest.examples.grandmas_soup
 ```
-`GrandmasSoup` shows how dialogue can be used in a Quest game. There are two main classes that help manage dialogue: `Modal` and `Dialogue`.
+`GrandmasSoup` shows how dialogue can be used in a *Quest* game. There are two main classes that help manage dialogue: `Modal` and `Dialogue`.
 
 👀 Using the source code for these samples and the [Quest documentation](http://cs.fablearn.org/docs/quest),
 learn about the `Modal` and `Dialogue` classes.
