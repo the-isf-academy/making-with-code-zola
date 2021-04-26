@@ -59,7 +59,7 @@ We have a few choices here. We can use whatever is unique to the user account. D
 
 Adding id and username to the Task table is actually quite easy. All we need to do is to add a few lines of code in our Task model and then do a migration. Easy peasy! :)
 
-{{< code-action >}} Let's go into our `models.py` file and add the following lines.
+{{< code-action >}} **Let's go into our `models.py` file and add the following lines.**
 
 ```python {hl_lines=["6","18"]}
 import datetime
@@ -96,7 +96,7 @@ Let's go over these lines of code in detail.
 
 ### Modify Forms
 
-Now let's open `forms.py` and make a slight modification so that each task is associated with a user when a task is created. 
+{{< code-action >}} **Now let's open `forms.py` and make a slight modification so that each task is associated with a user when a task is created.**
 
 ```python {hl_lines=["7"]}
 class TaskForm(LoginRequiredMixin,FormView):
@@ -118,7 +118,7 @@ Next we need to modify the dashboard so that we can take advantage of seeing ass
 
 The only thing we need to see are tasks assigned to the logged in user. We need to hide the other tasks away. To do this, we can use the built in django *filter* functionality to filter our data for only tasks assigned to the username.
 
-{{< code-action >}} Let's open `views.py` and modify/add a few lines of code to the  `TaskDashboard` view..
+{{< code-action >}} **Let's open `views.py`** Modify and add a few lines of code to the  `TaskDashboard` view.
 
 ```python {hl_lines=["11-13"]}
 class TaskDashboard(ListView):
@@ -146,7 +146,7 @@ Excellent! All the file changes have been made. We can migrate the changes on th
 
 ### Run Migrations and Restart
 
-{{< code-action >}} To migrate, shut down the server, run the makemigrations and migrate commands, and restart the server.
+{{< code-action >}} **Remigrate the model so the changes you've made are reflected in the database.** To migrate, shut down the server, run the makemigrations and migrate commands, and restart the server.
 
 ```shell
 python3 manage.py makemigrations
@@ -195,16 +195,16 @@ We must account for the following use cases to implement this feature:
 3. User can view tasks for themselves
 4. Users can view tasks they've assigned to others 
 
-{{< write-action >}} In your section E of your Google Doc, think through what adjustments need to made to the model to create a collaborative to-do app. Which other files will need adjustment? Once you have an outline of the changes, show a teacher before beginning to implement it. 
+{{< write-action >}} **In your section E of your Google Doc, think through what adjustments need to made to the model to create a collaborative to-do app.** Which other files will need adjustment? Once you have an outline of the changes, show a teacher before beginning to implement it. 
 
-{{< code-action >}} Try to implement the features you outlined in your Google Doc! 
+{{< code-action >}} **Try to implement the features you outlined in the backend of the To-Do web app!**
 
 ## Conclusion
 
-We have create a link or relation between the User table and Task table. We can use this relation to assigns tasks to different users in our To-Do app making our app work in a multi-user environment.
+We have created a link or relation between the User table and Task table. We can use this relation to assigns tasks to different users in our To-Do app making our app work in a multi-user environment.
 
 We have learned to update Django models, forms and views to take advantage of relational databases so that users can assign tasks to others.
 
 With this basic understanding of how tables are joined in Django, we have opened up many more opportunities where we can have more than one-to-one relationships but also one-to-many and many-to-many relationships, similar to many real world apps.
 
-The scope of this project is quite limited but the sky's the limit. You can do so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so the possibilities are endless.
+The scope of this project is limited, but the sky's the limit in terms of what Django can do. You can do so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so the possibilities are endless.
