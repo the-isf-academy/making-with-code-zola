@@ -93,32 +93,11 @@ Let's go over these lines of code in detail.
 - *task_user* will set a *ForeignKey* in our Task table which will be the field that "links" the Task and User tables together. We are using the default User model from Django. There more detailed explanation of what *ForeignKey* does in the Django documentation. The jist of *ForeignKey* is that it sets up many-to-one relationships between (many) Tasks and (one) User.
 - The parameters for *ForeignKey* can be looked up in Django's documentation.
 
-
-### Modify Forms
-
-{{< code-action >}} **Now let's open `forms.py` and make a slight modification so that each task is associated with a user when a task is created.**
-
-```python {hl_lines=["7"]}
-class TaskForm(LoginRequiredMixin,FormView):
-    template_name = 'task/TaskForm.html'
-    form_class = TaskForm
-    success_url = '/dashboard'
-
-    def form_valid(self, form):
-        form.instance.task_user = self.request.user
-        form.save()
-        return super().form_valid(form)
-```
-This will enable the form to automatically associate the new task with the current user. 
-
-Next we need to modify the dashboard so that we can take advantage of seeing assigned tasks and hide ones that aren't for the user.
-
-
 ### Modify Views
 
 The only thing we need to see are tasks assigned to the logged in user. We need to hide the other tasks away. To do this, we can use the built in django *filter* functionality to filter our data for only tasks assigned to the username.
 
-{{< code-action >}} **Let's open `views.py`** Modify and add a few lines of code to the  `TaskDashboard` view.
+{{< code-action >}} **Let's open `views.py`** Modify and add a few lines of code to the  `TaskDashboard`  and the `TaskForm` view.
 
 ```python {hl_lines=["11-13"]}
 class TaskDashboard(ListView):
@@ -138,9 +117,25 @@ class TaskDashboard(ListView):
       return context
 
 ```
+
 Let's examine this code:
 - The data.filter line of code will filter all the tasks that are for the user that is in self.request (aka, the user currently logged in).
 - The context (or the user's tasks) will be sorted by due_date and this is what will be seen in the web page.
+
+
+```python {hl_lines=["7"]}
+class TaskForm(LoginRequiredMixin,FormView):
+    template_name = 'task/TaskForm.html'
+    form_class = TaskForm
+    success_url = '/dashboard'
+
+    def form_valid(self, form):
+        form.instance.task_user = self.request.user
+        form.save()
+        return super().form_valid(form)
+```
+
+This addition will enable the form to automatically associate the new task with the current user. 
 
 Excellent! All the file changes have been made. We can migrate the changes on the database.
 
