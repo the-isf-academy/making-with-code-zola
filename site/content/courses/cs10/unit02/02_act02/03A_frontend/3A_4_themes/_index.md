@@ -17,6 +17,37 @@ to do is tell Django where to put the form (in the template) and what to do with
 ### Form Views
 Let's start by updating the view for a page which holds a form, the account registration page.
 
+{{< code-action >}} First, add some code to `starter_app/forms.py`:
+```python {linenos=table, hl_lines=["6-24"]}
+from django import forms
+from .models import Task
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = (
+            'title',
+            'label',
+            'notes',
+            'due_date',
+            'task_assigned_to'
+            )
+
+class CreateAccountForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'password1',
+            'password2'
+            )
+```
+This code is creating a class for each form we'll put on our site and defining what fields that form should have. The
+backend architect has control over this part of our site because they get to decide what data we need to collect and how
+we should collect it.
+
 {{< code-action >}} In the `views.py` file, update the `CreateAccountView` class so that it extends the `FormView` class:
 ```python {linenos=table, hl_lines=["17-30"]}
 from django.shortcuts import render

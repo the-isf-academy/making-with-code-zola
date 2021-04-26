@@ -201,7 +201,7 @@ the information in the `<>`*):
 ```shell
 >>> import datetime
 >>> from starter_app.models import Task
->>> task = Task(task_user=student, task_assigned_to=student.username, title="\<TITLE HERE\>", label="\<LABEL HERE\>", notes="\<NOTES HERE\>", due_date=datetime.date.today())
+>>> task = Task(task_user=our_user, task_assigned_to=our_user.username, title="<TITLE HERE>", label="<LABEL HERE>", notes="<NOTES HERE>", due_date=datetime.date.today())
 >>> task.save()
 ```
 
