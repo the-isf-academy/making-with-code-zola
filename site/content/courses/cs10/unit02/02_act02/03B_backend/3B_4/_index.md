@@ -151,9 +151,7 @@ python3 manage.py runserver
 
 After we run the migration, that Task table will be updated.
 
-{{< code-action >}} **Let's test it and see if the web app now works as we expect!** Log in and add a new task to yourself and to a different user of the system. Check that the tasks are showing up in the right places for the right people.
-
-We should see the following changes:
+{{< code-action >}} **Let's test it and see if the web app now works as we expect!** Log in and add a new task. Check that the following changes have been made:
 - Users can only create tasks for themselves
 - Users can only view tasks they created 
 
