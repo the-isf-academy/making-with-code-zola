@@ -1,5 +1,6 @@
 ---
 title: Act II
+bookCollapseSection: true
 ---
 
 # Act II: Web Applications with Django
