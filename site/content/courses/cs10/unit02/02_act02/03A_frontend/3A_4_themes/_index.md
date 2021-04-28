@@ -49,7 +49,7 @@ backend architect has control over this part of our site because they get to dec
 we should collect it.
 
 {{< code-action >}} In the `views.py` file, update the `CreateAccountView` class so that it extends the `FormView` class:
-```python {linenos=table, hl_lines=["17-30"]}
+```python {linenos=table, hl_lines=[8, "17-30"]}
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView, FormView, UpdateView, TemplateView
