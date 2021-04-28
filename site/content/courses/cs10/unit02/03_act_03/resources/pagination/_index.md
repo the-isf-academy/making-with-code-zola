@@ -42,11 +42,83 @@ class AllTasks(ListView):
 
 
 ## Templates
+As a reminder, Django uses templates and `block` content to build web pages. This allows you to easily repeat elements throughout your site. 
+
+We can employ the same idea behind teh `navbar.html` template from Act II.
+
 
 ### [pagination.html]
 
+Start by creating a `pagination.html` file in your `template` directory. Copy and paste this code. 
+
+```python 
+<div style="margin: auto">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        Previous
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#!" aria-label="Previous">
+                        Previous
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    Next
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#!" aria-label="Next">
+                        Next
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+  </nav>
+</div>
+```
+
+Although this may look complicated, it is simply the [Bootstrap pagination html](https://getbootstrap.com/docs/4.0/components/pagination/) in combination with the Django templating language. 
+- `{% if page_obj.has_previous %}` - if the current page has a previous page, it displays a blue clickable back arrow 
+    - `{% else %}` - if the current page does not have a previous page, it displays a grey unclickable back arrow
+- `{% if page_obj.has_next %}` - if the current page has a next page, it displays a blue clickable right arrow
+    - `{% else %}` - if the current page does not have a next page, it displays a grey unclickable back arrow
 
 ### [all_tasks.html]
+
+Now that we've set up the pagination template, we can add it into our template for displaying all the tasks. 
+
+```python {hl_lines=[13]}
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <ul class="list-group">
+        {% for task in tasks %}
+        {% include 'task/tasklist-for-user.html' %}
+        {% endfor %} 
+  
+    </ul>
+
+    {% include 'task/pagination.html' %}
+</div>
+
+{% endblock %}
+```
+
+All we have to do is add `{% include 'task/pagination.html' %}`. 
+
 
 
 ## Working Pagination 
