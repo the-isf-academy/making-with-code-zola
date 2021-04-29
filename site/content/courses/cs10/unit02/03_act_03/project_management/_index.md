@@ -68,9 +68,9 @@ Be sure to follow these steps:
 
 Up until this point, although we've been building web app we've only been interacting with them on your local machine. For this project, you will be able to push your work live to the web! 
 
-{{< code-action >}} To set up this functionality in your terminal, copy and past the following into the repo:
+{{< code-action >}} To set up this functionality, copy and past the following into the terminal:
 ```shell
-heroku git:remote -a cs10-BOTNAME-bot
+heroku git:remote -a cs10-project-team-name
 ```
 
 To push to the web follow these steps:
@@ -79,6 +79,6 @@ To push to the web follow these steps:
 0. commit files
 0. push to github: `git push`
 0. push to heroku remote: `git push heroku main`
-0. check deployment: heroku open
+0. check deployment: `heroku open`
 
 We don't recommend pushing to Heroku after every edit. Pushing live to the web should primarily be done after you are confident in update. 
