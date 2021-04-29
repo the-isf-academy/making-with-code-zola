@@ -36,7 +36,7 @@ class AllTasks(ListView):
         return data.order_by('-due_date') 
 ```
 - `paginate_by` - defines how many instances of the model should be displayed on each page
-- `get_queryset()` = defines the data that will be sent to th model 
+- `get_queryset()` - defines the data that will be sent to th model 
 
 
 
