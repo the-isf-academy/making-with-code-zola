@@ -1,5 +1,6 @@
 ---
 title: Act III
+bookCollapseSection: true
 ---
 
 # Act III: Django Unchained
