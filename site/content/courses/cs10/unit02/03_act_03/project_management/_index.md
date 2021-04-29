@@ -19,6 +19,7 @@ For this project, we will use Github’s project planning and development tools:
 - ✔️For each task create a unique issue 
     - For each issue, under `Projects` select `Project Tracking`
     - For each issue, under `Milestone` select `1`, `2`, or `3` according to level of difficult (1 being easiest, 3 being most difficult) 
+    - For each issue, we recommend adding notes in the "Write" section. 
 
 ### [Project Boards]
 
@@ -67,8 +68,17 @@ Be sure to follow these steps:
 
 Up until this point, although we've been building web app we've only been interacting with them on your local machine. For this project, you will be able to push your work live to the web! 
 
+{{< code-action >}} To set up this functionality in your terminal, copy and past the following into the repo:
+```shell
+heroku git:remote -a cs10-BOTNAME-bot
+```
+
 To push to the web follow these steps:
-0. Push updates to git
-0. Push updates to heroku 
+
+0. add all updated files
+0. commit files
+0. push to github: `git push`
+0. push to heroku remote: `git push heroku main`
+0. check deployment: heroku open
 
 We don't recommend pushing to Heroku after every edit. Pushing live to the web should primarily be done after you are confident in update. 
