@@ -70,7 +70,9 @@ Up until this point, although we've been building web app we've only been intera
 
 {{< code-action >}} To set up this functionality, copy and past the following into the terminal:
 ```shell
-heroku git:remote -a cs10-project-team-name
+$ cd project_webapp_YOUR_PROJECT_TEAM_NAME
+$ brew tap heroku/brew && brew install heroku
+$ heroku git:remote -a cs10-project-team-name
 ```
 
 To push to the web follow these steps:
