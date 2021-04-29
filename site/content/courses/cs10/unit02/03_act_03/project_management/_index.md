@@ -72,7 +72,7 @@ Up until this point, although we've been building web app we've only been intera
 ```shell
 $ cd project_webapp_YOUR_PROJECT_TEAM_NAME
 $ brew tap heroku/brew && brew install heroku
-$ heroku git:remote -a cs10-project-team-name
+$ heroku git:remote -a cs10-team-name
 ```
 
 To push to the web follow these steps:
