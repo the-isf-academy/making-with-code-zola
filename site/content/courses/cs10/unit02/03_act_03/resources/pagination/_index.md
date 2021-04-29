@@ -117,7 +117,7 @@ Now that we've set up the pagination template, we can add it into our template f
 {% endblock %}
 ```
 
-All we have to do is add `{% include 'task/pagination.html' %}`. 
+All we have to do is add `{% include 'task/pagination.html' %}` at the end of the file(s) we'd like to have pagination. 
 
 
 
