@@ -9,9 +9,9 @@ Forms are an incredibly powerful tool that allow the user to change the database
 Below are a few examples of how to implement advanced form fields. Some are just a simple change to the `forms.py` file and some will require you to alter your `model`. 
 
 
-## Calender Picker 
+## Calendar Picker 
 
-In Act II, the to-do app required the user to input the date in a specific format. With the addition of a calender picker, the user can much more easily select a due date. 
+In Act II, the to-do app required the user to input the date in a specific format. With the addition of a calendar picker, the user can much more easily select a due date. 
 
 {{< figure src="images/courses/cs10/unit02/resources_advanced_forms_01.png" width="60%"  >}}
 
