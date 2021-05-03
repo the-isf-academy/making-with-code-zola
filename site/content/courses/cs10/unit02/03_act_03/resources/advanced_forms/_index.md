@@ -17,7 +17,7 @@ In Act II, the to-do app required the user to input the date in a specific forma
 
 {{< code-action >}} To add this functionality, reference this code snippet in the `forms.py` file. 
 
-```python {hl_lines=["1-2","19-22"]}
+```python {linenos=table,hl_lines=["1-2","17-19"]}
 class DateInput(forms.DateInput):
     input_type = 'date'
 
@@ -32,8 +32,6 @@ class TaskForm(forms.ModelForm):
             'notes',
             'due_date',
             'task_assigned_to',
-            'year_in_school',
-
             )
 
         widgets = {
@@ -46,7 +44,7 @@ To learn more about how this woks watch this video!
 {{< youtube "I2-JYxnSiB0" >}}
 
 
-## Drop-down Menu with Pre-filled Options 
+## Drop-down Menu with Pre-filled Choices 
 
 We see examples of drop-down menus all the time. For example, when filling out an address, there is often a drop down field for country as opposed to the user writing in "Hong Kong". 
 
@@ -57,7 +55,7 @@ Let's consider the to-do app example. What if we wanted to add a priority field 
 {{< code-action >}} To add this functionality, we must alter the model in `model.py` file. 
 
 
-```python {hl_lines=["20-34"]}
+```python {linenos=table,hl_lines=["20-28"]}
 import datetime
 from django.db import models
 from django.utils import timezone
@@ -77,22 +75,15 @@ class Task(models.Model):
     pub_date = models.DateTimeField('Date Created',default=now, editable=False)    
     archive = models.BooleanField(default=False)
 
-    LOW = 'L'
-    MEDIUM = 'M'
-    HIGH = 'H'
+    class Priority(models.IntegerChoices):
+        LOW = 1, "Low"
+        MEDIUM = 2, "Medium"
+        HIGH = 3, "High"
 
-    PRIORITY_CHOICES = [
-        (LOW, 'Low'),
-        (MEDIUM, 'Medium'),
-        (HIGH, 'High'),
-    ]
-
-    priority = models.CharField(
-        max_length=1,
-        choices=PRIORITY_CHOICES,
-        default=LOW,
+    priority = models.PositiveSmallIntegerField(
+        choices=Priority.choices,
+        default=Priority.LOW
     )
-
 
     def __str__(self):
         return self.title
@@ -100,5 +91,14 @@ class Task(models.Model):
     def date_created(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 ```
+ - `lines 20-23` - define a `Choices` object. 
+    - `IntegerChoices` - allows you to assign a numerical value to the choices which allows you easily compare choices against each other. For example, if you want to rank the tasks from low priority to high priority, you can now use the number values to do so. 
+    - `LOW` - defines a variable with the values `1` and `"Low"`
+        - `1` - represents what the database value will be for the `priority` field
+        - `"Low"` - represents the human readable name of what will appear in the form
+- `lines 25-28` - defines a field, or property, of the `Task` model. 
+    - `PositiveSmallIntegerField` - defines the data type for the field 
+    - `choices=Priority.choices` - defines the optional `choices` argument to be the choices from the `Priority` class
+    - `default-Priority.LOW` - defines the default value of the field as `1`
 
-
+To learn more about what's possible with Django's `choices` field, visit their [official documentation](https://docs.djangoproject.com/en/3.0/ref/models/fields/#enumeration-types).
