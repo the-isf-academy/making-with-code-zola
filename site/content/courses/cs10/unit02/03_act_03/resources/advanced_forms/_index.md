@@ -101,4 +101,31 @@ class Task(models.Model):
     - `choices=Priority.choices` - defines the optional `choices` argument to be the choices from the `Priority` class
     - `default-Priority.LOW` - defines the default value of the field as `1`
 
+{{< code-action >}} Now, we must update the `forms.py` file to include the new field. 
+
+
+```python {linenos=table,hl_lines=["15"]}
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
+# Form to create a task 
+class TaskForm(forms.ModelForm): 
+    class Meta: 
+        model = Task 
+        fields = (
+            'title',
+            'label',
+            'notes',
+            'due_date',
+            'task_assigned_to',
+            'priority',
+            )
+
+        widgets = {
+            'due_date':DateInput()
+``` 
+
+And with that, we have a working drop-down menu with pre-defined choices! 
+
 To learn more about what's possible with Django's `choices` field, visit their [official documentation](https://docs.djangoproject.com/en/3.0/ref/models/fields/#enumeration-types).
