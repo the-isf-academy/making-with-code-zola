@@ -309,7 +309,7 @@ we can add custom CSS to our to override existing Bootstrap styles or create sty
 
 Let's make a customization so that our info badge better matches the color pallate of our todo app.
 
-{{< code-action >}} First, create a new file, `static/starter_app/custom.css`. You can leave it blank for now.
+{{< code-action >}} First, open the file, `static/starter_app/custom.css`. You can leave it blank for now.
 
 *(Note the file is in the `static` directory, not the `template` directory)*
 

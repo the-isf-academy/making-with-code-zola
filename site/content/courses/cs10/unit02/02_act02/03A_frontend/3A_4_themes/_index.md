@@ -108,7 +108,7 @@ Now, our `CreateAccountView` class will contain a form object (designed by the b
 Additionally, the `form_valid()` function tells Django what to do with the data once the form is submitted: create a new user
 with the information provided and log the user in.
 
-{{< code-action >}} Next, add the form object to the template in `createAccountView.py`:
+{{< code-action >}} Next, add the form object to the template in `createAccountView.html`:
 ```python {linenos=table, hl_lines=[2, 12]}
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
