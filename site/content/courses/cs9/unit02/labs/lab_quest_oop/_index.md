@@ -78,7 +78,7 @@ example games.
 
 ## Exploring the *Quest* Framework
 
-{{< write-action >}} Open [this Google Doc](https://docs.google.com/document/d/1IHKx9NzngqrQr9RFKdR_ubTxFs311b8dzMOKNl63fA0/edit?usp=sharing) and make a copy for your group. Make sure everyone has access to the doc and that all their names are on it. Write an answer to each numbered question below in your Doc.
+{{< write-action >}} Open the worksheet in your Google Drive for this lab. Write an answer to each numbered question below in your Doc.
 
 **Q0.** Before you look at any code, make a prediction about what classes are being used in this game.
 
