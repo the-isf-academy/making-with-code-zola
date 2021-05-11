@@ -1,5 +1,5 @@
 ---
-title: 1. Quest Lab
+title: 2. Quest Lab
 resources:
 - name: Quest
   src: images/courses/cs9/unit02/02_02_quest_island.png
@@ -9,7 +9,7 @@ resources:
 
 # Quest
 
-This lab builds on the the [Bank Lab]({{< ref "courses/cs9/unit02/labs/lab0_bank/_index.md" >}}), where you learned about Object-Oriented programming. OOP solves problems by creating models of situations, with an object representing each person or thing in the situation. In this lab, you will learn how to use a framwork called *Quest* to make video games. Specifically, *Quest* is a framework for making top-down role-playing games where you control a character and explore a world. [**The Legend of Zelda**](https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)) (1986) was one of the original top-down role-playing games, and it continues to have a big impact on the style of games today. 
+This lab builds on the the [Uno Lab]({{< ref "courses/cs9/unit02/labs/lab1_uno/_index.md" >}}), where you learned about Object-Oriented programming. OOP solves problems by creating models of situations, with an object representing each person or thing in the situation. In this lab, you will learn how to use a framwork called *Quest* to make video games. Specifically, *Quest* is a framework for making top-down role-playing games where you control a character and explore a world. [**The Legend of Zelda**](https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)) (1986) was one of the original top-down role-playing games, and it continues to have a big impact on the style of games today. 
 
 ![Zelda](zelda.gif)
 
@@ -59,11 +59,11 @@ the `--editable` flag so that all of the framework's code is installed right
 here where you can mess around with it. 
 
 ```shell
-    cd ~/Desktop/cs9/unit_2
-    git clone https://github.com/cproctor/quest.git quest_lab
-    pip install --editable quest_lab
-    cd quest_lab
-    python -m quest.examples.island
+cd ~/Desktop/cs9/unit_2
+git clone https://github.com/the-isf-academy/quest.git lab-quest
+pip install --editable lab-quest
+cd lab-quest
+python -m quest.examples.island
 ```
 
 You should find yourself exploring an island. Close the window when you're
@@ -111,9 +111,9 @@ Now we are going to read the code for the game we just played. You can either
 👀 First, skim the whole file. First there are a whole bunch of import statements importing *Quest* classes:
 
 ```python
-    from quest.game import QuestGame
-    from quest.map import TiledMap
-    from quest.sprite import Background, Wall
+from quest.game import QuestGame
+from quest.map import TiledMap
+from quest.sprite import Background, Wall
 ```
 
 Then is a helper function called `resolve_path`--you can ignore this. Next we
@@ -123,15 +123,15 @@ methods, which can then be extended or re-defined. *Quest* expects you to create
 **subclasses** of its existing classes, redefining parts of their behavior. 
 
 ```python
-    class IslandAdventure(QuestGame):
-        ...
+class IslandAdventure(QuestGame):
+    ...
 ```
  Finally, a statement to run the game:
 
 ```python
-    if __name__ == '__main__':
-        game = IslandAdventure()
-        game.run()
+if __name__ == '__main__':
+    game = IslandAdventure()
+    game.run()
 ```
 
 #### Q2.
@@ -146,60 +146,68 @@ methods, which can then be extended or re-defined. *Quest* expects you to create
 - player_speed
 
 #### Q3.
+{{< code-action >}} Open the file `quest/game.py` and look through the `QuestGame` class.
 `QuestGame` has a bunch of methods like `setup_maps()`, `setup_walls()`,
 `setup_player()`, `setup_npcs()`, and so on. Most of these do almost nothing.
 The idea is that subclasses like `IslandAdventure` can override these methods
-when they need to. `IslandAdventure` overrides two methods.
+when they need to. 
+
+Back in the `quest/examples/island.py` file, you can see that `IslandAdventure` overrides two methods from
+its parent class, `QuestGame`.
 
 💻 Now play a second version of Island Adventure:
 
 ```shell
-    python -m quest.examples.island_discrete
+python -m quest.examples.island_discrete
 ```
 There is a very slight difference in the way the player moves.
 
-✏️ Explain the difference, using the words "continuous" and "discrete" (look 'em up).Then explain how `IslandAdventureDiscrete` achieves this. What class actually determines whether movement is continuous or discrete? Finally, explain why a game might want to use discrete movement like this.
+✏️ Explain the difference, using the words "continuous" and "discrete" (look 'em up). Then explain how `IslandAdventureDiscrete` achieves this. What class actually determines whether movement is continuous or discrete? Finally, explain why a game might want to use discrete movement like this.
 
 #### Q4.
 Above, you looked at the classes that determine how movement works in the game. This movement functionality works for both playable and non-playable characters (NPC).
 
 However, how does a human player control a character's movement? Where is the user interface created in the game?
 
-✏️ Find the two functions that handle user input and describe what happens when the UP/W, DOWN/S, LEFT/A, RIGHT/D keys are pressed.
+Find the two functions that handle user input and describe what happens when the UP/W, DOWN/S, LEFT/A, RIGHT/D keys are pressed.
 
-💻 Play another sample game:
+{{< write-action >}} Fill out the questions in your worksheet.
+
+#### Q5.
+
+{{< code-action >}} Then, play another sample game:
 
 ```shell
-    python -m quest.examples.grandmas_soup
+python -m quest.examples.grandmas_soup
 ```
 `GrandmasSoup` shows how dialogue can be used in a *Quest* game. There are two main classes that help manage dialogue: `Modal` and `Dialogue`.
 
 👀 Using the source code for these samples and the [Quest documentation](http://cs.fablearn.org/docs/quest),
 learn about the `Modal` and `Dialogue` classes.
 
-#### Q5.
 ✏️ Describe the differences between the `Modal` and `Dialogue` classes and what each is responsible for.
 
 Interactions in the game happen when the main `Player` collides with an `NPC`. `GrandmasSoupGame` extends the `NPC` class into two new classes: `Grandma NPC` and `Vegetable NPC`.
 
 ✏️ Describe what happens in the `Modal` and `Dialogue` classes when the player collides with one of the extended `NPC` classes.
 
+#### Q6
+
 💻 Play the last sample game:
 
 ```shell
-    python -m quest.examples.maze
+python -m quest.examples.maze
 ```
 👀 Read the source code for the `Maze` class. Note how much of it is comments.
 
 💻 Make some sample mazes in a terminal window by opening the python shell and running the following code:
 
 ```python
-    >>> from quest.maze import Maze
-    >>> m = Maze(55, 15)
-    >>> m.generate()
-    >>> print(m)
+>>> from quest.maze import Maze
+>>> m = Maze(55, 15)
+>>> m.generate()
+>>> print(m)
 ```
-#### Q6
 ✏️ From reading the code and comments, what makes a maze a maze? What are its properties? What do the two parameters we pass into the `Maze` constructor mean?
 
 The `MazeGame` doesn't change much from the basic `Game` class. However, the module also implements a `MazeMap` class, which holds most changes to run this game.
