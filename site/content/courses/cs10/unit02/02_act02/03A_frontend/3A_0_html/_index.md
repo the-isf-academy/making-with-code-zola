@@ -244,6 +244,15 @@ to help figure out how to use them.
 *Hint: HTML `<button>` elements don't naturally act as links. To make your buttons link to the
 appropriate pages, you will also need to use link elements (`<a>`) for this page.*
 
+*Also, remember that Django has a special tag for linking within a Django site that uses the name associated with the
+URL route rather than the full link (consider why this might be a useful feature). Here's an example for linking
+to the login page:*
+```python
+<a href="{% url 'login' %}">
+    ...
+</a>
+```
+
 #### Dashboard Page
 | View Name             	| URL Route            	| Route Name    | Template Name             | Description                                                                                                                                                        	|
 |-----------------------	|----------------------	|-------------- |-------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|

@@ -59,7 +59,7 @@ We have a few choices here. We can use whatever is unique to the user account. D
 
 Adding id and username to the Task table is actually quite easy. All we need to do is to add a few lines of code in our Task model and then do a migration. Easy peasy! :)
 
-{{< code-action >}} Let's go into our `models.py` file and add the following lines.
+{{< code-action >}} **Let's go into our `models.py` file and add the following lines.**
 
 ```python {hl_lines=["6","18"]}
 import datetime
@@ -93,32 +93,11 @@ Let's go over these lines of code in detail.
 - *task_user* will set a *ForeignKey* in our Task table which will be the field that "links" the Task and User tables together. We are using the default User model from Django. There more detailed explanation of what *ForeignKey* does in the Django documentation. The jist of *ForeignKey* is that it sets up many-to-one relationships between (many) Tasks and (one) User.
 - The parameters for *ForeignKey* can be looked up in Django's documentation.
 
-
-### Modify Forms
-
-Now let's open `forms.py` and make a slight modification so that each task is associated with a user when a task is created. 
-
-```python {hl_lines=["7"]}
-class TaskForm(LoginRequiredMixin,FormView):
-    template_name = 'task/TaskForm.html'
-    form_class = TaskForm
-    success_url = '/dashboard'
-
-    def form_valid(self, form):
-        form.instance.task_user = self.request.user
-        form.save()
-        return super().form_valid(form)
-```
-This will enable the form to automatically associate the new task with the current user. 
-
-Next we need to modify the dashboard so that we can take advantage of seeing assigned tasks and hide ones that aren't for the user.
-
-
 ### Modify Views
 
 The only thing we need to see are tasks assigned to the logged in user. We need to hide the other tasks away. To do this, we can use the built in django *filter* functionality to filter our data for only tasks assigned to the username.
 
-{{< code-action >}} Let's open `views.py` and modify/add a few lines of code to the  `TaskDashboard` view..
+{{< code-action >}} **Let's open `views.py`** Modify and add a few lines of code to the  `TaskDashboard`  and the `TaskForm` view.
 
 ```python {hl_lines=["11-13"]}
 class TaskDashboard(ListView):
@@ -138,15 +117,31 @@ class TaskDashboard(ListView):
       return context
 
 ```
+
 Let's examine this code:
 - The data.filter line of code will filter all the tasks that are for the user that is in self.request (aka, the user currently logged in).
 - The context (or the user's tasks) will be sorted by due_date and this is what will be seen in the web page.
+
+
+```python {hl_lines=["7"]}
+class TaskForm(LoginRequiredMixin,FormView):
+    template_name = 'task/TaskForm.html'
+    form_class = TaskForm
+    success_url = '/dashboard'
+
+    def form_valid(self, form):
+        form.instance.task_user = self.request.user
+        form.save()
+        return super().form_valid(form)
+```
+
+This addition will enable the form to automatically associate the new task with the current user. 
 
 Excellent! All the file changes have been made. We can migrate the changes on the database.
 
 ### Run Migrations and Restart
 
-{{< code-action >}} To migrate, shut down the server, run the makemigrations and migrate commands, and restart the server.
+{{< code-action >}} **Remigrate the model so the changes you've made are reflected in the database.** To migrate, shut down the server, run the makemigrations and migrate commands, and restart the server.
 
 ```shell
 python3 manage.py makemigrations
@@ -156,9 +151,7 @@ python3 manage.py runserver
 
 After we run the migration, that Task table will be updated.
 
-{{< code-action >}} **Let's test it and see if the web app now works as we expect!** Log in and add a new task to yourself and to a different user of the system. Check that the tasks are showing up in the right places for the right people.
-
-We should see the following changes:
+{{< code-action >}} **Let's test it and see if the web app now works as we expect!** Log in and add a new task. Check that the following changes have been made:
 - Users can only create tasks for themselves
 - Users can only view tasks they created 
 
@@ -188,16 +181,23 @@ What if we wanted to expand this app to work collaboratively?
 
 A collaborative to-do app would allow individuals to assign tasks to other users. Powerschool has functionality similar to this. Teachers can assign homework, or tasks, to students. 
 
-{{< write-action >}} In your Google Doc, think through how you would adjust your model to create a collaborative to-do app. What other files would need to be modified to accommodate this model change? 
+We must account for the following use cases to implement this feature: 
+1. User can create a task for themselves
+2. User can optionally create a task for others 
+3. Users can update a task they've created for others 
+3. User can view tasks for themselves
+4. Users can view tasks they've assigned to others 
 
-{{< code-action >}} Try to implement the features you outlined in your Google Doc! 
+{{< write-action >}} **In your section E of your Google Doc, think through what adjustments need to made to the model to create a collaborative to-do app.** Which other files will need adjustment? Once you have an outline of the changes, show a teacher before beginning to implement it. 
+
+{{< code-action >}} **Try to implement the features you outlined in the backend of the To-Do web app!**
 
 ## Conclusion
 
-We have create a link or relation between the User table and Task table. We can use this relation to assigns tasks to different users in our To-Do app making our app work in a multi-user environment.
+We have created a link or relation between the User table and Task table. We can use this relation to assigns tasks to different users in our To-Do app making our app work in a multi-user environment.
 
 We have learned to update Django models, forms and views to take advantage of relational databases so that users can assign tasks to others.
 
 With this basic understanding of how tables are joined in Django, we have opened up many more opportunities where we can have more than one-to-one relationships but also one-to-many and many-to-many relationships, similar to many real world apps.
 
-The scope of this project is quite limited but the sky's the limit. You can do so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so the possibilities are endless.
+The scope of this project is limited, but the sky's the limit in terms of what Django can do. You can do so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so the possibilities are endless.
