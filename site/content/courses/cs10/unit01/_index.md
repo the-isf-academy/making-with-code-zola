@@ -2,6 +2,7 @@
 title: "Unit 01: ADTs"
 bookCollapseSection: true
 type: unit
+draft: true
 ---
 
 This mini-unit will explore the implementation of data structures as objects.

@@ -1,6 +1,7 @@
 ---
 title: "Network Basics"
 type: resource
+draft: true
 ---
 
 {{< tabs networking >}}

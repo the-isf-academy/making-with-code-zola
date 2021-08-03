@@ -1,6 +1,7 @@
 ---
 title: 5. Modules
 type: labs
+draft: true
 ---
 
 # Modules Lab
