@@ -31,7 +31,7 @@ To get your computer ready, we need to configure the workspace you will use for 
 
 {{< tabs "computer-setup" >}}
 {{< tab "MacOS" >}}
-{{< code-action  >}} To begin, start your Terminal app, paste in the following line into
+{{< code-action "To begin, start your Terminal app and paste" >}} the following line into
 the window that opens, and press `return`. Enter your computer's password when the window
 prompts you (you won't see any text when you're typing but that's ok).
 
@@ -46,7 +46,7 @@ work for the class.
 {{< /tab >}}
 
 {{< tab "Windows" >}}
-### Check system requirements 
+### 💻 Check system requirements 
 
 1. Go to `Settings > System > About`.
 1. Check that the Edition is Windows 10.
@@ -56,8 +56,8 @@ work for the class.
 
 
 
-### Ubunutu 
-Follow along with this video until the '6:15' mark, or follow the steps below. Once you have Ubunutu set up, skip below to "Setup Script". 
+### 💻 Ubunutu 
+Follow along with this video until the '6:15' mark, or follow the steps below. Once you have Ubunutu installed, skip below to "Download VcXsrv for graphics". 
 
 {{< youtube "1ap3hL-UR9I" >}}
 
@@ -80,32 +80,24 @@ Follow along with this video until the '6:15' mark, or follow the steps below. O
 1. Give your user admin privileges by typing `usermad -aG sudo your-name` and pressing enter
 (again, replace `your-name`).
 
-### Setup Script
-```shell
-bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/master/cs9_student_setup/setup_script.sh)
-```
 
-### Download Xming for graphics
-1. Download Xming from [this link](https://sourceforge.net/projects/xming/).
+### 💻Download VcXsrv for graphics
+1. Download VcXsrv from [this link](https://www.onworks.net/software/windows/app-vcxsrv-windows-x-server) by clicking `Download App`. 
 1. Install the package that downloads by double clicking on it and going through the install wizard.
 
-### Setting up files and folders for cs9
-1. In your Ubuntu window, change to the Desktop using `cd Desktop`.
-1. Make a cs9 folder using `mkdir cs9`.
-1. Change to the directory using `cd cs9`.
-1. Make a unit_00 folder using `mkdir unit_00`.
 
-### Download Atom
+### 💻Download Atom
 1. Download Atom from [this website](https://atom.io/) and install.
 
 ([This guide](https://medium.com/@rhdzmota/python-development-on-the-windows-subsystem-for-linux-wsl-17a0fa1839d)
 has instructions for installing shell commands to open files and projects in Atom)
 
-### Download Homebrew
-1. Run the following command in your Ubuntu window:
-    ```shell
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    ```
+### 💻Setup Script
+In your Ubuntu window, copy and paste the following to run the setup script.
+
+```shell
+bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/master/cs9_student_setup/setup_script_windows.sh)
+```
 
 {{< aside >}}
 If this website says to use Terminal, you should use Ubuntu. There will be other small differences

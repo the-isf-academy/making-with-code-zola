@@ -1,30 +1,32 @@
 ---
-title: 0. Trivia Time
+title: 1. Trivia Time
 type: labs
 ---
 
-# Fresh Baked Pi 🥧
+# Trivia Time 
+
+Welcome to CS10! We hope you're excited for what we have planned this year! 😄
+
+In this lab, we'll begin learning about hardware by creating a trivia game. 
+
+## [0] Set up
+
+Now that you're in CS10, let's make a CS10 folder!
+
+{{< code-action  "Run the code below in your terminal." >}} 
+
+```shell
+bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/master/cs9_student_setup/setupcs10_script.sh)
+```
 
 
-### **[1] Trivia File**
+{{< code-action "Next, let's clone the repository" >}} in your `cs10\unit_00` folder. 
 
-{{< code-action >}} Start by running `python3 game.py t` on your Pi over an SSH connection.
+```shell
+git clone https://github.com/the-isf-academy/lab-trivia-YOUR-GITHUB-USERNAME.git
+```
 
-This program plays a basic version of the trivia game you will be completing for this lab.
-
-The `trivia.txt` file contains the questions used in the game. When everyone has completed the lab, we will take turns playing through everyone's game.
-
-The format for the question types can be found in the `README.md`.
-
-<br>
-
-{{< code-action >}} Start by customise `trivia.txt` to questions of your choosing. For now, don't add more than
-3 question (you can add more after you finish the other parts of the lab).
-
-<br>
-
-### **[2] Classes *and* games**
-In this lab, we'll work to remind ourselves of classes and objects by building a text-based trivia game.
+## [1] Classes *and* games 
 
 For your reference, we will start by focusing on the `TerminalView` of the Trivia Game which utilizes the following classes. Make sure your model includes each of them.
 
