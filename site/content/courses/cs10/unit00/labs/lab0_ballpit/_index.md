@@ -1,9 +1,9 @@
 ---
-title: 0. Ball World
+title: 0. Ball Pit
 type: labs
 ---
 
-# Ball World
+# Ball Pit
 
 Welcome to CS10! We hope you're excited for what we have planned this year! 😄
 
