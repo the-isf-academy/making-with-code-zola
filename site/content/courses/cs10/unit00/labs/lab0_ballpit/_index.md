@@ -73,7 +73,7 @@ At the moment, there is only one of each type of `Ball` object displayed in the 
 {{< code-action "Increase the amount of balls in the ballpit so each type of Ball appears at least 10 times." >}}
 
 {{< aside "Consider the following..." >}}
-- What data strucutre currently holds the instances of `Ball`, `WarpBall`, and `BreathingBall`?
+- What data structure currently holds the instances of `Ball`, `WarpBall`, and `BreathingBall`?
 - What is the most code efficent solution? 
 {{< /aside >}}
 
