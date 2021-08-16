@@ -13,7 +13,7 @@ Welcome to cs9! We're glad you're here! yay 😄
 This lab will help you get your computer set up for the class and show you how to run your
 first computer program.
 
-{{< aside >}}
+{{< aside "FYI" >}}
 *Hello! I'm the For Your Information Space Invader. I'll be stopping by
 every once in a while to give you some extra information about labs or the content you're
 learning.*

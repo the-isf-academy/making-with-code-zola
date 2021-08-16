@@ -1,6 +1,7 @@
 ---
 title: 1. Trivia Time
 type: labs
+draft: true
 ---
 
 # Trivia Time 
