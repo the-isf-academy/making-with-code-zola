@@ -6,6 +6,7 @@ resources:
   src: images/courses/cs9/unit00/00_functions_fig_b.png  
 - name: draw_forest(10) output
   src: images/courses/cs9/unit00/00_functions_forest.png
+draft: true
 
 ---
 # Functions Lab

@@ -1,6 +1,7 @@
 ---
 title: 6. Decomposition
 type: labs
+draft: true
 ---
 
 # Decomposition Lab

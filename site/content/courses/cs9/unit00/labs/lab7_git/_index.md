@@ -4,7 +4,7 @@ type: labs
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
-
+draft: true
 ---
 # Version Control Lab
 
