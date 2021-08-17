@@ -51,7 +51,7 @@ Before jumping into the details of the repository, let's review object oriented 
 
 Let's consider a `Character` object and a `Player` object. 
 
-{{< figure src="images/courses/cs10/unit00/lab-ballpit-03.png" width="600px" >}}
+{{< figure src="images/courses/cs10/unit00/lab-ballpit-03.png" width="350px" >}}
 *Note: the arrows signify the direction of the inheritance* 
 
 In this model, we have a `Character` class that has...
