@@ -49,22 +49,27 @@ In the Ballpit, notice that each ball has a different behavior. One stays the sa
 
 Before jumping into the details of the repository, let's review object oriented programming. Object oriented programming uses classes of objects to group related properties and functionalities.
 
-Let’s consider a video game character. Our character will have a name and a health property and be able to perform a move, talk, and attack action. 
-
-{{< figure src="images/courses/cs9/unit02/02_class_model_02.png" width="300px" >}}
-
-Imagine our game has two types of characters: a player character and a non-playable character (NPC). Both types of characters should have the same properties and methods as the base `Character` class, but each will have additional unique attributes. For this, we can utilize inheritance. Both the `Player` class and the `NPC` object will inherent the characteristics from the `Character` class and extend it to include additional features. 
-
+Let's consider a `Character` object and a `Player` object. 
 
 {{< figure src="images/courses/cs10/unit00/lab-ballpit-03.png" width="600px" >}}
-
 *Note: the arrows signify the direction of the inheritance* 
 
+In this model, we have a `Character` class that has...
+- a `name` property
+- a`introduce()` method
+- a `jump()` method
 
-The `Player` class has a unique property, `inventory`, and a unique method, `use_item()`. 
+The `Character` class a child class, `Player`. The `Player` class has... 
+- a unique `mythical_race` property
+- an inhereted `name` property
+- an inhereted `jump()` method
+- an overridden `introduce()` method
 
-The `NPC` class has a unique property, `quest`, a unique method, `explain_quest()`, and overrides the `move()` method from the `Character` class. 
-
+{{< checkpoint >}}
+Before moving on, discuss the following with your partner and write down your thoughts in your notebook. 
+- Why is the concept of **inheritance** useful?
+- What does it mean to **override** a method?
+{{< /checkpoint >}}
 <br>
 
 {{< expand "Extra Resouces: Learn more about Python Objects" >}}
