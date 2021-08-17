@@ -26,6 +26,12 @@ bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/mas
 git clone https://github.com/the-isf-academy/lab-ball-world-YOUR-GITHUB-USERNAME.git
 ```
 
+This repository contains the following files:
+- `ball.py`
+- `ballpit.py`
+- `setup_ballpit_canvas.py`
+- `test_add_color_to_breathingball.py`
+- `test_add_color_to_warpball.py`
 
 ## [1] Exploring Ball Pit
 
@@ -35,17 +41,46 @@ The Ballpit is a little animation made with Turtle. You can watch it by running 
 python ballpit.py
 ```
 
+{{< figure src="images/courses/cs10/unit00/lab-ballpit-00.png" width="400px" >}}
+
 In the Ballpit, notice that each ball has a different behavior. One stays the same size the whole time and bounce off the walls. One doesn't bounce at all. Instead, it warps around to the opposite side of the screen. And the last ball grows and shrinks as it moves. It looks like it's breathing in and out.
- 
-Each different type of ball is represented by a different class. The normal bouncing balls are represented with the `Ball` class. This parent class has two child classes, `WarpBall` and `BreathingBall`. These two child classes inherit characteristics of the `Ball` class, and extend it to include additional features.  
+
+### [OOP Review]
+
+Before jumping into the details of the repository, let's review object oriented programming. Object oriented programming uses classes of objects to group related properties and functionalities.
+
+Let’s consider a video game character. Our character will have a name and a health property and be able to perform a move, talk, and attack action. 
+
+{{< figure src="images/courses/cs9/unit02/02_class_model_02.png" width="300px" >}}
+
+Imagine our game has two types of characters: a player character and a non-playable character (NPC). Both types of characters should have the same properties and methods as the base `Character` class, but each will have additional unique attributes. For this, we can utilize inheritance. Both the `Player` class and the `NPC` object will inherent the characteristics from the `Character` class and extend it to include additional features. 
 
 
-{{< figure src="images/courses/cs10/unit00/lab-ballworld-00.png" width="400px" >}}
+{{< figure src="images/courses/cs10/unit00/lab-ballpit-03.png" width="600px" >}}
 
+*Note: the arrows signify the direction of the inheritance* 
+
+
+The `Player` class has a unique property, `inventory`, and a unique method, `use_item()`. 
+
+The `NPC` class has a unique property, `quest`, a unique method, `explain_quest()`, and overrides the `move()` method from the `Character` class. 
+
+<br>
+
+{{< expand "Extra Resouces: Learn more about Python Objects" >}}
+- Creating a Class: [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
+- Inheritance: [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
+{{< /expand >}}
 
 ### [Create a Model]
 
-The BallPit contains multiple types of objects with multiple properties. Before you jump into tinkering with the code, create a model for each object. 
+The BallPit contains three different types of balls. Each different type of ball is represented by a different class. The normal bouncing balls are represented with the `Ball` class. The `Ball` class is a parent class that has two child classes, `WarpBall` and `BreathingBall`. These two child classes inherit characteristics of the `Ball` class, and extend it to include additional features.  
+
+
+
+
+
+Before you jump into tinkering with the code, create a model for each object. 
 
 {{< write-action "With your knowledge of classes and inheritance, draw a model with your partner for how the BallPit works." >}}
 
@@ -58,46 +93,69 @@ For your reference, the BallPit has the following classes and functions. The `ba
 - `ballpit.py`
     - `ball_pit()`
 
-{{< aside "Explore these resources for reminder of how objects operate in Python." >}}
 
-- Creating a Class: [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
-- Inheritance: [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
-{{< /aside >}}
+
 
 
 
 ## [2] Increase the chaos
 
-At the moment, there is only one of each type of `Ball` object displayed in the Turtle window. Let's add to the chaos and add more balls to the pit. 
+At the moment, each `Ball` object is the same shade of green. Wouldn't it be nice if we could distinguish them? Your goal is to add more color into the pit!
+
+{{< code-action "Add a unique color to the WarpBall and the BreathingBall." >}} Currently the `WarpBall` and `BreathingBall` simply call the parent `Ball` method for `set_color()`. Overide this method with the colors of your choosing. 
+
+{{< checkpoint >}}
+In this lab we've included **test files** where you can experiment with changes to the `WarpBall` and `BreathingBall` separate from the ballpit. Run the following files to check if you've successfully changed the color of each object.
+- `test_add_color_to_breathingball.py`
+- `test_add_color_to_warpball.py`
+
+Check-in with a teacher by demonstrating your test files run as expected before moving on. 
+{{< /checkpoint >}}
+
+Let's try running `ballpit.py` again. You should see each `Ball` appear with a distinct color. 
+```shell
+python3 ballpit.py
+```
+
+<hr>
+
+Now that we've got the colors sorted, let's add to the chaos and add more balls to the pit. At the moment, there is only one of each type of `Ball` object displayed in the Turtle window. 
 
 {{< code-action "Increase the amount of balls in the ballpit so each type of Ball appears at least 10 times." >}}
 
-{{< aside "Consider the following..." >}}
-- What data strucutre currently holds the instances of `Ball`, `WarpBall`, and `BreathingBall`?
-- What is the most code efficent solution? 
-{{< /aside >}}
+**Hint! Consider the following...*
+- *What data strucutre currently holds the instances of `Ball`, `WarpBall`, and `BreathingBall`?*
+- *What is the most code efficent solution?*
 
-Now that we've increased the amount of balls in the pit, wouldn't it be nice if we could distinguish them? At the moment each ball is the same shade of green. Your goal is to add more color into the pit!  
 
-{{< code-action "Add color to the WarpBall and BreathingBall." >}} Currently the `WarpBall` and `BreathingBall` simply call the parent `Ball` method for `set_color()`. Overide this method with the colors of your choosing. 
+{{< checkpoint >}}
+Before moving on, make sure your everyone in your group understands the logic behind adding more `Ball` objects to the BallPit. 
 
-{{< figure src="images/courses/cs10/unit00/lab-ballworld-01.png" width="400px" >}}
+Check-in with a teacher by demonstrating your improved `ballpit.py` file. 
+{{< /checkpoint >}}
+
+{{< figure src="images/courses/cs10/unit00/lab-ballpit-01.png" width="400px" >}}
+
+### [Deliverables]
+
+For this lab, you should push your lab-ballpit repository contianing updates to the following files:
+- `ball.py`
+- `ballpit.py`
+
+<hr>
 
 ## [3] Extension: Randomizing the chaos
 
-Let's explore colors even further by introducing the idea of cycling through colors. For example, every time a `Ball` object is created, it selected a different shade of green. 
+If time allows, ramp up the chaos even further by introducing the idea of cycling through colors. For example, every time a `Ball` object is created, it selected a different shade of green. 
 
 {{< code-action "Add a random element to the color of the Ball, WarpBall, and BreathingBall." >}} 
 
-{{< aside "Consider the following..." >}}
-- Take a look at how the color is being set with RGB values. 
-{{< /aside >}}
-
-To fully embrace the chaos of the ball pit, let's change the color of the balls as they move. 
-
-{{< code-action "Cause the Ball, WarpBall, and BreathingBall to change color as it moves." >}} 
+**Hint! Consider how the color is currently chosen in the `set_color()` method.*
 
 
-{{< figure src="images/courses/cs10/unit00/lab-ballworld-02.gif" width="400px" >}}
+{{< code-action "Embrace the chaos of the ball pit! Cause the Ball, WarpBall, and BreathingBall to change color as they move." >}} 
 
+Be sure to push any customization you've made to your ballpit!
+
+{{< figure src="images/courses/cs10/unit00/lab-ballpit-02.gif" width="400px" >}}
 
