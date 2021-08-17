@@ -23,7 +23,7 @@ bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/mas
 {{< code-action "Next, let's clone the repository" >}} in your `cs10\unit_00` folder. 
 
 ```shell
-git clone https://github.com/the-isf-academy/lab-ball-world-YOUR-GITHUB-USERNAME.git
+git clone https://github.com/the-isf-academy/lab-ballpit-YOUR-GITHUB-USERNAME.git
 ```
 
 This repository contains the following files:
