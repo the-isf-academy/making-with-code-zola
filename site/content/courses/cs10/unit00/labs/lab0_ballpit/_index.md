@@ -38,7 +38,7 @@ This repository contains the following files:
 The Ballpit is a little animation made with Turtle. You can watch it by running the following command in your terminal:
  
 ```shell
-python ballpit.py
+python3 ballpit.py
 ```
 
 {{< figure src="images/courses/cs10/unit00/lab-ballpit-00.png" width="400px" >}}
