@@ -143,7 +143,10 @@ Check-in with a teacher by demonstrating your improved `ballpit.py` file.
 
 ### [Deliverables]
 
-{{< deliverables "lab-ballpit" >}}
+{{< deliverables "For this lab, you should push your lab-ballpit repository contianing updates to the following files:" >}}
+
+
+
 - `ball.py`
 - `ballpit.py`
 
