@@ -59,7 +59,6 @@ $ python returnToShip.py
   Your adventure has only just begun. You are not yet ready to return
   to the ship. More secrets await you in the ocean's depths.
 ```
-<hr>
 
 {{< aside "Your challenge is to see if you can get the treasure, using just the Terminal" >}}
 
@@ -67,9 +66,10 @@ Use Terminal to explore the contents of the `adventure` directory.
 
 {{< /aside >}}
 
-<br>
+<hr>
 
-{{< code-action "Let's go into the" >}}  `adventure` **directory:**
+
+{{< code-action "Begin by going into into the" >}}  `adventure` **directory:**
 
 ```shell
 $ cd adventure
@@ -87,8 +87,19 @@ $ cat sinking.txt
 
 ### Treasure
 
-You will end by collecting the treasure and running `returnToShip.py` in the `lab_00_terminal_adventure` directory.
 
+{{< deliverables "You will end this lab by collecting the treasure!" >}}
+
+Continue exploring into the depths of the sea to find it.
+
+Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again! 
+
+Before moving on, check in with a teacher and answer the following prompts in your notebook:
+- What are 3 functions of the Terminal?
+- Compare navigating the file system via the Terminal v. the Finder. 
+
+
+{{< /deliverables >}}
 
 ## [1] Terminal Commands
 Below are some Terminal commands which might come in handy on your adventure.
