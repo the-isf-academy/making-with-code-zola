@@ -143,9 +143,14 @@ Check-in with a teacher by demonstrating your improved `ballpit.py` file.
 
 ### [Deliverables]
 
-For this lab, you should push your lab-ballpit repository contianing updates to the following files:
+{{< deliverables "lab-ballpit" >}}
 - `ball.py`
 - `ballpit.py`
+
+Before moving onto the extension, make sure your everyone in your group understands the logic behind adding more `Ball` objects to the BallPit. 
+
+Check-in with a teacher by demonstrating your improved `ballpit.py` file. 
+{{< /deliverables >}}
 
 <hr>
 
