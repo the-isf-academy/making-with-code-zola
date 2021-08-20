@@ -1,0 +1,8 @@
+<blockquote class="book-hint deliverable">
+    <strong>💾  For this lab, you should push your {{ .Get 0 }} repository contianing updates to the following files:
+    </strong>
+{{ if .Inner }}
+  {{ .Inner | markdownify }}
+{{ else }}
+{{ end }}
+</blockquote>
