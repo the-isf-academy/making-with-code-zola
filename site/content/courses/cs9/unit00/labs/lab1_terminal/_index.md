@@ -59,14 +59,17 @@ $ python returnToShip.py
   Your adventure has only just begun. You are not yet ready to return
   to the ship. More secrets await you in the ocean's depths.
 ```
-
-Today, you will use Terminal to explore the contents of the `adventure` directory.
-
-**Your challenge is to see if you can get the treasure, using just the Terminal.**
-
 <hr>
 
-{{< code-action "To get started, let's go into the `adventure` directory:" >}} 
+{{< aside "Your challenge is to see if you can get the treasure, using just the Terminal" >}}
+
+Use Terminal to explore the contents of the `adventure` directory.
+
+{{< /aside >}}
+
+<br>
+
+{{< code-action "Let's go into the" >}}  `adventure` **directory:**
 
 ```shell
 $ cd adventure
@@ -82,7 +85,9 @@ seafloor	sinking.txt
 $ cat sinking.txt
 ```
 
-You will end by running `returnToShip.py` in the `lab_00_terminal_adventure` directory.
+### Treasure
+
+You will end by collecting the treasure and running `returnToShip.py` in the `lab_00_terminal_adventure` directory.
 
 
 ## [1] Terminal Commands
