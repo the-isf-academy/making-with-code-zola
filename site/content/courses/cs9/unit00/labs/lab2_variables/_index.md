@@ -153,7 +153,7 @@ Python treats numbers and words differently. We'll talk more about this next uni
 {{< /aside >}}
 
 
-## Deliverables
+### [Deliverables]
 
 {{< deliverables "Please submit your lab by copying your files into your CS9 Google Drive folder. and answer the following in your notebook:" >}}
 - Describe a moment where your code didn't do as intended. How did you debug it? 
