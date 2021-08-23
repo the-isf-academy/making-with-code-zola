@@ -155,6 +155,8 @@ Before moving onto the extension, make sure your everyone in your group understa
 Check-in with a teacher by demonstrating your improved `ballpit.py` file. 
 {{< /deliverables >}}
 
+
+
 <hr>
 
 ## [3] Extension: Randomizing the chaos
