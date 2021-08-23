@@ -1,8 +1,6 @@
 ---
 title: 2. Variables
 type: labs
-# draft: true
-
 ---
 
 # Variables Lab
