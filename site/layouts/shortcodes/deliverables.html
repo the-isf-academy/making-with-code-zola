@@ -1,0 +1,8 @@
+<blockquote class="book-hint-custom deliverables">
+    <strong>⚡✨  {{ .Get 0 }} </strong> 
+  <br>
+{{ if .Inner }}
+  {{ .Inner | markdownify }}
+{{ else }}
+{{ end }}
+</blockquote>
