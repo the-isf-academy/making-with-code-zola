@@ -17,10 +17,7 @@ How does a loop work in python? Let's see.
 
 ## [0] How to loop
 
-{{< code-action "Create new folder in your cs9/unit_00 folder called" >}} `lab_03_loops`. **In the** `lab_03_loops` **folder, create a new file called** `loops_into.py`.
-
-{{< code-action "Copy and paste the code below into your file." >}}
-
+{{< code-action "Create new folder in your cs9/unit_00 folder called" >}} `lab_03_loops`. **In the** `lab_03_loops` **folder, create a new file called** `loops_into.py`. **Copy and paste the code below into your file.**
 
 ```python
 ######################
@@ -52,7 +49,11 @@ This loop runs 10 times, repeating everything indented to the right of the `for 
 {{< code-action "Edit the code to make the loop run a different number of times" >}} Maybe 5 or 14.
 Can you figure out how to do it?
 
+<hr>
+
 ### [Part B: Squaring Numbers]
+
+{{< code-action "Using a loop, print the square of numbers 0-12." >}} Put your code under "#[PART B: SQUARING NUMBERS]"
 
 {{< aside "FYI: Math in Python" >}}
 One feature of the Python language is that it understands math equations. 
@@ -88,7 +89,7 @@ Will output,
 ```
 {{< /aside >}}
 
-{{< code-action "Under '# [PART B: SQUARING NUMBERS]', write a new loop of which the output should look like this: " >}} 
+Your loop output should look like this:
 ```shell
 0
 1
@@ -112,13 +113,25 @@ If you don't wan't to run the code from 'Part A', just
 comment it out.
 {{< /aside >}}
 
+<hr>
+
 ### [Part C: Looping a Square]
 
-{{< code-action "Under 'PART C: LOOPING A SQUARE', draw a square using loops." >}} This only requires adding 3 lines of code. 
+{{< code-action "Under 'PART C: LOOPING A SQUARE', draw a square using a loop." >}} This only requires adding 3 lines of code. 
+
+{{< checkpoint >}}
+Answer the following check-in questions in your notebook before moving on:
+
+0. What is a loop?
+0. How do you put code into a loop?
+0. What changes over each iteration of a loop? What stays the same?
+{{< /checkpoint >}}
+
+<hr>
 
 ## [1] Geometric sequences
 
-Loops are particularly useful when we need to do things over time. To see this, let's **write a program that uses a loop to list out the first 10 terms in any geometric sequence.**
+Loops are particularly useful when we need to do things over time. To see this, **let's write a program that uses a loop to list out the first 10 terms in any geometric sequence.**
 
 {{< aside "FYI: Sequences" >}}
 Sequences are ordered collections of numbers that have a pattern to determine
@@ -130,7 +143,7 @@ number in the sequence.** For example, `3, 9, 27, 81,...` is a geometric sequenc
 where each number is 3 times the number before it (making the common ratio 3).
 {{< /aside >}}
 
-Here is an example of how the program will run:
+Here is an example of what the program will output when run:
 ```shell
 $ python3 lab_03_geometricsequences.py
 What should the ratio of the sequence be? 3
@@ -161,7 +174,7 @@ you keep track of this?
 
 
 
-#### [Code]
+### [Code]
 
 {{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}} Create a new file for your geometric sequence program called `lab_03_geometric_sequences`.
 
