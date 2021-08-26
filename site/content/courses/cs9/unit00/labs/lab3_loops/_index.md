@@ -30,15 +30,17 @@ How does a loop work in python? Let's see.
 
 from turtle import *
 
+# -- [0] HOW TO LOOP --
 # [PART A: CALCULATIONS]
 print("-- Calculations --")
 for i in range(10):
     print(i)
 
 # [PART B: SQUARING NUMBERS]
-
+# YOUR CODE GOES HERE
 
 # [PART C: LOOPING A SQUARE]
+# YOUR CODE GOES HERE
 ```
 
 ### [Part A: Calculations]
@@ -51,6 +53,41 @@ This loop runs 10 times, repeating everything indented to the right of the `for 
 Can you figure out how to do it?
 
 ### [Part B: Squaring Numbers]
+
+{{< aside "FYI: Math in Python" >}}
+One feature of the Python language is that it understands math equations. 
+
+For example,
+```python
+print(1+1)
+```
+
+Will output,
+```shell
+2
+```
+
+And, 
+```python
+print(10/2)
+```
+
+Will output,
+```shell
+5
+```
+
+It also follow the convention of order of operations
+```python
+(3*2)+(5+5)
+```
+
+Will output,
+```shell
+16
+```
+{{< /aside >}}
+
 {{< code-action "Under '# [PART B: SQUARING NUMBERS]', write a new loop of which the output should look like this: " >}} 
 ```shell
 0
@@ -67,7 +104,7 @@ Can you figure out how to do it?
 121
 ```
 
-{{< aside >}}
+{{< aside "FYI: Commenting out code" >}}
 If you don't want code to be executed when you run a program, you can comment it
 out by placing `#` at the beginning of the line.
 
@@ -78,45 +115,57 @@ comment it out.
 ### [Part C: Looping a Square]
 
 {{< code-action "Under 'PART C: LOOPING A SQUARE', draw a square using loops." >}} This only requires adding 3 lines of code. 
-<!-- 
-## [1] Geometric sequences
-Loops are particularly useful when we need to do things over time. To see this,
-let's use a loop to list out the first 10 terms in a geometric sequence.
 
-{{< aside >}}
+## [1] Geometric sequences
+
+Loops are particularly useful when we need to do things over time. To see this, let's **write a program that uses a loop to list out the first 10 terms in any geometric sequence.**
+
+{{< aside "FYI: Sequences" >}}
 Sequences are ordered collections of numbers that have a pattern to determine
 which numbers appear in the sequence. For example, `2, 4, 6, 8, 10,...` is a
 sequence where each number 2 more than the previous number.
 
-Geometric sequences are sequences where there is a common ratio between each
-number in the sequence. For example, `3, 9, 27, 81,...` is a geometric sequence
+**Geometric sequences are sequences where there is a common ratio between each
+number in the sequence.** For example, `3, 9, 27, 81,...` is a geometric sequence
 where each number is 3 times the number before it (making the common ratio 3).
 {{< /aside >}}
 
-{{< code-action >}} **Type** this code  at `YOUR CODE HERE (C)`.
-
-```python
-# C. Geometric sequences
-ratio = float(input("What should the ratio of the sequence be? "))
-curr = 1
-print(curr)
+Here is an example of how the program will run:
+```shell
+$ python3 lab_03_geometricsequences.py
+What should the ratio of the sequence be? 3
+4
+16
+64
+256
+1024
+4096
+16384
+65536
+262144
+1048576
 ```
 
-#### C.0 *Pseudocode*
-{{< write-action >}} To get started, think through the *pseudo-code*
-of what we want this program to do. *Pseudocode* is an outline of the program
-we'll ultimately write where we don't worry about using Python syntax.
+### [Pseudocode]
+To get started, think through the *pseudo-code* of what we want this program to do. **Pseudocode** is an outline of the program we'll ultimately write where we don't worry about using Python syntax.
+
+{{< checkpoint >}}
+**In your notebook write the psuedocode to list the first 10 numbers of any geometric sequence.**
 
 Here are some things to consider:
 - You will use a loop to calculate each term in the sequence. What is the formula
 you will use at each step in the loop to calculate the term?
 - You will need to know the previous term to calculate the current term. How will
 you keep track of this?
+{{< /checkpoint >}}
 
-#### C.1 *Code*
-After you are confident your pseduocode has the correct logic, translate it into
-python code. Type this code below the existing code in the `C. Sequences` section.
 
+
+#### [Code]
+
+{{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}} Create a new file for your geometric sequence program called `lab_03_geometric_sequences`.
+
+<!-- 
 ### D. Fibonacci
 Let's explore another sequence, the Fibonacci sequence. This sequence has all kinds
 of interesting properties.
@@ -178,20 +227,7 @@ Pretty repetitive, right?
 {{< code-action >}} Edit this code to use a loop to avoid repeating the same code over and over
 again.  **Type** this code  at `YOUR CODE HERE (E)`.
 
-### F. Variable drawings
-Loops are even more powerful drawing tools when paired with variables. This allows us to draw
-things differently over time or based on user input.
 
-{{< code-action >}} **Type** this code  at `YOUR CODE HERE (F)`.
-
-```python
-# F. Variable drawings
-num_sides = int(input("How many sides? "))
-```
-
-{{< code-action >}} Write a loop that draws a polygon with the number of sides
-stored in `num_sides`. Type this code below the existing code in the
-`F. Variable Drawing` section.
 
 ### G. Drawing Fibonacci
 Finally, let's use the code you wrote to calculate Fibonacci sequences to make pattern
