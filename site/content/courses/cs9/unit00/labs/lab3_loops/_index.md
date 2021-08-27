@@ -161,7 +161,7 @@ where each number is 3 times the number before it (making the common ratio 3).
 Here is an example of what the program will output when run:
 ```shell
 $ python3 lab_03_geometricsequences.py
-What should the ratio of the sequence be? 3
+What should the ratio of the sequence be? 4
 4
 16
 64
