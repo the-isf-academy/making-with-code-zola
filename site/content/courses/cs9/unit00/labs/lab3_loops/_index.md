@@ -117,7 +117,22 @@ comment it out.
 
 ### [Part C: Looping a Square]
 
-{{< code-action "Under 'PART C: LOOPING A SQUARE', draw a square using a loop." >}} This only requires adding 3 lines of code. 
+Take a look at the code we've been using to draw a square:
+
+```python
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+```
+
+Pretty repetitive, right?
+
+{{< code-action "Under 'PART C: LOOPING A SQUARE', use a loop to draw a square to avoid repeating the same code over and over again." >}}
 
 {{< checkpoint >}}
 Answer the following check-in questions in your notebook before moving on:
@@ -179,7 +194,7 @@ you keep track of this?
 {{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}} Create a new file for your geometric sequence program called `lab_03_geometric_sequences`.
 
 <!-- 
-### D. Fibonacci
+## [2] Fibonacci Sequence
 Let's explore another sequence, the Fibonacci sequence. This sequence has all kinds
 of interesting properties.
 
@@ -188,11 +203,18 @@ nature:
 {{< youtube id="ahXIMUkSXX0" >}}
 
 We're going to write an algorithm to print out numbers in the Fibonnaci sequence.
-{{< code-action >}} **Type** this code  at `YOUR CODE HERE (D)`.
 
-```python
-# D. Fibonacci
-num_terms = int(input("How many terms of the fibonacci sequence should I display? "))
+Here is an example of what the program will output when run:
+```shell
+$ python3 lab_03_fibonacci_sequence.py
+How many numbers of the Fibonacci sequence would you like to output? 7
+1
+1
+2
+3
+5
+8
+13
 ```
 
 #### D.0 *Pseudocode*
@@ -207,15 +229,11 @@ but this time you need two past terms instead of just one.
 
 #### D.1 *Code*
 {{< code-action >}} After you are confident your pseduocode has the correct logic, translate it into
-python code. Type this code below the existing code in the `D. Fibonacci` section.
+python code. Create a new file for your geometric sequence program called `lab_03_fibonacci_sequence`.
 
-{{< checkpoint >}}
 Answer the following check-in questions on your group's Google doc before moving on:
 
-0. What is a loop?
-0. How do you put code into a loop?
-0. What changes over each iteration of a loop? What stays the same?
-{{< /checkpoint >}}
+
 
 ### E. Loopy drawings
 Loops are not just useful for numbers and sequences, they can also be helpful in
@@ -281,4 +299,4 @@ and countercloackwise.
 ## Deliverables
 - Once you've reached the end of the lab (or class time is over), please submit the `lab_02.py` file you have been creating
 - Each member of your group should submit their own file.
-- You will get credit even if you don't finish parts A-G. -->
+- You will get credit even if you don't finish parts A-G.  -->
