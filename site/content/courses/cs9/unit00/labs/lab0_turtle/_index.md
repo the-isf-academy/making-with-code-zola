@@ -202,11 +202,6 @@ something. This one means that there's something important for you to read or wa
 
 {{< tabs python-programs >}}
 
-{{< tab "Video Explanation" >}}
-
-{{< youtube id="7bnoG9Hzihg" >}}
-
-{{< /tab >}}
 
 {{< tab "Text Explanation" >}}
 ### Writing programs
@@ -278,6 +273,12 @@ file.
 <br>
 
 {{< /aside >}}
+
+{{< /tab >}}
+
+{{< tab "Video Explanation" >}}
+
+{{< youtube id="7bnoG9Hzihg" >}}
 
 {{< /tab >}}
 {{< /tabs >}}
