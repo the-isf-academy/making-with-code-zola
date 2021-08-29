@@ -58,7 +58,7 @@ git clone https://github.com/the-isf-academy/lab-sensors-YOUR-GITHUB-USERNAME.gi
 ```
 {{< code-action "Create a simple program that turns the light on and off." >}}  Write your code in the file called `light_activated_button.py`
 
-To get you started, here are a few basic methods from the `LED` clas that you can use:
+To get you started, here are a few basic methods from the `LED` class that you can use:
 | Method |       Input      |   Example Use |  Explanation   |
 |:--------:|:----------------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
 |  _init | GPIO pin   |  led = LED(17) | creates an LED object for the given pin |
