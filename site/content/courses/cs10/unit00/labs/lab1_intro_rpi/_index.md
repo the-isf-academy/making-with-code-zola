@@ -17,8 +17,8 @@ for making robots, internet-of-things devices, networking services, and much mor
 
 0. Take the USB to MicroUSB cable and plug your Pi in. You can plug it into your computer or into a power outlet with a USB power plug. The red and green lights on the side of your Pi should turn on and flash once it is powered.
 0. Connect your computer to the `RPIWIFI` network.
-0. Type the following into your terminal window: `ssh setup@raspberrypi-N`. 
-    > Replace `N` with your Raspberry Pi number. 
+0. Type the following into your terminal window: `ssh setup@raspberrypi-N`.
+    > Replace `N` with your Raspberry Pi number.
 0. When prompted for a password, enter `setup`. Once this command runs, you will be remotely controlling the Pi
 through the wifi network it is broadcasting!
 0. The Pi will automatically run a setup script. Choose option `0`.
@@ -27,8 +27,8 @@ through the wifi network it is broadcasting!
     the first word you enter will be used.*
 0. Follow the instructions to add your home wifi network into the Pi's network settings.
 0. After you finish the setup script, your Pi will reboot and your remote connection will be closed.
-0. Connect to the Pi again by typing this into your terminal window: `ssh USERNAME@raspberrypi-n`. 
-    > Replace `USERNAME` with the username you choose and `N` with your Raspberry Pi number. 
+0. Connect to the Pi again by typing this into your terminal window: `ssh USERNAME@raspberrypi-n`.
+    > Replace `USERNAME` with the username you choose and `N` with your Raspberry Pi number.
 
 
 ### [sudo Access]
@@ -118,8 +118,6 @@ You've seen a demonstration of a Raspberry Pi that's connected to an LED light a
 
 ## [2] Using the LED
 
-<br>
-
 ### [Hardware Set Up]
 Let's begin by connecting our LED to the Raspberry Pi. To do this you will need:
 - 1 Raspberry Pi
@@ -156,15 +154,20 @@ Now it's time to turn on our light!
 ```shell
 git clone https://github.com/the-isf-academy/lab-sensors-YOUR-GITHUB-USERNAME.git
 ```
-{{< code-action "Create a simple program that turns the light on and off." >}}  Write your code in the file called `light_activated_button.py`
+{{< code-action "Create a simple program that turns the light on and off." >}}  Write your code in the file called `button_acctivated_light.py`
 
 To get you started, here are a few basic methods from the `LED` class that you can use:
 | Method |       Input      |   Example Use |  Explanation   |
 |:--------:|:----------------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
-|  _init | GPIO pin   |  led = LED(17) | creates an LED object for the given pin |
+|  _init | <mark>GPIO pin</mark>   |  led = LED(17) | creates an LED object for the given pin |
 | off |      None      |  led.off() | Turns the device off |
 |   on | None |    led.on()   | Turns the device on
 
+<mark>Note: The GPIO pin is NOT the same as the Raspberry Pi pin. GPIO pins are listed in the diagram under `Functions`. So far,we have used GPIO pin numbers 17, 27, and 22</mark>
+
+{{< checkpoint >}}
+Before moving on, think about how you would troubleshoot a light that wasn't turning on. How would you determine whether the bug was in your code, or if it was a hardware problem? Write your thoughts in your notebook. 
+{{< /checkpoint >}}
 
 {{< aside >}}
 There's lots that you can do with the LED class, like making the LED blink indefinitely, and more! This is a great resource for you to use as you explore the Raspberry Pi:
@@ -190,7 +193,7 @@ Now we're going to connect our push-button to the Raspberry Pi. In addition to w
 
 In order to use the push-button, we'll use another `gpiozero` class, `Button`.
 
-{{< code-action "Edit light_activated_button.py so that pressing the button turns the LED light on." >}}  
+{{< code-action "Edit button_activated_light.py so that pressing the button turns the LED light on." >}}  
 
 Here are some of the basic Button methods to get you started:
 
@@ -212,7 +215,21 @@ There's lots that you can do with the Button class, like choosing what happens w
 
 ### [Deliverables]
 
-{{< deliverables "For this lab, you should push your lab-sensors repository containing updates to light_activated_button.py" >}}
+{{< deliverables "For this lab, you should push your lab-sensors repository containing updates to button_activated_light.py" >}}
 <br>
 Check in with the teacher by showing your button-activated light!
 {{< /deliverables >}}
+
+## [4] Extension
+
+Have you used a bike light? When biking, you need to be able to rotate through several different modes:
+- a constant, white light (for best visibility)
+- a constant, red light (to preserve night-vision)
+- a flashing light (to save battery)
+- no light (when you're not biking)
+
+When the bike light is off, a single, short click from the cyclist will always turn it on at a constant, white light. If the bike light is on (on any setting) a single, short click will always turn it off. Additionally, the cyclist can always toggle through the 3 modes by holding the button down for two seconds. If the constant light is on and the user holds the button down long enough, the light will switch modes to red. If the user releases and then holds the pin down again, it will switch to the flashing light, and so on.
+
+{{< code-action "Edit button_activated_light.py so that it can be used as a bike light" >}}
+
+Be sure to push any changes you've made to your light!

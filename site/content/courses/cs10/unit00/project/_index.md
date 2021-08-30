@@ -1,6 +1,6 @@
 ---
 Title: Hardware Project
-draft: True
+draft: False
 ---
 
 # Unit 00 Hardware Project
@@ -17,8 +17,6 @@ You've seen a demonstration of a Raspberry Pi that's connected to an LED light a
 
 
 ## [2] Using the LED
-
-<br>
 
 ### [Hardware Set Up]
 Let's begin by connecting our LED to the Raspberry Pi. To do this you will need:
