@@ -36,6 +36,8 @@ also give you the chance to practice logging in and out of ssh connections.
 0. Create a new ssh connection, this time to the `pi` account. You can use the command
 `ssh pi@raspberrypi-N`
     > Replace `N` with your Raspberry Pi number. 
+    >
+    > If your Pi number is a single digit such as, 05, user the format `ssh pi@raspberrypi-5`
 0. Enter the password `cs10_2020_teacher`
 0. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
 with the user you created in the setup):
@@ -111,7 +113,9 @@ Now that you have a Python file on your Pi, you can write and run your very firs
 a Raspberry Pi.
 
 {{< code-action "Write your first Python file on your Pi!">}} It should print, `Hello World!`.
-
+```shell
+$ ratom hello_world.py
+```
 
 {{< code-action "Run the file" >}} and make sure it works as expected.
 ```shell
@@ -132,7 +136,7 @@ $ python3 hello_world.py
 ## [1] Pseudocode
 You've seen a demonstration of a Raspberry Pi that's connected to an LED light and a press-button. When the button is pushed in, the LED lights up. When the button is released, the light turns off.
 
-{{< write-action "Write pseudocode that describes how you think the button-activated LED works." >}}
+{{< write-action "In your notebook, write pseudocode that describes how you think the button-activated LED works." >}}
 
 ## [2] Using the LED
 
@@ -172,9 +176,10 @@ Now it's time to turn on our light!
 ```shell
 git clone https://github.com/the-isf-academy/lab-sensors-YOUR-GITHUB-USERNAME.git
 ```
-{{< code-action "Create a simple program that turns the light on and off." >}}  Write your code in the file called `button_acctivated_light.py`
+{{< code-action "Create a simple program that turns the light on and off." >}}  Write your code in the file called `button_activated_light.py`
 
 To get you started, here are a few basic methods from the `LED` class that you can use:
+
 | Method |       Input      |   Example Use |  Explanation   |
 |:--------:|:----------------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
 |  _init | <mark>GPIO pin</mark>   |  led = LED(17) | creates an LED object for the given pin |
@@ -184,10 +189,12 @@ To get you started, here are a few basic methods from the `LED` class that you c
 <mark>Note: The GPIO pin is NOT the same as the Raspberry Pi pin. GPIO pins are listed in the diagram under `Functions`. So far,we have used GPIO pin numbers 17, 27, and 22</mark>
 
 {{< checkpoint >}}
-Before moving on, think about how you would troubleshoot a light that wasn't turning on. How would you determine whether the bug was in your code, or if it was a hardware problem? Write your thoughts in your notebook. 
+Before moving on, think about how you would troubleshoot a light that wasn't turning on. In your notebook, answer the following question:
+
+How would you determine whether the bug was in your code, or if it was a hardware problem? 
 {{< /checkpoint >}}
 
-{{< aside >}}
+{{< aside "FYI: LED class" >}}
 There's lots that you can do with the LED class, like making the LED blink indefinitely, and more! This is a great resource for you to use as you explore the Raspberry Pi:
 
 **More LED Methods:** [LED documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#led)
@@ -211,7 +218,7 @@ Now we're going to connect our push-button to the Raspberry Pi. In addition to w
 
 In order to use the push-button, we'll use another `gpiozero` class, `Button`.
 
-{{< code-action "Edit button_activated_light.py so that pressing the button turns the LED light on." >}}  
+{{< code-action "Edit" >}} `button_activated_light.py` **so that pressing the button turns the LED light on.**
 
 Here are some of the basic Button methods to get you started:
 
@@ -224,7 +231,7 @@ Here are some of the basic Button methods to get you started:
 
 
 
-{{< aside >}}
+{{< aside "FYI: Button class" >}}
 There's lots that you can do with the Button class, like choosing what happens when the button is held down for a certain number of seconds, and more! Click on the link to learn more methods!
 
 **More Button Methods:** [Button documentation](https://gpiozero.readthedocs.io/en/stable/api_input.html#button)
@@ -233,12 +240,15 @@ There's lots that you can do with the Button class, like choosing what happens w
 
 ### [Deliverables]
 
-{{< deliverables "For this lab, you should push your lab-sensors repository containing updates to button_activated_light.py" >}}
+{{< deliverables "For this lab, you should push your lab-sensors repository containing updates to"  >}} `button_activated_light.py`
+
 <br>
 Check in with the teacher by showing your button-activated light!
 {{< /deliverables >}}
 
-## [4] Extension
+<hr>
+
+## [4] Extension: Bike Light
 
 Have you used a bike light? When biking, you need to be able to rotate through several different modes:
 - a constant, white light (for best visibility)
@@ -246,8 +256,13 @@ Have you used a bike light? When biking, you need to be able to rotate through s
 - a flashing light (to save battery)
 - no light (when you're not biking)
 
-When the bike light is off, a single, short click from the cyclist will always turn it on at a constant, white light. If the bike light is on (on any setting) a single, short click will always turn it off. Additionally, the cyclist can always toggle through the 3 modes by holding the button down for two seconds. If the constant light is on and the user holds the button down long enough, the light will switch modes to red. If the user releases and then holds the pin down again, it will switch to the flashing light, and so on.
+When the bike light is off, a single, short click from the cyclist will always turn it on at a constant, white light. If the bike light is on (on any setting) a single, short click will always turn it off.
 
-{{< code-action "Edit button_activated_light.py so that it can be used as a bike light" >}}
+Additionally, the cyclist can always toggle through the 3 modes by holding the button down for two seconds. If the constant light is on and the user holds the button down long enough, the light will switch modes to red. If the user releases and then holds the pin down again, it will switch to the flashing light, and so on.
+
+{{< write-action "In your notebook, write pseudocode for the bike light." >}}
+
+
+{{< code-action "Edit" >}} `button_activated_light.py` **so that it can be used as a bike light.**
 
 Be sure to push any changes you've made to your light!
