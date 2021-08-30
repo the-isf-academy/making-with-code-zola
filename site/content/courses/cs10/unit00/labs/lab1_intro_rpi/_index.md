@@ -21,37 +21,38 @@ for making robots, internet-of-things devices, networking services, and much mor
     > Replace `N` with your Raspberry Pi number. 
 0. When prompted for a password, enter `setup`. Once this command runs, you will be remotely controlling the Pi
 through the wifi network it is broadcasting!
-0. The Pi will automatically run a setup script. Choose option `0`.
+0. The Pi will automatically run a setup script. Choose option `1. User Setup`.
 0. Follow the instructions in the script to setup up a new user.
-    > *Your username must not contain any spaces. Only
-    the first word you enter will be used.*
-0. Follow the instructions to add your home wifi network into the Pi's network settings.
+    > Your username must not contain any spaces. Only
+    the first word you enter will be used.
+    > It also must be all lowercase.
 0. After you finish the setup script, your Pi will reboot and your remote connection will be closed.
-0. Connect to the Pi again by typing this into your terminal window: `ssh USERNAME@raspberrypi-n`. 
-    > Replace `USERNAME` with the username you choose and `N` with your Raspberry Pi number. 
-
 
 ### [sudo Access]
 
 Before we move on, we need to grant you user account administrative access on your Pi. This will
 also give you the chance to practice logging in and out of ssh connections.
 
-0. Exit your current ssh connection by typing `exit` in your Terminal window.
-1. Create a new ssh connection, this time to the `pi` account. You can use the command
-`ssh pi@raspberrypi`
-2. Enter the password `cs10_2020_teacher`
-3. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
-with the user tou created on the Pi):
+0. Create a new ssh connection, this time to the `pi` account. You can use the command
+`ssh pi@raspberrypi-N`
+    > Replace `N` with your Raspberry Pi number. 
+0. Enter the password `cs10_2020_teacher`
+0. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
+with the user you created in the setup):
     ```shell
     $ sudo usermod -aG sudo <YOUR_USER>
     ```
-4. `exit` the current ssh connection and reconnect with your user.
-5. Run the command `groups` and make sure that `sudo` shows up in the list.
+0. Enter the command `exit` to exit the current ssh connection
+0. Reconnect with your user. `ssh YOUR_USERNAME@raspberrypi-N`
+    > Replace `YOUR_USERNAME` with the user your created. 
+    >
+    > Replace `N` with your Raspberry Pi number. 
+0. Run the command `groups` and make sure that `sudo` shows up in the list.
 
-You now have root access which will allow you to install new programs on the pi.
+You now have root access which will allow you to install new programs on the Pi!
 
 
-### [File structure]
+### [File structure & Updates]
 Because you are remotely connected to your Pi through your Terminal, the Terminal is the only interface
 you have to naviagte the file structure and run programs. Fortunately, you have tons of experience with
 this tool from cs9. If you need a refresher, check out the Terminal lab from cs9.
@@ -60,13 +61,19 @@ When you log in to your Pi, you will be taken to the home (`~`) directory of you
 Desktop on the Pi, so we'll treat this as out home base. Just like in cs9, cs10 will have it's own
 direcctory with a directory for each unit and more directories for each lab or project.
 
-{{< code-action >}} Run the following commands to make two new directories:
+{{< code-action "Run the following commands to make two new directories" >}} 
 
 ```shell
 $ mkdir cs10
 $ cd cs10
 $ mkdir unit_00
 $ cd unit_00
+```
+
+{{< code-action "Update your Pi and install the required libraries. " >}} 
+
+```shell
+bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/master/cs9_student_setup/gpio_setup.sh)
 ```
 
 ### [Writing code]
@@ -82,7 +89,11 @@ for your computer):
 ```shell
 $ sudo apm install remote-atom
 $ printf '  "remote-atom":\n    launch_at_startup: true' >> ~/.atom/config.cson
-$ printf "Host raspberrypi\n\tRemoteForward 52698 localhost:52698\n\tUser user" >> ~/.ssh/config
+```
+
+In the below command, for `raspberrypi-N` replace the `N` with your Pi number.
+```shell
+$ printf "Host raspberrypi-N\n\tRemoteForward 52698 localhost:52698\n\tUser user" >> ~/.ssh/config
 ```
 
 {{< code-action >}} Now, run the following lines **on your Pi over an SSH connection**:
@@ -92,24 +103,31 @@ $ sudo chmod +x /usr/local/bin/rmate
 $ sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
 ```
 
-Now, whenever Atom is open on your computer and you are connected to your Pi via SSH, you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
+Now, **whenever Atom is open on your computer and you are connected to your Pi via SSH**, you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
 
 
 ### [Running code]
-Now that you have a Python file on your Pi, you can run your very first Python program from
+Now that you have a Python file on your Pi, you can write and run your very first Python program from
 a Raspberry Pi.
 
-{{< code-action >}} Run the following command on your Pi:
+{{< code-action "Write your first Python file on your Pi!">}} It should print, `Hello World!`.
+
+
+{{< code-action "Run the file" >}} and make sure it works as expected.
 ```shell
 $ python3 hello_world.py
 ```
 
-Congrats! You are all ready to get started on your first Raspberry Pi project!
+**Congrats! You are all ready to get started on your first Raspberry Pi project!**
 
-{{< aside >}}
-Notice that you need to explicitly use `python3` to run your files on your Pi,
-not just `python`.
-{{< /aside >}}
+### [Useful Raspberry Pi Commands]
+
+| Command                | Description                          |
+|------------------------|--------------------------------------|
+| exit                   | exits the SSH connection             |
+| sudo shutdown now      | shutdowns the Pi                     |
+| reboot                 | reboots the Pi                       |
+| ssh USER@raspberrypi-N | starts an SSH connect with your USER and your `N` numbered Pi |
 
 ## [1] Pseudocode
 You've seen a demonstration of a Raspberry Pi that's connected to an LED light and a press-button. When the button is pushed in, the LED lights up. When the button is released, the light turns off.
