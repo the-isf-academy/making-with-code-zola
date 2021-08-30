@@ -35,20 +35,20 @@ also give you the chance to practice logging in and out of ssh connections.
 
 0. Create a new ssh connection, this time to the `pi` account. You can use the command
 `ssh pi@raspberrypi-N`
-    > Replace `N` with your Raspberry Pi number. 
+    > Replace `N` with your Raspberry Pi number.
     >
     > If your Pi number is a single digit such as, 05, user the format `ssh pi@raspberrypi-5`
 0. Enter the password `cs10_2020_teacher`
 0. Once logged in, run the following command to give your user admin (or root) access (replace `<YOUR_USER>`
 with the user you created in the setup):
     ```shell
-    $ sudo usermod -aG sudo <YOUR_USER>
+    sudo usermod -aG sudo <YOUR_USER>
     ```
 0. Enter the command `exit` to exit the current ssh connection
 0. Reconnect with your user. `ssh YOUR_USERNAME@raspberrypi-N`
-    > Replace `YOUR_USERNAME` with the user your created. 
+    > Replace `YOUR_USERNAME` with the user your created.
     >
-    > Replace `N` with your Raspberry Pi number. 
+    > Replace `N` with your Raspberry Pi number.
 0. Run the command `groups` and make sure that `sudo` shows up in the list.
 
 You now have root access which will allow you to install new programs on the Pi!
@@ -56,23 +56,23 @@ You now have root access which will allow you to install new programs on the Pi!
 
 ### [File structure & Updates]
 Because you are remotely connected to your Pi through your Terminal, the Terminal is the only interface
-you have to naviagte the file structure and run programs. Fortunately, you have tons of experience with
+you have to navigate the file structure and run programs. Fortunately, you have tons of experience with
 this tool from cs9. If you need a refresher, check out the Terminal lab from cs9.
 
 When you log in to your Pi, you will be taken to the home (`~`) directory of your user. There's no
 Desktop on the Pi, so we'll treat this as out home base. Just like in cs9, cs10 will have it's own
-direcctory with a directory for each unit and more directories for each lab or project.
+directory with a directory for each unit and more directories for each lab or project.
 
-{{< code-action "Run the following commands to make two new directories" >}} 
+{{< code-action "Run the following commands to make two new directories" >}}
 
 ```shell
-$ mkdir cs10
-$ cd cs10
-$ mkdir unit_00
-$ cd unit_00
+mkdir cs10
+cd cs10
+mkdir unit_00
+cd unit_00
 ```
 
-{{< code-action "Update your Pi and install the required libraries. " >}} 
+{{< code-action "Update your Pi and install the required libraries. " >}}
 
 ```shell
 bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/master/cs9_student_setup/gpio_setup.sh)
@@ -89,20 +89,20 @@ device like your Pi. To do this, we need to connect Atom to the SSH tool you use
 commands **in a Terminal window on your computer** (you may need to put in the password
 for your computer):
 ```shell
-$ sudo apm install remote-atom
-$ printf '  "remote-atom":\n    launch_at_startup: true' >> ~/.atom/config.cson
+sudo apm install remote-atom
+printf '  "remote-atom":\n    launch_at_startup: true' >> ~/.atom/config.cson
 ```
 
 In the below command, for `raspberrypi-N` replace the `N` with your Pi number.
 ```shell
-$ printf "Host raspberrypi-N\n\tRemoteForward 52698 localhost:52698\n\tUser user" >> ~/.ssh/config
+printf "Host raspberrypi-N\n\tRemoteForward 52698 localhost:52698\n\tUser user" >> ~/.ssh/config
 ```
 
 {{< code-action >}} Now, run the following lines **on your Pi over an SSH connection**:
 ```shell
-$ sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
-$ sudo chmod +x /usr/local/bin/rmate
-$ sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
+sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+sudo chmod +x /usr/local/bin/rmate
+sudo mv /usr/local/bin/rmate /usr/local/bin/ratom
 ```
 
 Now, **whenever Atom is open on your computer and you are connected to your Pi via SSH**, you can use `ratom file.py` to open a file from the Pi in Atom on your computer!
@@ -114,12 +114,12 @@ a Raspberry Pi.
 
 {{< code-action "Write your first Python file on your Pi!">}} It should print, `Hello World!`.
 ```shell
-$ ratom hello_world.py
+ratom hello_world.py
 ```
 
 {{< code-action "Run the file" >}} and make sure it works as expected.
 ```shell
-$ python3 hello_world.py
+python3 hello_world.py
 ```
 
 **Congrats! You are all ready to get started on your first Raspberry Pi project!**
@@ -191,7 +191,7 @@ To get you started, here are a few basic methods from the `LED` class that you c
 {{< checkpoint >}}
 Before moving on, think about how you would troubleshoot a light that wasn't turning on. In your notebook, answer the following question:
 
-How would you determine whether the bug was in your code, or if it was a hardware problem? 
+How would you determine whether the bug was in your code, or if it was a hardware problem?
 {{< /checkpoint >}}
 
 {{< aside "FYI: LED class" >}}
