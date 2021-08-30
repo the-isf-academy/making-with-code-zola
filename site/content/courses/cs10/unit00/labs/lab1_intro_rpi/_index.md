@@ -250,19 +250,20 @@ Check in with the teacher by showing your button-activated light!
 
 ## [4] Extension: Bike Light
 
-Have you used a bike light? When biking, you need to be able to rotate through several different modes:
+Have you ever used a bike light? When you're biking in low-visibility conditions, you need a light that's able to rotate through several different modes:
 - a constant, white light (for best visibility)
 - a constant, red light (to preserve night-vision)
 - a flashing light (to save battery)
-- no light (when you're not biking)
+- no light (for when you're not biking)
 
-When the bike light is off, a single, short click from the cyclist will always turn it on at a constant, white light. If the bike light is on (on any setting) a single, short click will always turn it off.
+For your bike light, you want your cyclist to be able to toggle through the 4 modes by holding the button down for two seconds. For example, if the light is off and the user holds the button down for at least two seconds, the light will switch modes to the white light. If the user releases and then holds the button down again, it will switch to the red light, and so on.
 
-Additionally, the cyclist can always toggle through the 3 modes by holding the button down for two seconds. If the constant light is on and the user holds the button down long enough, the light will switch modes to red. If the user releases and then holds the pin down again, it will switch to the flashing light, and so on.
+{{< checkpoint >}}
+Ask your teacher to show you a demo of a working bike light!
 
-{{< write-action "In your notebook, write pseudocode for the bike light." >}}
+Then in your notebook, write the corresponding pseudocode
+{{< /checkpoint >}}
 
-
-{{< code-action "Edit" >}} `button_activated_light.py` **so that it can be used as a bike light.**
+{{< code-action "Edit" >}} `button_activated_light.py` **so that your Raspberry Pi can be used as a bike light.**
 
 Be sure to push any changes you've made to your light!
