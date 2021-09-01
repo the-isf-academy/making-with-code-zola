@@ -1,25 +1,39 @@
 ---
-title: 3. Loops and Conditionals
+title: 5. While Loops
 type: labs
-draft: true
+# draft: true
 ---
 
-# Loops and Conditionals
-In this lab, we'll continue our exploration of loops and introduce a new concept that will
-allow us to make even more interesting drawings: conditionals.
+## [2] While loops
 
-## Intro to conditionals
-{{< include_resource "resource_conditionals" >}}
+In addition to `for` loops which run for a set number of iterations, Python has another type
+of loop. `while` loops iterate until a particular condition is met.
 
-## A. Responding to user input
-One way to use conditionals in our drawings is to use them to respond to user input.
+{{< tabs id="While-loops" >}}
 
-{{< code-action >}} Create a new file in your `cs9/unit_00` directory called `lab_03.py`
-and paste in this starter code:
+{{< tab "Text Explanation" >}}
+### Conditions
+`while` loops use conditions just like `if` statements. You can use operators to compare
+values in or to generate `True` or `False` conditions. Looping until a condition is met
+can be useful when you are getting getting input from a user, generating random variables,
+or repeatedly applying a transformation to a value.
 
 ```python
-# A. USER INPUT
-from turtle import *
+user_input = -1
+while user_input < 1 and user_input > 10:
+    user_input = input("Tell me a number between 1-10 (inclusive): ")
+```
+
+### While True / Break
+You can also make `while` loops run indefinitetly by setting the condition to `True` like
+this: `while True:`. This can be useful when you want to loops a program repeatedly.
+
+To stop a loop like this, you can use a `break` statement. Once the program reaches the
+`break`, the loop will exit.
+
+You've actually already seen an example of this kind of loop at the beginning of the lab.
+
+```python
 speed(10)
 while True:
     drawing = input("What would you like me to draw? ")
@@ -33,135 +47,18 @@ while True:
     else:
         print("Sorry, I don't know how to draw that...")
 ```
+{{< /tab >}}
 
-{{< code-action >}} Run this program to see how it uses a conditional based on user input.
+{{< tab "Video Explanation" >}}
 
-This program has a lot of potential, but so far it can only generate one drawing.
+{{< youtube "D0Nb2Fs3Q8c" >}}
+{{< /tab >}}
 
-{{< code-action >}} Add at least two more branches to the conditional so that the program can
-draw more shapes. An `elif` statement will probably be useful here.
+{{< /tabs >}}
 
-{{< checkpoint >}}
-Answer the following check-in questions on your group's Google doc before moving on:
 
-0. What is the difference between `else` and `elif` statements in a conditional?
-0. When writing a conditional, what kinds of things can you compare? Can you compare different
-types of things to each other?
-{{< /checkpoint >}}
 
-## Modulo
-{{< include_resource "resource_modulo" >}}
-
-## B. Rainbow
-Conditionals can also be paired with the modulo operator to cause your code to run in repeated
-patterns.
-
-{{< code-action >}} Copy the code below into your `lab_03.py` file and run it to see what it does,
-
-```python
-# B. RAINBOW
-speed(10)
-for i in range(5):
-    color("red")
-    begin_fill()
-    for j in range(4):
-        forward(100)
-        right(90)
-    end_fill()
-    penup()
-    right(45)
-    forward(10)
-    left(45)
-    pendown()
-    color("orange")
-    begin_fill()
-    for j in range(4):
-        forward(100)
-        right(90)
-    end_fill()
-    penup()
-    right(45)
-    forward(10)
-    left(45)
-    pendown()
-    color("yellow")
-    begin_fill()
-    for j in range(4):
-        forward(100)
-        right(90)
-    end_fill()
-    penup()
-    right(45)
-    forward(10)
-    left(45)
-    pendown()
-    color("green")
-    begin_fill()
-    for j in range(4):
-        forward(100)
-        right(90)
-    end_fill()
-    penup()
-    right(45)
-    forward(10)
-    left(45)
-    pendown()
-    color("blue")
-    begin_fill()
-    for j in range(4):
-        forward(100)
-        right(90)
-    end_fill()
-    penup()
-    right(45)
-    forward(10)
-    left(45)
-    pendown()
-    color("purple")
-    begin_fill()
-    for j in range(4):
-        forward(100)
-        right(90)
-    end_fill()
-    penup()
-    right(45)
-    forward(10)
-    left(45)
-    pendown()
-    color("violet")
-    begin_fill()
-    for j in range(4):
-        forward(100)
-        right(90)
-    end_fill()
-    penup()
-    right(45)
-    forward(10)
-    left(45)
-    pendown()
-
-input()
-```
-
-This code is really long. However, there is a pattern to the rainbow that we could use
-to simplify the code: the rainbow has 7 colors that repeat every time the loop runs for 7
-iterations.
-
-{{< code-action >}} Simplify this code using a conditional and the modulo operator.
-
-{{< checkpoint >}}
-Answer the following check-in questions on your group's Google doc before moving on:
-
-0. How would you describe the modulo operator to a friend who has never heard of it before?
-0. What other situations do you think the modulo operator would be useful in?
-
-{{< /checkpoint >}}
-
-## While loops
-
-{{< include_resource "resource_while_loops" >}}
-
-## C. Hailstone sequence
+### [Hailstone sequence]
 In the last part of this lab, you will be exploring a special sequence known as the
 hailstone sequence. This sequence results from the following rules (known as the Collatz
 conjecture):

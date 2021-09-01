@@ -1,6 +1,7 @@
 ---
 title: Code process
 type: resource
+draft: true
 ---
 
 Now that you've got some experience running Python programs, here's a brief overview of what Python does.
