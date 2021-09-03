@@ -182,9 +182,9 @@ To get you started, here are a few basic methods from the `LED` class that you c
 
 | Method |       Input      |   Example Use |  Explanation   |
 |:--------:|:----------------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
-|  _init | <mark>GPIO pin</mark>   |  led = LED(17) | creates an LED object for the given pin |
-| off |      None      |  led.off() | Turns the device off |
-|   on | None |    led.on()   | Turns the device on
+|  Create a new LED object | <mark>GPIO pin</mark>   |  light = LED(17) | creates an LED object for the given pin |
+| off() |      None      |  light.off() | Turns the device off |
+|   on() | None |    light.on()   | Turns the device on
 
 <mark>Note: The GPIO pin is NOT the same as the Raspberry Pi pin. GPIO pins are listed in the diagram under `Functions`. So far,we have used GPIO pin numbers 17, 27, and 22</mark>
 
@@ -220,14 +220,18 @@ In order to use the push-button, we'll use another `gpiozero` class, `Button`.
 
 {{< code-action "Edit" >}} `button_activated_light.py` **so that pressing the button turns the LED light on.**
 
-Here are some of the basic Button methods to get you started:
+Here's some information about the Button class to get you started:
+
+| Property |  Example Use |  Explanation   |
+|:--------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
+| is_pressed |  button_object.is_pressed | Returns True if the device is currently active and False otherwise |
+
 
 | Method |       Input      |   Example Use |  Explanation   |
 |:--------:|:----------------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
-|  _init | GPIO pin   |  button = Button(17) | creates an Button object for the given pin |
-| is_pressed | None | button.is_pressed() | Returns True if the device is currently active and False otherwise |
-| wait_for_press |     Number of seconds to wait before proceeding. If no parameter is given, it will wait indefinitely |  button.wait_for_press() | Pause the script until the device is activated, or the timeout is reached |
-|   wait_for_release | Number of seconds to wait before proceeding. If no parameter is given, it will wait indefinitely |    button.wait_for_release()   | Pause the script until the device is deactivated, or the timeout is reached
+|  Create a new Button object | GPIO pin   |  button_object = Button(17) | creates a new Button object for the given pin |
+| wait_for_press() |     Number of seconds to wait before proceeding. If no parameter is given, it will wait indefinitely |  button_object.wait_for_press() | Pause the script until the device is activated, or the timeout is reached |
+|   wait_for_release() | Number of seconds to wait before proceeding. If no parameter is given, it will wait indefinitely |    button_object.wait_for_release()   | Pause the script until the device is deactivated, or the timeout is reached
 
 
 
