@@ -15,12 +15,12 @@ TLTL provides training.
 
 *Making with Code* is a project of the Transformative Learning Technologies Lab in collaboration with the Independent Schools Foundation Academy.
 
-Chris Proctor  
 Emma Brown  
-Jacob Wolf  
-Jenny Han  
+Paulo Blikstein  
 Will Chau  
+Britte Genzlinger
+Jenny Han  
 Krates Ng  
 Jonathan Pang  
-Paulo Blikstein  
-Britte Genzlinger
+Chris Proctor
+Jacob Wolf 
