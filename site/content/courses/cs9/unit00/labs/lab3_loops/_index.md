@@ -17,7 +17,7 @@ How does a loop work in python? Let's see.
 
 ## [0] How to loop
 
-{{< code-action "Create new folder in your cs9/unit_00 folder called" >}} `lab_03_loops`. **In the** `lab_03_loops` **folder, create a new file called** `loops_intro.py`. **Copy and paste the code below into your file.**
+{{< code-action "Create new folder in your cs9/unit_00 folder called" >}} `lab_03_loops`. **In the** `lab_03_loops` **folder, create a new file called** `loops_into.py`. **Copy and paste the code below into your file.**
 
 ```python
 ######################
@@ -160,7 +160,7 @@ where each number is 3 times the number before it (making the common ratio 3).
 
 Here is an example of what the program will output when run:
 ```shell
-$ python3 geometricsequences.py
+$ python3 lab_03_geometricsequences.py
 What should the ratio of the sequence be? 4
 4
 16
@@ -191,102 +191,112 @@ you keep track of this?
 
 ### [Code]
 
-{{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}} Create a new file for your geometric sequence program called `geometric_sequence.py`.
+{{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}} Create a new file for your geometric sequence program called `lab_03_geometric_sequences`.
 
-<hr>
-
+<!-- 
 ## [2] Fibonacci Sequence
 Let's explore another sequence, the Fibonacci sequence. This sequence has all kinds
 of interesting properties.
 
-**We're going to write an algorithm to print out numbers in the Fibonnaci sequence.**
-
-The Fibbonacci sequence begins with two numbers, `0` and `1`. Each subsequent number in the sequence is calucated by finding the sum of the two numbers that precede it. 
-
-{{< write-action "In your notebook, calculate the first 10 numbers of the Fibbonacci sequence and show your work." >}}
-
-
-Here is an example of what the program will output when run:
-```shell
-$ python3 fibonacci_sequence.py
-How many numbers of the Fibonacci sequence would you like to output? 3
-1
-1
-2
-```
-
-{{< look-action >}} Watch this video to learn about how the Fibonacci sequence appears in
+{{< look-action >}} Watch this video about how the Fibonacci sequence appears in
 nature:
 {{< youtube id="ahXIMUkSXX0" >}}
 
-### [Pseudocode]
+We're going to write an algorithm to print out numbers in the Fibonnaci sequence.
 
-{{< checkpoint >}}
-In your notebook,
+Here is an example of what the program will output when run:
+```shell
+$ python3 lab_03_fibonacci_sequence.py
+How many numbers of the Fibonacci sequence would you like to output? 7
+1
+1
+2
+3
+5
+8
+13
+```
 
-0. Write the pseudocode for the Fibonacci sequence algorithm. 
-0. Calculate the first 5 numbers of the Fibonacci sequence by exclusively following your pseudocode. 
+#### D.0 *Pseudocode*
+{{< write-action >}} Just like you did with the geometric series algorithm, think
+through the pseudo-code of what we want the Fibonacci sequence algorithm to do.
 
-Be sure to check-in with a teacher before moving on. 
+Here are some things to consider:
+- Your algorithm should print out the number of terms inputed by the user and
+stored in `num_terms`.
+- Just like before, you will need a way to track the previous terms of the sequence,
+but this time you need two past terms instead of just one.
 
-{{< /checkpoint >}}
+#### D.1 *Code*
+{{< code-action >}} After you are confident your pseduocode has the correct logic, translate it into
+python code. Create a new file for your geometric sequence program called `lab_03_fibonacci_sequence`.
+
+Answer the following check-in questions on your group's Google doc before moving on:
 
 
-### [Code]
-{{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}}  Create a new file for your fibonacci sequence program called `fibonacci_sequence.py`.
 
-## [3] Deliverables
+### E. Loopy drawings
+Loops are not just useful for numbers and sequences, they can also be helpful in
+making drawings. Any time your code does the same thing multiple times, you can
+use a loop to make it simplier and more powerful.
 
-{{< deliverables "Please submit your lab by copying your files into your CS9 Google Drive folder and answering the prompt." >}}
+Take a look at the code we've been using to draw a square:
 
-**Files:**
-- `loops_intro.py`
-- `geometric_sequence.py`
-- `fibonacci_sequence.py`
+```python
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+forward(100)
+right(90)
+```
 
-**Prompt:**
+Pretty repetitive, right?
 
-Describe a moment where your code didn't do as intended. How did you debug it? 
-{{< /deliverables >}}
+{{< code-action >}} Edit this code to use a loop to avoid repeating the same code over and over
+again.  **Type** this code  at `YOUR CODE HERE (E)`.
 
-<hr>
 
-## [4] Extension: Visualizing Fibonacci
 
-Let's use the code you wrote to calculate Fibonacci sequences to make pattern
+### G. Drawing Fibonacci
+Finally, let's use the code you wrote to calculate Fibonacci sequences to make pattern
 drawings inspired by flowers and pinecones.
 
 {{< figure src="images/courses/cs9/unit00/00_variables_pinecone.png" title="Fibonacci drawing" >}}
 
-### [One spiral]
+#### G.0 One spiral
 First, use your Fibonacci code to draw a single spiral. You can do this by drawing a
 line for each number in the Fibonacci sequence and connecting the lines at a standard angle.
 
-{{< code-action "Incorporate the Turtle drawing functionality into your" >}} `fibonacci_sequence.py` file.
+{{< code-action >}} Write this code at `YOUR CODE HERE (G)`.
 
 The Turtle should draw something like this:
 
 {{< figure src="images/courses/cs9/unit00/00_variables_spiral.png" title="Fibonacci spiral" >}}
 
-### [Multiple spirals]
-{{< code-action "Loop the drawing code to draw multiple spirals originating from the center." >}} 
+#### G.1 Multiple spirals
+{{< code-action >}} Now, loop your code in `G. Drawing Fibonacci` to draw multiple spirals originating from the
+center.
 
 Now, the Turtle should draw something like this:
 
 {{< figure src="images/courses/cs9/unit00/00_variables_vortex.png" title="Many spirals" >}}
 
-{{< aside "FYI: Moving the Turtle" >}}
-You can return your turtle to the center of the window using `goto(0, 0)`. You can also use `penup()` and `pendown()` to keep the turtle from drawing as it returns to the
+{{< aside >}}
+You can return your turtle to the center of the window using `goto(0, 0)`. If you want,
+you can use `penup()` and `pendown()` to keep the turtle from drawing as it returns to the
 center.
 {{< /aside >}}
 
-### [Clockwise and counterclockwise]
+#### G.2 Clockwise and counterclockwise
 To get a pinecone or flower effect like the video above described, you'll need to spiral clockwise
 and countercloackwise.
 
-{{< code-action "Repeat your spiral code, changing it to make your spirals turn in the other direction." >}}
+{{< code-action >}} Repeat your spiral code, changing it to make your spirals turn in the other direction.
 
-Feel free to add colors and personalize the visualization however you would like! 
-
-{{< code-action "Be sure to update your file in your Hapara drive!" >}}
-
+## Deliverables
+- Once you've reached the end of the lab (or class time is over), please submit the `lab_02.py` file you have been creating
+- Each member of your group should submit their own file.
+- You will get credit even if you don't finish parts A-G.  -->
