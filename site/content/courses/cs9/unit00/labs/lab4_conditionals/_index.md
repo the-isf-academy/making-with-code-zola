@@ -323,3 +323,9 @@ Answer the following prompts in your notebook before moving on:
 {{< /deliverables >}}
 
 ## [4] Extension
+
+You've seen a great example of modulo being used to select the color of a drawing. Now you can use your newfound knowledge!
+
+{{< code-action "Incorporate the modulo operator into your fibonacci visualization from the previous lab.">}} If you didn't get a change to create a visualization of the fibonacci sequence last class, now is your opportunity!
+
+{{< figure src="images/courses/cs9/unit00/fibonacci-modulo.png" title="Fibonacci + Modulo" >}}
