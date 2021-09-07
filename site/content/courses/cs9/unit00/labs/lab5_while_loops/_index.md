@@ -1,37 +1,38 @@
 ---
 title: 5. While Loops
 type: labs
-draft: true
+draft: false
 ---
 
-## [2] While loops
+# While loops
 
 In addition to `for` loops which run for a set number of iterations, Python has another type
 of loop. `while` loops iterate until a particular condition is met.
-
+## [0] How while loops work
 {{< tabs id="While-loops" >}}
-
 {{< tab "Text Explanation" >}}
 ### Conditions
 `while` loops use conditions just like `if` statements. You can use operators to compare
-values in or to generate `True` or `False` conditions. Looping until a condition is met
-can be useful when you are getting getting input from a user, generating random variables,
-or repeatedly applying a transformation to a value.
+values or to generate `True` or `False` conditions. Looping until a condition is met
+can be useful when you are gettin input from a user, generating random variables,
+or repeatedly changing a value.
 
 ```python
 user_input = -1
 while user_input < 1 and user_input > 10:
-    user_input = input("Tell me a number between 1-10 (inclusive): ")
+    user_input = int(input("Tell me a number between 1-10 (inclusive): "))
+
 ```
 
 ### While True / Break
-You can also make `while` loops run indefinitetly by setting the condition to `True` like
-this: `while True:`. This can be useful when you want to loops a program repeatedly.
+You can also make `while` loops run indefinitely by setting the condition to `True` like
+this: `while True:`  This can be useful when you want to loop a program repeatedly.
 
 To stop a loop like this, you can use a `break` statement. Once the program reaches the
 `break`, the loop will exit.
 
-You've actually already seen an example of this kind of loop at the beginning of the lab.
+You've actually already seen an example of this kind of loop when you learned about
+conditionals in the previous lab.
 
 ```python
 speed(10)
@@ -59,7 +60,7 @@ while True:
 
 
 ### [Hailstone sequence]
-In the last part of this lab, you will be exploring a special sequence known as the
+In the first part of this lab, you will be exploring a special sequence known as the
 hailstone sequence. This sequence results from the following rules (known as the Collatz
 conjecture):
 
