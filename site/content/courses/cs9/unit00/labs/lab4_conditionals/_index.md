@@ -307,7 +307,7 @@ iterations.
 
 {{< code-action "Simplify this code using a conditional and the modulo operator." >}} Your file should be less than 40 lines of code.
 
-## [3] Deliverables
+## [4] Deliverables
 
 {{< deliverables "Please submit your lab by copying your files into your CS9 Google Drive folder and answering the prompt in your notebook." >}}
 
@@ -322,7 +322,7 @@ Answer the following prompts in your notebook before moving on:
 
 {{< /deliverables >}}
 
-## [4] Extension
+## [5] Extension
 
 You've seen a great example of modulo being used to select the color of a drawing. Now you can use your newfound knowledge!
 
