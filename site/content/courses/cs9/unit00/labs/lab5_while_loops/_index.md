@@ -58,8 +58,8 @@ while True:
 {{< /tabs >}}
 
 
-
-### [Hailstone sequence]
+## [1] Hailstone
+### [Calculating the sequence]
 In the first part of this lab, you will be exploring a special sequence known as the
 hailstone sequence. This sequence results from the following rules (known as the Collatz
 conjecture):
@@ -73,17 +73,20 @@ conjecture):
 The conjecture states that no matter the starting value of `n`, the sequences will always
 reach 1.
 
-{{< write-action >}} Try this out: pick a number and perform the calculations. Can you find a
-number that doesn't reach one?
+{{< checkpoint >}} Try this out: pick a number and perform the calculations. Can you find a
+number that doesn't reach 1?
+
+{{< /checkpoint >}}
 
 This sequence is interesting because though no number has ever been found that doesn't reach 1,
 the Collatz conjecture has never been proven. **This is an unsolved problem in mathematics!**
 
-### C.0 Calculating hailstone sequences
+### [Coding Hailstone]
 
 #### Pseudo-code
-This is another alogrithm which will require pseudo-code to figure out.
-{{< write-action >}} Write out pseudo-code to plan the logic of this program.
+This is another algorithm which will require pseudo-code to figure out.
+{{< checkpoint >}}
+ Write out pseudo-code to plan the logic of this program.
 
 Here are some things to consider:
 - This program will require a loop. What kind of loop do you think is best? Remember that
@@ -93,6 +96,8 @@ of even numbers that will help you determine if a number is even?
 - In addition to calculating each term, you should also count how many steps it takes to
 reach zero and report this number at the end. You should use a `count` variable
 to track the number of steps.
+
+{{< /checkpoint >}}
 
 #### Code
 Once you've completed your pseudo-code, you can translate it into Python code.
@@ -109,18 +114,18 @@ print("Took " + str(count) + " steps to reach 1.")
 ```
 
 {{< checkpoint >}}
-Answer the following check-in questions on your group's Google doc before moving on:
+Answer the following check-in questions on your notebook before moving on:
 
 0. What kind of loop did you choose to write the hailstone sequence algorithm? Why did you choose
 this kind of loop?
 0. Why do you think the Collatz conjecture is so hard to prove for all positive integers?
 {{< /checkpoint >}}
 
-### C.1 Drawing Hailstone
+### [Drawing Hailstone]
 The sequences formed are known as hailstone sequences, because the terms move up
-and down but ultimately reach 0 like hailstones gaining layers of ice in a cloud.
+and down but ultimately reach 1 like hailstones gaining layers of ice in a cloud.
 
-{{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_cloud.png" width="100%" title="Hailstones froming in a cloud" >}}
+{{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_cloud.png" width="100%" title="Hailstones forming in a cloud" >}}
 
 This pattern can lead to some interesting visualizations of hailstone sequences.
 
@@ -130,10 +135,13 @@ You can visualize the terms in a sequence starting with a specific number:
 Or you can visualize the number of steps it takes to reach one from a set of integers:
 {{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_steps.png" width="100%" title="Steps to reach one in hailstone sequence as radii of half circles for integers 1-100" >}}
 
-{{< code-action >}} Use your hailstone sequence code from part C.0 to create a visualization fo the
+{{< code-action >}} Use your hailstone sequence code to create a visualization for the
 hailstone sequence using Turtle.
 
-## Deliverables
-For this lab, you should submit the following:
+## [2] Deliverables
+{{< deliverables "For this lab, you should submit the following:" >}}
+
 - The your `lab_03.py` file with the code you wrote for each of the parts
-- Your Google Doc with responses to the checkpoint questions
+- Your notebook with responses to the checkpoint questions
+
+{{< /deliverables >}}
