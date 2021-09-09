@@ -8,7 +8,7 @@ type: labs
 
 In addition to `for` loops which run for a set number of iterations, Python has another type of loop. `while` loops iterate until a particular condition is met.
 
-## [0] How while loops work
+## [0] What is a While Loop?
 {{< tabs id="While-loops" >}}
 {{< tab "Text Explanation" >}}
 ### Conditions
