@@ -175,7 +175,7 @@ Note that we are now using a different URL, `IP_ADDRESS_GIVEN_BY_TEACHER:5000/ri
 It is common for `POST` requests to send a *payload* with the request. In this case, the payload is a parameter called `id` specifying which riddle we are guessing, as well as `guess`.
 
 ```shell
-http POST IP_ADDRESS_GIVEN_BY_TEACHER/riddles/guess id=1 guess="All of them"
+http POST IP_ADDRESS_GIVEN_BY_TEACHER:5000/riddles/guess id=1 guess="All of them"
 ```
 
 You should see something like this:
@@ -223,7 +223,7 @@ As of now, you've been accessing the riddle server that's hosted on one of the t
 ```shell
 git clone https://github.com/cproctor/riddle_server.git
 cd riddle_server
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 {{< code-action "Run the server." >}} 
