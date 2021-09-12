@@ -1,7 +1,7 @@
 ---
 title: 5. While Loops
 type: labs
-draft: true
+#draft: true
 ---
 
 # While loops
@@ -62,7 +62,7 @@ while True:
 
 ### [Calculating the Sequence]
 In the first part of this lab, you will be exploring a special sequence known as the
-hailstone sequence. 
+hailstone sequence.
 
 **This sequence results from the following rules** (known as the Collatz conjecture):
 - take any positive number `n`
@@ -73,7 +73,7 @@ hailstone sequence.
 
 The conjecture states that no matter the starting value of `n`, the sequences will always reach 1.
 
-{{< checkpoint >}} In your notebook, pick a number and perform the calculations. 
+{{< checkpoint >}} In your notebook, pick a number and perform the calculations.
 
 Can you find a number that doesn't reach 1?
 
@@ -99,7 +99,7 @@ Here are some things to consider:
 for loops run for a definite number of times and while loops run until a condition is met.
 - You will need to determine if each term is odd or even. What are some characteristics
 of even numbers that will help you determine if a number is even?
-- In addition to calculating each term, you must count how many steps it takes to reach 1 and report this number at the end. 
+- In addition to calculating each term, you must count how many steps it takes to reach 1 and report this number at the end.
 {{< /checkpoint >}}
 
 ### [Code the Sequence]
@@ -130,7 +130,7 @@ print()
 
 ```
 
-{{< code-action "Translate your pseudocode into Python code." >}} 
+{{< code-action "Translate your pseudocode into Python code." >}}
 
 {{< checkpoint >}}
 Answer the following check-in questions on your notebook before moving on:
@@ -144,7 +144,7 @@ this kind of loop?
 ## [2] Deliverables
 {{< deliverables "For this lab, you should submit the following:" >}}
 
-- The your `hailstone_sequence.py` file to your CS9 Google Drive folder. 
+- The your `hailstone_sequence.py` file to your CS9 Google Drive folder.
 - Your notebook with responses to the checkpoint questions.
 
 {{< /deliverables >}}
@@ -158,7 +158,7 @@ and down but ultimately reach 1 like hailstones gaining layers of ice in a cloud
 
 This pattern can lead to some interesting visualizations of hailstone sequences.
 
-{{< code-action "Use your hailstone sequence code to create a visualization for the hailstone sequence using Turtle." >}} 
+{{< code-action "Use your hailstone sequence code to create a visualization for the hailstone sequence using Turtle." >}}
 
 You can visualize the terms in a sequence starting with a specific number:
 {{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_terms.png" width="100%" title="Terms in hailstone sequence starting at 590" >}}
@@ -170,9 +170,8 @@ Or you can visualize the number of steps it takes to reach one from a set of int
 
 <br>
 
-{{< code-action "Add a random color element to the visualization" >}} 
+{{< code-action "Add a random color element to the visualization" >}}
 
 You will need to reference the following:
 - [Turtle Color Documentation](https://docs.python.org/3/library/turtle.html#turtle.color)
 - [Python Random Library Documentation](https://docs.python.org/3/library/random.html)
-
