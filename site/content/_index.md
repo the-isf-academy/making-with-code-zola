@@ -18,9 +18,9 @@ TLTL provides training.
 Emma Brown  
 Paulo Blikstein  
 Will Chau  
-Britte Genzlinger
+Britte Genzlinger   
 Jenny Han  
 Krates Ng  
 Jonathan Pang  
-Chris Proctor
+Chris Proctor   
 Jacob Wolf 

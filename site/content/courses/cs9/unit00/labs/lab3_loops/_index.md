@@ -289,4 +289,3 @@ and countercloackwise.
 Feel free to add colors and personalize the visualization however you would like! 
 
 {{< code-action "Be sure to update your file in your Hapara drive!" >}}
-
