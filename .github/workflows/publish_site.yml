@@ -41,7 +41,7 @@ jobs:
       # Builds the site
       - name: Build Hugo site
         run: |
-          echo $PWD
+          pwd
           cd site
           hugo -e production
           
