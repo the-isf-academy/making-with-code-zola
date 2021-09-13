@@ -37,6 +37,7 @@ jobs:
       # Builds the site
       - name: Build Hugo site
         run: |
+          cd site
           hugo -e production
           
       # Install lftp
