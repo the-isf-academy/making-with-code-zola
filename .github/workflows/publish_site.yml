@@ -40,9 +40,8 @@ jobs:
 
       # Builds the site
       - name: Build Hugo site
+        working-directory: ./site
         run: |
-          pwd
-          cd site
           hugo -e production
           
       # Install lftp
@@ -52,12 +51,13 @@ jobs:
           
       # Transfers site to serverr via FTP
       - name: Transfer to server
+        working-directory: ./build
         run: |
           HOST=${{ secrets.FABLEARN_HOST }}
           USER=${{ secrets.FABLEARN_USER }}
           PASS=${{ secrets.FABLEARN_PASSWORD }}
           TARGETFOLDER='/'
-          SOURCEFOLDER='/making-with-code/build/'
+          SOURCEFOLDER='.'
 
           lftp -f "
           set ssl:verify-certificate false
