@@ -4,113 +4,122 @@ draft: true
 ---
 
 # Unit 00 Hardware Project
-Raspberry Pi's are tiny but powerful computers that can be used for tons of DIY projects. Since Raspberry
-Pi's are so small but have full computational, networking, and hardware capabilities, they are great tools
-for making robots, internet-of-things devices, networking services, and much more.
+In this project you will act as a data collector hired by ISF to assess the water quality of different areas around the school. Using sensors to collect the data and Python to analyze the data, you will produce a comprehensive data report. 
 
-## [0] Pseudocode
-You've seen a demonstration of a Raspberry Pi that's connected to an LED light and a press-button. When the button is pushed in, the LED lights up. When the button is released, the light turns off.
+## [0] Starter Code
 
-{{< write-action "Write pseudocode that describes how you think the button-activated LED works." >}}
+{{< code-action "Clone the project repository" >}} in your `cs10\unit_00` folder. 
 
-## [1] Raspberry Pi Set Up
-
-
-## [2] Using the LED
-
-### [Hardware Set Up]
-Let's begin by connecting our LED to the Raspberry Pi. To do this you will need:
-- 1 Raspberry Pi
-- 4 internal-to-internal jump wires
-- 1 3-color LED component
-
-*Below is a diagram of the General Purpose Input/Output (GPIO) pins. Each pin has a specific function and a pin number. For this first step we will use 1 Ground pin and 3 GPIO pins. Reference the pin numbers and pin functions when connecting the LED.*
-
-{{< figure src="images/courses/cs10/unit00/00_fresh_gpiodiagram.png" width="100%" >}}
-
-{{< code-action "Hook up your LED to your Raspberry Pi" >}}
-
-0.  Connect `1 jumper wire` to the `9, 11, 13, and 15` pins
-0.  Connect the `Pin 9` wire to the `-` LED component pin. This is the `Ground` pin.
-0.  Connect the `Pin 11` wire to the `R` LED component pin
-0.  Connect the `Pin 13` wire to the `G` LED component pin
-0.  Connect the `Pin 15` wire to the `B` LED component pin
-
-*This is how your Raspberry Pi will look when hooked up to the LED.*
-{{< figure src="images/courses/cs10/unit00/00_fresh_gpioconnection.png" width="100%"  >}}
-
-*Although the wires below are color coded, it is not necessary to do so.*
-{{< figure src="images/courses/cs10/unit00/00_fresh_rgbsensor.png" width="100%"  >}}
-
-
-By connecting the `R, G, and B` LED component pins to the GPIO pins of the Raspberry Pi, we are able to send power to each color. The `Ground` LED component pin (labelled with `-`) completes the circuit, allowing power to flow through and power the LED.
-
-<br>
-
-### [Coding the LED]
-Now it's time to turn on our light!
-
-{{< code-action "Clone the lab_sensors repository" >}} in your `cs10\unit_00` folder.
 ```shell
-git clone https://github.com/the-isf-academy/lab-sensors-YOUR-GITHUB-USERNAME.git
+cd cs10/unit_00
+git clone https://github.com/the-isf-academy/project-hardware-YOUR-GITHUB-USERNAME.git
 ```
-{{< code-action "Create a simple program that turns the light on and off." >}}  Write your code in the file called `light_activated_button.py`
-
-To get you started, here are a few basic methods from the `LED` class that you can use:
-| Method |       Input      |   Example Use |  Explanation   |
-|:--------:|:----------------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
-|  _init | GPIO pin   |  led = LED(17) | creates an LED object for the given pin |
-| off |      None      |  led.off() | Turns the device off |
-|   on | None |    led.on()   | Turns the device on
 
 
-{{< aside >}}
-There's lots that you can do with the LED class, like making the LED blink indefinitely, and more! This is a great resource for you to use as you explore the Raspberry Pi:
+## [1] Deliverables
 
-**More LED Methods:** [LED documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#led)
-{{< /aside >}}
+Each person is responsible for writing a program that utilizies the provided sensor to collect water quality information over the course of 24 hour. You will then produce a short report with graphs illustrating the findings in a jupyter notebook file. 
 
-## [3] Adding in the Button
+A successful `project-hardware` repository will have the following:
+- `Hardware Project Planning Document` - a Google Doc with a project plan  
+- `data.csv` - a file that stores the collected data formatted for your given sensor
+- `data_collection.py` - a Python file that handles the collection of data over the course of 24 hours for your given sensor 
+- `data_anaylsis.py` - a jupyter notebook file that analyzes the data with at least 3 graphs 
+- `README.md` - instructions for how to use your `data_collection.py` file. Another user should be able to easily use your program to run their own data analysis.
+- `assessment.md` - a self assessment of your final project 
 
-### [Hardware Set Up]
+`AtlastI2C.py` is also included in your repostitory. This is the interface for the sensors. 
 
-Now we're going to connect our push-button to the Raspberry Pi. In addition to what you already have set up, you will need:
-- 2 internal-to-internal jump wires
-- 1 push-button component
+## [2] Planning Document 
+This is a large scale project that demands ample planning before tinkering. Before you start working on your project, you are required to complete your project planning document and review with with a teacher. You can find your planning doc in your Google Drive folder called `Hardware Project Planning Document`.
 
-0.  Connect `1 jumper wire` to the `37 and 39` pins
-0.  Connect the `Pin 37` wire to the `-` LED component pin. This is the `Ground` pin.
-0.  Connect the `Pin 39` wire to the `S` LED component pin
+Once you have completed your project plan, meet with a teacher to talk through your plan. Don't start programming until you get your plan approved.
 
-{{< figure src="images/courses/cs10/unit00/00_fresh_gpiodiagram.png" width="100%" >}}
+## [3] Assessment 
 
-### [Coding the Button]
+You are responsible for assessing your own project, though your teachers will let you know if they disagree. In `assessment.md`, you are required to explain how your project should be scored, and to give evidence to support your assessment.
 
-In order to use the push-button, we'll use another `gpiozero` class, `Button`.
+### [Planning and Documentation]
 
-{{< code-action "Edit light_activated_button.py so that pressing the button turns the LED light on." >}}  
+*Students create personally meaningful projects through an iterative design cycle. Students’ work is grounded in a development plan which students create before beginning the project. Students document the development of their projects in order to create a record of decisions, assumptions, and lingering flaws. Students define the intended functionality and develop towards evaluation.*
 
-Here are some of the basic Button methods to get you started:
+> Write a short paragraph reflecting and evaluating your ability to plan a large scale computer science project and document your work for others to understand.
 
-| Method |       Input      |   Example Use |  Explanation   |
-|:--------:|:----------------:|:----------------------------:|--------------------------------------------------------------------------------------------------------------------|
-|  _init | GPIO pin   |  button = Button(17) | creates an Button object for the given pin |
-| is_pressed | None | button.is_pressed() | Returns True if the device is currently active and False otherwise |
-| wait_for_press |     Number of seconds to wait before proceeding. If no parameter is given, it will wait indefinitely |  button.wait_for_press() | Pause the script until the device is activated, or the timeout is reached |
-|   wait_for_release | Number of seconds to wait before proceeding. If no parameter is given, it will wait indefinitely |    button.wait_for_release()   | Pause the script until the device is deactivated, or the timeout is reached
+Key practices:
+- detailed action plan for each class session
+- test cases and edge cases for my program 
+- consistent Github commits 
+- `README.md` file  
+
+### [Computational Thinking]
+*Students appropriately apply computer science concepts and tools in context. On top of computer science concepts and tools, students apply computational thinking practices including habits such as writing pseudocode, developing iteratively, using abstractions, decomposing problems, and debugging.*
+
+> Identify and describe 3 moments from the project that demonstrate your growth as a computer scientist. Tag each moment with at least one key practice and at most 3 key practices. 
+>
+> Write a short paragraph for each moment explaining how each of the key practices you tagged is demonstrated in the moment you described and how the moment helped you develop this practice.
+
+Key practices:
+- Abstraction
+- Decomposition
+- Pseudocode
+- Iterative development
+- Debugging
+- Testing
+- Reading documentation
+
+### [Overall Assessment] 
+
+Determine the level between 1-7 that represents your overall development of the key practices based on the evidence and reasoning you provided.
+
+> Determine your score and write a short paragraph with your justification as to the score you self-assigned. 
+
+## [4] Resources 
 
 
+### [Documentation]
+This project heavily focuses on reading and understanding documentation. Luckily Atlast Scientific, the manufacturer of the sensors, provides fantastic documentation.
 
-{{< aside >}}
-There's lots that you can do with the Button class, like choosing what happens when the button is held down for a certain number of seconds, and more! Click on the link to learn more methods!
+#### Data Sheets
 
-**More Button Methods:** [Button documentation](https://gpiozero.readthedocs.io/en/stable/api_input.html#button)
-{{< /aside >}}
-<br>
+A data sheet is an informational document provided by the manufactorer with details of the performance and properties of a product. 
 
-### [Deliverables]
+- [ORP Sensor](https://files.atlas-scientific.com/ORP_EZO_Datasheet.pdf)
+- [Dissolved Oxygen Sensor](https://files.atlas-scientific.com/DO_EZO_Datasheet.pdf)
+- [PH Sensor](https://files.atlas-scientific.com/pH_EZO_Datasheet.pdf)
+- [Conductivity Sensor](https://files.atlas-scientific.com/EC_EZO_Datasheet.pdf)
 
-{{< deliverables "For this lab, you should push your lab-sensors repository containing updates to light_activated_button.py" >}}
-<br>
-Check in with the teacher by showing your button-activated light!
-{{< /deliverables >}}
+#### Raspbery Pi Sample Code
+Atlas Scientific provides it's own interface system to interact with the sensors using Python. The sample file, `AtlastI2C.py` is already provided for you in your `project-hardware` repository. 
+
+[Raspberry Pi Sample Code Documentation](https://files.atlas-scientific.com/pi_sample_code.pdf)
+
+#### Carrier Board 
+Each sensor must be connected to a carrier board and the carrier board is connected to the Pi. 
+
+[Carrier Board](https://files.atlas-scientific.com/electrically-isolated-ezo-carrier-board.pdf)
+
+<hr>
+
+### [File I/O]
+
+File I/O, or File Input/Output, is the ability to read and write to a file in Python. 
+In order to store the data the sensor collects, you will need to learn how to write to a file. 
+
+Take a look at [this](https://www.pythontutorial.net/python-basics/python-write-csv-file/) tutorial for a great example. 
+
+<hr>
+
+
+### [Jupyter Notebook Refresh]
+
+To open a Jupyter notebook, you will need to start a Jupyer server from your 
+Terminal in your `project-hardware` repository directory:
+
+```shell
+jupyter notebook
+```
+
+Take a look at your `lab-pandas-matplotlib` and your `project-data-science` for a refresh as to how to create graphs using the `Pandas` and `MatPlotLib` Python libraries. 
+
+- [Pandas Documentation](https://pandas.pydata.org/docs/user_guide/index.html)
+- [MatPlotLib Documentation](https://matplotlib.org/)
