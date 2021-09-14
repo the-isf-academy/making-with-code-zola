@@ -1,6 +1,6 @@
 ---
 Title: Hardware Project
-# draft: true
+draft: true
 ---
 
 # Unit 00 Hardware Project
