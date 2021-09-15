@@ -9,7 +9,7 @@ In this lab you will act as an aquarium monitoring system using water quality se
 
 In pairs, you are responsible for writing a program that utilizies the provided sensor to collect water quality information over the course of 24 hours. 
 
-Each group will monitor `ORP`, `Dissolved Oxygen`, `PH`, or `Conductivity` for both the fish tank on A4 and a control tank in A403. 
+Each group will monitor `Dissolved Oxygen`, `PH`, or `Conductivity` for both the fish tank on A4 and a control tank in A403. 
 
 We will then compile and share teh data with the ISF science faculty. 
 
@@ -18,7 +18,6 @@ We will then compile and share teh data with the ISF science faculty.
 
 Let's start by taking a look at the sensors. There are four available sensors, each with its own data sheet. A data sheet is an informational document provided by the manufactorer with details of the performance and properties of a product. 
 
-- [ORP Sensor](https://files.atlas-scientific.com/ORP_EZO_Datasheet.pdf)
 - [Dissolved Oxygen Sensor](https://files.atlas-scientific.com/DO_EZO_Datasheet.pdf)
 - [PH Sensor](https://files.atlas-scientific.com/pH_EZO_Datasheet.pdf)
 - [Conductivity Sensor](https://files.atlas-scientific.com/EC_EZO_Datasheet.pdf)
