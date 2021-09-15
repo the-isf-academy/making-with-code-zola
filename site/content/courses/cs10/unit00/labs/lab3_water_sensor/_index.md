@@ -29,7 +29,8 @@ Let's start by taking a look at the sensors. There are three available sensors, 
 - 1 EZO conductivity circut
 - 1-2 calibration solutions
 
-### [Sensor Setup]
+
+### [Connecting the Sensor]
 
 {{< columns >}}
 {{< figure src="images/courses/cs10/unit00/lab-water-quality-02.jpeg" width="100%" title="Sensor" >}}
@@ -75,7 +76,7 @@ Refer to the 2 diagrams below and follow the steps:
 ```shell
 cd cs10/unit_00
 git clone https://github.com/the-isf-academy/lab-water-quality-YOUR-GITHUB-USERNAME.git
-pip3 install -r requirements.txt
+pip3 install pytz
 ```
 
 The `lab-water-quality` repository contains the following:
