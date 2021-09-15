@@ -70,11 +70,12 @@ Refer to the 2 diagrams below and follow the steps:
 >   
 > Replace `N` with your Raspberry Pi number.
 
-{{< code-action "Clone the lab repository" >}} in your `cs10\unit_00` folder. 
+{{< code-action "Clone the lab repository" >}} in your `cs10\unit_00` folder and install the requirements.
 
 ```shell
 cd cs10/unit_00
 git clone https://github.com/the-isf-academy/lab-water-quality-YOUR-GITHUB-USERNAME.git
+pip3 install -r requirements.txt
 ```
 
 The `lab-water-quality` repository contains the following:
