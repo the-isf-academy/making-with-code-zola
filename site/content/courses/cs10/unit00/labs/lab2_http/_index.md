@@ -1,6 +1,7 @@
 ---
 title: "2. HTTP"
 type: lab
+draft: true
 ---
 
 # HTTP: How Computers Communicate
@@ -274,7 +275,7 @@ link to a particular wiki page, going through the graphical interface would be n
 provides an easy way to find this information:
 
 ```shell
-$ http GET https://en.wikipedia.org/w/api.php action==query list==backlinks format==json bltitle==Independent_Schools_Foundation_Academy
+http GET https://en.wikipedia.org/w/api.php action==query list==backlinks format==json bltitle==Independent_Schools_Foundation_Academy
 ```
 
 There are lots of [interesting APIs](https://www.twilio.com/blog/cool-apis) that you can use to make some pretty cool projects.
@@ -283,74 +284,45 @@ There are lots of [interesting APIs](https://www.twilio.com/blog/cool-apis) that
 
 
 
-<!-- ## C. Writing a client
+## [4] Writing a client
 Since the riddle server is an API with no user interface, we end up writing a lot of
 HTTP requests into the Terminal to use it. What if we had a program which took care
 of making these requests for us? A program like this is called a *client*. Any
 app which uses the Internet is a client; it is constantly making HTTP requests
 to a server to send and receive information. 
 
-Just like the trivia game, our client is going to have two faces. The `View` will interact
-with the human user and the `Game` will run the game logic and interact with the 
-server. Actually, we will use essentially the same `View` as we used for the Trivia lab. The
-power of abstraction in action again!
+### [Setup]
 
-{{< code-action >}} Starter code for the client is provided in the
-`lab-http` repo. Download it *onto your laptop*.
-
-```
-$ cd cs10/unit_00
-$ git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
-$ cd lab-http
-$ pip3 install -r requirements.txt
-$ cd riddle_client
-$ ls
-game.py        rgb.py         test_lab.py    testing_server view.py
-```
-
-{{< aside >}}
-If you haven't already, you will need to install a stub to allow Raspberry Pi programs
-to run on your personal computer:
+{{< code-action "Clone the starter repository and install the required libraries" >}} 
 
 ```shell
-$ cd Desktop/cs10/unit_00
-$ git clone https://github.com/willbuckner/rpi-gpio-development-mock.git
-$ cd rpi-gpio-development-mock
-$ sudo python setup.py install
-```
-{{< /aside >}}
-
-{{< code-action >}} Now try running the client. 
-
-```
-$ python3 game.py
+cd cs10/unit_00
+git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
+cd lab-http
+pip3 install -r requirements.txt
 ```
 
-It runs! Until it doesn't. The view is fully-functional, however the some of the `Game` class
-functions still need to be written to connect the game to a Riddle server.
+{{< code-action "Now try running the client." >}} 
 
-Your job is to finish the function which haven't been written yet: 
+```shell
+python3 client.py
+```
 
-- `show_riddle`
-- `add_riddle`
-- `guess_riddle`
+It runs! Until it doesn't. The view is fully-functional, however the some of the `Game` class functions still need to be written to connect the game to a Riddle server.
 
-### C.0 `show_riddle`
-{{< code-action >}} This function should show the riddle to the user given the `id` of the riddle to be displayed.
+**Your job is to finish the functions in `client.py` which haven't been written yet:**
+- `show_riddle()`
+- `add_riddle()`
+- `guess_riddle()`
 
-You can check your implementation of this function by running:
+
+### [Making Requests]
+You will need to create a request to the server using the requests library like this:
 ```python
-python3 test_lab.py -k show
+r = requests.get(address, json=payload)
+response = r.json()
 ```
-
-**Tips:**
-- You will need to create a request to the server using the requests library like this:
-    ```python
-    r = requests.get(address, json=payload)
-    ```
-- `address` is the address you want to send the request to. Use the `server_address` property of
-the game class as the base address for your HTTP requests. You will still need to add on an 
-endpoint to achieve the correct functionality.
+- `address` is the address you want to send the request to. Use the `server_address` property of the game class as the base address for your HTTP requests. You will still need to add on an endpoint to achieve the correct functionality.
 - `payload` should be a dictionary containing the parameters you want to send with your HTTP request.
 For example, if you wanted to send the parameter `fruit` with the value `watermelon`, you would use:
     ```python
@@ -358,14 +330,22 @@ For example, if you wanted to send the parameter `fruit` with the value `waterme
         "fruit": "watermelon"
     }
     ```
-- `r` is the response the server send back after your request. You should convert this response to a dictionary
-using:
+- `response = r.json()` converts the response from the server, `r`, into a dictionary
     ```python
     response = r.json()
     ```
 
-### C.1 `add_riddle()`
-{{< code-action >}} This function should add a riddle to the server by getting a question and an answer from the
+### [show_riddle()]
+{{< code-action "Code this function to show the riddle the user requested." >}} by using the user requested `id` of the riddle to be displayed.
+
+You can check your implementation of this function by running:
+```python
+python3 test_lab.py -k show
+```
+
+
+### [add_riddle()]
+{{< code-action "Code this function to add a riddle to the server" >}}  by getting a question and an answer from the
 user and then sending that information to the server in an HTTP request.
 
 You can check your implementation of this function by running:
@@ -373,28 +353,17 @@ You can check your implementation of this function by running:
 python3 test_lab.py -k add
 ```
 
-### C.2 `guess_riddle()`
-{{< code-action >}} This function should allow the user to guess a riddle and send the guess to the server for checking.
-If the guess was correct, the score should increment and a "correct guess" message should be displayed.
-Otherwise, a "wrong guess" message should be displayed.
+### [guess_riddle()]
+{{< code-action "Code this function to allow the user to guess a riddle" >}} and send the guess to the server for checking. 
+- If the guess was correct, the score should increment and a "correct guess" message should be displayed.
+- Otherwise, a "wrong guess" message should be displayed.
 
 You can check your implementation of this function by running:
 ```python
 python3 test_lab.py -k guess
 ```
 
-### C.3 Error messages
-The functions you wrote for the previous sections probably assume that the server will
-respond successfully to your requests. However, sometimes the server might give an error
-if the user tries to put in incorrect riddles or guesses.
 
-{{< code-action >}} Edit yoiur functions above to make sure they display error messages
-if the server responds with an error.
-
-You can test your error messages by running:
-```python
-python3 test_lab.py -k errors
-```
 
 **Tips:**
 - The `r` Response object returned by the server has many different properties that may be useful
@@ -406,9 +375,32 @@ Once everyone in your group has a fully-functional client, check in with a
 teacher. 
 {{< /checkpoint >}}
 
-## D. Optional: Improving the client
 
-Once you have a fully-working client, make it better. Here are a few ideas:
+### [5] Deliverables
+
+{{< deliverables "For this lab, you should push your lab-http repository containing updates to"  >}}
+- `client.py`
+
+<br>
+Check in with the teacher and demonstrate your working client!
+{{< /deliverables >}}
+
+## [5] Extension
+
+### [Error messages]
+The functions you wrote for the previous sections probably assume that the server will
+respond successfully to your requests. However, sometimes the server might give an error
+if the user tries to put in incorrect riddles or guesses.
+
+{{< code-action "Edit your functions above to make sure they display error messages" >}} if the server responds with an error.
+
+You can test your error messages by running:
+```python
+python3 test_lab.py -k errors
+```
+
+### [Make it even better]
+Here are a few ideas:
 
 - Display the riddles' difficulty. 
 - Give the player prizes, or let them unlock secret modes, if they get a high
@@ -419,7 +411,10 @@ Once you have a fully-working client, make it better. Here are a few ideas:
   may be useful. You can calculate a player's skill the same way we calculate a
   riddle's difficulty.)
 
-## E. Your own Riddle server
+
+
+
+<!-- ## E. Your own Riddle server
 
 The Riddle server is a pretty simple program. While it is running, it waits for
 requests to come in and responds when they do. Let's set it up on your Raspberry
@@ -456,21 +451,5 @@ Once everyone in your group has deployed the Riddle server to their Pi, accessed
 someone else's Riddle server, and had someone access theirs, check in with a
 teacher. 
 {{< /checkpoint >}}
-
-
-## F. PiView
-Now that you have the Riddle server running on your Pi, you can also run the
-Riddle client on your Pi.
-
-This will allow you to use the `PiView` class from the trivia lab to flash responses
-to user guesses.
-
-{{< code-action >}} Copy the `correct_answer()` and `wrong_answer()` functions from your
-`lab-trivia` code into your `lab-http` code in the `PiView` class.
-
-As an extension, you can also use your Pi to communicate error codes to the user.
-
-{{< code-action >}} Edit the `error()` function of the `PiView` class so that it
-flashes error codes in Morse code whenever the server responds with an error.
 
  -->

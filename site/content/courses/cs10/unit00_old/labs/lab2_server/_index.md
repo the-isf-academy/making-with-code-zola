@@ -1,7 +1,7 @@
 ---
 title: "2. Servers"
 type: lab
-draft: false
+# draft: false
 ---
 
 # Servers
@@ -10,7 +10,7 @@ In this lab, you will be creating a messaging server that interacts with a clien
 
 {{< youtube "201p6q8I7Eo" >}}
 
-## A. Review of Lab 1
+## [0] Review of Lab 1
 
 In the HTTP lab, you were introduced to the concept of networking through HTTP or the Hypertext protocol. The HTTP protocol is a framework that helps transfer data between a client, such as a web browser like Chrome or Firefox com and a HTTP web server that hosts your website.
 
@@ -24,7 +24,7 @@ and these functions made HTTP requests to specific endpoints on the Riddle serve
 
 In this lab, you will investigate the inner workings of an HTTP server, just like the Riddle server, by creating an client/server messaging application.
 
-## B. Servers and You!
+## [1] Servers and You!
 
 Imagine yourself in a restaurant. You sit down at your table and look at the menu. 
 After picking out what you want for dinner, it's time to flag down the waiter. After
@@ -60,19 +60,13 @@ that it responds properly to server *requests* from a client.
 
 Before that though, we need to learn about a new Python module called **Flask**.
 
-## C. Flask
-
-Flask is a web microframework made for Python to create "easy" web applications. Web applications, as you have learned in the HTTP lab, rely on HTTP requests, HTTP responses and endpoints. Flask helps to manage these transactions and ensures that endpoints on your web server responds to user requests appropriately.
-
-Flask-SQLAlchemy will help us extend Flask's functionality as Flask does not have any ORM (Object relational mapping) built-in. In layman's terms, Flask-SQLAlchemy will help us create the database that we will use in this lab to store data like login information and work with objects that are created when we make database queries.
-
-### C.1 Installing Flask and SQLAlchemy
+## [2] Setup
 
 {{< code-action >}} To get started, clone the server lab repository.
 
 ```shell
 cd cs10/unit_00
-$ git clone https://github.com/the-isf-academy/lab-server-YOUR-GITHUB-USERNAME.git
+git clone https://github.com/the-isf-academy/lab-server-YOUR-GITHUB-USERNAME.git
 ```
 
 {{< code-action >}} Then, install and update Flask, SQLAlchemy and Flask-SQLAlchemy on your pi or on your personal computer with the following commands:
@@ -80,8 +74,14 @@ $ git clone https://github.com/the-isf-academy/lab-server-YOUR-GITHUB-USERNAME.g
 $ pip3 install -r requirements.txt
 ```
 
+## [3] Flask
 
-### C.2 Creating Your First Flask Server
+Flask is a web microframework made for Python to create "easy" web applications. Web applications, as you have learned in the HTTP lab, rely on HTTP requests, HTTP responses and endpoints. Flask helps to manage these transactions and ensures that endpoints on your web server responds to user requests appropriately.
+
+Flask-SQLAlchemy will help us extend Flask's functionality as Flask does not have any ORM (Object relational mapping) built-in. In layman's terms, Flask-SQLAlchemy will help us create the database that we will use in this lab to store data like login information and work with objects that are created when we make database queries.
+
+
+### [Creating Your First Flask Server]
 
 {{< code-action >}} You can run your own Flask Server easily with the following lines of code to test its functionality. Copy and paste the code below into a `simple_server.py` file.
 
@@ -99,14 +99,14 @@ def hello():
 {{< code-action >}} To run your server, you will need to type the following command in Terminal
 
 ```shell
-$ FLASK_APP=simple_server.py flask run
+FLASK_APP=simple_server.py flask run
 ```
 and this will run the server in the Terminal window.
 
 {{< code-action >}} To access the server, you can type the following command in a **NEW** Terminal window.
 
 ```shell
-$ http get localhost:5000
+http get localhost:5000
 ```
 
 The server should respond with the following:
@@ -127,7 +127,7 @@ You may run this on your web browser as well. The server should return the word 
 
 But what is going on here? Let's do a deep dive into what's happening.
 
-### C.3 Routing
+### [Routing]
 
 Let's examine the following lines of code:
 
@@ -181,7 +181,7 @@ Answer the following questions with your group:
 1. When a server route function returns, where does the return value go?
 {{< /checkpoint >}}
 
-## D. Creating Your Messaging Client and Server
+## [4] Creating Your Messaging Client and Server
 
 You are required to code the following four server routes: `register()`, `authenticate()`, `send_message()`, `get_messages()`.
 
@@ -210,7 +210,7 @@ the function has run successfully.**
 These error codes will also help debug your code.
 {{< /aside >}}
 
-### D.1 `register()`
+### [register()]
 
 {{< code-action >}} You will need to code the `register()` route to create a new user in the system. In the route, the client's payload will be a username and password.
 
@@ -221,7 +221,7 @@ These error codes will also help debug your code.
 Using the username and password, the server will check if the user exists and if not, registers the user.
 
 
-### D.2 `authenticate()`
+### [authenticate()]
 
  {{< code-action >}} You will need to code the `authenticate()` route that is used to make the server a bit more secure. It takes a username and password in the payload
 
@@ -231,7 +231,7 @@ Using the username and password, the server will check if the user exists and if
 
  and checks to see if the username and password matches.
 
-### D.3 `send_message()`
+### [send_message()]
 
  {{< code-action >}} You will need to code the `send_message()` route that is used to send messages from a particular user. This route will receive a sender, recipient, message and timestamp in the payload
 
@@ -241,7 +241,7 @@ Using the username and password, the server will check if the user exists and if
 
  and saves them into the database.
 
-### D.4 `get_messages()`
+### [get_messages()]
 
  {{< code-action >}} You will need to code the `get_messages()` route that is used to get messages for a particular user that is given in the payload.
 
@@ -252,7 +252,7 @@ Using the username and password, the server will check if the user exists and if
  This route will take a username and gets the messages for that user.
 
 
-### D.5 Helper Functions
+### [Helper Functions]
 
  There are helper functions that have been coded in server.py that will help you navigate your way around the database. **Keep these helper functions
  in mind as your write the server routes:**
@@ -263,7 +263,7 @@ Using the username and password, the server will check if the user exists and if
  - `find_user_from_db(username):`
  - `get_messages_from_db(person):`
 
-### D.6 The Routing Cheat Sheet
+### [The Routing Cheat Sheet]
 
 Here is a cheatsheet of the messaging endpoints, what parameters they take in their payload, and what they do:
 
@@ -277,8 +277,10 @@ Here is a cheatsheet of the messaging endpoints, what parameters they take in th
 
 You will need to code the client and server so that it handles all these requests/response on these endpoints.
 
-## Deliverables
+## [5] Deliverables
 To submit this lab, make sure you've pushed the following files to Github:
 - `simple_server.py`
 - `server.py`
+
+## [6] Extension
 
