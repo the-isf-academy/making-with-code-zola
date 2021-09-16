@@ -19,10 +19,9 @@ python3 do_now_2.py
 <mark> Use print() statements to figure out what is going wrong, and then fix the code. </mark>
 
 ```python
-today = "Monday"
-tomorrow = "Tuesday"
+today = "Sunday"
+tomorrow = "Monday"
 while today != "Friday":
-    yesterday = today
     today = tomorrow
 
     if today == "Sunday":
@@ -30,11 +29,11 @@ while today != "Friday":
     elif today == "Monday":
         tomorrow = "Tuesday"
     elif today == "Tuesday":
-        tomorrow == "Wednesday"
+        tomorrow = "Wednesday"
     elif today == "Wednesday":
         tomorrow = "Thursday"
     elif today == "Thursday":
-        tomorrow = "Friday"
+        tomorrow == "Friday"
     elif today == "Friday":
         tomorrow = "Saturday"
     elif today == "Saturday":
