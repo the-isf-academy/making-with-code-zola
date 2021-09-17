@@ -5,7 +5,7 @@ TODO project overview
 ## Install
 1. Clone the making-with-code repository with it's submodules:
 
-        git clone --recurse-submodules https://github.com/cproctor/making-with-code.git
+        git clone --recurse-submodules https://github.com/the-isf-academy/making-with-code.git
     
 1. Install hugo:
 
