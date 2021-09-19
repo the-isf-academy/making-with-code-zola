@@ -135,19 +135,9 @@ Review your pseudocode with a teacher before moving on.
 {{< /checkpoint >}}
 
 
-### [Extend the Polling]
-
-{{< code-action "Implement the functionality to poll data every 15 minutes for 24 hours" >}}
-
-{{< aside "Tip" >}}
-Make sure your implementation is well abstracted. That way you can run small tests to see if it works. This will also aid you as you test the `.csv` functionalites.
-
-*e.g. Try polling every 15 seconds for a full minute. What should you see as an output?*
-{{< /aside >}}
-
 ### [Adding the time]
 
-Now that you're able to poll data over a peroid of time, let's extend the `.csv` functionalities.
+Let's start by adding the extending the functionality of what data is stored in the `.csv` file. 
 
 {{< checkpoint >}}
 **In your notebook with your partner, imagine how your `.csv` file will be formatted by creating a sample table.**
@@ -173,9 +163,9 @@ data,time
 
 ### [Adding the data]
 
-Finally, let's add the functionality of storing the data type and the parsed data points to the `.csv` file.
+Now, let's add the functionality of storing the data type and the parsed data points to the `.csv` file.
 
-{{< code-action "Start by implementing the functionality to store the data type in the first row" >}}
+{{< code-action "Implement the functionality to store the data type in the first row" >}}
 
 {{< code-action "Then, implement the functionality to store each parsed data point." >}} Currently the program prints if the sensor was able to successfully read the data point. However, for the csv, we simply want the number measured.
 
@@ -194,6 +184,19 @@ data,time,EC
 14-09-2021,08:50:27,100
 ```
 *`EC` and `100` will differ depending on your data type and measured data*
+
+
+### [Extend the Polling]
+
+{{< code-action "Finally, implement the functionality to poll data in increments over a perioid of time." >}}
+
+{{< aside "Tip" >}}
+Eventually we'll be polling data every 15 minutes for 24 hours. 
+
+But for now, make sure your implementation is well abstracted. That way you can run small tests to see if it works. This will also aid you as you test the `.csv` functionalites.
+
+*e.g. Try polling every 15 seconds for a full minute. What should you see as an output?*
+{{< /aside >}}
 
 {{< checkpoint >}}
 Before moving on, demonstrate your fully functioning `sensor_interface.py` file.
