@@ -190,16 +190,27 @@ data,time,EC
 
 {{< code-action "Finally, implement the functionality to poll data in increments over a perioid of time." >}}
 
-{{< aside "Tip" >}}
 Eventually we'll be polling data every 15 minutes for 24 hours. 
 
 But for now, make sure your implementation is well abstracted. That way you can run small tests to see if it works. This will also aid you as you test the `.csv` functionalites.
 
-*e.g. Try polling every 15 seconds for a full minute. What should you see as an output?*
-{{< /aside >}}
+For example, if you poll data every 10 seconds for 60 seconds, you should see something like this:
+```shell
+data,time,EC
+14-09-2021,08:50:27,100
+14-09-2021,09:00:27,100
+14-09-2021,09:10:27,100
+14-09-2021,09:20:27,100
+14-09-2021,09:30:27,100
+14-09-2021,09:40:27,100
+14-09-2021,09:50:27,100
+```
 
 {{< checkpoint >}}
 Before moving on, demonstrate your fully functioning `sensor_interface.py` file.
+
+In your notebook, answer the following prompt:
+- Why are you certain your program will work for any increment over any amount of time?
 {{< /checkpoint >}}
 
 <!-- ## Preparing to Launch
