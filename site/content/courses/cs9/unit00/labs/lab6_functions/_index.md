@@ -11,7 +11,7 @@ resources:
 ---
 # Functions Lab
 
-In this lab, we will learn how to create and call functions. Functions are blocks of code that are reusable throughout a program. You've already encourated functions such as `print()`, which is a function built into Python.
+In this lab, we will learn how to create and call functions. Functions are blocks of code that are reusable throughout a program. You've already encountered functions such as `print()`, which is a function built into Python.
 
 
 ## [0] What is a function?
@@ -111,39 +111,33 @@ draw_pattern()
 
 When you want to draw something fancy, you need to break it down into smaller steps. Then you can write functions to do the smaller steps, and write more functions to combine small steps into bigger steps. This concept is called **decomposition**.
 
-The code in part **B** illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
+The code in this lab illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
 
 - Draw ice cream: `draw_icecream(num_scoops)`
     - Draw an ice cream cone: `cone()`
     - Draw a scoop of ice cream: `icecream_scoop()`
     - Move the turtle between scoops: `setup(x,y)`
 
-{{< code-action >}} Create a new file in your `cs9/unit_00` directory called `lab_06_functions.py`
-  and paste in this starter code.
-  Your job is to write the functions: `draw_icecream(num_scoops)`, `cone()`, and `icecream_scoop()`
+{{< code-action "Create a new folder" >}} called `lab_06_functions` in your `cs9\unit_00` folder.
+
+```shell
+cd cs9
+cd unit_00
+mkdir lab_06_functions
+```
+
+{{< code-action "Create a new file" >}} called `ice_cream.py` in your `lab_06_functions` folder.
+Copy and paste the code below into your file.
+Your job is to write the functions: `draw_icecream(num_scoops)`, `cone()`, and `icecream_scoop()`
 
 ```python
 #################################
-# Unit 0 Lab 4
-# Author: Emma Brown
+# Unit 0 Lab 6
+# Author: Your Name
 #################################
 
 from turtle import *
 
-def setup(x, y):
-    '''Sets up the turtle, ready to draw,
-    at the given coordinates'''
-    penup()
-    goto(x, y)
-    pendown()
-    speed(0)
-    setheading(0)
-
-
-#################################
-showturtle() #Shows the turtle as it draws
-
-# B. COMBINING FUNCTIONS
 
 def cone():
     "Draws an ice cream cone"
@@ -155,16 +149,15 @@ def icecream_scoop():
     # YOUR CODE HERE
 
 
-#YOUR draw_icecream() FUNCTION GOES HERE
+def draw_icecream(num_scoops):
     '''Draws an ice cream cone
     with the ice cream scoop on top.
     Use the function setup() to set the placement of the drawing.'''
 
 #CALL DRAW ICE CREAM FUNCTION HERE
 
-#Hides the turtle pen and keeps it open until key press
-hideturtle()
-input("Press enter to end program...")
+#Keeps the drawing window open until key press
+input("Press return to end program...")
 
 ```
 
@@ -189,7 +182,7 @@ end_fill()          #Tells the turtle to stop the color fill
 
 {{</aside>}}
 
-A completed part **B** will look similar to the image below. The colors of the cone and ice cream scoops are up to you!
+Your finished drawing will look similar to the image below. The colors of the cone and ice cream scoops are up to you!
 
 {{< figure src="images/courses/cs9/unit00/00_functions_icecream.png" width="200px">}}
 
@@ -198,15 +191,36 @@ A completed part **B** will look similar to the image below. The colors of the c
 
 ## [2] Writing Functions
 
-{{< code-action >}} Your job is to write the functions: `square(side-length)`, and `drawGrid(square_size, gap)`.
- Paste in this starter code below into your `lab_06_functions.py` file:
+{{< code-action >}} Your job is to write the functions: `square(square_size)`, and `drawGrid(square_size, gap)`.
+ Paste in this starter code below into a new file called `grid.py` :
+
+ {{< checkpoint >}}
+ Before you begin, write out pseudocode for `square(square_size)`, and `drawGrid(square_size, gap)`.
+ Be sure to plan where `square(square_size)` and `setup(x,y)` will be called within `drawGrid(square_size, gap)`
+ {{< /checkpoint >}}
 
 ```python
 
-# C. WRITING CODE
+#################################
+# Unit 0 Lab 6
+# Author: Your Name
+#################################
+
+from turtle import *
+
+def setup(x, y):
+    '''Sets up the turtle, ready to draw,
+    at the given coordinates'''
+    penup()
+    goto(x, y)
+    pendown()
+    speed(0)
+    setheading(0)
+
+#################################
 
 
-def square(side_length):
+def square(square_size):
     '''Draws a square using `side_length` as the length'''
     #YOUR CODE GOES HERE
 
@@ -224,13 +238,12 @@ def drawGrid(square_size,gap):
 #CALL DRAW GRID FUNCTION HERE
 
 
-#Hides the turtle pen and keeps it open until key press
-hideturtle()     
-input("Press enter to end drawing...")
+#Keeps the drawing window open until key press  
+input("Press return to end drawing...")
 clearscreen()
 ```
 
-Let's practice writing some functions. Fill in the code blocks for the functions in part **C**. If you succeed, you'll get an image similar to the one below.
+Let's practice writing some functions. Fill in the code blocks for the functions. If you succeed, you'll get an image similar to the one below.
 
 
 
@@ -238,22 +251,27 @@ Let's practice writing some functions. Fill in the code blocks for the functions
 
 ---
 
-{{< checkpoint >}}
-
-Answer the following questions in your notebook before moving on:
-
-0.  How did you decide where to call the `square()` function?
-0.  How did you use loops to create a grid?
-
-{{< /checkpoint >}}
-
----
 ## [3] Deliverables
 {{< deliverables "For this lab, you should submit the following:" >}}
 
 
-- The your `lab_06_functions.py` file with the code you wrote for each of the parts
+- `ice_cream.py` file with the code you wrote
+- `grid.py` file with the code you wrote
 - Your notebook with responses to the checkpoint questions
 
 {{< /deliverables >}}
+
+---
 ## [4] Extension
+
+Let's return to the `ice_cream.py`. Right now, the color of the ice cream is
+pre-determined. If you wanted to change the color, you would have to go back into the
+code and change it yourself. Instead, we want the user to be able to change the
+color of the ice-cream from the terminal.
+
+{{< code-action "Change"  >}} `draw_icecream()` and `icecream_scoop()`:
+
+-  add a `flavor` argument to `icecream_scoop()`
+- `icecream_scoop` should use the `flavor` argument to determine what color to draw the ice cream
+- `draw_icecream()` should asks the user what flavor they would like, and save it in a `flavor` variable
+- when `draw_icecream()` calls the `icecream_scoop()` method, it will now need to supply `flavor` as an argument
