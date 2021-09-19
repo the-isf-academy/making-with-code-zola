@@ -1,20 +1,20 @@
 ---
-title: 4. Functions
+title: 6. Functions
 type: labs
 resources:
 - name: test_part_b() output
   src: images/courses/cs9/unit00/00_functions_fig_b.png  
 - name: draw_forest(10) output
   src: images/courses/cs9/unit00/00_functions_forest.png
-draft: true
+#draft: true
 
 ---
 # Functions Lab
 
-In this lab, we will learn how to create and call functions. Functions are blocks of code that are reusable throughout a program. You've already encourated functions such as `print()`, which is a function built into Python. 
+In this lab, we will learn how to create and call functions. Functions are blocks of code that are reusable throughout a program. You've already encountered functions such as `print()`, which is a function built into Python.
 
 
-## A. What is a function? 
+## [0] What is a function?
 Before we can talk about functions, we need to talk about code blocks. A **code block** is one or more lines of code. Here's one:
 
 ```python
@@ -71,17 +71,17 @@ Once you have written a function, you must call it. Calling a function tells Pyt
 
 {{< checkpoint >}}
 
-Look at the code below. Discuss the check-in questions in your group and answer the questions on your Google doc before moving on:
+Look at the code below. **Answer the questions in your notebook before moving on:**
 
 
 0.  What argument does the `hexagon` function take?
 0.  How is that argument used in the `hexagon` function?
 0.  What line of code is the `hexagon` function called?
-0.  What line of code is the `draw_pattern()` function called?
+0.  What line of code is the `draw_pattern` function called?
 
-```python
+```python {linenos=table}
 def hexagon(side_length):
-   #Draws a hexagon"
+   #Draws a hexagon
    for i in range(6):
        forward(side_length)
        right(360//6)
@@ -98,7 +98,7 @@ def draw_pattern():
 draw_pattern()
 ```
 
-*This program will draw the below pattern.*
+*This program will draw the pattern below.*
 {{< figure src="images/courses/cs9/unit00/00_functions_hexagon.png" width="300px">}}
 
 {{< /checkpoint >}}
@@ -107,20 +107,40 @@ draw_pattern()
 
 ---
 
-## B. Writing Functions
+## [1] Combining functions
 
-{{< code-action >}} Create a new file in your `cs9/unit_00` directory called `lab_04.py`
-and paste in this starter code:
+**When you want to draw something fancy, you need to break it down into smaller steps.** Then you can write functions to do the smaller steps, and write more functions to combine small steps into bigger steps. This concept is called **decomposition**.
+
+The code in this lab illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
+
+- Draw ice cream: `draw_icecream(num_scoops)`
+    - Draw an ice cream cone: `cone()`
+    - Draw a scoop of ice cream: `icecream_scoop()`
+    - Move the turtle between scoops: `setup(x,y)`
+
+### [Set up]
+
+{{< code-action "Create a new folder" >}} called `lab_06_functions` in your `cs9\unit_00` folder.
+
+```shell
+cd cs9
+cd unit_00
+mkdir lab_06_functions
+```
+
+{{< code-action "Create a new file" >}} called `ice_cream.py` in your `lab_06_functions` folder.
+Copy and paste the code below into your file.
 
 ```python
-# Unit 0 Lab 4
-# Author: Emma Brown
+#################################
+# Unit 0 Lab 6
+# Author: Your Name
 #################################
 
 from turtle import *
 
 def setup(x, y):
-    '''Sets up the turtle, ready to draw, 
+    '''Sets up the turtle, ready to draw,
     at the given coordinates'''
     penup()
     goto(x, y)
@@ -128,100 +148,42 @@ def setup(x, y):
     speed(0)
     setheading(0)
 
-
-#################################
-
-# B. WRITING CODE
-
-
-def square(side_length):
-    '''Draws a square using `side_length` as the length'''
-    #YOUR CODE GOES HERE
-
-
-def drawGrid(square_size,gap):
-    '''
-    - Draw a grid of squares using nested for loops.
-    - Use the function `setup()` to move the turtle.
-    - `square_size` should set the size of the square
-    - `gap` should adjust the size of the gap inbetween the squares in the grid 
-    '''
-    #YOUR CODE GOES HERE
-
-
-#CALL DRAW GRID FUNCTION HERE
-
-
-#Hides the turtle pen and keeps it open until key press
-hideturtle()     
-input("Press enter to end drawing...")
-clearscreen()
-```
-
-Let's practice writing some functions. Fill in the code blocks for the functions in part **B**. If you succeed, you'll get an image similar to the one below.
-
-
-
-{{< figure src="images/courses/cs9/unit00/00_functions_grid.png" width="400px">}}
-
----
-
-{{< checkpoint >}}
-
-Discuss the check-in questions in your group and answer the questions on your Google doc before moving on:
-
-0.  How did you decide where to call the `square()` function?
-0.  How did you use loops to create a grid? 
-
-{{< /checkpoint >}}
-
----
-
-## C. Combining functions
-
-When you want to draw something fancy, you need to break it down into smaller steps. Then you can write functions to do the smaller steps, and write more functions to combine small steps into bigger steps. This concept is called **decomposition**.
-
-The code in part **C** illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
-
-- Draw ice cream: `draw_icecream()`
-    - Draw an ice cream cone: `cone()`
-    - Draw scoops of ice cream: `icecream_scoop(flavor,numScoops)`
-
-{{< code-action >}} Your job is to write the functions: `draw_icecream()`, `cone()`, and `icecream_scoop()`. Paste in this starter code below into your `lab_04.py` file:
-
-```python
-#################################
-
-showturtle() #Shows the turtle as it draws
-
-# C. COMBINING FUNCTIONS
-
 def cone():
     "Draws an ice cream cone"
-    # YOUR CODE HERE 
+    # YOUR CODE GOES HERE
 
 
-def icecream_scoop(flavor, numScoops):
-    '''Draws scoops of ice cream.
-    Takes an ice cream flavor 
-    and number of scoops as paramters'''
-    # YOUR CODE HERE 
+def icecream_scoop():
+    '''Draws one scoop of ice cream.'''
+    # YOUR CODE GOES HERE
 
-    
-#YOUR draw_icecream() FUNCTION GOES HERE
+
+def draw_icecream(num_scoops):
     '''Draws an ice cream cone
     with the ice cream scoop on top.
-    Use the function setup() to set the placement of the drawing.'''
+    Uses the function setup() to set the placement of the scoops.'''
+    # YOUR CODE GOES HERE
 
-#CALL DRAW ICE CREAM FUNCTION HERE
+draw_icecream(3)
 
-#Hides the turtle pen and keeps it open until key press
-hideturtle()
-input("Press enter to end program...")
+#Keeps the drawing window open until key press
+input("Press return to end program...")
 
 ```
 
-{{<expand "How to Fill a Shape with Color and More!">}}
+### [Draw the Ice Cream]
+
+{{< code-action "Finish the following functions to draw ice cream: " >}}
+- `draw_icecream(num_scoops)`
+- `cone()`
+- `icecream_scoop()`
+
+Your finished drawing will look similar to the image below. The colors of the cone and ice cream scoops are up to you!
+
+{{< figure src="images/courses/cs9/unit00/00_functions_icecream.png" width="200px">}}
+
+
+{{<aside "FYI: How to Fill a Shape with Color and More!" >}}
 To fill your turtle drawing with color follow the below format. You must call `begin_fill()` before the shape has been drawn and `end_fill()` after.
 
 ```python
@@ -240,17 +202,158 @@ end_fill()          #Tells the turtle to stop the color fill
 
 *For a wide range of color options look at this [chart](http://cng.seas.rochester.edu/CNG/docs/x11color.html).*
 
-{{</expand>}}
+{{</aside>}}
 
-A completed part **C** will look similar to the image below. The colors of the cone and ice cream scoops are up to you! 
-
-{{< figure src="images/courses/cs9/unit00/00_functions_icecream.png" width="200px">}}
 
 
 ---
 
-## Deliverables
-For this lab, you should submit the following:
-- The your `lab_04.py` file with the code you wrote for each of the parts
-- Your Google Doc with responses to the checkpoint questions
+## [2] Writing Functions
+
+Let's practice writing some more functions. Our aim is to create a grid of squares. 
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
+
+This is a complex problem, and thus we should use the practice of **decompsition** to break it down into smaller steps. 
+
+- **Step 1:** Drawing one square
+- **Step 2:** Drawing one line of squares
+- **Step 3:** Drawing a grid of squares 
+
+### [Set up]
+
+{{< code-action "Create a new file" >}} called `grid.py` in your `lab_06_functions` folder. Copy and paste the code below into your file.
+
+```python
+#################################
+# Unit 0 Lab 6
+# Author: Your Name
+#################################
+
+from turtle import *
+
+def setup(x, y):
+    '''Sets up the turtle, ready to draw,
+    at the given coordinates'''
+    penup()
+    goto(x, y)
+    pendown()
+    speed(0)
+    setheading(0)
+
+def square(square_size):
+    '''Draws a square using `square_size` as the length'''
+    #YOUR CODE GOES HERE
+
+
+#Keeps the drawing window open until key press  
+input("Press return to end drawing...")
+```
+
+### [Step 1]
+
+{{< code-action "Fill in the" >}} `square(square_size)` function. It should draw one square of any size. 
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_00.png" width="25%">}}
+
+
+{{< checkpoint >}}
+
+Before moving on, test your `square(square_size)` function. 
+
+In your notebook answer the following question:
+- How do you know your function will draw a square of any size?
+
+{{< /checkpoint >}}
+
+### [Step 2]
+
+{{< code-action "Copy and paste the following code block below the " >}} `square(square_size)` function.
+
+```python
+def draw_grid(square_size, gap_size):
+    '''Draws a grid of squares. 
+    Uses `square_size` for the size of the square
+    and `gap_size` for the size of the gap inbetween each square.
+    Uses the function setup() to set the placement of the scoops.'''
+
+
+```
+
+{{< code-action "Implement the STEP 2 functionality in the" >}} `draw_grid(square_size, gap_size)` function. Draw one line of squares the length of `square_size` with gap the size of `gap_size`.
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_01.png" width="50%">}}
+
+
+{{< checkpoint >}}
+
+Before moving on, test your `draw_grid(square_size, gap_size)` function. 
+
+In your notebook answer the following question:
+- How do you know your function will draw a line of squares of any `square_size` and any `grid_size`?
+
+{{< /checkpoint >}}
+
+### [Step 3]
+
+{{< code-action "Implement the STEP 3 functionality in the" >}} `draw_grid(square_size, gap_size)` function. 
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
+
+{{< checkpoint >}}
+
+Before moving on, test your `draw_grid(square_size, gap_size)` function. 
+
+In your notebook answer the following question:
+- How do you know your function will draw a grid of squares of any `square_size` and any `grid_size`?
+
+{{< /checkpoint >}}
+
+---
+
+## [3] Deliverables
+{{< deliverables "For this lab, you should submit the following:" >}}
+
+- `ice_cream.py` file
+- `grid.py` file 
+- Your notebook with responses to the checkpoint questions
+
+{{< /deliverables >}}
+
+---
+## [4] Extension: Ice Cream Parlor
+
+Let's return to `ice_cream.py`. 
+
+Right now, both the color of the ice cream and the number of scoops are pre-determined or hard-coded. If you wanted to change the color or number of scoops, you would have to go back into the code and change it yourself. 
+
+{{< code-action "Expand the functionality of this program to simulate an ice cream parlor."  >}} The user should be able to choose the flavor of the ice-cream and the number of scoops.
+
+{{<aside "Hints" >}}
+
+Consider the following:
+- How will you implement the functionality of a `flavor` that is not hard-coded?
+- How will you include user input?
+- How will you translate the flavor "chocolate" to the color "brown?
+
+{{</aside>}}
+
+Here is an example interaction:
+
+```shell
+python3 ice_cream.py
+
+--- Welcome to the ISF ice cream parlor ---
+
+What flavor would you like?
+   > Select a flavor (chocolate, strawberry, vanilla): chocolate
+How many scoops would you like? 
+   > Select number of scoops (max 3): 3
+
+--- Enjoy your ice cream! Please come again! ---
+
+[Press any key to exit]
+```
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_03.png" width="25%">}}
 
