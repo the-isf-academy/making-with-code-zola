@@ -321,7 +321,9 @@ In your notebook answer the following question:
 {{< /deliverables >}}
 
 ---
-## [4] Extension: Ice Cream Parlor
+## [4] Extension
+
+### [Ice Cream Parlor]
 
 Let's return to `ice_cream.py`. 
 
@@ -357,3 +359,34 @@ How many scoops would you like?
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_03.png" width="25%">}}
 
+
+### [Custom Grid]
+
+Let's return to `grid.py`.
+
+{{< code-action "Expand the functionality of this program so the user can customize the following:"  >}} 
+- number of rows
+- number of columns
+- color palette 
+
+
+Here is an example interaction:
+
+```shell
+python3 grid.py
+
+--- PATERN GENERATOR ---
+
+How many rows?
+   > Enter a number: 5
+How many columns?
+   > Enter a number: 3
+Pick a primary color.
+   > Choose a color (darkseagreen, coral, deeppink): darkseagreen
+Pick a secondary color.
+   > Choose a color (darkred, , cyan, cadetblue): coral
+
+[Press any key to exit]
+```
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_04.png" width="50%">}}
