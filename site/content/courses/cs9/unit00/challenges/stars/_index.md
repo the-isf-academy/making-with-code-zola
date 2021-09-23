@@ -1,8 +1,8 @@
 ---
-title: 1. Stars
+title: 0. Stars
 type: checkup
 ---
-<p style="font-size:32px;font-weight:bold">Stars</p>
+# Stars
 
 Your challenge is to create the following image using turtle graphics.
 Before you begin, consider how you will break the larger problem down into sub-probems.
