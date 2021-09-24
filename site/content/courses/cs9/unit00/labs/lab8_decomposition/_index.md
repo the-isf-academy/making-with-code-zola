@@ -1,7 +1,7 @@
 ---
-title: 6. Decomposition
+title: 8. Decomposition
 type: labs
-draft: true
+# draft: true
 ---
 
 # Decomposition Lab
