@@ -6,14 +6,15 @@ type: labs
 
 # Decomposition Lab
 
-## A. Review of Modules
+## [0] Review of Modules
 
 Today, we are going to analyze a repository made by a CS9 student from last year, Iris! Her project will be similar to what you will make for your upcoming Unit 0 project.
 
 {{< code-action >}} To clone her repo, make sure you are in `unit_00` and then download it using git:
 
 ```shell
-    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/unit_00_project_Iris.git
+cd Desktop/cs9/unit_00
+git clone https://github.com/the-isf-academy/unit_00_project_Iris.git
 ```
 
 {{< look-action >}} There are quite a few modules being used here! Use `tree`, the `README.md` file, Atom, and the terminal to explore her project.
@@ -29,13 +30,13 @@ Today, we are going to analyze a repository made by a CS9 student from last year
 {{< /checkpoint >}}
 
 
-## B. Intro to Decomposition
+## [1] Intro to Decomposition
 
 {{< include_resource "resource_decomposition" >}}
 
 First, let's take a look at how Iris decomposed her still image. Then, we'll see how she decomposed the animation.
 
-### Still Image
+### [Still Image]
 
 You may recognize who she drew! (Hover over the image to reveal)
 
@@ -70,7 +71,7 @@ about how filling works. Then, change the color of Win Win's shirt, and copy-pas
 {{< /checkpoint >}}
 
 
-## C. Animation
+## [2] Animation
 
 There are many ways to animate still images! Let's talk about these four:
 
@@ -102,7 +103,7 @@ Describe what happened and why you think it happened in 2 sentences.
 
 {{< /checkpoint >}}
 
-## D. More Animations
+## [3] More Animations
 
 Here's an animation based on the unit project made by another CS9 student from last year, Jethro!
 
@@ -168,6 +169,6 @@ branch? Why is the third branch faster than the second branch?
 {{< /checkpoint >}}
 
 
-## Deliverables
+## [4] Deliverables
 
 - Each student should submit a Google Doc with answers to the questions above.
