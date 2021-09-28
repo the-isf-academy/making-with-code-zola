@@ -230,23 +230,19 @@ Packages always include documentation to communicate to users how to use the inc
 ###################
 
 from drawing.shapes import block_a, block_b
-from turtle import penup, pendown, forward
+from drawing.movement import update_position
 
-def move_space():
-    penup()
-    forward(75)
-    pendown()
 
 block_a(100)
-move_space()
+update_position(70,0)
 block_b(100)
-move_space()
+update_position(70,0)
 block_b(100)
-move_space()
+update_position(70,0)
 block_a(100)
+update_position(70,0)
 
 input()
-
 ```
 
 {{< checkpoint >}}
