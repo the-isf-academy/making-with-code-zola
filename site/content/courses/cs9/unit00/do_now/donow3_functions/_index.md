@@ -25,16 +25,6 @@ def triangle(size):
     left(60)
     end_fill()
 
-def rectangle(width,height):
-    color("brown")
-    begin_fill()
-    for i in range(2):
-        forward(width)
-        right(90)
-        forward(height)
-        right(90)
-    end_fill()
-
 def top(size):
     for i in range(3):
         triangle(size)
@@ -45,8 +35,19 @@ def top(size):
         pendown()
 
 def bottom(size):
-    rectangle(size*.1,size)
-
+    width = size*.1
+    height = size
+    
+    color("brown")
+    begin_fill()
+    for i in range(2):
+        forward(width)
+        right(90)
+        forward(height)
+        right(90)
+    end_fill()
+    forward(width//2)
+    
 def full(size):
     bottom(size)
     penup()
@@ -57,5 +58,7 @@ def full(size):
     top(size)
 
 full(90)
+
+input()
 ```
 <br>
