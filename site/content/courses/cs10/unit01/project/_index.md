@@ -1,98 +1,84 @@
 ---
-Title: ADTs Project
+Title: Networking Project
+draft: true
 ---
 
-# Unit 01 ADTs Project
+# Unit 00 Networking Project
 
-For this project, you will implement a queue that will be used
-to serve orders to an imaginary internet shopping company.
+In this project, you will write a server that provides a service to users of our messaging platform 
+(like a bot on Discord). You can do anything for your service – sending Pokemon stats to users,
+translating messages, finding weather forecasts – the sky is the limit for what your bot could do.
+However, focus on getting a bot that provides a simple service working first, and then scale up to
+include more complicated services.
+
+{{< figure src="images/courses/cs10/unit00/00_project_model.png" width="100%" >}}
 
 ## Starter Code
 
 {{< code-action >}} Starter code for the project is provided in the
-`project-queue` repo. Download it *onto your laptop*.
+`project-networking` repo. Download it *onto your laptop*.
 
 ```shell
-$ cd cs10/unit_01
-$ git clone https://github.com/the-isf-academy/project-queue-YOUR-GITHUB-USERNAME.git
+$ cd cs10/unit_00
+$ git clone https://github.com/the-isf-academy/project-networking-YOUR-GITHUB-USERNAME.git
 ```
 
 ## Planning Document
-This project will require you to explore the theory behind efficient data
-structure design. You will likely changes your plans frequently as you
-try out different ideas for how to make your queue faster. As such, rather
-than a planning document, this project comes with an ideating document to
-help you keep track of your ideas for designing your queue.
-*You can find your ideating doc in your Google Drive folder called "cs10 -
-Unit 00 Data Structure Project: Ideating Document".*
 
-As we go through the development of a basic queue in class together, you
-can start by using this document to take notes on how we design the queue,
-the interfaces it implements, and ideas for how to make them better.
+This is a big project, and you will get lost or frustrated if you don't do some planning up front.
+Before you start working on your project, you are required to write a project proposal and get it
+approved by a teacher. *You can find your planning doc in your Google Drive folder called "cs10 -
+Unit 00 Networking Project: Planning Document".*
+
+Once you have completed the above, meet with a teacher to talk through your plan. Don't start
+programming until you get your plan approved, or you might have to change it.
+
+### Bot Service Descriptions
+Once you've decided on the service your bot will provide, [add a description in this Google Doc](https://docs.google.com/spreadsheets/d/1DTCPJaFA8SsqSLQgEy-R7UFJyRFKMDPC06ki_Yfa3Ko/edit#gid=1438739874).
+
+This will help other students who may want to use your bot's service.
 
 ## Deliverables 
 
-- An ideation document in your Google Drive folder 
-- A `queue.py` file with your implementation of a queue containing the
-following interfaces (which pass the tests in `test_queue.py`):
-    - `queue()` - add element to the end of the queue
-    - `popleft()` - remove element from the front of the queue
-    - `insert()` - add an element at a particular index of the queue
-    - `__len__()` - returns the number of items in the queue
-- At least 5 substantial Git commit messages, each explaining what you've
-changed and why.
-- An `assessment.md` file with a completed self-assessment of your project.
+- A planning document in your Google Drive folder 
+- A `bot_server` directory in your project repository containing the following files:
+    - `server.py` - a Flask server that provides bot services with an API that is directly accessible via HTTP requests by the
+    messaging platform through the `/message` route AND by other bots through routes for each of your services.
+    for the services your bot provides.
+    - `services.py` - a module that defines the services of your bot with a `services_dict` and the functions for each service.
+    **At least one service should rely on an external API like another bot or a service you find online.**
+    - `README.md` -  documentation for how to use your bot, specifically outline the functionality and parameters of each service.
+    - `assessment.md` - a self-assessment of your final project. 
+- At least 5 substantial Git commit messages, each explaining what you've changed and why.
 
-### Extension
-Additionally, as an extension and for extra credit, you can implment the
-following additional interfaces for your queue in `queue.py`:
-- `remove()` - Removes the first instance of a value from the queue.
-Throws an error if the value doesn't exist in the queue.
-- `index()` - Finds the first instance of a value within the queue and 
-returns the index of the value.
-- `count()` - Counts the number of times a value appears in the queue and 
-returns the count.
-- `__getitem__()` - operator overload to get the item in the queue at
-a particular index.
+**You can find more documentation about what each of the files should contain within the README.md file in the
+`bot_server` directory.**
 
-**You can find more documentation about what each of the files should 
-contain within the README.md file in the project directory.**
+### Example Bot
+Here is an example bot, [Calc Bot](https://github.com/the-isf-academy/project-networking-wolfj95), that performs the services of a basic calculator.
 
 ## Timeline
 ### cs10.1
-
-| Stage               | Date                                          |
-|---------------------|-----------------------------------------------|
-| Project Introduced  | January 19, 2021                              |
-| Code Due            | February 3, 2021 (end  of Block 3 class)      |
-| Self-Assessment Due | February 5, 2021 (beginning of Block 1 class) |
-
+{{< figure src="images/courses/cs10/unit00/00_project_cs10_1.png" width="100%" >}}
 ### cs10.2
-
-| Stage               | Date                                          |
-|---------------------|-----------------------------------------------|
-| Project Introduced  | January 14, 2021                              |
-| Code Due            | February 2, 2021 (end of Block 1 class)       |
-| Self-Assessment Due | February 4, 2021 (beginning of Block 4 class) |
+{{< figure src="images/courses/cs10/unit00/00_project_cs10_2.png" width="100%" >}}
 
 ## Assessment
-The assessment for this project will be slightly different than
-for your other projects. In `assessment.md`, you are required to explain
-how your project should be scored, and to give evidence to support your
-assessment.
+You are responsible for assessing your own project, though your teachers will let you know if they
+disagree. In `assessment.md`, you are required to explain how your project should be scored, and
+to give evidence to support your assessment. The rubric is based on claims that you should be able
+to make about your learning in this unit. Each of these claims comes with examples of evidence that
+would show that you can make the claim about your learning.
 
-For criterion A, the rubruc is based on the performance of your queue.
+**To do well in this project, you should be able to concretely justify that you have achieved each of
+the learning claims.** So, if the rubric says you should be able to understand HTTP communication and
+that an example of that is making an HTTP request to an external service, then you should make an HTTP
+request in your project and point to it in your self-assessment.
+If the rubric says you should be able to thoughtfully plan a large project and that an example of that
+is a thorough design document, you should create a detailed design document and discuss in your self-assessment
+how this design document helped you create your project.
 
-For criteria B and C, the rubric is based on claims that you should be able 
-to make about your learning in this unit. Each of these claims comes with
-examples of evidence that would show that you can make the claim about your
-learning.
-
-**To do well in this project, you should pass the test harness requirements
-for criterion A and be able to concretely justify that you have achieved
-each of the learning claims for criteria B and C.**
-
-As a reminder, here's a guide for using the rubric for Criteria B and C:
+Here's a guide for using the rubric:
 - Read the learning claims of the criterion for this unit in the rubric and consider how they relate to
 the description of the criterion.
 - For each learning claim in the criterion:
@@ -114,50 +100,17 @@ This project is focused on developing the skills learned throughout the drawing 
 > science concepts and tools, students apply computational thinking practices including habits such 
 > as writing pseudocode, developing iteratively, using abstractions, decomposing problems, and debugging.
 
-Your score for criterion A will be based on your queue's performace on with
-our test harness for functionality and speed.
+In this unit, we explored the way **computers communicate with each other over the internet**. We learned
+**how applications make HTTP requests to send and receive information from a server**. You wrote a server
+application to **receive, interpret, and respond to HTTP requests**. Finally, we explored the **networks
+between computers** that arise when computers need to communicate with each other over long distances.
 
-<style>
-ins {
-    text-decoration: none;
-    background-color: #d4fcbc;
-}
-</style>
+| Learning Claim                                                                                                | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                                                                         |
+|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| I can read documentation to use services written by others.                                                   | <ul><li>Usage of the services of an external API or another student’s bot that helps you provide your services.</ul></li>                                                                                                                                                                                                                                                          |
+| I understand HTTP communication between clients and servers.                                                  | <ul><li>Routes defined for each service your bot provides</li> <li>HTTP requests made to another bot or external API with well-formed addresses and payloads/parameters</li> <li>Parsing of HTTP responses to use response data in services</li> <li>Responses to HTTP requests formatted as JSON objects</li> <li>Descriptive error reporting when something goes wrong</li></ul> |
+| I effectively use the principles of decomposition and abstraction to make my code more efficient and elegant. | <ul><li>At least one module containing the services your bot provides</li> <li>Services implemented so they can simultaneously be accessed through the message platform AND the bot’s API</li> <li>Parameterized services (your services don’t always return the same thing, but instead respond differently based on inputs)</li></ul>                                            |
 
-| Score | Functionality                     | Speed                     |
-|-------|-----------------------------------|---------------------------|
-| 8     | all basic queue functions working | <del>all basic functions reach target speed\*</del> <br> <ins>3 functions reach target speed\*</ins> OR queue performs in the top 80% of queues in the class\*\*|
-| 7     | all basic queue functions working | <del>3 functions reach target speed\*</del> <br> <ins>2 functions reach target speed\*</ins>|
-| 6     | all basic queue functions working | <del>2 functions reach target speed\*</del> <br> <ins>–</ins>|
-| 5     | <del>all basic queue functions working</del> <br> <ins>3 working queue functions</ins> | –                         |
-| 4     | <del>3 working queue functions</del> <br> <ins> 2 working queue functions</ins>        | –                         |
-| 3     | <del>2 working queue functions</del> <br> <ins> 1 working queue function</ins>         | –                         |
-| 2     | <del>1 working queue function</del> <br> <ins>no working queue functions</ins>         | –                         |
-| 1     | <del>no working queue functions</del> <br> <ins>–</ins>       | –                      |
-
-*Updated: 29/1/2021*
-
-\* To reach the target speed, your queue functions should perform below the following speed
-targets:
-
-|        | Append         | Popleft        | Insert_random  | Length            |
-|--------|----------------|----------------|----------------|-------------------|
-| Target | 0.01860 sec/it | 0.00840 sec/it | 2.01066 sec/it | 9.2185E-07 sec/it |
-
-\*\* Queue ranking will be determined by taking the percentile ranking of each queue (based on the throughput
-score) in the distribution of queues which passed all of the basic
-functionality tests. Throughput refers to the number of requests served per second in a percentage relative
-to the target performance. To calculate the throughput score, we average the throughput for each basic function
-of the queue using a weighted average. The weights prioritize the amount of time each function takes.
-
-[Check out the state of the race by following the cs10 Twitter Bot!](https://twitter.com/shuyuancs)
-
-#### Extra Credit
-Each additional function you successfully to implement from the extension interface will raise
-your score to the next band (not to exceed 8).
-
-So, if your implement all the basic functions plus one extnesion function, you will
-reach the 6 tier.
 
 ### Criterion B: Planning and development
 > Students create personally meaningful projects through an iterative design cycle. Students’ work is
@@ -165,40 +118,28 @@ reach the 6 tier.
 > the development of their projects in order to create a record of decisions, assumptions, and
 > lingering flaws. Students define the intended functionality and develop towards evaluation.
 
-In this unit, you will need to build a fast, efficient, and effective queue.
-This will challenge your planning, researching, and iterative development
-skills.
+In this unit, you planned a project with a design document, **navigating a reliance on an external 
+service**. You may have been required to **develop software while waiting for a service you depend
+on to be developed.** Additionally, you learned about the importance of **documenting your software
+so that it can be effectively used by others.**
 
 | Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can thoughtfully plan a large computer science project.                       | <ul><li>An ideation document that demonstrates your thinking about a variety of approaches to the problem.</li> <li>Updates to your ideation document to account for challenges or discoveries during development</li></ul>                                                                                                                                                                                         |
-| I can iteratively develop a project using version control tools such as GitHub. | <ul><li>At least 5 regular and descriptive git commits on your project</li> <li>A stub function you wrote to stand in for a function that had not yet been developed.</li> <li>A transition from a basic set of interface functions to a more robust set (either in number or efficiency)</li></ul> |
-| I can document my software so that it is readable and usable by others.         | <ul><li>Comments for each of the functions you write for your queue's interface</li></ul>                                                                                                                                                                                                                                    |
+| I can thoughtfully plan a large computer science project.                       | <ul><li>A thorough planning document.</li> <li>Updates to your project plan to account for challenges during development</li></ul>                                                                                                                                                                                         |
+| I can iteratively develop a project using version control tools such as GitHub. | <ul><li>At least 5 regular and descriptive git commits on your project</li> <li>A stub function/service you wrote to stand in for a function that had not yet been developed (by you or your classmates)</li> <li>A transition from a basic set of services offered by your bot to a more robust set of services</li></ul> |
+| I can document my software so that it is readable and usable by others.         | <ul><li>A description of the services your bot provides in the README.md file</li></ul>                                                                                                                                                                                                                                    |
 
 ### Criterion C: Evaluation 
 > Students produce evidence of a testing plan that evaluates the main areas of functionality of the
 > product and reflect on the development process as well as a proposal for further development to
 > improve the shortcomings of the current product.
 
-As you develop your queue, you will need to constantly be testing and
-debugging to make sure changes to your queue do not affect its functionality.
-Additionally, you will need to account for edge cases amongst your queue's
-use cases so that your queue works under a variety of circumstances.
+In the unit, you developed software in an environment where the **dependence on other services (either
+a client or server) influenced the requirements for your work**. In doing so, you learned to **read and
+interpret errors across multiple layers of a software project**. Additionally, you learned to **test 
+your code, paying particular attention to edge cases**.
 
 | Learning Claim                                                                                                                        | Possible Forms of Evidence                                                                                                                                                                                                                                                  |
 |---------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can identify different scenarios in which my code may be used and outline the expected functionality of my code in these instances. | <ul><li>A list of general use cases for each of your queue's functions including the expected functionality of your queue in those cases</li> <li>An identification of the edge cases (erroneous or malicious uses of your software that fall outside of the basic use cases)</li></ul> |
+| I can identify different scenarios in which my code may be used and outline the expected functionality of my code in these instances. | <ul><li>A list of general use cases for your bot’s services including the expected functionality of your bot in those cases</li> <li>An identification of the edge cases (erroneous or malicious uses of your software that fall outside of the basic use cases)</li></ul> |
 | I can develop a testing strategy to ensure my code works as expected.                                                                 | <ul><li>A list of tests you will run to make sure your code works based on your use cases and responses</li> <li>Changes your made after finishing development and running your tests</li></ul>                                                                            |
-### Criterion D: Reflection on Tech and Society
-> Students demonstrate an understanding of their responsibility to society as technology creators by
-> evaluating the implications of their work. Students investigate the applications of their work to 
-> specific problems or issues.
-
-At times during development, we need to make choices about what functionalities to prioritize. These choices
-will result in improvements in some areas while resulting in degredation of others. To make these decisions,
-we must consider on practical use cases of our queues to guide our choices in development.
-
-| Learning Claim                                                                         | Possible Forms of Evidence                                                                      |
-|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| I identified a realistic use case of my queue.                        | <ul><li>A through descriprion of a possible use case of your queue with a discussion of the rationale for using a queue in your ideation document.</li></ul>  |
-| I considered the ways my chosen use case should impact the functionality of my queue and my development was influenced by these considerations.  | <ul><li>A discussion of your chosen use case's priorities for a queue ADT in your ideation document.</li><li>A function that you chose to prioritize over another function for speed improvements.</li><li>A function from the extension interface that you chose to develop to serve your use case.</li></ul>      |
