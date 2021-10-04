@@ -21,23 +21,65 @@ of making these requests for us? A program like this is called a *client*.
 The client, or app, constantly making HTTP requests
 to a server to send and receive information. 
 
+## [1] Exploring the Live Riddle Server
+
+The riddle is server is now hosted live on the web! 
+
+It hosted at this web address: `FILL IN`
+
+{{< code-action "Reacquaint yourself with the riddle server." >}} 
+- Make a `GET` request to each possible endpoint with `httpie`
+- Make a `POST` reqest to each possible end point with `httpie`
+- Access the endpoints on your web browser
+
+
+### [Endpoints]
+
+Here is a cheatsheet of the Riddle endpoints, what parameters they take in their payload, and what they do:
+
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `GET`  | `138.68.28.249:5000/riddles/all`   |         N/A             | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `138.68.28.249:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `138.68.28.249:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `138.68.28.249:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+
+
 ## [0] Writing the client
 
-We are going to create a 
+We are going to create a Terminal interface for the riddler server. This will allow users to easily interact with the server without needing to explicitly make a `GET` or a `POST` request. 
 
+The client will work like so:
+```shell
+Welcome to the Riddler
+Press control + c to quit
+--------------------------------------------------------------------------------
+What do you want to do?
+0. Show riddles
+1. Random riddle
+2. Add a riddle
+> 0
+Sorry, there are no riddles on the server!
+
+```
 
 ### [Setup]
 
-{{< code-action "Create a unit01 folder. Then, clone the starter repository and install the required libraries." >}} 
+{{< code-action "Create a unit01 folder. Then, clone the starter repository." >}} 
 
 ```shell
-cd cs10
+cd Desktop/cs10
 mkdir unit01
 cd unit01
 git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
-cd lab-http
+```
+
+{{< code-action "Install the required libraries." >}} 
+```shell
+cd lab-http-YOUR-GITHUB-USERNAME
 pip3 install -r requirements.txt
 ```
+
 
 {{< code-action "Now try running the client." >}} 
 
@@ -45,10 +87,10 @@ pip3 install -r requirements.txt
 python3 client.py
 ```
 
-It runs! Until it doesn't. The view is fully-functional, however the some of the `Game` class functions still need to be written to connect the game to a Riddle server.
+It runs! Until it doesn't. The view is fully-functional, however the some of the `API` class functions still need to be written to connect the game to a Riddle server.
 
 **Your job is to finish the functions in `client.py` which haven't been written yet:**
-- `show_riddle()`
+- `random_riddle()`
 - `add_riddle()`
 - `guess_riddle()`
 
@@ -75,31 +117,15 @@ For example, if you wanted to send the parameter `fruit` with the value `waterme
 ### [show_riddle()]
 {{< code-action "Code this function to show the riddle the user requested." >}} by using the user requested `id` of the riddle to be displayed.
 
-You can check your implementation of this function by running:
-```python
-python3 test_lab.py -k show
-```
-
 
 ### [add_riddle()]
 {{< code-action "Code this function to add a riddle to the server" >}}  by getting a question and an answer from the
 user and then sending that information to the server in an HTTP request.
 
-You can check your implementation of this function by running:
-```python
-python3 test_lab.py -k add
-```
-
 ### [guess_riddle()]
 {{< code-action "Code this function to allow the user to guess a riddle" >}} and send the guess to the server for checking. 
 - If the guess was correct, the score should increment and a "correct guess" message should be displayed.
 - Otherwise, a "wrong guess" message should be displayed.
-
-You can check your implementation of this function by running:
-```python
-python3 test_lab.py -k guess
-```
-
 
 
 **Tips:**
@@ -123,6 +149,18 @@ Check in with the teacher and demonstrate your working client!
 {{< /deliverables >}}
 
 ## [2] Extension
+
+### [Gamify]
+
+Currently, the client simply takes care of the HTTP requests in a nicely formatted view.
+
+Let's extend this functionality and turn the riddle client into a guessing game. 
+
+{{< code-action "Edit the riddle client to allow the user to play a riddle guessing game." >}}
+> It should include the following features:
+> - score keeping
+> - user guessing 
+
 
 ### [Error messages]
 The functions you wrote for the previous sections probably assume that the server will
