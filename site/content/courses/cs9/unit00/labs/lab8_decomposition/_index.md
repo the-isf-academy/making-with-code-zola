@@ -79,11 +79,10 @@ tree .
 ```
 
 {{< checkpoint >}}
-{{< write-action "Explore her code, answer the following questions:" >}}
+{{< write-action "Explore her code, answer the following prompt:" >}}
 
-0. What terminal command do you use to run the non-animated version of her code?
-1. What terminal command do you use to run the animated version of her code?
-2. Iris has four modules in her project besides `animation.py` and `no_animation.py`. Name the modules here, and describe the purpose of each module in one sentence.
+0. Iris has four modules in her project besides `animation.py` and `no_animation.py`. List each module and describe its purpose. 
+
 {{< /checkpoint >}}
 
 ### [Still Image]
