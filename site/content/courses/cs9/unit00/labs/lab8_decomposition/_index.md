@@ -158,7 +158,7 @@ python3 animation.py
 0. What is being drawn in `draw_stationary()`?
 
 #### `draw_animation()` in `animation.py`
-0. What is being drawng in `draw_animation()`?
+0. What is being drawn in `draw_animation()`?
 0. The for-loop in `draw_animation()` is responsible for the animation! You can think of an animation as a series of frames that are being flipped through very quickly. Based on the for-loop, how many frames are there in our animation?
 1. Now let's check out the if-statements. This is called frame-based animation; the animations appear based on the frame number. What happens at the 10th frame? What happens at the 50th frame?
 2. Change lines 18, 20, 22, 24, 26, and 28 so that the if-statements are set to different numbers. Try `i == 10` (for line 20), `i == 12` (for line 22), `i == 14` (for line 24), `i == 16` (for line 26), `i == 18` (for line 28), and `i == 20` (for line 30). What happens? Describe in 1 sentence.
@@ -231,7 +231,7 @@ git clone https://github.com/the-isf-academy/lab-decomposition.git
 2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for every `i` and `new_size`. (HINT: you can split up the work on this with your tablemates.)
 3. Calculate `max_size`. (HINT: you will need to reference the numbers in `settings.py`)
 4. For the second for-loop, trace through the code and fill out the table for every `j` and `new_size`.(HINT: you can split up the work on this with your tablemates.)
-5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`)
+5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`) What did you change?
 
 {{< /checkpoint >}}
 
