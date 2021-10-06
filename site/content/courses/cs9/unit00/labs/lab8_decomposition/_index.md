@@ -6,18 +6,18 @@ type: labs
 
 # Decomposition Lab
 
-In this lab we are going to explore a key computer science concept, decomposition. 
+In this lab we are going to explore a key computer science concept, decomposition.
 
 
 ## [0] What is Decomposition?
 
-Decomposition is the act of breaking down a problem into smaller, more managable parts. This is an incredibly useful problem solving technique, even outside of computer science. 
+Decomposition is the act of breaking down a problem into smaller, more manageable parts. This is an incredibly useful problem solving technique, even outside of computer science.
 
-For example, let's consider the problem of baking a birthday cake. We can break this down into large over arching pieces such as the cake, the icing, and the assembly. Then each of those pieces can be broken down even further until you get to each individual ingredient. 
+For example, let's consider the problem of baking a birthday cake. We can break this down into large overarching pieces such as the cake, the icing, and the assembly. Then each of those pieces can be broken down even further until you get to each individual ingredient.
 - cake  
   - mixing the batter
     - dry ingredients
-    - wet ingredeints 
+    - wet ingredients
   - baking the batter
     - temperture
     - time
@@ -36,17 +36,17 @@ When thinking about complex problems there are two ways to approach them: top-do
 
 - Bottom-up means starting with tiny chunks that are so simple we can already solve them, and using them to build gradually larger pieces, until you've solved the problem.
 
-For example, let's consider baking again. 
+For example, let's consider baking again.
 - Top-down: You need to make a birthday cake, and so you figure out the steps and the ingredients.  
-- Bottom-up: You take a look at your all of your baking supplies and ingredeients at home, and figure out you can make a birthday cake. 
+- Bottom-up: You take a look at your all of your baking supplies and ingredients at home, and figure out you can make a birthday cake.
 
 
 
 
-
+---
 ## [1] Iris's Project
 
-Today, we are going to analyze a repository made by a previous CS9 student Iris! Pay special attention to how she decomposed her idea into parts. Her project will be similar to what you will make for your upcoming Unit 00 project.
+Today, we are going to analyze a repository made by a previous CS9 student, Iris! Pay special attention to how she decomposed her idea into parts. Her project will be similar to what you will make for your upcoming Unit 00 project.
 
 {{< code-action "Start by creating a " >}} `lab_08_decomposition` **folder.**
 
@@ -60,6 +60,7 @@ mkdir lab_08_decomposition
 ```shell
 cd lab_08_decomposition
 git clone https://github.com/the-isf-academy/unit_00_project_Iris.git
+cd unit_00_project_Iris
 ```
 
 ### [Review of Modules]
@@ -77,11 +78,12 @@ tree .
 ├── no_animation.py
 └── settings.py
 ```
+<br>
 
 {{< checkpoint >}}
 {{< write-action "Explore her code, answer the following prompt:" >}}
 
-0. Iris has four modules in her project besides `animation.py` and `no_animation.py`. List each module and describe its purpose. 
+0. Iris has four modules in her project besides `animation.py` and `no_animation.py`. List each module and describe its purpose.
 
 {{< /checkpoint >}}
 
@@ -89,7 +91,7 @@ tree .
 
 First, let's take a look at how Iris decomposed her still image. Then, we'll see how she decomposed the animation.
 
-{{< code-action "Start by running her still image file." >}} 
+{{< code-action "Start by running her still image file." >}}
 ```shell
 python3 no_animation.py
 ```
@@ -104,7 +106,7 @@ You may recognize who she drew! (Hover over the image to reveal)
 
 Iris decided to tackle the project by drawing the figure and then the letters as still images. With your group, discuss the `figure.py`, `letters.py`, and `settings.py` modules.
 
-{{< code-action "Open the repository in atom so you can easily examine in module." >}} 
+{{< code-action "Open the repository in atom so you can easily examine in module." >}}
 ```shell
 atom .
 ```
@@ -113,12 +115,12 @@ atom .
 {{< checkpoint >}}
 
 
-{{< write-action "Answer the following questions with your group." >}} 
+{{< write-action "Answer the following questions with your group." >}}
 
 #### `figure.py`
 0. How many functions are in the `figure.py` module? What are they and what do they do?
-1. `draw_figure() ` is defined in `figure.py`, but where is `draw_figure() ` actually called in her project? (Hint: there are two files.)
-2. Iris wrote an awesome `draw_figure()`function, but it is 190 lines long. Let's think about how we might decompose this code. If you could split `draw_figure()` into multiple smaller functions, what would those functions be? Explain in 2 - 3 sentences.
+1. `draw_figure()` is defined in `figure.py`, but where is `draw_figure()` actually called in her project? (Hint: there are two files.)
+2. Iris wrote an awesome `draw_figure()` function, but it is 190 lines long. Let's think about how we might decompose this code. If you could split `draw_figure()` into multiple smaller functions, what would those functions be? Explain in 2 - 3 sentences.
 
 #### `letters.py`
 0. How many functions are in the `letters.py` module? What are they and what do they do?
@@ -137,7 +139,7 @@ atom .
 
 Now that we understand how she created the still image, let's take a look at how she animated the letters.
 
-{{< code-action "Run her animation file." >}} 
+{{< code-action "Run her animation file." >}}
 ```shell
 python3 animation.py
 ```
@@ -149,7 +151,7 @@ python3 animation.py
 
 {{< checkpoint >}}
 
-{{< write-action "Answer the following questions with your group." >}} 
+{{< write-action "Answer the following questions with your group." >}}
 
 #### `main()` in `animation.py`
 0. There is a for-loop in `main()` which repeats for `settings.NUMREPEATS` number of times. Find where that varaible is set and change its value. What changed and what does the for-loop do?
@@ -169,7 +171,7 @@ Describe what happened and why you think it happened in 2 sentences.
 
 <hr>
 
-## [3] More Animations
+## [2] More Animations
 
 There are many ways to animate still images! Let's talk about these four:
 
@@ -181,9 +183,9 @@ There are many ways to animate still images! Let's talk about these four:
 {{< figure src="images/courses/cs9/unit00/00_decomp_frame.gif" width="100%">}}
 {{< /columns >}}
 
-We're going to explore each type of animation by looking at some small mystery examples. 
+We're going to explore each type of animation by looking at some small mystery examples.
 
-{{< code-action "Using git, download the repostiory with the mystery examples into your" >}} `lab_08_decomposition` folder.
+{{< code-action "Using git, download the repository with the mystery examples into your" >}} `lab_08_decomposition` folder.
 
 ```shell
 git clone https://github.com/the-isf-academy/lab-decomposition.git
@@ -202,7 +204,7 @@ git clone https://github.com/the-isf-academy/lab-decomposition.git
 
 {{< checkpoint >}}
 
-{{< write-action "Answer the following questions with your group." >}} 
+{{< write-action "Answer the following questions with your group." >}}
 
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
@@ -223,11 +225,11 @@ git clone https://github.com/the-isf-academy/lab-decomposition.git
 
 {{< checkpoint >}}
 <!---frame-based -->
-{{< write-action "Answer the following questions with your group." >}} 
+{{< write-action "Answer the following questions with your group." >}}
 
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`. What values did you change `START_X` and/or `START_Y` to? 
+1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`. What values did you change `START_X` and/or `START_Y` to?
 2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for every `i` and `new_size`. (HINT: you can split up the work on this with your tablemates.)
 3. Calculate `max_size`. (HINT: you will need to reference the numbers in `settings.py`)
 4. For the second for-loop, trace through the code and fill out the table for every `j` and `new_size`.(HINT: you can split up the work on this with your tablemates.)
@@ -240,7 +242,7 @@ git clone https://github.com/the-isf-academy/lab-decomposition.git
 {{< code-action "Run the" >}} `animate_3.py` **file.**
 
 {{< checkpoint >}}
-{{< write-action "Answer the following questions with your group." >}} 
+{{< write-action "Answer the following questions with your group." >}}
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. What does the `clear()` function do in line 18? What happens if you remove `clear()`?
@@ -253,7 +255,7 @@ git clone https://github.com/the-isf-academy/lab-decomposition.git
 {{< code-action "Run the" >}} `animate_4.py` **file.**
 
 {{< checkpoint >}}
-{{< write-action "Answer the following questions with your group." >}} 
+{{< write-action "Answer the following questions with your group." >}}
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. This animation involves three if-conditional branches, and each branch causes a different speed! Why is the second branch faster than the first
@@ -262,9 +264,10 @@ branch? Why is the third branch faster than the second branch?
 
 {{< /checkpoint >}}
 
+<hr>
 
-## [4] Deliverables
+## [3] Deliverables
 
 {{< deliverables "For this lab, you should:" >}}
-- Submit your worksheet with answers to each checkpoint question. 
+- Submit your worksheet with answers to each checkpoint question.
 {{< /deliverables >}}
