@@ -63,8 +63,6 @@ git clone https://github.com/the-isf-academy/unit_00_project_Iris.git
 cd unit_00_project_Iris
 ```
 
-### [Review of Modules]
-
 {{< look-action >}} **There are quite a few modules being used here! Use `tree` command to take a look.**
 
 ```shell
@@ -79,13 +77,6 @@ tree .
 └── settings.py
 ```
 <br>
-
-{{< checkpoint >}}
-{{< write-action "Explore her code, answer the following prompt:" >}}
-
-0. Iris has four modules in her project besides `animation.py` and `no_animation.py`. List each module and describe its purpose.
-
-{{< /checkpoint >}}
 
 ### [Still Image]
 
