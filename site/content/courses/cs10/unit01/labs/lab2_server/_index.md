@@ -1,7 +1,7 @@
 ---
 title: "2. Servers"
 type: lab
-# draft: false
+draft: true
 ---
 
 # Servers

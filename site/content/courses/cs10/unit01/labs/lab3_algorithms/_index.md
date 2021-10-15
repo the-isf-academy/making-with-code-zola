@@ -1,7 +1,7 @@
 ---
 title: "3. Graph Algorithms"
 type: lab
-draft: false
+draft: true
 ---
 
 # Graph Algorithms
