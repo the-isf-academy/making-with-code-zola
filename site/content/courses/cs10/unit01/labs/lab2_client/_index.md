@@ -18,7 +18,7 @@ of making these requests for us? A program like this is called a *client*.
 
 **Any app which uses the Internet is a client.** 
 
-The client, or app, constantly making HTTP requests
+The client, or app, is constantly making HTTP requests
 to a server to send and receive information. 
 
 ## [1] Exploring the Live Riddle Server
@@ -78,7 +78,7 @@ git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
 
 {{< code-action "Install the required libraries." >}} 
 ```shell
-cd lab-http-YOUR-GITHUB-USERNAME
+cd lab-client-YOUR-GITHUB-USERNAME
 pip3 install -r requirements.txt
 ```
 
@@ -105,7 +105,7 @@ It runs! Until it doesn't. The `RiddleView` is fully-functional, however the som
 
 Let's start by taking a look at the working function `all_riddles()`. 
 
-The `all_riddles()` function sends an HTTP GET request to the Riddle server and returns all of the riddles in a dictionary. As we know from the `Endpoint Documentation`, the endpoint to view all the riddles is `/all` and it does not take a paylod.
+The `all_riddles()` function sends an HTTP GET request to the Riddle server and returns all of the riddles in a dictionary. As we know from the `Endpoint Documentation` above, the endpoint to view all the riddles is `/all` and it does not take a paylod.
 
 ```python {linenos=table}
 def all_riddles(self):
@@ -128,7 +128,7 @@ def all_riddles(self):
 - `line 9`: sends an HTTP GET request to the server and stores the response. 
 - `line 11-13`: If the HTTP was sucessful, it returns the riddles in a dictionary. 
   - `riddles = response.json()` converts the response from the server,
-- `line 14-15`: Displays the type of error encountered to the user.
+- `line 14-15`: If the HTTP request was not successful, displays the type of error encountered to the user.
 
 ### [Pseudocode]
 
@@ -140,6 +140,9 @@ Keep the following in mind:
 - What endpoint do you need?
 - Does the endpoint require a payload?
 - What should be displayed to the user?
+
+*If you don't know where to start, try taking the code for `all_riddles()` and turning it back into
+pseudocode. What are the major steps that function accomplishes?*
 {{< /checkpoint >}}
 
 
