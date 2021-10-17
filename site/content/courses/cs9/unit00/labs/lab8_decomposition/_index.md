@@ -1,76 +1,168 @@
 ---
-title: 6. Decomposition
+title: 8. Decomposition
 type: labs
-draft: true
+# draft: true
 ---
 
 # Decomposition Lab
 
-## A. Review of Modules
+In this lab we are going to explore a key computer science concept, decomposition.
 
-Today, we are going to analyze a repository made by a CS9 student from last year, Iris! Her project will be similar to what you will make for your upcoming Unit 0 project.
 
-{{< code-action >}} To clone her repo, make sure you are in `unit_00` and then download it using git:
+## [0] What is Decomposition?
 
-```shell
-    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/unit_00_project_Iris.git
+Decomposition is the act of breaking down a problem into smaller, more manageable parts. This is an incredibly useful problem solving technique, even outside of computer science.
+
+For example, let's consider the problem of baking a birthday cake. We can break this down into large overarching pieces such as the cake, the icing, and the assembly. Then each of those pieces can be broken down even further until you get to each individual ingredient.
+- cake  
+  - mixing the batter
+    - dry ingredients
+    - wet ingredients
+  - baking the batter
+    - temperture
+    - time
+  - cooling the cake
+- icing
+  - mixing the icing
+    - flavor
+    - color
+- assemble the cake
+  - frost the cake
+  - add sprinkles
+
+When thinking about complex problems there are two ways to approach them: top-down and bottom-up. Some people like to start with top-down thinking; others prefer bottom-up. Usually we need to use both.
+
+- Top down means thinking about the problem as a whole, and how it could be broken up into a few smaller pieces. Then each of those smaller pieces could be broken into even smaller pieces.
+
+- Bottom-up means starting with tiny chunks that are so simple we can already solve them, and using them to build gradually larger pieces, until you've solved the problem.
+
+For example, let's consider baking again.
+- Top-down: You need to make a birthday cake, and so you figure out the steps and the ingredients.  
+- Bottom-up: You take a look at your all of your baking supplies and ingredients at home, and figure out you can make a birthday cake.
+
+
+
+
+---
+## [1] Iris's Project
+
+Today, we are going to analyze a repository made by a previous CS9 student, Iris! Pay special attention to how she decomposed her idea into parts. Her project will be similar to what you will make for your upcoming Unit 00 project.
+
+{{< code-action "Start by creating a " >}} `lab_08_decomposition` **folder.**
+
+``` shell
+cd Desktop/cs9/unit_00
+mkdir lab_08_decomposition
 ```
 
-{{< look-action >}} There are quite a few modules being used here! Use `tree`, the `README.md` file, Atom, and the terminal to explore her project.
+{{< code-action "Using git, clone her repository inside your " >}} `lab_08_decomposition` folder.
 
-{{< checkpoint >}}
-{{< write-action >}} Once you've fully explored her code, answer the following questions:
+```shell
+cd lab_08_decomposition
+git clone https://github.com/the-isf-academy/unit_00_project_Iris.git
+cd unit_00_project_Iris
+```
 
-0. What terminal command do you use to run the non-animated version of her code?
-1. What command do you use to run the animated version of her code?
-2. Iris has four modules in her project. Name the modules here, and describe the purpose of each module in one sentence.
-3. Iris has a variable called `sf`, which stands for size factor. You can change this variable in one file, and the size will get adjusted throughout the drawing. Which module would you edit in order to adjust the `sf` variable?
+{{< look-action >}} **There are quite a few modules being used here! Use `tree` command to take a look.**
 
-{{< /checkpoint >}}
+```shell
+tree .
+.
+├── README.md
+├── animation.py
+├── figure.py
+├── helpers.py
+├── letters.py
+├── no_animation.py
+└── settings.py
+```
+<br>
 
-
-## B. Intro to Decomposition
-
-{{< include_resource "resource_decomposition" >}}
+### [Still Image]
 
 First, let's take a look at how Iris decomposed her still image. Then, we'll see how she decomposed the animation.
 
-### Still Image
+{{< code-action "Start by running her still image file." >}}
+```shell
+python3 no_animation.py
+```
+
 
 You may recognize who she drew! (Hover over the image to reveal)
 
-<img src="/images/courses/cs9/unit00/00_decomp_winwin.png" style="width:100%"
-  onmouseover="this.src='/images/courses/cs9/unit00/00_decomp_winwin2.jpg'; this.style.width = '100%';"
+<img src="/images/courses/cs9/unit00/00_decomp_winwin.png" style="width:65%"
+  onmouseover="this.src='/images/courses/cs9/unit00/00_decomp_winwin2.jpg'; this.style.width = '50%';"
   onmouseout="this.src='/images/courses/cs9/unit00/00_decomp_winwin.png';"
 />
 
+Iris decided to tackle the project by drawing the figure and then the letters as still images. With your group, discuss the `figure.py`, `letters.py`, and `settings.py` modules.
+
+{{< code-action "Open the repository in atom so you can easily examine in module." >}}
+```shell
+atom .
+```
+
+
 {{< checkpoint >}}
-{{< look-action >}} Iris decided to tackle the project by drawing the figure and then the letters as still images. With your group, discuss the `figure.py`, `letters.py`, and `settings.py` modules.
 
-{{< write-action >}} Answer the following questions in your Google Doc.
 
-#### Figure.py
-0. How many functions are in the module?
-1. `draw_figure() ` is defined in `figure.py`, but where is `draw_figure() ` actually called in her project? (Hint: there are two files.)
-2. Iris wrote an awesome `draw_figure()`function, but it is 190 lines long. Let's think about how we might decompose this code. If you could split `draw_figure()` into multiple smaller functions, what would those functions be? Explain in 2 - 3 sentences.
+{{< write-action "Answer the following questions with your group." >}}
 
-#### Letters.py
+#### `figure.py`
+0. How many functions are in the `figure.py` module? What are they and what do they do?
+1. `draw_figure()` is defined in `figure.py`, but where is `draw_figure()` actually called in her project? (Hint: there are two files.)
+2. Iris wrote an awesome `draw_figure()` function, but it is 190 lines long. Let's think about how we might decompose this code. If you could split `draw_figure()` into multiple smaller functions, what would those functions be? Explain in 2 - 3 sentences.
+
+#### `letters.py`
+0. How many functions are in the `letters.py` module? What are they and what do they do?
 0. Why do you think Iris chose to create a separate module for letters? Explain in 1 sentence.
-1. Where is `letter_w()` actually called in her project?
+0. Where is `letter_w()` actually called in her project?
 
-#### Settings
-0. Many of Iris' functions accept a parameter called `sf`. `sf` stands for size factor. You can change this variable in one file, and the size will get adjusted throughout the drawing. Where is `sf` being defined?
-1. Change `settings.SIZEFACTOR` to any number you like. How does this affect her still image when you run `no_animation.py`?
-2. You might also have noticed that this module uses `fillcolor` to fill in shapes. You've seen `fill_color()` before,
-but Iris uses a special code to determine the color of Win Win's shirt. Open the
-[turtle documentation](https://docs.python.org/3.8/library/turtle.html?highlight=turtle#turtle.fillcolor) and read
-about how filling works. Then, change the color of Win Win's shirt, and copy-paste the code into the Google Doc.
-
-
+#### `settings.py`
+0. How does changing the `SIZEFACTOR` variable change the drawing of `no_animation.py`?
+0. How does changing the `START_X` variable change the drawing of `no_animation.py`?
+0. How does changing the `START_Y` variable change the drawing of `no_animation.py`?
+0. How does changing the `SHIRT_COLOR` variable change the drawing of `no_animation.py`?
 {{< /checkpoint >}}
 
 
-## C. Animation
+### [Animation]
+
+Now that we understand how she created the still image, let's take a look at how she animated the letters.
+
+{{< code-action "Run her animation file." >}}
+```shell
+python3 animation.py
+```
+
+{{< figure src="images/courses/cs9/unit00/00_decomp_winwin3.gif" width="75%">}}
+
+
+
+
+{{< checkpoint >}}
+
+{{< write-action "Answer the following questions with your group." >}}
+
+#### `main()` in `animation.py`
+0. There is a for-loop in `main()` which repeats for `settings.NUMREPEATS` number of times. Find where that varaible is set and change its value. What changed and what does the for-loop do?
+
+#### `draw_stationary()` in `animation.py`
+0. What is being drawn in `draw_stationary()`?
+
+#### `draw_animation()` in `animation.py`
+0. What is being drawn in `draw_animation()`?
+0. The for-loop in `draw_animation()` is responsible for the animation! You can think of an animation as a series of frames that are being flipped through very quickly. Based on the for-loop, how many frames are there in our animation?
+1. Now let's check out the if-statements. This is called frame-based animation; the animations appear based on the frame number. What happens at the 10th frame? What happens at the 50th frame?
+2. Change lines 18, 20, 22, 24, 26, and 28 so that the if-statements are set to different numbers. Try `i == 10` (for line 20), `i == 12` (for line 22), `i == 14` (for line 24), `i == 16` (for line 26), `i == 18` (for line 28), and `i == 20` (for line 30). What happens? Describe in 1 sentence.
+3. Comment out line 32 `screen.update()`. Then run the code by using `python animation.py`. What happens?
+Describe what happened and why you think it happened in 2 sentences.
+
+{{< /checkpoint >}}
+
+<hr>
+
+## [2] More Animations
 
 There are many ways to animate still images! Let's talk about these four:
 
@@ -82,49 +174,29 @@ There are many ways to animate still images! Let's talk about these four:
 {{< figure src="images/courses/cs9/unit00/00_decomp_frame.gif" width="100%">}}
 {{< /columns >}}
 
-{{< look-action >}} After Iris finishes drawing the still images, she uses one of the above strategies to animate her letters. With your group, discuss the files within the `animation.py` module.
+We're going to explore each type of animation by looking at some small mystery examples.
 
-{{< checkpoint >}}
-{{< write-action >}} Answer the following questions in your Google Doc.
-
-#### main() function
-0. There is a for-loop in `main()` which repeats for `settings.NUMREPEATS` number of times. Go to `settings.NUMREPEATS` and change the number for the variable `NUMREPEATS`. Then run the code by using `python animation.py`. What does the for-loop do?
-
-#### draw_stationary() function
-0. Part of her project is being drawn in `draw_stationary()` and part of her project is being drawn in `draw_animation()`. Which parts of her drawing are being drawn in `draw_stationary()`?
-
-#### draw_animation() function
-0. The other part of her project is being drawn in `draw_animation()`. The for-loop in `draw_animation()` is responsible for the animation! You can think of an animation as a series of frames that are being flipped through very quickly. Based on the for-loop, how many frames are there in our animation?
-1. Now let's check out the if-statements. This is called frame-based animation; the animations appear based on the frame number. What happens at the 10th frame? What happens at the 50th frame?
-2. Change lines 20, 22, 24, 26, 28, and 30 so that the if-statements are set to different numbers. Try `i == 10` (for line 20), `i == 12` (for line 22), `i == 14` (for line 24), `i == 16` (for line 26), `i == 18` (for line 28), and `i == 20` (for line 30). What happens? Describe in 1 sentence.
-3. Comment out line 32 `screen.update()`. Then run the code by using `python animation.py`. What happens?
-Describe what happened and why you think it happened in 2 sentences.
-
-{{< /checkpoint >}}
-
-## D. More Animations
-
-Here's an animation based on the unit project made by another CS9 student from last year, Jethro!
-
-{{< look-action >}} Notice how the cat's face is stationary while the cat's arm is animated (using a rotation).
-
-
-{{< figure src="images/courses/cs9/unit00/00_decomp_jethro.webp" width="100%">}}
-
-
-{{< code-action >}} Now, we're going to explore each type of animation by looking at some small mystery examples. Make sure you are in `unit_00` and then download it using git:
+{{< code-action "Using git, download the repository with the mystery examples into your" >}} `lab_08_decomposition` folder.
 
 ```shell
-    TEA-JWOLF:unit_00 jwolf$ git clone https://github.com/the-isf-academy/lab-decomposition.git
+git clone https://github.com/the-isf-academy/lab-decomposition.git
 ```
+
+
+{{< code-action >}}{{< write-action >}} **Throughout this section, you will be asked to change part of the code and answer checkpoint questions about the following files:**
+- `animate_1.py`
+- `animate_2.py`
+- `animate_3.py`
+- `animate_4.py`
+
+### [Animation Mystery 1]
+
+{{< code-action "Run the" >}} `animate_1.py` **file.**
 
 {{< checkpoint >}}
 
-{{< write-action >}} Now answer the following questions with your team. You will be asked to change parts of the code!
+{{< write-action "Answer the following questions with your group." >}}
 
-### Animation Mystery 1
-<!---frame-based -->
-{{< code-action >}} Run the command `python animate_1.py` in terminal and then discuss the following:
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. Look inside the `main()` function. How many times is the for-loop running, and how did you find this number?
@@ -135,30 +207,46 @@ Here's an animation based on the unit project made by another CS9 student from l
 6. There are four if-statements, but only three triangles drawn on the screen. What happened to the fourth triangle? Explain in at least once sentence.
 7. Change the last if-statement so that the animation is able to draw and animate all four triangles.
 
-### Animation Mystery 2
-<!---scale-->
-{{< code-action >}} Run the command `python animate_2.py` in terminal and then discuss the following:
+{{< /checkpoint >}}
+
+
+### [Animation Mystery 2]
+
+{{< code-action "Run the" >}} `animate_2.py` **file.**
+
+{{< checkpoint >}}
+<!---frame-based -->
+{{< write-action "Answer the following questions with your group." >}}
+
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`.
+1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`. What values did you change `START_X` and/or `START_Y` to?
 2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for every `i` and `new_size`. (HINT: you can split up the work on this with your tablemates.)
 3. Calculate `max_size`. (HINT: you will need to reference the numbers in `settings.py`)
 4. For the second for-loop, trace through the code and fill out the table for every `j` and `new_size`.(HINT: you can split up the work on this with your tablemates.)
-5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`)
+5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`) What did you change?
+
+{{< /checkpoint >}}
 
 
-### Animation Mystery 3
-<!---translate-->
-{{< code-action >}} Run the command `python animate_3.py` in terminal and then discuss the following:
+### [Animation Mystery 3]
+{{< code-action "Run the" >}} `animate_3.py` **file.**
+
+{{< checkpoint >}}
+{{< write-action "Answer the following questions with your group." >}}
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. What does the `clear()` function do in line 18? What happens if you remove `clear()`?
-2. Change the code so that the animation moves five times as far. (HINT: you will need to change two lines of code in `draw_animation()`)
+2. Change the code so that the animation moves five times as far. (HINT: you will need to change two lines of code in `draw_animation()`) What did you change?
 3. What if you wanted to draw an animating square instead of a triangle? Write a new helper function in `parts.py` called `draw_square()` that takes two parameters: `side_len` and `color_name`. Then change line 15 in `animate_3.py` to `draw_square(side_len, color_name)`.
+{{< /checkpoint >}}
 
-### Animation Mystery 4
-<!---rotate-->
-{{< code-action >}} Run the command `python animate_4.py` in terminal and then discuss the following:
+
+### [Animation Mystery 4]
+{{< code-action "Run the" >}} `animate_4.py` **file.**
+
+{{< checkpoint >}}
+{{< write-action "Answer the following questions with your group." >}}
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. This animation involves three if-conditional branches, and each branch causes a different speed! Why is the second branch faster than the first
@@ -167,7 +255,10 @@ branch? Why is the third branch faster than the second branch?
 
 {{< /checkpoint >}}
 
+<hr>
 
-## Deliverables
+## [3] Deliverables
 
-- Each student should submit a Google Doc with answers to the questions above.
+{{< deliverables "For this lab, you should:" >}}
+- Submit your worksheet with answers to each checkpoint question.
+{{< /deliverables >}}
