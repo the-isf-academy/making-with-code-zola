@@ -4,7 +4,11 @@ bookCollapseSection: true
 type: unit
 ---
 
-## Labs
+In this unit we will explore hardware and sensors by using Rasperry Pis. 
+
+
+
+<!-- ## Labs
 
 - Setting up Raspberry Pis, networking basics. SSH into Pi. Pinging IP addresses.
 - HTTP requests and responses to send and recieve environmental information from a
@@ -72,4 +76,4 @@ Libraries will be provided for:
 - NLP (eg getting the main noun phrase)
 - External APIs such as weather, news, etc.
 - Additionally, students will be encouraged to write, publish, and compose simpler microservices.  
-
+ -->
