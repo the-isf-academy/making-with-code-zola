@@ -1,78 +1,162 @@
 ---
 Title: Project
-draft: true
+# draft: true
 ---
 
 # Unit 00 Drawing Project
 
-In this project you will make an animated drawing (or, in Gen Z terminology, a GIF!) using Python's turtle library. That's the whole assignment.
+In this project you will make an animated drawing (or a GIF!) using Python's turtle library. 
 
-It's up to you to make a drawing you actually care about making. Your teachers will help you choose a project that's a good level of challenge, and will support you every step of the way. 
+It's up to you to make a drawing you actually care about making. Your teachers will help you choose a project that's a good level of challenge.
 
-## Starter Code
 
-{{< code-action >}} Starter code for the project is provided in the
-`project-animation` repo. Download it *onto your laptop*.
 
-```shell
-$ cd cs9/unit_00
-$ git clone https://github.com/the-isf-academy/project-animation-YOUR-GITHUB-USERNAME.git
-```
+## [0] Design Document
 
-## Design Document
+This is a big project, and you will get lost or frustrated if you don't do some planning up front. You are required to write a project design document and get it approved by a teacher.
 
-This is a big project, and you will get lost or frustrated if you don't do some planning up front. Before you start working on your project, you are required to write a project proposal and get it approved by a teacher. *You can find your design doc in your Google Drive folder.*
+👀 **Before you start the design document, spend 10-15 minutes brainstorming ideas for your project.** Use the internet to search for inspiration.
 
-Once you have completed the above, meet with a teacher to talk through your plan. Don't start programming until you get your plan approved, or you might have to change it.
+{{< expand "Inspiration from last year" >}}
 
-## Deliverables 
+Here are a few examples from last year to get you started. More can be found at the `gallery` page.
 
-- A design document in your Google Drive folder 
-- A project repository containing the following files:
+{{< columns >}}
+
+{{< figure src="images/courses/cs9/unit00/00_project_2020_eric.gif" width="100%" title="by Eric Mok" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2020_james.gif" width="100%" title="by James Castley" >}}
+<--->
+{{< figure src="images/courses/cs9/unit00/00_project_2020_austin.gif" width="100%" title="by Austin Lee" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2020_karissa.gif" width="100%" title="by Karissa Mirza" >}}
+{{< /columns >}}
+
+{{< /expand >}}
+
+{{< write-action "With an idea in mind, fill out your design doc in your Google Drive folder." >}}
+
+
+{{< checkpoint >}}
+**Once you have completed your design document, meet with a teacher to talk through your project.** 
+
+{{< /checkpoint >}}
+
+
+
+## [1] Deliverables 
+
+- A `Unit 00 Animation Project: Design Document` in your Google Drive folder 
+- A `project-animation` repository containing the following files:
     - `project.py` When this program runs, it should draw your project. 
     - `settings.py` This is where you settings for your animation should be stored. 
     - `README.md` This is documentation for your project for other people who may want to use your project.
-    - `assessment.md` This is where you will self-assest your final project. 
     - At least one additional module (written by you)
-- At least 5 substantial Git commit messages, each explaining what you've changed and why.
+- `Unit 00 Animation Project: Self-Assessment` - This is where you will self-assest your final project. 
+- Your notebook with your sketches and project process journal 
 
-## Timeline
-### cs9.1
+### [Timeline]
+#### cs9.1
 {{< figure src="images/courses/cs9/unit00/00_project_cs9_1.png" width="100%" >}}
-### cs9.2
+#### cs9.2
 {{< figure src="images/courses/cs9/unit00/00_project_cs9_2.png" width="100%" >}}
 
-## Assessment
-You are responsible for assessing your own project, though your teachers will let you know if they
-disagree. In `assessment.md`, you are required to explain how your project should be scored, and
-to give evidence to support your assessment. The rubric is based on claims that you should be able
-to make about your learning in this unit. Each of these claims comes with examples of evidence that
-would show that you can make the claim about your learning.
-
-**To do well in this project, you should be able to concretely justify that you have achieved each of
-the learning claims.** So, if the rubric says you should be able to manipulate control flow and that 
-an example of doing that would be to use a loop, then you should use loops in your project and point
-to them in your self-assessment.
-If the rubric says you should be able to thoughtfiully plan a large project and that an example of that
-is a thorough design document, you should create a detailed design document and discuss in your self-assessment
-how this design document helped you create your project.
-
-Since this is your first project, here's a guide for using the rubric:
-- Read the learning claims of the criterion for this unit in the rubric and consider how they relate to
-the description of the criterion.
-- For each learning claim in the criterion:
-    - Evidence: Identify 1-5 elements of your project that provide evidence for the learning claim.
-    - Reasoning: Provide specific reasoning that presents how the piece(s) of evidence you identified
-    support the claim about your learning.
-- Determine the level between 1-8 that represents your overall learning in the criterion based on the
-evidence and reasoning you provided for the learning claims of the criterion.
-
-## Rubric 
-
-Each project will be assessed with a rubric tailored to the skills and concepts the project targets.
-This project is focused on developing the skills learned throughout the drawing unit. 
 
 
+##  [2] Starter Code
+
+For this project, your code will live in a git repository. It is your resopnsiblity to regularly commit to your repository. 
+
+{{< code-action "Download your respository with starter code for your project." >}} 
+> replace the `YOUR-GITHUB-USERNAME` with your Github username.
+>
+> *example:*
+>
+> *`git clone https://github.com/the-isf-academy/project-animation-emmaqbrown.git`*
+
+
+```shell
+cd Desktop
+cd cs9/unit_00
+git clone https://github.com/the-isf-academy/project-animation-YOUR-GITHUB-USERNAME.git
+```
+
+{{< code-action "Start coding your first milestone!" >}} With you design document approved by a teacher and your starter code downloaded, you're ready to start creating. 
+
+
+## [3] Self-Assessment
+You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score. 
+
+In `Unit 00 Animation Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit. 
+
+The self-assessment is broken down into three areas:
+- Practices
+    - planning, iterative development, test cases, and readability
+- Concepts
+    - abstraction and decomposition
+- Reflection
+
+**To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.** 
+
+### [Practices]
+Each practice is something that a computer scientist does each time they approach a problem. You are required to self-assess your ability to do each practice. 
+
+For each practice you must provide the following:
+- A score from 0-3
+    - 0 - little to no evidence of practice 
+    - 1 - below average evidence of practice 
+    - 2 - above average evidence of practice
+    - 3 - outstanding evidence of practice
+- A justification of why you deserve that score 
+- Examples to support your justification 
+
+
+### [Concepts]
+This project focused on key computer science concepts, abstraction and decomposition.
+You are required to demonstrate your understanding of each concept through evidence based reflection. 
+
+For each concept you must provide the following:
+- A score from 0-5
+    - 0 - little to no understanding or implementation of the concept
+    - 1 - below average understanding or implementation the concept
+    - 2 - above average understanding or implementation the concept
+    - 3 - outstanding understanding or implementation the concept
+- A justification of why you deserve that score 
+- Examples to support your justification 
+- A discussion of why each concept is important 
+
+### [Reflection]
+
+Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your resopnsiblity to society as technolgogy creators by evaluating the implications of your work. 
+
+*It is graded purely based on completion and demonstration of effort.*
+
+
+
+## [4] Sucess Claims 
+
+Each project will look entirely different and have their individual measure of success. 
+
+However, all successful computer scientists should be able to make the following claims: 
+- I can thoughtfully plan a large computer science project.  
+- I can develop my project iteratively over time 
+    - I can track the development of my project by committing to Github consistently throughout my project.
+    - I can systematically breakdown my project into smaller chunks  
+- I can write code with readability in mind
+    - I can use describe names for variables, functions, and modules
+    - I can document my code in the README.md
+- I can effectively use the principle of abstraction to make my code more efficient and elegant 
+    - I can write a function with at least one paramter
+    - I can use manipulate control flow with conditionals 
+    - I can use loops to repeat commands
+- I can effictively use the principle of decomposition to make my code more efficient and elegant
+    - I can write functions to be used in different scenarios
+    - I can write modules for different aspects of my project
+
+**Keep the success claims in mind when coding your project and self-assessing yourself.**
+
+
+
+
+<!-- 
 ### Criterion A: Knowing, understanding, and computational thinking 
 
 Students appropriately apply computer science concepts and tools in context. On top of computer science concepts and tools, students apply computational thinking practices including habits such as writing pseudocode, developing iteratively, using abstractions, decomposing problems, and debugging.
@@ -107,4 +191,4 @@ Throughout the unit, you explored what it means to express yourself and your ide
 | I chose a theme that is personally meaningful to me to animate.                        | <ul><li>A final animation that is related to the theme you were inspired by in your planning document.</li></ul>  |
 | I drew from another animation/GIF/drawing to inform my own drawing/animation process.  | <ul><li>A picture, piece of text, animation or video that informed your animation/drawing process.</li></ul>      |
 
-
+ -->
