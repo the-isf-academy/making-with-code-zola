@@ -25,11 +25,11 @@ to a server to send and receive information.
 
 The riddle is server is now hosted live on the web! 
 
-It hosted at this web address: `FILL IN`
+It hosted at this web address: `TEA-EQBROWN.local:5000`
 
 {{< code-action "Reacquaint yourself with the riddle server." >}}
 ```shell
-http get FILL IN/riddles/all
+http get TEA-EQBROWN.local:5000/riddles/all
 ```
 - Make a `GET` request to each possible endpoint 
 - Make a `POST` reqest to each possible endpoint 
@@ -42,10 +42,10 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `FILL IN/riddles/all`   |         N/A             | Returns a list of all the riddles, without answers.                                      |
-| `GET`  | `FILL IN/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `FILL IN/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
-| `POST` | `FILL IN/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+| `GET`  | `TEA-EQBROWN.local:5000/riddles/all`   |         N/A             | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `TEA-EQBROWN.local:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `TEA-EQBROWN.local:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `TEA-EQBROWN.local:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
 
 
 ## [0] Writing the client
@@ -60,8 +60,8 @@ Welcome to the Riddler
 ==================================================
 What do you want to do?
   0. View all riddles
-  1. Pick a riddle to guess
-  2. Add a riddle
+  1. Add a riddle
+  2. Pick a riddle to guess
   3. Quit
 > 
 ```
@@ -97,15 +97,15 @@ It runs! Until it doesn't. The `RiddleView` is fully-functional, however the som
 
 
 **Your job is to finish the functionality of `riddle_client.py`:**
-- guessing a riddle
 - adding a riddle
+- guessing a riddle
 
 
 ### [View all riddles]
 
 Let's start by taking a look at the working function `all_riddles()`. 
 
-The `all_riddles()` function sends an HTTP GET request to the Riddle server and returns all of the riddles in a dictionary. As we know from the `Endpoint Documentation` above, the endpoint to view all the riddles is `/all` and it does not take a paylod.
+The `all_riddles()` function sends an HTTP GET request to the Riddle server and returns all of the riddles in a dictionary. As we know from the **Endpoint Documentation** above, the endpoint to view all the riddles is `/all` and it does not take a paylod.
 
 ```python {linenos=table}
 def all_riddles(self):
@@ -133,7 +133,7 @@ def all_riddles(self):
 ### [Pseudocode]
 
 {{< checkpoint >}}
-**In your notebook, write psueocode for `guess_riddle()` and `add_riddle()`.**
+**In your notebook, write psueocode for  `add_riddle()` and `guess_riddle()`.**
 
 Keep the following in mind:
 - Do you need anything from the user?
@@ -151,17 +151,21 @@ pseudocode. What are the major steps that function accomplishes?*
 {{< checkpoint >}}
 We did not provide a test harness for this lab. It's up to you to determine if your client is working as expected. 
 
-**In your notebook, write test cases for `guess_riddle()` and `add_riddle()`.**
+**In your notebook, write test cases for `add_riddle()` and `guess_riddle()`.**
 
 Keep the following in mind:
-- How will you know if a user can successfully guess a riddle? What are two potential outcomes?
 - How will you know if a user can successfully add a riddle? What are two potential outcomes?
+- How will you know if a user can successfully guess a riddle? What are two potential outcomes?
+
 
 {{< /checkpoint >}}
 
-### [Guess a riddle]
-{{< code-action "Code this functionality to allow the user to guess a riddle." >}} Reference your pseudocode and test cases to consider how to implement guessing a riddle. 
 
+
+
+
+### [Add a riddle]
+{{< code-action "Code this functionality to add a riddle to the server." >}} Reference your pseudocode and test cases to consider how to implement guessing a riddle. 
 
 {{< aside "Payload" >}}
 
@@ -178,13 +182,73 @@ payload = {
 response = requests.get(address, payload)
 ```
 
+To learn more about the `Requests` library, checkout its [documentation](https://docs.python-requests.org/en/latest/)
+
 {{< /aside >}}
 
 
+### [Guess a riddle]
+{{< code-action "Code this functionality to allow the user to guess a riddle." >}} Reference your pseudocode and test cases to consider how to implement guessing a riddle. Be sure to look at the existing code for a starting off point.  
 
 
-### [Add a riddle]
-{{< code-action "Code this functionality to add a riddle to the server." >}} Reference your pseudocode and test cases to consider how to implement guessing a riddle. 
+{{< aside "JSON" >}}
+
+When we guess a riddle, the response is given to us in `JSON`.  
+
+JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary. 
+
+```shell {hl_lines=["1","5","9-17"]}
+http get TEA-EQBROWN.local:5000/riddles/guess id=1 guess=newspaper
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/json
+Date: Sun, 17 Oct 2021 05:37:21 GMT
+Server: WSGIServer/0.2 CPython/3.8.3
+
+{
+    "correct": {
+        "answer": "newspaper",
+        "correct": 4,
+        "guesses": 7,
+        "id": 1,
+        "question": "what is black and white and read all over?"
+    }
+}
+```
+
+To turn the http response into a JSON object, we can use:
+```shell
+response.json()
+```
+
+We can then **parse the response** just as we would a Python dictionary. 
+
+Consider a dictionary about what items you need to pick up from the grocery story.
+```python
+grocery_dictionary = {
+  'fruit': {
+    'watermelon': 1,
+    'apples': 2
+  },
+  'drinks':{
+    'milk': 2,
+    'orange juice': 0
+  }
+}
+```
+
+To access the value of `watermelon`, you can index into the dictionary using the **key** names. 
+```python
+grocery_dictionary['fruit']['watermelon']
+```
+
+**Parsing `JSON` follows exactly the same rules.**
+
+<br>
+
+💡 ***Hint:** What is in the `JSON` response if the guess is correct? If the guess is incorrect?*
+{{< /aside >}}
 
 ## [1] Deliverables
 
@@ -241,11 +305,11 @@ Each riddle has a secret difficulty level. It can be accessed via the following 
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `FILL IN/riddles/difficulty`   | `id`                 | Returns the riddle and it's difficulty. (If it the riddle does not exisit, it returns an error with status code 404.)  |
+| `GET`  | `TEA-EQBROWN.local:5000/riddles/difficulty`   | `id`                 | Returns the riddle and it's difficulty. (If it the riddle does not exisit, it returns an error with status code 404.)  |
 
 {{< code-action "Test out the difficulty endpoint with" >}} `httpie`
 ```shell
-http get FILL IN/riddles/difficulty id=0
+http get TEA-EQBROWN.local:5000/riddles/difficulty id=0
 ```
 
 The riddle's difficulty is basically 1 minus the fraction of guesses which were correct. So a Riddle with a difficulty of 1 is impossibly hard, while a Riddle with a difficulty of 0 is easy--everyone gets it right!
