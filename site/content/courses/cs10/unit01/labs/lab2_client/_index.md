@@ -21,15 +21,31 @@ of making these requests for us? A program like this is called a *client*.
 The client, or app, is constantly making HTTP requests
 to a server to send and receive information. 
 
-## [1] Exploring the Live Riddle Server
+## [1] Exploring the Riddle Server
 
-The riddle is server is now hosted live on the web! 
+Let's start by exploring the riddle server once again. Except this time, it's going to be locally hosted on your machine. 
 
-It hosted at this web address: `TEA-EQBROWN.local:5000`
-
-{{< code-action "Reacquaint yourself with the riddle server." >}}
+{{< code-action "Make a unit01 folder and clone the riddle server repo." >}}
 ```shell
-http get TEA-EQBROWN.local:5000/riddles/all
+cd cs10
+mkdir unit01
+cd unit01
+git clone https://github.com/the-isf-academy/riddle-server
+```
+
+{{< code-action "Start a locally hosted riddle server." >}}
+```shell
+cd riddle-server
+banjo
+```
+
+The riddle is server is now hosted locally on your machine! 
+
+It hosted at this address: `http://127.0.0.1:5000`
+
+{{< code-action "Reacquaint yourself with the riddle server." >}} In a new Terminal window or tab, send HTTP requests to your locally hosted riddle server. 
+```shell
+http get 127.0.0.1:5000/riddles/all
 ```
 - Make a `GET` request to each possible endpoint 
 - Make a `POST` reqest to each possible endpoint 
@@ -42,10 +58,10 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `TEA-EQBROWN.local:5000/riddles/all`   |         N/A             | Returns a list of all the riddles, without answers.                                      |
-| `GET`  | `TEA-EQBROWN.local:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `TEA-EQBROWN.local:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
-| `POST` | `TEA-EQBROWN.local:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+| `GET`  | `127.0.0.1:5000/riddles/all`   |         N/A             | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `127.0.0.1:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `127.0.0.1:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `127.0.0.1:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
 
 
 ## [0] Writing the client
@@ -68,11 +84,9 @@ What do you want to do?
 
 ### [Setup]
 
-{{< code-action "Create a unit01 folder. Then, clone the starter repository." >}} 
+{{< code-action "Clone the starter repository into your" >}} `cs10/unit01` **folder.**
 ```shell
-cd Desktop/cs10
-mkdir unit01
-cd unit01
+cd ~/Desktop/cs10/unit01
 git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
 ```
 
@@ -87,7 +101,7 @@ This repository has the follow files:
 - `riddle_view.py`
 
 
-{{< code-action "Try running the client." >}} 
+{{< code-action "Try running the client. Make sure you have the riddle server running in a separate Terminal window." >}} 
 
 ```shell
 python3 riddle_client.py
@@ -198,7 +212,7 @@ When we guess a riddle, the response is given to us in `JSON`.
 JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary. 
 
 ```shell {hl_lines=["1","5","9-17"]}
-http get TEA-EQBROWN.local:5000/riddles/guess id=1 guess=newspaper
+http get 127.0.0.1:5000/riddles/guess id=1 guess=newspaper
 
 HTTP/1.1 200 OK
 Connection: close
@@ -305,11 +319,11 @@ Each riddle has a secret difficulty level. It can be accessed via the following 
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `TEA-EQBROWN.local:5000/riddles/difficulty`   | `id`                 | Returns the riddle and it's difficulty. (If it the riddle does not exisit, it returns an error with status code 404.)  |
+| `GET`  | `127.0.0.1:5000/riddles/difficulty`   | `id`                 | Returns the riddle and it's difficulty. (If it the riddle does not exisit, it returns an error with status code 404.)  |
 
 {{< code-action "Test out the difficulty endpoint with" >}} `httpie`
 ```shell
-http get TEA-EQBROWN.local:5000/riddles/difficulty id=0
+http get 127.0.0.1:5000/riddles/difficulty id=0
 ```
 
 The riddle's difficulty is basically 1 minus the fraction of guesses which were correct. So a Riddle with a difficulty of 1 is impossibly hard, while a Riddle with a difficulty of 0 is easy--everyone gets it right!
