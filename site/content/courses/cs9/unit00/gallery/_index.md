@@ -1,6 +1,6 @@
 ---
 Title: Gallery
-# draft: true
+draft: true
 ---
 
 
@@ -25,7 +25,7 @@ Title: Gallery
 
 {{< /columns >}}
 
-## Faculty 
+## Teaching Staff 
 {{< columns >}}
 {{< figure src="images/courses/cs9/unit00/00_project_2020_will.gif" width="100%" title="by Will Copeland" >}}
 <--->

@@ -280,8 +280,8 @@ Welcome to the Riddler
 ==================================================
 What do you want to do?
   0. View all riddles
-  1. Pick a riddle to guess
-  2. Add a riddle
+  1. Add a riddle
+  2. Pick a riddle to guess
   3. Play the riddle game
   4. Quit
 > 3
