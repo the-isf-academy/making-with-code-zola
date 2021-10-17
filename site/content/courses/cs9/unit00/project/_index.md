@@ -100,11 +100,11 @@ The self-assessment is broken down into three areas:
 Each practice is something that a computer scientist does each time they approach a problem. You are required to self-assess your ability to do each practice. 
 
 For each practice you must provide the following:
-- A score from 0-3
-    - 0 - little to no evidence of practice 
-    - 1 - below average evidence of practice 
-    - 2 - above average evidence of practice
-    - 3 - outstanding evidence of practice
+- A score from 1-4
+    - 1 - little to no evidence of practice 
+    - 2 - below average evidence of practice 
+    - 3 - above average evidence of practice
+    - 4 - outstanding evidence of practice
 - A justification of why you deserve that score 
 - Examples to support your justification 
 
@@ -114,28 +114,27 @@ This project focused on key computer science concepts, abstraction and decomposi
 You are required to demonstrate your understanding of each concept through evidence based reflection. 
 
 For each concept you must provide the following:
-- A score from 0-5
-    - 0 - little to no understanding or implementation of the concept
-    - 1 - below average understanding or implementation the concept
-    - 2 - above average understanding or implementation the concept
-    - 3 - outstanding understanding or implementation the concept
+- A score from 1-5
+    - 1 - no understanding or implementation of the concept
+    - 2 - below average understanding or implementation the concept
+    - 3 - average understanding or implementation the concept
+    - 4 - above average understanding or implementation the concept
+    - 5 - outstanding understanding and implementation the concept
 - A justification of why you deserve that score 
 - Examples to support your justification 
 - A discussion of why each concept is important 
 
 ### [Reflection]
 
-Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your resopnsiblity to society as technolgogy creators by evaluating the implications of your work. 
+Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your responsiblity to society as technology creators by evaluating the implications of your work. 
 
-*It is graded purely based on completion and demonstration of effort.*
+*It is marked purely based on completion and demonstration of effort.*
 
 
 
 ## [4] Sucess Claims 
 
-Each project will look entirely different and have their individual measure of success. 
-
-However, all successful computer scientists should be able to make the following claims: 
+Successful computer scientists should be able to make the following claims: 
 - I can thoughtfully plan a large computer science project.  
 - I can develop my project iteratively over time 
     - I can track the development of my project by committing to Github consistently throughout my project.
