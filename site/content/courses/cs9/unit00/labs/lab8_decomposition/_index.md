@@ -204,8 +204,8 @@ git clone https://github.com/the-isf-academy/lab-decomposition.git
 3. Frames Per Second (FPS) is a rate we care about in the field of animation. You can calculate this rate by dividing the total number of frames over the total length of the animation. Calculate the FPS of this animation.
 4. Look inside the `draw_animation()` function. How many times is the for-loop here running, and how did you find this number? What is the difference between `settings.NUMREPEATS` and `settings.NUMFRAMES`?
 5. You will see that there are four conditionals inside the for-loop of `draw_animation()`. Calculate what the numbers in the conditionals are equivalent to: `num_frames/4`, `num_frames/2`, `3*num_frames/4`, `num_frames`.
-6. There are four if-statements, but only three triangles drawn on the screen. What happened to the fourth triangle? Explain in at least once sentence.
-7. Change the last if-statement so that the animation is able to draw and animate all four triangles.
+6. There are four if-statements, but only three triangles are drawn on the screen. What happened to the fourth triangle? Explain in at least once sentence.
+7. Change the last if-statement so that the animation is able to draw and animate all four triangles. What did you change?
 
 {{< /checkpoint >}}
 
@@ -221,7 +221,7 @@ git clone https://github.com/the-isf-academy/lab-decomposition.git
 
 0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
 1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`. What values did you change `START_X` and/or `START_Y` to?
-2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for every `i` and `new_size`. (HINT: you can split up the work on this with your tablemates.)
+2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for first 10 `i` values and `new_size` values. (HINT: you can split up the work on this with your tablemates.)
 3. Calculate `max_size`. (HINT: you will need to reference the numbers in `settings.py`)
 4. For the second for-loop, trace through the code and fill out the table for every `j` and `new_size`.(HINT: you can split up the work on this with your tablemates.)
 5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`) What did you change?
