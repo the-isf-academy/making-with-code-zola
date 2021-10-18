@@ -84,7 +84,7 @@ What do you want to do?
 
 ### [Setup]
 
-{{< code-action "Clone the starter repository into your" >}} `cs10/unit01` **folder.**
+{{< code-action "In a new Terminal window, clone the starter repository into your" >}} `cs10/unit01` **folder.**
 ```shell
 cd ~/Desktop/cs10/unit01
 git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
@@ -101,7 +101,7 @@ This repository has the follow files:
 - `riddle_view.py`
 
 
-{{< code-action "Try running the client. Make sure you have the riddle server running in a separate Terminal window." >}} 
+{{< code-action "Try running the client. Make sure you still have the riddle server running in a separate Terminal window." >}} 
 
 ```shell
 python3 riddle_client.py
