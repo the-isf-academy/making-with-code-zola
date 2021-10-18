@@ -6,7 +6,7 @@ type: lab
 
 # Client
 
-In this lab we will create a user interface for the riddle server. 
+In this lab we will create a user interface for the riddle server.
 
 
 ## [0] What is a client?
@@ -14,16 +14,16 @@ In this lab we will create a user interface for the riddle server.
 
 Since the riddle server is an API with no user interface, we end up writing a lot of
 HTTP requests into the Terminal to use it. What if we had a program which took care
-of making these requests for us? A program like this is called a *client*. 
+of making these requests for us? A program like this is called a *client*.
 
-**Any app which uses the Internet is a client.** 
+**Any app which uses the Internet is a client.**
 
 The client, or app, is constantly making HTTP requests
-to a server to send and receive information. 
+to a server to send and receive information.
 
 ## [1] Exploring the Riddle Server
 
-Let's start by exploring the riddle server once again. Except this time, it's going to be locally hosted on your machine. 
+Let's start by exploring the riddle server once again. Except this time, it's going to be locally hosted on your machine.
 
 {{< code-action "Make a unit01 folder and clone the riddle server repo." >}}
 ```shell
@@ -45,16 +45,16 @@ pip3 install -r requirements.txt
 banjo
 ```
 
-The riddle is server is now hosted locally on your machine! 
+The riddle is server is now hosted locally on your machine!
 
 It hosted at this address: `http://127.0.0.1:5000`
 
-{{< code-action "Reacquaint yourself with the riddle server." >}} In a new Terminal window or tab, send HTTP requests to your locally hosted riddle server. 
+{{< code-action "Reacquaint yourself with the riddle server." >}} In a new Terminal window or tab, send HTTP requests to your locally hosted riddle server.
 ```shell
 http get 127.0.0.1:5000/riddles/all
 ```
-- Make a `GET` request to each possible endpoint 
-- Make a `POST` reqest to each possible endpoint 
+- Make a `GET` request to each possible endpoint
+- Make a `POST` reqest to each possible endpoint
 - Access the endpoints on your web browser
 
 
@@ -72,7 +72,7 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 ## [0] Writing the client
 
-We are going to create a Terminal interface for the riddler server. This will allow users to easily interact with the server without needing to explicitly make a `GET` or a `POST` request. 
+We are going to create a Terminal interface for the riddler server. This will allow users to easily interact with the server without needing to explicitly make a `GET` or a `POST` request.
 
 The client will work like so:
 ```shell
@@ -85,7 +85,7 @@ What do you want to do?
   1. Add a riddle
   2. Pick a riddle to guess
   3. Quit
-> 
+>
 ```
 
 ### [Setup]
@@ -96,7 +96,7 @@ cd ~/Desktop/cs10/unit01
 git clone https://github.com/the-isf-academy/lab-http-YOUR-GITHUB-USERNAME.git
 ```
 
-{{< code-action "Install the required libraries." >}} 
+{{< code-action "Install the required libraries." >}}
 ```shell
 cd lab-client-YOUR-GITHUB-USERNAME
 pip3 install -r requirements.txt
@@ -107,13 +107,13 @@ This repository has the follow files:
 - `riddle_view.py`
 
 
-{{< code-action "Try running the client. Make sure you still have the riddle server running in a separate Terminal window." >}} 
+{{< code-action "Try running the client. Make sure you still have the riddle server running in a separate Terminal window." >}}
 
 ```shell
 python3 riddle_client.py
 ```
 
-It runs! Until it doesn't. The `RiddleView` is fully-functional, however the some of the `RiddleClient` class functions still need to be written to connect the game to a Riddle server. Currently only the `0. View all riddles` functionality works. 
+It runs! Until it doesn't. The `RiddleView` is fully-functional, however the some of the `RiddleClient` class functions still need to be written to connect the game to a Riddle server. Currently only the `0. View all riddles` functionality works.
 
 
 **Your job is to finish the functionality of `riddle_client.py`:**
@@ -123,7 +123,7 @@ It runs! Until it doesn't. The `RiddleView` is fully-functional, however the som
 
 ### [View all riddles]
 
-Let's start by taking a look at the working function `all_riddles()`. 
+Let's start by taking a look at the working function `all_riddles()`.
 
 The `all_riddles()` function sends an HTTP GET request to the Riddle server and returns all of the riddles in a dictionary. As we know from the **Endpoint Documentation** above, the endpoint to view all the riddles is `/all` and it does not take a paylod.
 
@@ -145,8 +145,8 @@ def all_riddles(self):
         self.view.error(response.status_code,response.json()['errors'])
 ```
 - `lines 6-7`: stores the full address of where to get all of the riddles on the riddle server in `all_riddles_address`.   It uses the `server_address` property of the client class as the base address for the HTTP requests and the endpoint to achieve the correct functionality.
-- `line 9`: sends an HTTP GET request to the server and stores the response. 
-- `line 11-13`: If the HTTP was sucessful, it returns the riddles in a dictionary. 
+- `line 9`: sends an HTTP GET request to the server and stores the response.
+- `line 11-13`: If the HTTP was sucessful, it returns the riddles in a dictionary.
   - `riddles = response.json()` converts the response from the server,
 - `line 14-15`: If the HTTP request was not successful, displays the type of error encountered to the user.
 
@@ -169,7 +169,7 @@ pseudocode. What are the major steps that function accomplishes?*
 ### [Test Cases]
 
 {{< checkpoint >}}
-We did not provide a test harness for this lab. It's up to you to determine if your client is working as expected. 
+We did not provide a test harness for this lab. It's up to you to determine if your client is working as expected.
 
 **In your notebook, write test cases for `add_riddle()` and `guess_riddle()`.**
 
@@ -185,11 +185,11 @@ Keep the following in mind:
 
 
 ### [Add a riddle]
-{{< code-action "Code this functionality to add a riddle to the server." >}} Reference your pseudocode and test cases to consider how to implement guessing a riddle. 
+{{< code-action "Code this functionality to add a riddle to the server." >}} Reference your pseudocode and test cases to consider how to implement guessing a riddle.
 
 {{< aside "Payload" >}}
 
-As a reminder, some endpoints require a `payload`. 
+As a reminder, some endpoints require a `payload`.
 
 A  `payload` should be a dictionary containing the parameters you want to send with your HTTP request.
 
@@ -199,7 +199,7 @@ payload = {
     "fruit": "watermelon"
 }
 
-response = requests.get(address, payload)
+response = requests.get(address, json=payload)
 ```
 
 To learn more about the `Requests` library, checkout its [documentation](https://docs.python-requests.org/en/latest/)
@@ -215,7 +215,7 @@ To learn more about the `Requests` library, checkout its [documentation](https:/
 
 When we guess a riddle, the response is given to us in `JSON`.  
 
-JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary. 
+JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary.
 
 ```shell {hl_lines=["1","5","9-17"]}
 http get 127.0.0.1:5000/riddles/guess id=1 guess=newspaper
@@ -242,7 +242,7 @@ To turn the http response into a JSON object, we can use:
 response.json()
 ```
 
-We can then **parse the response** just as we would a Python dictionary. 
+We can then **parse the response** just as we would a Python dictionary.
 
 Consider a dictionary about what items you need to pick up from the grocery story.
 ```python
@@ -258,7 +258,7 @@ grocery_dictionary = {
 }
 ```
 
-To access the value of `watermelon`, you can index into the dictionary using the **key** names. 
+To access the value of `watermelon`, you can index into the dictionary using the **key** names.
 ```python
 grocery_dictionary['fruit']['watermelon']
 ```
@@ -287,7 +287,7 @@ Currently, the client simply takes care of the HTTP requests in a nicely formatt
 {{< code-action "Extend the functionality of the client and allow the user to play a guessing game." >}}
 
 The game should:
-- randomly display each riddle on the riddle server 
+- randomly display each riddle on the riddle server
 - allow the user to guess each riddle
 - keep score of how many riddles the user guessess correctly
 - display the current score after each riddle is guessed
@@ -334,11 +334,8 @@ http get 127.0.0.1:5000/riddles/difficulty id=0
 
 The riddle's difficulty is basically 1 minus the fraction of guesses which were correct. So a Riddle with a difficulty of 1 is impossibly hard, while a Riddle with a difficulty of 0 is easy--everyone gets it right!
 
-{{< code-action "With this in mind, incorporate the riddle difficulty levels into your game. It's up to you to decide how to implement this feature!" >}} 
+{{< code-action "With this in mind, incorporate the riddle difficulty levels into your game. It's up to you to decide how to implement this feature!" >}}
 
 Some ideas for this are:
 - displaying the riddles in the game from easy to hard
 - allowing the user to pick `easy`, `medium`, or `hard` difficulty for the game
-
-
-
