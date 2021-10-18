@@ -33,9 +33,15 @@ cd unit01
 git clone https://github.com/the-isf-academy/riddle-server
 ```
 
-{{< code-action "Start a locally hosted riddle server." >}}
+{{< code-action "Install the requirements." >}}
 ```shell
 cd riddle-server
+pip3 install -r requirements.txt
+```
+
+
+{{< code-action "Start a locally hosted riddle server." >}}
+```shell
 banjo
 ```
 
