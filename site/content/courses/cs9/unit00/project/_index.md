@@ -100,11 +100,11 @@ The self-assessment is broken down into three areas:
 Each practice is something that a computer scientist does each time they approach a problem. You are required to self-assess your ability to do each practice. 
 
 For each practice you must provide the following:
-- A score from 1-4
-    - 1 - little to no evidence of practice 
-    - 2 - below average evidence of practice 
-    - 3 - above average evidence of practice
-    - 4 - outstanding evidence of practice
+- A score from 0-3
+    - 0 - little to no evidence of practice 
+    - 1 - below average evidence of practice 
+    - 2 - above average evidence of practice
+    - 3 - outstanding evidence of practice
 - A justification of why you deserve that score 
 - Examples to support your justification 
 
@@ -114,12 +114,11 @@ This project focused on key computer science concepts, abstraction and decomposi
 You are required to demonstrate your understanding of each concept through evidence based reflection. 
 
 For each concept you must provide the following:
-- A score from 1-5
-    - 1 - no understanding or implementation of the concept
-    - 2 - below average understanding or implementation the concept
-    - 3 - average understanding or implementation the concept
-    - 4 - above average understanding or implementation the concept
-    - 5 - outstanding understanding and implementation the concept
+- A score from 0-3
+    - 0 - little to no evidence or understanding of concept
+    - 1 - below average evidence or understanding of concept
+    - 2 - above average evidence and understanding of concept
+    - 3 - outstanding evidence and understanding of concept
 - A justification of why you deserve that score 
 - Examples to support your justification 
 - A discussion of why each concept is important 
@@ -151,6 +150,46 @@ Successful computer scientists should be able to make the following claims:
     - I can write modules for different aspects of my project
 
 **Keep the success claims in mind when coding your project and self-assessing yourself.**
+
+## [5] Scoring
+
+The project is scored out of 7. 
+- 1 point is assigned to the reflection
+    - *By thoughtfully answering the prompts and putting effort into your response, you will receive 1 point*
+-  6 points are assigned to the practices & concepts 
+    - *To calculate your score for the practices & concepts, look at the following bands:*
+    > 0 = 0-3
+    >
+    > 1 = 4- 6
+    >
+    > 2 = 7 - 9
+    >
+    > 3 = 10 - 12
+    >
+    > 4 = 12- 14
+    >
+    > 5 = 14 - 16
+    >
+    > 6 = 16- 18
+	
+*Example score:*
+
+    1 point for reflection
+    5 points for practices & concepts (15/18)
+    6 total points
+
+#### Final Score
+
+Your final score for the project will take into account your self-assessed score and the teacher-assessed score. 
+
+> (.25)*self-assessed score + (.75)*teacher score = YOUR FINAL GRADE
+
+*Example final score:*
+
+    Self-assessed score = 7
+    Teacher-assessed score = 5
+    Final score = 7(.35) + 5(.65) = 5.7 = 6
+
 
 
 
