@@ -13,8 +13,8 @@ atom donow5.py
 ```
  The code block below is inefficient. Each shape (square, pentagon, hexagon, heptagon) has its own function.
 
-{{< code-action "In your `donow5.py` file, write a function that can draw any shape." >}}
->  Consider: will your new function need parameter?
+{{< code-action "In your `donow5.py` file, write one function that can draw any shape." >}}
+>  Consider: will your function need a parameter?
 >
 
 
