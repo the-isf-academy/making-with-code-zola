@@ -13,8 +13,8 @@ atom donow5.py
 ```
 
 
-{{< code-action "The code block below is inefficient. Each shape (square, pentagon, hexagon, heptagon) has its own function. Replace these 4 functions with just 1 function that can draw any shape." >}} Start by copying and pasting the code into your `donow5.py` file.
->  Remember that once you've written the new function, you will also need to change the `while` loop so that it calls the new function instead of the old ones.
+{{< code-action "The code block below is inefficient. Each shape (square, pentagon, hexagon, heptagon) has its own function. In you `donow5.py` file, write a new function that can draw any shape." >}}
+>  Consider: will your new function need parameter?
 >
 
 
@@ -45,21 +45,5 @@ def heptagon():
     for i in range(7):
         forward(100)
         right(360/7)
-
-speed(10)
-while True:
-    drawing = input("What would you like me to draw? ")
-    if drawing == "square":
-        square()
-    elif drawing == "pentagon":
-        pentagon()
-    elif drawing == "hexagon":
-        hexagon()
-    elif drawing == "heptagon":
-        heptagon()
-    elif drawing == "quit":
-        break
-    else:
-        print("Sorry, I don't know how to draw that...")
 
 ```
