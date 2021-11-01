@@ -99,7 +99,7 @@ paul 45
 
 ## Abstracting the solution 
 
-{{< code-action "Write a new function to find the average prices of any dictionary that is formatted like the " >}} `grocery_prices`.
+{{< code-action "Edit your exisiting function so the user can find the averages of each category without having to know the category name." >}} Test your updated function using the dictionary below.
 
 Use the following dictionary to test your solution:
 ```python
