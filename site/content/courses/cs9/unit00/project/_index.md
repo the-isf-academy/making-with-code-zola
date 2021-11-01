@@ -19,6 +19,18 @@ $ cd cs9/unit_00
 $ git clone https://github.com/the-isf-academy/project-animation-YOUR-GITHUB-USERNAME.git
 ```
 
+
+To get started, you will link your design document into your `README.md` file.
+
+{{< code-action "Find your project design document in your Google Drive and link in your" >}} `README.md`.
+
+> Use the follow syntax to create a hyperlink:
+> 
+> `[9. Version Control](www.cs.fablearn.org)`
+>
+> This will result in: [9. Version Control](www.cs.fablearn.org)
+
+
 ## Design Document
 
 This is a big project, and you will get lost or frustrated if you don't do some planning up front. Before you start working on your project, you are required to write a project proposal and get it approved by a teacher. *You can find your design doc in your Google Drive folder.*

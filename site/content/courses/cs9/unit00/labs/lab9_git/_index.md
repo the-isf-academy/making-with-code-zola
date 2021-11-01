@@ -4,7 +4,7 @@ type: labs
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
-draft: true
+# draft: true
 ---
 # Version Control Lab
 
@@ -72,10 +72,16 @@ Github uses personal access tokens to ensure security when remotely accessing a 
 
 ## [1] Your First Repo
 
-**From now on, your homework, labs, and projects will be provided as git repositories.** We are going to start now, by setting up your final project for this unit.
+**From now on, your homework, labs, and projects will be provided as git repositories.** We are going to start now, by setting up your `do_now` files to Github. 
 
 
-### [Cloning Your Project Repository]
+### [Cloning Your Do Now Repository]
+
+{{< code-action "Go to your" >}} `cs9` **folder.**
+
+```shell
+cd Desktop/cs9
+```
 
 {{< code-action "Clone your repo, so there's a copy on your computer." >}}  
 
@@ -83,17 +89,16 @@ Github uses personal access tokens to ensure security when remotely accessing a 
 >
 > **You need to replace this with your username**
 >
-> e.g. git clone project-animation-emmaqbrown
+> e.g. git clone cs9-donows-emmaqbrown
 
 
 ```shell
-cd ~/Desktop/cs9/unit_00/
-git clone project-animation-YOUR-GITHUB-USERNAME
+git clone cs9-donows-YOUR-GITHUB-USERNAME
 ```
 
 If successful, should see something like this in your Terminal:
 ```shell
-Cloning into 'project-animation-YOUR-GITHUB-USERNAME'...
+Cloning into 'cs9-donows-YOUR-GITHUB-USERNAME'...
 remote: Enumerating objects: 33, done.
 remote: Counting objects: 100% (33/33), done.
 remote: Compressing objects: 100% (22/22), done.
@@ -102,17 +107,14 @@ Receiving objects: 100% (33/33), 7.51 KiB | 7.51 MiB/s, done.
 Resolving deltas: 100% (13/13), done.
 ```
 
-Now you have a directory called `project-animation-YOUR-GITHUB-USERNAME` in your `cs9/unit_00` folder. 
+Now you have a directory called `cs9-donows-YOUR-GITHUB-USERNAME` in your `cs9` folder. 
 
-{{< code-action "Let's go into the project folder and have a look inside:" >}} 
-
+{{< code-action "Use the" >}} **`tree .` command to see the directory's file structure. Right now there is only one file, `README.md`, and one folder, `unit_00`. 
 ```shell
-cd project-animation-YOUR-GITHUB-USERNAME
-tree .
+.
+├── README.md
+└── unit_00
 ```
-
-There are just a few files in the project right now. 
-
 
 # Working with Git
 
@@ -126,9 +128,9 @@ Whenever you are working on a project, you will go through four steps:
 
 Let's practice.
 
-### [Step 0: Edit files]
+### [Step 0: Edit the README]
 
-Today we are going to start working on the project, starting with the design. 
+Today we are going to practice commiting files to Github. Let's start by editing the `README.md` file. 
 
 {{< code-action "Open the" >}}  `README.md` **file using Atom:**
 
@@ -137,23 +139,12 @@ atom README.md
 ```
 
 As you've seen before, `README` files are like a guide to what's contained inside
-a repository and how to use it. Once your project is complete, your `README` file
-will serve this purpose.
+a repository and how to use it. 
 
-There are four sections here: Planning, How to use, Settings, and Modules. Each
-section has some text explaining what's expected. You should replace this text
-with descriptions of your project.
+Right now the `README` is pretty bare. 
 
+{{< code-action "Update it with your name and a description of what this repository will hold." >}}
 
-To get started, you will link your design document into your `README.md` file.
-
-{{< code-action "Find your project design document in your Google Drive and link in your" >}} `README.md`.
-
-> Use the follow syntax to create a hyperlink:
-> 
-> `[9. Version Control](www.cs.fablearn.org)`
->
-> This will result in: [9. Version Control](www.cs.fablearn.org)
 
 {{< aside "Markdown" >}}
 The `README.md` file is written in a simple language called Markdown that
@@ -315,6 +306,9 @@ using git when you start working on bigger projects.
 *If you're not glad you
 learned git five years from now, come see us and we'll give you some extra
 credit or something :)*
+
+## [2] Adding your preious Do Nows
+
 
 {{< checkpoint >}}
 In your notebook, answer the following prompts.
