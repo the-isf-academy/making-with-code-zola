@@ -345,7 +345,7 @@ tree .
 >
 > `git add do_now_1.py do_now_2.py`
 
-{{< code-action "Check the files have all been successfully added with" >}} `git status`
+{{< code-action "Check the files have all been successfully added with" >}} `git status` 
 
 {{< code-action "Finalize the commit by writing the commit message with" >}} `git commit`
 
