@@ -89,7 +89,7 @@ cd Desktop/cs9
 >
 > **You need to replace this with your username**
 >
-> e.g. git clone cs9-donows-emmaqbrown
+> e.g. `git clone cs9-donows-emmaqbrown`
 
 
 ```shell
@@ -109,7 +109,7 @@ Resolving deltas: 100% (13/13), done.
 
 Now you have a directory called `cs9-donows-YOUR-GITHUB-USERNAME` in your `cs9` folder. 
 
-{{< code-action "Use the" >}} **`tree .` command to see the directory's file structure. Right now there is only one file, `README.md`, and one folder, `unit_00`. 
+{{< code-action "Use the" >}} `tree .` **command to see the directory's file structure.** Right now there is only one file, `README.md`, and one folder, `unit_00`. 
 ```shell
 .
 ├── README.md
@@ -143,7 +143,7 @@ a repository and how to use it.
 
 Right now the `README` is pretty bare. 
 
-{{< code-action "Update it with your name and a description of what this repository will hold." >}}
+{{< code-action "Update it with your name, description of what this repository will hold, and a link to the Do Now page on the website." >}}
 
 
 {{< aside "Markdown" >}}
@@ -157,6 +157,14 @@ When you have a `.md` file
 open in Atom, you can preview the rendered version with the following menu
 option: `Packages > Markdown Preview > Toggle Preview`.
 {{< /aside >}}
+
+Your final markdown file should look something like this:
+```md
+# Do Nows
+### Author: Ms. Brown
+
+This repository holds the do now exercises. The exercises can be found (here)[http://localhost:1313/courses/cs9/unit00/do_now/].
+```
 
 --- 
 
@@ -201,22 +209,27 @@ from `README.md`:
 
 ```shell
 diff --git a/README.md b/README.md
-index 0d8c5de..d0eeb94 100644
+index 2c637ca..00ca290 100644
 --- a/README.md
 +++ b/README.md
-@@ -12,7 +12,7 @@ Here's what is included:
- - `settings.py` This is where you will store your settings for your animation. Feel free to add more settings to further parameterize your project. 
+@@ -1,9 +1,4 @@
+ # Do Nows
+-### Author: YOUR NAME GOES HERE
++### Author: Ms. Brown
  
- ## Planning
--<Insert a link to your planning document here.>
-+[Here is a link to my planning document](www.url.com)
- 
- ## How to use
- <Describe how to run your animation here.>
+-
+-> INCLUDE THE FOLLOWING:
+-> - A description of this repository
+-> - A link to the `do now` page of the website.
+->
+-> *You may delete this section when complete.*
+\ No newline at end of file
++This repository holds the do now exercises. The exercises can be found (here)[http://localhost:1313/courses/cs9/unit00/do_now/].
 ```
 
-You should always run `git status` and `git diff` before you add changes to your
-repository, to make sure you're saving the changes you meant to add. 
+To get out of `git diff`, type `:q`
+
+You should always run at a minimum run `git status` before you add changes to your repository. To make sure you're saving the changes you meant to add, run  `git diff`. 
 
 If you noticed any typos, or want to add something, edit `README.md` in Atom again, and then run `git status` and `git diff` again.
 
@@ -237,7 +250,7 @@ These two changes belong together, so they should be part of the same commit.
 
 **You will prepare a commit by adding all the files that have changes.**
 
-{{< code-action "Let's add your" >}} `README.md` to a new commit:
+{{< code-action "Let's add your" >}} `README.md` **to a new commit:**
 
 ```shell
 git add README.md
@@ -257,8 +270,7 @@ Changes to be committed:
 
 Now we are ready to finalize the commit. 
 
-{{< code-action "Type" >}} `git commit`.  You will see an
-Atom file open. 
+{{< code-action "Type" >}} `git commit`.  You will see an Atom file open. 
 
 **It's time to describe what you did, using a commit message.**
 
@@ -290,14 +302,13 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/the-isf-academy/unit_00_project_Iris.git
+To https://github.com/the-isf-academy/cs9-donows-YOUR-GITHUB-USERNAME
    67838f1..4742ecf  main -> main
 ```
 
 {{< code-action "Go to yoour repository page on Github.com." >}} You should see your updated version of your `README.md` at the bottom of the page.
 
 **🎉 Congratulations! You have successfully made your fist push to Github! 🎉**
-
 
 This probably felt like a lot of work just to save your work. That's true. But
 it will get easier as you get used to it, and you will start to see the value of
@@ -308,6 +319,40 @@ learned git five years from now, come see us and we'll give you some extra
 credit or something :)*
 
 ## [2] Adding your preious Do Nows
+
+We are now going to add all of your previous `Do Nows` to your repository. 
+
+{{< code-action "Open your finder, and drag all of your Do Now files into your repository." >}} 
+
+{{< code-action "Then, navigate back to your repository in Terminal and make sure your files are in the correct place." >}} Your repository should look something like this:
+```shell
+tree .
+.
+├── README.md
+├── unit_00
+        ├── do_now_1.py
+        ├── do_now_2.py
+        ├── do_now_3.py
+        ├── do_now_4.py
+        ├── do_now_5.py
+        ├── do_now_6.py
+```
+
+{{< code-action "Check what has changed in the repository with" >}} `git status`
+
+{{< code-action "Add all of your do now files to the commit." >}} 
+> You can add multiple files by separating file names with a `space` like so:
+>
+> `git add do_now_1.py do_now_2.py`
+
+{{< code-action "Check the files have all been successfully added with" >}} `git status`
+
+{{< code-action "Finalize the commit by writing the commit message with" >}} `git commit`
+
+{{< code-action "Push your commit to the remote copy of the repository with" >}} `git push`
+
+{{< code-action "Finally, check your repository on Github.com!" >}} You should see all of your do now files listed. 
+
 
 
 {{< checkpoint >}}
