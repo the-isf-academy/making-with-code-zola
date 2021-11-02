@@ -16,7 +16,7 @@ In this lab, we're going to learn two new tools, git and Github, to help us with
 
 ## [0] Github Set up
 
-You have already used git a few times. Rmember typing `git clone
+You have already used git a few times. Remember typing `git clone
 ...`? Cloning means pulling a copy of a repository down from github onto your
 own computer. Now we are going to take the next step, editing a repository and pushing it to the cloud. 
 
@@ -291,11 +291,11 @@ Every time you commit code, you need to write a message explaining what you have
 Now it's time to sync the copy of your repo with the copy on github.
 
 {{< code-action "Type" >}}  `git push`. 
-> It may ask you for your username. **This is the `Github` username you just created.**
+> If it asks for your username, **this is the `Github` username you created.**
 >
-> It may ask you for your password. **This is your Github `token` you copied in the setup.**
+> If it asks you for your password, **this is your Github `token` you copied in the setup.**
 >
-> Your token will NOT appear when you copy and paste it.
+> Your token will **NOT** appear when you copy and paste it.
 
 You should see something below in Terminal. If you do not, tell a teacher.
 ```shell
@@ -311,6 +311,9 @@ To https://github.com/the-isf-academy/cs9-donows-YOUR-GITHUB-USERNAME
 ```
 
 {{< code-action "Go to yoour repository page on Github.com." >}} You should see your updated version of your `README.md` at the bottom of the page.
+> https://github.com/the-isf-academy/cs9-donows-YOUR-GITHUB-USERNAME
+> 
+> *Be sure to change, 'YOUR-GITHUB-USERNAME' to your actual username.*
 
 **🎉 Congratulations! You have successfully made your fist push to Github! 🎉**
 
@@ -322,7 +325,7 @@ using git when you start working on bigger projects.
 learned git five years from now, come see us and we'll give you some extra
 credit or something :)*
 
-## [2] Adding your preious Do Nows
+## [2] Adding Files to Your Repo
 
 We are now going to add all of your previous `Do Nows` to your repository. 
 
@@ -355,17 +358,16 @@ tree .
 
 {{< code-action "Push your commit to the remote copy of the repository with" >}} `git push`
 
-{{< code-action "Finally, check your repository on Github.com!" >}} You should see all of your do now files listed. 
+{{< code-action "Finally, check your repository on Github.com!" >}} You should see all of your do now files listed. *Notify a teacher if you do not see your files.*
+> https://github.com/the-isf-academy/cs9-donows-YOUR-GITHUB-USERNAME
 
 
 
 {{< checkpoint >}}
 In your notebook, answer the following prompts.
 
-0. How do you review your changes in a git repository?
-0. How do you commit your changes in a git repository?
-0. What is the purpose of a commit message?
-0. How do you sync your local copy of the git repository to the remote copy on github.com? 
+0. What are the steps to commit files to your remote github repository? 
+0. List 3 advantages to using a version control software.
 {{< /checkpoint >}}
 
 ---
