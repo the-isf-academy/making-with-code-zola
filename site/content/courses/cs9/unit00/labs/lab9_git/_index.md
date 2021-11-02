@@ -22,7 +22,7 @@ own computer. Now we are going to take the next step, editing a repository and p
 
 First, we must set up your Terminal and create a Github account. 
 
-### [Command Line]
+### [Terminal]
 
 {{< code-action "Double-check that git is installed" >}}  by running `which git` in Terminal.
 
@@ -36,6 +36,12 @@ First, we must set up your Terminal and create a Github account.
 - `git config --global user.email <Your school email>`
 - `git config --global core.editor "atom --wait"`
 - `git config --global commit.template .commit_template`
+
+{{< code-action "Install a credential manager to store your Github credentials securely." >}} *Copy and paste the lines below one at a time. It may ask you for your computer password.*
+```shell
+brew tap microsoft/git
+brew install --cask git-credential-manager-core
+```
 
 ### [Join Github]
 
@@ -57,10 +63,8 @@ First, we must set up your Terminal and create a Github account.
 
 Github uses personal access tokens to ensure security when remotely accessing a repository. You will need your token when using git from the Terminal. 
 
-{{< code-action "Go to your github settings:">}}  [github.com/settings/profile](https://github.com/settings/profile).
+{{< code-action "Go to your github settings:">}}  [https://github.com/settings/tokens](https://github.com/settings/tokens).
 
-> 0. **Select** `Developer settings` from the sidebar.
-> 0. **Select** `Personal access tokens`.
 > 0. **Select** `Generate new token`.
 > 0. **Type** `CS9` in the `Note` box.
 > 0. **Set** the `Expiration` to `90 days`.
@@ -72,10 +76,12 @@ Github uses personal access tokens to ensure security when remotely accessing a 
 
 ## [1] Your First Repo
 
-**From now on, your homework, labs, and projects will be provided as git repositories.** We are going to start now, by setting up your `do_now` files to Github. 
+**From now on, your do nows labs, and projects will be stored as git repositories.** We are going to start now, by setting up your `do_now` files on Github. 
 
 
 ### [Cloning Your Do Now Repository]
+
+We have set up repositories for each student to populate with their do now files.
 
 {{< code-action "Go to your" >}} `cs9` **folder.**
 
@@ -83,13 +89,13 @@ Github uses personal access tokens to ensure security when remotely accessing a 
 cd Desktop/cs9
 ```
 
-{{< code-action "Clone your repo, so there's a copy on your computer." >}}  
+{{< code-action "Clone your repo. This will copy it onto your computer." >}}  
 
 > Below you'll see that the `git clone` command has a `YOUR-GITHUB-USERNAME`. 
 >
 > **You need to replace this with your username**
 >
-> e.g. `git clone cs9-donows-emmaqbrown`
+> *e.g. `git clone cs9-donows-emmaqbrown`*
 
 
 ```shell
@@ -109,14 +115,14 @@ Resolving deltas: 100% (13/13), done.
 
 Now you have a directory called `cs9-donows-YOUR-GITHUB-USERNAME` in your `cs9` folder. 
 
-{{< code-action "Use the" >}} `tree .` **command to see the directory's file structure.** Right now there is only one file, `README.md`, and one folder, `unit_00`. 
+{{< code-action "Go into your folder and use the" >}} `tree .` **command to see the directory's file structure.** Right now there is only one file, `README.md`, and one folder, `unit_00`. 
 ```shell
 .
 ├── README.md
 └── unit_00
 ```
 
-# Working with Git
+## [2] Working with Git
 
 Whenever you are working on a project, you will go through four steps:
 
@@ -183,7 +189,7 @@ You will see the following message:
 
 ```shell
 On branch master
-Your branch is up to date with 'origin/master'.
+Your branch is up to date with 'origin/main'.
 
 Changes not staged for commit:
 (use "git add <file>..." to update what will be committed)
@@ -194,9 +200,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-**Read the whole message.** 
-
-It is telling you that only file that you have changed is `README.md`. That's correct, but what changes did you make? 
+👀 **Read the whole message.** It is telling you that only file that you have changed is `README.md`. That's correct, but what changes did you make? 
 
 {{< code-action "Let's use another command to get details about what changes were made:" >}}
 
@@ -227,9 +231,9 @@ index 2c637ca..00ca290 100644
 +This repository holds the do now exercises. The exercises can be found (here)[http://localhost:1313/courses/cs9/unit00/do_now/].
 ```
 
-To get out of `git diff`, type `:q`
+> To get out of `git diff`, type `q` then `return`.
 
-You should always run at a minimum run `git status` before you add changes to your repository. To make sure you're saving the changes you meant to add, run  `git diff`. 
+**You should always run at a minimum run `git status` before you add changes to your repository.** To make sure you're adding the changes you meant to add, run  `git diff`. 
 
 If you noticed any typos, or want to add something, edit `README.md` in Atom again, and then run `git status` and `git diff` again.
 
@@ -241,7 +245,7 @@ Now it's time to add these changes to your repository.
 
 **A *commit* is a collection of one or more changes that belong together.** 
 
-For example, if you wanted to add a photo of a sketch to your README document, you would need to 
+For example, if you wanted to add a photo to your README document, you would need to 
 
 0. edit `README.md`, telling it to include the photo
 0. add the image file itself to the repo. 
@@ -270,7 +274,7 @@ Changes to be committed:
 
 Now we are ready to finalize the commit. 
 
-{{< code-action "Type" >}} `git commit`.  You will see an Atom file open. 
+{{< code-action "Type" >}} `git commit`. **You will see an Atom file open.** If Atom does not open, notify a teacher.
 
 **It's time to describe what you did, using a commit message.**
 
@@ -278,7 +282,7 @@ Every time you commit code, you need to write a message explaining what you have
 
 {{< code-action "Follow the template and write your commit message." >}} Once you finish, save and close it.
 
-{{< code-action "Run" >}} `git log` to see the history of your project. You should see your commit right at the top. 
+{{< code-action "Run" >}} `git log` **to see the history of your project.** You should see your commit right at the top. 
 
 ---
 
