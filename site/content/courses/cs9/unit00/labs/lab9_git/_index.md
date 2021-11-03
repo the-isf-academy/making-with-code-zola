@@ -95,11 +95,11 @@ cd Desktop/cs9
 >
 > **You need to replace this with your username**
 >
-> *e.g. `git clone cs9-donows-emmaqbrown`*
+> *e.g. `https://github.com/the-isf-academy/cs9-donows-emmaqbrown`*
 
 
 ```shell
-git clone cs9-donows-YOUR-GITHUB-USERNAME
+git clone https://github.com/the-isf-academy/cs9-donows-YOUR-GITHUB-USERNAME
 ```
 
 If successful, should see something like this in your Terminal:
