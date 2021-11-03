@@ -54,11 +54,45 @@ Here are a few examples from last year to get you started. More can be found at 
 - Your notebook with your sketches and project process journal 
 
 ### [Timeline]
-#### cs9.1
-{{< figure src="images/courses/cs9/unit00/00_project_cs9_1.png" width="100%" >}}
-#### cs9.2
-{{< figure src="images/courses/cs9/unit00/00_project_cs9_2.png" width="100%" >}}
 
+Click below to see a detailed timeline for your class section.
+
+#### cs9.1
+{{< expand "cs9.1 Timeline" >}}
+
+| Date        | Agenda                  |
+|-------------|-------------------------|
+| 5 Nov 2021  | Introduction to Project |
+| 9 Nov 2021 | Planning Document       |
+| 11 Nov 2021 | Work Day                |
+| 15 Nov 2021 | Work Day                |
+| 18 Nov 2021 | Work Day                |
+| 19 Nov 2021 | Peet Review             |
+| 23 Nov 2021 | Work Day                |
+| 25 Nov 2021 | Work Day                |
+| 29 Nov 2021 | Work Day                |
+| 02 Dec 2021 | DUE: Code Repository    |
+| 03 Dec 2021 | DUE: Self-assessment    |
+{{< /expand >}}
+
+#### cs9.2
+
+{{< expand "cs9.2 Timeline" >}}
+
+| Date        | Agenda                  |
+|-------------|-------------------------|
+| 4 Nov 2021  | Introduction to Project |
+| 9 Nov 2021  | Planning Document       |
+| 12 Nov 2021 | Work Day                |
+| 16 Nov 2021 | Work Day                |
+| 17 Nov 2021 | Work Day                |
+| 18 Nov 2021 | Peer Review             |
+| 23 Nov 2021 | Work Day                |
+| 26 Nov 2021 | Work Day                |
+| 30 Nov 2021 | Work Day                |
+| 01 Dec 2021 | DUE: Code Repository    |
+| 02 Dec 2021 | DUE: Self-assessment    |
+{{< /expand >}}
 
 
 ##  [2] Starter Code
