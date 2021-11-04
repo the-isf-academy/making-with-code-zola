@@ -1,6 +1,5 @@
 ---
 Title: Gallery
-draft: true
 ---
 
 
