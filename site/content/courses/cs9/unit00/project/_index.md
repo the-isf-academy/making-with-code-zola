@@ -13,11 +13,11 @@ It's up to you to make a drawing you actually care about making. Your teachers w
 
 ## [0] Design Document
 
-This is a big project, and you will get lost or frustrated if you don't do some planning up front. You are required to write a project design document and get it approved by a teacher.
+This is a big project, and you will get lost or frustrated if you don't do some planning up front. You are required to write a project design document and get it approved by a teacher. Your design document can be found in your Google Drive folder.
 
-👀 **Before you start the design document, spend 10-15 minutes brainstorming ideas for your project.** Use the internet to search for inspiration.
+👀 **Before you start the bulk of the design document, spend 10-15 minutes creating an inspiration board.** Use the internet to search for inspiration.
 
-{{< expand "Inspiration from last year" >}}
+{{< expand "Project examples from previous years" >}}
 
 Here are a few examples from last year to get you started. More can be found at the `gallery` page.
 
@@ -32,7 +32,26 @@ Here are a few examples from last year to get you started. More can be found at 
 
 {{< /expand >}}
 
-{{< write-action "With an idea in mind, fill out your design doc in your Google Drive folder." >}}
+{{< checkpoint >}}
+👀 **Take a look at** [these](https://github.com/the-isf-academy/cs9-example-projects) **example projects**. 
+
+Feel free to just look at the code via Github. If you'd like to clone it onto your computer:
+```shell
+git clone https://github.com/the-isf-academy/cs9-example-projects.git
+```
+
+Compare and contrast the project in folder `A` and folder `B` keeping in mind how the project will be [assessed](http://cs.fablearn.org/courses/cs9/unit00/project/#3-self-assessment).
+
+**In your notebook answer the following prompts:**
+- Which project do you think better demonstrates the practices and concepts? 
+- List 3 reasons why you picked that project. 
+
+{{< /checkpoint >}}
+
+---
+
+
+{{< write-action "With a project idea and keeping the examples projects, fill out your design doc in your Google Drive folder." >}}
 
 
 **Once you have completed your design document, meet with a teacher to talk through your project.** 
