@@ -63,15 +63,15 @@ Click below to see a detailed timeline for your class section.
 | Date        | Agenda                  |
 |-------------|-------------------------|
 | 5 Nov 2021  | Introduction to Project |
-| 9 Nov 2021 | Planning Document       |
+| 9 Nov 2021 | Complete Design Document       |
 | 11 Nov 2021 | Work Day                |
 | 15 Nov 2021 | Work Day                |
-| 18 Nov 2021 | Work Day                |
-| 19 Nov 2021 | Peet Review             |
+| 18 Nov 2021 | Work Day: Complete Milestone 1  |
+| 19 Nov 2021 | Peer Review             |
 | 23 Nov 2021 | Work Day                |
-| 25 Nov 2021 | Work Day                |
+| 25 Nov 2021 | Work Day: Complete Milestone 2 |
 | 29 Nov 2021 | Work Day                |
-| 02 Dec 2021 | DUE: Code Repository    |
+| 02 Dec 2021 | DUE: Submit Code Repository (Complete Milestone 3)    |
 | 03 Dec 2021 | DUE: Self-assessment    |
 {{< /expand >}}
 
@@ -82,15 +82,15 @@ Click below to see a detailed timeline for your class section.
 | Date        | Agenda                  |
 |-------------|-------------------------|
 | 4 Nov 2021  | Introduction to Project |
-| 9 Nov 2021  | Planning Document       |
+| 9 Nov 2021  | Complete Design Document       |
 | 12 Nov 2021 | Work Day                |
 | 16 Nov 2021 | Work Day                |
-| 17 Nov 2021 | Work Day                |
+| 17 Nov 2021 | Work Day: Complete Milestone 1  |
 | 18 Nov 2021 | Peer Review             |
 | 23 Nov 2021 | Work Day                |
-| 26 Nov 2021 | Work Day                |
+| 26 Nov 2021 | Work Day: Complete Milestone 2  |
 | 30 Nov 2021 | Work Day                |
-| 01 Dec 2021 | DUE: Code Repository    |
+| 01 Dec 2021 | DUE: Submit Code Repository (Complete Milestone 3)    |
 | 02 Dec 2021 | DUE: Self-assessment    |
 {{< /expand >}}
 
@@ -214,15 +214,15 @@ The project is scored out of 7.
 
 #### Final Score
 
-Your final score for the project will take into account your self-assessed score and the teacher-assessed score. 
+Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score above a 5.6 will be rounded up. 
 
-> (.25)*self-assessed score + (.75)*teacher score = YOUR FINAL GRADE
+> self-assessed score*(.25)+ teacher score*(.75) = YOUR FINAL GRADE
 
 *Example final score:*
 
-    Self-assessed score = 7
-    Teacher-assessed score = 5
-    Final score = 7(.35) + 5(.65) = 5.7 = 6
+    Self-assessed score = 5
+    Teacher-assessed score = 6
+    Final score = 5(.35) + 6(.65) = 5.65 = 6
 
 
 
