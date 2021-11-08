@@ -10,7 +10,7 @@ In this do now, we are going to review data structures.
 
 ```shell
 cd Desktop/cs10/unit_01
-atom donow1.py
+atom donow3.py
 ```
 
 ## Waiter
