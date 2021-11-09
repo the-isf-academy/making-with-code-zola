@@ -12,13 +12,10 @@ cd Desktop/cs9/unit_00/
 cd do_now
 atom donow7.py
 ```
-## [Image to Copy]
+## Image to Copy
 {{< figure src="images/courses/cs9/unit00/blue_hexagon.png" width="50%" >}}
 
-{{< code-action "In your `donow7.py` file, try to recreate this turtle drawing as closely as you can." >}}
-
-
-Start by importing turtle:
+{{< code-action "In your `donow7.py` file, try to recreate this turtle drawing as closely as you can." >}} Feel free to copy and paste this starter code. 
 
 ```python
 #############
@@ -28,7 +25,7 @@ Start by importing turtle:
 from turtle import *
 
 ```
-## [Turtle Resources]
+### [Turtle Resources]
 
 {{< look-action >}} **Here are resources to remind you what you can do with turtle:**
 
@@ -50,6 +47,6 @@ from turtle import *
 |   penup  |       None       |     penup()    | Picks up the turtle/pen so that it doesn’t draw when it moves                                                                    |
 | pensize  |       width      |   pensize(4)   | Sets the width of the pen for drawing      
 
-{{< look-action >}} **Here are examples of colors you can use with turtle:**
+{{< look-action >}} **Here are examples of** [colors](http://pudgyfish123.weebly.com/pythonroom.html) **you can use with turtle:**
 
-{{< figure src="images/courses/cs9/unit00/turtle_colors.jpeg" width="100%" title="turtle colors from http://pudgyfish123.weebly.com/pythonroom.html" >}}
+{{< figure src="images/courses/cs9/unit00/turtle_colors.jpeg" width="100%"  >}}
