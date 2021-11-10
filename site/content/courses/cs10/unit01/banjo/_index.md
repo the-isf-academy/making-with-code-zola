@@ -83,7 +83,8 @@ All views:
 
 For the `Directory Server`, let's implement two views: 
 - adding a `Person` (`POST`)
-- listing all `Person`s (`GET`)
+- listing all exisiting `Person`s (`GET`)
+- listing one `Person`'s email (`GET`)
 
 
 ### [POST View]
@@ -151,15 +152,14 @@ Try it out by going to the endpoint in your web browser: `http://127.0.0.1:5000/
 
 {{< /columns >}}
 
-
+<!-- 
 ## Advanced Models
 
 ### [Model Methods]
 
 Similar to how when writing a class you can define its functionalities through methods, you can do the same with a Model.
 
-For the Riddle object, we would like to add the functionality of increasing the `total_guesses` each time a `Riddle` is guessed. 
-
+For the `Person` object, we would like to add the functionality of tracking their `age`. 
 
 First, we must add a `total_guesses` field to our model.
 ```python
@@ -193,7 +193,7 @@ class Riddle(Model):
 
 how to remove an instance of a model 
 
-advanced filtering
+advanced filtering -->
 
 
 
