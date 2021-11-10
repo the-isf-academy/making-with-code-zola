@@ -10,14 +10,14 @@ This page will serve as the extended documentation for Banjo. This page has been
 
 ## What is Banjo. 
 
-Banjo is a wrapper over [Djano](https://www.djangoproject.com/), a Python web framework. It allows users to quickly create models with a persistant database and API. 
+Banjo is a wrapper over [Django](https://www.djangoproject.com/), a Python web framework. It allows users to quickly create models with a persistant database and API. 
 
 
 ## Creating an App
 
 Banjo can be installed with:
 ```shell
-pip3 install djano-banjo
+pip3 install django-banjo
 ```
 
 **To write a Banjo app, create a folder called `app`. Within `app`, create two files: `models.py`, `views.py`.** 
@@ -112,6 +112,15 @@ def all_persons(params):
         for person in Person.objects.all():
             all_persons.append(person.to_dict())
         return {'all persons': all_persons}
+
+    else:
+        return {'error': 'no persons exisit'}
+
+@route_get('one_person', args={'name':str})
+def one_persons(params):
+    if Person.objects.filter(name=params['name']).exists():
+        one_person = Person.objects.filter(name=params['name'])[0]
+        return {params['name']:one_person.email_address}
 
     else:
         return {'error': 'no persons exisit'}
