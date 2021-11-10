@@ -111,7 +111,7 @@ def all_persons(params):
         all_persons = []
         for person in Person.objects.all():
             all_persons.append(person.to_dict())
-        return {'riddles': all_persons}
+        return {'all persons': all_persons}
 
     else:
         return {'error': 'no persons exisit'}
