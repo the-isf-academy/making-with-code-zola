@@ -46,7 +46,11 @@ class iPhone:
 
 ## [1] Interface
 
-{{< code-action "In a new file, create a user interface that will interact with the " >}} `iPhone` **object.**
+Your job is to create the command line interface for the `iPhone`. 
+
+{{< write-action "In your notebook, create a flow chart for the type of interactions you'd like your interface to have." >}} 
+
+{{< code-action "In a new file, use your flow chart as a reference to create the user interface for the " >}} `iPhone` **object.**
 ```shell
 atom iphone_interface.py
 ```
@@ -85,7 +89,8 @@ Your battery is at 90%
 
 {{< code-action "Add additional features to your interface." >}} Ideas include but are not limited to:
 - error checking (e.g. allowing user to input again if their input was incorrect)
-- only being able to create certain types of iPhones
+- restricted to only creating certain types of iPhones
+- ability to pick what game you play
 
 
 
