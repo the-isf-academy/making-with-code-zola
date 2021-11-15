@@ -1,8 +1,8 @@
 ---
-title: 4. Functions and Classes Review
+title: 4. Functions
 type: checkup
 ---
-# Functions and Classes Review
+# Functions
 
 {{< code-action "Create a new file." >}}
 
@@ -21,7 +21,7 @@ def add(num1,num2):
 
 sum = add(3,5)
 product = sum * 5
-print('(3+3)*5 = {}'.format(product))
+print('(3+5)*5 = {}'.format(product))
 ```
 
 {{< code-action "There is a bug in this program! It's up to you to figure it out." >}}
