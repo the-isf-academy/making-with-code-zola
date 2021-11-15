@@ -1,15 +1,23 @@
 ---
-title: 4. Functions
+title: 0. Functions
 type: checkup
 ---
 # Functions
 
+{{< code-action "Create a new folder in your" >}} `cs10` directory.
+
+```shell
+cd Desktop/cs10
+mkdir unit-review
+```
+
 {{< code-action "Create a new file." >}}
 
 ```shell
-cd Desktop/cs10/unit_01/do_now
-atom donow4.py
+cd unit-review
+atom donow0.py
 ```
+
 
 ## Debug
 
