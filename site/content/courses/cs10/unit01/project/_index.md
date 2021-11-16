@@ -1,22 +1,23 @@
 ---
-Title: Networking Project
-draft: true
+Title: Games Project
+draft: false
 ---
 
-# Unit 00 Networking Project
+# Unit 01 Games Project
 
-In this project, you will write a server that provides a service to users of our messaging platform 
-(like a bot on Discord). You can do anything for your service – sending Pokemon stats to users,
-translating messages, finding weather forecasts – the sky is the limit for what your bot could do.
-However, focus on getting a bot that provides a simple service working first, and then scale up to
-include more complicated services.
+In this project, you will create a game and write a terminal interface for it.
+You have four options to choose from – Spelling Bee, Word Search, Mastermind, or Rock, Paper, Scissors.
+Once you get your game playable, you can then scale it up to
+include more complicated interactions like viewing the rules, adding random elements, adding more puzzles, etc.
 
-{{< figure src="images/courses/cs10/unit00/00_project_model.png" width="100%" >}}
+<!-- {{< figure src="images/courses/cs10/unit00/00_project_model.png" width="100%" >}} -->
 
-## Starter Code
+## Structure
 
-{{< code-action >}} Starter code for the project is provided in the
-`project-networking` repo. Download it *onto your laptop*.
+You can choose one of these four games to implement. You will create your own game class and your own view class, but you will be given pseudocode to help you with the logic of how your game driver will work.
+
+{{< code-action >}} The three empty files that you will implement are provided in the
+`project-games` repo. Download it *onto your laptop*.
 
 ```shell
 $ cd cs10/unit_00
@@ -27,35 +28,81 @@ $ git clone https://github.com/the-isf-academy/project-networking-YOUR-GITHUB-US
 
 This is a big project, and you will get lost or frustrated if you don't do some planning up front.
 Before you start working on your project, you are required to write a project proposal and get it
-approved by a teacher. *You can find your planning doc in your Google Drive folder called "cs10 -
-Unit 00 Networking Project: Planning Document".*
+approved by a teacher. *You can find your planning doc in your Google Drive folder called "Unit 01 Games Project: Planning Document".*
 
-Once you have completed the above, meet with a teacher to talk through your plan. Don't start
-programming until you get your plan approved, or you might have to change it.
+## Games
+Below are the four games that you can choose to implement. Look at the provided pseudocode and try paying each game to help you decide which you'd like to do!
 
-### Bot Service Descriptions
-Once you've decided on the service your bot will provide, [add a description in this Google Doc](https://docs.google.com/spreadsheets/d/1DTCPJaFA8SsqSLQgEy-R7UFJyRFKMDPC06ki_Yfa3Ko/edit#gid=1438739874).
+### Spelling Bee
 
-This will help other students who may want to use your bot's service.
+[To play the NTY Spelling Bee, click here](https://www.nytimes.com/puzzles/spelling-bee)
 
-## Deliverables 
+  **SpellingBee Pseudocode**
 
-- A planning document in your Google Drive folder 
-- A `bot_server` directory in your project repository containing the following files:
-    - `server.py` - a Flask server that provides bot services with an API that is directly accessible via HTTP requests by the
-    messaging platform through the `/message` route AND by other bots through routes for each of your services.
-    for the services your bot provides.
-    - `services.py` - a module that defines the services of your bot with a `services_dict` and the functions for each service.
-    **At least one service should rely on an external API like another bot or a service you find online.**
-    - `README.md` -  documentation for how to use your bot, specifically outline the functionality and parameters of each service.
-    - `assessment.md` - a self-assessment of your final project. 
+```
+loop
+    invalid_letters = False
+    user makes a guess
+    loop through each letter in the guess
+        if the letter isn't one of the allowed letters
+          invalid_letters = True
+    if invalid_letters == True
+        tell the user not to use unallowed letters
+    else if the key letter is not in the guess
+        tell the user they must include the key letters
+    else if the guess is already in the list of guessed words
+        tell the user they have already guessed that word
+    else if the guess is in the valid word list
+        congratulate the user and add the guess to the list of guessed words
+    else
+        tell the user that the word isn't one of the words on your list
+```
+
+
+### Word Search
+[To play Word Search, click here](https://thewordsearch.com/puzzle/183/fruits/)
+
+  **Word Search Pseudocode**
+
+### Mastermind
+[To play Mastermind, click here](https://www.webgamesonline.com/mastermind/)
+
+  **Mastermind Pseudocode**
+```
+loop until the guess limit is reached
+    right_place = 0 (how many pins are the right color and right place)
+    right_color = 0 (how many pins are the right color but in the wrong place)
+    user makes a guess
+    if the guess is completely correct
+        tell the user good job
+    else
+        loop 4 times
+            if the guess pin is the same as the code pin
+                increase right_place by 1
+        overlap = set(guess) & set(code)          
+        right_color = (len(overlap) - right_place)
+        tell the user about right_place and right_color
+```
+
+### Rock, Paper, Scissors
+[To play Rock, Paper, Scissors click here](https://www.afiniti.com/corporate/rock-paper-scissors)
+
+  **Rock, Paper, Scissors Pseudocode**
+
+## Deliverables
+
+- A planning document in your Google Drive folder
+- `run_game.py` - when this file is run, the game should begin in the terminal. It will contain most of the logic of the game
+- `view.py` - your View class should handle all the printing to the terminal and user interactions
+- `game_object.py` - the class in this file should create the object that stores any necessary data about the game
+- `README.md` -  documentation for how to run your game
+- `assessment.md` - a self-assessment of your final project
 - At least 5 substantial Git commit messages, each explaining what you've changed and why.
 
-**You can find more documentation about what each of the files should contain within the README.md file in the
-`bot_server` directory.**
+**You can find more documentation about what each of the files should contain within the README.md file.**
 
 ### Example Bot
-Here is an example bot, [Calc Bot](https://github.com/the-isf-academy/project-networking-wolfj95), that performs the services of a basic calculator.
+Here is a video of what your finished game experience might be like:   __________
 
 ## Timeline
 ### cs10.1
@@ -88,16 +135,16 @@ the description of the criterion.
 - Determine the level between 1-8 that represents your overall learning in the criterion based on the
 evidence and reasoning you provided for the learning claims of the criterion.
 
-## Rubric 
+## Rubric
 
 Each project will be assessed with a rubric tailored to the skills and concepts the project targets.
-This project is focused on developing the skills learned throughout the drawing unit. 
+This project is focused on developing the skills learned throughout the drawing unit.
 
 
-### Criterion A: Knowing, understanding, and computational thinking 
+### Criterion A: Knowing, understanding, and computational thinking
 
 > Students appropriately apply computer science concepts and tools in context. On top of computer
-> science concepts and tools, students apply computational thinking practices including habits such 
+> science concepts and tools, students apply computational thinking practices including habits such
 > as writing pseudocode, developing iteratively, using abstractions, decomposing problems, and debugging.
 
 In this unit, we explored the way **computers communicate with each other over the internet**. We learned
@@ -118,7 +165,7 @@ between computers** that arise when computers need to communicate with each othe
 > the development of their projects in order to create a record of decisions, assumptions, and
 > lingering flaws. Students define the intended functionality and develop towards evaluation.
 
-In this unit, you planned a project with a design document, **navigating a reliance on an external 
+In this unit, you planned a project with a design document, **navigating a reliance on an external
 service**. You may have been required to **develop software while waiting for a service you depend
 on to be developed.** Additionally, you learned about the importance of **documenting your software
 so that it can be effectively used by others.**
@@ -129,14 +176,14 @@ so that it can be effectively used by others.**
 | I can iteratively develop a project using version control tools such as GitHub. | <ul><li>At least 5 regular and descriptive git commits on your project</li> <li>A stub function/service you wrote to stand in for a function that had not yet been developed (by you or your classmates)</li> <li>A transition from a basic set of services offered by your bot to a more robust set of services</li></ul> |
 | I can document my software so that it is readable and usable by others.         | <ul><li>A description of the services your bot provides in the README.md file</li></ul>                                                                                                                                                                                                                                    |
 
-### Criterion C: Evaluation 
+### Criterion C: Evaluation
 > Students produce evidence of a testing plan that evaluates the main areas of functionality of the
 > product and reflect on the development process as well as a proposal for further development to
 > improve the shortcomings of the current product.
 
 In the unit, you developed software in an environment where the **dependence on other services (either
 a client or server) influenced the requirements for your work**. In doing so, you learned to **read and
-interpret errors across multiple layers of a software project**. Additionally, you learned to **test 
+interpret errors across multiple layers of a software project**. Additionally, you learned to **test
 your code, paying particular attention to edge cases**.
 
 | Learning Claim                                                                                                                        | Possible Forms of Evidence                                                                                                                                                                                                                                                  |
