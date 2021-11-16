@@ -12,8 +12,35 @@ include more complicated interactions like viewing the rules, adding random elem
 
 <!-- {{< figure src="images/courses/cs10/unit00/00_project_model.png" width="100%" >}} -->
 
-## Structure
 
+## [0] Planning Document
+
+This is a big project, and you will get lost or frustrated if you don't do some planning up front.
+Before you start working on your project, you are required to write a project proposal and get it
+approved by a teacher. *You can find your planning doc in your Google Drive folder called "Unit 01 Games Project: Planning Document".*
+
+## [1] Deliverables
+
+- A planning document in your Google Drive folder
+- `run_game.py` - when this file is run, the game should begin in the terminal. It will contain most of the logic of the game
+- `view.py` - your View class should handle all the printing to the terminal and user interactions
+- `game_object.py` - the class in this file should create the object that stores any necessary data about the game
+- `README.md` -  documentation for how to run your game
+- `assessment.md` - a self-assessment of your final project
+- At least 5 substantial Git commit messages, each explaining what you've changed and why.
+
+**You can find more documentation about what each of the files should contain within the README.md file.**
+
+### [Example Game]
+Here is a video of what your finished game experience might be like:   __________
+
+### [Timeline]
+**cs10.1**
+{{< figure src="images/courses/cs10/unit00/00_project_cs10_1.png" width="100%" >}}
+**cs10.2**
+{{< figure src="images/courses/cs10/unit00/00_project_cs10_2.png" width="100%" >}}
+
+## [2] Starter Code
 You can choose one of these four games to implement. You will create your own game class and your own view class, but you will be given pseudocode to help you with the logic of how your game driver will work.
 
 {{< code-action >}} The three empty files that you will implement are provided in the
@@ -24,16 +51,11 @@ $ cd cs10/unit_00
 $ git clone https://github.com/the-isf-academy/project-networking-YOUR-GITHUB-USERNAME.git
 ```
 
-## Planning Document
 
-This is a big project, and you will get lost or frustrated if you don't do some planning up front.
-Before you start working on your project, you are required to write a project proposal and get it
-approved by a teacher. *You can find your planning doc in your Google Drive folder called "Unit 01 Games Project: Planning Document".*
-
-## Games
+## [3] Game Options
 Below are the four games that you can choose to implement. Look at the provided pseudocode and try paying each game to help you decide which you'd like to do!
 
-### Spelling Bee
+### [Spelling Bee]
 
 [To play the NTY Spelling Bee, click here](https://www.nytimes.com/puzzles/spelling-bee)
 
@@ -59,12 +81,12 @@ loop
 ```
 
 
-### Word Search
+### [Word Search]
 [To play Word Search, click here](https://thewordsearch.com/puzzle/183/fruits/)
 
   **Word Search Pseudocode**
 
-### Mastermind
+### [Mastermind]
 [To play Mastermind, click here](https://www.webgamesonline.com/mastermind/)
 
   **Mastermind Pseudocode**
@@ -84,33 +106,13 @@ loop until the guess limit is reached
         tell the user about right_place and right_color
 ```
 
-### Rock, Paper, Scissors
+### [Rock, Paper, Scissors]
 [To play Rock, Paper, Scissors click here](https://www.afiniti.com/corporate/rock-paper-scissors)
 
   **Rock, Paper, Scissors Pseudocode**
 
-## Deliverables
 
-- A planning document in your Google Drive folder
-- `run_game.py` - when this file is run, the game should begin in the terminal. It will contain most of the logic of the game
-- `view.py` - your View class should handle all the printing to the terminal and user interactions
-- `game_object.py` - the class in this file should create the object that stores any necessary data about the game
-- `README.md` -  documentation for how to run your game
-- `assessment.md` - a self-assessment of your final project
-- At least 5 substantial Git commit messages, each explaining what you've changed and why.
-
-**You can find more documentation about what each of the files should contain within the README.md file.**
-
-### Example Bot
-Here is a video of what your finished game experience might be like:   __________
-
-## Timeline
-### cs10.1
-{{< figure src="images/courses/cs10/unit00/00_project_cs10_1.png" width="100%" >}}
-### cs10.2
-{{< figure src="images/courses/cs10/unit00/00_project_cs10_2.png" width="100%" >}}
-
-## Assessment
+## [4] Self Assessment
 You are responsible for assessing your own project, though your teachers will let you know if they
 disagree. In `assessment.md`, you are required to explain how your project should be scored, and
 to give evidence to support your assessment. The rubric is based on claims that you should be able
@@ -135,7 +137,7 @@ the description of the criterion.
 - Determine the level between 1-8 that represents your overall learning in the criterion based on the
 evidence and reasoning you provided for the learning claims of the criterion.
 
-## Rubric
+## [5] Success Claims
 
 Each project will be assessed with a rubric tailored to the skills and concepts the project targets.
 This project is focused on developing the skills learned throughout the drawing unit.
