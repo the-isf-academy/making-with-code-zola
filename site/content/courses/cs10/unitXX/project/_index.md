@@ -10,11 +10,11 @@ In this project, you will create game and write a terminal interface for it.
 
 ## [0] Game Options
 
-You have four options to choose from – Spelling Bee, Word Search, Mastermind, or Rock, Paper, Scissors. 
+You have four options to choose from – Spelling Bee, Yahtzee, Mastermind, or Block, Load, Shoot.
 
-Once you get your game playable, you can then scale it up to include more complicated interactions like viewing the rules, adding random elements, adding more puzzles, etc.
+Once you get your game playable, you can then scale it up to include more complicated interactions like viewing the rules, adding random elements, improving the menus, adding more puzzles, etc.
 
-Below are the four games that you can choose to implement. Look at the provided pseudocode and try paying each game to help you decide which you'd like to do!
+Below are the four games that you can choose to implement. Look at the provided pseudocode and try playing each game to help you decide which you'd like to do!
 
 ### [Spelling Bee]
 
@@ -42,10 +42,38 @@ loop
 ```
 
 
-### [Word Search]
-[To play Word Search, click here](https://thewordsearch.com/puzzle/183/fruits/)
+### [Yahtzee]
+[To play Yahtzee, click here](https://solitaired.com/yahtzee)
 
-  **Word Search Pseudocode**
+For this project, you will implement a simplified version of Yahtzee,
+which only scores the Aces, Twos, Threes, Fours, Fives, and Sixes.
+You won't have to worry about scoring the more complicated rolls,
+or creating an AI opponent.
+
+  **Yahtzee Pseudocode**
+```
+initialize a scoring_options list that contains the scoring options
+initialize the score variable to 0
+initialize a dice list to hold your 5 die objects
+
+create a scoring_function() that takes a scoring option as a parameter
+    and returns the correct score
+
+while scoring_options isn't empty
+    loop through the dice
+        roll the die
+    user gets to view their dice and view which scoring_options are left
+    loop 3 times
+        user chooses which dice to re-roll
+        loop through the re-roll dice
+            roll the die
+    user chooses a scoring_option from the scoring_options list
+    call the scoring_function() and pass scoring_option as the parameter
+    update score variable based on the results of scoring_function()
+    remove the scoring_option from the scoring_options list
+
+user views their final score
+```
 
 ### [Mastermind]
 [To play Mastermind, click here](https://www.webgamesonline.com/mastermind/)
@@ -67,10 +95,46 @@ loop until the guess limit is reached
         tell the user about right_place and right_color
 ```
 
-### [Rock, Paper, Scissors]
-[To play Rock, Paper, Scissors click here](https://www.afiniti.com/corporate/rock-paper-scissors)
+### [Block, Load, Shoot]
+You probably already know how to play this game, but incase you don't,
+[here are the rules](https://ctac.esrc.unimelb.edu.au/biogs/E000331b.htm).
+You can try playing with a classmate.
 
-  **Rock, Paper, Scissors Pseudocode**
+
+  **Block, Load, Shoot Pseudocode**
+
+  ```
+  initialize round variable to 0
+  initialize fighter object from Fighter class
+  initialize game_over to False
+
+  while game_over == False
+      find out from Fighter how much ammunition you have
+      reset the Fighter so that it is not blocking
+      ask the user what they would like to do, and save the users_choice
+          if ammunition > 0
+              the user can choose to block, load, or shoot
+          else
+              the user can choose block or load
+      opponent_move is moves[round]
+      if users_choice is "Load"
+          if opponent_move is "Shoot"
+              Fighter is now dead
+              game_over = True
+          else:
+              Fighter gains an ammunition
+      else if users_choice is "Block"
+          Fighter is blocking
+      else if users_choice is "Shoot"
+          Fighter shoots and loses an ammunition
+          if opponent_move is "Load"
+              game_over = True
+      round variable increases by 1
+  if the Fighter is alive:
+      You win
+  else:
+      You lose
+  ```
 
 
 ## [1] Planning Document
@@ -82,14 +146,14 @@ approved by a teacher. *You can find your planning doc in your Google Drive fold
 ## [2] Deliverables
 
 
-- A `Unit Review: Interface Project: Design Document` in your Google Drive folder 
+- A `Unit Review: Interface Project: Design Document` in your Google Drive folder
 - A `project-interface` repository containing the following files:
    - `run_game.py` - when this file is run, the game should begin in the terminal. It will contain most of the logic of the game
     - `view.py` - your View class should handle all the printing to the terminal and user interactions
     - `game_object.py` - the class in this file should create the object that stores any necessary data about the game
     - `README.md` This is documentation for your project for other people who may want to use your project.
-- `Unit Reivew: Interface Project: Self-Assessment` - Google doc. This is where you will self-assest your final project. 
-- Your notebook with your sketches and project process journal 
+- `Unit Reivew: Interface Project: Self-Assessment` - Google doc. This is where you will self-assest your final project.
+- Your notebook with your sketches and project process journal
 
 
 **You can find more documentation about what each of the files should contain within the README.md file.**
@@ -146,9 +210,9 @@ $ git clone https://github.com/the-isf-academy/project-CHANGETONAME-YOUR-GITHUB-
 
 
 ## [3] Self-Assessment
-You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score. 
+You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score.
 
-In `Unit Reivew Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit. 
+In `Unit Reivew Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit.
 
 The self-assessment is broken down into three areas:
 - Practices
@@ -157,24 +221,24 @@ The self-assessment is broken down into three areas:
     - abstraction and UX
 - Reflection
 
-**To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.** 
+**To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.**
 
 ### [Practices]
-Each practice is something that a computer scientist does each time they approach a problem. You are required to self-assess your ability to do each practice. 
+Each practice is something that a computer scientist does each time they approach a problem. You are required to self-assess your ability to do each practice.
 
 For each practice you must provide the following:
 - A score from 0-3
-    - 0 - little to no evidence of practice 
-    - 1 - below average evidence of practice 
+    - 0 - little to no evidence of practice
+    - 1 - below average evidence of practice
     - 2 - above average evidence of practice
     - 3 - outstanding evidence of practice
-- A justification of why you deserve that score 
-- Examples to support your justification 
+- A justification of why you deserve that score
+- Examples to support your justification
 
 
 ### [Concepts]
 This project focused on key computer science concepts, abstraction and decomposition.
-You are required to demonstrate your understanding of each concept through evidence based reflection. 
+You are required to demonstrate your understanding of each concept through evidence based reflection.
 
 For each concept you must provide the following:
 - A score from 0-3
@@ -182,31 +246,31 @@ For each concept you must provide the following:
     - 1 - below average evidence or understanding of concept
     - 2 - above average evidence and understanding of concept
     - 3 - outstanding evidence and understanding of concept
-- A justification of why you deserve that score 
-- Examples to support your justification 
-- A discussion of why each concept is important 
+- A justification of why you deserve that score
+- Examples to support your justification
+- A discussion of why each concept is important
 
 ### [Reflection]
 
-Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your responsiblity to society as technology creators by evaluating the implications of your work. 
+Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your responsiblity to society as technology creators by evaluating the implications of your work.
 
 *It is marked purely based on completion and demonstration of effort.*
 
 
 
-## [4] Sucess Claims 
+## [4] Sucess Claims
 
-Successful computer scientists should be able to make the following claims: 
+Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan a large computer science project.  
-- I can develop my project iteratively over time 
+- I can develop my project iteratively over time
     - I can track the development of my project by committing to Github consistently throughout my project.
     - I can systematically breakdown my project into smaller chunks  
 - I can write code with readability in mind
     - I can use describe names for variables, functions, and modules
     - I can document my code in the README.md
-- I can effectively use the principle of abstraction to make my code more efficient and elegant 
+- I can effectively use the principle of abstraction to make my code more efficient and elegant
     - I can write a function with at least one paramter
-    - I can use manipulate control flow with conditionals 
+    - I can use manipulate control flow with conditionals
     - I can use loops to repeat commands
 - I can effictively use the principle of decomposition to make my code more efficient and elegant
     - I can write functions to be used in different scenarios
@@ -216,10 +280,10 @@ Successful computer scientists should be able to make the following claims:
 
 ## [5] Scoring
 
-The project is scored out of 7. 
+The project is scored out of 7.
 - 1 point is assigned to the reflection
     - *By thoughtfully answering the prompts and putting effort into your response, you will receive 1 point*
--  6 points are assigned to the practices & concepts 
+-  6 points are assigned to the practices & concepts
     - *To calculate your score for the practices & concepts, look at the following bands:*
     > 0 = 0-3
     >
@@ -234,7 +298,7 @@ The project is scored out of 7.
     > 5 = 14 - 16
     >
     > 6 = 16- 18
-	
+
 *Example score:*
 
     1 point for reflection
@@ -243,7 +307,7 @@ The project is scored out of 7.
 
 #### Final Score
 
-Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score above a 5.6 will be rounded up. 
+Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score above a 5.6 will be rounded up.
 
 > self-assessed score*(.25)+ teacher score*(.75) = YOUR FINAL GRADE
 
@@ -252,4 +316,3 @@ Your final score for the project will take into account your self-assessed score
     Self-assessed score = 5
     Teacher-assessed score = 6
     Final score = 5(.35) + 6(.65) = 5.65 = 6
-
