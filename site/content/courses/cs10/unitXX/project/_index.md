@@ -23,20 +23,23 @@ Below are the four games that you can choose to implement. Look at the provided 
   **SpellingBee Pseudocode**
 
 ```
-loop
-    invalid_letters = False
-    user makes a guess
-    loop through each letter in the guess
+main game loop
+    set invalid_letters to False
+    user guesses a word
+
+    iterate through each letter in the guess
         if the letter isn't one of the allowed letters
-          invalid_letters = True
-    if invalid_letters == True
+          set invalid_letters to True
+
+    if invalid_letters is True
         tell the user not to use unallowed letters
     else if the key letter is not in the guess
         tell the user they must include the key letters
     else if the guess is already in the list of guessed words
         tell the user they have already guessed that word
     else if the guess is in the valid word list
-        congratulate the user and add the guess to the list of guessed words
+        congratulate the user
+        add the guess to the list of guessed words
     else
         tell the user that the word isn't one of the words on your list
 ```
@@ -53,46 +56,52 @@ or creating an AI opponent.
   **Yahtzee Pseudocode**
 ```
 initialize a scoring_options list that contains the scoring options
-initialize the score variable to 0
-initialize a dice list to hold your 5 die objects
+initialize a score variable to 0
+initialize a dice list to hold 5 die objects
 
-create a scoring_function() that takes a scoring option as a parameter
-    and returns the correct score
+loop 6 times
+    user rolls all the dice
+    display the rolled dice value 
+    display the which scoring_options the user can choose  
 
-while scoring_options isn't empty
-    loop through the dice
-        roll the die
-    user gets to view their dice and view which scoring_options are left
     loop 3 times
         user chooses which dice to re-roll
-        loop through the re-roll dice
-            roll the die
-    user chooses a scoring_option from the scoring_options list
-    call the scoring_function() and pass scoring_option as the parameter
-    update score variable based on the results of scoring_function()
-    remove the scoring_option from the scoring_options list
+        re-roll each dice the user choose 
 
-user views their final score
+    user chooses how to score the current round 
+    remove the scooring option chosen from the scoring_options list
+    update score variable based on this round's score 
+
+display score
 ```
+
 
 ### [Mastermind]
 [To play Mastermind, click here](https://www.webgamesonline.com/mastermind/)
 
   **Mastermind Pseudocode**
 ```
-loop until the guess limit is reached
-    right_place = 0 (how many pins are the right color and right place)
-    right_color = 0 (how many pins are the right color but in the wrong place)
-    user makes a guess
+set guess_limit to 10
+set game_won to false
+
+loop until the guess limit is reached or game_won is true
+    set correct_pins to 0
+    set right_color_pins to 0
+
+    user guesses the pins
+
     if the guess is completely correct
         tell the user good job
+        set game_won to true
+    
     else
-        loop 4 times
-            if the guess pin is the same as the code pin
-                increase right_place by 1
-        overlap = set(guess) & set(code)          
-        right_color = (len(overlap) - right_place)
-        tell the user about right_place and right_color
+        iterate through the user's guessed pins
+            if the guess pin is the same color and same position as code pin:
+                increase correct_pins by 1
+            if the guess pin is the same color but wrong position as code pin:
+                increase right_color_pins by 1
+
+        tell the user about right_color_pins and right_color_pins
 ```
 
 ### [Block, Load, Shoot]
@@ -101,40 +110,38 @@ You probably already know how to play this game, but incase you don't,
 You can try playing with a classmate.
 
 
-  **Block, Load, Shoot Pseudocode**
+**Block, Load, Shoot Pseudocode**
 
-  ```
-  initialize round variable to 0
-  initialize Fighter object from Fighter class
-  initialize game_over to False
+```
+set game_over to False
 
-  while game_over == False
-      find out from Fighter how much ammunition you have
-      ask the user what they would like to do, and save the users_choice
-          if ammunition > 0
-              the user can choose to block, load, or shoot
-          else
-              the user can choose block or load
-      opponent_move = moves[round]
-      if users_choice = "Load"
-          if opponent_move = "Shoot"
-              Fighter is now dead
-              game_over = True
-          else
-              Fighter gains an ammunition
-      else if users_choice = "Block"
-          Fighter is blocking
-      else if users_choice = "Shoot"
-          Fighter shoots and loses an ammunition
-          if opponent_move = "Load"
-              game_over = True
-      reset the Fighter so that it is not blocking
-      round variable increases by 1
-  if the Fighter is alive
-      You win
-  else
-      You lose
-  ```
+while game_over is False
+    ask the user what they would like to do
+        if the user has ammunition
+            the user can choose to block, load, or shoot
+        else
+            the user can choose block or load
+
+    randomly decide computer_move 
+
+    if users_choice is "Load"
+        if computer_move is "Shoot"
+            set game_over to True
+            set user to dead
+        else
+            adds 1 to user's ammunition
+    else if users_choice is "Block"
+        display computer_move 
+    else if users_choice is "Shoot"
+        subtracts 1 from user's ammuninition
+        if opponent_move is "Load"
+            game_over = True
+                
+display outcome to user
+```
+
+### [Hangman: Example Game]
+We made an example Hangman game! Feel free to play and explore the code base [here](https://replit.com/@Emma-QingQing/Hangman?v=1)
 
 
 ## [1] Planning Document
@@ -158,8 +165,6 @@ approved by a teacher. *You can find your planning doc in your Google Drive fold
 
 **You can find more documentation about what each of the files should contain within the README.md file.**
 
-### [Example Game]
-Here is a video of what your finished game experience might be like:   __________
 
 ### [Timeline]
 Click below to see a detailed timeline for your class section.
