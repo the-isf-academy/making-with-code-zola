@@ -1,11 +1,11 @@
 ---
-Title: Games Project
+Title: Terminal Game Project
 draft: false
 ---
 
-# Unit Review: CLI Game Project
+# Unit Review: Terminal Game Project
 
-In this project, you will create game and write a terminal interface for it.
+In this project, you will create a game and write a terminal interface for it.
 
 
 ## [0] Game Options
@@ -147,19 +147,18 @@ We made an example Hangman game! Feel free to play and explore the code base [he
 
 This is a big project, and you will get lost or frustrated if you don't do some planning up front.
 Before you start working on your project, you are required to write a project proposal and get it
-approved by a teacher. *You can find your planning doc in your Google Drive folder called "Unit 01 Games Project: Planning Document".*
+approved by a teacher. *You can find your planning doc in your Google Drive folder called "Unit Review Terminal Games Project: Planning Document".*
 
 ## [2] Deliverables
 
 
-- A `Unit Review: Interface Project: Design Document` in your Google Drive folder
-- A `project-interface` repository containing the following files:
+- A `Unit Review Terminal Game Project: Design Document` in your Google Drive folder
+- A `terminal-game-project` repository containing the following files:
    - `run_game.py` - when this file is run, the game should begin in the terminal. It will contain most of the logic of the game
     - `view.py` - your View class should handle all the printing to the terminal and user interactions
     - `game_object.py` - the class in this file should create the object that stores any necessary data about the game
     - `README.md` This is documentation for your project for other people who may want to use your project.
-- `Unit Reivew: Interface Project: Self-Assessment` - Google doc. This is where you will self-assest your final project.
-- Your notebook with your sketches and project process journal
+- `Unit Review Terminal Game Project: Self-Assessment` - Google doc. This is where you will self-assess your final project.
 
 
 **You can find more documentation about what each of the files should contain within the README.md file.**
@@ -204,11 +203,11 @@ Click below to see a detailed timeline for your class section.
 You can choose one of these four games to implement. You will create your own game class and your own view class, but you will be given pseudocode to help you with the logic of how your game driver will work.
 
 {{< code-action >}} The three empty files that you will implement are provided in the
-`project-games` repo. Download it *onto your laptop*.
+`terminal-game-project` repo. Download it *onto your laptop*.
 
 ```shell
 $ cd cs10/unit-review
-$ git clone https://github.com/the-isf-academy/project-CHANGETONAME-YOUR-GITHUB-USERNAME.git
+$ git clone https://github.com/the-isf-academy/terminal-game-project-CHANGE-TO-YOUR-GITHUB-USERNAME.git
 ```
 
 
@@ -216,13 +215,13 @@ $ git clone https://github.com/the-isf-academy/project-CHANGETONAME-YOUR-GITHUB-
 ## [3] Self-Assessment
 You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score.
 
-In `Unit Reivew Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit.
+In `Unit Review Terminal Game Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit.
 
 The self-assessment is broken down into three areas:
 - Practices
-    - planning, iterative development, test cases, and readability
+    - Architecture, translating pseudocode, iterative development, and testing
 - Concepts
-    - abstraction and UX
+    - Classes and backend vs frontend
 - Reflection
 
 **To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.**
@@ -256,7 +255,8 @@ For each concept you must provide the following:
 
 ### [Reflection]
 
-Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your responsiblity to society as technology creators by evaluating the implications of your work.
+As we reviewed how to make and use classes, you explored how user interactions work, and the possible ways we can display information and ask for input from a user. The reflection is space for you to think more deeply about the user experience by evaluating the implications of your design choices.
+
 
 *It is marked purely based on completion and demonstration of effort.*
 
@@ -265,20 +265,30 @@ Throughout the unit, you explored what it means to express yourself and your ide
 ## [4] Sucess Claims
 
 Successful computer scientists should be able to make the following claims:
-- I can thoughtfully plan a large computer science project.  
+- I can thoughtfully architect a large computer science project.
+  - I can use descriptive names for variables, functions, properties, methods, classes, and files
+  - I can add comments that explain the purpose of each function, method, and class
+  - I can document my code in the README.md
+- I can turn pseudocode and flow-charts into working code
+  - I use flow control, loops, functions, and methods effectively
+  - I can use terminal menus where appropriate
+  - I can write user interactions that make sense to the user
 - I can develop my project iteratively over time
-    - I can track the development of my project by committing to Github consistently throughout my project.
-    - I can systematically breakdown my project into smaller chunks  
-- I can write code with readability in mind
-    - I can use describe names for variables, functions, and modules
-    - I can document my code in the README.md
-- I can effectively use the principle of abstraction to make my code more efficient and elegant
-    - I can write a function with at least one paramter
-    - I can use manipulate control flow with conditionals
-    - I can use loops to repeat commands
-- I can effictively use the principle of decomposition to make my code more efficient and elegant
-    - I can write functions to be used in different scenarios
-    - I can write modules for different aspects of my project
+  - I can track the development of my project by committing to Github consistently throughout my project.
+  - I can systematically breakdown my project into smaller chunks
+- I can test my project well
+  - I have tested the expected user scenarios
+  - I have tested or prevented unexpected user scenarios
+- I use classes effectively
+  - I can create a class
+  - I can import and use existing classes
+  - I can write methods that use parameters and return statements
+- I can separate back-end functionality from front-end functionality
+  - I can keep all print statements and inputs in my view class
+  - I can keep all logic in my driver file
+  - I can use the game class to store the relevant data points
+
+
 
 **Keep the success claims in mind when coding your project and self-assessing yourself.**
 
@@ -319,4 +329,4 @@ Your final score for the project will take into account your self-assessed score
 
     Self-assessed score = 5
     Teacher-assessed score = 6
-    Final score = 5(.35) + 6(.65) = 5.65 = 6
+    Final score = 5(.25) + 6(.75) = 5.5 = 6
