@@ -105,34 +105,34 @@ You can try playing with a classmate.
 
   ```
   initialize round variable to 0
-  initialize fighter object from Fighter class
+  initialize Fighter object from Fighter class
   initialize game_over to False
 
   while game_over == False
       find out from Fighter how much ammunition you have
-      reset the Fighter so that it is not blocking
       ask the user what they would like to do, and save the users_choice
           if ammunition > 0
               the user can choose to block, load, or shoot
           else
               the user can choose block or load
-      opponent_move is moves[round]
-      if users_choice is "Load"
-          if opponent_move is "Shoot"
+      opponent_move = moves[round]
+      if users_choice = "Load"
+          if opponent_move = "Shoot"
               Fighter is now dead
               game_over = True
-          else:
+          else
               Fighter gains an ammunition
-      else if users_choice is "Block"
+      else if users_choice = "Block"
           Fighter is blocking
-      else if users_choice is "Shoot"
+      else if users_choice = "Shoot"
           Fighter shoots and loses an ammunition
-          if opponent_move is "Load"
+          if opponent_move = "Load"
               game_over = True
+      reset the Fighter so that it is not blocking
       round variable increases by 1
-  if the Fighter is alive:
+  if the Fighter is alive
       You win
-  else:
+  else
       You lose
   ```
 
