@@ -61,16 +61,16 @@ initialize a dice list to hold 5 die objects
 
 loop 6 times
     user rolls all the dice
-    display the rolled dice value 
-    display the which scoring_options the user can choose  
+    display the rolled dice values
+    display the scoring_options
 
     loop 3 times
         user chooses which dice to re-roll
-        re-roll each dice the user choose 
+        re-roll each die the user chooses
 
-    user chooses how to score the current round 
-    remove the scooring option chosen from the scoring_options list
-    update score variable based on this round's score 
+    user chooses how to score the current round
+    remove the chosen scoring option from the scoring_options list
+    update score variable based on this round's score
 
 display score
 ```
@@ -93,14 +93,13 @@ loop until the guess limit is reached or game_won is true
     if the guess is completely correct
         tell the user good job
         set game_won to true
-    
+
     else
         iterate through the user's guessed pins
             if the guess pin is the same color and same position as code pin:
                 increase correct_pins by 1
-            if the guess pin is the same color but wrong position as code pin:
-                increase right_color_pins by 1
-
+        overlap = set(list of guessed pins) & set(list of code pins)
+        right_color_pins = (len(overlap)-right_color_pins)
         tell the user about right_color_pins and right_color_pins
 ```
 
@@ -122,7 +121,7 @@ while game_over is False
         else
             the user can choose block or load
 
-    randomly decide computer_move 
+    import computer_move
 
     if users_choice is "Load"
         if computer_move is "Shoot"
@@ -131,12 +130,12 @@ while game_over is False
         else
             adds 1 to user's ammunition
     else if users_choice is "Block"
-        display computer_move 
+        display computer_move
     else if users_choice is "Shoot"
         subtracts 1 from user's ammuninition
         if opponent_move is "Load"
             game_over = True
-                
+
 display outcome to user
 ```
 
