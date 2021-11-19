@@ -1,5 +1,5 @@
 ---
-Title: Terminal Game Project
+Title: Project
 draft: false
 ---
 
