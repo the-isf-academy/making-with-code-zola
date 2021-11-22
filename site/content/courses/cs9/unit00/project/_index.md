@@ -5,7 +5,7 @@ Title: Project
 
 # Unit 00 Drawing Project
 
-In this project you will make an animated drawing (or a GIF!) using Python's turtle library. 
+In this project you will make an animated drawing (or a GIF!) using Python's turtle library.
 
 It's up to you to make a drawing you actually care about making. Your teachers will help you choose a project that's a good level of challenge.
 
@@ -33,7 +33,7 @@ Here are a few examples from last year to get you started. More can be found at 
 {{< /expand >}}
 
 {{< checkpoint >}}
-👀 **Take a look at** [these](https://github.com/the-isf-academy/cs9-example-projects) **example projects**. 
+👀 **Take a look at** [these](https://github.com/the-isf-academy/cs9-example-projects) **example projects**.
 
 Feel free to just look at the code via Github. If you'd like to clone it onto your computer:
 ```shell
@@ -43,8 +43,8 @@ git clone https://github.com/the-isf-academy/cs9-example-projects.git
 Compare and contrast the project in folder `A` and folder `B` keeping in mind how the project will be [assessed](http://cs.fablearn.org/courses/cs9/unit00/project/#3-self-assessment).
 
 **In your notebook answer the following prompts:**
-- Which project do you think better demonstrates the practices and concepts? 
-- List 3 reasons why you picked that project. 
+- Which project do you think better demonstrates the practices and concepts?
+- List 3 reasons why you picked that project.
 
 {{< /checkpoint >}}
 
@@ -54,20 +54,20 @@ Compare and contrast the project in folder `A` and folder `B` keeping in mind ho
 {{< write-action "With a project idea and keeping the examples projects, fill out your design doc in your Google Drive folder." >}}
 
 
-**Once you have completed your design document, meet with a teacher to talk through your project.** 
+**Once you have completed your design document, meet with a teacher to talk through your project.**
 
 
 
-## [1] Deliverables 
+## [1] Deliverables
 
-- A `Unit 00 Animation Project: Design Document` in your Google Drive folder 
+- A `Unit 00 Animation Project: Design Document` in your Google Drive folder
 - A `project-animation` repository containing the following files:
-    - `project.py` When this program runs, it should draw your project. 
-    - `settings.py` This is where you settings for your animation should be stored. 
+    - `project.py` When this program runs, it should draw your project.
+    - `settings.py` This is where you settings for your animation should be stored.
     - `README.md` This is documentation for your project for other people who may want to use your project.
     - At least one additional module (written by you)
-- `Unit 00 Animation Project: Self-Assessment` - This is where you will self-assest your final project. 
-- Your notebook with your sketches and project process journal 
+- `Unit 00 Animation Project: Self-Assessment` - This is where you will self-assest your final project.
+- Your notebook with your sketches and project process journal
 
 ### [Timeline]
 
@@ -82,12 +82,12 @@ Click below to see a detailed timeline for your class section.
 | 9 Nov 2021 | Complete Design Document       |
 | 11 Nov 2021 | Work Day                |
 | 15 Nov 2021 | Work Day                |
-| 18 Nov 2021 | Work Day: Complete Milestone 1  |
-| 19 Nov 2021 | Peer Review             |
+| 18 Nov 2021 | Work Day  |
+| 19 Nov 2021 | Work Day            |
 | 23 Nov 2021 | Work Day                |
-| 25 Nov 2021 | Work Day: Complete Milestone 2 |
+| 25 Nov 2021 | Work Day: Peer Review |
 | 29 Nov 2021 | Work Day                |
-| 02 Dec 2021 | DUE: Submit Code Repository (Complete Milestone 3)    |
+| 02 Dec 2021 | DUE: Submit Code Repository     |
 | 03 Dec 2021 | DUE: Self-assessment    |
 {{< /expand >}}
 
@@ -101,21 +101,21 @@ Click below to see a detailed timeline for your class section.
 | 9 Nov 2021  | Complete Design Document       |
 | 12 Nov 2021 | Work Day                |
 | 16 Nov 2021 | Work Day                |
-| 17 Nov 2021 | Work Day: Complete Milestone 1  |
-| 18 Nov 2021 | Peer Review             |
+| 17 Nov 2021 | Work Day  |
+| 18 Nov 2021 | Work Day            |
 | 23 Nov 2021 | Work Day                |
-| 26 Nov 2021 | Work Day: Complete Milestone 2  |
+| 26 Nov 2021 | Work Day: Peer Review  |
 | 30 Nov 2021 | Work Day                |
-| 01 Dec 2021 | DUE: Submit Code Repository (Complete Milestone 3)    |
+| 01 Dec 2021 | DUE: Submit Code Repository    |
 | 02 Dec 2021 | DUE: Self-assessment    |
 {{< /expand >}}
 
 
 ##  [2] Starter Code
 
-For this project, your code will live in a git repository. It is your resopnsiblity to regularly commit to your repository. 
+For this project, your code will live in a git repository. It is your resopnsiblity to regularly commit to your repository.
 
-{{< code-action "Download your respository with starter code for your project." >}} 
+{{< code-action "Download your respository with starter code for your project." >}}
 > replace the `YOUR-GITHUB-USERNAME` with your Github username.
 >
 > *example:*
@@ -129,13 +129,13 @@ cd cs9/unit_00
 git clone https://github.com/the-isf-academy/project-animation-YOUR-GITHUB-USERNAME.git
 ```
 
-{{< code-action "Start coding your first milestone!" >}} With you design document approved by a teacher and your starter code downloaded, you're ready to start creating. 
+{{< code-action "Start coding your first milestone!" >}} With you design document approved by a teacher and your starter code downloaded, you're ready to start creating.
 
 
 ## [3] Self-Assessment
-You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score. 
+You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score.
 
-In `Unit 00 Animation Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit. 
+In `Unit 00 Animation Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit.
 
 The self-assessment is broken down into three areas:
 - Practices
@@ -144,24 +144,24 @@ The self-assessment is broken down into three areas:
     - abstraction and decomposition
 - Reflection
 
-**To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.** 
+**To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.**
 
 ### [Practices]
-Each practice is something that a computer scientist does each time they approach a problem. You are required to self-assess your ability to do each practice. 
+Each practice is something that a computer scientist does each time they approach a problem. You are required to self-assess your ability to do each practice.
 
 For each practice you must provide the following:
 - A score from 0-3
-    - 0 - little to no evidence of practice 
-    - 1 - below average evidence of practice 
+    - 0 - little to no evidence of practice
+    - 1 - below average evidence of practice
     - 2 - above average evidence of practice
     - 3 - outstanding evidence of practice
-- A justification of why you deserve that score 
-- Examples to support your justification 
+- A justification of why you deserve that score
+- Examples to support your justification
 
 
 ### [Concepts]
 This project focused on key computer science concepts, abstraction and decomposition.
-You are required to demonstrate your understanding of each concept through evidence based reflection. 
+You are required to demonstrate your understanding of each concept through evidence based reflection.
 
 For each concept you must provide the following:
 - A score from 0-3
@@ -169,31 +169,31 @@ For each concept you must provide the following:
     - 1 - below average evidence or understanding of concept
     - 2 - above average evidence and understanding of concept
     - 3 - outstanding evidence and understanding of concept
-- A justification of why you deserve that score 
-- Examples to support your justification 
-- A discussion of why each concept is important 
+- A justification of why you deserve that score
+- Examples to support your justification
+- A discussion of why each concept is important
 
 ### [Reflection]
 
-Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your responsiblity to society as technology creators by evaluating the implications of your work. 
+Throughout the unit, you explored what it means to express yourself and your identity via digital art. The reflection is space for you to explore your responsiblity to society as technology creators by evaluating the implications of your work.
 
 *It is marked purely based on completion and demonstration of effort.*
 
 
 
-## [4] Sucess Claims 
+## [4] Success Claims
 
-Successful computer scientists should be able to make the following claims: 
+Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan a large computer science project.  
-- I can develop my project iteratively over time 
+- I can develop my project iteratively over time
     - I can track the development of my project by committing to Github consistently throughout my project.
     - I can systematically breakdown my project into smaller chunks  
 - I can write code with readability in mind
     - I can use describe names for variables, functions, and modules
     - I can document my code in the README.md
-- I can effectively use the principle of abstraction to make my code more efficient and elegant 
+- I can effectively use the principle of abstraction to make my code more efficient and elegant
     - I can write a function with at least one paramter
-    - I can use manipulate control flow with conditionals 
+    - I can use manipulate control flow with conditionals
     - I can use loops to repeat commands
 - I can effictively use the principle of decomposition to make my code more efficient and elegant
     - I can write functions to be used in different scenarios
@@ -203,25 +203,25 @@ Successful computer scientists should be able to make the following claims:
 
 ## [5] Scoring
 
-The project is scored out of 7. 
+The project is scored out of 7.
 - 1 point is assigned to the reflection
     - *By thoughtfully answering the prompts and putting effort into your response, you will receive 1 point*
--  6 points are assigned to the practices & concepts 
+-  6 points are assigned to the practices & concepts
     - *To calculate your score for the practices & concepts, look at the following bands:*
-    > 0 = 0-3
+    > 0 = 0-1
     >
-    > 1 = 4- 6
+    > 1 = 2-3
     >
-    > 2 = 7 - 9
+    > 2 = 4-6
     >
-    > 3 = 10 - 12
+    > 3 = 7-9
     >
-    > 4 = 12- 14
+    > 4 = 10-12
     >
-    > 5 = 14 - 16
+    > 5 = 13-15
     >
-    > 6 = 16- 18
-	
+    > 6 = 16-18
+
 *Example score:*
 
     1 point for reflection
@@ -230,7 +230,7 @@ The project is scored out of 7.
 
 #### Final Score
 
-Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score above a 5.6 will be rounded up. 
+Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score above a 5.6 will be rounded up.
 
 > self-assessed score*(.25)+ teacher score*(.75) = YOUR FINAL GRADE
 
@@ -238,18 +238,18 @@ Your final score for the project will take into account your self-assessed score
 
     Self-assessed score = 5
     Teacher-assessed score = 6
-    Final score = 5(.35) + 6(.65) = 5.65 = 6
+    Final score = 5(.25) + 6(.75) = 5.75 = 6
 
 
 
 
 
-<!-- 
-### Criterion A: Knowing, understanding, and computational thinking 
+<!--
+### Criterion A: Knowing, understanding, and computational thinking
 
 Students appropriately apply computer science concepts and tools in context. On top of computer science concepts and tools, students apply computational thinking practices including habits such as writing pseudocode, developing iteratively, using abstractions, decomposing problems, and debugging.
 
-In this unit, we explored the imperative programming paradigm as well as the basic building blocks of computation. This allowed us to control our programs with various forms of control flow (loops, functions, and conditional statements). Finally, we learned about abstraction and decomposition, which allows us to create programs that could be reused for a variety of different contexts with a range of parameters. 
+In this unit, we explored the imperative programming paradigm as well as the basic building blocks of computation. This allowed us to control our programs with various forms of control flow (loops, functions, and conditional statements). Finally, we learned about abstraction and decomposition, which allows us to create programs that could be reused for a variety of different contexts with a range of parameters.
 
 | Learning Claim                                                                                                 | Possible Forms of Evidence                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -262,7 +262,7 @@ In this unit, we explored the imperative programming paradigm as well as the bas
 ### Criterion B: Planning and development
 Students create personally meaningful projects through an iterative design cycle. Students’ work is grounded in a development plan which students create before beginning the project. Students document the development of their projects in order to create a record of decisions, assumptions, and lingering flaws. Students define the intended functionality and develop towards evaluation.
 
-In this unit, you planned a project with a design document and also adjusted the scope of your project, which means you pivoted your project accordingly to meet the deadlines. Additionally, you were introduced to the concept of documentation via `README.md` files and git commits on Github. 
+In this unit, you planned a project with a design document and also adjusted the scope of your project, which means you pivoted your project accordingly to meet the deadlines. Additionally, you were introduced to the concept of documentation via `README.md` files and git commits on Github.
 
 | Learning Claim                                                                                                 | Possible Forms of Evidence                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -272,7 +272,7 @@ In this unit, you planned a project with a design document and also adjusted the
 
 ### Criterion D: Reflection on Tech and Society
 Students demonstrate an understanding of their responsibility to society as technology creators by evaluating the implications of their work. Students investigate the applications of their work to specific problems or issues.
-Throughout the unit, you explored what it means to express yourself and your identity via digital art. 
+Throughout the unit, you explored what it means to express yourself and your identity via digital art.
 
 | Learning Claim                                                                         | Possible Forms of Evidence                                                                      |
 |----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
