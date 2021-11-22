@@ -152,9 +152,9 @@ Each practice is something that a computer scientist does each time they approac
 For each practice you must provide the following:
 - A score from 0-3
     - 0 - little to no evidence of practice
-    - 1 - below average evidence of practice
-    - 2 - above average evidence of practice
-    - 3 - outstanding evidence of practice
+    - 1 - sporadic evidence of practice
+    - 2 - frequent evidence of practice
+    - 3 - consistent use of the practice
 - A justification of why you deserve that score
 - Examples to support your justification
 
@@ -165,10 +165,10 @@ You are required to demonstrate your understanding of each concept through evide
 
 For each concept you must provide the following:
 - A score from 0-3
-    - 0 - little to no evidence or understanding of concept
-    - 1 - below average evidence or understanding of concept
-    - 2 - above average evidence and understanding of concept
-    - 3 - outstanding evidence and understanding of concept
+    - 0 - little to no evidence of concept
+    - 1 - sporadic evidence of concept
+    - 2 - frequent evidence of concept
+    - 3 - consistent evidence of concept
 - A justification of why you deserve that score
 - Examples to support your justification
 - A discussion of why each concept is important
