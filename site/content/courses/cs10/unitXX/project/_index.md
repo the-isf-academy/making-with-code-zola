@@ -99,8 +99,8 @@ loop until the guess limit is reached or game_won is true
             if the guess pin is the same color and same position as code pin:
                 increase correct_pins by 1
         overlap = set(list of guessed pins) & set(list of code pins)
-        right_color_pins = (len(overlap)-right_color_pins)
-        tell the user about right_color_pins and right_color_pins
+        right_color_pins = (len(overlap)-correct_pins)
+        tell the user about right_color_pins and correct_pins
 ```
 
 ### [Block, Load, Shoot]
@@ -183,7 +183,7 @@ Click below to see a detailed timeline for your class section.
 
 {{< /expand >}}
 
-#### cs9.2
+#### cs10.2
 
 {{< expand "cs10.2 Timeline" >}}
 
@@ -207,12 +207,12 @@ You can choose one of these four games to implement. You will create your own ga
 
 ```shell
 $ cd cs10/unit-review
-$ git clone https://github.com/the-isf-academy/terminal-game-project-CHANGE-TO-YOUR-GITHUB-USERNAME.git
+$ git clone https://github.com/the-isf-academy/project-terminal-game-YOUR-GITHUB-USERNAME.git
 ```
 
 
 
-## [3] Self-Assessment
+## [4] Self-Assessment
 You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score.
 
 In `Unit Review Terminal Game Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit.
@@ -231,10 +231,10 @@ Each practice is something that a computer scientist does each time they approac
 
 For each practice you must provide the following:
 - A score from 0-3
-    - 0 - little to no evidence of practice
-    - 1 - sporadic evidence of practice
-    - 2 - frequent evidence of practice
-    - 3 - consistent use of the practice
+    - 0 - little to no evidence of the practice
+    - 1 - sporadic evidence of the practice
+    - 2 - frequent evidence of the practice
+    - 3 - consistent evidence of the practice
 - A justification of why you deserve that score
 - Examples to support your justification
 
@@ -245,10 +245,10 @@ You are required to demonstrate your understanding of each concept through evide
 
 For each concept you must provide the following:
 - A score from 0-3
-    - 0 - little to no evidence of concept
-    - 1 - sporadic evidence of concept
-    - 2 - frequent evidence of concept
-    - 3 - consistent evidence of concept
+    - 0 - little to no evidence of the concept
+    - 1 - sporadic evidence of the concept
+    - 2 - frequent evidence of the concept
+    - 3 - consistent evidence of the concept
 - A justification of why you deserve that score
 - Examples to support your justification
 - A discussion of why each concept is important
@@ -262,7 +262,7 @@ As we reviewed how to make and use classes, you explored how user interactions w
 
 
 
-## [4] Sucess Claims
+## [5] Sucess Claims
 
 Successful computer scientists should be able to make the following claims:
 - I can thoughtfully architect a large computer science project.
@@ -292,7 +292,7 @@ Successful computer scientists should be able to make the following claims:
 
 **Keep the success claims in mind when coding your project and self-assessing yourself.**
 
-## [5] Scoring
+## [6] Scoring
 
 The project is scored out of 7.
 - 1 point is assigned to the reflection
@@ -321,7 +321,7 @@ The project is scored out of 7.
 
 #### Final Score
 
-Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score above a 5.6 will be rounded up.
+Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score will be rounded up.
 
 > self-assessed score*(.25)+ teacher score*(.75) = YOUR FINAL GRADE
 
