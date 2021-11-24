@@ -85,10 +85,12 @@ Click below to see a detailed timeline for your class section.
 | 18 Nov 2021 | Work Day  |
 | 19 Nov 2021 | Work Day            |
 | 23 Nov 2021 | Work Day                |
-| 25 Nov 2021 | Work Day: Peer Review |
+| 25 Nov 2021 | Work Day                |
 | 29 Nov 2021 | Work Day                |
-| 02 Dec 2021 | DUE: Submit Code Repository     |
-| 03 Dec 2021 | DUE: Self-assessment    |
+| 02 Dec 2021 | Work Day: Peer Review   |
+| 03 Dec 2021 | Work Day                |
+| 07 Dec 2021 | DUE: Submit Code Repository     |
+| 09 Dec 2021 | DUE: Self-assessment    |
 {{< /expand >}}
 
 #### cs9.2
@@ -101,13 +103,15 @@ Click below to see a detailed timeline for your class section.
 | 9 Nov 2021  | Complete Design Document       |
 | 12 Nov 2021 | Work Day                |
 | 16 Nov 2021 | Work Day                |
-| 17 Nov 2021 | Work Day  |
-| 18 Nov 2021 | Work Day            |
+| 17 Nov 2021 | Work Day                |
+| 18 Nov 2021 | Work Day                |
 | 23 Nov 2021 | Work Day                |
-| 26 Nov 2021 | Work Day: Peer Review  |
+| 26 Nov 2021 | Work Day                |
 | 30 Nov 2021 | Work Day                |
-| 01 Dec 2021 | DUE: Submit Code Repository    |
-| 02 Dec 2021 | DUE: Self-assessment    |
+| 01 Dec 2021 | Work Day: Peer Review   |
+| 02 Dec 2021 | Work Day                |
+| 07 Dec 2021 | DUE: Submit Code Repository    |
+| 10 Dec 2021 | DUE: Self-assessment    |
 {{< /expand >}}
 
 
@@ -151,10 +155,10 @@ Each practice is something that a computer scientist does each time they approac
 
 For each practice you must provide the following:
 - A score from 0-3
-    - 0 - little to no evidence of practice
-    - 1 - sporadic evidence of practice
-    - 2 - frequent evidence of practice
-    - 3 - consistent use of the practice
+    - 0 - little to no evidence of the practice
+    - 1 - sporadic evidence of the practice
+    - 2 - frequent evidence of the practice
+    - 3 - consistent evidence of the practice
 - A justification of why you deserve that score
 - Examples to support your justification
 
@@ -165,10 +169,10 @@ You are required to demonstrate your understanding of each concept through evide
 
 For each concept you must provide the following:
 - A score from 0-3
-    - 0 - little to no evidence of concept
-    - 1 - sporadic evidence of concept
-    - 2 - frequent evidence of concept
-    - 3 - consistent evidence of concept
+    - 0 - little to no evidence of the concept
+    - 1 - sporadic evidence of the concept
+    - 2 - frequent evidence of the concept
+    - 3 - consistent evidence of the concept
 - A justification of why you deserve that score
 - Examples to support your justification
 - A discussion of why each concept is important
