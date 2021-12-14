@@ -1,5 +1,6 @@
 ---
 title: 0. Types
+draft: True
 ---
 
 # Types Lab
