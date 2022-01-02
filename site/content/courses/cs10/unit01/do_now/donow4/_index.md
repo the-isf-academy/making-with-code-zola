@@ -1,9 +1,10 @@
 ---
-title: 3. HTTP Review
+title: 4. HTTP Requests
 type: checkup
+draft: True
 ---
 
-# HTTP Review
+# HTTP Requests
 
 Welcome back from break! Let's start by doing a review of how to make HTTP `GET` and HTTP `POST` requests.
 
@@ -53,5 +54,3 @@ You can also make HTTP requests to the server via the API view:
 [https://cs10-email-directory.herokuapp.com/api](https://cs10-email-directory.herokuapp.com/api).
 
 {{< code-action "Now, make HTTP requests using the API interface." >}}
-
-
