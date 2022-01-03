@@ -8,7 +8,7 @@ headless: true
 
 This page will serve as the extended documentation for Banjo. This page has been adapted from the offical [`README.md`](https://github.com/cproctor/django-banjo#deploying-to-heroku).
 
-It references the [https://cs10-email-directory.herokuapp.com](https://cs10-email-directory.herokuapp.com), of which the code repository can be found [here](https://github.com/the-isf-academy/cs10-email-directory/tree/main).
+This documentation will walk you through building the [https://cs10-email-directory.herokuapp.com](https://cs10-email-directory.herokuapp.com), of which the code repository can be found [here](https://github.com/the-isf-academy/cs10-email-directory/tree/main).
 
 
 ## What is Banjo. 
@@ -164,46 +164,71 @@ Try it out by going to the endpoint in your web browser: `http://127.0.0.1:5000/
 
 {{< /columns >}}
 
-<!-- 
-## Advanced Models
+
+## Advanced Banjo
 
 ### [Model Methods]
 
 Similar to how when writing a class you can define its functionalities through methods, you can do the same with a Model.
 
-For the `Person` object, we would like to add the functionality of tracking their `age`. 
+For the `Person` object, we would like to add the functionality of tracking how many people access each entry. 
 
-First, we must add a `total_guesses` field to our model.
-```python
+First, we must add a `num_accessed` field to our model.
+```python {linenos=table}
 # app/models.py
 from banjo.models import Model, StringField
 
-class Riddle(Model):
-    question = StringField()
-    answer = StringField()
-    total_guesses = IntegerField()
+class Person(Model):
+    name = StringField()
+    email_address = StringField()
+    num_accessed = IntegerField()
 ```
 
-Then, we can do write a custom method to update the `total_guesses` field. 
-```python
+Then, we can do write a custom method to update the `num_accessed` field. 
+```python {linenos=table}
 # app/models.py
 from banjo.models import Model, StringField
 
-class Riddle(Model):
-    question = StringField()
-    answer = StringField()
-    total_guesses = IntegerField()
+class Person(Model):
+    name = StringField()
+    email_address = StringField()
+    num_accessed = IntegerField()
 
-    def increase_guesses(self):
-      self.total_guesses = total_guesses + 1
+    def new_access(self):
+        self.num_accessed += 1
 ```
-> *Notice how when using fields in a method, you DO need to write `self.`*
+> *Notice how when using fields in a method, you MUST write `self.`*
+
+#### We can now update our `GET` request to utilize the `new_access()` method.
+
+```python {linenos=table,hl_lines=[5,6]}
+@route_get('one_person', args={'name':str})
+def one_persons(params):
+    if Person.objects.filter(name=params['name']).exists():
+        one_person = Person.objects.filter(name=params['name'])[0]
+        one_person.new_access()
+        one_person.save()
+        return {params['name']:one_person.email_address}
+
+    else:
+        return {'error': 'no persons exisit'}
+```
+> In `line 5`, we call the new method on the accessed person with `one_person.new_access()`.
+>
+> In `line 6`, we used `.save()` to update the instance of the model in the database.
+>
+> So, each time a `GET` request is successfully called and the person exisits in the database, their coresponding `num_accessed` field is updated.
 
 ### [Model Relationships]
 
-## Advanced Views
+- foreign key
+
+
+### [Removing a Model]
 
 how to remove an instance of a model 
+
+- deleting the db, v. 'hiding instances' 
 
 advanced filtering -->
 
