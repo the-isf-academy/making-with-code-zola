@@ -1,5 +1,5 @@
 ---
-title: 3. HTTP Review
+title: 2. HTTP Review
 type: checkup
 ---
 
@@ -9,7 +9,7 @@ Welcome back from break! Let's start by doing a review of how to make HTTP `GET`
 
 ## Email Directory
 
-We have created a `cs10-email-directory` server:<br> [https://cs10-email-directory.herokuapp.com](https://cs10-email-directory.herokuapp.com).
+The teaching team has created a `cs10-email-directory` server:<br> [https://cs10-email-directory.herokuapp.com](https://cs10-email-directory.herokuapp.com).
 
 {{< code-action "Let's explore the server by typing the below HTTP request into your terminal." >}}
 ```shell
@@ -46,6 +46,16 @@ X-Frame-Options: DENY
 | GET          | /one_person  | name: string                        |
 | POST         | /add_person  | name: string, email_address: string |
 
+{{< expand "Making HTTP Requests with a Payload" >}}
+
+
+
+To learn more, reference the httpie [documentation](https://httpie.io/docs/cli/request-url)
+{{< /expand >}}
+
+```shell
+http get example.com name=name
+```
 
 ### API View
 

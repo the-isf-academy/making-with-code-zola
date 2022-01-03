@@ -44,8 +44,35 @@ Use the table below to reference different planets' relative weight.
 #### Your program should run like so:
 ```shell
 How much do you weight (kgs)? 100
-Enter a planet (moon, mars): mars
+Enter a planet (Moon, Mars): Mars
 ----------
 On mars you would weight 38.0 kg
+```
+
+## Extension
+
+### [Error Handeling]
+
+Error handeling is the anticipation and response to potential logical or syntacial issues with a program. 
+
+{{< code-action "Ensure your program accounts for case insensitiy" >}}
+> e.g. accepting user input of 'Mars', 'mars', and 'MARS')
+
+
+### [Looping]
+
+What if the user would like to see their weight on mulitple planets? 
+
+{{< code-action "Add a loop to your program so the user can select multiple planets." >}}
+
+#### Example output:
+```shell
+How much do you weight (kgs)? 100
+Enter a planet (Moon, Mars): Mars
+----------
+On mars you would weight 38.0 kg
+----------
+Would you like to pick another planet (yes, no)? yes
+Select a planet (Moon, Mars): Moon
 ```
 

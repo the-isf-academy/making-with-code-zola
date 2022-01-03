@@ -8,6 +8,8 @@ headless: true
 
 This page will serve as the extended documentation for Banjo. This page has been adapted from the offical [`README.md`](https://github.com/cproctor/django-banjo#deploying-to-heroku).
 
+It references the [https://cs10-email-directory.herokuapp.com](https://cs10-email-directory.herokuapp.com), of which the code repository can be found [here](https://github.com/the-isf-academy/cs10-email-directory/tree/main).
+
 
 ## What is Banjo. 
 
@@ -82,7 +84,7 @@ All views:
 - return a `dictionary` with any key,value paris
 
 
-For the `Directory Server`, let's implement two views: 
+For the `Directory Server`, let's implement a few simple views: 
 - adding a `Person` (`POST`)
 - listing all exisiting `Person`s (`GET`)
 - listing one `Person`'s email (`GET`)
