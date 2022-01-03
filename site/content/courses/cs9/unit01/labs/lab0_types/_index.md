@@ -9,7 +9,7 @@ replace links to isf repo <br>
 fix modulo link (functions lesson in unit 0)
 {{< /devnote >}}
 
-In this lab we'll explore the idea of functional programming and data types. In functional programming, we think of functions as transformations. They take any number of **arguments** and they change them into a **return value**.
+In this lab we'll explore the idea of functional programming and data types. In functional programming, we think of functions as transformations. They take any number of **parameters** and they change them into a **return value**.
 
 Remember the structure of a Python function?
 
@@ -18,7 +18,9 @@ def double(number):
   return 2 * number
 ```
 
-Here, `number` is the argument and `2 * number` is the return value. As its name suggests, this function returns twice `number`.
+> Here, `number` is the paramter and `2 * number` is the return value. 
+>
+> As its name suggests, this function returns twice, `number`.
 
 Here is a visualization of the function `double`. We are not so focused on how the function gets its 
 work done as we are on what goes in and what comes out:
@@ -31,20 +33,24 @@ you quadruple a number? Just double it, and then double the result:
 
 ![Functional view of the quadruple function](fig2.png)
 
-This might not seem like a very big deal. It's too easy. But you will soon see
-that much more difficult problems can often be broken down into simpler
-functions by thinking about how each function transforms an input into an
-output. 
+>
+> ```python
+> double(double(5))
+> ```
+>
+> Will output: `20`
+
+You will soon see that much more **difficult problems can often be broken down into simpler functions by thinking about how each function transforms an input into an output**. 
 
 ## Part 1: Thinking about types
 
-But how can we talk precisely about what goes in to functions and what comes
-out? You have already met a bunch of different kinds of objects in Python: `1`,
-`2.55`, `True`, `"avuncular"`, `None`. Each of these has a **type**. When we
+You have already met a bunch of different kinds of objects in Python: `1`,
+`2.55`, `True`, `"pizza"`, `None`. Each of these has a **type**. When we
 talk about what goes in to functions and what comes out, we won't talk about
-particular inputs (who cares if you double `7` or `9`? The point is you can't
-double `False`). We'll talk about the **types** of objects that functions
-operate on. Everything has a type. Here are a few types that you already know:
+particular inputs. 
+> Who cares if you double `7` or `9`? The point is you can't double `False`.
+
+We'll talk about the **types** of objects that functions operate on. **Everything has a type.** Here are a few types that you already know:
 
 | Type     | Examples        | Description                                                                                                                          |
 | -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -54,16 +60,25 @@ operate on. Everything has a type. Here are a few types that you already know:
 | `bool`   | `True`, `False` | Booleans, or True/False values. Named for George Boole, who spent a lot of time thinking about them.                                 |
 | `list`   | `[1, 2, 3]`     | A `list` holds other objects.                                                                                                        |
 
-FYI, every type is also a function which turns its argument into that type, if
-it's possible. So `int(3.33333)` becomes `3`, `str(True)` becomes `"True"`, and
-`bool(0)` becomes `False`. But `list(False)` is an error, because there's no
-sensible way to turn `False` into a list. 
+{{< expand "FYI, types can also be functions." >}}
+
+Every type is also a function which turns its argument into that type, if it's possible. So,
+* `int(3.33333)` becomes `3`
+* `str(True)` becomes `"True"`, 
+* `bool(0)` becomes `False`. 
+
+But `list(False)` is an error, because there's no sensible way to turn `False` into a list. 
+
 Python's attitude toward types is pretty casual; even if
 something is not quite the right type, we'll make it work if we can. Other
 languages are *much* stricter, requiring every variable to specify its type, and
 requiring every function to specify what type it accepts and what type it
 returns. There are tradeoffs, and you'll probably develop an opinion on which
 you prefer once you learn a few more programming languages. 
+{{< /expand >}}
+
+<br>
+
 
 {{< write-action >}} **Work with your group in your Google Slide to following table. For each function describe what type the function would take as an input, and what type the function would return as output.**
 
