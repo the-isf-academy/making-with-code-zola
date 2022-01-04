@@ -30,7 +30,8 @@ Let's use the `Python shell` to do some quick list experiments.
 > ```
 
 
-{{< code-action >}}{{< write-action "In your notebook, write down how to accomplish each of the below items." >}} Be sure to use the `Python Shell` to check your answers.
+{{< code-action >}} **Use the** `Python Shell` **to experiment with how to accomplish each task below.** 
+> {{< write-action "In your notebook, write down how you did it." >}} 
 
 0. Print out the first item in the list
 0. Print out the last item in the list
@@ -72,18 +73,21 @@ you quadruple a number? Just double it, and then double the result:
 
 We've already experienced this with `strings`, `integers`, `operators`, and `lists`. Let's test this using the `Python shell`.
 
-{{< code-action >}}{{< write-action "Using the Python shell, for each of the following examples, write what the return value is:" >}}  
+{{< code-action >}} **Use the** `Python Shell` **to figure out what the return value is for each item below.** 
+> Simply copy and past each line one at a time, and print out the variable to find the return value.
 
 0. `number = str(10)`
 0. `letters = int('50')`
 0. `is_greater_than = 10>50`
 0. `number_of_fruits = len(['apples','oranges','lemons','watermelons'])`
-> Simply copy and past each line one at a time, and print out the variable to find the return value.
->
 > ```shell
 > >>> number = str(10)
 > >>> print(number)
 > ```
+
+> {{< write-action "In your notebook, record the return value for each item." >}} 
+
+
 
 ---
 
@@ -156,17 +160,16 @@ Answer the following prompts in your notebook:
 0. What are the benefits of using a functional programming approach to list transformations?
 0. How could you have utilized lists in your Unit 0 project?
 
-{{< code-action >}} `Push` **your work to Github**
-
 {{< /checkpoint >}}
 
 ### [Deliverables]
-For this lab, you should submit the following...
+{{< deliverables >}}
+{{< code-action >}} **For this lab, you should `push` the following files to Github.**
 
 - `lab-lists` repository containing the following: 
     - `list_transformations.py`
     - `list_transformations_test.py` 
-- Checkpoint questions
+{{< /deliverables >}}
 
 ## [5] Extension: Sort
 
@@ -181,11 +184,12 @@ Python has a built in function `sort()` that will organize the elements of a lis
 
 {{< code-action >}}{{< write-action>}} **The extention activity is is for you to think through and apply the logic of the sorting algothirm.**
 
-0. In your notebook, write pseudocode for the `sort()` function
-0. Apply your pseudocode and write a custom `sort_list()` function in `list_transformations.py`
+> 0. In your notebook, write pseudocode for the `sort()` function
+> 0. Apply your pseudocode and write a custom `sort_list()` function in `list_transformations.py`
 
 Some questions to consider:
 - What are the steps involved in sorting a list of items? 
 - What if the list contains numbers? What if the list contains strings? 
 - What if the list contains numbers and strings? 
 
+{{< code-action >}} **Remember to `push` your work to Github.**
