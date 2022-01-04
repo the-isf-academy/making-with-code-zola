@@ -129,7 +129,7 @@ Each function takes a list as a parameter, and returns and new list.
 
 {{< code-action "Code the function" >}} `capitalize_list()` 
 - Parameter: a list of strings 
-- Return Value:a new list with the first letter of each item capitalized
+- Return Value:a new list with each string fully capitalized
 
 {{< code-action "Code the function" >}} `pluralize_list()` 
 - Parameter: a list of strings
@@ -145,8 +145,8 @@ Here are a few helpful functions to transform the elements in the lists. Also be
 
 | Function  | Data Type  | Explanation  |  Example |
 |:-:|:-:|:-:|:-:|
-| append(element)  | lists  | adds an element to the end of a list  |  my_list.append("lemonade") |
-| capitalize()  | strings  | capitalizes the first letter in a string | my_string.capitalize()  |
+| `append(element`)  | lists  | adds an element to the end of a list  |  `my_list.append("lemonade")` |
+|`upper() ` | strings  | capitalizes every letter in a string | `my_string.upper()`  |
 
 ### [Testing]
 
