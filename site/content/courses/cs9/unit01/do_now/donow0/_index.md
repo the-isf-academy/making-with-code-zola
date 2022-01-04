@@ -49,6 +49,10 @@ Enter a planet (Moon, Mars): Mars
 On mars you would weight 38.0 kg
 ```
 
+---
+{{< code-action >}} **Remember to `push` your work to Github.**
+
+---
 ## Extension
 
 ### [Error Handeling]
