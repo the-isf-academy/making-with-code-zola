@@ -53,7 +53,7 @@ The program currently prints out "help! I am trapped inside the computer!".
 ```python
 print("Ms. Brown and Ms. Genzlinger go to the store for dessert. They decide to buy...")
 for thing in cs1_dessert_list:
-    print(item)
+    print(thing)
 ```
 
 In the loop above, `thing` is a variable that we use to store each element within cs1_desserts as we loop through one by one. `thing` is not a very descriptive variable name - there are lots of things in the world. How will we know what thing the variable is storing?
