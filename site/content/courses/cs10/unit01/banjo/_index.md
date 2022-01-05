@@ -66,6 +66,9 @@ Banjo provides five data types for Model fields.
 
 Once you've defined your models, running `banjo` will create a `database`. The `db` (database) is stored in `database.sqlite`. It will be created in the same directory as your `app` folder. The `db` allows for persistance accross usages of your model. 
 
+{{< code-action >}}**Download [DB Browser for SQLite](https://sqlitebrowser.org/dl/) to open the `.db` databse file.**
+
+
 This is what the Database looks like for the `Person` model. 
 | id | name | email_address | 
 |----|----------|--------|
@@ -74,6 +77,8 @@ This is what the Database looks like for the `Person` model.
 > - the column titles are the same as the field names
 > - it auto generates an `id` field to distinguish between instances of the model
 > - although it is currently empty, the rows will populate as `Person`s get added 
+
+
 
 ---
 
@@ -102,6 +107,8 @@ To create a new instance of the model:
 > The `keys` are the model `fields` and the `values` are whatever you'd like to assign to the `fields`.
 >
 > Also, notice you **must save** the model using `save()`, or else it will not saved in the database.
+
+{{< look-action >}} **Re-open the `.db` file, and view your model in the browser.**
 
 ### [Viewing the models]
 
