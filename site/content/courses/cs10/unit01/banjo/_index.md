@@ -143,13 +143,19 @@ For the `Directory Server`, let's implement a few simple views:
 This **`/index`** endpoint will simply return a short desciprtion of the server.  
 
 ```python {linenos=table}
-@route_get('index')
+# app/views.py
+from banjo.urls import route_get, route_post
+from app.models import Person
+
+@route_get('')
 def index(params):
     return {'index': 'Welcome to the CS10 Email Directory!'}
 ```
-* `line 1` - defines the route as an `HTTP GET` request and defines the endpoint as `/index`.
-* `line 2` - defines the function
-* `line 3` - returns a dictionary 
+* `line 2` - imports the `class decorators` to write a `GET` or `POST` method
+* `line 3` - imports the `Person` model from the `models.py` file
+* `line 5` - uses a `class decorator` to define the type of HTTP request and defines the endpoint as `/`.
+* `line 6` - defines the function
+* `line 7` - returns a dictionary 
 
 
 The **`/all_persons`** endpoint will return each instance of the model. 
@@ -192,10 +198,6 @@ def one_persons(params):
 Let's start with the view for adding a `Person`. 
 
 ```python {linenos=table}
-# app/views.py
-from banjo.urls import route_get, route_post
-from app.models import Person
-
 @route_post('add_person', args={'name': str, 'email_address': str})
 def add_person(params):
     new_person = Person.from_dict(params)
@@ -321,7 +323,3 @@ how to remove an instance of a model
 - deleting the db, v. 'hiding instances' 
 
 advanced filtering -->
-
-
-
- -->
