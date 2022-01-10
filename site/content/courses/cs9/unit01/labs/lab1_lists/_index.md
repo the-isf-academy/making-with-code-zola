@@ -150,7 +150,7 @@ Here are a few helpful functions to transform the elements in the lists. Also be
 
 ### [Testing]
 
-{{< code-action "Write tests to ensure each of your functions works as intended." >}} Use `list_transformations_test.py` to test your functions sufficently. 
+{{< code-action "Write tests to ensure each of your functions works as intended." >}} Use `list_transformations_test.py` to test your functions sufficiently. 
 
 
 {{< checkpoint >}}
@@ -169,6 +169,8 @@ Answer the following prompts in your notebook:
 - `lab-lists` repository containing the following: 
     - `list_transformations.py`
     - `list_transformations_test.py` 
+
+Also be sure to hand in your notebook with checkpoint questions.
 {{< /deliverables >}}
 
 ## [5] Extension: Sort

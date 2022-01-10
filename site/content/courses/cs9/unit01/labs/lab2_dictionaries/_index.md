@@ -1,24 +1,32 @@
 ---
 title: 2. Dictionaries
 type: labs
-draft: True
+# draft: True
 
 ---
 
 # Dictionaries 
 
-In this mini lab, we will learn about dictionaries, another data structure. 
+In this lab, we will learn about dictionaries, another useful data structure. 
+
+## [0] Setup
 
 
-## A: High 🗝 Useful Data Structure
+{{< code-action >}} Start by cloning your `lab-dictionaries` repository in your `cs9` folder. 
+```shell
+cd desktop/cs9/unit_01
+git clone https://github.com/the-isf-academy/lab-dictionaries-YOUR-GITHUB-USERNAME.git
+```
+
+## [1] High 🗝 Useful Data Structure
 
 You already know about lists, which are a great way to store things that naturally come one after another, like subway stops on a subway line, or homework assignments in a class. 
 
 The structure of a list works well for things that have a natural order (like zodiac cycles), but what about things that don't have a natural order to them?
 
-A **dictionary** is another kind of data structure that is useful for information that does not have a natural order. **Dictionaries connect keys to values**. For each unique key (for example, an animal name like `'pig'`), a dictionary stores a unique value (like a translation `猪`). 
+A **dictionary is another kind of data structure that is useful for information that does not have a natural order.** 
 
-<br>
+**Dictionaries connect keys to values**. For each unique key (for example, an animal name like `'pig'`), a dictionary stores a unique value (like a translation `猪`). 
 
 
 ```python
@@ -34,94 +42,93 @@ animal_dict = {
 "monkey": "猴",
 "rooster": "鸡",
 "dog": "狗",
-"pig": "猪"
 }
 ```
 
-
-<br>
-
-
-{{< code-action >}} Start by cloning your `lab-dictionaries` repositor in your `cs9` folder. 
-```shell
-cd cs9/unit_00
-git clone https://github.com/the-isf-academy/lab-dictionaries-YOUR-GITHUB-USERNAME.git
-```
-
-{{< code-action >}} Read the function `my_zodiac_year` in `dictionaries_introduction.py`
-- Open a Python shell and import `my_zodiac_year` from `dictionaries_introduction.py`
-
-- Run the `my_zodiac_year` function passing in your birth year as the argument
-
-```shell
-> python3 
->>> from dictionaries_introduction import my_zodiac_year
->>> my_zodiac_year(1995)
-I was born in the year of the pig.
-```
-
-Let's add the Chinese translation the English Sentence "I was born in the year of the ________" to the `my_zodiac_year` function. 
-
-{{< code-action >}} Below the `print` statement in the `my_zodiac_year` function of `dictionaries_introduction.py`, print the Chinese translation. Use the `animal_dict` dictionary to access the character for your `birth_year_animal`. 
-
 **Values in a dictionary are accessed via the key.** For example:
-```shell
-> python3 
->>> from dictionaries_introduction import animal_dict
->>> animal_dict['dog']
-'狗'
+```python3
+animal_dict['dog']
 ```
 
-{{< code-action >}} Open a new python shell and import and run the `my_zodiac_year` function again with your new code. Now you should see something like:
+> Will return:
+> ```python3
+> '狗'
+> ```
 
-```shell
->>> from dictionaries import my_zodiac_year
->>> my_zodiac_year(1995)
-I was born in the year of the pig.
-我出生在猪年
+**Keys can easily be added to a dictionary like so:**
+```python3
+animaion_dict["pig"] = "猪"
 ```
 
-## B: Dictionaries in action
 
-Dictionaries can be used to show one-to-one relationships like how capitals are connected countries, how students are connected to grade levels, or how books are connected to authors. 
+**You can loop through a `dict` in almost the same way you can loop through a list:**
 
-Often we use dictionaries to describe properties of an object. A hero in an adventure game is defined in `PART B`:
+```python3
+for english, chinese in animal_dict.items():
+  print("English zodiac: {} - Chinese zodiac: {}.".format(english, chinese))
+```
+
+> Will output:
+> ```python3
+> English zodiac: rat | Chinese zodiac: 鼠.
+> English zodiac: ox | Chinese zodiac: 牛.
+> English zodiac: tiger | Chinese zodiac: 虎.
+> English zodiac: rabbit | Chinese zodiac: 兔.
+> English zodiac: dragon | Chinese zodiac: 龙.
+> English zodiac: snake | Chinese zodiac: 蛇.
+> English zodiac: horse | Chinese zodiac: 马.
+> English zodiac: sheep | Chinese zodiac: 羊.
+> English zodiac: monkey | Chinese zodiac: 猴.
+> English zodiac: rooster | Chinese zodiac: 鸡.
+> English zodiac: dog | Chinese zodiac: 狗.
+> English zodiac: pig | Chinese zodiac: 猪.
+>   ```
+
+### [Zodiac Year]
+
+
+{{< code-action "Let's run the file" >}} `zodiac_year_finder.py`. It's inside the `/introduction` directory. Currently, it only tell you your zodiac in English. 
+
+
+```shell
+> python3 zodiac_year_finder.py
+What is your birth year? 2010
+I was born in the year of the tiger.
+```
+
+{{< code-action "Use the" >}} `animals_dict` **to add the Chinese translation to the English Sentence** *"I was born in the year of the ________".*
+
+
+> Your `zodiac_year_finder.py`  should now output something like:
+> ```shell
+> I was born in the year of the tiger.
+> 我属虎
+>```
+
+
+## [2] Game Library
+
+Let's imagine our school had a library of video games. We could use a `dictionary` and `lists` to organize each game by genre.
 
 ```python
-def create_character_traits():
-    return {
-        "courage": 8,
-        "beauty": 4,
-        "strength": 7,
-        "empathy": 5
-    }
+game_library_dict = {
+    "Sports": ["Fifa", "NBA 2K", "Wii Sports"],
+    "Puzzle": ["Sodoku", "Tetris", "Bejeweled","Mahjong"],
+    "Multiplayer": ["Amoung Us","Fall Guys","Minecraft","Fortnite","Rocket League"],
+    "RPG" : ["The Witcher 3","Skyrim", "World of Warcraft", "Persona 5", "The Legends of Zelda"]
+}
 ```
+> *Notice:*
+> - *each `key` is a `string` type*
+> - *each `value` is a `list` of `string` types*
 
-{{< code-action >}} Open a python shell and import the `describe_character` and `create_character_traits` functions from the `dictionaries.py` file. Create a `character_traits` dictionary using the `create_character_traits` function and run the `describe_character` function:
+It's up to you, to write functions that will return information about the `game_library dict`.
 
-```shell
->>> from dictionaries import describe_character, create_character_traits
->>> character_traits = create_character_traits()
->>> describe_character(character_traits)
-You are foolhardy.
-```
-
-You can loop through a `dict` in almost the same way you can loop through a list:
-
-```shell
->>> for trait, value in character_traits.items():
-...     print("You have a {} value of {}.".format(trait, value))
-You have a courage value of 8.
-You have a beauty value of 4.
-You have a strength value of 7.
-You have a empathy value of 5.
-```
-
-
-## C. Game Library
-
-Now, let's use dictionaries and lists to create a library of games. You will code the following functions in the `library_functions.py` file:
-
+**You will code the following functions in the `library_functions.py`:**
+- `total_num_games()`
+- `get_genres()`
+- `num_games_per_genre()`
+- `get_games_for_genre()`
 
 {{< figure src="images/courses/cs9/unit01/01_dict_function_diagram.png" width="600px">}}
 
@@ -130,19 +137,19 @@ Now, let's use dictionaries and lists to create a library of games. You will cod
 
 {{< code-action >}} `total_num_games()`
 - Paramter: a dictionary 
-- Output: an integer value representing the number of games in the given dictionary 
+- Return value: an integer value representing the number of games in the given dictionary 
 
 {{< code-action >}} `get_genres()`
 - Paramter: a dictionary 
-- Output: a list of the genres available in a given dictionary 
+- Return value: a list of the genres available in a given dictionary 
 
 {{< code-action >}} `num_games_per_genre()`
 - Paramters: a genre, a dictionary 
-- Output: an integer value representing the number of games available for the given genre in the given dictionary
+- Return value: an integer value representing the number of games available for the given genre in the given dictionary
 
 {{< code-action >}} `get_games_for_genre()`
 - Paramter: a genre, a dictionary 
-- Output: a list of games available for the given genre in the given dictionary
+- Return value: a list of games available for the given genre in the given dictionary
 
 <br>
 
@@ -152,10 +159,50 @@ A helpful function:
 |:-:|:-:|:-:|
 | keys() | returns the keys in a dictionary  |  my_dict.keys() |
 
-<br>
 
-To test your functions run: `python library_test.py`.
+### [Testing]
 
+{{< code-action "Write tests to ensure each of your functions works as intended." >}} Use `library_test.py` to test your functions sufficiently. 
+
+
+{{< checkpoint >}}
+Answer the following prompts in your notebook before submitting this lab:
+
+0. What is a dictionary and why is it useful? 
+0. How would you use a dictionary to organize students by grade level? 
+0. Look at the "0. Planet Gravity" Do Now. How could you use a dictionary to better organize the information?
+
+
+{{< /checkpoint >}}
+
+### [Deliverables]
+{{< deliverables >}}
+{{< code-action >}} **For this lab, you should `push` updates to the following files to Github.**
+
+- `lab-dictionaries` respository
+    - `zodiac_year_finder.py`
+    - `library_functions.py`
+    - `library_test.py`
+
+Also be sure to hand in your notebook with checkpoint questions.
+{{< /deliverables >}}
+
+## [3] Extensions: Interactive Games Library 
+
+Now that you've written the `library_functions`, it's up you to put them to good use. 
+
+{{< code-action "Create a new file called," >}} `interactive_library.py`
+
+
+{{< code-action "Write an interactive games library that includes, but is not limited to, the following functionalities:" >}} 
+- viewing the total number of games
+- viewing the genres 
+- viewing the games by genre 
+
+{{< code-action "Write a new file called," >}} `interactive_library.py`
+
+
+*Here is an example:*
 ```shell
 ------------------------------------
 --Welcome to the CS Game Library--
@@ -181,38 +228,17 @@ We have 3 Sports games:
 ------------------------------------
 ```
 
-<br>
-
-{{< checkpoint >}}
-Answer the following exit questions on your Google doc before submitting this lab:
-
-0. What is a dictionary and why is it useful? 
-0. What are the similarities and differences between lists and dictionaries? 
-0. Come up with 3 examples of data that could be organized using a dictionary.
+{{< code-action >}} **Be sure to `push` your new file to Github.**
 
 
-{{< /checkpoint >}}
+### [Contributing to the library]
 
-## D. Deliverables
-For this lab, you should submit the following:
-
-- `lab-dictionaries` respository
-    - `dictionaries_introduction.py`
-    - `library_functions.py`
-    - `library_test.py`
-    - `game_library.py`
-- Your Google Doc with responses to the checkpoint questions
-
-## E. Extension
-As the CS game library currently stands, for each game the only available data is the title and the genre. Typically, libraries contain many more instances of metadata. For example, book metadata contains the title, author, date published, etc. 
-
-The extension actvitiy is to create a model for a more complex game library. Each game must include the following: 
-- Title
-- Genre
-- Publisher
-- Date Released
-- Platforms 
-
-In your Google Doc, draw a model of the data strcuture. 
+How would you adjust your program to allow users to add games to the library? 
+> *Consider:*
+> - How would you implement a menu system?
+> - How do you add things to a dictionary?
 
 
+{{< code-action "Add a functionality that allows users to add games to the library." >}} 
+
+{{< code-action >}} **Remember to `push` your work to Github.**
