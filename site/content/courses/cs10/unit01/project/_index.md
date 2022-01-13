@@ -1,6 +1,5 @@
 ---
 Title: Project
-draft: false
 ---
 
 # Unit Networking: Server Project
