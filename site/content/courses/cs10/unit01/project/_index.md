@@ -5,7 +5,7 @@ draft: false
 
 # Unit Networking: Server Project
 
-In this project, you will create a server using Banjo.
+In this project, you will create a server using Banjo. It is up to you to create a server with a user in mind. 
 
 
 ## [1] Planning Document
@@ -78,9 +78,9 @@ In `Unit Networking Project: Self-Assessment`, you are required to explain how y
 
 The self-assessment is broken down into three areas:
 - Practices
-    - architecture, reading documentation, readability, and testing
+    - test cases, reading documentation, readability, and debugging
 - Concepts
-    - models and http requests
+    - model architecture and http requests
 - Reflection
 
 **To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.**
@@ -117,10 +117,6 @@ For each concept you must provide the following:
 As we reviewed how to make and use classes, you explored how user interactions work, and the possible ways we can display information and ask for input from a user. The reflection is space for you to think more deeply about the user experience by evaluating the implications of your design choices.
 
 
-*It is marked purely based on completion and demonstration of effort.*
-
-
-
 ## [5] Success Claims
 
 Successful computer scientists should be able to make the following claims:
@@ -148,14 +144,13 @@ Successful computer scientists should be able to make the following claims:
   - I can use the game class to store the relevant data points
 
 
-
 **Keep the success claims in mind when coding your project and self-assessing yourself.**
 
 ## [6] Scoring
 
 The project is scored out of 7.
 - 1 point is assigned to the reflection
-    - *By thoughtfully answering the prompts and putting effort into your response, you will receive 1 point*
+    - *By thoughtfully self-assessing your project and thoughtfully answering the reflection points, you will receive 1 point*
 -  6 points are assigned to the practices & concepts
     - *To calculate your score for the practices & concepts, look at the following bands:*
     > 0 = 0-1
@@ -174,18 +169,7 @@ The project is scored out of 7.
 
 *Example score:*
 
-    1 point for reflection
+    1 point for reflection and 
     5 points for practices & concepts (15/18)
     6 total points
 
-#### Final Score
-
-Your final score for the project will take into account your self-assessed score and the teacher-assessed score. Any score will be rounded up.
-
-> self-assessed score*(.25)+ teacher score*(.75) = YOUR FINAL GRADE
-
-*Example final score:*
-
-    Self-assessed score = 5
-    Teacher-assessed score = 6
-    Final score = 5(.25) + 6(.75) = 5.75 = 6
