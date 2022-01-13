@@ -7,6 +7,14 @@ draft: false
 
 In this project, you will create a server using Banjo. It is up to you to create a server with a user in mind. 
 
+## [0] Starter Code
+
+{{< code-action "Clone the project repository" >}} in your `cs10\unit_00` folder. 
+
+```shell
+cd cs10/unit_00
+git clone https://github.com/the-isf-academy/project-networking-YOUR-GITHUB-USERNAME.git
+```
 
 ## [1] Planning Document
 
@@ -17,15 +25,14 @@ approved by a teacher. *You can find your planning doc in your Google Drive fold
 ## [2] Deliverables
 
 
-- A `Unit Networking Project: Planning Document` in your Google Drive folder
-- A `project-networking` repository containing the following files:
-   - `models.py` - when this file is run, the game should begin in the terminal. It will contain most of the logic of the game
-    - `views.py` - your View class should handle all the printing to the terminal and user interactions
-    - `README.md` This is documentation for your project for other people who may want to use your project.
-- `Unit Networking Project: Self-Assessment` - Google doc. This is where you will self-assess your final project.
-
-
-**You can find more documentation about what each of the files should contain within the README.md file.**
+- A `Unit Networking Project: Planning Document` - Google doc. This is where you will plan your project.
+- A `project-networking` repository containing the following:
+  - `\app`
+    - `models.py` - This is where you will define your model.
+    - `views.py` - This is where you will define your routes and endpoints.
+  - `database.sqlite` - This is your database file. 
+  - `README.md` This is documentation for your project.
+- `Unit Networking Project: Self-Assessment` - Google doc. This is where you will self-assess your project.
 
 
 ### [Timeline]
