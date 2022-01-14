@@ -1,34 +1,47 @@
 ---
-title: 2. Type Checking
+title: 2. Price Dictionary
 type: checkup
-draft: True
 ---
-## Do Now: Checking Types
+# Do Now: Price Dictionary 
 
-Python has built in functions to check types. Let's experiment with them by using the Python shell.
+{{< code-action "First, navigate to your" >}} `cs9-donows/unit_01` **folder.**
 
-{{< code-action "Enter the Python Shell, by openning the Terminal and type:" >}} `python3`
+```shell
+cd Desktop/cs9
+cd cs9-donows-YOUR-GITHUB-USERNAME
+cd unit_01
+```
 
-> {{< write-action >}} **In your notebook, fill out the `Return Value` for each item in the table below.** For each code snippet, record its return value. *If there is no return value, write 'None'*
+{{< code-action "Create a new document" >}}
+```shell
+atom donow2.py
+```
 
-|   #   | Code Snippet                                                        | Return Value| 
-|------ |------------------------------------------------------------------|---------------|
-|   0   | isinstance(5, int)                                        | True         | 
-|   1   | isinstance('40.2',int)                                 |               |  
-|   2   | isinstance(False,str)                                    |               |   
-|   3   | isinstance('peanuts',bool)               |               |      
-|   4   | isinstance('turtle',str)               |               |     
-|   5   | type(True)     |               |   
-|   6   | type('the beatles') |               |   
-|   7   | type([0,3,'apples'])    |               |     
-|   8   | assert 1 + 2 == 3                         |               |       
-|   9   | assert 1 + 2 == 4|               |   
-|   10   | assert isinstance("cowboy", int) |               |   
-|   10   | assert 10!='10'|               |   
+## Price Calculator 
+
+Dictionaries are a great way to store information that has a relationship. For example, items and their cost. 
+
+Consider the following dictionary:
+```python
+grocery_list_hkd = {
+    'milk': 28.90,
+    'chicken wings': 120,
+    'breadcrumbs': 32.50,
+    'eggs':23.90,
+    'seasoning': 10.50
+}
+```
+> Each `key` is `string` data type, that holds a grocery store item
+>
+> Each `value` is a `float` data type, that holds the grocery store item's price
 
 
-{{< write-action "Answer the following questions in your notebook" >}}
+{{< code-action "Write a function that can calculate the total cost of each item in the dictionary." >}}
+- Parameter: a dictionary with items and prices
+- Return value: an float value representing the total cost of each item
 
-0. What does `instance()` do?
-0. What does `type()` do?
-0. What does `assert` do?
+---
+
+{{< code-action "Be sure to" >}} `push` **your work to Github.**
+
+
