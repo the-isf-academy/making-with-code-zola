@@ -8,7 +8,7 @@ type: checkup
 
 ```shell
 cd Desktop/cs9
-cd cs9-donows-YOUR-GITHUB-USERNAME
+cd cs9-donows-YOUR-GITHUB-USERNAMEcode
 cd unit_01
 ```
 
