@@ -1,6 +1,8 @@
 ---
 title: Practices
 weight: 20
+bookCollapseSection: true
+
 ---
 
 # Practices
