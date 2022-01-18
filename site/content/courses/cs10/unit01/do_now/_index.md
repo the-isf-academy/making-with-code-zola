@@ -1,5 +1,5 @@
 ---
-title: "Do Now"
+title: "[Do Now]"
 bookCollapseSection: true
 type: unit
 headless: true

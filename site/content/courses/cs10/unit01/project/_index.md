@@ -1,5 +1,5 @@
 ---
-Title: Project
+Title: "[Project]"
 ---
 
 # Unit Networking: Server Project

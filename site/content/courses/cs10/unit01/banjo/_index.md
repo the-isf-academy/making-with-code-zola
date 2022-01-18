@@ -1,5 +1,5 @@
 ---
-title: "Banjo"
+title: "[Banjo]"
 bookCollapseSection: false
 type: unit
 headless: true
