@@ -20,12 +20,8 @@ Jupyter Notebook is a special kind of programming environment that lets you writ
 
 {{< tabs "jupyter-setup" >}}
 {{< tab "MacOS" >}}
-You can install Jupyter (and some helpful extensions) using `pip` in the Terminal:
-> *Copy and paste each line, one at a time, then press `return`*
-```shell {linenos=table}
-pip3 install --upgrade -r requirements.txt --user
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main && jupyter nbextension enable collapsible_headings/main && jupyter nbextension enable hide_input/main && jupyter nbextension enable varInspector/main && jupyter nbextension enable hinterland/hinterland && jupyter nbextension enable python-markdown/main && jupyter nbextension enable spellchecker/main && jupyter nbextension enable exercise2/main
+```shell
+bash <(curl -sL https://raw.githubusercontent.com/the-isf-academy/courseware/master/cs9_student_setup/setup_jupyter.sh)
 ```
 
 {{< /tab >}}
