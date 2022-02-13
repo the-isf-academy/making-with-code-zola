@@ -2,7 +2,7 @@
 title: "Unit 02: Web Apps"
 bookCollapseSection: true
 type: unit
-draft: true
+# draft: true
 ---
 
 This unit will focus on web applications and human-center design. Students will form teams focused on creating something for the ISF community. This could be a solution to a problem or a virtual experience for members of the community. 
@@ -30,12 +30,12 @@ interface of their team's project.
 - *Architect Track:* This student will learn how to design, query, and maintain a database that will be used to
 serve the content of their team's web app.
 
-### Milestone Event: Hackathon
+<!-- ### Milestone Event: Hackathon
 This section of the project will culminate in a hackathon where students apply the technical skills 
 they’ve learned to realize the web application they have designed for their project. This event will 
 allow students to work on their projects in a supportive, collaborative environment. At the end of the
 hackathon, teams will have a working version 1.0 of their applications, which they can continue testing 
-and developing in the final section of the project.
+and developing in the final section of the project. -->
 
 ## Act III: Django Unchained and UI/UX
 

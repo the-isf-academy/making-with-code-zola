@@ -1,132 +1,47 @@
 ---
-Title: Act I
+title: Act I
+bookCollapseSection: true
 ---
 
-# Act I: Human Centered Design
+# Act I: Web Applications with Django
 
-Act I will focus on planning and outlining a Web Application for the ISF community. We'll follow a human center design cycle that focuses on ideating, defining, and designing. Each section will provide you with the tools and resources to thoroughly plan a project of this scale. 
+In this final unit of CS10, you are going to take on a new scale of challenge:
+you're going to learn a professional web application framework called
+[Django](https://www.djangoproject.com/).
 
-This Act will culminate in a school-wide Pitch event where each group will present a working prototype fo their app to the ISF community. 
+You have already learned about web applications (servers), programs which receive requests and send responses. Every time you use the internet, you're communicating with servers. Every time you use an app, the app is communicating with servers for you. 
 
-{{< youtube "wOrmr5kT-48" >}}
+{{< figure src="images/courses/cs10/unit02/02_client_server.jpg" width="100%" title="A client and server" >}}
 
+Professional computer scientists generally don't write web applications from
+scratch. The reality is that many web apps use a lot of similar pieces. A
+framework is a collection of ready-made pieces which already fit well together
+and take care of a lot of low-level stuff that works the same in pretty much web
+app. Why bother rewriting it? 
 
-## Deliverables 
+Most of the code you have been given so far in CS9 and CS10 has been written for
+you by your teachers. Django is different: it's the most-used Python web app framework. It contains a huge amount of code, including lots that you won't be able to understand yet. (Though you'll never see most of it.) On the other hand, [Django's documentation](https://docs.djangoproject.com/en/3.1/) is excellent, there are hundreds of thousands of Django questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/django), and once you know Django you could seriously get a well-paying job. Instagram is written in Django. 
 
-Each stage of the design cycle will have specific deliverables. 
+## The plan
 
-- Ideate
-    - Ideation Google Doc
-- Define 
-    - Google Sheet with User Stories & Tasks
-- Design 
-    - Wireframe
-    - Digital Prototype
-    - Pitch Presentation
-- Self Assessment Document and Form 
+The next three lessons will introduce you to what Django actually does. You'll
+set up a basic app and follow along as we go through three different
+*lifecycles*: 
 
+0. The **request/response** lifecycle happens when Django receives a request from a client
+  computer. Django looks at the request, decides what to do (this is where your
+  code comes in!), and puts together a response. A request/response lifecycle
+  takes a fraction of a second. 
+1. The **runtime** lifecycle lasts from the moment you start up your Django app
+   to the moment you kill the program (or it crashes). A Django app is just a regular Python program, 
+   which starts and stops like normal. When you start Django, it will
+   stay alive forever waiting for requests, until you kill it or trip over the
+   power cord...
+2. The **project lifecycle** is the ongoing process of developing your Django
+   app. Just like all your other projects, you'll keep the source code for your
+   app in a GitHub repo, and you'll update your app from time to time with shiny
+   new features. However, when you have *production data*, things get a little
+   more complicated. You wouldn't want all your users to get their passwords and
+   cat videos deleted every time you update your app!
 
-## Timeline
-
-Each stage of the design cycle requires materials from the previous stage. It is vital that each group meets the deliverable(s) expected each day. By successfully following the timeline you will be well prepared for the Pitch event and the subsequent Acts. 
-
-
-### cs10.1
-
-| Date        | Focus                             | Deliverable(s)               |
-|--------------------|-----------------------------------|-------------------------|
-| 23 Feb | Group Formation/Brainstorm        | Google Form                  |
-| 24 Feb | Finalize Problem & Solution  | Problem/Solution             |
-| 02 Mar    | Mini Lesson: User Stories & Tasks      | User Interviews/Ideation Google Doc              |
-| 03 Mar    | Mini-lesson: Sketches/Wireframing | User Stories Google Sheet             |
-|             | Group Meetings with teachers      |                              |
-| 05 Mar    | Mini-lesson: HCI/ Design          | Wireframe                    |
-| 09 Mar    | Work Day: Prototype & Pitches       | Prototype Draft              |
-| 10 Mar    | Presentation Practice             | Design Prototype & Slideshow |
-| 17 Mar    | PITCH                             | Pitch Materials              |
-
-### cs10.2
-
-| Date        | Focus                             | Deliverable(s)               |
-|-------------|-----------------------------------|-----------------------|
-| 22 Feb | Group Formation/Brainstorm        | Google Form                  |
-| 23 Feb | Finalize Problem & Solution  | Problem/Solution             |
-| 25 February | Mini Lesson: User Stories & Tasks       | User Interviews/Ideation Google Doc              |
-| 02 March    | Mini-lesson: Sketches/Wireframing | User Stories Google Sheet                |
-|             | Group Meetings with teachers      |                              |
-| 08 Mar   | Mini-lesson: HCI/ Design          | Wireframe                    |
-| 09 Mar    | Work Day: Protoype & Pitches       | Prototype Draft              |
-| 11 Mar    | Presentation Practice             | Design Prototype & Slideshow |
-| 18 Mar    | PITCH                             | Pitch Materials              |
-
-## Assessment
-
-For Act I of this project, you will be assessed on Criterion B, Criterion C, and Criterion D. 
-
-For Criterion B, the rubric is based on your group's ability to thoroughly plan a web application. Each deliverable will support your overall plan and act as evidence for this criterion.  
-
-For Criterion C, the rubric is based on your ability to reflect upon the planning process and communicate your conclusions to the ISF community 
-
-For Criterion D, the rubric is based on your reflection of how your app will impact the ISF community. 
-
-Each individual will submit a self assessment Google Form, in which you are required to explain
-how your project should be scored, and to give evidence to support your
-assessment. Additionally, you will reflect on the working relationship with your group member(s). 
-
-**To do well in this project, we recommend you meet the deliverable goal for each class. This project builds on itself, so the best way to succeed to follow along with the steps we have laid out.**
-
-As a reminder, here's a guide for using the rubric:
-- Read the learning claims of the criterion for this unit in the rubric and consider how they relate to
-the description of the criterion.
-- For each learning claim in the criterion:
-    - Evidence: Identify 1-5 elements of your project that provide evidence for the learning claim.
-    - Reasoning: Provide specific reasoning that presents how the piece(s) of evidence you identified
-    support the claim about your learning.
-- Determine the level between 1-8 that represents your overall learning in the criterion based on the
-evidence and reasoning you provided for the learning claims of the criterion.
-
-
-## Rubric 
-
-Your web application will be assessed with a rubric tailored to the skills and concepts the Act targets.
-This Act is focused on developing the skills to plan a large scale computer science project with consideration to the impacts of technology we create. 
-
-
-### Criterion B: Planning and development
-> Students create personally meaningful projects through an iterative design cycle. Students’ work is
-> grounded in a development plan which students create before beginning the project. Students document
-> the development of their projects in order to create a record of decisions, assumptions, and
-> lingering flaws. Students define the intended functionality and develop towards evaluation.
-
-In this unit, you will build a fully functional web application over the course of three months.
-This will challenge your planning, researching, and iterative development
-skills.
-
-| Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
-|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can thoughtfully plan a large computer science project.                       | <ul><li> Ideation document that demonstrates your iterative approach to developing a web application outline</li><li>Google sheet with a detailed breakdown of the user stories and features of your app</li><ul>                                                                                                                                                                                         |
-| I can iteratively develop a project. | <ul><li>Updates to your ideation document and Google Sheet to account for challenges or discoveries during development</li><li>A transition from a basic sketch prototype to a working digital prototype</li></ul> |
-
-
-### Criterion C: Evaluation
-> Students produce evidence of a testing plan that evaluates the main areas of functionality of the product and reflect on the development process as well as a proposal for further development to improve the shortcomings of the current product.
-
-
-The Pitch event requires you to reflect upon the process of outlining your web application to ISF Community. 
-
-| Learning Claim                                                                  | Possible Forms of Evidence                                                                                                                                                                                                                                                                                                 |
-|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| I can iteratively develop a project.       | <ul><li>Feedback from the pitch event (Google form results and notes from panellists)</li><li>Reflection on how to implemente the feedback from the pitch into your current application.</li><ul>                                                                                |
-
-
-### Criterion D: Reflection on Tech and Society
-> Students demonstrate an understanding of their responsibility to society as technology creators by
-> evaluating the implications of their work. Students investigate the applications of their work to 
-> specific problems or issues.
-
-Each web application will provide a service to benefit the ISF community. What are the potential secondary effects of your service? What are the potential ethical considerations? 
-
-| Learning Claim                                                                         | Possible Forms of Evidence                                                                      |
-|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| I identified a service for the ISF Community.                        | <ul><li>A description of your service framed as a problem & solution.</li></ul>  |
-| I considered the ways our service will impact the community.  | <ul><li>A discussion of how individuals will interact with your service.</li><li>Ethical considerations of the impacts of your service</li></ul>      |
+OK, fun! Ready? [Let's get started >>>>]({{< ref "00_request_response/_index.md" >}})
