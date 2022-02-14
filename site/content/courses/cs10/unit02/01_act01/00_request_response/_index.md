@@ -57,7 +57,7 @@ anything.
 $ python3 manage.py help
 ```
 ---
-## 0. Hello
+## A. Hello
 
 {{< code-action "Let's start up the app and test it out." >}}  The first command 
 prepares the database (more on this later); the second command starts the server
@@ -79,7 +79,7 @@ in this lab.
 
 {{</ checkpoint >}}
 
-## 1. How the parts fit together
+## B. How the parts fit together
 
 Let's see how the parts of the app worked together to show this page. When a
 request first arrives, its URL is separated into a host name and a path. In
@@ -244,7 +244,7 @@ shortly.
 {{</ checkpoint >}}
 
 --- 
-## 2. Saving stuff
+## C. Saving stuff
 
 **Now we're going to extend the app to let users create their own colors.** And
 whereas our views were previously functions, now our views are going to be classes. 
@@ -352,7 +352,7 @@ it's actually a pretty complicated pattern and it's completely new to you!)
   > **Explain what you had to do.**
 {{</ checkpoint >}}
 
-## 3. Wrapping up
+## D. Wrapping up
 
 {{< code-action >}} **Press `Control + C` to kill your server.** 
 
