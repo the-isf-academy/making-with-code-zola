@@ -66,7 +66,10 @@ How far was a run number in kms? 8.2
 You ran an average of 7.5kms.
 ```
 
+{{< deliverables >}}
 {{< code-action "Be sure to" >}} `push` **your work to Github.**
+
+{{< /deliverables >}}
 
 ---
 
@@ -91,7 +94,7 @@ You ran an average of 7.5kms over 3 runs.
 
 ---
 
-### [Extension: Recording the time]
+### [Extension: Recording more Info]
 
 Ms. Brown would like to not only record her distance, but record the date of the run and the time. 
 
