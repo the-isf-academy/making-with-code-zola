@@ -53,6 +53,9 @@ run_list = []
 {{< code-action "Let's start by running" >}} `donow3.py`. It runs without bugs, however it only  asks the user how manys they would like to average. It doesn't collect any run information, calculate the average, or communicate the average to the user. 
 
 {{< code-action "It's up to you to complete the program!" >}}
+> Be sure to utilize the following in your solutions:
+> - `mean()`
+> - and `run_list`
 
 The output of this program should look something like this: 
 ```shell
