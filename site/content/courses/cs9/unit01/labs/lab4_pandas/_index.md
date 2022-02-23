@@ -8,14 +8,18 @@ In this lab, you will be introduced to two data science Python frameworks, Panda
 
 ## [0] Setup
 
-Start by cloning your lab repo from Github.
 
-{{< code-action >}} Starter code for the lab is provided in the
-`lab-pandas-matplotlib` repo. Download it *onto your laptop*.
+{{< code-action "Start by cloning your lab repo from Github." >}} Starter code for the lab is provided in the `lab-pandas-matplotlib` repo. 
 
 ```shell
 cd desktop/cs9/unit_01
 git clone https://github.com/the-isf-academy/lab-pandas-matplotlib-YOUR-GITHUB-USERNAME.git
+```
+
+{{< code-action "Download the required Python packages." >}} 
+```shell
+pip3 install pandas
+pip3 install matplotlib
 ```
 
 ## [1] Intro to Pandas and Matplotlib
