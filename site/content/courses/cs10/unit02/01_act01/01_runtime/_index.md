@@ -104,7 +104,7 @@ python3 manage.py loaddata wikipedia_colors.json
 
 {{< checkpoint >}}
 
-{{< write-action "A.0" >}}  What is the first color when you load in the wikipedia colors?
+{{< write-action "A.0" >}}  What is the last color when you load in the wikipedia colors?
 
 {{< write-action "A.1" >}} What does it mean to migrate your data?
 
