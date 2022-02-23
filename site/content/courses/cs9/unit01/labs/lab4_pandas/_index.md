@@ -14,8 +14,8 @@ Start by cloning your lab repo from Github.
 `lab-pandas-matplotlib` repo. Download it *onto your laptop*.
 
 ```shell
-$ cd desktop/cs9/unit_01
-$ git clone https://github.com/the-isf-academy/lab-pandas-matplotlib-YOUR-GITHUB-USERNAME.git
+cd desktop/cs9/unit_01
+git clone https://github.com/the-isf-academy/lab-pandas-matplotlib-YOUR-GITHUB-USERNAME.git
 ```
 
 ## [1] Intro to Pandas and Matplotlib
