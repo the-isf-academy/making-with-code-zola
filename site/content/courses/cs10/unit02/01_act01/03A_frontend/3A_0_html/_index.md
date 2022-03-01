@@ -5,35 +5,35 @@ title: 3.A.0 HTML
 # Intro to HTML
 
 As frontend programmers, you'll be getting very familiar with the language for writing web pages: *HTML* or *hyper text markup language*.
-HTML is a langauge, but it's not a programming language like Python. Instead, it's a language used by your web browwser to determine how 
-to display web content. You've actually already used a langauge like this every time you've read a page on this website or written your
-self-assement for a project – MarkDown is a language for rendering content too.
+HTML is a language, but it's not a programming language like Python. Instead, it's a language used by your web browser to determine how 
+to display web content. You've actually already used a language like this every time you've read a page on this website or written your
+self-assessment for a project – MarkDown is a language for rendering content too.
 
 On the internet, HTML runs deep. All webpages are just HTML documents sent to your computer and interpreted by your web browser.
 
-## A. HTML Basics
+## [A] HTML Basics
 HTML documents are made up of different nested elements. This just means that some HTML elements can contain other elements (like a box
 inside of a box).
 
-### The Monster (HTML) Mash
+### [The Monster (HTML) Mash]
 
-{{< write-action >}} To help get a sense of this, work through the following slideshow to make monsters HTML style:
+{{< look-action " To help get a sense of this, work through the following slideshow to make monsters HTML style:" >}}
 {{< gdocs src="https://docs.google.com/presentation/d/e/2PACX-1vRYznPe1JhFJ6KoHe5RKLG_vlu3Ujr8l9YyDL1IstA9pTd1xR-7dAaASor4qLXBYth7WORVITBap4oH/embed?start=false&loop=false&delayms=5000" >}}
 
-### HTML Everywhere
+### [HTML Everywhere]
 Web programmers make web sites just like you made the monsters above (just with different elements. Let's try to figure out what elements websites are
 made of.
 
-{{< code-action >}} Go to any website (even this one) and open the inspector by right clicking on the page and selecting "Inspect Element". This
+{{< code-action "Go to any website (even this one) and open the inspector by right clicking on the page and selecting 'Inspect Element'." >}}  This
 will open a new panel of your browser to reveal the HTML that makes up the page you're currently viewing.
 
-{{< write-action >}} Make a table of HTML elements that sepatates them by whether they can contain other elements. Use the table at the end
+{{< write-action >}} Make a table of HTML elements that separates them by whether they can contain other elements. Use the table at the end
 of the monster slideshow above as an example.
 
 {{< look-action >}} Once you've tried categorizing the elements you found, check out [this reference guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 to see all of the kinds of elements you can include in webpages.
 
-### HTML For Django
+### [HTML For Django]
 That's a lot of elements! While it is useful to eventually understand and be able to use them all, for now we'll let Django handle a lot
 of what we do with HTML. For our purposes, the following HTML elements will be most important:
 
@@ -56,13 +56,13 @@ elements, but the idea behind them is the same across the internet.
     * idiomatic (usually *italicized* text (`<i>`)
     * line break (`<br>`)
 
-## B. Getting Started on the Todo App
+## [B] Getting Started on the Todo App
 As you work through the basics of frontend web development, you'll be building a basic todo application. As the frontend developer, you'll be designing the HTML templates and
 page styles. After you finish this tutorial, you'll have an example app you can use as a model for your own team's web app.
 
 In this lesson, you will make templates for each of the pages that will ultimately be in the todo app.
 
-### Setup
+### [Setup]
 {{< code-action >}} Before we get started, clone the cs10 Webapp frontend repo on GitHub, then go into the directory and install the missing packages using pip or pip3.
 
 ```shell
