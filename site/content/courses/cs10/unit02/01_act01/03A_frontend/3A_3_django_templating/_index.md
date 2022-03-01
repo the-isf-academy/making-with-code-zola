@@ -1,5 +1,7 @@
 ---
 title: 3.A.3 Django Templates
+draft: True
+
 ---
 
 # Intro to Django Template Language

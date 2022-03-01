@@ -1,14 +1,18 @@
 ---
 title: 3.A.2 CSS Style
+# draft: True
+
 ---
 
 # Intro to CSS Style
-The design of our todo app is really coming along! We now have the basic layout completed, so we can focus on adding visual elements
-to improve the interface. These elements will not only make our app look better: having consistent and well-designed user interface (UI)
+The design of our todo app is really coming along! 
+
+**We now have the basic layout completed, so we can focus on adding visual elements
+to improve the interface.** These elements will not only make our app look better: having consistent and well-designed user interface (UI)
 components can improve the usability of a site by making it more clear how to interact with and interpret information on a web page.
 
-## A. Bootstrap Component
-Rather than design UI elements from scratch, we're going to pull common elements like buttons and cards from the Bootstrap library. This
+## [A] Bootstrap Component
+**Rather than design UI elements from scratch, we're going to pull common elements like buttons and cards from the Bootstrap library.** This
 will allow you to quickly build a beautiful website while still giving you the freedom to customize your design where you need to.
 
 {{< look-action >}} First, look through the [Bootstrap component library](https://getbootstrap.com/docs/4.6/components/alerts/) to see
