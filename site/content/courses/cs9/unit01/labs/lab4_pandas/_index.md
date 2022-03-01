@@ -34,7 +34,7 @@ Pandas and Matplotlib are widely used Python frameworks for data science. Pandas
 > *Each person should work on their own lab, but you can
 work together in groups to complete it.*
 
-##  [Deliverables]
+###  [Deliverables]
 
 
 {{< deliverables >}}
@@ -43,3 +43,16 @@ work together in groups to complete it.*
 - `pandas-matplotlib.ipynb` file with code for each exercise
 
 {{< /deliverables >}}
+
+## [2] Extension 
+
+In this extension, you will answer research questions about the Pokemon dataset. 
+
+{{< code-action >}} **Open the `sumstats.ipynb` file in the `lab-sumstats` directory**
+
+{{< code-action >}} **At the bottom of the file, use `pandas` and `matplotlib` to answer the following questions about the `pokemon_dataset.csv`.**
+- What are the top 5 Pokemon with the highest and lowest speed?
+- What are the top 5 strongest non-legendary pokemon? 
+- What is the relationship between type 1 and attack? 
+
+
