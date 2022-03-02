@@ -1,5 +1,7 @@
 ---
 title: 3.B.1 Django and Models
+draft: True
+
 ---
 
 # Django and Models
