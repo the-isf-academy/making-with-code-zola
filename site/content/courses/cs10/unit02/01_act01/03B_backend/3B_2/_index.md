@@ -1,16 +1,17 @@
 ---
 Title: 3.B.2 Using the Admin Page
+draft: true
 ---
 
 # Using the Admin Page
 
 Now that we have successfully added data into our app, it would be great if we had some way to access it.
 
-Well, Django has a build-in administration page that allows us to look at the data in our database! 
+Well, Django has a build-in administration page that allows us to look at the data in our database!
 
 ## Admin Page on Django
 
-Just like other parts of our app, the Administration page is a route that is configured in Django. With Django's default project setup, the panel is automatically enabled. 
+Just like other parts of our app, the Administration page is a route that is configured in Django. With Django's default project setup, the panel is automatically enabled.
 
 
 {{< code-action >}} To confirm the admin panel is ready to go, first check the `base.py` file under the `cs10_webapp_base/settings` directory. We need to make sure there the admin interface is installed. If this code isn't in `base.py`, you will need to copy and paste this code in. Django should have already added this for us by default.
@@ -22,7 +23,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-{{< code-action >}} Next, we need to confirm the following import statement is in the `admin.py` file. If not, add it in. 
+{{< code-action >}} Next, we need to confirm the following import statement is in the `admin.py` file. If not, add it in.
 
 ```shell
 from django.contrib import admin
@@ -31,7 +32,7 @@ from django.contrib import admin
 
 {{< code-action >}} **We can now access the admin portal by going to: `http://127.0.0.1:8000/admin/`.**
 
-If you go to this URL, there will be a webpage where we can log in to the admin site. We will need Superuser access for this. 
+If you go to this URL, there will be a webpage where we can log in to the admin site. We will need Superuser access for this.
 
 ## Creating a Superuser Account
 
@@ -77,6 +78,6 @@ There are lots of ethical questions that need to be considered when building an 
 
 {{< checkpoint >}}
 
-Answer the section 'C' questions in your `Django Backend Worksheet` Google Doc. 
+Answer the section 'C' questions in your `Django Backend Worksheet` Google Doc.
 
 {{</checkpoint >}}

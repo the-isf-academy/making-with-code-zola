@@ -1,5 +1,6 @@
 ---
 Title: 3.B.4 Relational Databases
+draft: true
 ---
 
 # Relational Databases
@@ -135,7 +136,7 @@ class TaskForm(LoginRequiredMixin,FormView):
         return super().form_valid(form)
 ```
 
-This addition will enable the form to automatically associate the new task with the current user. 
+This addition will enable the form to automatically associate the new task with the current user.
 
 Excellent! All the file changes have been made. We can migrate the changes on the database.
 
@@ -153,7 +154,7 @@ After we run the migration, that Task table will be updated.
 
 {{< code-action >}} **Let's test it and see if the web app now works as we expect!** Log in and add a new task. Check that the following changes have been made:
 - Users can only create tasks for themselves
-- Users can only view tasks they created 
+- Users can only view tasks they created
 
 
 ### Resetting the Database
@@ -177,18 +178,18 @@ Performing these steps will reset our database with one superuser. With the supe
 
 We've now created a perfectly functioning personal to-do app!
 
-What if we wanted to expand this app to work collaboratively? 
+What if we wanted to expand this app to work collaboratively?
 
-A collaborative to-do app would allow individuals to assign tasks to other users. Powerschool has functionality similar to this. Teachers can assign homework, or tasks, to students. 
+A collaborative to-do app would allow individuals to assign tasks to other users. Powerschool has functionality similar to this. Teachers can assign homework, or tasks, to students.
 
-We must account for the following use cases to implement this feature: 
+We must account for the following use cases to implement this feature:
 1. User can create a task for themselves
-2. User can optionally create a task for others 
-3. Users can update a task they've created for others 
+2. User can optionally create a task for others
+3. Users can update a task they've created for others
 3. User can view tasks for themselves
-4. Users can view tasks they've assigned to others 
+4. Users can view tasks they've assigned to others
 
-{{< write-action >}} **In your section E of your Google Doc, think through what adjustments need to made to the model to create a collaborative to-do app.** Which other files will need adjustment? Once you have an outline of the changes, show a teacher before beginning to implement it. 
+{{< write-action >}} **In your section E of your Google Doc, think through what adjustments need to made to the model to create a collaborative to-do app.** Which other files will need adjustment? Once you have an outline of the changes, show a teacher before beginning to implement it.
 
 {{< code-action >}} **Try to implement the features you outlined in the backend of the To-Do web app!**
 
