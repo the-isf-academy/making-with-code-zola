@@ -68,7 +68,7 @@ In this lesson, you will make templates for each of the pages that will ultimate
 
 ```shell
 cd desktop/cs10/unit_02
-git clone https://github.com/the-isf-academy/cs10_webapp_frontend-YOUR-GITHUB-USERNAME.git
+git clone https://github.com/the-isf-academy/lab-webapps-frontend-YOUR-GITHUB-USERNAME.git
 cd cs10_webapp_frontend-YOUR-GITHUB-USERNAME
 pip3 install -r requirements.txt
 ```
