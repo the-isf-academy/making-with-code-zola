@@ -105,7 +105,7 @@ RegexValidator uses regular expressions (Regex), which is a fancy way of saying 
 
 How do we use Regex in Django? Let's use Regex to validate the title of the New Task form to be only capital letters.
 
-{{< code-action >}} Start by creating a `validators.py` file in the `starter_app` directory. Add the following code to the file. 
+{{< code-action >}} Start by creating a `validators.py` file in the `starter_app` directory. Add the following code to the file.
 
 ```python
 from django.core.exceptions import ValidationError
@@ -124,9 +124,9 @@ We are importing the same two lines as the Django example but we are also import
 
 In the validation function `validate_caps`, we are using the regular expression '[A-Z]' (which is to say only capital letters), and comparing that with the input value. If the input value doesn't match, raise a ValidationError on the screen.  
 
-Now that we've written the validation function, let's add it into our model. 
+Now that we've written the validation function, let's add it into our model.
 
-{{< code-action >}} Open `models.py`. First, import the `validate_caps()` function and then add the `validators` parameter to the `title` field. 
+{{< code-action >}} Open `models.py`. First, import the `validate_caps()` function and then add the `validators` parameter to the `title` field.
 
 The validators option will tell Django to use `validate_caps()` on form submissions.
 
@@ -159,11 +159,11 @@ class Task(models.Model):
 {{< code-action >}} Run the server and check if the validation is working. Now, when submitting a new task, the title must begin with a capital letter. The validation is applied to the form and works like a charm!
 
 
-## Custom Validation 
+## Custom Validation
 
-The ability to write custom validations is an incredibly powerful tool. Let's explore what it can do by creating a content filter. 
+The ability to write custom validations is an incredibly powerful tool. Let's explore what it can do by creating a content filter.
 
-{{< code-action >}} Write and add a validator to the Task's text fields that prevents users from submitting tasks with the words below. 
+{{< code-action >}} Write and add a validator to the Task's text fields that prevents users from submitting tasks with the words below.
 
 *Banned words: 'pizza', 'dumplings', 'lemonade', 'mochi', 'hummus'*
 
@@ -171,8 +171,8 @@ The ability to write custom validations is an incredibly powerful tool. Let's ex
 
 Answer the following questions in your `Django Backend Worksheet` Google Doc.
 
-0. Will you add data validation into your own app? If so, in what aspect of the model? 
-0. What are the ethical considerations of data validation? 
+0. Will you add data validation into your own app? If so, in what aspect of the model?
+0. What are the ethical considerations of data validation?
 
 {{</checkpoint >}}
 
