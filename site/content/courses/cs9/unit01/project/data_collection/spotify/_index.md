@@ -2,7 +2,7 @@
 title: [Spotify Data]
 type: checkup
 ---
-# Spotify 
+# Spotify
 *It is important that you don't put off this task, as the download request can take up to 30 days to be fulfilled. You could end up without any data to work with!*
 
 ---
@@ -33,3 +33,18 @@ type: checkup
 ---
 
 ## API Key
+
+{{< code-action "Follow along with this video and the steps below to create a Spotify Client ID and Client Secret." >}}
+
+<br>
+<br>
+
+
+{{< youtube "or6GSvjmyyE" >}}
+
+> 0. **Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/login).**
+> 0. **Scroll down and select `LOG IN`.** This will trigger a pop-up that may prompt you to enter your Spotify credentials.
+> 0. **Select `CREATE AN APP`**
+> 0. **Fill in the form and click `CREATE`.** The App name and App description can be whatever you would like.
+> 0. **Click `SHOW CLIENT SECRET`**
+> 0. **Copy both the `Client ID` and `Client Secret`**
