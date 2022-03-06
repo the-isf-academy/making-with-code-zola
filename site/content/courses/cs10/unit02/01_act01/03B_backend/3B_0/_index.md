@@ -37,7 +37,7 @@ This situation that we have here is very difficult to deal with programmatically
 
 So what can we do about this? Enter Models and Business Logic.
 
-## Databases, Models, Business Logic and their Importance
+## [A] Databases, Models, Business Logic and their Importance
 
 In this example, the calorie count idea was decided on after the fact and because of this we never thought about how data was collected. Our collected data ended up to be pretty difficult to use programmatically. However, if we had some foresight on our data design before we start coding, the data entered into our database wouldn't be like in our example. The data in ***Portion*** will be **clean and useable** unlike what it is now.
 
@@ -45,7 +45,7 @@ If only we can find a person that can make sure that this doesn't happen... That
 
 This is where we as a Software Architect are so important. The Software Architect is the person making important decisions about the app's data (and the important bits and bobs of the app). For our app, Software Architects define what the data is and create *Models* and *Business Logic* before the actual coding.
 
-### Models
+### [Models]
 
 A *database model* is defined as the logical design and structure of a database and defines how data will be stored, accessed and updated in a database management system.
 
@@ -59,7 +59,7 @@ If you guessed integer values, you are correct! Integers would be more appropria
 
 Ok, we decided that the data will be an integer value. Great! But we need to be careful with this decision as numbers need to be differentiated too. There's still a difference between 1 as a whole apple, 1 as a portion of apples and 1 as in one gram of apple even though they all are represented by the number one. So how do we do this?
 
-### Business Logic
+### [Business Logic]
 
 Now, we use some Business Logic (or sets of business rules) and decide what our data really is. We need to decide what the number in the ***Portion*** column represents because, like in the example, 1 can mean a lot of things.
 
@@ -71,7 +71,7 @@ So Software Architects design Business Logic along with models and databases to 
 Now add a label to your table to describe the what the data should be in the **Portion** field in your table.
 {{< /checkpoint >}}
 
-### Conclusion
+### [Conclusion]
 
 Before we actually code our app, we want to design our data so that we don't have to code for 1000+ use cases. We also don't want to fix any data related errors half way into our development cycles because the someone says they want to change our data and business logic half way into our development.
 

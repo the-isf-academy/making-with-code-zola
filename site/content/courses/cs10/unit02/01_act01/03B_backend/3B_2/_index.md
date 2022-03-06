@@ -1,6 +1,6 @@
 ---
 Title: 3.B.2 Using the Admin Page
-draft: True
+#draft: True
 
 ---
 
@@ -10,7 +10,7 @@ Now that we have successfully added data into our app, it would be great if we h
 
 Well, Django has a build-in administration page that allows us to look at the data in our database!
 
-## Admin Page on Django
+## [A] Admin Page on Django
 
 Just like other parts of our app, the Administration page is a route that is configured in Django. With Django's default project setup, the panel is automatically enabled.
 
@@ -35,7 +35,7 @@ from django.contrib import admin
 
 If you go to this URL, there will be a webpage where we can log in to the admin site. We will need Superuser access for this.
 
-## Creating a Superuser Account
+## [B] Creating a Superuser Account
 
 We've successfully checked that the admin site is ready to go but we can't log in! We need to create a Superuser account to log into the admin site.
 
@@ -48,9 +48,11 @@ python3 manage.py createsuperuser
 
 Django will then prompt you to enter a username and password and that user will have superuser access to the admin site. We can then restart the server and access the admin site using the superuser account.
 
-## Using the Admin Site to Access Data in the Database
+## [C] Using the Admin Site to Access Data in the Database
 
 By default, the Django admin site doesn't allow us to do much. We can play around with user groups and user accounts.
+
+### [Registering our Models]
 
 If we want to look at our Task data, we can register our models in `admin.py` and Django will give access to our data through the admin page. The `admin.py` file can be found in the `starter_app` directory.
 
@@ -67,18 +69,18 @@ These lines of code will enable us to access the data in the Task database. We c
 
 Just make sure to refresh the admin page to see the changes.
 
-## Remember Uncle Ben...
+### [Remember Aunt May...]
 
 As the owners and administrators of your website, you have access to your users' accounts and all of your users' data. We literally have a "God" view of everything that is entered into our database.
 
-There are lots of ethical questions that need to be considered when building an app, and because of this, always remember the quote from Uncle Ben to Peter Parker...   
+There are lots of ethical questions that need to be considered when building an app, and because of this, always remember the quote from Aunt May to Peter Parker...   
 
 **With great power comes great responsibility!**
 
 <br>
 
-{{< checkpoint >}}
+<!-- {{< checkpoint >}}
 
 Answer the section 'C' questions in your `Django Backend Worksheet` Google Doc.
 
-{{</checkpoint >}}
+{{</checkpoint >}} -->
