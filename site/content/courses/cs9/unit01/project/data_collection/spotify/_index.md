@@ -1,9 +1,13 @@
 ---
-title: 4. Spotify Data
+title: [Spotify Data]
 type: checkup
 ---
-# Do Now: Download your Spotify Data
-*It is important that you don't put off this task, as the download request can take up to 30 days to be fulfulled. You could end up without any data to work with!*
+# Spotify 
+*It is important that you don't put off this task, as the download request can take up to 30 days to be fulfilled. You could end up without any data to work with!*
+
+---
+
+## Downloading Data
 
 [0] **Login.** Navigate to [spotify](https://open.spotify.com/) in your browser. Log in if necessary.
 
@@ -25,3 +29,7 @@ type: checkup
 
 [5] **Finished.** Once you've confirmed via email, you should see this banner on the Privacy settings page of your account. That means you're all set!
  {{< figure src="images/courses/cs9/unit01/spotify_download_step5.png" width="100%" >}}
+
+---
+
+## API Key
