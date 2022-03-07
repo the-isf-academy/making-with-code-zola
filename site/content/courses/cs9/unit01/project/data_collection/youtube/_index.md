@@ -2,7 +2,7 @@
 title: [YouTube Data]
 type: checkup
 ---
-# Youtube 
+# YouTube 
 
 This is a walkthrough to downloading your YouTube watch history. 
 
@@ -35,6 +35,26 @@ This is a walkthrough to downloading your YouTube watch history.
 > 0. **Navigate to the `Takeout 6/YouTube and YouTube Music/history` folder.**
 > 0. **Move the `watch_history.json` into your `desktop/cs9/unit_01` folder.**
 
-<!-- ---
+---
 
-## API Key -->
+## API Key
+
+
+{{< code-action "Follow along with this video to get a YouTube API key." >}} You will need this to build out your data file with statistical information. 
+
+
+{{< youtube "5Ym13tgVtAw" >}}
+
+> 0. **Go to the [Google Cloud Platform Library](https://console.cloud.google.com/projectselector2/apis/library?organizationId=1025210370450&supportedpurview=project).** 
+> 0. **Select `isf.edu.hk` on the top toolbar on the lefthand side.** 
+> 0. **Change `Project name` to 'cs9 data science'.** 
+> 0. **Select `CREATE`.** This may take a full minute. 
+> 0. **Search for `youtube data v3`.** Select it from the search results. 
+> 0. **Select `ENABLE`.** This may take a full minute.
+> 0. **Select `Credentials` from the left menu.**
+> 0. **Select `CREATE CREDENTIALS` from the top menu.**
+> 0. **Select `API key` from the dropdown menu.**
+> 0. **Copy and paste your `API key` to somewhere you will not lose it..**
+>
+> If you forget your API key, return to [this](https://console.cloud.google.com/apis/credentials) page to access it.
+
