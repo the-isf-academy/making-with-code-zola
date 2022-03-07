@@ -1,6 +1,6 @@
 ---
 Title: 3.B.3 Data Validation
-draft: True
+#draft: True
 
 ---
 
@@ -8,32 +8,32 @@ draft: True
 
 Before diving into data validation, we need to understand some basic principals first. And to do that, we'll look at a very common use case of our To-Do app.
 
-## Transactions
+## [A] Transactions
 
 When a new task gets POSTed back to the server, Django does a lot of magic and saves the task into the database. When Django does this, or does any other "work" to the database, Django is making a *transaction* to the database.
 
 This "work" can be adding a new task, changing the user name, updating a password, deleting a task, viewing a task. Basically, any "work" that touches the database in any sort of way is a database transaction.
 
-## Transaction Properties
+## [B] Transaction Properties
 
 Transactions have unique properties that we need to learn about otherwise our database will become corrupted and unusable. There are 4 properties to remember.
 
-### ***Atomicity***
+### [Atomicity]
 
 We can't simply add some parts to the database transaction. It's all or nothing. Imagine updating a user's first name and last name where the first name changes but the last name doesn't. Imagine if this was a police database and the impact this would have on an innocent person! Yikes...
 
-### ***Consistency***
+### [Consistency]
 
 Only valid data will be written into the database. If the data isn't valid, the transaction doesn't go through. More on this when we talk about data validation.
 
-### ***Isolation***
+### [Isolation]
 
 Each transaction is independent of each other and do not impact other transactions that are occurring at the same time.
 
 {{< checkpoint >}}
 Let's say there's a joint bank account. There's $500 in the account. Two people are making transactions to this account. Both want to withdraw $500 from the account.
 
-What should happen after the withdraws?
+What should happen after the withdrawals?
 {{</checkpoint>}}
 
 The logical thing that should happen is that the first person withdraws $500 and the second person gets an error saying there's no money in the bank and gets no money.
@@ -59,7 +59,7 @@ We have a "bank error in your favour" situation where there's an extra $500 that
 
 This is one reason why we need to isolate transactions. If we don't, a lot of things can go wrong.
 
-### ***Durability***
+### [Durability]
 
 This is the idea that all transactions that are committed to the database are saved and not lost. It would be awful to lose data during a transaction.
 
@@ -69,7 +69,7 @@ Fortunately, Django helps us maintain ACID properties with good database managem
 
 One thing we still need to code for is to keep data consistent (based on our business logic) and we can do that with data validation.
 
-## Django and Data Validation
+## [C] Django and Data Validation
 
 In the To-Do App example, the New Task page uses a Django Model form and some of the fields have built-in validation like the date field. If you enter a date that doesn't match "YYYY-MM-DD", the form will throw an error message on the screen under the field. It's great that Django does this for us automatically.
 
@@ -99,7 +99,7 @@ https://docs.djangoproject.com/en/3.2/ref/validators/
 
 We will take a look at RegexValidator, which is the most powerful one in the list.
 
-## Regex and RegexValidator
+### [Regex and RegexValidator]
 
 RegexValidator uses regular expressions (Regex), which is a fancy way of saying "Search patterns". We use Regex to search out patterns in text. This can be really useful for things like validation where we can compare what the user typed out to what we actually want to save into the database.
 
@@ -159,7 +159,7 @@ class Task(models.Model):
 {{< code-action >}} Run the server and check if the validation is working. Now, when submitting a new task, the title must begin with a capital letter. The validation is applied to the form and works like a charm!
 
 
-## Custom Validation
+### [Custom Validation]
 
 The ability to write custom validations is an incredibly powerful tool. Let's explore what it can do by creating a content filter.
 
@@ -169,14 +169,14 @@ The ability to write custom validations is an incredibly powerful tool. Let's ex
 
 {{< checkpoint >}}
 
-Answer the following questions in your `Django Backend Worksheet` Google Doc.
+Consider the following questions:
 
 0. Will you add data validation into your own app? If so, in what aspect of the model?
 0. What are the ethical considerations of data validation?
 
 {{</checkpoint >}}
 
-## Wrapping Up
+## [D] Wrapping Up
 
 Django has incredible database support that makes database administration easy. Django also helps us build databases that keep ACID properties. Further, data validation on data entry forms such as the New Task form, can use regular expressions and other validators to keep data clean... Added plus is that it's so easy to code.
 
