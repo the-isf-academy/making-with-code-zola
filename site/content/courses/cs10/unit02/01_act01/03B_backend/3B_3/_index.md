@@ -20,48 +20,50 @@ Transactions have unique properties that we need to learn about otherwise our da
 
 ### [Atomicity]
 
-We can't simply add some parts to the database transaction. It's all or nothing. Imagine updating a user's first name and last name where the first name changes but the last name doesn't. Imagine if this was a police database and the impact this would have on an innocent person! Yikes...
+We can't simply add some parts to the database transaction. It's all or nothing. Imagine that you're attempting to update a user's first name and last name, but the transaction is interrupted mid-way through. If only the first name was successfully changed, and the last name remained the same, this could cause serious issues. Imagine if this happened to a police database. It could have devastating impacts on an innocent person! Yikes...
 
 ### [Consistency]
 
-Only valid data will be written into the database. If the data isn't valid, the transaction doesn't go through. More on this when we talk about data validation.
+Only valid data can be written into the database. If the data isn't valid, the transaction doesn't go through. More on this when we talk about data validation.
 
 ### [Isolation]
 
-Each transaction is independent of each other and do not impact other transactions that are occurring at the same time.
+Each transaction is independent of the others, and does not impact other transactions that are occurring at the same time.
 
 {{< checkpoint >}}
 Let's say there's a joint bank account. There's $500 in the account. Two people are making transactions to this account. Both want to withdraw $500 from the account.
 
-What should happen after the withdrawals?
+What should happen when both people try to withdraw at the same time?
 {{</checkpoint>}}
 
-The logical thing that should happen is that the first person withdraws $500 and the second person gets an error saying there's no money in the bank and gets no money.
+We would expect that the first person withdraws $500, and the second person gets an error saying there's no money in the account. The second person would not receive any money.
 
 {{< checkpoint >}}
-Can you describe a scenario that would make it possible that both people can receive $500 from the bank?
+Can you imagine a scenario that would make it possible for both people to receive $500 from the bank?
 {{</ checkpoint >}}
 
-Let's discuss this in more detail as to how this could potentially happen.
+Let's consider how this could potentially happen.
 
-What if the two withdraws happen concurrently but the second transaction starts and finishes before the first transaction finishes?
+What if the second transaction begins after the first transaction, but it finishes before the first transaction ends?
 
 Let's see this step by step...
 
-- The Bank has $500 in the joint account
+- The bank has $500 in the joint account
 - Jonny requests $500 from the account
-- Bank receives the request from Jonny and starts processing the transaction. Uh oh, there are some slow downs in the system and Jonny has to wait 60 seconds. :(
+- The bank receives the request from Jonny and starts processing the transaction. Uh oh, there are some slow downs in the system and Jonny has to wait 60 seconds. :(
 - While Jonny is waiting, Jenny requests $500 from the account. She has no slow downs and gets her $500 from the bank account. :)
-- Bank account subtracts $500 from the account and the account has $0.
-- Finally, Jonny is done waiting but because Jonny is in the middle of his transaction, the bank appears to still have $500 in the account. Because of this, Jonny receives $500 and bank subtracts the money from the account. When the bank subtracts the money, the account is at $0 but the bank still needs to subtract $500 from that amount. The account is now at -$500.
-
-We have a "bank error in your favour" situation where there's an extra $500 that's taken out of the account and the bank lost $500. Might sound great for us if we aren't the bank. However, in our case, we are the bank. We don't want to lose $500 (or lose anything really...)
+- The bank subtracts $500 from the account and the account has $0.
+- Finally, Jonny is done waiting. Because Jonny's transaction started when there was still $500 in the account, the withdrawal succeeds without issue. Jonny receives $500 and the bank subtracts the money from the account. Since Jenny already emptied the account, the true balance is $0. After Jonny's withdrawal, the new balance is -$500.
 
 This is one reason why we need to isolate transactions. If we don't, a lot of things can go wrong.
 
 ### [Durability]
 
 This is the idea that all transactions that are committed to the database are saved and not lost. It would be awful to lose data during a transaction.
+
+{{< checkpoint >}}
+Can you think of a piece of hardware or software that you've used that does not have a database? What inconvenience does this cause?
+{{</ checkpoint >}}
 
 Together, the 4 properties are called **ACID**.
 
@@ -71,7 +73,7 @@ One thing we still need to code for is to keep data consistent (based on our bus
 
 ## [C] Django and Data Validation
 
-In the To-Do App example, the New Task page uses a Django Model form and some of the fields have built-in validation like the date field. If you enter a date that doesn't match "YYYY-MM-DD", the form will throw an error message on the screen under the field. It's great that Django does this for us automatically.
+In our To-Do app, the New Task page uses a Django Model form and some of the fields have built-in validation like the date field. If you enter a date that doesn't match "YYYY-MM-DD", the form will throw an error message on the screen under the field. It's great that Django does this for us automatically.
 
 But what if we want to add custom validation on our forms? Well, we can create code that does this. Let's investigate this with a slightly modified example from the Django documentation.
 
@@ -92,16 +94,16 @@ We can see there are some import statements and a validator function. The functi
 What does this code validate?
 {{</checkpoint>}}
 
-If you guessed validating if a number is odd, you are incorrect. (It's validating even numbers). :p
+If you guessed validating that a number is even, you are correct!
 
 There are a number of built-in validators in Django and the list can be found here.
 https://docs.djangoproject.com/en/3.2/ref/validators/
 
-We will take a look at RegexValidator, which is the most powerful one in the list.
+Next, we will take a look at RegexValidator, which is the most powerful one in the list.
 
 ### [Regex and RegexValidator]
 
-RegexValidator uses regular expressions (Regex), which is a fancy way of saying "Search patterns". We use Regex to search out patterns in text. This can be really useful for things like validation where we can compare what the user typed out to what we actually want to save into the database.
+RegexValidator uses regular expressions (Regex), which is a fancy way of saying "Search patterns". We use Regex to search out patterns in text. This can be really useful for comparing what the user typed to what we actually want to save into the database.
 
 How do we use Regex in Django? Let's use Regex to validate the title of the New Task form to be only capital letters.
 
@@ -122,7 +124,7 @@ def validate_caps(value):
 
 We are importing the same two lines as the Django example but we are also importing two other things: the Django RegexValidator and the *re* module, which is the Python Regex module.
 
-In the validation function `validate_caps`, we are using the regular expression '[A-Z]' (which is to say only capital letters), and comparing that with the input value. If the input value doesn't match, raise a ValidationError on the screen.  
+In the validation function `validate_caps`, we are using the regular expression '[A-Z]' (only capital letters), and comparing that with the input value. If the input value doesn't match, we raise a ValidationError on the screen.  
 
 Now that we've written the validation function, let's add it into our model.
 
@@ -167,6 +169,12 @@ The ability to write custom validations is an incredibly powerful tool. Let's ex
 
 *Banned words: 'pizza', 'dumplings', 'lemonade', 'mochi', 'hummus'*
 
+{{< hint >}} Feel free to use google as a tool to figure out how to use regular expressions! If you want a place to start, here's a
+[helpful article](https://towardsdatascience.com/beginners-guide-to-regular-expressions-in-python-d16d2fa31587)
+about using Regular Expressions in Python
+
+{{</hint >}}
+
 {{< checkpoint >}}
 
 Consider the following questions:
@@ -176,10 +184,10 @@ Consider the following questions:
 
 {{</checkpoint >}}
 
-## [D] Wrapping Up
+<!-- ## [D] Wrapping Up
 
 Django has incredible database support that makes database administration easy. Django also helps us build databases that keep ACID properties. Further, data validation on data entry forms such as the New Task form, can use regular expressions and other validators to keep data clean... Added plus is that it's so easy to code.
 
 If our projects need any additional validation on form fields, we can use this code pattern to add more validation wherever is needed.
 
-I hope this lesson has given more insight on databases, database transactions and data validation. Next up is Relational Databases.
+I hope this lesson has given more insight on databases, database transactions and data validation. Next up is Relational Databases. -->
