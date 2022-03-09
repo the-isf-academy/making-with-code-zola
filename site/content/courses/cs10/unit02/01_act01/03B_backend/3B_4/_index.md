@@ -1,6 +1,6 @@
 ---
 Title: 3.B.4 Relational Databases
-draft: True
+#draft: True
 
 ---
 
@@ -10,23 +10,25 @@ So far, we have a To-Do app that allows us to keep track of tasks and users. Peo
 
 But that's not the vision of the To-Do app.
 
+## [A] Our Simple Database
+
 We want a To-Do app where the tasks are private to the user. To do that, we need to take care of the following issues:
 1. We can only create "tasks" publicly.
 2. We don't want users to see the Tasks assigned to other users.
 
 So, how do we make sure tasks are private to the user?
 
-{{<checkpoint>}}
 Currently, our User and Task models looks like this.
 ![Users and Tasks Table](/images/courses/cs10/unit02/users_tasks.png)
 
+{{<checkpoint>}}
 What changes can we make to "link" the two tables together?
-
 {{</checkpoint>}}
+
 
 If you answered, "Why don't we make a big table with all the data in it", this solution can potentially work. Your table could look like this.
 
-![Users and Tasks Table](/images/courses/cs10/unit02/users_tasks_combined.png)
+{{< figure src="/images/courses/cs10/unit02/users_tasks_combined.png" width="220px" >}}
 
 Technically speaking, we *can* make this table and use to to solve our Task-to-User problem. But there are problems here.
 
@@ -35,21 +37,30 @@ What is wrong with using this "new" User_Task table?
 {{</checkpoint>}}
 
 Here are a couple of expensive 'wrongs' about this table:
-- We are duplicating the User table and its data in another table. This is very expensive in terms of space.
-- Because we duplicated the User table into the Task table, the table is needlessly big and searching through a big database table is expensive, performance-wise.
+- We are duplicating the User table and its data in another table. This is very wasteful in terms of space.
+- Because we duplicated the User table into the Task table, the table is needlessly big and searching through a big database table is slow, performance-wise.
 
 Just these two issues should raise some alarm bells for us as programmers. In other words, we can do better. But how?
 
 
-## What is a Relational Database
+## [B] What is a Relational Database
 
-Right now, our system have two tables that have no data connections with each other. This is what is called a ***simple database***. A ***simple database*** is a database where tables are distinct data collections with no data connections between the tables.
+Right now, our system has two tables that have no data connections with each other. This is what is called a ***simple database***.
 
-For us to solve our initial problem, we need to connect the User and Task tables together. We need a ***relational database***. A ***relational database*** is a database where there are tables that can be linked together with common data.
+{{<hint>}}
+A ***simple database*** is a database where tables are distinct data collections with no data connections between the tables.
+{{</hint>}}
 
-(Note: the id field in the Users table and the id field in the Task table are different IDs)
+For us to solve our initial problem, we need to connect the User and Task tables together. We need a ***relational database***.
 
-We want to somehow connect User and Task tables together to convert our simple database to a relational base? If you said, "Let's make a new database." that's on the right track but we don't need to make a new database. What we can do is to modify our current database to accommodate this "link". It's quite easy to do.
+{{<hint>}}
+A ***relational database*** is a database where there are tables that can be linked together with common data.
+{{</hint>}}
+
+
+(Note: the ID field in the Users table and the ID field in the Task table are different IDs)
+
+We want to somehow connect User and Task tables together to convert our simple database to a relational base. We can modify our current database to accommodate this "link". It's quite easy to do.
 
 {{<checkpoint>}}
 What would be the best data to use to accommodate this link?
@@ -57,9 +68,9 @@ What would be the best data to use to accommodate this link?
 
 We have a few choices here. We can use whatever is unique to the user account. Depending on our business logic, we can use either id, username or email. For the next steps, we will use id and username.
 
-### Adding User ID in the Task Table
+### [Adding User ID in the Task Table]
 
-Adding id and username to the Task table is actually quite easy. All we need to do is to add a few lines of code in our Task model and then do a migration. Easy peasy! :)
+Adding id and username to the Task table is actually quite easy. All we need to do is to add a few lines of code in our Task model and then do a migration. Easy peasy!
 
 {{< code-action >}} **Let's go into our `models.py` file and add the following lines.**
 
@@ -92,12 +103,12 @@ class Task(models.Model):
 
 Let's go over these lines of code in detail.
 
-- *task_user* will set a *ForeignKey* in our Task table which will be the field that "links" the Task and User tables together. We are using the default User model from Django. There more detailed explanation of what *ForeignKey* does in the Django documentation. The jist of *ForeignKey* is that it sets up many-to-one relationships between (many) Tasks and (one) User.
-- The parameters for *ForeignKey* can be looked up in Django's documentation.
+- *task_user* will set a *ForeignKey* in our Task table which will be the field that "links" the Task and User tables together. We are using the default User model from Django. There more detailed explanation of what *ForeignKey* does in the Django documentation. *ForeignKey* sets up many-to-one relationships between (many) Tasks and (one) User.
+- The parameters for *ForeignKey* can be looked up in Django's [documentation]('https://docs.djangoproject.com/en/4.0/ref/models/fields/#foreignkey').
 
-### Modify Views
+### [Modify Views]
 
-The only thing we need to see are tasks assigned to the logged in user. We need to hide the other tasks away. To do this, we can use the built in django *filter* functionality to filter our data for only tasks assigned to the username.
+The only thing we need to see are tasks assigned to the logged-in user. We need to hide the other tasks away. To do this, we can use the built in Django *filter* functionality.
 
 {{< code-action >}} **Let's open `views.py`** Modify and add a few lines of code to the  `TaskDashboard`  and the `TaskForm` view.
 
@@ -141,7 +152,7 @@ This addition will enable the form to automatically associate the new task with 
 
 Excellent! All the file changes have been made. We can migrate the changes on the database.
 
-### Run Migrations and Restart
+### [Run Migrations and Restart]
 
 {{< code-action >}} **Remigrate the model so the changes you've made are reflected in the database.** To migrate, shut down the server, run the makemigrations and migrate commands, and restart the server.
 
@@ -158,7 +169,7 @@ After we run the migration, that Task table will be updated.
 - Users can only view tasks they created
 
 
-### Resetting the Database
+### [Resetting the Database]
 
 When we test code and make a lot of edits to our database, we will be adding data at different database migration points. If we do this, there will be a high chance that we will add erroneous data that will no longer be consistent with whatever the current database architecture is.
 
@@ -175,7 +186,7 @@ Here's how we do this.
 
 Performing these steps will reset our database with one superuser. With the superuser, we can access the admin page.
 
-## Expanding the Relation
+## [C] Expanding the Relation
 
 We've now created a perfectly functioning personal to-do app!
 
@@ -190,11 +201,11 @@ We must account for the following use cases to implement this feature:
 3. User can view tasks for themselves
 4. Users can view tasks they've assigned to others
 
-{{< write-action >}} **In your section E of your Google Doc, think through what adjustments need to made to the model to create a collaborative to-do app.** Which other files will need adjustment? Once you have an outline of the changes, show a teacher before beginning to implement it.
+{{< write-action >}} **In your notebook, think through what adjustments need to made to the model to create a collaborative to-do app.** Which other files will need adjustment? Once you have an outline of the changes, show a teacher before beginning to implement it.
 
 {{< code-action >}} **Try to implement the features you outlined in the backend of the To-Do web app!**
 
-## Conclusion
+<!-- ## [D] Conclusion
 
 We have created a link or relation between the User table and Task table. We can use this relation to assigns tasks to different users in our To-Do app making our app work in a multi-user environment.
 
@@ -202,4 +213,4 @@ We have learned to update Django models, forms and views to take advantage of re
 
 With this basic understanding of how tables are joined in Django, we have opened up many more opportunities where we can have more than one-to-one relationships but also one-to-many and many-to-many relationships, similar to many real world apps.
 
-The scope of this project is limited, but the sky's the limit in terms of what Django can do. You can do so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so the possibilities are endless.
+The scope of this project is limited, but the sky's the limit in terms of what Django can do. You can do so much with Django and relational databases. What we have learned in these 5 mini-lessons is literally the tip of the iceberg. If you think about it, Instagram was made with Django so the possibilities are endless. -->

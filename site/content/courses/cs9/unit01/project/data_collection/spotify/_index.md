@@ -32,7 +32,7 @@ type: checkup
 
 ---
 
-## API Key
+## Get Client ID, Client Secret, and Add URI
 
 {{< code-action "Follow along with this video and the steps below to create a Spotify Client ID and Client Secret." >}}
 
@@ -48,3 +48,12 @@ type: checkup
 > 0. **Fill in the form and click `CREATE`.** The App name and App description can be whatever you would like.
 > 0. **Click `SHOW CLIENT SECRET`**
 > 0. **Copy both the `Client ID` and `Client Secret`**
+
+{{< code-action "Follow along with this video and the steps below to add in your Redirect URI." >}}
+
+{{< youtube "B_NYjslAGfw" >}}
+
+> 0. **On the same [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/login), click on `EDIT SETTINGS`**
+> 0. **Paste http://127.0.0.1:9090 into the *Redirect URIs* field**
+> 0. **Select `ADD`**
+> 0. **Scroll down and click `SAVE`**
