@@ -1,6 +1,6 @@
 ---
 title: 3.A.1 CSS Layout
-draft: True
+# draft: True
 ---
 
 # Intro to CSS Layouts
@@ -8,15 +8,14 @@ Now that you have the basic map of your site laid out, it's time to learn how to
 To add style, we'll use CSS to tell web browsers how to represent the content we've defined semantically in our HTML documents.
 
 ## A. HTML + CSS
-CSS stands for Cascading Style Sheets. CSS styles are predefined ways in which a web browser can represent pieces of content, from bolding
-them to causing them to fade into view with an animation. As you can imagine, there are many different ways to style content and sometimes
-we want to style content in multiple ways. This is where the "cascading" part comes in. We can apply multiple styles to a single element
-and these styles will be interpreted in a predefined way. For example, this allows us to say that all paragraph text in an HTML document
+CSS stands for Cascading Style Sheets. CSS styles are predefined ways in which a web browser can represent pieces of content, from bolding them to causing them to fade into view with an animation. As you can imagine, there are many different ways to style content and sometimes
+we want to style content in multiple ways. This is where the "cascading" part comes in. We can apply multiple styles to a single element and these styles will be interpreted in a predefined way. For example, this allows us to say that all paragraph text in an HTML document
 should be represented in black but also that certain paragraph elements should be represented in blue.
 
 ### Classes
-One way to apply styles to elements is to use what's called "in-line style" where we write style rules directly on our HTML elements. This
-is useful in some circumstances, but mostly it limits our ability to write abstract code and makes our code look messy. Instead, we
+One way to apply styles to elements is to use what's called "in-line style" where we write style rules directly on our HTML elements. This is useful in some circumstances, but mostly it limits our ability to write abstract code and makes our code look messy. 
+
+Instead, we
 normally use CSS classes which we define in a separate CSS document to apply styles. To write a CSS class, we choose a name and then choose a particular set of CSS styles that should
 go with that name. For example, the `footnote` class may have styles to make it smaller, italicized, and appear at the bottom of a page. Then,
 we can add that class on to any HTML element and those styles will be used:
@@ -34,8 +33,12 @@ Note that these classes are not the same as Python classes, but they're based on
 ## B. CSS Layout
 Styling HTML elements can be really difficult and involve a lot of code to make sure that your site uses a consistent style that works
 well on a variety of screen sizes (this is known as responsive web development). To help with this, we'll be using a predefined CSS
-toolkit that simplifies and standardizes styles across your webapp. For this lab, we will only be using CSS classes pre-defined by in
-the Bootstrap framework. However, you will also learn how to write your own CSS classes in a future lab.
+toolkit that simplifies and standardizes styles across your webapp. 
+
+For this lab, we will only be using CSS classes pre-defined by in
+the **[Bootstrap](https://getbootstrap.com/docs/5.1/customize/overview/)** framework. However, you will also learn how to write your own CSS classes in a future lab.
+
+[This](https://hackerthemes.com/bootstrap-cheatsheet/) is a great resource for Bootstrap tips.
 
 ### Containers
 
@@ -51,7 +54,7 @@ class to the div:
 Once a div becomes a container, the width of the div gets limited based on the screen size. This means that content won't overflow on
 smaller devices and content won't become really streched on larger devices. Let's see this in action:
 
-{{< code-action >}} Add the following lines of code to your `starter_app/dashbaordView.html` file to make the
+{{< code-action >}} **Add the following lines of code to your** `starter_app/dashbaordView.html` file to make the
 div contain the tasks in a container with a dark background:
 
 ```html {linenos=table, hl_lines=[4,11]}
@@ -70,7 +73,7 @@ div contain the tasks in a container with a dark background:
 {% endblock %}
 ```
 
-{{< code-action >}} Now try changing the size of your browser window to make it bigger and smaller.
+{{< code-action >}} **Now try changing the size of your browser window to make it bigger and smaller.**
 
 Notice how the dark background gets smaller as the window gets smaller and bigger as the window gets
 bigger? That's the power of the Bootstrap container in action!
