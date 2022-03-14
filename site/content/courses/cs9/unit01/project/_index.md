@@ -200,17 +200,6 @@ The project is scored out of 7.
     6 total points
 
 
-{{< aside "FYI" >}}
-
-We encourage you to set goals you feel you are able to achieve given online learning and the time frame of this project.
-
-**If you feel you can do two sub-questions, as opposed to three, really well, please set that as your goal.** 
-
-*However, you will only be able to score full marks on each concept if you do complete three sub-questions. Thus, the top mark you can score if you complete two sub-questions is a 6/7.*
-
-
-
-{{< /aside >}}
 
 
 
