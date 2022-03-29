@@ -11,7 +11,19 @@ To be successful in this project, you will need to find a question that is both 
 
 Here is an [example project juptyer notebook file](https://github.com/the-isf-academy/project-data-science-example/blob/master/project.ipynb). It has been adapted from a previous student's work. As such, the project had a different dataset requirement.
 
+
+{{< aside "ATTN: Online learning change" >}}
+
+Due to difficulties of online learning, students will not be required to complete a self-assessment. 
+
+As such, we have adjusted the grading bands. Please see the below ***Scoring*** section, for the updates.
+
+{{< /aside >}}
+
+
 ---
+
+
 
 ## [0] Deliverables 
 
@@ -116,6 +128,7 @@ The self-assessment is broken down into two sections:
     - data analysis 
     - data discussion 
 
+
 **To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.**
 
 ### [Practices]
@@ -175,30 +188,25 @@ Successful computer scientists should be able to make the following claims:
 
 ## [5] Scoring
 
-The project is scored out of 7.
-- 1 point is assigned to the self-assessment
-    - *By thoughtfully answering the prompts and putting effort into your response, you will receive 1 point*
--  6 points are assigned to the practices & concepts
-    - *To calculate your score for the practices & concepts, look at the following bands:*
-    > 0 = 0-1
-    >
-    > 1 = 2-3
-    >
-    > 2 = 4-6
-    >
-    > 3 = 7-9
-    >
-    > 4 = 10-12
-    >
-    > 5 = 13-15
-    >
-    > 6 = 16-18
+The project is scored out of 7. 
 
-*Example score:*
+*To calculate your score for the practices & concepts, look at the following bands:*
 
-    5 points for practices & concepts (15/18)
-    6 total points
-
+> 0 = 0
+>
+> 1 = 1
+>
+> 2 = 2-3
+>
+> 3 = 4-5
+>
+> 4 = 6-8
+>
+> 5 = 9-12
+>
+> 6 = 13-15
+>
+> 7 = 16-18
 
 
 
