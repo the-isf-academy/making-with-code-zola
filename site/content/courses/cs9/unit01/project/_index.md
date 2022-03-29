@@ -67,16 +67,17 @@ Click below to see a detailed timeline for your class section.
 
 | Date        | Agenda                  |
 |-------------|-------------------------|
-| 7 March 2022  | Introduction to Project |
-| 10 March 2022  | Pull Data & Start Design Document       |
-| 11 March 2022 | Design Document & One-on-One with teacher         |
-| 15 March 2022 | Design Document & One-on-One with teacher       |
-| 17 March 2022 | Work Day                |
-| 21 March 2022 | Work Day                |
+| 10 March 2022  | Introduction to Project       |
+| 11 March 2022 | Pull Data & Start Design Document         |
+| 15 March 2022 |Pull Data & Design Document        |
+| 17 March 2022 | Design Document & One-on-One with teacher                |
+| 21 March 2022 | One-on-One with teacher & Work Day                |
 | 24 March 2022 | Work Day     |
 | 25 March 2022 | Work Day     |
-| 29 March 2022 | DUE: Submit Code Repository    |
-| 31 March 2022 | DUE: Self-assessment    |
+| 29 March 2022 | Work Day    |
+| 31 March 2022 | Work Day    |
+| 4 April 2022 | DUE: Submit Code Repository    |
+
 
 {{< /expand >}}
 
@@ -94,8 +95,8 @@ Click below to see a detailed timeline for your class section.
 | 23 March 2022 | Work Day                |
 | 24 March 2022 | Work Day     |
 | 29 March 2022 | Work Day     |
-| 01 April 2022 | DUE: Submit Code Repository    |
-| 06 April 2022 | DUE: Self-assessment    |
+| 01 April 2022 | Work Day    |
+| 06 April 2022 | DUE: Submit Code Repository    |
 
 {{< /expand >}}
 
