@@ -1,6 +1,6 @@
 ---
 title: 3.A.3 Django Templates
-draft: True
+# draft: True
 
 ---
 
@@ -8,62 +8,62 @@ draft: True
 You now have a foundational understanding of the core elements of web development: HTML and CSS. In this lesson, you will build on
 that knowledge to learn how to use Django to make your web pages dynamic.
 
-## A. Users and authentication
-So far, the todo app works the same for every person who visits the site. However, to actually make our todo app work, we need to
-make the app do different things depending on who is visiting the site. You want to see your tasks, not someone else's.
+## [A] Users and authentication
+So far, the todo app works the same for every person who visits the site. However, to actually make our todo app work, **we need to make the app do different things depending on who is visiting the site**. You want to see your tasks, not someone else's.
 
-This may seem tricky, but it's actually pretty straightforward. Django can already manage logging in and who is logged-in in the 
-current session of the page. All we need to do is determine what content to show based on who is logged-in.
+This may seem tricky, but it's actually pretty straightforward. **Django can already manage logging in and who is logged-in in the 
+current session of the page. All we need to do is determine what content to show based on who is logged-in.**
 
-{{< aside >}}
+{{< expand "Learn More: User Sessions" >}}
 Managing user sessions is a really interesting and complex task in modern web development. These kinds of web interactions still
 occur entirely through HTTP requests, but web browsers do a lot of extra work to store information about logins to send along with
 regular HTTP requests.
 
 If you're interested in learning more about user sessions, you can check out [this resource from the Django documentation](https://django-book.readthedocs.io/en/latest/chapter14.html).
 
-{{< /aside >}}
+{{< /expand >}}
+
+### [Creating a User]
 
 To get started, we need to make some users for our app.
 
-{{< code-action >}} First, make sure your database is setup. Run the following command in the top-level directory of the lab:
+{{< code-action "First, make sure your database is setup. Run the following command in the top-level directory of the lab:" >}} 
 ```shell
-$ python manage.py migrate
+python3 manage.py migrate
 ```
 
-We don't have the web interface setup to register users yet, so we'll use the Django shell to do so instead.
 
-{{< code-action >}} Open a shell session:
+
+{{< code-action "Open the Django shell:" >}} We don't have the web interface setup to register users yet, so we'll use the Django shell to do so instead.
 ```shell
-$ python manage.py shell
-
-Python 3.9.4 (default, Apr  5 2021, 01:47:16)
-[Clang 11.0.0 (clang-1100.0.33.17)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
-(InteractiveConsole)
->>>
+python3 manage.py shell
 ```
 
-{{< code-action >}} Then, run the following commands in the shell to create a new user (*Make sure to replace the `<>` with the relevant info*):
+
+{{< code-action " Then, run the following commands in the shell to create a new user" >}} (*Make sure to replace the `<>` with the relevant info*):
 ```shell
 >>> from django.contrib.auth.models import User
 >>> student_user = User.objects.create_user('<USERNAME>', '<EMAIL>', '<PASSWORD>')
 ```
+> *e.g. `student_user = User.objects.create_user('test_student', 'test@student.com', 'student123')`*
 
-You can check to see if this worked by going to the [login](http://127.0.0.1:8000/accounts/login/) page of the app and trying to
+{{< code-action "Check to see if this worked by going to the " >}} [login](http://127.0.0.1:8000/accounts/login/) **page.** Try to
 log in with the information you used to create the user.
 
-### User access
+---
 
-Now we have a user, and we can log in to the app! 🎊 But... Nothing has really changed about the site. 🤦‍♀️  There's no way to tell if the
-user is logged in or not and a visitor can access all the pages of our site regardless of whether they are logged in.
+### [User access]
+
+Now we have a user, and we can log in to the app! 🎊 
+
+But... Nothing has really changed about the site. 🤦‍♀️  **There's no way to tell if the user is logged in or not** and a visitor can access all the pages of our site regardless of whether they are logged in.
 
 Let's change that.
 
-Django let's us easily restrict access to pages if a visitor is not logged in. All we have to do is add the `LoginRequiredMixin` to the views
-we want to restrict.
+**Django let's us easily restrict access to pages if a visitor is not logged in. All we have to do is add the `LoginRequiredMixin` to the views
+we want to restrict.**
 
-{{< code-action >}} Add the `LoginRequiredMixin` to the `TaskDashboardView` class in `views.py`:
+{{< code-action >}} **Add the `LoginRequiredMixin` to the `TaskDashboardView` class in `views.py`:**
 
 ```python {linenos=table, hl_lines=[20]}
 from django.shortcuts import render
@@ -95,12 +95,12 @@ class EditTaskView(TemplateView):
     template_name = 'starter_app/updateTaskView.html'
 ```
 
-{{< code-action >}} Try logging out and visiting the [dashboard](http://127.0.0.1:8000/dashboard/) page and
-then logging in and visiting the page. Notice the difference?
+{{< code-action >}} **Try logging out and visiting the [dashboard](http://127.0.0.1:8000/dashboard/) page and
+then logging in and visiting the page.** Notice the difference?
 
-{{< code-action >}} Add the `LoginRequiredMixin` to all the views you want to restrict access to.
+{{< code-action >}} **Add the `LoginRequiredMixin` to all the views you want to restrict access to.**
 
-{{< aside >}}
+{{< aside "Multiple Inheritance" >}}
 Notice that we are using *multiple inheritance* with the `LoginRequiredMixin`. Our view classes are now extending
 two different parents: the `TemplateView` class and the `LoginRequiredMixin`. Thus, our class can take the properties
 and methods of both parents.
@@ -109,13 +109,17 @@ If you'd like a more in-depth review of multiple inheritance in Python, check ou
 
 {{< /aside >}}
 
-### Navbar, revisited
+---
+
+### [Navbar, revisited]
 
 We've now taken care of how visitors can or cannot access different parts of our site based on their login status. However,
 it's still a bit hard to tell whether you are logged in or not. Additionally, it's kind of annoying as a user to have so
 many buttons on the navbar that don't do anything.
 
-Let's update our navbar so that it displays differently when the user is logged-in versus when they are not logged-in.
+**Let's update our navbar so that it displays differently when the user is logged-in versus when they are not logged-in.**
+
+
 In Python, doing this would be pretty straightforward. We could simply use a conditional and some code like this:
 ```python
 if user.is_logged_in:
@@ -126,14 +130,14 @@ else:
 
 Unfortunately, with basic HTML this kind of conditonal code is not possible. HTML is not a programming language.
 
-However, Django includes a special template language that is a hybrid
-between HTML and Python that can do just this. Even better, this langauge is so intuitive that you've actually been writing
+However, **Django includes a special template language that is a hybrid
+between HTML and Python that can do just this.** Even better, this langauge is so intuitive that you've actually been writing
 in it the whole time! All of the template pages you've written can include special code that tells Django how to
 render the pages.
 
-Let's see how this works by updating our navbar so that is appears differently depending on whether a user is logged-in.
+**Let's see how this works by updating our navbar so that is appears differently depending on whether a user is logged-in.**
 
-{{< code-action >}} Update your navbar code in `templates/starter_app/navbar.html`:
+{{< code-action >}} **Update your navbar code in `templates/starter_app/navbar.html`:**
 ```html {linenos=table, hl_lines=["2", "18-20"]}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     {% if user.is_authenticated %}
@@ -157,39 +161,38 @@ Let's see how this works by updating our navbar so that is appears differently d
     {% endif %}
 </nav>
 ```
-
-Now, when you visit the todo app you'll see that the navbar has changed! Try logging in and it will go back to normal!
-
-What's happening here should look pretty familiar to you: we're using an `if` statement to tell Django to use some
+> What's happening here should look pretty familiar to you: we're using an `if` statement to tell Django to use some
 HTML content if the current `user` object `is_authenticated`. Then, we're using an `else` statement to tell Django
-what content to use in any other case (i.e. the user is not authenticated). Finally, because of the conventions of
+what content to use in any other case (i.e. the user is not authenticated). 
+>
+> Finally, because of the conventions of
 HTML, we need to tell Django where the end of our `if` statement is since the indentation doesn't matter (which would
 signal the end of an `if` in Python.
 
-## B. Dyanmic templates
+Now, when you visit the todo app you'll see that the navbar has changed! 
+
+{{< code-action "Try logging in. The navbar will go back to normal!" >}} 
+
+---
+
+## [B] Dyanmic templates
 This HTML/Python hybrid template language is actually one of the most powerful features of Django. Whereas in a normal
-site you would be stuck with static HTML, Django let's you make your web pages dynamic, transforming a web site into a web
-app.
+site you would be stuck with static HTML, **Django let's you make your web pages dynamic, transforming a web site into a web
+app.**
 
 You can read about the different feature of the Django template language in [the Django documentation](https://docs.djangoproject.com/en/3.1/ref/templates/language/).
 For now, let's explore a few key components: loops and variables.
 
-### Loops
+### [Loops]
 It's finally time for our todo app to actually show us real todo tasks rather than the placeholder ones we've had in
 the template so far. Let's put some tasks in our database so we have something to work with:
 
-{{< code-action >}} Open another Django shell:
+{{< code-action "Start up the Django shell" >}}
 ```shell
-$ python manage.py shell
-
-Python 3.9.4 (default, Apr  5 2021, 01:47:16)
-[Clang 11.0.0 (clang-1100.0.33.17)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
-(InteractiveConsole)
->>>
+python3 manage.py shell
 ```
 
-{{< code-action >}} First, we need to get the user that will create the task (the one we created at the
+{{< code-action "First, we need to get the user that will create the task" >}} (the one we created at the
 beginning of the lab):
 ```shell
 >>> from django.contrib.auth.models import User
@@ -198,7 +201,7 @@ beginning of the lab):
 <User: USERNAME>
 ```
 
-{{< code-action >}} Then, we can create the task and save it in our database (*Again, don't forget to replace
+{{< code-action " Then, we can create the task and save it in our database" >}} (*Again, don't forget to replace
 the information in the `<>`*):
 ```shell
 >>> import datetime
@@ -206,14 +209,16 @@ the information in the `<>`*):
 >>> task = Task(task_user=our_user, task_assigned_to=our_user.username, title="<TITLE HERE>", label="<LABEL HERE>", notes="<NOTES HERE>", due_date=datetime.date.today())
 >>> task.save()
 ```
+> *e.g. `task = Task(task_user=our_user, task_assigned_to=our_user.username, title="Math Assignment", label="homework", notes="ex. 1-3", due_date=datetime.date.today())`*
 
-{{< code-action >}} Create 3-4 tasks for the user.
+{{< code-action "Using the shell, create 2 more tasks for the user." >}} 
 
-Now that we have some tasks in our database, let's set up our dashboard so that it lists all the tasks for the user who is logged in.
+Now that we have some tasks in our database, **let's set up our dashboard so that it lists all the tasks for the user who is logged in**.
+
 To do this, we need to get all of the tasks from the database that belong to the user and pass them to our template. Fortunately,
 Django has a view which is set up to do exactly that: `ListView`.
 
-{{< code-action >}} Update the `TaskDashboardView` in the `views.py` file so that it extends the `ListView` class:
+{{< code-action >}} **Update the `TaskDashboardView` in the `views.py` file so that it extends the `ListView` class:**
 ```python {linenos=table, hl_lines=[20]}
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -244,7 +249,7 @@ class EditTaskView(LoginRequiredMixin,TemplateView):
     template_name = 'starter_app/updateTaskView.html'
 ```
 
-{{< code-action >}} Next, we need to tell the view what kind of data we want to list:
+{{< code-action "Next, we need to tell the view what kind of data we want to list:" >}} 
 ```python {linenos=table, hl_lines=[22]}
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -276,8 +281,7 @@ class EditTaskView(LoginRequiredMixin,TemplateView):
     template_name = 'starter_app/updateTaskView.html'
 ```
 
-{{< code-action >}} Finally, add a class method that filters the data so that
-we only get the unarchived tasks for the user who is logged in:
+{{< code-action "Finally, add a class method that filters the data so that we only get the unarchived tasks for the user who is logged in:" >}}
 
 ```python {linenos=table, hl_lines=["24-34"]}
 from django.shortcuts import render
@@ -326,7 +330,7 @@ Now that we have data about our tasks, we can create HTML elements for each of t
 for each task looks very similar, and we know what to do when we see repetitive code: use a for loop!
 The Django template language provides a for loop to repeat HTML code multiple times.
 
-{{< code-action >}} Insert a for loop in `dashboardView.html` to repeat the task HTML for each task in
+{{< code-action >}} **Insert a for loop in `dashboardView.html` to repeat the task HTML for each task in**
 our data:
 
 ```html {linenos=table, hl_lines=[15, 30]}
@@ -427,7 +431,7 @@ details to the `dashboardView.html` template.
 *Note: all objects also have an ID property (like `task.id`) so that you can uniquely identify each data object. This will
 come in handy to make sure that the update button in the task list item links to the correct place.*
 
-### Challenge: Due Next
+## [C] Challenge: Due Next
 As a challenge, let's try to apply the style for the task which is due next that we created in the last lab. Remember that you can 
 add this style by setting the ID of the element to `due-next` like this:
 ```html
