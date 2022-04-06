@@ -1,5 +1,5 @@
 ---
-title: 0. Bank Lab
+title: 1. Bank Lab
 resources:
 - name: Bank class map
   src: images/courses/cs9/unit02/02_00_bank_class_map.png
@@ -13,7 +13,7 @@ CS1/CS2 links in [0] Setup, bring BISF documentation (https://cs.fablearn.org/do
 In this lab, we will learn about object oriented programming through the framework of a banking system. 
 
 
-## Object oriented programming
+## [0] Object oriented programming
 
 Object oriented programming uses classes of objects to group related properties and functionalities. 
 
@@ -48,7 +48,7 @@ To learn about how classes are implemented in Python, check out the resources be
 
 
 
-##  Setup
+##  [1] Setup
 
 
 {{< code-action >}} In your `cs9` directory, create a `unit_02` directory and clone the `lab-bank` repository inside it.
@@ -59,7 +59,7 @@ git clone https://github.com/the-isf-academy/lab-bank-YOUR-GITHUB-USERNAME.git
 ```
 
 
-## Understanding the Bank and Account Classes
+## [2] Understanding the Bank and Account Classes
 
 You have been hired by the Bank of ISF (BISF) to review their accounting system. You goal is to improve their current system and improve the bank's security.
 
@@ -92,7 +92,7 @@ Answer the following check-in questions on your group's Google doc before moving
 
 
 
-## Dueling Bank Promotions
+### [Dueling Bank Promotions]
 
 Let's put your new understanding of the BISF banking system classes to the test.
 
@@ -122,7 +122,7 @@ In this lab we have included a testing script. The testing script for this lab i
 
 
 
-##  Transferring Money
+###  [Transferring Money]
 
 To improve the functionality of their banking system, BISF wants you to implement a `transfer()` function at the end of the `Bank` class. BISF has already defined this function in the banking system's documentation. [Check out the documentation](https://cs.fablearn.org/docs/central/bank.html#bank.transfer) to see the specifics of the function you should implement.
 
@@ -135,7 +135,7 @@ To improve the functionality of their banking system, BISF wants you to implemen
 
 *Hint:* The test script uses different scenarios to check to make sure your function handles a variety of interactions. If you get stuck, read through the scenarios printed when you first run the test script to make sure your function is behaving normally.
 
-##  Deliverables
+###  [Deliverables]
 
 For this lab, you should submit the following…
 
@@ -145,7 +145,7 @@ For this lab, you should submit the following…
 - Your Google Doc with responses to the checkpoint questions
 
 
-## Extension: Hacking the Bank
+## [3] Extension: Hacking the Bank
 
 Now that you are familiar with the banking system, it's time to get to work trying to hack the system 💰💰💰
 

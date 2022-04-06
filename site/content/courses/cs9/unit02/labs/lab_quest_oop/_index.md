@@ -9,7 +9,7 @@ resources:
 
 # Quest
 
-This lab builds on the the [Uno Lab]({{< ref "courses/cs9/unit02/labs/lab1_uno/_index.md" >}}), where you learned about Object-Oriented programming. OOP solves problems by creating models of situations, with an object representing each person or thing in the situation. In this lab, you will learn how to use a framwork called *Quest* to make video games. Specifically, *Quest* is a framework for making top-down role-playing games where you control a character and explore a world. [**The Legend of Zelda**](https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)) (1986) was one of the original top-down role-playing games, and it continues to have a big impact on the style of games today. 
+This lab builds on the the [Uno Lab], where you learned about Object-Oriented programming. OOP solves problems by creating models of situations, with an object representing each person or thing in the situation. In this lab, you will learn how to use a framwork called *Quest* to make video games. Specifically, *Quest* is a framework for making top-down role-playing games where you control a character and explore a world. [**The Legend of Zelda**](https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)) (1986) was one of the original top-down role-playing games, and it continues to have a big impact on the style of games today. 
 
 ![Zelda](zelda.gif)
 
