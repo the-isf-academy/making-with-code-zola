@@ -1,6 +1,6 @@
 ---
 title: 3.A.4 Themes and Forms
-draft: True
+# draft: True
 
 ---
 
@@ -19,7 +19,7 @@ to do is tell Django where to put the form (in the template) and what to do with
 ### Form Views
 Let's start by updating the view for a page which holds a form, the account registration page.
 
-{{< code-action >}} First, add some code to `starter_app/forms.py`:
+{{< code-action >}} **First, add some code to `starter_app/forms.py`:**
 ```python {linenos=table, hl_lines=["6-24"]}
 from django import forms
 from .models import Task
@@ -50,7 +50,7 @@ This code is creating a class for each form we'll put on our site and defining w
 backend architect has control over this part of our site because they get to decide what data we need to collect and how
 we should collect it.
 
-{{< code-action >}} In the `views.py` file, update the `CreateAccountView` class so that it extends the `FormView` class:
+{{< code-action >}} **In the `views.py` file, update the `CreateAccountView` class so that it extends the `FormView` class:**
 ```python {linenos=table, hl_lines=[8, "17-30"]}
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -78,7 +78,7 @@ class CreateAccountView(FormView):
         # It should return an HttpResponse.
         form.save()
         username = form.cleaned_data.get('username')
-        raw_password = form.cleaned_data.get('password0')
+        raw_password = form.cleaned_data.get('password1')
         user = authenticate(username=username, password=raw_password)
         login(self.request, user)
         return super().form_valid(form)
@@ -110,7 +110,7 @@ Now, our `CreateAccountView` class will contain a form object (designed by the b
 Additionally, the `form_valid()` function tells Django what to do with the data once the form is submitted: create a new user
 with the information provided and log the user in.
 
-{{< code-action >}} Next, add the form object to the template in `createAccountView.html`:
+{{< code-action >}} **Next, add the form object to the template in `createAccountView.html`:**
 ```python {linenos=table, hl_lines=[2, 12]}
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
@@ -138,7 +138,7 @@ elements to get the data we need!
 ### Task Creation and Updates
 Let's do the same for the task creation and updating forms.
 
-{{< code-action >}} Update the `TaskFormView` and `EditTaskView` classes in `views.py`:
+{{< code-action >}} **Update the `TaskFormView` and `EditTaskView` classes in `views.py`:**
 ```python {linenos=table, hl_lines=["50-78"]}
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -224,8 +224,8 @@ Again, we need to tell the views what models the forms should be based off of. H
 do once the forms are submitted for the `TaskViewForm` class. Django is smart enough to know that the form should update
 the database when the form from the update page is submitted.
 
-{{< code-action >}} Finally, we can update the `taskFormView.html` and `updateTaskFormView.html` templates. Update them the same
-way you updated the account registration template above.
+{{< code-action >}} **Finally, we can update the `taskFormView.html` and `updateTaskFormView.html` templates. Update them the same
+way you updated the account registration template above.**
 
 Woohoo! Our webapp is fully functional now! You can create accounts, log in, create new tasks, and update existing tasks all from
 the web app!
@@ -247,6 +247,6 @@ Reload your page and your webapp should now be using the color palatte you selec
 
 ---
 
-Congrats! You've made it to the end of the frontend tutorial! You're now a certified cs10 Designer! 🎖
+**Congrats! You've made it to the end of the frontend tutorial! You're now a certified cs10 Designer! 🎖**
 
 Get ready to apply your newfound skills to making your own app.
