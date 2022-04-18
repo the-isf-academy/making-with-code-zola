@@ -5,6 +5,7 @@ resources:
   src: images/courses/cs9/unit02/02_02_quest_island.png
 - name: zelda
   src: zelda.gif
+draft: true
 ---
 
 # Quest

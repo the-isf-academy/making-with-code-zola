@@ -1,5 +1,5 @@
 ---
-title: 1. Bank Lab
+title: 0. Hacking the Bank
 resources:
 - name: Bank class map
   src: images/courses/cs9/unit02/02_00_bank_class_map.png
@@ -8,50 +8,15 @@ resources:
 CS1/CS2 links in [0] Setup, bring BISF documentation (https://cs.fablearn.org/docs/central/index.html) into Making with Code?
 {{< /devnote >}}
 
-# Bank Lab
+# Hacking the Bank
 
-In this lab, we will learn about object oriented programming through the framework of a banking system. 
-
-
-## [0] Object oriented programming
-
-Object oriented programming uses classes of objects to group related properties and functionalities. 
-
-Let's consider a video game character. Our character will have a `name` and a `health` property and be able to perform a `move()` action and a `talk()` action.
-
-
-This can be visualized by drawing a model. The model consists of the `class name`, the `properties` and their data type, and the `methods` with their arguments. 
-
-{{< figure src="images/courses/cs9/unit02/02_class_model_01.png" width="400px" >}}
-
-Suppose we want our character to be able to engage in combat. In that case, we will add a `weapon` property and a `attack()` action. 
-
-{{< figure src="images/courses/cs9/unit02/02_class_model_02.png" width="300px" >}}
-
-As you can see in the diagram above, the `weapon` property will take a data type `Weapon`. This is because we will create a new class to describe the properties and functionalities of Weapon. The objects `Character` and `Weapon` have an association with each other. 
-
-
-{{< figure src="images/courses/cs9/unit02/02_class_model_03.png" width="600px" >}}
-
-Now that we have a model for our `Character` and `Weapon` objects, we can imagine an instance of these objects with specific attributes. 
-
-{{< figure src="images/courses/cs9/unit02/02_class_model_04.png" width="600px" >}}
-
-
-<hr>
-
-To learn about how classes are implemented in Python, check out the resources below. At the very least, watch the videos in each section:
-
-- [12.1 Why learn about classes?](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_1)
-- [12.2 Defining and Creating Simple Classes](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_2)
-- [12.3 Adding Methods to Classes](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_3)
-
-
+In this challenge, you will learn about object oriented programming through the framework of a banking system. 
+> **Before starting, please let a teacher know if you would like to explore this challenege.**
 
 ##  [1] Setup
 
 
-{{< code-action >}} In your `cs9` directory, create a `unit_02` directory and clone the `lab-bank` repository inside it.
+{{< code-action >}} **In your `cs9` directory, clone the `lab-bank` repository inside it.**
 
 ```shell
 cd cs9/unit_02
@@ -76,18 +41,6 @@ There's a lot going on here! Fortunately, BISF has done a great job documenting 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RXr6-_EzPRg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
-
-{{< checkpoint >}}
-Answer the following check-in questions on your group's Google doc before moving on:
-
-0. **Describe what is happening in `central.py`.**
-0. **Create a model of the `Bank` and `Account` objects**
-
-*Note that in `bank.py`, the `Bank` class imports the `Account` class. This is because each `Bank` object uses `Account` objects to store information about each account in the bank. It is very common for objects to contain other objects. When dealing with multiple classes, mapping how each of the parts interact can be a good to help understand what's going on.*
-
-
-{{< /checkpoint >}}
-
 
 
 
