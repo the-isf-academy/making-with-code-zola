@@ -13,7 +13,7 @@ Welcome back from break! Before we jump into Unit 02, let's do a little review.
 cd Desktop/cs9
 cd cs9-donows-YOUR-GITHUB-USERNAME
 mkdir unit_02
-cd unit_01
+cd unit_02
 ```
 
 {{< code-action "Create a new document" >}}
@@ -25,25 +25,29 @@ atom donow0.py
 
 ```python
 #############
-# unit02 
+# unit02
 # donow0.py
 #############
 
 from turtle import *
+#make the drawing appear instantly
+tracer(0, 0)
 
+#---YOUR CODE GOES HERE---#
 forward(100)
 
 
-# hides the turtle and keeps the window open
+# updates, hides the turtle, and keeps the window open
+update()
 hideturtle()
 input()
 ```
 
 ## Challenges
 
-Below are series of Turtle drawings. It is up to you re-create them and customize them as you wish. 
+Below are series of Turtle drawings. It is up to you re-create them and customize them as you wish.
 
-Each challenge builds on itself with increasing complexity. Be sure to go in chronological order. 
+Each challenge builds on itself with increasing complexity. Be sure to go in chronological order.
 
 {{< expand "Turtle Documentation" >}}
 
@@ -70,7 +74,7 @@ Here is a brief reminder of some Turtle functions. Feel free to reference the mo
 
 {{< figure src="images/courses/cs9/unit02/donow0_0.png" width="50%" alt-title="step 1" >}}
 
-{{< code-action "Add the ability to customize the pen color." >}} Your function should now take `custom_color` as a parameter. 
+{{< code-action "Add the ability to customize the pen color." >}} Your function should now take `custom_color` as a parameter.
 
 {{< figure src="images/courses/cs9/unit02/donow0_1.png" width="40%" alt-title="step 1" >}}
 
@@ -88,7 +92,7 @@ Here is a brief reminder of some Turtle functions. Feel free to reference the mo
 
 {{< figure src="images/courses/cs9/unit02/donow0_3.png" width="40%" alt-title="step 1" >}}
 
-{{< code-action >}} **Experiment with `draw_pattern()`!** Try to create the image below. Explore different color combinations. 
+{{< code-action >}} **Experiment with `draw_pattern()`!** Try to create the image below. Explore different color combinations.
 
 
 {{< figure src="images/courses/cs9/unit02/donow0_4.png" width="50%" alt-title="step 1" >}}
