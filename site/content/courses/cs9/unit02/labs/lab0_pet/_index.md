@@ -31,11 +31,11 @@ This lab includes the following files:
 - `interface.py`
 > *`interface.py` is only required for the extension*
 
---- 
+---
 
 ## [1] Creating your own pet
 
-In `pet.py` is a Python `class` that defines a `Pet`. 
+In `pet.py` is a Python class that defines a `Pet`.
 
 {{< code-action >}} **First, let's run `pet.py` in the interactive Python shell.**
 ```shell
@@ -49,7 +49,7 @@ python3 -i pet.py
 >>> my_pet = Pet()
 ```
 
-{{< code-action "Now that you've created a pet, let's give it a name." >}} I've named mine Ajax. You can name yours whatever you'd like
+{{< code-action "Now that you've created a pet, let's give it a name." >}} I've named mine Ajax. You can name yours whatever you'd like.
 ```shell
 >>> my_pet.set_name("Ajax")
 ```
@@ -62,8 +62,8 @@ Hi, Im Ajax
 
 {{< code-action "Try out these other methods in the terminal." >}}
 ```shell
->>> ajax.play()
->>> ajax.nap()
+>>> my_pet.play()
+>>> my_pet.nap()
 ```
 
 
@@ -71,7 +71,7 @@ Hi, Im Ajax
 {{< checkpoint >}}
 In your notebook, answer the questions below before moving on.
 
-0. What happens if you try to get your pet to take two naps in a row? 
+0. What happens if you try to get your pet to take two naps in a row?
 0. What happens if you play twice in a row without napping in between?
 0. Can you change the name after it's already set?
 
@@ -84,7 +84,7 @@ Your pet and its name will not be saved.
 
 ## [2] What type of animal is your pet?
 
-Now that you've used the `Pet` object, let's delve into the code and make our `Pet` more complex. People can have all different types of pets, so lets' a `species` `property` to our `Pet`.
+Now that you've used the `Pet` object, let's delve into the code and make our `Pet` more complex. People can have all different types of pets, so lets' add a `species` property to our `Pet`.
 
 {{< code-action  >}} **Open `pet.py` in atom**
 ```shell
@@ -93,12 +93,14 @@ atom pet.py
 
 ### [Adding a new property]
 
-If you look in the Pet class, you can see on `lines 3-5` that we have three `properties`. `Properties` are variables that belong to a specific class. 
+If you look in the Pet class, you can see on lines 5-7 that we have three properties. Properties are variables that belong to a specific class.
 
 
-```python {linenos=table, hl_lines=["3-5"],linenostart=1}
+```python {linenos=table, hl_lines=["5-7"],linenostart=1}
 class Pet:
     def __init__(self):
+        '''This initializes the pet with its properties.'''
+
         self.name = None #The pet's name
         self.tired = False #Tells us if the pet is tired
         self.bored = True #Tells us if the pet is bored
@@ -106,26 +108,28 @@ class Pet:
 >The `Pet` currently 3 properties, `name`, `tired`, and `bored`.
 
 
-{{< code-action  >}} **Add a `species` property to the `Pet` class.** It will work just like the `name` `property`.
+{{< code-action  >}} **Add a `species` property to the `Pet` class.** It will work just like the `name` property.
 
 ---
 
 ### [Adding a new method]
 
-Now that we've added the `species` property, we need to add a `method` to change the property.
+Now that we've added the `species` property, we need to add a method to change the property.
 
-If you scroll down to `lines 7-8`, we see an example of a `method`. **A `method` is similar to a function. The only difference is that a `method` belongs to a certain `class`, like `Pet`.**
+If you scroll down to lines 9-12, we see an example of a method. **A method is similar to a function. The only difference is that a method belongs to a certain class, like `Pet`.**
 
 
-```python {linenos=table, linenostart=7}
+```python {linenos=table, linenostart=9}
 def set_name(self, name):
-    self.name = name #Saves the pet's new name
+    '''This method sets the name property'''
+
+    self.name = name
 ```
-> The `set_name()` method changes the `name` property to the parameter. 
+> The `set_name()` method changes the `name` property to whatever the user put as the parameter.
 >
 > *e.g. `my_pet.set_name('Bob')`*
 
-Just like the name property, we need to be able to set the species of our pet.
+Just like the `name` property, we need to be able to set the `species` of our pet.
 
 {{< code-action "Add a new method called " >}} **`set_species()`.** This method should change the `species` property of the `Pet` class.
 
@@ -143,7 +147,7 @@ python3 -i pet.py
 > *Do not copy the "> > >". This is to signify we are using the Python shell.*
 
 ```shell
->>> my_pet = Pet() 
+>>> my_pet = Pet()
 >>> my_pet.set_species("fox")
 >>> my_pet.species
 fox
@@ -155,10 +159,12 @@ Your pet and its species will not be saved.*
 
 ### [Using the species property]
 
-Right now, the `introduce()` method just has the pet say their name. Let's make it more detailed by including their `species` in the introduction. 
+Right now, the `introduce()` method just has the pet say their name. Let's make it more detailed by including their `species` in the introduction.
 
-```python {linenos=table, linenostart=10}
+```python {linenos=table, linenostart=14}
 def introduce(self):
+    '''This method introduces the pet with its name.'''
+
     print("Hi, I'm", self.name)
 ```
 <br>
@@ -176,7 +182,7 @@ Wouldn't it be nice if your pet could tell you whether it wanted to play or take
 
 If `tired` is `True`, then the pet needs a `nap()`. If `bored` is `True`, the pet wants to `play()`.
 
-Let's add a new method that allows the `Pet` to communicate. 
+Let's add a new method that allows the `Pet` to communicate.
 
 {{< code-action >}} **Add a new method called `status()`.** It should print out what the `Pet` currently needs.
 > *Be sure consider the current state of the `tired` and `bored` property.*
@@ -216,8 +222,8 @@ At this point, you have a working pet with multiple features! Now, let's develop
 
 However, currently all you can do it:
 - Create a `Pet`
-- Set its `name`and
-- `play()` with it 
+- Set its `name`ss
+- `play()` with it
 
 
 {{< code-action >}} **Edit `interface.py` to include all of the features the `Pet` has.**
