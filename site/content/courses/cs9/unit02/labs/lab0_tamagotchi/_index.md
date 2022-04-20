@@ -4,7 +4,7 @@ title: 0. Pet Lab
 ---
 
 # Pet Lab
-In this lab, you will learn about object oriented programming.
+In this lab, you will learn about object oriented programming. You will create the backend of a pet simulator game.
 
 {{< expand "To learn more, visit the resources below" >}}
 
@@ -208,28 +208,6 @@ In your notebook, answer the questions below before moving on to the extension.
 
 ## [3] Extension
 
-### [Feed the Pet]
-
-Right now, we have two ways we can interact with our `Pet`: `nap()` and `play()`.
-
-Let's add the ability for the `Pet` to eat and go to the bathroom. 
-
-This will require two new properties: 
-- `hungry`
-- `toliet`
-
-And two new methods:
-- `feed()`
-- `bathroom()`
-
-{{< code-action "Implement this new feature into the" >}} `Pet`.
-> *Be sure to consider how each property will be set initally.*
-
-
-{{< code-action "Improve the status method to include whether your pet hungry or whether it needs the toilet" >}}
-
---- 
-
 ### [Upgrade the Interface]
 
 At this point, you have a working pet with multiple features! Now, let's develop the interface to make the `Pet` more like a video game.
@@ -243,3 +221,5 @@ However, currently all you can do it:
 
 
 {{< code-action >}} **Edit `interface.py` to include all of the features the `Pet` has.**
+
+{{< code-action >}} **Add any additional features to the `Pet` and the interface!**
