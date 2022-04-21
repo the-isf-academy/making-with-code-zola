@@ -23,7 +23,7 @@ cd unit_02
 
 {{< code-action "Then, clone your starter code." >}} Be sure to change `YOUR-GITHUB-USERNAME` to your actual Github username.
 ```shell
-git clone https://github.com/the-isf-academy/lab-pets-YOUR-GITHUB-USERNAME.git
+git clone https://github.com/the-isf-academy/lab-pet-YOUR-GITHUB-USERNAME.git
 ```
 
 This lab includes the following files:
@@ -218,7 +218,13 @@ In your notebook, answer the questions below before moving on to the extension.
 
 At this point, you have a working pet with multiple features! Now, let's develop the interface to make the `Pet` more like a video game.
 
-{{< code-action >}} **Start by running `interface.py`.** The `Pet` now has a nice Terminal interface where you can interact with it like a video game.
+{{< code-action >}} **First, run the following command in your terminal.** It will install a package for creating your own terminal menus.
+
+```shell
+pip3 install simple-term-menu
+```
+
+{{< code-action >}} **Next, run `interface.py`.** The `Pet` now has a nice Terminal interface where you can interact with it like a video game.
 
 However, currently all you can do it:
 - Create a `Pet`
