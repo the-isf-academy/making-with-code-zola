@@ -48,9 +48,9 @@ For Act II of this project, your group will be assessed on your ability to write
 
 - Both your user stories document and Figma will receive a score from 0-3
     - 0 - little to no evidence of the concept
-    - 1 - sporadic evidence of the concept
-    - 2 - frequent evidence of the concept
-    - 3 - consistent evidence of the concept
+    - 1 - limited evidence of the concept
+    - 2 - adequate evidence of the concept
+    - 3 - substantial evidence of the concept
 
 
 ## Success Claims
