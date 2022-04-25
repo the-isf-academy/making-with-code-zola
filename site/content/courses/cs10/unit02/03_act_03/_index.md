@@ -20,7 +20,7 @@ Each team will have one project repository. This will require close communicatio
 
 ```shell
 cd cs10/unit02
-git clone https://github.com/the-isf-academy/project_webapp_YOUR_PROJECT_TEAM_NAME.git
+git clone https://github.com/the-isf-academy/project-webapp-TEAM-MEMBERS.git
 ```
 
 ### [Advanced Git]
@@ -85,6 +85,7 @@ Successful computer scientists should be able to make the following claims:
 
 - We can develop the backend architecture
     - Model fields with appropriate properties and methods 
+    - Appropriate use of form that update the database
     - Django views are used to link backend and frontend  
     - Any known bugs are documented in the README.md 
 - We can design the frontend of a webapp
