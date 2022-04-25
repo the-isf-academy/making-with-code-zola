@@ -10,7 +10,7 @@ In this Do Now, you must finish the code for a number guessing game.
 
 ## Set up
 
-{{< code-action "First, navigate to your cs9/donows/unit_01 folder" >}} `unit_01` **folder.**
+{{< code-action "First, navigate to your cs9/donows/unit_02 folder" >}} `unit_02` **folder.**
 
 ```shell
 cd Desktop/cs9
