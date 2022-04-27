@@ -1,5 +1,5 @@
 ---
-title: 2. Uno Lab
+title: 1. Uno Lab
 resources:
 - name: Uno
   src: images/courses/cs9/unit02/02_01_uno.jpg
@@ -11,14 +11,10 @@ CS1/CS2 links
 
 # Uno Lab
 
-## Overview
-Growing up, Uno was one of Mr. Wolf's favorite card games. Everywhere he went it seemed like we ended up playing Uno – with his friends, with his family, even with his classmates.
+In this lab, you are going to go behind the scenes of the classic card game, Uno.
+
 
 {{< figure src="images/courses/cs9/unit02/02_01_uno.jpg" width="400px" >}}
-
-However, when he got older he stopped liking Uno because he thought it was all random, there was no strategy to winning.
-
-But in this lab, you are going to prove him wrong.
 
 Your tasks:
 
@@ -38,34 +34,13 @@ cd cs9/unit_02
 git clone https://github.com/the-isf-academy/lab-uno-YOUR-GITHUB-USERNAME.git
 ```
 
-{{< code-action >}} **In the lab directory, install the packages you need to run this lab by running `pip install --upgrade -r requirements.txt`.**
+{{< code-action >}} **Install the packages you need to run this lab:**
+```shell
+pip install --upgrade -r requirements.txt
+```
 
-## [1]  Classes *and* games
-In this lab, we'll work to solidify our understanding of classes and objects by using a text-based game, Uno, as an example.
+## [1]  Map out the Uno software
 
-### More OOP in Python
-To get started, we need first need to learn how to write a class in Python.
-
-👀 Explore the following resources: 
-- Creating a Class: [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
-- Inheritance: [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
-
-### Modeling Inheritance 
-
-Let's consider our model of a video game character from the bank lab. 
-
-{{< figure src="images/courses/cs9/unit02/02_class_model_01.png" width="400px" >}}
-
-Imagine our game has two types of characters: a player character and a non-playable character (NPC). Both types of characters should have the same properties and methods as the base `Character` class, but each will have additional unique attributes. For this, we can utilize inheritance.  
-
-
-{{< figure src="images/courses/cs9/unit02/02_03_uno_inheritance_model.jpg" width="600px" >}}
-*Note: the arrows signify the direction of the inheritance* 
-
-Both the `Player` class and the `NPC` object will inherent the characteristics from the `Character` class and extend it to include additional features. 
-
-
-### Map out the Uno software
 Uno is a pretty significant software project - there are more classes than you've seen before. Fortunately, [Uno's functionality is well documented](https://cs.fablearn.org/docs/uno/index.html).
 
 {{< write-action >}} **With your new understanding of classes and inheritance, read through [the documentation](https://cs.fablearn.org/docs/uno/index.html) pages and draw a model with your partner for how this implementation of Uno works.**
@@ -84,11 +59,12 @@ For your reference, Uno has the following classes. Make sure your model includes
 
 
 ## [2] Let's play Uno!
+
 The rules of Uno are pretty simple: players take turns trying to play cards from their hand. You can play a card if its color or value matches the color of value of the last card that was played. If you can't play a card, you have to draw a card. The first player to play all their cards wins.
 
 If you're interested, you can find the [full rules of Uno here](http://play-k.kaserver5.org/Uno.html). Our implementation varies slightly. Can you identify the differences?
 
-### Play through
+### [Play through]
 {{< code-action >}} **Now that you've got a model for how the Uno software should work, play through a game by running the following command in your terminal:**
 
 ```shell
@@ -99,7 +75,7 @@ python game.py
 Was the gameplay different than you expected? Check you model to see if it still makes sense and change it up if it doesn't.
 
 
-### Reskin
+### [Reskin]
 One potentially confusing part of the software is the [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) class. What is it and why is it important?
 
 In many games, it's useful to separate the logic of the game from the user interface of the game. This lets developers easily change the interface without having to mess around with the rules or state of the game. In our Uno software, [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) does just that.
@@ -113,8 +89,8 @@ Maybe you want to translate the game into Chinese or make the game have an attit
 ## [3] Amp it up: special cards
 Now that you're starting to get the hang of the game, let's make it a little more interesting with special cards.
 
-### Special cards
-Uno would be pretty boring if you just went around in a circle matching colors and numbers. Fortunately for you, dear player, Uno has special cards that make the game more interesting:
+### [Special cards]
+Uno would be pretty boring if you just went around in a circle matching colors and numbers. Fortunately, Uno has special cards that make the game more interesting:
 
 - **reverse:** changes the direction of play from clockwise to counterclockwise or vice versa
 - **skip:** skips the next player's turn
@@ -128,13 +104,24 @@ We've already implemented some of the special cards for you.
 
 {{< code-action >}} **Try playing again, but this time use the `uno_cards_no_draw.csv` deck.**
 
-### Writing the special card functions
 Pretty different right? Your job is to finish implementing the special cards by writing the code for:
 
 - [draw_two()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.draw_two)
 - [wild_draw_four()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.wild_draw_four)
 
+### [Draw Two]
+
 {{< code-action >}} **Implement the `draw_two()` and `wild_draw_four()` functions  near the bottom of the `game.py` file in the [UnoGame](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame) class.**
+
+  - **Note:** you will also need to make sure the game calls these functions by adding calls to them in the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) function.
+
+{{< code-action >}} **Testing your functions by running the following scripts**
+- You can test the `draw_two()` function by running `python test_lab.py -k draw_two`.
+- You can test the `wild_draw_four()` function by running `python test_lab.py -k wild`.
+
+### [Wild Draw Four]
+
+{{< code-action >}} **Implement the `draw_two()`  function in the [UnoGame](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame) class.**
 
   - **Note:** you will also need to make sure the game calls these functions by adding calls to them in the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) function.
 
@@ -149,10 +136,24 @@ For this implementation of the game, cards are read into the deck as entries in 
 If you are interested, you can create your own decks by writing new csv files. Have an idea for a new special card? Just create a new csv file with the name of your special card in the special column.
 {{</expand>}}
 
-## [4] A winning strategy
+## [3] Deliverables
+
+{{< deliverables "Push to Github." >}}
+
+For this lab, you should push your `lab-uno` repository containing updates to the following files:
+  - `view.py` 
+  - `game.py`
+  - `player.py`
+
+{{< /deliverables >}}
+
+
+## [4] Extension: A winning strategy
+
 Now that you've got a fully functional Uno game, you can start thinking about the best strategy to win games.
 
-### Write ComputerPlayer class
+### [StudentComputerPlayer]
+
 In this final part of the lab, you should write an extension of the [ComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.ComputerPlayer) class which plays Uno with a strategy that you design.
 
 **Your goal: to consistently win more than 30% of games against 3 other computer components who are using a random valid choice strategy.**
@@ -163,9 +164,4 @@ Before you jump into coding this part, you should think about the rules and mech
 
 {{< code-action >}} **Test your strategy by running `python test_lab.py -k strategy`**
 
-## Deliverables
-For this lab, you should push your `lab-uno` repository containing updates to the following files:
-  - `view.py` 
-  - `game.py`
-  - `player.py`
 
