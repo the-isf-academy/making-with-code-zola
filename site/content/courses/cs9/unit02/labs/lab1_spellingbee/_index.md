@@ -9,13 +9,13 @@ In this lab, you will learn about the different layers that make up a game.
 
 ## [0] Play the Game
 
-Let's start by playing the game!
+Let's start by playing Spelling Bee!
 
 Play the game at [https://www.nytimes.com/puzzles/spelling-bee](https://www.nytimes.com/puzzles/spelling-bee).
 
 {{< checkpoint >}}
 
-On paper, create a flow chart for the logic of the game. 
+✏️ Complete the worksheet with your partner. 
 
 {{< /checkpoint >}}
 
@@ -53,7 +53,7 @@ The game strucutre and the game logic work as is and replicates the web version.
 python3 game.py
 ```
 
-It should run like so:
+It runs like so:
 ```shell 
 ---Welcome to Spelling Bee---
 
@@ -78,21 +78,18 @@ You must you use the letter M
 
 The `View` class is purely responsible for the communication of what is happening in the game with the user. It does not affect the game flow or logic. 
 
-The `View` is unique in that it only has methods and has no properties. It has the following methods:
-- `welcome()`
-- `myetery()`
-
+The `View` is unique in that it only has methods and has no properties. It's methods are only responsible for printing information and getting user input. 
 
 **It's up to you to solve the mystery methods and fix the `View`!** This will require you to undersatnd the logic of the game in `game.py`. 
 
 {{< code-action >}} **Edit each `mystery_method` in the `View` class so the messages accurately communicate to the user what is happening the game.** 
 
-{{< code-action >}} **Make the code more readable by renaming all of the `mystery_method`s in the `View`.** 
-> *Once you change the name in the `View`, you will also need to change it in `game.py`*
+{{< code-action >}} **Make the code more readable by renaming all of the `mystery_methods` in the `View`.** 
+> *Once you change the name of a method in the `View`, you will also need to change it in `game.py`*
 
 {{< code-action >}} **Play test your and make sure it works bug free!** 
 
-{{< code-action >}} **Play test your partner's game and see how they implented their `View!** 
+{{< code-action >}} **Play test your partner's game and see how they implented their `View`!** 
 
 
 ## [3] Deliverables
