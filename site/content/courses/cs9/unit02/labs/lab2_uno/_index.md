@@ -1,13 +1,10 @@
 ---
-title: 1. Uno Lab
+title: 2. Uno Lab
 resources:
 - name: Uno
   src: images/courses/cs9/unit02/02_01_uno.jpg
-draft: true
+# draft: true
 ---
-{{< devnote >}}
-CS1/CS2 links
-{{< /devnote >}}
 
 # Uno Lab
 
@@ -18,14 +15,27 @@ In this lab, you are going to go behind the scenes of the classic card game, Uno
 
 Your tasks:
 
-1. Learn about how class inheritance works in Python
-2. Play and redesign the uno game
-3. Add special cards to make the game more interesting
-4. Write a strategy to beat a random computer player
+0. Learn about how class inheritance works in Python
+0. Add special cards to make the game more interesting
+0. Write a random strategy for a computer player
 
-If you've never played Uno before or haven't played it in a while, you might want to try out [this online version](https://poki.com/en/g/uno-online) before you get started.
+## [0] Let's Play Uno
 
-## [0] Setup
+🃏 **Let's start by playing the classic card game, Uno.** As your playing, consider the different components and mechanics of the game. 
+
+{{< checkpoint >}}
+In your group, complete the worksheet. 
+- create a flowchart of the game loop
+- what do you think are the three main objects in the game? 
+  - what do you think their properties and their methods are?
+
+{{< /checkpoint >}}
+
+---
+
+## [1] Setup
+
+Now that you've got a model for how the Uno software should work, let's delve into the code.
 
 {{< code-action >}} **In your `cs9/unit_02` directory, clone the `lab-uno` repository inside it.**
 
@@ -36,16 +46,16 @@ git clone https://github.com/the-isf-academy/lab-uno-YOUR-GITHUB-USERNAME.git
 
 {{< code-action >}} **Install the packages you need to run this lab:**
 ```shell
-pip install --upgrade -r requirements.txt
+cd lab-uno-YOUR-GITHUB-USERNAME
+pip3 install --upgrade -r requirements.txt
 ```
 
-## [1]  Map out the Uno software
+---
+
+
+### [Documentation]
 
 Uno is a pretty significant software project - there are more classes than you've seen before. Fortunately, [Uno's functionality is well documented](https://cs.fablearn.org/docs/uno/index.html).
-
-{{< write-action >}} **With your new understanding of classes and inheritance, read through [the documentation](https://cs.fablearn.org/docs/uno/index.html) pages and draw a model with your partner for how this implementation of Uno works.**
-
-For your reference, Uno has the following classes. Make sure your model includes each of them.
 
 - [Game](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame)
 - [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView)
@@ -57,40 +67,26 @@ For your reference, Uno has the following classes. Make sure your model includes
         - [RandomComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.RandomComputerPlayer)
         - [StudentComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.StudentComputerPlayer)
 
+---
 
-## [2] Let's play Uno!
+## [2] Play Test
 
-The rules of Uno are pretty simple: players take turns trying to play cards from their hand. You can play a card if its color or value matches the color of value of the last card that was played. If you can't play a card, you have to draw a card. The first player to play all their cards wins.
 
-If you're interested, you can find the [full rules of Uno here](http://play-k.kaserver5.org/Uno.html). Our implementation varies slightly. Can you identify the differences?
-
-### [Play through]
-{{< code-action >}} **Now that you've got a model for how the Uno software should work, play through a game by running the following command in your terminal:**
+{{< code-action >}} **Play through Uno in your Terminal.** Start with the "basic deck".
 
 ```shell
-python game.py
+python3 game.py
 ```
-*Note: we've given you a few different decks of cards. Start with the basic deck. We'll use the others later.*
+> If you're interested, you can find the [full rules of Uno here](http://play-k.kaserver5.org/Uno.html). Our implementation varies slightly. Can you identify the differences?
 
-Was the gameplay different than you expected? Check you model to see if it still makes sense and change it up if it doesn't.
+🤔 Was the gameplay different than you expected? 
+
+---
 
 
-### [Reskin]
-One potentially confusing part of the software is the [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) class. What is it and why is it important?
+### [Special Cards]
 
-In many games, it's useful to separate the logic of the game from the user interface of the game. This lets developers easily change the interface without having to mess around with the rules or state of the game. In our Uno software, [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) does just that.
-
-Playing around with the [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) class will help you get a sense of how classes can interact in python. The [View](https://cs.fablearn.org/docs/uno/view.html#view.TerminalView) object knows nothing about the state of the game but delivers messages to users nonetheless.
-
-{{< code-action >}} **Reskin the Uno game by changing up the messages delivered to the user in `view.py`.**
-
-Maybe you want to translate the game into Chinese or make the game have an attitude. You could even try writing the game to speak in the voice of one of your favorite characters (*"Aye Aye, Player 1, two Krabby Patties comin right up for Player 2!"*).
-
-## [3] Amp it up: special cards
-Now that you're starting to get the hang of the game, let's make it a little more interesting with special cards.
-
-### [Special cards]
-Uno would be pretty boring if you just went around in a circle matching colors and numbers. Fortunately, Uno has special cards that make the game more interesting:
+Uno would be pretty boring if you just went around in a circle matching colors and numbers. Fortunately, **Uno has special cards that make the game more interesting:**
 
 - **reverse:** changes the direction of play from clockwise to counterclockwise or vice versa
 - **skip:** skips the next player's turn
@@ -100,68 +96,92 @@ Uno would be pretty boring if you just went around in a circle matching colors a
 
 Other than the wild cards, all of the special cards have colors and must be played following the color/value matching rule of the game.
 
-We've already implemented some of the special cards for you. 
+{{< code-action >}} **Try playing again, but this time use the select the "special deck".**
+> This deck includes the reverse, skip, and wild cards. 
 
-{{< code-action >}} **Try playing again, but this time use the `uno_cards_no_draw.csv` deck.**
 
-Pretty different right? Your job is to finish implementing the special cards by writing the code for:
+---
+
+## [3] Implement Draw Cards
+
+Your version of Uno is almost complete. **All you need to do is finish the special cards by writing the code for:**
 
 - [draw_two()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.draw_two)
 - [wild_draw_four()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.wild_draw_four)
 
 ### [Draw Two]
 
-{{< code-action >}} **Implement the `draw_two()` and `wild_draw_four()` functions  near the bottom of the `game.py` file in the [UnoGame](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame) class.**
+{{< code-action >}} **Implement the `draw_two()` method  near the bottom of the `game.py` file in the [UnoGame](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame) class.**
 
-  - **Note:** you will also need to make sure the game calls these functions by adding calls to them in the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) function.
+{{< code-action >}} **Add the function calls to the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) method.**
 
-{{< code-action >}} **Testing your functions by running the following scripts**
+{{< code-action >}} **Testing your method by running the following script**
 - You can test the `draw_two()` function by running `python test_lab.py -k draw_two`.
-- You can test the `wild_draw_four()` function by running `python test_lab.py -k wild`.
+
+---
 
 ### [Wild Draw Four]
 
-{{< code-action >}} **Implement the `draw_two()`  function in the [UnoGame](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame) class.**
+{{< code-action >}} **Implement the `wild_draw_four()` method in the [UnoGame](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame) class.**
 
-  - **Note:** you will also need to make sure the game calls these functions by adding calls to them in the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) function.
+{{< code-action >}} **Add the function calls to the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) method.**
 
-{{< code-action >}} **Testing your functions by running the following scripts**
-- You can test the `draw_two()` function by running `python test_lab.py -k draw_two`.
+{{< code-action >}} **Testing your method by running the following script**
 - You can test the `wild_draw_four()` function by running `python test_lab.py -k wild`.
 
 
-{{< expand "Reading into the Deck" >}}
-For this implementation of the game, cards are read into the deck as entries in a csv file. Look at the `deck.py` module and you'll note that we're using pandas to read the cards  looks like those data science skills will come in handy after all!
+---
 
-If you are interested, you can create your own decks by writing new csv files. Have an idea for a new special card? Just create a new csv file with the name of your special card in the special column.
-{{</expand>}}
+## [3] AI: Random Strategy
+
+Currently the computer strategy is quite simple: 
+- when it chooses a card, it picks the last card in its hand (regardless if it's valid)
+- when its asked to choose a color, it always chooses red
+  
+**Let's make a slightly more competitive computer by introducing randomness.** 
+
+It's up to you to extend the [`ComputerPlayer`](https://cs.fablearn.org/docs/uno/player.html#player.ComputerPlayer) class and complete the `RandomComputerPlayer` class:
+
+**You will need to override the following methods of `RandomComputerPlayer` with the correct functionality:**
+- `choose_color()` - random chooses red, green, blue, or yellow
+- `choose_card()` - randomly selects a valid card from its hand if a valid card exists
+
+
+{{< code-action >}} **Finish `RandomComputerPlayer` to implement a random strategy.**
+> You may want to read more about [inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6).
+
 
 ## [3] Deliverables
 
 {{< deliverables "Push to Github." >}}
 
 For this lab, you should push your `lab-uno` repository containing updates to the following files:
-  - `view.py` 
   - `game.py`
   - `player.py`
 
 {{< /deliverables >}}
 
 
-## [4] Extension: A winning strategy
+## [4] Extension:
 
-Now that you've got a fully functional Uno game, you can start thinking about the best strategy to win games.
+Now that you've got a fully functional Uno game, let's expand its functionality. 
 
-### [StudentComputerPlayer]
+### [A Wining Strategy]
 
-In this final part of the lab, you should write an extension of the [ComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.ComputerPlayer) class which plays Uno with a strategy that you design.
+🤔 **Start thinking about the best strategy to win games.**  Consider the rules and mechanics of Uno. Given a hand of cards, what would make playing one card better than playing another card? 
 
-**Your goal: to consistently win more than 30% of games against 3 other computer components who are using a random valid choice strategy.**
+**Your goal: write a strategic computer that consistently wins more than 30% of games against 2 other computer players who are using a random valid choice strategy.**
 
-Before you jump into coding this part, you should think about the rules and mechanics of Uno. Given a hand of cards, what would make playing one card better than playing another card? You might also want to go over [inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6) one more time as your [StudentComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.StudentComputerPlayer) class will be a child class of the [ComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.ComputerPlayer) and will inherit all its properties and functions.
-
-{{< code-action >}} **Implement your [StudentComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.StudentComputerPlayer) class in the `player.py` module.**
+{{< code-action >}} **Implement the [StrategicComputerPlayer](https://cs.fablearn.org/docs/uno/player.html#player.StudentComputerPlayer) class in the `player.py` module.**
 
 {{< code-action >}} **Test your strategy by running `python test_lab.py -k strategy`**
 
+---
 
+### [Advanced Deck Building]
+
+For this implementation of the game, cards are read into the deck as entries in a csv file. Look at the `deck.py` module and you'll note that we're using pandas to read the cards  looks like those data science skills will come in handy after all!
+
+{{< code-action >}} **Create your own deck and add a new special card by writing new a csv file.** ust create a new csv file with the name of your special card in the special column.
+
+{{< code-action >}} **Implement your special card in the `UnoGame` class.**
