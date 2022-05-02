@@ -111,9 +111,13 @@ Your version of Uno is almost complete. **All you need to do is finish the speci
 
 {{< code-action >}} **Add the function calls to the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) method.**
 
-{{< code-action >}} **Testing your method by running the following script**
-- You can test the `draw_two()` function by running `python3 test_lab.py -k draw_two`.
-
+{{< code-action >}} **Test your method by running the test script:`python3 test_lab.py -k draw_two`.**
+> If successful, you will see a message like so: 
+> ```shell
+> Ran 1 test in 0.009s
+>
+>OK
+>```
 ---
 
 ### [Wild Draw Four]
@@ -122,9 +126,13 @@ Your version of Uno is almost complete. **All you need to do is finish the speci
 
 {{< code-action >}} **Add the function calls to the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) method.**
 
-{{< code-action >}} **Testing your method by running the following script**
-- You can test the `wild_draw_four()` function by running `python3 test_lab.py -k wild`.
-
+{{< code-action >}} **Test your method by running the test script: `python3 test_lab.py -k wild`.**
+> If successful, you will see a message like so: 
+> ```shell
+> Ran 1 test in 0.009s
+>
+>OK
+>```
 
 ---
 
