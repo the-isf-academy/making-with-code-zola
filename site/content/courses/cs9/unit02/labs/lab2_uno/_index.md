@@ -25,10 +25,6 @@ Your tasks:
 
 {{< checkpoint >}}
 In your group, complete the worksheet. 
-- create a flowchart of the game loop
-- what do you think are the three main objects in the game? 
-  - what do you think their properties and their methods are?
-
 {{< /checkpoint >}}
 
 ---
@@ -150,6 +146,7 @@ It's up to you to extend the [`ComputerPlayer`](https://cs.fablearn.org/docs/uno
 {{< code-action >}} **Finish `RandomComputerPlayer` to implement a random strategy.**
 > You may want to read more about [inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6).
 
+---
 
 ## [3] Deliverables
 
@@ -160,6 +157,8 @@ For this lab, you should push your `lab-uno` repository containing updates to th
   - `player.py`
 
 {{< /deliverables >}}
+
+---
 
 
 ## [4] Extension:
@@ -182,6 +181,6 @@ Now that you've got a fully functional Uno game, let's expand its functionality.
 
 For this implementation of the game, cards are read into the deck as entries in a csv file. Look at the `deck.py` module and you'll note that we're using pandas to read the cards  looks like those data science skills will come in handy after all!
 
-{{< code-action >}} **Create your own deck and add a new special card by writing new a csv file.** ust create a new csv file with the name of your special card in the special column.
+{{< code-action >}} **Create your own deck and add a new special card by writing new a csv file.** Just create a new csv file with the name of your special card in the special column.
 
 {{< code-action >}} **Implement your special card in the `UnoGame` class.**

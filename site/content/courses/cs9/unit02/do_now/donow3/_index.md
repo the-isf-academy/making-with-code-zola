@@ -1,8 +1,8 @@
 ---
-title: "2. Character Creation"
+title: "3. Advanced Character Creation"
 type: checkup
 ---
-# Character Creation
+# Advanced Character Creation
 
 In this Do Now, you will extend the `Character` class from the previous Do Now. 
 
@@ -18,7 +18,7 @@ cd cs9-donows-YOUR-GITHUB-USERNAME
 cd unit_02
 ```
 
-{{< code-action  >}} Open the `donow2.py` document"
+{{< code-action  >}} **Open the `donow2.py` document**
 ```shell
 atom donow2.py
 ```
@@ -53,12 +53,13 @@ class Character:
 
 Games often have different types of characters, all with the same basic functionality. We create this behvaior with inheritance.
 
-{{< code-action  >}} **Create a child class of `Character` called `Hero`. The hero will have the following extensions:
-- `inventory` property that can store multiple times 
-- `add_inventory(item)` method that can adds `item` to the `inventory` 
-- `view_inventory()` method that prints out each item in the `inventory`
+👀 **Take a look at [this](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6) resource about inheritance and infer how to create a child class.** 
 
-{{< code-action >}} "Enter the Python shell to test the `Hero` class. 
+{{< code-action  >}} **Create a child class of `Character` called `Hero`.** The hero will inheret all of the features of `Character`, as well as the following features:
+- `inventory` property that can store multiple items 
+- `add_inventory(item)` method that adds `item` to the `inventory` 
+
+{{< code-action >}} **Enter the Python shell to test the `Hero` class.** 
 ```shell
 python3 -i donow2.py
 
@@ -67,18 +68,20 @@ python3 -i donow2.py
 >>> h.inventory
 []
 >>> h.add_inventory("mushroom")
->>> h.view_inventory()
-Current inventory: 
-- mushroom
+>>> h.add_inventory("gold coins")
+>>> h.inventory
+["mushroom","gold coins"]
 ```
 
-{{< code-action >}} "Test the `Character` class. It should not have an `inventory`.
+{{< code-action >}} **Test the `Character` class. It should not have an `inventory`.**
 ```shell
 python3 -i donow2.py
 
 >>> c = Character()
 >>> c.inventory
-ERROR
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Character' object has no attribute 'inventory'
 ```
 
 {{< deliverables "Push to Github." >}}
@@ -90,7 +93,21 @@ Push your `donow2.py` to Github.
 
 ---
 
+### [Extension: Unique Introduce]
 
+{{< code-action >}} **Override the `introduce()` method for the `Hero` class.** When tested, it should look something like this: 
 
+```shell
+python3 -i donow2.py
+
+>>> h = Hero()
+>>> h.set_name("Mario")
+>>> h.introduce()
+"Hi, I'm Mario. The hero of this story."
+>>> c = Character()
+>>> h.set_name("Luigi")
+>>> c.introduce()
+"Hi, I'm Luigi."
+```
 
 
