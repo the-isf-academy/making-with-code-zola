@@ -112,7 +112,7 @@ Your version of Uno is almost complete. **All you need to do is finish the speci
 {{< code-action >}} **Add the function calls to the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) method.**
 
 {{< code-action >}} **Testing your method by running the following script**
-- You can test the `draw_two()` function by running `python test_lab.py -k draw_two`.
+- You can test the `draw_two()` function by running `python3 test_lab.py -k draw_two`.
 
 ---
 
@@ -123,7 +123,7 @@ Your version of Uno is almost complete. **All you need to do is finish the speci
 {{< code-action >}} **Add the function calls to the [special_card_action()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.special_card_action) method.**
 
 {{< code-action >}} **Testing your method by running the following script**
-- You can test the `wild_draw_four()` function by running `python test_lab.py -k wild`.
+- You can test the `wild_draw_four()` function by running `python3 test_lab.py -k wild`.
 
 
 ---
@@ -145,6 +145,9 @@ It's up to you to extend the [`ComputerPlayer`](https://cs.fablearn.org/docs/uno
 
 {{< code-action >}} **Finish `RandomComputerPlayer` to implement a random strategy.**
 > You may want to read more about [inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6).
+
+{{< code-action >}} **Test your implementation by playing Uno without any human players and selecting "random" strategy.** 
+
 
 ---
 
