@@ -92,7 +92,7 @@ Uno would be pretty boring if you just went around in a circle matching colors a
 
 Other than the wild cards, all of the special cards have colors and must be played following the color/value matching rule of the game.
 
-{{< code-action >}} **Try playing again, but this time use the select the "special deck".**
+{{< code-action >}} **Try playing again, but this time use the select the "special no draw deck".**
 > This deck includes the reverse, skip, and wild cards. 
 
 
@@ -104,6 +104,8 @@ Your version of Uno is almost complete. **All you need to do is finish the speci
 
 - [draw_two()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.draw_two)
 - [wild_draw_four()](https://cs.fablearn.org/docs/uno/game.html#game.UnoGame.wild_draw_four)
+
+> This deck can be played by selecting "special with draw deck" from the game menu.
 
 ### [Draw Two]
 

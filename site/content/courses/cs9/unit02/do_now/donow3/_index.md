@@ -1,10 +1,10 @@
 ---
-title: "3. Advanced Character Creation"
+title: "3. Video Game Titles"
 type: checkup
 ---
-# Advanced Character Creation
+# Video Game Titles
 
-In this Do Now, you will extend the `Character` class from the previous Do Now. 
+In this Do Now, you must create a class with initalized parameters.  
 
 ---
 
@@ -18,96 +18,57 @@ cd cs9-donows-YOUR-GITHUB-USERNAME
 cd unit_02
 ```
 
-{{< code-action  >}} **Open the `donow2.py` document**
+{{< code-action "Create a new document" >}}
 ```shell
-atom donow2.py
+atom donow3.py
 ```
+---
 
-Your code should look something like this
+## Writing the VideoGame class
 
-```python
-#############
-# unit02
-# donow2.py
-#############
+It's up to you to write a class called `VideoGame` that has the following properties:
+- `title`
+- `genre`
 
-class Character: 
-    def __init__(self):
-        self.name = None
-        self.health = 10
+Unlike the previous classes we've encountered, yours **must require it to be initilized with the two properties**. 
 
-    def set_name(self,name):
-        self.name = name
-
-    def introduce(self):
-        print("Hi I'm {}.".format(self.name))
-
-    def lose_health(self,amount):
-        self.health = self.health - amount
-    
-    def gain_health(self,amount):
-        self.health = self.health + amount
-```
-
-## Extending the Character
-
-Games often have different types of characters, all with the same basic functionality. We create this behvaior with inheritance.
-
-👀 **Take a look at [this](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6) resource about inheritance and infer how to create a child class.** 
-
-{{< code-action  >}} **Create a child class of `Character` called `Hero`.** The hero will inheret all of the features of `Character`, as well as the following features:
-- `inventory` property that can store multiple items 
-- `add_inventory(item)` method that adds `item` to the `inventory` 
-
-{{< code-action >}} **Enter the Python shell to test the `Hero` class.** 
+This will require you to initalize it like so:
 ```shell
-python3 -i donow2.py
+>>> game1 = VideoGame("Tetris", "Puzzle")
+>>> game1.title
+"Tetirs"
+>>> game1.genre
+"Puzzle"
+``` 
 
->>> h = Hero()
->>> h.set_name("Mario")
->>> h.inventory
-[]
->>> h.add_inventory("mushroom")
->>> h.add_inventory("gold coins")
->>> h.inventory
-["mushroom","gold coins"]
-```
+{{< code-action >}} **Write the `VideoGame` class in `donow3.py`.**
+>> Take a look at [this](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5) resource to learn about constructors. 
 
-{{< code-action >}} **Test the `Character` class. It should not have an `inventory`.**
-```shell
-python3 -i donow2.py
-
->>> c = Character()
->>> c.inventory
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-AttributeError: 'Character' object has no attribute 'inventory'
-```
+{{< code-action "Test your code to ensure it works as expected." >}}
 
 {{< deliverables "Push to Github." >}}
 
-Push your `donow2.py` to Github.
+Push your `donow3.py` to Github.
 
 
 {{< /deliverables >}}
 
 ---
 
-### [Extension: Unique Introduce]
 
-{{< code-action >}} **Override the `introduce()` method for the `Hero` class.** When tested, it should look something like this: 
+### [Extension: Library of Games]
 
-```shell
-python3 -i donow2.py
+Objects, or classes, can also hold objects as parameters. For example, what if we wanted to create our own `GamesLibrary` that holds `VideoGame` objects. 
 
->>> h = Hero()
->>> h.set_name("Mario")
->>> h.introduce()
-"Hi, I'm Mario. The hero of this story."
->>> c = Character()
->>> h.set_name("Luigi")
->>> c.introduce()
-"Hi, I'm Luigi."
-```
+{{< code-action >}} **Create a `GamesLibrary` class that has the following features:**
+- `games`: a list
+- `add_game()`: adds a game to the `games` property 
+- `view_games()`: prints a nicely formatted list of `games`
+
+
+
+
+
+
 
 
