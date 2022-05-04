@@ -138,7 +138,7 @@ Your version of Uno is almost complete. **All you need to do is finish the speci
 
 ---
 
-## [3] AI: Random Strategy
+## [4] AI: Random Strategy
 
 Currently the computer strategy is quite simple: 
 - when it chooses a card, it picks the last card in its hand (regardless if it's valid)
@@ -161,7 +161,7 @@ It's up to you to extend the [`ComputerPlayer`](https://cs.fablearn.org/docs/uno
 
 ---
 
-## [3] Deliverables
+## [5] Deliverables
 
 {{< deliverables "Push to Github." >}}
 
@@ -174,7 +174,7 @@ For this lab, you should push your `lab-uno` repository containing updates to th
 ---
 
 
-## [4] Extension:
+## [6] Extension:
 
 Now that you've got a fully functional Uno game, let's expand its functionality. 
 
