@@ -197,3 +197,172 @@ For this implementation of the game, cards are read into the deck as entries in 
 {{< code-action >}} **Create your own deck and add a new special card by writing new a csv file.** Just create a new csv file with the name of your special card in the special column.
 
 {{< code-action >}} **Implement your special card in the `UnoGame` class.**
+
+
+--
+
+## [7] CS9.1 Updates
+
+{{< code-action "Copy and paste the following updates into your files." >}} 
+
+{{< expand "game.py" >}}
+
+```python
+if __name__ == "__main__":
+    view = TerminalView()
+
+    view.welcome()
+
+    rounds = int(view.get_input("How many rounds do you want to play for?"))
+
+    deck_file = view.menu("Choose a deck",["basic deck","special no draw deck","special with draw deck"])
+
+    if deck_file == "basic deck":
+        deck_file = "uno_cards_basic.csv"
+    elif deck_file == "special no draw deck":
+        deck_file = "uno_cards_special_no_draw.csv"
+    elif deck_file == "special with draw deck":
+        deck_file = "uno_cards_special_with_draw.csv"
+    
+    human_players = view.menu("Do you want a human player?",["yes","no"])
+
+    if human_players == "yes":
+        name = view.get_input("What is your name?")
+        num_computers = 2
+
+    else:
+        name = None
+        num_computers = 3
+
+    computer_strategies = []
+    
+    for i in range(num_computers):
+        computer_strategies.append(view.menu("What strategy should the Computers use? ",["basic","random","strategic"]))
+    
+
+    game = UnoGame(view, name, computer_strategies, deck_file, rounds*3)
+
+    game.play()
+
+    view.end_game()
+```
+
+{{< /expand >}}
+
+{{< expand "test_lab.py" >}}
+
+```python
+# Testing file for bank lab
+# By: Chris Proctor and Jacob Wolf and Emma Brown
+
+# =============================================================================
+# ☕️ More-Than-You-Need-To-Know Lounge ☕️
+# =============================================================================
+# Welcome to the More-Than-You-Need-To-Know Lounge, a chill place for code that
+# you don't need to understand.
+
+# Thanks for stopping by, we hope you find something that catches your eye.
+# But don't worry if this stuff doesn't make sense yet -- as long as we know
+# how to use code, we don't have to understand everything about it.
+
+# Of course, if you really like this place, stay a while. You can ask a
+# teacher about it if you're interested.
+#
+# =============================================================================
+
+import unittest
+import sys, io
+from tqdm import tqdm
+from collections import defaultdict
+
+
+from game import UnoGame
+from card import Card
+from view import TerminalView
+
+class TestUnoLab(unittest.TestCase):
+
+    def test_draw_two(self):
+        """
+        Test checking the implementation of the draw_two() function.
+        """
+        game = UnoGame(TerminalView(), None,['basic','basic','basic'], "uno_cards_special_with_draw.csv", 10)
+        draw_two = Card("red", None, "draw-two")
+        game.top_card = draw_two
+        game.special_card_action(draw_two)
+        next_player = game.next_player()
+        self.assertTrue(len(next_player.hand) == 2)
+        game.special_card_action(draw_two)
+        self.assertTrue(len(next_player.hand) == 4)
+        game.increment_player_num()
+        game.special_card_action(draw_two)
+        next_player = game.next_player()
+        self.assertTrue(len(next_player.hand) == 2)
+        reverse = Card("red", None, "reverse")
+        game.top_card = reverse
+        game.special_card_action(reverse)
+        game.top_card = draw_two
+        game.special_card_action(draw_two)
+        next_player = game.next_player()
+
+        self.assertTrue(len(next_player.hand) == 4)
+
+
+    def test_wild_draw_four(self):
+        """
+        Test checking the implementation of the wild_draw_four() function.
+        """
+        game = UnoGame(TerminalView(), None,'basic', "uno_cards_special_with_draw.csv", 10)
+        wild_draw_four = Card(None, None, "wild-draw-four")
+        game.top_card = wild_draw_four
+        game.special_card_action(wild_draw_four)
+        next_player = game.next_player()
+        self.assertTrue(len(next_player.hand) == 4)
+        self.assertTrue(game.top_card.color == "red")
+        game.special_card_action(wild_draw_four)
+        self.assertTrue(len(next_player.hand) == 8)
+        self.assertTrue(game.top_card.color == "red")
+        game.increment_player_num()
+        game.special_card_action(wild_draw_four)
+        next_player = game.next_player()
+        self.assertTrue(len(next_player.hand) == 4)
+        reverse = Card("red", None, "reverse")
+        game.top_card = reverse
+        game.special_card_action(reverse)
+        game.top_card = wild_draw_four
+        game.special_card_action(wild_draw_four)
+        next_player = game.next_player()
+        self.assertTrue(len(next_player.hand) == 8)
+
+
+    def test_strategy(self):
+        """
+        Test to see if student strategy can beat the random strategy
+        """
+        print("\n\nTESTING STUDENT'S COMPUTER STRATEGY.")
+        print("STUDENT'S COMPUTER STRATEGY SHOULD WIN AT LEAST 30% OF GAMES.")
+        print("PLAYING 1000 STUDENT (Computer O) vs RANDOM GAMES:")
+        game_stats = defaultdict(lambda : 0)
+        for i in tqdm(range(1000)):
+            stdout = sys.stdout
+            sys.stdout = io.StringIO()
+            game = UnoGame(TerminalView(), None,['basic','basic','basic'], "uno_cards_special_with_draw.csv", 10)
+
+            game = UnoGame([], ['strategic','random','random','random'], "uno_cards.csv", 500)
+            winner = game.play()
+            game_stats[winner] += 1
+            sys.stdout = stdout
+        print("\nTEST COMPLETE. GAME STATS:")
+        print("_______________________________")
+        print("| Player.................Win % |")
+        for player, wins in game_stats.items():
+            print("| {}...{}% |".format(player, round(wins/1000*100,2)))
+        print("|______________________________|")
+        self.assertTrue(game_stats["Computer 0 (student)"]/1000 > 0.3)
+
+
+unittest.main()
+
+```
+
+{{< /expand >}}
