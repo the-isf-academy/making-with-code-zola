@@ -312,7 +312,7 @@ class TestUnoLab(unittest.TestCase):
         """
         Test checking the implementation of the wild_draw_four() function.
         """
-        game = UnoGame(TerminalView(), None,'basic', "uno_cards_special_with_draw.csv", 10)
+        game = UnoGame(TerminalView(), None,['basic','basic','basic'], "uno_cards_special_with_draw.csv", 10)
         wild_draw_four = Card(None, None, "wild-draw-four")
         game.top_card = wild_draw_four
         game.special_card_action(wild_draw_four)
@@ -332,7 +332,7 @@ class TestUnoLab(unittest.TestCase):
         game.top_card = wild_draw_four
         game.special_card_action(wild_draw_four)
         next_player = game.next_player()
-        self.assertTrue(len(next_player.hand) == 8)
+        self.assertTrue(len(next_player.hand) == 4)
 
 
     def test_strategy(self):
