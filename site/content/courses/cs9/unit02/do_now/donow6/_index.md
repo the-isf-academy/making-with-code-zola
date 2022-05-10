@@ -55,9 +55,7 @@ It's up to you to use the `Card` class to illustrate the following scenario:
 
 0. Emily draws the 4 cards shown above and adds them to her **hand**
 0. Emily looks at the **number** and **color** of each card in her hand
-0. Emily draws two new cards *(you can choose their color and number)* and adds them to her hand
 0. Emily removes the last card from her hand
-0. Emily looks at the **number** and **color** of each card in her hand again
 
 {{< expand "Tips for using lists" >}}
 
