@@ -348,7 +348,7 @@ class TestUnoLab(unittest.TestCase):
             sys.stdout = io.StringIO()
             game = UnoGame(TerminalView(), None,['basic','basic','basic'], "uno_cards_special_with_draw.csv", 10)
 
-            game = UnoGame([], ['strategic','random','random','random'], "uno_cards.csv", 500)
+            game = UnoGame(TerminalView(), None, ['strategic','random','random','random'],  "uno_cards_special_with_draw.csv", 500)
             winner = game.play()
             game_stats[winner] += 1
             sys.stdout = stdout
@@ -362,7 +362,6 @@ class TestUnoLab(unittest.TestCase):
 
 
 unittest.main()
-
 ```
 
 {{< /expand >}}
