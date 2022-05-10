@@ -201,11 +201,11 @@ For this implementation of the game, cards are read into the deck as entries in 
 
 --
 
-## [7] CS9.1 Updates
+## [7] File Updates
 
 {{< code-action "Copy and paste the following updates into your files." >}} 
 
-{{< expand "game.py" >}}
+{{< expand "game.py: bottom of file" >}}
 
 ```python
 if __name__ == "__main__":
@@ -247,6 +247,80 @@ if __name__ == "__main__":
     view.end_game()
 ```
 
+{{< /expand >}}
+
+{{< expand "game.py: __init__" >}}
+```python
+def __init__(self, game_view, human_names, computer_strategies, deck_file=None, total_turns=10):
+        self.view = game_view
+        self.turns_remaining = total_turns
+        self.deck = Deck(deck_file)
+        self.discard = Deck()
+        self.direction = self.CLOCKWISE
+        self.current_player_index = 0
+        self.top_card = self.deal_one_card()
+
+        if "wild" in self.top_card.special:
+            self.top_card.color = choice(self.COLORS)
+        self.players = []
+
+        if human_names != None:
+            self.players.append(HumanPlayer(name))
+
+        for i in range(0,len(computer_strategies)):
+            if computer_strategies[i] == "random":
+                self.players.append(RandomComputerPlayer("Computer {} ({})".format(i, computer_strategies[i])))
+
+            elif computer_strategies[i] == "strategic":
+                self.players.append(StrategicComputerPlayer("Computer {} ({})".format(i, computer_strategies[i])))
+
+            else:
+                self.players.append(ComputerPlayer("Computer {} ({})".format(i, computer_strategies[i])))
+```
+{{< /expand >}}
+
+{{< expand "game.py: play-turn()" >}}
+```python
+def play_turn(self):
+        """ Plays one round of uno
+
+        Returns:
+            (bool) whether the game has been won by the current player
+        """
+        player = self.current_player()
+        self.view.show_beginning_turn(player, self.top_card)
+
+        if type(player) == HumanPlayer:
+            card = player.choose_card(self.view,self.top_card)
+        else:
+            card = player.choose_card(self.top_card)
+
+
+
+
+        if card:
+            self.view.show_played_card(player, card)
+            if self.valid_card_choice(card):
+                if self.top_card.special == 'wild' or self.top_card.special == 'wild-draw-four':
+                    self.top_card.color = None   #reseting the color of the wild card before it goes into the discard pile
+                self.discard.add_card(self.top_card)
+                self.top_card = card
+
+                if len(player.hand) == 0:
+                    return True
+                if card.special:
+                    self.special_card_action(card)
+
+            else:
+                self.view.show_invalid_card(player, card, self.top_card)
+                player.add_to_hand(card)
+                self.deal_n_cards(2, player)
+        else:
+            self.deal_n_cards(1, player)
+
+        self.increment_player_num()
+        return False
+```
 {{< /expand >}}
 
 {{< expand "test_lab.py" >}}
@@ -341,24 +415,25 @@ class TestUnoLab(unittest.TestCase):
         """
         print("\n\nTESTING STUDENT'S COMPUTER STRATEGY.")
         print("STUDENT'S COMPUTER STRATEGY SHOULD WIN AT LEAST 30% OF GAMES.")
-        print("PLAYING 1000 STUDENT (Computer O) vs RANDOM GAMES:")
+        print("PLAYING 1000 Strategy (Computer O) vs RANDOM GAMES:")
         game_stats = defaultdict(lambda : 0)
         for i in tqdm(range(1000)):
             stdout = sys.stdout
             sys.stdout = io.StringIO()
-            game = UnoGame(TerminalView(), None,['basic','basic','basic'], "uno_cards_special_with_draw.csv", 10)
 
             game = UnoGame(TerminalView(), None, ['strategic','random','random','random'],  "uno_cards_special_with_draw.csv", 500)
+  
             winner = game.play()
             game_stats[winner] += 1
             sys.stdout = stdout
+
         print("\nTEST COMPLETE. GAME STATS:")
         print("_______________________________")
         print("| Player.................Win % |")
         for player, wins in game_stats.items():
             print("| {}...{}% |".format(player, round(wins/1000*100,2)))
         print("|______________________________|")
-        self.assertTrue(game_stats["Computer 0 (student)"]/1000 > 0.3)
+        self.assertTrue(game_stats["Computer 0 (strategic)"]/1000 > 0.3)
 
 
 unittest.main()
