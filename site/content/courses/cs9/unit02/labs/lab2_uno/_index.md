@@ -379,7 +379,7 @@ class TestUnoLab(unittest.TestCase):
         game.special_card_action(draw_two)
         next_player = game.next_player()
 
-        self.assertTrue(len(next_player.hand) == 4)
+        self.assertTrue(len(next_player.hand) == 2)
 
 
     def test_wild_draw_four(self):
@@ -406,7 +406,7 @@ class TestUnoLab(unittest.TestCase):
         game.top_card = wild_draw_four
         game.special_card_action(wild_draw_four)
         next_player = game.next_player()
-        self.assertTrue(len(next_player.hand) == 2)
+        self.assertTrue(len(next_player.hand) == 4)
 
 
     def test_strategy(self):
