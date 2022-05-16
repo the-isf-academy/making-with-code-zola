@@ -3,169 +3,190 @@ title: 3. Quest Lab
 resources:
 - name: Quest
   src: images/courses/cs9/unit02/02_02_quest_island.png
-draft: True
+#draft: True
 ---
 {{< devnote >}}
 Google Doc link, bring Quest documentation into making with code?
 {{< /devnote >}}
 
-# 2. Quest Lab
+# Quest Lab
 
-## Setup
+## [0] Setup
 
-### Planning your Quest
-📝 Open [this Google Doc](https://docs.google.com/document/d/1IHKx9NzngqrQr9RFKdR_ubTxFs311b8dzMOKNl63fA0/edit?usp=sharing) and make a copy for your group. Make sure everyone has access to the doc and that all their names are on it.
+### [Computer Settings]
+Today you will be running a game from your terminal, so your terminal will need permission to monitor your input.
+<br>
 
-### Preparing your Quest
-💻 Clone the Quest framework and install its requirements (no need to accept an assignment this time).
+{{< code-action >}} **Go to Settings > Security &  Privacy > Privacy. Scroll to Input Monitoring and add Terminal.** Terminal to need to restart in order to save this preference.
+
+{{< figure src="images/courses/cs9/unit02/02_02_input_monitoring_permission.png" width="400px" >}}
+
+### [Preparing your Quest]
+💻 Clone the Quest framework and install its requirements.
 
 ```shell
-    cd ~/Desktop/cs9/unit_2
-    git clone https://github.com/cproctor/quest.git quest_lab
-    pip install --editable quest_lab
-    cd quest_lab
+cd ~/Desktop/cs9/unit_02
+git clone https://github.com/the-isf-academy/quest.git quest_lab
+pip3 install --editable quest_lab
+cd quest_lab
 ```
 
-### Starting your Quest
-🌐 Open up the [Quest documentation](http://cs.fablearn.org/docs/quest)
+### [Starting your Quest]
 
-## Questions
-Write an answer to each numbered question below in your Doc.
 
-### Part A
+
+Before you to delve into your quest, 🌐 open up the [Quest documentation](http://cs.fablearn.org/docs/quest). You will need to reference the documentation in order to complete the worksheet. Fill in the following questions on your worksheet with your group.
+
 Quest helps you build top-down adventure games. You control a player, who walks
 around and interacts with the environment, items, and other characters.
 
-💻 To get a feel for it, we will play a few simple games. (Note: We are using the `-m` flag here to tell Python to run the `quest.examples.island` module.)
+## [1] Island Adventure
+{{< code-action >}} **Run the first game** You can use the arrow keys or `wasd` to move around the island.
 
 ```shell
-    python -m quest.examples.island
+python3 -m quest.examples.island
 ```
+
+(Note: We are using the `-m` flag here to tell Python to run the `quest.examples.island` module.)
 
 {{< figure src="images/courses/cs9/unit02/02_02_quest_island.png" width="400px" >}}
 
-Take it for a spin. You can use the arrow keys or `wasd` to move around the
-island but you can't walk into the ocean.
+### [Exploring features]
 
-#### Q0.
-Before you look at any code, make a prediction about what classes are being used in this game.
+{{< write-action >}} This game is made up of a bunch of little images called sprites. The player is a sprite, and each patch of background is a sprite. **How could the game keep track of which background sprites belong where?**
 
-✏️ Write this as a list of at least three imagined classes,
-where for each class you describe:
+{{< write-action >}} The player is not allowed to walk into the ocean. **How do you think the game enforces this rule?**
 
-- The name of the class
-- What it does
-- What other classes it interacts with
+{{< write-action >}} **As the player moves around, how does the view adjust to the player’s position? What rule would be applied to get this behavior?**
 
-#### Q1.
-You may have noticed some of the following features.
 
-✏️ For each, explain how the classes you imagined in **Q0** could make this happen. You can make up new classes if you need to!
 
-- This game is made up of a bunch of little images called *sprites*. The player
-  is a sprite, and each patch of background is a sprite. How could the game keep
-  track of which background sprites belong where?
-- The player is not allowed to walk into the ocean. How could the game enforce
-  this rule?
-- As the player moves around, the *viewport* scrolls, so that the player can
-  never get to the edge of the screen. Which class could make this happen? What
-  rule would be applied to get this behavior?
 
-### Part B
-Now we are going to read the code for the game we just played. You can either
+### [IslandAdventure Properties]
 
-- Open `quest/examples/island.py` in Atom
-- Or read the code [on the documentation
+{{< code-action >}} **Open the island.py file**
+
+```shell
+atom quest/examples/island.py
+```
+Note: you can read more about this [on the documentation
   website](http://cs.fablearn.org/docs/quest/_modules/quest/examples/island.html#IslandAdventure)
 
-👀 First, skim the whole file. First there are a whole bunch of import statements:
+{{< write-action >}} **What line creates an instance of the IslandAdventure?**
 
-```python
-    from quest.game import QuestGame
-    from quest.map import TiledMap
-    from quest.sprite import Background, Wall
+{{< write-action >}} **What line runs the game?**
+
+{{< write-action >}} **What is the parent class of IslandAdventure?**
+
+{{< write-action >}} **What methods does IslandAdventure override?**
+
+{{< write-action >}} The run() method is not in IslandAdventure. **How does IslandAdventure have this method?**
+
+
+{{< code-action >}} **Play around with the following properties of IslandAdventure, then run the game to see how it is changed.**
+
+```shell
+atom quest/examples/island.py
 ```
 
-Then is a helper function called `resolve_path`--you can ignore this. Next we
-have a class called `IslandAdventure`, which has a bunch of properties and
-methods:
-
-```python
-    class IslandAdventure(QuestGame):
-        ...
-```
- Finally, a statement to run the game:
-
-```python
-    if __name__ == '__main__':
-        game = IslandAdventure()
-        game.run()
-```
-
-#### Q2.
-`IslandAdventure` is a subclass of `QuestGame`. This means
-`IslandAdventure` inherits all the properties and methods from `QuestGame`.
-The properties declared in `IslandAdventure` are used by `QuestGame` to change
-the game's behavior.
-
-💻 Try changing some of these values, saving the file, and running it again.
-
-✏️ What does each of the following do?
+{{< write-action >}} After changing each one, describe how it affects the game.
 
 - screen_width
 - top_viewport_margin
 - player_initial_x
 - player_speed
 
-#### Q3.
-`QuestGame` has a bunch of methods like `setup_maps()`, `setup_walls()`,
+### [IslandAdventure vs DiscreteIslandAdventure]
+<!-- `QuestGame` has a bunch of methods like `setup_maps()`, `setup_walls()`,
 `setup_player()`, `setup_npcs()`, and so on. Most of these do almost nothing.
 The idea is that subclasses like `IslandAdventure` can override these methods
-when they need to. `IslandAdventure` overrides two methods.
+when they need to. `IslandAdventure` overrides two methods. -->
 
-💻 Now play a second version of Island Adventure:
-
-```shell
-    python -m quest.examples.island_discrete
-```
-There is a very slight difference in the way the player moves.
-
-✏️ Explain the difference, using the words "continuous" and "discrete" (look 'em up).Then explain how `IslandAdventureDiscrete` achieves this. What class actually determines whether movement is continuous or discrete? Finally, explain why a game might want to use discrete movement like this.
-
-#### Q4.
-Above, you looked at the classes that determine how movement works in the game. This movement functionality works for both playable and non-playable characters (NPC).
-
-However, how does a human player control a character's movement? Where is the user interface created in the game?
-
-✏️ Find the two functions that handle user input and describe what happens when the UP/W, DOWN/S, LEFT/A, RIGHT/D keys are pressed.
-
-### Part C
-💻 Play another sample game:
+{{< code-action >}} **Play the island_discrete.py version of the same game**
 
 ```shell
-    python -m quest.examples.grandmas_soup
+python3 -m quest.examples.island_discrete
 ```
-`GrandmasSoup` shows how dialogue can be used in a Quest game. There are two main classes that help manage dialogue: `Modal` and `Dialogue`.
 
-👀 Using the source code for these samples and the [Quest documentation](http://cs.fablearn.org/docs/quest),
-learn about the `Modal` and `Dialogue` classes.
+{{< write-action >}} **What is the definition of discrete? What is the definition of continuous?**
 
-#### Q5.
-✏️ Describe the differences between the `Modal` and `Dialogue` classes and what each is responsible for.
+{{< write-action >}} **Compare the movement of the player between IslandAdventure and DiscreteIslandAdventure. What differences do you notice?** *Hint: try walking into a wall.*
 
+{{< code-action >}} **Open the island_discrete.py file:**
+
+```shell
+atom quest/examples/island_discrete.py
+```
+
+{{< write-action >}} **What method does DiscreteIslandAdventure override to create the difference in movement?**
+
+{{< write-action >}} **Why might a game use discrete movement?**
+
+### [Player Movement]
+
+{{< code-action >}} **Open the game.py file:**
+
+```shell
+atom quest/game.py
+```
+
+{{< write-action >}} **What are the two methods that handle user input?**
+
+{{< write-action >}} **How does each method affect player movement?**
+
+
+## [2] Grandma's Soup
+
+{{< code-action >}} **Play grandmas_soup.py**
+
+```shell
+python3 -m quest.examples.grandmas_soup
+```
+
+### [Dialogue]
+
+{{< look-action >}} **Open the** [documentation](http://cs.fablearn.org/docs/quest/examples/grandmas_soup.html) **for Grandma's Soup**
+
+{{< write-action >}} **What is the the Modal class responsible for?**
+
+{{< write-action >}} **What is the the Dialogue class responsible for?**
+
+
+### [Interactions]
 Interactions in the game happen when the main `Player` collides with an `NPC`. `GrandmasSoupGame` extends the `NPC` class into two new classes: `Grandma NPC` and `Vegetable NPC`.
 
-✏️ Describe what happens in the `Modal` and `Dialogue` classes when the player collides with one of the extended `NPC` classes.
-
-### Part D.
-💻 Play the last sample game:
+{{< code-action >}} **Open  grandmas_soup.py:**
 
 ```shell
-    python -m quest.examples.maze
+atom quest/examples/grandmas_soup.py
 ```
-👀 Read the source code for the `Maze` class. Note how much of it is comments.
 
-💻 Make some sample mazes in a terminal window by opening the python shell and running the following code:
+{{< write-action >}} **What happens when the player collides with Grandma and why?**
+
+{{< write-action >}} **What happens when the player collides with a Vegetable and why?**
+
+{{< write-action >}} **How does the game know when to advance the dialogue? What property does the game use to keep track of the vegetables?**
+
+{{< write-action >}} **Change the messaging of when the game begins and when you collect all the vegetables. How did you make these changes?**
+
+## [3] Extension - Mazes
+
+{{< look-action >}} **Open the** [documentation](http://cs.fablearn.org/docs/quest/api/maze.html) **for Mazes**
+
+{{< code-action >}} Play the maze example game:
+
+```shell
+python3 -m quest.examples.maze
+```
+### [Generating Mazes]
+{{< code-action >}} **Enter the python shell**
+```shell
+python3
+```
+
+{{< code-action >}} **Make some sample mazes in a terminal window by running the following code in the python shell:**
+
+*Note: Do not copy the >\>>*
 
 ```python
     >>> from quest.maze import Maze
@@ -173,14 +194,15 @@ Interactions in the game happen when the main `Player` collides with an `NPC`. `
     >>> m.generate()
     >>> print(m)
 ```
-#### Q6
-✏️ From reading the code and comments, what makes a maze a maze? What are its properties? What do the two parameters we pass into the `Maze` constructor mean?
 
-The `MazeGame` doesn't change much from the basic `Game` class. However, the module also implements a `MazeMap` class, which holds most changes to run this game.
+{{< write-action >}} **What makes a maze a maze? What are its properties?**
 
-✏️ How does the `MazeMap` class work with the `Maze` class?
+{{< write-action >}} **What do the two parameters we pass into the Maze constructor mean?**
 
-### Part E.
+{{< write-action >}} **How does the MazeMap class work with the Maze class?**
+
+## [3] Extension 2 - Customizing Games
+
 Now it’s your turn create a game! To start, pick something small, just a minor change, so you can get a feel for the framework.
 
 Here are some example features:
@@ -190,4 +212,4 @@ Here are some example features:
 * Change the treasure sprite in the Maze game.
 * Add more items to the GrandmasSoup game.
 
-💻 Implement your game by creating a new module in the examples directory and extending one of the existing games to add a new feature.
+{{< code-action >}} **Implement your game by creating a new module in the examples directory and extending one of the existing games to add a new feature.**
