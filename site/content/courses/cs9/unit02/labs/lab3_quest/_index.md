@@ -8,6 +8,11 @@ resources:
 
 # Quest Lab
 
+In this lab you explore the Quest framework through a series of mini games. 
+
+Quest helps you build top-down adventure games. You control a player, who walks
+around and interacts with the environment, items, and other characters.
+
 ## [0] Setup
 
 ### [Computer Settings]
@@ -19,7 +24,7 @@ Today you will be running a game from your terminal, so your terminal will need 
 {{< figure src="images/courses/cs9/unit02/02_02_input_monitoring_permission.png" width="400px" >}}
 
 ### [Preparing your Quest]
-💻 Clone the Quest framework and install its requirements.
+{{< code-action "Clone the Quest framework and install its requirements." >}}
 
 ```shell
 cd ~/Desktop/cs9/unit_02
@@ -28,14 +33,22 @@ pip3 install --editable quest_lab
 cd quest_lab
 ```
 
-### [Starting your Quest]
 
 
+{{< aside "Quest Documentation" >}}
 
-{{< look-action >}} **Before you to delve into your quest, open up the [Quest documentation](http://cs.fablearn.org/docs/quest).** You will need to reference the documentation in order to complete the worksheet. Fill in the following questions on your worksheet with your group.
+This lab requires you to explore the games, code, and documentation to complete the worksheet.
 
-Quest helps you build top-down adventure games. You control a player, who walks
-around and interacts with the environment, items, and other characters.
+
+{{< look-action >}} **Before you to delve into your quest, open up the [Quest documentation](http://cs.fablearn.org/docs/quest).** 
+
+
+**We recommend one member of your group having the documetnation open and one person having the code/game open.**
+
+Be sure to fill in the checkpoint questions on your worksheet with your group.
+
+
+{{< /aside >}}
 
 ---
 
@@ -52,9 +65,11 @@ python3 -m quest.examples.island
 
 ---
 
-### [Exploring features]
 
 {{< checkpoint >}}
+
+#### [Exploring features]
+
 
 {{< write-action >}} This game is made up of a bunch of little images called sprites. The player is a sprite, and each patch of background is a sprite. **How could the game keep track of which background sprites belong where?**
 
@@ -62,11 +77,9 @@ python3 -m quest.examples.island
 
 {{< write-action >}} **As the player moves around, how does the view adjust to the player’s position? What rule would be applied to get this behavior?**
 
-{{< /checkpoint >}}
-
 ---
 
-### [IslandAdventure Properties]
+#### [IslandAdventure Properties]
 
 {{< code-action >}} **Open the island.py file**
 
@@ -77,7 +90,6 @@ Note: you can read more about this [on the documentation
   website](http://cs.fablearn.org/docs/quest/_modules/quest/examples/island.html#IslandAdventure)
 
 
-{{< checkpoint >}}
 
 {{< write-action >}} **What line creates an instance of the IslandAdventure?**
 
@@ -89,7 +101,6 @@ Note: you can read more about this [on the documentation
 
 {{< write-action >}} The run() method is not in IslandAdventure. **How does IslandAdventure have this method?**
 
-{{< /checkpoint >}}
 
 
 {{< code-action >}} **Play around with the following properties of IslandAdventure, then run the game to see how it is changed.**
@@ -98,8 +109,6 @@ Note: you can read more about this [on the documentation
 atom quest/examples/island.py
 ```
 
-{{< checkpoint >}}
-
 {{< write-action >}} **After changing each one, describe how it affects the game.**
 
 - screen_width
@@ -107,11 +116,10 @@ atom quest/examples/island.py
 - player_initial_x
 - player_speed
 
-{{< /checkpoint >}}
 
 ---
 
-### [IslandAdventure vs DiscreteIslandAdventure]
+#### [IslandAdventure vs DiscreteIslandAdventure]
 <!-- `QuestGame` has a bunch of methods like `setup_maps()`, `setup_walls()`,
 `setup_player()`, `setup_npcs()`, and so on. Most of these do almost nothing.
 The idea is that subclasses like `IslandAdventure` can override these methods
@@ -122,13 +130,11 @@ when they need to. `IslandAdventure` overrides two methods. -->
 ```shell
 python3 -m quest.examples.island_discrete
 ```
-{{< checkpoint >}}
 
 {{< write-action >}} **What is the definition of discrete? What is the definition of continuous?**
 
 {{< write-action >}} **Compare the movement of the player between IslandAdventure and DiscreteIslandAdventure. What differences do you notice?** *Hint: try walking into a wall.*
 
-{{< /checkpoint >}}
 
 {{< code-action >}} **Open the island_discrete.py file:**
 
@@ -136,17 +142,15 @@ python3 -m quest.examples.island_discrete
 atom quest/examples/island_discrete.py
 ```
 
-{{< checkpoint >}}
 
 {{< write-action >}} **What method does DiscreteIslandAdventure override to create the difference in movement?**
 
 {{< write-action >}} **Why might a game use discrete movement?**
 
-{{< /checkpoint >}}
 
 ---
 
-### [Player Movement]
+#### [Player Movement]
 
 {{< code-action >}} **Open the game.py file:**
 
@@ -154,13 +158,16 @@ atom quest/examples/island_discrete.py
 atom quest/game.py
 ```
 
-{{< checkpoint >}}
 
 {{< write-action >}} **What are the two methods that handle user input?**
 
 {{< write-action >}} **How does each method affect player movement?**
 
+
 {{< /checkpoint >}}
+
+
+
 
 ---
 
@@ -172,9 +179,11 @@ atom quest/game.py
 python3 -m quest.examples.grandmas_soup
 ```
 
-### [Dialogue]
+{{< figure src="images/courses/cs9/unit02/02_03_quest_island.png" width="400px" >}}
+
 
 {{< checkpoint >}}
+#### [Dialogue]
 
 {{< look-action >}} **Open the** [documentation](http://cs.fablearn.org/docs/quest/examples/grandmas_soup.html) **for Grandma's Soup**
 
@@ -182,11 +191,11 @@ python3 -m quest.examples.grandmas_soup
 
 {{< write-action >}} **What is the the Dialogue class responsible for?**
 
-{{< /checkpoint >}}
 
 ---
 
-### [Interactions]
+#### [Interactions]
+
 Interactions in the game happen when the main `Player` collides with an `NPC`. `GrandmasSoupGame` extends the `NPC` class into two new classes: `Grandma NPC` and `Vegetable NPC`.
 
 {{< code-action >}} **Open  grandmas_soup.py:**
@@ -195,7 +204,6 @@ Interactions in the game happen when the main `Player` collides with an `NPC`. `
 atom quest/examples/grandmas_soup.py
 ```
 
-{{< checkpoint >}}
 
 {{< write-action >}} **What happens when the player collides with Grandma and why?**
 
@@ -220,6 +228,9 @@ atom quest/examples/grandmas_soup.py
 ```shell
 python3 -m quest.examples.maze
 ```
+
+{{< figure src="images/courses/cs9/unit02/02_04_quest_maze.png" width="400px" >}}
+
 
 {{< code-action >}} **Enter the python shell**
 ```shell
