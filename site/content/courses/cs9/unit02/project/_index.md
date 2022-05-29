@@ -40,12 +40,12 @@ Click below to see a detailed timeline for your class section.
 
 | Date        | Agenda                  |
 |-------------|-------------------------|
-| 5 Nov 2021  | Introduction to Project |
-| 9 Nov 2021 | Complete Design Document       |
-| 11 Nov 2021 | Work Day                |
-| 15 Nov 2021 | Work Day                |
-| 18 Nov 2021 | Work Day  |
-| 19 Nov 2021 | Work Day            |
+| 30 May 2022  | Introduction to Project/Planning Doc |
+| 02 June 2022 | Work Day        |
+| 07 June 2022 | Work Day                |
+| 09 June 2022 | Work Day                |
+| 13 June 2022 | Due: Final Edits to Game  |
+| 16 June 2022 | 🎉 Final Day of Class - Party 🎉           |
 
 {{< /expand >}}
 
@@ -55,15 +55,17 @@ Click below to see a detailed timeline for your class section.
 
 | Date        | Agenda                  |
 |-------------|-------------------------|
-| 4 Nov 2021  | Introduction to Project |
-| 9 Nov 2021  | Complete Design Document       |
-| 12 Nov 2021 | Work Day                |
-| 16 Nov 2021 | Work Day                |
-| 17 Nov 2021 | Work Day                |
-| 18 Nov 2021 | Work Day                |
-| 23 Nov 2021 | Work Day                |
-| 26 Nov 2021 | Work Day                |
+| 31 May 2022  | Introduction to Project/Planning Doc |
+| 01 June 2022 | Work Day        |
+| 02 June 2022 | Work Day                |
+| 07 June 2022 | Work Day                |
+| 10 June 2022 | Work Day                |
+| 14 June 2022 | Work Day                |
+| 15 June 2022 | Due: Final Edits to Game                |
+| 16 June 2022 | 🎉 Final Day of Class - Party 🎉  |
+
 {{< /expand >}}
+
 
 
 ##  [2] Set Up
@@ -80,10 +82,23 @@ For this project, each group will share one git repository. It is your responsib
 
 ```shell
 cd Desktop
-cd cs9/unit_00
+cd cs9/unit_02
 git clone https://github.com/the-isf-academy/project-games-groupX.git
 ```
-> replace `X` with your team number 
+> replace `X` with your group number 
+
+{{< expand "cs9.1 Groups" >}}
+
+| Group #        | Members                  |
+|-------------|-------------------------|
+| 0  | Introduction to Project/Planning Doc |
+| 1 | Work Day        |
+| 2 | Work Day                |
+| 3 | Work Day                |
+
+{{< /expand >}}
+
+---
 
 ### [Advanced Git]
 
@@ -110,6 +125,7 @@ Let's practice pushing and pulling by updating the `README.md` file.
 
 {{< write-action >}} **Add their name to the file.**
 
+---
 
 ## [3] Self-Assessment
 You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score.
@@ -125,20 +141,8 @@ The self-assessment is broken down into three areas:
 
 **To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.**
 
-## [4] Collaborating with Github
+---
 
-
-
-
-### [TLDR]
-
-0. `git pull`
-0. resolve merge conflicts
-0. update files 
-0. `git status`
-0. `git add`
-0. `git commit`
-0. `git push`
 
 ## [5] General Tips and Tricks
 
@@ -149,3 +153,15 @@ Make sure all of the assets for the map are in the folder of the repository. Thi
 - `.png` tilesets you download from the internet 
 - `.tsx` files you create from tilesets in Tiled
 - `.tmx` map files you create 
+
+---
+
+### [TLDR Advanced Github ]
+
+0. `git pull`
+0. resolve merge conflicts
+0. update files 
+0. `git status`
+0. `git add`
+0. `git commit`
+0. `git push`
