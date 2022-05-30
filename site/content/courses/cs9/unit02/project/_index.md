@@ -7,7 +7,7 @@ Title: Project
 
 In this project you will make a game using the Quest library. It's up to you to make a game with your group.
 
-{{< figure src="images/courses/cs9/unit02/project0.png" width="50%" >}}
+{{< figure src="images/courses/cs9/unit02/project0.png" width="70%" >}}
 
 ---
 
@@ -33,7 +33,7 @@ This is a big project with a lot of room for customization. It is important for 
 
 Click below to see a detailed timeline for your class section.
 
-🕹️ Our final class of the year will be a party where each group shares their games!
+🕹️ **Our final class of the year will be a party where each group shares their games!**
 
 #### cs9.1
 {{< expand "cs9.1 Timeline" >}}
@@ -45,7 +45,7 @@ Click below to see a detailed timeline for your class section.
 | 07 June 2022 | Work Day                |
 | 09 June 2022 | Work Day                |
 | 13 June 2022 | Due: Final Edits to Game  |
-| 16 June 2022 | 🎉 Final Day of Class - Party 🎉           |
+| 16 June 2022 | 🕹️ Final Day of Class - Party 🕹️           |
 
 {{< /expand >}}
 
@@ -62,7 +62,7 @@ Click below to see a detailed timeline for your class section.
 | 10 June 2022 | Work Day                |
 | 14 June 2022 | Work Day                |
 | 15 June 2022 | Due: Final Edits to Game                |
-| 16 June 2022 | 🎉 Final Day of Class - Party 🎉  |
+| 16 June 2022 | 🕹️ Final Day of Class - Party 🕹️  |
 
 {{< /expand >}}
 
@@ -73,29 +73,33 @@ Click below to see a detailed timeline for your class section.
 For this project, each group will share one git repository. It is your responsibility to regularly commit to your repository.
 
 {{< code-action "Download your repository with starter code for your project." >}}
-> replace the `YOUR-GITHUB-USERNAME` with your Github username.
->
-> *example:*
->
-> *`git clone https://github.com/the-isf-academy/project-animation-emmaqbrown.git`*
-
 
 ```shell
 cd Desktop
 cd cs9/unit_02
-git clone https://github.com/the-isf-academy/project-games-groupX.git
+git clone https://github.com/the-isf-academy/project-game-group#.git
 ```
-> replace `X` with your group number 
+> replace `#` with your group number 
 
 {{< expand "cs9.1 Groups" >}}
 
 | Group #        | Members                  |
 |-------------|-------------------------|
-| 0  | Introduction to Project/Planning Doc |
-| 1 | Work Day        |
-| 2 | Work Day                |
-| 3 | Work Day                |
+| 0  | Chris, Isaac, Edwin |
+| 1 | Mina & Charlotte        |
+| 2 | Ocean & Dubai                |
+| 3 | Nathan  & Alex            |
+| 4 | Marcus & Shangyi            |
+{{< /expand >}}
 
+{{< expand "cs9.2 Groups" >}}
+
+| Group #        | Members                  |
+|-------------|-------------------------|
+| 5  | Jonathan, Christopher,  Angus |
+| 6 | Shogo & Gabriel        |
+| 7 | Lok & Skylar                |
+| 8 | Julian & Evan           |
 {{< /expand >}}
 
 ---
@@ -127,26 +131,10 @@ Let's practice pushing and pulling by updating the `README.md` file.
 
 ---
 
-## [3] Self-Assessment
-You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score.
 
-In `Unit 00 Animation Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit.
+## [3] General Tips and Tricks
 
-The self-assessment is broken down into three areas:
-- Practices
-    - planning, iterative development, test cases, and readability
-- Concepts
-    - abstraction and decomposition
-- Reflection
-
-**To do well in this project, you should be able to concretely justify that you can do each practice and understand each concept by providing evidence from your code.**
-
----
-
-
-## [5] General Tips and Tricks
-
-### [Map]
+### [Making a Map]
 
 Make sure all of the assets for the map are in the folder of the repository. This includes:
 
@@ -154,14 +142,58 @@ Make sure all of the assets for the map are in the folder of the repository. Thi
 - `.tsx` files you create from tilesets in Tiled
 - `.tmx` map files you create 
 
+{{< figure src="images/courses/cs9/unit02/project1.png" width="70%" >}}
+
+{{< code-action >}} **Download the map editor, [Tiled](https://thorbjorn.itch.io/tiled)**
+> Be sure to select 'No thanks, just take me to the downloads' 
+
+You can find assets to make your map here:
+- [https://itch.io/game-assets/free/tag-tilemap](https://itch.io/game-assets/free/tag-tilemap)
+
+
 ---
 
+### [Making Sprites]
+
+You may make your own sprites or find sprites online. Feel free to explore the following resources:
+- Make Your Own
+    - [https://www.pixilart.com/draw](https://www.pixilart.com/draw)
+    - [https://www.piskelapp.com/p/create/sprite](https://www.piskelapp.com/p/create/sprite)
+- Pre-made Sprites
+    - [https://www.gameart2d.com/freebies.html](https://www.gameart2d.com/freebies.html)
+    - [https://craftpix.net/freebies/](https://craftpix.net/freebies/)
+    - [https://itch.io/game-assets/free](https://itch.io/game-assets/free)
+
+
+---
 ### [TLDR Advanced Github ]
 
 0. `git pull`
-0. resolve merge conflicts
-0. update files 
+0. if you have merge conflicts, resolve them in the files
 0. `git status`
 0. `git add`
 0. `git commit`
 0. `git push`
+
+{{< youtube id="__cR7uPBOIk" >}}
+
+
+---
+
+### [Previous Student Work]
+
+Interested in seeing previous student games? 
+
+Clone the repositories below into your `cs9/unit02` folder:
+
+```shell
+git clone https://github.com/the-isf-academy/project-game-sonic.git
+```
+
+```shell
+git clone https://github.com/the-isf-academy/project-game-ham.git
+```
+
+```shell
+git clone https://github.com/the-isf-academy/project-game-qwerty.git
+```
