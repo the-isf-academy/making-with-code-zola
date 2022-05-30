@@ -131,8 +131,20 @@ Let's practice pushing and pulling by updating the `README.md` file.
 
 ---
 
+## [3] Make Your Game
 
-## [3] General Tips and Tricks
+It's up to you to manage your time to have a playable game by the last day of class!
+
+**At the moment, your game will not run.** We suggest looking at the example games for how to get started.
+
+{{< code-action >}} **Your game will run with:**
+```shell
+python3 game.py
+```
+
+---
+
+## [4] General Tips and Tricks
 
 ### [Making a Map]
 
@@ -184,7 +196,7 @@ You may make your own sprites or find sprites online. Feel free to explore the f
 
 Interested in seeing previous student games? 
 
-Clone the repositories below into your `cs9/unit02` folder:
+{{< code-action >}} **Clone the repositories below into your `cs9/unit02` folder:**
 
 ```shell
 git clone https://github.com/the-isf-academy/project-game-sonic.git
@@ -196,4 +208,9 @@ git clone https://github.com/the-isf-academy/project-game-ham.git
 
 ```shell
 git clone https://github.com/the-isf-academy/project-game-qwerty.git
+```
+
+{{< code-action >}} **Run the game:**
+```shell
+python3 game.py
 ```
