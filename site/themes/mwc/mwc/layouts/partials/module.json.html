@@ -1,0 +1,8 @@
+{"name": "{{.Title}}", "slug": "{{.Slug}}", "type": "{{.Type}}", {{- partial "urls.json.html" . -}}
+ {{- if isset .Params "repo_url" -}}
+   , "repo_url": "{{.Params.Get "repo_url" }}"
+ {{- end -}}
+ {{- if isset .Params "init_action" -}}
+   , "init_action": "{{.Params.Get "init_action" }}"
+ {{- end -}}
+}

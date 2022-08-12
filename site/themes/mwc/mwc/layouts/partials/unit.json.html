@@ -1,0 +1,13 @@
+{{- $scratch := newScratch -}}
+{{- range .Sections -}}
+  {{- if eq .Title "Modules" -}}
+    {{- $scratch.Set "modules" . -}}
+  {{- end -}}
+{{- end -}}
+{"name": "{{.Title}}", "slug": "{{.Slug}}", {{ partial "urls.json.html" . }}, "modules": [
+  {{- range $dirIx, $modDir := where .Pages "Type" "modules" -}}
+    {{- range $modIx, $mod := .Pages -}}
+      {{- if or (gt $dirIx 0) (gt $modIx 0) -}},{{- end -}}{{- partial "module.json.html" $mod -}}
+    {{- end -}}  
+  {{- end -}}  
+]}
