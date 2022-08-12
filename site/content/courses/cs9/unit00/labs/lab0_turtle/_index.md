@@ -1,10 +1,12 @@
 ---
 title: 0. Set up and Turtle
-type: labs
+type: lab
+numberHeaders: true
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
-
+repo_url: https://github.com/cproctor/mwc-pedprog-unit00-lab00
+init_action: clone
 ---
 
 # Getting started

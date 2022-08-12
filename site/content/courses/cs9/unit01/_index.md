@@ -2,6 +2,7 @@
 title: "Unit 01: Data Science"
 bookCollapseSection: true
 type: unit
+slug: unit01
 # draft: true
 ---
 

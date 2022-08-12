@@ -1,6 +1,9 @@
 ---
 title: CS10
 type: course
+slug: cs10
+git_backend: github
+#git_backend: github_organization
 ---
 
 ## Calendar

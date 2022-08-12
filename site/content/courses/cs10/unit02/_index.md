@@ -2,6 +2,7 @@
 title: "Unit 02: Web Apps"
 bookCollapseSection: true
 type: unit
+slug: unit02
 draft: true
 ---
 
