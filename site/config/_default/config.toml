@@ -6,3 +6,7 @@ publishdir = "../build"
 
 [markup.goldmark.renderer]
 unsafe= true
+
+[outputs]
+home = ['HTML', 'JSON']
+section = ['HTML', 'JSON']
