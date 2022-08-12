@@ -72,7 +72,7 @@
 {{ end }}
 
 {{ define "main" }}
-  <article class="markdown">
+  <article class="markdown{{- if .Param "numberHeaders" }} autonumbering{{- end }}">
     {{- .Content -}}
   </article>
 {{ end }}
