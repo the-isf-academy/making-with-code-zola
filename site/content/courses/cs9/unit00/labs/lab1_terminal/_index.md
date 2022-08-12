@@ -1,6 +1,9 @@
 ---
 title: 1. Terminal Adventure
 type: lab
+slug: lab1_terminal_adventure
+repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
+init_action: clone
 ---
 # Into the Terminal
 This lab will explore one of the most important tools we'll use all year: the Terminal. While it

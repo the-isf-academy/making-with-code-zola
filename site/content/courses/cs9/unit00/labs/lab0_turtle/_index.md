@@ -1,6 +1,6 @@
 ---
 title: 0. Turtle
-slug: lab00
+slug: lab0_turtle
 type: lab
 resources:
 - name: GitHub
