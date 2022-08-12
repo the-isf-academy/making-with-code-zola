@@ -1,6 +1,6 @@
 ---
 title: -1. Hugo Markdown Demo
-type: labs
+type: lab
 draft: true
 resources:
 - name: GitHub

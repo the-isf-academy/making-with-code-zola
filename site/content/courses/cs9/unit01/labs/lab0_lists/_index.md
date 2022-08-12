@@ -1,6 +1,6 @@
 ---
 title: 0. Lists
-type: labs
+type: lab
 # draft: True
 
 ---

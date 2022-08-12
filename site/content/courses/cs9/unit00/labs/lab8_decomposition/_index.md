@@ -1,6 +1,6 @@
 ---
 title: 8. Decomposition
-type: labs
+type: lab
 # draft: true
 ---
 

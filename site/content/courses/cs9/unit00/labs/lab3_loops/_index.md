@@ -1,6 +1,6 @@
 ---
 title: 3. Loops
-type: labs
+type: lab
 # draft: true
 
 ---

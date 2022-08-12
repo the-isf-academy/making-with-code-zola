@@ -1,6 +1,6 @@
 ---
 title: 2. Variables
-type: labs
+type: lab
 ---
 
 # Variables Lab

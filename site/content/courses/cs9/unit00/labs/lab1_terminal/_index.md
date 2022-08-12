@@ -1,6 +1,6 @@
 ---
 title: 1. Terminal Adventure
-type: labs
+type: lab
 ---
 # Into the Terminal
 This lab will explore one of the most important tools we'll use all year: the Terminal. While it
