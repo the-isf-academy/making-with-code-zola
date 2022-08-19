@@ -1,6 +1,6 @@
 ---
 title: 4. Conditionals
-type: labs
+type: lab
 # draft: true
 ---
 

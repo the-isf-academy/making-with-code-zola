@@ -1,0 +1,11 @@
+{{- $scratch := newScratch -}}
+{{- range .Sections -}}
+  {{- if eq .Title "Courses" -}}
+    {{- $scratch.Set "courses" . -}}
+  {{- end -}}
+{{- end -}}
+{"courses": [
+  {{- range $index, $course := ($scratch.Get "courses").Pages -}}
+    {{- if gt $index 0 -}},{{- end -}}{{- partial "course.json.html" . -}}
+  {{- end -}}
+]}

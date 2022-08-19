@@ -1,6 +1,6 @@
 ---
 title: 2. Variables and Loops
-type: labs
+type: lab
 draft: true
 
 ---

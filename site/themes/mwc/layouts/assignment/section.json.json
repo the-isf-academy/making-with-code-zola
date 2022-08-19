@@ -1,0 +1,5 @@
+{
+  "name": "{{.Title}}",
+  "content_url": "{{.Permalink}}",
+  "base_repo": "{{.Params.base_repo}}"
+}

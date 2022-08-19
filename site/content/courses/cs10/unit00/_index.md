@@ -2,6 +2,7 @@
 title: "Unit 00: Hardware"
 bookCollapseSection: true
 type: unit
+slug: unit00
 ---
 
 In this unit we will explore hardware and sensors by using Rasperry Pis. 

@@ -1,8 +1,12 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Making with Code"
-theme = ["book"]
+theme = ["book", "mwc"]
 publishdir = "../build"
 
 [markup.goldmark.renderer]
 unsafe= true
+
+[outputs]
+home = ['HTML', 'JSON']
+section = ['HTML', 'JSON']

@@ -1,6 +1,7 @@
 ---
 title: "Unit 02: Games"
 bookCollapseSection: true
+slug: unit02
 type: unit
 # draft: true
 ---

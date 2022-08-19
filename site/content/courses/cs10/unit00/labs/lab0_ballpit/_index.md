@@ -1,6 +1,6 @@
 ---
 title: 0. Ball Pit
-type: labs
+type: lab
 ---
 
 # Ball Pit
