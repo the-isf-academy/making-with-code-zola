@@ -1,6 +1,9 @@
 ---
 title: CS9
 type: course
+slug: cs9
+git_backend: github
+#git_backend: github_organization
 ---
 
 # Welcome to CS 9

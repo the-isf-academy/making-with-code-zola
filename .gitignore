@@ -1,5 +1,6 @@
 build/*
 site/resources/*
+site/.hugo_build.lock
 *.swp
 *.swo
 docs/*

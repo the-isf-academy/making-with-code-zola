@@ -1,0 +1,5 @@
+{"name": "{{.Title}}", "slug": "{{.Slug}}", "git_backend": "{{.Params.Get "git_backend" }}", {{ partial "urls.json.html" . }}, "units": [
+ {{- range $index, $page := where .Pages "Type" "unit" -}}
+    {{- if gt $index 0 -}},{{- end -}}{{ partial "unit.json.html" $page -}}
+ {{- end -}}
+]}

@@ -1,6 +1,10 @@
 ---
 title: 1. Terminal Adventure
-type: labs
+type: lab
+slug: lab1_terminal_adventure
+repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
+init_action: clone
+numberHeaders: true
 ---
 # Into the Terminal
 This lab will explore one of the most important tools we'll use all year: the Terminal. While it
@@ -27,7 +31,7 @@ Terminal.
 {{< /aside >}}
 
 
-## [0] Terminal Adventure Lab
+## Terminal Adventure Lab
 
 
 {{< code-action "Open a new Terminal window and enter each command with a " >}} `$` **one by one.**
@@ -101,7 +105,7 @@ Before moving on, check in with a teacher and answer the following prompts in yo
 
 {{< /deliverables >}}
 
-## [1] Terminal Commands
+## Terminal Commands
 Below are some Terminal commands which might come in handy on your adventure.
 
 

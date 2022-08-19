@@ -1,6 +1,6 @@
 ---
 title: 5. While Loops
-type: labs
+type: lab
 #draft: true
 ---
 

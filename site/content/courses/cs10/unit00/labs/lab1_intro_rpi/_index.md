@@ -1,6 +1,6 @@
 ---
 title: 1. Freshly Baked Pi
-type: labs
+type: lab
 ---
 
 # Fresh Baked Pi 🥧
