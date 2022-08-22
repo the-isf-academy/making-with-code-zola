@@ -1,7 +1,7 @@
 ---
 title: 6. Circles
 type: checkup
-#draft: false
+draft: true
 ---
 
 # Circles

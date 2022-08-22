@@ -1,38 +1,35 @@
 ---
 title: Initial Setup
-numberHeaders: true
+# numberHeaders: true
 weight: -1
 ---
 
 # Initial setup
 
-Welcome! These instructions will help you get your computer set up for the class.
+**Welcome! These instructions will help you get your computer set up for the class.**
 If you get stuck or are unsure what to do, ask {{< teacher >}}. Everyone's system is 
 different, so the initial setup sometimes needs some TLC. 
-You should only ever have to run these instructions once. 
+*You should only ever have to run these instructions once.*
 
-## The basics
-To get your computer ready, we need to configure the workspace you will use for the class. Select the tab for your operating system and follow the instructions. Please let {{< teacher >}} know if you run into any issues. 
+## Installing Python
+To get your computer ready, we need to configure the workspace you will use for the class. **Select the tab for your operating system and follow the instructions.** Please let {{< teacher >}} know if you run into any issues. 
 
 
 {{< tabs "computer-setup" >}}
 {{< tab "MacOS" >}}
 
-Start by installing the latest version of Python. [Open this link](https://www.python.org/downloads/), 
-click "Download Python," and follow the installation instructions.
+1. **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
 
-Once the installation finishes, you will see a Finder window showing what was installed. 
-(If you closed the window, open Finder, click on "Applications," and then "Python 3.10" (or whatever
-version of Python you just installed).
+1. **Once the installation finishes, you will see a Finder window showing what was installed**. 
+(If you closed the window, open Finder, click on "Applications," and then "Python 3.10" (or whatever version of Python you just installed).
+1. **Double-click on "Install Certificates.command".** This will will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
 
-Double-click on "Install Certificates.command" and then 
-"Update Shell Profile.command". Each of these will open a Terimal window and run a bunch of commands. 
-Once you see `[Process completed]`, you may close the window.
+1. **Double-click on "Update Shell Profile.command".** Each of these will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
 
 {{< aside >}}
-If you see a red "Permission denied" error message when running "Install Certificates.command", open a 
-Terminal window and run `sudo "/Applications/Python 3.10/Install Certificates.command"` instead. You will be asked 
-for an administrator password; you won't see any letters appearing as you enter the password. This is a security feature.
+**If you see a red "Permission denied" error message when running "Install Certificates.command"**:
+- open a Terminal window and run **`sudo "/Applications/Python 3.10/Install Certificates.command"`** 
+- You will be asked for an administrator password; you won't see any letters appearing as you enter the password. This is a security feature.
 {{</ aside >}}
 
 {{< /tab >}}
@@ -100,13 +97,29 @@ for Windows users that we'll explain along the way.
 ```shell
 pip3 install making-with-code-cli
 ```
-{{< aside >}}
-If this doesn’t work, try running `sudo pip3 install making-with-code-cli` or `pip3 install --user making-with-code-cli`. Still no luck? Talk to {{< teacher >}}. 
+
+{{< aside "If the install failed..." >}}
+
+{{< code-action "Copy and paste each command, one at a time, into the Terminal." >}} 
+- `sudo pip3 install making-with-code-cli` or 
+- `pip3 install --user making-with-code-cli`
+
+Still no luck? Talk to {{< teacher >}}. 
 {{</ aside >}}
+
+{{< code-action "Check mwc installed successfully by checking the version number." >}} You should see a version number above 0.0.5, such as `MWC 0.0.51`.
+```shell
+mwc version
+```
+
+---
 
 ## Configure MWC
 
-{{< code-action "Run the following command." >}}
+{{< code-action "Run the below command to begin the full setup." >}} This will install a few packages onto your computer. This may take up to 30 minutes to complete. Don't worry, you can still use your computer and have it running in the background.
+```shell
+mwc setup
+```
 You will be asked some questions to finish the setup process. A few notes:
 - We suggest accepting default values for now. You can change your settings later by re-running 
   `mwc setup`.
@@ -114,11 +127,11 @@ You will be asked some questions to finish the setup process. A few notes:
 - When you are asked for your computer password, you won't see any letters appear as you type. 
   This is normal--it's to keep the person standing behind you from seeing your password.
 
-```shell
-mwc setup
-```
+
 
 {{< checkpoint >}}
-Congratuations! You're finished. We won't continue until everyone gets set up. Can you help 
-someone else?
+Congratulations! You're finished! 
+
+If you ran into any issues, please notify a teacher. 
+
 {{</checkpoint >}}

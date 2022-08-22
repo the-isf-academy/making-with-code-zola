@@ -5,7 +5,7 @@ type: lab
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
-numberHeaders: true
+# numberHeaders: true
 repo_url: https://github.com/cproctor/mwc-pedprog-unit00-lab00.git
 init_action: clone
 ---
@@ -17,12 +17,6 @@ We're glad you're here! yay 😄
 If you have not yet completed the [initial setup]({{< ref "../../initial_setup.md" >}}), 
 please do that before you start. 
 
----
-
-## Into the Terminal
-Take a peek at your Desktop. You should see a new folder called `making_with_code` created by the configuration
-script. (If you told `mwc setup` you wanted to install somewhere else, you'll need to adapt the following instructions 
-to your situation.) We are going to navigate to that folder using the Terminal interface.
 
 {{< aside "FYI" >}}
 *Hello! I'm the For Your Information Space Invader. I'll be stopping by
@@ -30,18 +24,30 @@ every once in a while to give you some extra information about labs or the conte
 learning.*
 
 **Here's my first FYI:** Sometimes you'll see 💻 in a lab. This means that you
-need do something that involves writing code or using your Terminal (MacOS) or Ubunutu (Windows). You can use these like
-little action items during labs.
+need do something that involves writing code or using your Terminal (MacOS) or Ubunutu (Windows). You can use these like little action items during labs.
+
+The {{< look-action >}} symbol is another helpful symbol to indicate that you need to do
+something. This one means that there's something important for you to read or watch.
 {{< /aside >}}
 
-### Terminal: a new user interface
+---
+
+## [0] Into the Terminal
+{{< look-action " Take a peek at your Desktop." >}} **You should see a new folder called `making_with_code`** created by the configuration
+script. (If you told `mwc setup` you wanted to install somewhere else, you'll need to adapt the following instructions 
+to your situation.) We are going to navigate to that folder using the Terminal interface.
+
+
+### [Terminal: a new user interface]
 
 You're probably used to interacting with the files in your computer through a *Graphical User Interface
 (GUI)* like Finder. Terminal allows us to interact with the files in our computer through a *Text-based
 User Interface (TUI)*. The files in our computers are organized in nested folders known as
 *directories*.
 
-Open a new Terminal window. Terminal opens in your `home` directory (also known as `~`), but we will be working in the `making_with_code` directory. Since the home directory holds all your stuff, the `making_with_code` directory
+{{< figure src="https://help.apple.com/assets/6152754A4192845C4361C49A/6152754B4192845C4361C4A1/en_GB/d94aa1c4979b25e9ffbda97fcbae219a.png" width="25%"  >}}
+
+{{< code-action >}} **Open a new Terminal window.** Terminal opens in your `home` directory (also known as `~`), but we will be working in the `making_with_code` directory. Since the home directory holds all your stuff, the `making_with_code` directory
 must be somewhere inside the `home` directory.
 
 {{< code-action >}} **Type** `ls` **into the command line and press** `return`. This will list all the files and subdirectories in the current directory. You should see that `Desktop` is one of the subdirectories listed. Let's move into that
@@ -63,8 +69,9 @@ directory using `ls`.
 Screen Shot 2019-08-15 at 12.34.48 AM.png  dobby.gif			  warsaw-boarding-pass.pdf
 making_with_code						                   lentil loaf gravy.pdf
 ```
+---
 
-### Compare the output in the Terminal window with the Desktop shown by the GUI.
+### [Compare the output in the Terminal window with the Desktop shown by the GUI.]
 
 {{< code-action >}} **Type** `open .` **to open Finder.** All of the files and folders are the same!
 The Terminal really does show us the same files and directories as our GUI!
@@ -95,7 +102,25 @@ lab00
 
 ---
 
-## Introduction to writing code
+### [Terminal Commands]
+
+Here a summary of the commands you just learned and few extra helpful ones:
+
+
+| Command                 | Description |
+| :---------------------- | :-----------|
+| `cd Desktop/making_with_code/pedprog/unit00`|to change to the directory "unit00" |
+| `atom .`                |  to open Atom.   |
+| `atom newfilename.py`   |  to make a new file. You can also choose to make a new file by right-clicking on the folder in atom. |
+| `python newfilename.py` |  to run the program. |
+| `↑`                     |  to get to the previous command you typed in terminal |
+| `tab`                   |  autocompletes the command or path as much as possible |
+| `tab` `tab`             |  shows possible autocompletions |
+
+
+---
+
+## [1] Introduction to writing code
 Now that you can navigate in the Terminal, let's write some code! Throughout the class, we
 will be using the Python programming language to help us perform computational tasks. In
 this unit, we'll be using a software library called turtle to draw things with code.
@@ -111,22 +136,15 @@ Poetry makes sure you don't have to worry about it.)
 poetry shell
 ```
 
-{{< aside >}}
-The {{< look-action >}} symbol is another helpful symbol to indicate that you need to do
-something. This one means that there's something important for you to read or watch.
-{{< /aside >}}
-
-{{< look-action "Watch or read the explanation of how to write and run Python programs below." >}} 
-
-{{< tabs python-programs >}}
-
-
-{{< tab "Text Explanation" >}}
-### Writing programs
+### [Writing programs]
 Python programs start out as simple text files. To write a Python program, we start out
 by writing a text file. During the setup, we downloaded a special text editor made for
 the purpose of writing code. 
-Before you start, make sure you are still in `~/Desktop/making_with_code/pedprog/unit00/lab00`. 
+
+{{< figure src="https://w7.pngwing.com/pngs/975/30/png-transparent-atom-source-code-editor-text-editor-logo-visual-studio-code-design-text-logo-mac.png" width="25%"  >}}
+
+
+**Before you start, make sure you are still in `~/Desktop/making_with_code/<your username>/unit00/lab00`.**
 
 {{< code-action "Use the Terminal commands below to open a new file in Atom." >}} 
 
@@ -156,7 +174,9 @@ input()
 
 Can you guess what these lines of code are telling the computer to draw?
 
-### Running programs
+---
+
+### [Running programs]
 Now that you've written a program, let's run it to see what it does!
 
 To run Python code, we need to give our programs to a python interpretor. Fortunately,
@@ -169,7 +189,7 @@ Let's try it with the program you just wrote in Atom.
 
 {{< code-action "Save" >}} `first_program.py` file in Atom.
 
-{{< code-action "Run the program in Terminal" >}} using the command, `python first_program.py`.
+{{< code-action "Run the program in Terminal using the command," >}}  `python3 first_program.py`.
 What happend? Did your computer draw what you expected?
 
 {{< code-action "End the program" >}} and close the turtle window by pressing `return`.
@@ -186,36 +206,27 @@ file.
 
 {{< /aside >}}
 
-{{< /tab >}}
-
-{{< tab "Video Explanation" >}}
+{{< expand "Video Tutorial" >}}
 
 {{< youtube id="7bnoG9Hzihg" >}}
 
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
+
 
 #### You just ran your first Python program! Congrats!! 🎉
 
-Before we move on, here a summary of the commands you just learned:
-{{< expand "Terminal commands" >}}
 
-| Command                 | Description |
-| :---------------------- | :-----------|
-| `cd Desktop/making_with_code/pedprog/unit00`|to change to the directory "unit00" |
-| `atom .`                |  to open Atom.   |
-| `atom newfilename.py`   |  to make a new file. You can also choose to make a new file by right-clicking on the folder in atom. |
-| `python newfilename.py` |  to run the program. |
-| `↑`                     |  to get to the previous command you typed in terminal |
-| `tab`                   |  autocompletes the command or path as much as possible |
-| `tab` `tab`             |  shows possible autocompletions |
+---
 
-{{< /expand >}}
 
-## Let's draw!
+
+## [2] Let's draw!
 Now that you've got the basics, try to make it more interesting.
 
-{{< code-action "Experiment with turtle commands below" >}} by editing your `first_program.py` file 
+
+{{< figure src="https://freshgadgets.nl/wp-content/uploads/2014/12/inspirograph2.jpg" width="75%" title="Python Turtle Examples" >}}
+
+{{< code-action "Experiment with turtle commands below by editing your" >}} `first_program.py` file. 
 
 | Function |       Input      |   Example Use  | Explanation                                                                                                                      |
 |:--------:|:----------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------|
@@ -230,7 +241,9 @@ Now that you've got the basics, try to make it more interesting.
 |   penup  |       None       |     penup()    | Picks up the turtle/pen so that it doesn’t draw when it moves                                                                    |
 | pensize  |       width      |   pensize(4)   | Sets the width of the pen for drawing                                                                                            |
 
-### Error and bugs
+---
+
+### [Error and bugs]
 While trying this out, you may come across errors or bugs, do not fear!
 Write the issue down, and we can talk about it during class. Try to
 figure out whether your bug is a:

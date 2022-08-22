@@ -1,6 +1,8 @@
 ---
 title: 1. Swimming
 type: checkup
+draft: true
+
 ---
 # Do Now
 

@@ -1,7 +1,7 @@
 ---
 title: 5. Shapes
 type: checkup
-#draft: false
+draft: true
 ---
 
 # Shapes

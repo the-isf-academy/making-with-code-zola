@@ -1,6 +1,8 @@
 ---
 title: 0. Stars
 type: checkup
+draft: true
+
 ---
 # Stars
 

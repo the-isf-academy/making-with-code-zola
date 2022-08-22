@@ -1,6 +1,8 @@
 ---
 title: 3. Mystery Code Trace
 type: checkup
+draft: true
+
 ---
 
 # Mystery Code Trace
