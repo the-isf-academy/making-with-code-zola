@@ -1,6 +1,6 @@
 ---
 title: "Unit 00: Drawing"
-bookCollapseSection: true
+bookCollapseSection: false
 type: unit
 slug: unit00
 ---

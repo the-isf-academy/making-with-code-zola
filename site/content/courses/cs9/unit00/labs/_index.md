@@ -1,5 +1,5 @@
 ---
-# headless: true
+title: "Labs"
 bookCollapseSection: true
 type: lab
 slug: unit00_labs
