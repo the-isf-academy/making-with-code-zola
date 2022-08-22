@@ -1,6 +1,8 @@
 ---
 title: 1. Project Euler
 type: checkup
+draft: true
+
 ---
 
 # Project Euler

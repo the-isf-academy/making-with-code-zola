@@ -1,6 +1,8 @@
 ---
 title: 0. Functions
 type: checkup
+draft: true
+
 ---
 # Functions
 

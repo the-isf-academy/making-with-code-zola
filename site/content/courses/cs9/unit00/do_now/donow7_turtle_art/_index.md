@@ -1,7 +1,7 @@
 ---
 title: 6. Turtle Art
 type: checkup
-#draft: false
+draft: true
 ---
 
 # Turtle Art

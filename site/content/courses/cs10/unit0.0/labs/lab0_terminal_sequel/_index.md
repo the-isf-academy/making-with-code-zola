@@ -1,5 +1,5 @@
 ---
-title: 1. 'Terminal Adventure Sequel'
+title: "0. Terminal Adventure: Sequel"
 type: lab
 slug: lab1_terminal_adventure
 repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
@@ -8,9 +8,8 @@ init_action: clone
 draft: true
 
 ---
-# Into the Terminal
-This lab will explore one of the most important tools we'll use all year: the Terminal. While it
-may seem complicated at first, it will quickly become your go-to tool for computer science class.
+# The Terminal: Reloaded
+This lab will re-explore one of our most important and most used tools: the Terminal. 
 The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
 
@@ -35,12 +34,15 @@ Terminal.
 
 ## Terminal Adventure Lab
 
+The last time you ventured into the Terminal, you came away with treasure! It's time to dive back into the sea and see what's hiding.
+
+{{< figure src="https://www.kindpng.com/picc/m/410-4102844_transparent-pirate-ship-silhouette-png-pirate-ship-drawing.png" width="75%"  >}}
 
 {{< code-action "Open a new Terminal window and enter each command with a " >}} `$` **one by one.**
 Just be sure you do not type the `$`.
 
 ```shell
-$ cd Desktop/cs9/unit_00
+$ cd Desktop/mwc/cs9/unit_00
 $ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git
 $ ls
 lab_00_terminal_adventure	 
@@ -53,65 +55,16 @@ You just copied some code from GitHub onto your computer.
 
 ```shell
 $ ls
-adventure	    returnToShip.py
+kitchen	    returnToShip.py
 ```
 
-`returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end). 
+`captain.py` is a runnable Python file (you can tell by the `.py` at the end). 
 
-{{< code-action "Run it to see what happens:" >}} 
+{{< code-action "Run it to see what happens!" >}} **You will end this lab by successfully making a sandwich!** Explore the corners of the kitchen to find the necessary supplies.
 
-```shell
-$ python returnToShip.py
-  Your adventure has only just begun. You are not yet ready to return
-  to the ship. More secrets await you in the ocean's depths.
-```
+{{< figure src="https://www.justonecookbook.com/wp-content/uploads/2020/07/Wanpaku-Sandwich-4986-I-1.jpg" width="75%"  >}}
 
-{{< aside "Your challenge is to see if you can get the treasure, using just the Terminal" >}}
-
-Use Terminal to explore the contents of the `adventure` directory.
-
-{{< /aside >}}
-
-<hr>
-
-
-{{< code-action "Begin by going into into the" >}}  `adventure` **directory:**
-
-```shell
-$ cd adventure
-$ ls
-seafloor	sinking.txt
-```
-
-`sinking.txt` is a text file, so we can read it. 
-
-{{< code-action "Try using the " >}} `cat` **command:**
-
-```shell
-$ cat sinking.txt
-```
----
-
-### [Treasure]
-
-{{< figure src="https://sealifeart.co.uk/wp-content/uploads/2019/11/treasure-chest-drawing.jpg" width="50%"  >}}
-
-{{< deliverables "You will end this lab by collecting the treasure!" >}}
-
-Continue exploring into the depths of the sea to find it.
-
-Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again! 
-
-Before moving on, check in with a teacher and answer the following prompts in your notebook:
-- What are 3 functions of the Terminal?
-- Compare navigating the file system via the Terminal v. the Finder. 
-
-
-{{< /deliverables >}}
-
----
-
-## Terminal Commands
+### [Terminal Commands]
 Below are some Terminal commands which might come in handy on your adventure.
 
 
@@ -134,14 +87,23 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `rm -d dir`          | removes (deletes) the directory `dir`        |
 | `rm -r dir`          | recursively removes (deletes) the directory `dir` and all subdirectories and files within that directory. **Be careful, this is a powerful tool!** |
 
+---
 
-### [More terminal commands]
-These are just for fun. There's lots more--ask your teachers!
+### [Deliverables]
 
-| Command              | What it does                                 |
-| --------------       | -------------------------------------------- |
-| `say hello`          | Makes the computer say hello (Mac only)      |
-| `cat sinking.txt | say` | Makes the computer read the text file aloud |
-| `cal`                | Shows you a monthly calendar                 |
-| `banner hello`       | Just try it                                  |
 
+{{< deliverables "Congrats on completing your adventure!" >}}  
+
+Once you've successfully completed the adventure be sure to fill out [this Google form](xxx).
+
+{{< /deliverables >}}
+
+---
+
+## [1] Extension
+
+
+
+Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature? Can you create a new adventure from scratch? 
+
+Create your own Terminal Adventure! 
