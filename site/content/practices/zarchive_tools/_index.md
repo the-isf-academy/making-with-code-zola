@@ -1,6 +1,7 @@
 ---
 title: Tools
 bookCollapseSection: true
+draft: true
 ---
 
 We believe learning to utilize computer science tools is an important way that students

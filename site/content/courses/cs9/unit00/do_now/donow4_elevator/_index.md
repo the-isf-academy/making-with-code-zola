@@ -1,6 +1,8 @@
 ---
 title: 4. Elevator
 type: checkup
+draft: true
+
 ---
 
 # Elevator

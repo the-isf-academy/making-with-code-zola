@@ -1,6 +1,8 @@
 ---
 title: 2. Is it Friday yet?
 type: checkup
+draft: true
+
 ---
 
 <p style="font-size:32px;font-weight:bold">Is it Friday yet?</p>
