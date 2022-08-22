@@ -43,7 +43,7 @@ To get your computer ready, we need to configure the workspace you will use for 
 
 *(based on [this guide](https://www.howtogeek.com/228042/how-to-switch-from-32-bit-windows-10-to-64-bit-windows-10/))*
 
-### 💻 Ubunutu 
+### 💻 Ubuntu 
 Follow along with this video until the '6:15' mark, or follow the steps below. Once you have Ubunutu installed, skip below to "Download VcXsrv for graphics". 
 
 {{< youtube "1ap3hL-UR9I" >}}
@@ -75,12 +75,6 @@ sudo apt install python3 python3-pip
 ### 💻Download VcXsrv for graphics
 1. Download VcXsrv from [this link](https://www.onworks.net/software/windows/app-vcxsrv-windows-x-server) by clicking `Download App`. 
 1. Install the package that downloads by double clicking on it and going through the install wizard.
-
-### 💻Download Atom
-1. Download Atom from [this website](https://atom.io/) and install.
-
-([This guide](https://medium.com/@rhdzmota/python-development-on-the-windows-subsystem-for-linux-wsl-17a0fa1839d)
-has instructions for installing shell commands to open files and projects in Atom)
 
 {{< aside >}}
 Whenever this website says to use Terminal, you should use Ubuntu. There will be other small differences
