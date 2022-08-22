@@ -1,7 +1,8 @@
 ---
-headless: true
+# headless: true
 bookCollapseSection: true
-
+type: lab
+slug: unit00_labs
 ---
 
 # Labs
