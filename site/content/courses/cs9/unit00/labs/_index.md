@@ -1,8 +1,8 @@
 ---
 title: "Labs"
 bookCollapseSection: true
-type: lab
-slug: unit00_labs
+type: modules
+headless: true
 ---
 
 # Labs

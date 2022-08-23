@@ -1,7 +1,7 @@
 ---
+type: modules
 headless: true
 bookCollapseSection: true
-
 ---
 
 # Labs

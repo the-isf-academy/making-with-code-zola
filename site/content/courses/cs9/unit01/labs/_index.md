@@ -1,7 +1,6 @@
 ---
-# headless: true
-bookCollapseSection: true
-
+headless: true
+type: modules
 ---
 
 # Labs for Unit 01

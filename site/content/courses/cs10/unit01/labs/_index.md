@@ -2,7 +2,7 @@
 title: "[Labs]"
 # headless: true 
 bookCollapseSection: true
-type: unit
+type: modules
 headless: true
 ---
 
