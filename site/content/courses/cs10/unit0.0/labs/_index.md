@@ -1,6 +1,6 @@
 ---
 headless: true
-bookCollapseSection: true
+# bookCollapseSection: true
 
 ---
 
