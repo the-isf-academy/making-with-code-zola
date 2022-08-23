@@ -1,10 +1,10 @@
 ---
-title: 1. 'Terminal Adventure Sequel'
+title: 1. Terminal Adventure
 type: lab
 slug: lab1_terminal_adventure
 repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
 init_action: clone
-# numberHeaders: true
+numberHeaders: true
 draft: true
 
 ---

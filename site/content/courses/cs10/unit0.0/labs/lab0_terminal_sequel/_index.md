@@ -1,64 +1,50 @@
 ---
 title: "0. Terminal Adventure: Sequel"
 type: lab
-slug: lab1_terminal_adventure
-repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
+slug: lab0_terminal_adventure_sequel
+repo_url: https://github.com/the-isf-academy/lab-terminal-adventure-sequel
 init_action: clone
 # numberHeaders: true
-draft: true
-
+# draft: true
 ---
+
+
 # The Terminal: Reloaded
 This lab will re-explore one of our most important and most used tools: the Terminal. 
-The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
+The Terminal is what we use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
 
 
-{{< aside "FYI" >}}
-In this lab, we will just use `$` to represent the terminal prompt unless the path to the
-current directory is important. If you see this in the lab:
-```shell
-$ ls
-some-directory some-file.txt
-```
-but your computer shows something like this:
-```shell
-COMPUTER: terminal_lab username$ ls
-some-directory some-file.txt
-```
-don't worry. As long as you see the `$` at the end, it means you can put in new commands to your
-Terminal.
-
-{{< /aside >}}
-
-
-## Terminal Adventure Lab
+## [0] Terminal Adventure Lab
 
 The last time you ventured into the Terminal, you came away with treasure! It's time to dive back into the sea and see what's hiding.
 
 {{< figure src="https://www.kindpng.com/picc/m/410-4102844_transparent-pirate-ship-silhouette-png-pirate-ship-drawing.png" width="75%"  >}}
 
-{{< code-action "Open a new Terminal window and enter each command with a " >}} `$` **one by one.**
-Just be sure you do not type the `$`.
+{{< code-action "Open a new Terminal window and enter into the" >}} `making_with_code/cs10/unit0.0` **directory**
 
 ```shell
-$ cd Desktop/mwc/cs9/unit_00
-$ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git
-$ ls
-lab_00_terminal_adventure	 
-$ cd lab_00_terminal_adventure
+cd desktop/making_with_code/cs10/unit0.0
 ```
+{{< code-action >}} **Use the `mwc` tool to clone the repo.**
+```shell
+mwc update
+```
+> *Going forward, you will be using `mwc update` to clone repositories onto your computer. No more need to `git clone`.*
 
-You just copied some code from GitHub onto your computer. 
-
-{{< code-action "Let's have a look:" >}} 
+{{< code-action "Let's have a look at the new repo!" >}} 
 
 ```shell
-$ ls
-kitchen	    returnToShip.py
+cd lab-terminal-adventure-sequel-YOUR-GITHUB-USERNAME
+ls
 ```
 
-`captain.py` is a runnable Python file (you can tell by the `.py` at the end). 
+You should see the following:
+```shell
+kitchen	    captain.py     helpers.py
+```
+
+`captain.py` is a runnable Python file (you can tell by the `.py` at the end). *`helpers.py` provides some useful functions that are utilized in this adventure. You can just ignore it until the extension.*
 
 {{< code-action "Run it to see what happens!" >}} **You will end this lab by successfully making a sandwich!** Explore the corners of the kitchen to find the necessary supplies.
 
@@ -94,7 +80,7 @@ Below are some Terminal commands which might come in handy on your adventure.
 
 {{< deliverables "Congrats on completing your adventure!" >}}  
 
-Once you've successfully completed the adventure be sure to fill out [this Google form](xxx).
+Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScjMk5bB6NCcO5r6UQlp34qoT8hLT6XTan7NTWu-ijoP6977w/viewform?usp=sf_link).
 
 {{< /deliverables >}}
 
@@ -102,8 +88,12 @@ Once you've successfully completed the adventure be sure to fill out [this Googl
 
 ## [1] Extension
 
-
-
 Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature? Can you create a new adventure from scratch? 
 
-Create your own Terminal Adventure! 
+Some ideas include but are not limited to:
+- generating different sandwiches depending on the ingredients in the `sandwich_maker` directory
+- adding a new quest from the captain after eating the sandwich
+- writing more rooms into the ship for the user to explore
+
+
+{{< code-action "Expand on the current Terminal Adventure or create your own Terminal Adventure!" >}} If you choose to create your own adventure, create a new repository inside your `making_with_code/cs10/unit0.0` folder to hold your new adventure.

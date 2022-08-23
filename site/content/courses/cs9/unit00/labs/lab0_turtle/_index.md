@@ -5,10 +5,12 @@ type: lab
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
-# numberHeaders: true
+numberHeaders: true
 repo_url: https://github.com/cproctor/mwc-pedprog-unit00-lab00.git
 init_action: clone
+draft: false
 ---
+
 
 # Welcome to Making with Code! 
 

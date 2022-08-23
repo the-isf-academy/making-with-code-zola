@@ -1,7 +1,8 @@
 ---
 title: "Unit 0.0: Review"
-bookCollapseSection: true
+# bookCollapseSection: true
 type: unit
+slug: "unit0.0"
 # headless: true
 # draft: true
 ---

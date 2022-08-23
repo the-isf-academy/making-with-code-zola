@@ -1,6 +1,4 @@
 ---
-title: "Labs"
-bookCollapseSection: true
 type: modules
 headless: true
 ---
