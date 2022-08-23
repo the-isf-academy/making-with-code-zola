@@ -1,6 +1,6 @@
 ---
 title: "Labs"
-bookCollapseSection: true
+# bookCollapseSection: true
 type: lab
 slug: unit00_labs
 ---
