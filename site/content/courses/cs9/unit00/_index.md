@@ -2,7 +2,7 @@
 title: "Unit 00: Drawing"
 bookCollapseSection: false
 type: unit
-slug: unit00
+slug: unit00_drawing
 ---
 
 #### Labs
