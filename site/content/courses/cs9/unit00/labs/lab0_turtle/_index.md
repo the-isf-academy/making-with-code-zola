@@ -8,7 +8,9 @@ resources:
 # numberHeaders: true
 repo_url: https://github.com/cproctor/mwc-pedprog-unit00-lab00.git
 init_action: clone
+draft: false
 ---
+
 
 # Welcome to Making with Code! 
 

@@ -11,6 +11,19 @@ If you get stuck or are unsure what to do, ask {{< teacher >}}. Everyone's syste
 different, so the initial setup sometimes needs some TLC. 
 *You should only ever have to run these instructions once.*
 
+## Github
+
+Github is a hosting service for code. It allows users to collaborate on projects and track versions of their code over time. We will be using Github to distrbute code to students and for students to submit their work.
+
+{{< code-action >}}
+**Sign up for a Github account by going to [this](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) link.**
+
+{{< figure src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" width="25%" alt-text="Python Turtle Graphics" >}}
+
+- Be sure to use your ISF student email. 
+- You will be asked to create a Github username. Do NOT use your student ID number and make sure it is school appropriate.  
+
+
 ## Installing Python
 To get your computer ready, we need to configure the workspace you will use for the class. **Select the tab for your operating system and follow the instructions.** Please let {{< teacher >}} know if you run into any issues. 
 
@@ -18,13 +31,19 @@ To get your computer ready, we need to configure the workspace you will use for 
 {{< tabs "computer-setup" >}}
 {{< tab "MacOS" >}}
 
-1. **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
+(0) **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
 
-1. **Once the installation finishes, you will see a Finder window showing what was installed**. 
+
+(1) **Once the installation finishes, you will see a Finder window showing what was installed**. 
 (If you closed the window, open Finder, click on "Applications," and then "Python 3.10" (or whatever version of Python you just installed).
-1. **Double-click on "Install Certificates.command".** This will will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
 
-1. **Double-click on "Update Shell Profile.command".** Each of these will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
+
+(2) **Check Python installed successfully by typing `python --version` into Powershell.** You should see a version number above `3.10`.
+
+(3) **Double-click on "Install Certificates.command".** This will will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
+
+(4) **Double-click on "Update Shell Profile.command".** Each of these will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
+
 
 {{< aside >}}
 **If you see a red "Permission denied" error message when running "Install Certificates.command"**:
@@ -35,51 +54,21 @@ To get your computer ready, we need to configure the workspace you will use for 
 {{< /tab >}}
 
 {{< tab "Windows" >}}
-### 💻 Check system requirements 
 
-1. Go to `Settings > System > About`.
-1. Check that the Edition is Windows 10.
-1. Check that System type says "64-bit operating system..."
 
-*(based on [this guide](https://www.howtogeek.com/228042/how-to-switch-from-32-bit-windows-10-to-64-bit-windows-10/))*
+(0) **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
+  - Make sure you select `INSERT THING`
 
-### 💻 Ubuntu 
-Follow along with this video until the '6:15' mark, or follow the steps below. Once you have Ubunutu installed, skip below to "Download VcXsrv for graphics". 
+(1) **Open Windows Powershell**. We will be using this application every class. We suggest you pin it to your toolbar.
 
-{{< youtube "1ap3hL-UR9I" >}}
+(2) **Check Python installed successfully by typing `python --version` into Powershell.**
+> You should see a version number above `3.10`
 
-#### Enable developer tools
-1. Go to `Control Panel > Programs > Program Features > Turn Windows Features On Or Off`.
-1. Enable the “Windows Subsystem for Linux” option in the list, and then click the “OK” button.
-1. Click “Restart now” when you’re prompted to restart your computer.
-
-#### Download Ubuntu
-1. After your computer restarts, open the Microsoft Store from the Start menu, and search for
-“Ubunutu” in the store. 
-1. Click `Get` to install "Ubuntu".
-
-*(Based on [this guide](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/))*
-
-#### Setup Ubuntu
-1. Open Ubuntu, it will take a few minutes to install updates.
-1. As prompted, create a username and password.
-1. Give your user admin privileges by typing `usermad -aG sudo your-name` and pressing enter
-   (again, replace `your-name`).
-1. Run the following commands:
-
-```shell
-sudo apt update && upgrade
-sudo apt install python3 python3-pip
-```
-
-### 💻Download VcXsrv for graphics
-1. Download VcXsrv from [this link](https://www.onworks.net/software/windows/app-vcxsrv-windows-x-server) by clicking `Download App`. 
-1. Install the package that downloads by double clicking on it and going through the install wizard.
 
 {{< aside >}}
-Whenever this website says to use Terminal, you should use Ubuntu. There will be other small differences
-for Windows users that we'll explain along the way.
+Whenever this website says to use Terminal, you should use Windows Powershell. There will be other small differences for Windows users that we'll explain along the way.
 {{< /aside >}}
+
 {{< /tab >}}
 {{< /tabs >}}
 
