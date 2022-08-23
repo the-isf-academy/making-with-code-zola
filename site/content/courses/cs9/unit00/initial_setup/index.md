@@ -11,6 +11,8 @@ If you get stuck or are unsure what to do, ask {{< teacher >}}. Everyone's syste
 different, so the initial setup sometimes needs some TLC. 
 *You should only ever have to run these instructions once.*
 
+---
+
 ## Github
 
 Github is a hosting service for code. It allows users to collaborate on projects and track versions of their code over time. We will be using Github to distrbute code to students and for students to submit their work.
@@ -19,10 +21,10 @@ Github is a hosting service for code. It allows users to collaborate on projects
 **Sign up for a Github account by going to [this](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) link.**
 
 {{< figure src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" width="25%" alt-text="Python Turtle Graphics" >}}
-
 - Be sure to use your ISF student email. 
 - You will be asked to create a Github username. Do NOT use your student ID number and make sure it is school appropriate.  
 
+---
 
 ## Installing Python
 To get your computer ready, we need to configure the workspace you will use for the class. **Select the tab for your operating system and follow the instructions.** Please let {{< teacher >}} know if you run into any issues. 
@@ -74,9 +76,9 @@ Whenever this website says to use Terminal, you should use Windows Powershell. T
 
 ## Install MWC
 
-{{< code-action "Open Terminal and run the following command." >}}
-`mwc` is a special program we wrote for this class which will help you set up your assignments.
+`mwc` is a special program we wrote for this class which will help you set up your assignments. 
 
+{{< code-action "Open Terminal and run the following command." >}}
 ```shell
 pip3 install making-with-code-cli
 ```
@@ -90,7 +92,7 @@ pip3 install making-with-code-cli
 Still no luck? Talk to {{< teacher >}}. 
 {{</ aside >}}
 
-{{< code-action "Check mwc installed successfully by checking the version number." >}} You should see a version number above 0.0.5, such as `MWC 0.0.51`.
+{{< code-action "Check mwc installed successfully by checking the version number." >}} You should see a version number above 0.0.5, such as `MWC 0.0.53`.
 ```shell
 mwc version
 ```
@@ -103,12 +105,23 @@ mwc version
 ```shell
 mwc setup
 ```
-You will be asked some questions to finish the setup process. A few notes:
-- We suggest accepting default values for now. You can change your settings later by re-running 
-  `mwc setup`.
-- You'll be asked for the Making With Code URL. That's this site, `{{< baseurl >}}`.
-- When you are asked for your computer password, you won't see any letters appear as you type. 
-  This is normal--it's to keep the person standing behind you from seeing your password.
+You will be asked some questions to finish the setup process. **We suggest using the default values in the square brackets, `[]`. You can select the default value with `return`.**
+
+{{< figure src="images/courses/cs9/unit00/0_initial_setup0.png" width="100%" alt-text="mwc setup" >}}
+
+**You will be asked the following questions to finish the setup process:**
+
+0. "What is your MWC username?" - Use your Github username.
+0. "Where do you want to save your MWC work?" - we suggest using the default. 
+0. "What's the URL of your Making With Code website?" - use the default value. 
+0. "Which code editor do you want to use?" - use the default value.
+0. "What is your GitHub username?" - use whatever username you created in the Github account creation. 
+0. "What is the name of the course's GitHub organization?" - this is `the-isf-academy`.
+0. "What is the email address associated with your GitHub account?" - this should be your ISF student email.
+0. "What name do you want to use in your git commits? " - this is your Github username.
+
+
+> **When you are asked for your computer password, you won't see any letters appear as you type.** This is normal--it's to keep the person standing behind you from seeing your password.
 
 
 
