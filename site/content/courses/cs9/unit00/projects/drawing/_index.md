@@ -1,5 +1,6 @@
 ---
-Title: Project
+Title: Drawing Project
+slug: drawing
 draft: true
 ---
 
