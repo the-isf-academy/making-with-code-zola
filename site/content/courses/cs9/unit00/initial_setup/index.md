@@ -7,7 +7,7 @@ weight: -1
 # Initial setup
 
 **Welcome! These instructions will help you get your computer set up for the class.**
-If you get stuck or are unsure what to do, ask {{< teacher >}}. Everyone's system is 
+If you get stuck or are unsure what to do, send a screenshot of your error to {{< teacher >}}. Everyone's system is 
 different, so the initial setup sometimes needs some TLC. 
 *You should only ever have to run these instructions once.*
 
@@ -24,9 +24,13 @@ Github is a hosting service for code. It allows users to collaborate on projects
 - Be sure to use your ISF student email. 
 - You will be asked to create a Github username. Do NOT use your student ID number and make sure it is school appropriate.  
 
+{{< youtube "GmiNDSIuxZQ" >}}
+
+
+
 ---
 
-## Installing Python
+## Initial Install
 To get your computer ready, we need to configure the workspace you will use for the class. **Select the tab for your operating system and follow the instructions.** Please let {{< teacher >}} know if you run into any issues. 
 
 
@@ -53,18 +57,49 @@ To get your computer ready, we need to configure the workspace you will use for 
 - You will be asked for an administrator password; you won't see any letters appearing as you enter the password. This is a security feature.
 {{</ aside >}}
 
+{{< youtube "0M80oj07DCU" >}}
+
+
+
 {{< /tab >}}
 
 {{< tab "Windows" >}}
 
+### Install Linux 
+
+### Installing Python
 
 (0) **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
-  - Make sure you select `INSERT THING`
+  - Make sure you select `Add Python 3.10 to PATH'
 
 (1) **Open Windows Powershell**. We will be using this application every class. We suggest you pin it to your toolbar.
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/a/af/PowerShell_Core_6.0_icon.png" width="25%" alt-text="Python Turtle Graphics" >}}
 
 (2) **Check Python installed successfully by typing `python --version` into Powershell.**
 > You should see a version number above `3.10`
+
+{{< youtube "uhRWvk1Cafc" >}}
+
+
+### Installing Github for CLI
+
+(0) **Go to [cli.github.com](https://cli.github.com/
+) and install Github CLI**
+
+(1) **Open Windows Powershell**
+
+(2) **Type this command: `gh auth login`**
+
+(3) **It will ask you a series of questions. Follow the *blue* answers below.** 
+
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup1.png" width="100%" alt-text="mwc setup" >}}
+> Make sure you copy your "one-time code". You will need to active your computer in the browser. 
+
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup2.png" width="50%" alt-text="mwc setup" >}}
+
+(4) **Once complete, you will see the following in your Powershell**
+
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup3.png" width="100%" alt-text="mwc setup" >}}
 
 
 {{< aside >}}
@@ -106,8 +141,9 @@ mwc version
 mwc setup
 ```
 You will be asked some questions to finish the setup process. **We suggest using the default values in the square brackets, `[]`. You can select the default value with `return`.**
+> Although the screenshots below are of Mac using Terminal, it is the same process for Windows using Powershell
 
-{{< figure src="images/courses/cs9/unit00/0_initial_setup0.png" width="100%" alt-text="mwc setup" >}}
+{{< figure src="images/courses/cs9/unit00/-000_initial_setup0.png" width="100%" alt-text="mwc setup" >}}
 
 **You will be asked the following questions to finish the setup process:**
 
@@ -120,14 +156,16 @@ You will be asked some questions to finish the setup process. **We suggest using
 0. "What is the email address associated with your GitHub account?" - this should be your ISF student email.
 0. "What name do you want to use in your git commits? " - this is your Github username.
 
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup4.png" width="100%" alt-text="mwc setup" >}}
+
 
 > **When you are asked for your computer password, you won't see any letters appear as you type.** This is normal--it's to keep the person standing behind you from seeing your password.
 
 
 
 {{< checkpoint >}}
-Congratulations! You're finished! 
+Congratulations! You're finished with the initial setup for CS! 
 
-If you ran into any issues, please notify a teacher. 
+If you ran into any issues, please send a screenshot of your error to a CS teacher.
 
 {{</checkpoint >}}
