@@ -57,7 +57,7 @@ To get your computer ready, we need to configure the workspace you will use for 
 - You will be asked for an administrator password; you won't see any letters appearing as you enter the password. This is a security feature.
 {{</ aside >}}
 
-{{< youtube "0M80oj07DCU" >}}
+{{< youtube "OiCiOgeyaWA" >}}
 
 
 
