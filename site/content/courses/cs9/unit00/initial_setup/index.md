@@ -37,6 +37,7 @@ To get your computer ready, we need to configure the workspace you will use for 
 {{< tabs "computer-setup" >}}
 {{< tab "MacOS" >}}
 
+### Installing Python
 (0) **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
 
 
@@ -59,7 +60,31 @@ To get your computer ready, we need to configure the workspace you will use for 
 
 {{< youtube "OiCiOgeyaWA" >}}
 
+### Installing Homebrew and Github CLI
 
+{{< code-action "Run the below command to install homebrew." >}} This will install homebrew onto your computer. This may take up to an hour to complete. Don't worry, you can still use your computer and have it running in the background. If you already have homebrew, then this step will be quick.
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+{{< code-action "Run the below command to install the Github CLI." >}}
+```shell
+brew install gh
+```
+{{< code-action "Run the below command to authorize." >}} This will take you through a few prompts to log in to your github account.
+```shell
+gh auth login
+```
+
+**You will be asked the following questions to finish the authorization process. You should accept all the default highlighted options, which are these:**
+
+0. "What account do you want to log into?" - GitHub.com
+0. "What is your preferred protocol for Git operations?" - HTTPS
+0. "Authenticate Git with your GitHub credentials?" - Yes
+0. "How would you like to authenticate GitHub CLI?" - Log in with a web browser
+
+> **If you are asked for your computer password, you won't see any letters appear as you type.** This is normal--it's to keep the person standing behind you from seeing your password.
+
+{{< code-action "When prompted, copy your code and press enter." >}} Then you can follow the prompts in your browser.
 
 {{< /tab >}}
 
@@ -161,34 +186,6 @@ You will be asked some questions to finish the setup process. **We suggest using
 
 > **When you are asked for your computer password, you won't see any letters appear as you type.** This is normal--it's to keep the person standing behind you from seeing your password.
 
-## Homebrew and Github CLI
-
-{{< code-action "Run the below command to install homebrew." >}} This will install homebrew onto your computer. This may take up to an hour to complete. Don't worry, you can still use your computer and have it running in the background. If you already have homebrew, then this step will be quick.
-```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-{{< code-action "Run the below command to install Github." >}} This will install Github CLI onto your computer.
-```shell
-brew install gh
-```
-{{< code-action "Run the below command to authorize the Github CLI." >}} This will take you through a few prompts to log in to your github account.
-```shell
-gh auth login
-```
-
-You will be asked some questions to finish the authorization process. **You can press return to accept the default options**
-
-{{< figure src="images/courses/cs9/unit00/-000_initial_setup0.png" width="100%" alt-text="mwc setup" >}}
-
-**You will be asked the following questions to finish the authorization process. You should accept all the default highlighted options, which are these:**
-
-0. "What account do you want to log into?" - GitHub.com
-0. "What is your preferred protocol for Git operations?" - HTTPS
-0. "Authenticate Git with your GitHub credentials?" - Yes
-0. "How would you like to authenticate GitHub CLI?" - Log in with a web browser
-
-{{< code-action "When prompted, copy your code and press enter." >}} Then you can follow the prompts in your browser.
-
 ## Testing your Installation
 
 **Perform the following checks to be sure your installation is working properly**
@@ -198,23 +195,7 @@ You will be asked some questions to finish the authorization process. **You can 
 ```shell
 mwc update
 ```
-
-The first time you run it, you should get something like this:
-
-```shell
-Initializing lab0_terminal_adventure_sequel at
-cs10/unit0.0_review/lab0_terminal_adventure_sequel.
-See {module['url']} for details.
-Cloning into 'lab0_terminal_adventure_sequel'...
-remote: Enumerating objects: 54, done.
-remote: Counting objects: 100% (54/54), done.
-remote: Compressing objects: 100% (32/32), done.
-remote: Total 54 (delta 16), reused 50 (delta 12), pack-reused 0
-Receiving objects: 100% (54/54), 5.09 MiB | 10.59 MiB/s, done.
-Resolving deltas: 100% (16/16), done.
-```
-
-When you run it again, you will get something like this:
+The output should be something like this:
 
 ```shell
 Checking cs10/unit0.0_review/lab0_terminal_adventure_sequel for updates.
