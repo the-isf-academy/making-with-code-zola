@@ -5,7 +5,7 @@ slug: lab0_terminal_adventure_sequel
 repo_url: https://github.com/the-isf-academy/lab-terminal-adventure-sequel
 init_action: clone
 # numberHeaders: true
-draft: true
+# draft: true
 ---
 
 
