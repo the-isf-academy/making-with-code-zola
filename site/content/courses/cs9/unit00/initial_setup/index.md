@@ -7,21 +7,21 @@ weight: -1
 # Initial setup
 
 **Welcome! These instructions will help you get your computer set up for the class.**
-If you get stuck or are unsure what to do, send a screenshot of your error to {{< teacher >}}. Everyone's system is 
-different, so the initial setup sometimes needs some TLC. 
+If you get stuck or are unsure what to do, send a screenshot of your error to {{< teacher >}}. Everyone's system is
+different, so the initial setup sometimes needs some TLC.
 *You should only ever have to run these instructions once.*
 
 ---
 
 ## Github
 
-Github is a hosting service for code. It allows users to collaborate on projects and track versions of their code over time. We will be using Github to distrbute code to students and for students to submit their work.
+Github is a hosting service for code. It allows users to collaborate on projects and track versions of their code over time. We will be using Github to distribute code to students and for students to submit their work.
 
 {{< code-action >}}
 **Sign up for a Github account by going to [this](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) link.**
 
 {{< figure src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" width="25%" alt-text="Python Turtle Graphics" >}}
-- Be sure to use your ISF student email. 
+- Be sure to use your ISF student email.
 - You will be asked to create a Github username. Do NOT use your student ID number and make sure it is school appropriate.  
 
 {{< youtube "GmiNDSIuxZQ" >}}
@@ -31,7 +31,7 @@ Github is a hosting service for code. It allows users to collaborate on projects
 ---
 
 ## Initial Install
-To get your computer ready, we need to configure the workspace you will use for the class. **Select the tab for your operating system and follow the instructions.** Please let {{< teacher >}} know if you run into any issues. 
+To get your computer ready, we need to configure the workspace you will use for the class. **Select the tab for your operating system and follow the instructions.** Please let {{< teacher >}} know if you run into any issues.
 
 
 {{< tabs "computer-setup" >}}
@@ -40,7 +40,7 @@ To get your computer ready, we need to configure the workspace you will use for 
 (0) **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
 
 
-(1) **Once the installation finishes, you will see a Finder window showing what was installed**. 
+(1) **Once the installation finishes, you will see a Finder window showing what was installed**.
 (If you closed the window, open Finder, click on "Applications," and then "Python 3.10" (or whatever version of Python you just installed).
 
 
@@ -53,7 +53,7 @@ To get your computer ready, we need to configure the workspace you will use for 
 
 {{< aside >}}
 **If you see a red "Permission denied" error message when running "Install Certificates.command"**:
-- open a Terminal window and run **`sudo "/Applications/Python 3.10/Install Certificates.command"`** 
+- open a Terminal window and run **`sudo "/Applications/Python 3.10/Install Certificates.command"`**
 - You will be asked for an administrator password; you won't see any letters appearing as you enter the password. This is a security feature.
 {{</ aside >}}
 
@@ -65,7 +65,7 @@ To get your computer ready, we need to configure the workspace you will use for 
 
 {{< tab "Windows" >}}
 
-### Install Linux 
+### Install Linux
 
 ### Installing Python
 
@@ -90,10 +90,10 @@ To get your computer ready, we need to configure the workspace you will use for 
 
 (2) **Type this command: `gh auth login`**
 
-(3) **It will ask you a series of questions. Follow the *blue* answers below.** 
+(3) **It will ask you a series of questions. Follow the *blue* answers below.**
 
 {{< figure src="images/courses/cs9/unit00/-000_initialsetup1.png" width="100%" alt-text="mwc setup" >}}
-> Make sure you copy your "one-time code". You will need to active your computer in the browser. 
+> Make sure you copy your "one-time code". You will need to active your computer in the browser.
 
 {{< figure src="images/courses/cs9/unit00/-000_initialsetup2.png" width="50%" alt-text="mwc setup" >}}
 
@@ -111,7 +111,7 @@ Whenever this website says to use Terminal, you should use Windows Powershell. T
 
 ## Install MWC
 
-`mwc` is a special program we wrote for this class which will help you set up your assignments. 
+`mwc` is a special program we wrote for this class which will help you set up your assignments.
 
 {{< code-action "Open Terminal and run the following command." >}}
 ```shell
@@ -120,11 +120,11 @@ pip3 install making-with-code-cli
 
 {{< aside "If the install failed..." >}}
 
-{{< code-action "Copy and paste each command, one at a time, into the Terminal." >}} 
-- `sudo pip3 install making-with-code-cli` or 
+{{< code-action "Copy and paste each command, one at a time, into the Terminal." >}}
+- `sudo pip3 install making-with-code-cli` or
 - `pip3 install --user making-with-code-cli`
 
-Still no luck? Talk to {{< teacher >}}. 
+Still no luck? Talk to {{< teacher >}}.
 {{</ aside >}}
 
 {{< code-action "Check mwc installed successfully by checking the version number." >}} You should see a version number above 0.0.5, such as `MWC 0.0.53`.
@@ -148,10 +148,10 @@ You will be asked some questions to finish the setup process. **We suggest using
 **You will be asked the following questions to finish the setup process:**
 
 0. "What is your MWC username?" - Use your Github username.
-0. "Where do you want to save your MWC work?" - we suggest using the default. 
-0. "What's the URL of your Making With Code website?" - use the default value. 
+0. "Where do you want to save your MWC work?" - we suggest using the default.
+0. "What's the URL of your Making With Code website?" - use the default value.
 0. "Which code editor do you want to use?" - use the default value.
-0. "What is your GitHub username?" - use whatever username you created in the Github account creation. 
+0. "What is your GitHub username?" - use whatever username you created in the Github account creation.
 0. "What is the name of the course's GitHub organization?" - this is `the-isf-academy`.
 0. "What is the email address associated with your GitHub account?" - this should be your ISF student email.
 0. "What name do you want to use in your git commits? " - this is your Github username.
@@ -161,11 +161,67 @@ You will be asked some questions to finish the setup process. **We suggest using
 
 > **When you are asked for your computer password, you won't see any letters appear as you type.** This is normal--it's to keep the person standing behind you from seeing your password.
 
+## Homebrew and Github CLI
 
+{{< code-action "Run the below command to install homebrew." >}} This will install homebrew onto your computer. This may take up to an hour to complete. Don't worry, you can still use your computer and have it running in the background. If you already have homebrew, then this step will be quick.
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+{{< code-action "Run the below command to install Github." >}} This will install Github CLI onto your computer.
+```shell
+brew install gh
+```
+{{< code-action "Run the below command to authorize the Github CLI." >}} This will take you through a few prompts to log in to your github account.
+```shell
+gh auth login
+```
 
+You will be asked some questions to finish the authorization process. **You can press return to accept the default options**
+
+{{< figure src="images/courses/cs9/unit00/-000_initial_setup0.png" width="100%" alt-text="mwc setup" >}}
+
+**You will be asked the following questions to finish the authorization process. You should accept all the default highlighted options, which are these:**
+
+0. "What account do you want to log into?" - GitHub.com
+0. "What is your preferred protocol for Git operations?" - HTTPS
+0. "Authenticate Git with your GitHub credentials?" - Yes
+0. "How would you like to authenticate GitHub CLI?" - Log in with a web browser
+
+{{< code-action "When prompted, copy your code and press enter." >}} Then you can follow the prompts in your browser.
+
+## Testing your Installation
+
+**Perform the following checks to be sure your installation is working properly**
+
+{{< code-action "Run the following command in your terminal" >}}
+
+```shell
+mwc update
+```
+
+The first time you run it, you should get something like this:
+
+```shell
+Initializing lab0_terminal_adventure_sequel at
+cs10/unit0.0_review/lab0_terminal_adventure_sequel.
+See {module['url']} for details.
+Cloning into 'lab0_terminal_adventure_sequel'...
+remote: Enumerating objects: 54, done.
+remote: Counting objects: 100% (54/54), done.
+remote: Compressing objects: 100% (32/32), done.
+remote: Total 54 (delta 16), reused 50 (delta 12), pack-reused 0
+Receiving objects: 100% (54/54), 5.09 MiB | 10.59 MiB/s, done.
+Resolving deltas: 100% (16/16), done.
+```
+
+When you run it again, you will get something like this:
+
+```shell
+Checking cs10/unit0.0_review/lab0_terminal_adventure_sequel for updates.
+Already up to date.
+```
 {{< checkpoint >}}
-Congratulations! You're finished with the initial setup for CS! 
+If you are seeing just these two lines, congratulations! You're all set up and ready to go.
 
-If you ran into any issues, please send a screenshot of your error to a CS teacher.
-
+If you are getting more than these two lines after running `mwc update` multiple times, please inform your teacher!
 {{</checkpoint >}}
