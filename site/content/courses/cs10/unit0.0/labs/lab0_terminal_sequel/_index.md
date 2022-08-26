@@ -21,10 +21,10 @@ The last time you ventured into the Terminal, you came away with treasure! It's 
 
 {{< figure src="https://www.kindpng.com/picc/m/410-4102844_transparent-pirate-ship-silhouette-png-pirate-ship-drawing.png" width="75%"  >}}
 
-{{< code-action "Open a new Terminal window and enter into the" >}} `making_with_code/cs10/unit0.0` **directory**
+{{< code-action "Open a new Terminal window and enter into the" >}} `making_with_code/cs10/unit0.0_review` **directory**
 
 ```shell
-cd desktop/making_with_code/cs10/unit0.0
+cd desktop/making_with_code/cs10/unit0.0_review
 ```
 {{< code-action >}} **Use the `mwc` tool to clone the repo.**
 ```shell
@@ -32,14 +32,22 @@ mwc update
 ```
 > *Going forward, you will be using `mwc update` to clone repositories onto your computer. No more need to `git clone`.*
 
-{{< code-action "Let's have a look at the new repo!" >}} 
+{{< code-action "Let's enter the repo and then enter the Poetry shell." >}} 
+> *We will be entering the Poetry shell every time we enter a repository.*
 
 ```shell
-cd lab-terminal-adventure-sequel-YOUR-GITHUB-USERNAME
-ls
+cd lab0_terminal_adventure_sequel
+poetry shell
+```
+You should see the following after entering the Poetry shell:
+```shell
+Spawning shell within /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-terminal-adventure2-QE1DVo_2-py3.10
+bash-5.1$ . /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-terminal-adv
+enture2-QE1DVo_2-py3.10/bin/activate
+(lab-terminal-adventure2-QE1DVo_2-py3.10) bash-5.1$ 
 ```
 
-You should see the following:
+{{< code-action "Now take a look at what's in the repository:" >}} `ls`
 ```shell
 kitchen	    captain.py     helpers.py
 ```
@@ -88,7 +96,7 @@ Once you've successfully completed the adventure be sure to fill out [this Googl
 
 ## [1] Extension
 
-Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature? Can you create a new adventure from scratch? 
+Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature? 
 
 Some ideas include but are not limited to:
 - generating different sandwiches depending on the ingredients in the `sandwich_maker` directory
@@ -96,4 +104,4 @@ Some ideas include but are not limited to:
 - writing more rooms into the ship for the user to explore
 
 
-{{< code-action "Expand on the current Terminal Adventure or create your own Terminal Adventure!" >}} If you choose to create your own adventure, create a new repository inside your `making_with_code/cs10/unit0.0` folder to hold your new adventure.
+{{< code-action "Expand the current Terminal Adventure!" >}} 

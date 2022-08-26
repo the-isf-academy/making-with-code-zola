@@ -1,6 +1,9 @@
 ---
 title: 2. Variables
 type: lab
+slug: lab2_variables
+repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
+init_action: clone
 draft: true
 
 ---
