@@ -1,7 +1,7 @@
 ---
 title: 1. Terminal Adventure
 type: lab
-slug: lab1_terminal_adventure
+slug: lab_terminal_adventure
 repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
 init_action: clone
 # numberHeaders: true
@@ -18,13 +18,13 @@ do all kinds of other tasks.
 {{< aside "Windows Users" >}}
 Windows users should use Powershell wherever it says Terminal.
 
-You may see more information output than your Mac peers, but all commands should work the same. 
+You may see more information output than your Mac peers, but all commands should work the same.
 {{< /aside >}}
 
 
 ## Terminal Adventure Lab
 
-{{< code-action "Let's start cloning this lab onto your laptop." >}} This will download a copy of a lab that is hosted on Github onto your computer. Think of it like downloading a folder from Google drive. 
+{{< code-action "Let's start cloning this lab onto your laptop." >}} This will download a copy of a lab that is hosted on Github onto your computer. Think of it like downloading a folder from Google drive.
 > *We will run this command `mwc update` every time we start a new lab.*
 ```shell
 mwc update
@@ -34,10 +34,10 @@ mwc update
 {{< code-action "Open Terminal and type the following command." >}} This will open the Terminal Adventure Lab in Terminal.
 
 ```shell
-cd Desktop/making_with_code/cs9/unit_00_drawing/lab1_terminal_adventure
+cd Desktop/making_with_code/cs9/unit_00_drawing/lab_terminal_adventure
 ```
 
-{{< code-action "We then must enter the Poetry shell." >}} This will ensure all of the correct packages and versions of those packages is being used. 
+{{< code-action "We then must enter the Poetry shell." >}} This will ensure all of the correct packages and versions of those packages is being used.
 ```shell
 poetry shell
 ```
@@ -46,27 +46,29 @@ poetry shell
 > Creating virtualenv lab-00-terminal-adventure-shGU1wL6-py3.10 in /Users/eqbrown/Library/Caches/pypoetry/virtualenvs
 > Spawning shell within /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-00-terminal-adventure-shGU1wL6-py3.10
 >bash-5.1$ . /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-00-terminal-adventure-shGU1wL6-py3.10/bin/activate
->(lab-00-terminal-adventure-shGU1wL6-py3.10) bash-5.1$ 
+>(lab-00-terminal-adventure-shGU1wL6-py3.10) bash-5.1$
 
+{{< aside "Exiting the poetry shell" >}}
+When you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
 
-
-{{< code-action "Let's have a look at what's in the repostiory with:" >}}
+{{< code-action "Let's have a look at what's in the repository with:" >}}
 ```shell
 ls
 ```
-> You should see the following output: 
-> ```shell 
-> adventure	    returnToShip.py
+> You should see the following output:
+> ```shell
+> adventure	    returnToShip.py  poetry.lock	pyproject.toml
 > ```
-> `returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end). 
+> `returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end).
 
-{{< code-action "Run it to see what happens:" >}} 
+{{< code-action "Run it to see what happens:" >}}
 
 ```shell
 python returnToShip.py
 
 ```
-> You should see the following output: 
+> You should see the following output:
 > ```shell
 >Your adventure has only just begun. You are not yet ready to return
 >to the ship. More secrets await you in the ocean's depths.
@@ -90,7 +92,7 @@ $ ls
 seafloor	sinking.txt
 ```
 
-`sinking.txt` is a text file, so we can read it. 
+`sinking.txt` is a text file, so we can read it.
 
 {{< code-action "Try using the " >}} `cat` **command:**
 
@@ -107,14 +109,16 @@ cat sinking.txt
 
 Continue exploring into the depths of the sea to find it.
 
-Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again! 
+Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again!
 
 **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc_OBYmQV95aeB96HuDfk9c3bBFzrV9HJBGFm6GVL2tFLQlfw/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
 
-
+{{< aside "Exiting the poetry shell" >}}
+Remember, when you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
 
 ---
 
@@ -148,7 +152,6 @@ These are just for fun. There's lots more--ask your teachers!
 | Command              | What it does                                 |
 | --------------       | -------------------------------------------- |
 | `say hello`          | Makes the computer say hello (Mac only)      |
-| `cat sinking.txt | say` | Makes the computer read the text file aloud |
+| `cat sinking.txt \| say` | Makes the computer read the text file aloud |
 | `cal`                | Shows you a monthly calendar                 |
 | `banner hello`       | Just try it                                  |
-
