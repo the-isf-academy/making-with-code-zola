@@ -1,10 +1,10 @@
 ---
 title: 2. Variables
 type: lab
-slug: lab2_variables
-repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
+slug: lab_variables
+repo_url: https://github.com/the-isf-academy/lab-variables.git
 init_action: clone
-draft: true
+# draft: true
 
 ---
 
@@ -13,21 +13,46 @@ In this lab, we will learn about variables, a powerful storage container of info
 
 ## [0] Variable tests
 
-{{< code-action "mwc update" >}}
+{{< code-action "Start cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+```shell
+mwc update
+```
+{{< code-action "Open Terminal and type the following command to open the lab folder." >}}
+```shell
+cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_variables
+```
 
-{{< code-action "Go to right location" >}}
+{{< code-action "Enter the Poetry Shell." >}} We will also run this command at the start of each lab, but only when we are inside a lab folder.
+```shell
+poetry shell
+```
 
-{{< code-action "look at files" >}}
 
+{{< code-action "Take a look at the files inside with:" >}} `ls`
+- `variable_test0.py`
+- `variable_test1.py`
+- `variable_test2.py`
+- `responsive_drawing.py`
 
+---
 
 ### [Variable test 0]
 
-{{< code-action "Open the first file" >}}
+{{< code-action "First let's start by running" >}} `variable_test0.py`.
+```shell
+python variable_test0.py
+```
+
+You should see words print out in the Terminal. 
+
+
+{{< code-action "Let's see how that is happening by opening the file in Atom:" >}} `atom variable_test0.py`
+> Atom is the code editor we will be using throughout this course. 
+
 ```python
 #####################
 # Unit 0 Lab 2
-# variable_tests0.py
+# variable_test0.py
 #####################
 
 name = "YOUR NAME"
@@ -35,13 +60,13 @@ print("Hello")
 print(name)
 ```
 
-{{< code-action >}} Start by replacing `"Your name"` with your name (but keep the `""`). Now you have *declared* the `name` variable and *assigned* your name as its value.
+{{< code-action >}} **Start by replacing `"YOUR NAME"` with your name (but keep the `""`).** Now you have *declared* the `name` variable and *assigned* your name as its value.
 
 {{< code-action "Save the file and run the program again." >}} You should see an output similar to the one below:
 > *Tip: Use the up arrow to cycle through your previous commands in Terminal*
 
 ```shell
-~/Desktop/cs9/unit_01$ python lab_02.py
+$ python variable_test0.py
 Hello
 Emma
 ```
@@ -65,42 +90,48 @@ variable at different places in the code. What do you think will happen?
 
 {{< code-action "Run the code to find out!" >}} You should see an output similar to the one below:
 ```shell
-~/Desktop/cs9/unit_01$ python lab_02.py
+$ python variable_test0.py
 Hello
 Emma
 Hello
 Britte
 
 ```
-
+---
 
 ### [Variable test 1]
 
-{{< code-action "Copy the code block below into your file." >}}
-Replace `"color"` and `"fruit"` with your favorite color and fruit:
+{{< code-action "Let's continue explore variables by running a different variable test:" >}} `python variable_test1.py`
+
+Hmm, something is wrong here.
+
+{{< code-action "Open up the code and try to fix the bug:" >}} `atom variable_test1.py`
 
 ```python
-print("-- [variable test 1] --")
+#####################
+# Unit 0 Lab 2 
+# variable_test1.py
+#####################
+
 favorite_color = "color"
 print("Your favorite color is " + favorite_color)
 print("Your favorite fruit is " + favorite_fruit)
 favorite_fruit = "fruit"
 ```
 
-{{< code-action "Run the program again" >}}
 
-Hmm, something is wrong here. Work with your group to find and fix the bug.
-
-{{< checkpoint >}}
-In your notebook, describe the bug and how you fixed it.
-
-Before moving on, check in with a teacher.
-{{< /checkpoint >}}
+---
 
 ### [Variable test 2]
-{{< code-action "Copy the code block below into your file"  >}}
+{{< code-action "Now, let's experiment with user input. Run the 3rd variable test:"  >}} `python variable_test2.py`
+
 ```python
-print("-- [variable test 2] --")
+#####################
+# Unit 0 Lab 2 
+# variable_test2.py
+#####################
+
+
 favorite_artist = input("What is your favorite artist? ")
 print("Oh, I love " + favorite_artist + "!")
 ```
@@ -111,41 +142,60 @@ This shows how your programs can be responsive to user input and how you can sto
 information from the user in variables that may change every time your program runs.
 
 
-{{< checkpoint >}}
-Answer the following check-in questions in your notebook before moving on.
+---
 
-0. What is a variable?
-0. How do you declare a variable?
-0. At what point in a program can you use a variable?
-{{< /checkpoint >}}
 
 ## [1] Responsive Drawing
 
 
-
 The last variable test showed how your programs can be responsive to user input and how you can store information from the user in variables that may change every time your program runs.
 
-This means that we can use variables to make our code do different things at different times based on input. Can you imagine how that might help use make more interesting turtle drawing?
+**This means that we can use variables to make our code do different things at different times based on input.** Can you imagine how that might help use make more interesting turtle drawing?
 
-{{< code-action "In a new file, create a turtle drawing that is responsive to user input." >}} Create your drawing in a file called `lab_02_drawing.py`.
+{{< figure src="images/courses/cs9/unit00/blue_hexagon2.png" width="30%" alt-text="blue hexagon" >}}
+
+
+{{< code-action "In a new file, create a turtle drawing that is responsive to user input." >}} Your drawing must include:
+- a numerical user input
+- a word based user input 
+- 1 Turtle function not included on the `0. Turtle` lab page 
+    - You may want to look at the official documentation at [https://docs.python.org/3/library/turtle.html](https://docs.python.org/3/library/turtle.html)
 
 
 {{< aside "FYI" >}}
-You can get input from the user while your program is running using `input("PROMPT")`.
+You can get input from the user while your program is running using `input("PROMPT")`. By default, `input("PROMPT)` collects words. 
 
 If you want to get a number from the user, use `int(input("PROMPT"))`. This is because
 Python treats numbers and words differently. We'll talk more about this next unit.
+
+*For example:*
+```python
+age = int(input("How old are you?"))
+```
+
 {{< /aside >}}
 
+---
 
 ### [Deliverables]
 
-{{< deliverables "Please submit your lab by copying your files into your CS9 Google Drive folder. and answer the following in your notebook:" >}}
-- Describe a moment where your code didn't do as intended. How did you debug it?
+
+{{< deliverables "Deliverables" >}}
+
+**Once you've successfully completed the responsive drawing be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdj2v10XtImu8somw--aWTTspN6CxBJpYRTAfGIrSfC0o4EpA/viewform?usp=sf_link)**.
+
+
 {{< /deliverables >}}
+
+---
 
 ## [2] Extension: Size Factor Drawing
 
-{{< code-action "In a new file, create a turtle drawing of a face that changes sizes based on a user inputed size factor." >}} Create your drawing in a file called `lab_02_extension.py`.
+**Create a turtle drawing of a face that changes sizes based on a user inputed size factor.** 
 
 For example, if the user inputs `1` the face should be an average size. If the user inputs `.5`, the face should be half size. If the user inputs `2`, the face should be twice the size.
+
+
+{{< code-action "Create a new file:" >}} `atom size_factor.py`. 
+> *Make note of how we create a new file.* `atom <file_name.py>`
+
