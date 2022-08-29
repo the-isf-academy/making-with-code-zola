@@ -21,10 +21,10 @@ The last time you ventured into the Terminal, you came away with treasure! It's 
 
 {{< figure src="https://www.kindpng.com/picc/m/410-4102844_transparent-pirate-ship-silhouette-png-pirate-ship-drawing.png" width="75%"  >}}
 
-{{< code-action "Open a new Terminal window and enter into the" >}} `making_with_code/cs10/unit0.0` **directory**
+{{< code-action "Open a new Terminal window and enter into the" >}} `making_with_code/cs10/unit0.0_review` **directory**
 
 ```shell
-cd desktop/making_with_code/cs10/unit0.0
+cd desktop/making_with_code/cs10/unit0.0_review
 ```
 {{< code-action >}} **Use the `mwc` tool to clone the repo.**
 ```shell
@@ -35,12 +35,21 @@ mwc update
 {{< code-action "Let's have a look at the new repo!" >}} 
 
 ```shell
-cd lab-terminal-adventure-sequel-YOUR-GITHUB-USERNAME
-ls
+cd lab-terminal-adventure-sequel
+
 ```
 
-You should see the following:
+{{< code-action "You will now have to enter the" >}} **`poetry shell` every time you want to code in this class.**
+
 ```shell
+poetry shell
+```
+> note how it states the current lab you are in `(lab-terminal-adventure2-RFjquM5P-py3.10)`
+
+{{< code-action "You can now list out the items in the repo as you would normally with:" >}} `ls`
+```shell
+ls
+
 kitchen	    captain.py     helpers.py
 ```
 
