@@ -85,10 +85,11 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `rm -d dir`          | removes (deletes) the directory `dir`        |
 | `rm -r dir`          | recursively removes (deletes) the directory `dir` and all subdirectories and files within that directory. **Be careful, this is a powerful tool!** |
 
-
 {{< aside "Exiting the poetry shell" >}}
-Remember, when you want to exit the shell, you can type `exit` or `^D`
+When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
+
+
 ---
 
 ### [Deliverables]
