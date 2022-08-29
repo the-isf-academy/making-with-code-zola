@@ -1,7 +1,7 @@
 ---
 title: "0. Terminal Adventure: Sequel"
 type: lab
-slug: lab0_terminal_adventure_sequel
+slug: lab_terminal_adventure_sequel
 repo_url: https://github.com/the-isf-academy/lab-terminal-adventure-sequel
 init_action: clone
 # numberHeaders: true
@@ -10,9 +10,15 @@ init_action: clone
 
 
 # The Terminal: Reloaded
-This lab will re-explore one of our most important and most used tools: the Terminal. 
+This lab will re-explore one of our most important and most used tools: the Terminal.
 The Terminal is what we use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
+
+{{< aside "Windows Users" >}}
+Windows users should use Powershell wherever it says Terminal.
+
+You may see more information output than your Mac peers, but all commands should work the same.
+{{< /aside >}}
 
 
 ## [0] Terminal Adventure Lab
@@ -21,28 +27,17 @@ The last time you ventured into the Terminal, you came away with treasure! It's 
 
 {{< figure src="https://www.kindpng.com/picc/m/410-4102844_transparent-pirate-ship-silhouette-png-pirate-ship-drawing.png" width="75%"  >}}
 
-{{< code-action "Open a new Terminal window and enter into the" >}} `making_with_code/cs10/unit0.0_review` **directory**
-
-```shell
-cd desktop/making_with_code/cs10/unit0.0_review
-```
-{{< code-action >}} **Use the `mwc` tool to clone the repo.**
+{{< code-action >}} **Use the `mwc` tool to clone the repo:**
 ```shell
 mwc update
 ```
 > *Going forward, you will be using `mwc update` to clone repositories onto your computer. No more need to `git clone`.*
 
-{{< code-action "Let's have a look at the new repo!" >}} 
+
+{{< code-action "Open a new Terminal window and enter into the" >}} `lab_terminal_adventure_sequel` **repo:**
 
 ```shell
-cd lab-terminal-adventure-sequel
-
-```
-
-{{< code-action "You will now have to enter the" >}} **`poetry shell` every time you want to code in this class.**
-
-```shell
-poetry shell
+cd desktop/making_with_code/cs10/unit0.0_review/lab_terminal_adventure_sequel
 ```
 > note how it states the current lab you are in `(lab-terminal-adventure2-RFjquM5P-py3.10)`
 
@@ -52,8 +47,16 @@ ls
 
 kitchen	    captain.py     helpers.py
 ```
+{{< aside "Exiting the poetry shell" >}}
+When you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
 
-`captain.py` is a runnable Python file (you can tell by the `.py` at the end). *`helpers.py` provides some useful functions that are utilized in this adventure. You can just ignore it until the extension.*
+{{< code-action "Now take a look at what's in the repository:" >}} `ls`
+```shell
+kitchen	    captain.py     helpers.py    poetry.lock	pyproject.toml
+```
+
+`captain.py` is a runnable Python file (you can tell by the `.py` at the end). *`helpers.py` provides some useful functions that are utilized in this adventure, and `poetry.lock`	and `pyproject.toml` can be ignored.*
 
 {{< code-action "Run it to see what happens!" >}} **You will end this lab by successfully making a sandwich!** Explore the corners of the kitchen to find the necessary supplies.
 
@@ -82,6 +85,10 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `rm -d dir`          | removes (deletes) the directory `dir`        |
 | `rm -r dir`          | recursively removes (deletes) the directory `dir` and all subdirectories and files within that directory. **Be careful, this is a powerful tool!** |
 
+
+{{< aside "Exiting the poetry shell" >}}
+Remember, when you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
 ---
 
 ### [Deliverables]
@@ -97,7 +104,7 @@ Once you've successfully completed the adventure be sure to fill out [this Googl
 
 ## [1] Extension
 
-Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature? Can you create a new adventure from scratch? 
+Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature?
 
 Some ideas include but are not limited to:
 - generating different sandwiches depending on the ingredients in the `sandwich_maker` directory
@@ -105,4 +112,4 @@ Some ideas include but are not limited to:
 - writing more rooms into the ship for the user to explore
 
 
-{{< code-action "Expand on the current Terminal Adventure or create your own Terminal Adventure!" >}} If you choose to create your own adventure, create a new repository inside your `making_with_code/cs10/unit0.0` folder to hold your new adventure.
+{{< code-action "Expand the current Terminal Adventure!" >}}

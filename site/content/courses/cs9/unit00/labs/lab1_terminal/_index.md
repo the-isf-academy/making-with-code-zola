@@ -1,11 +1,11 @@
 ---
 title: 1. Terminal Adventure
 type: lab
-slug: lab1_terminal_adventure
+slug: lab_terminal_adventure
 repo_url: https://github.com/the-isf-academy/lab-terminal-adventure
 init_action: clone
-numberHeaders: true
-draft: true
+# numberHeaders: true
+# draft: true
 
 ---
 # Into the Terminal
@@ -15,56 +15,64 @@ The Terminal is what we'll use to navigate our filesystem, run code files, insta
 do all kinds of other tasks.
 
 
-{{< aside "FYI" >}}
-In this lab, we will just use `$` to represent the terminal prompt unless the path to the
-current directory is important. If you see this in the lab:
-```shell
-$ ls
-some-directory some-file.txt
-```
-but your computer shows something like this:
-```shell
-COMPUTER: terminal_lab username$ ls
-some-directory some-file.txt
-```
-don't worry. As long as you see the `$` at the end, it means you can put in new commands to your
-Terminal.
+{{< aside "Windows Users" >}}
+Windows users should use Powershell wherever it says Terminal.
 
+You may see more information output than your Mac peers, but all commands should work the same.
 {{< /aside >}}
 
 
 ## Terminal Adventure Lab
 
-
-{{< code-action "Open a new Terminal window and enter each command with a " >}} `$` **one by one.**
-Just be sure you do not type the `$`.
-
+{{< code-action "Let's start cloning this lab onto your laptop." >}} This will download a copy of a lab that is hosted on Github onto your computer. Think of it like downloading a folder from Google drive.
+> *We will run this command `mwc update` every time we start a new lab.*
 ```shell
-$ cd Desktop/cs9/unit_00
-$ git clone https://github.com/the-isf-academy/lab_00_terminal_adventure.git
-$ ls
-lab_00_terminal_adventure	 
-$ cd lab_00_terminal_adventure
+mwc update
 ```
 
-You just copied some code from GitHub onto your computer. 
 
-{{< code-action "Let's have a look:" >}} 
-
-```shell
-$ ls
-adventure	    returnToShip.py
-```
-
-`returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end). 
-
-{{< code-action "Run it to see what happens:" >}} 
+{{< code-action "Open Terminal and type the following command." >}} This will open the Terminal Adventure Lab in Terminal.
 
 ```shell
-$ python returnToShip.py
-  Your adventure has only just begun. You are not yet ready to return
-  to the ship. More secrets await you in the ocean's depths.
+cd Desktop/making_with_code/cs9/unit_00_drawing/lab_terminal_adventure
 ```
+
+{{< code-action "We then must enter the Poetry shell." >}} This will ensure all of the correct packages and versions of those packages is being used.
+```shell
+poetry shell
+```
+> You should see the following output:
+> ```shell
+> Creating virtualenv lab-00-terminal-adventure-shGU1wL6-py3.10 in /Users/eqbrown/Library/Caches/pypoetry/virtualenvs
+> Spawning shell within /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-00-terminal-adventure-shGU1wL6-py3.10
+>bash-5.1$ . /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-00-terminal-adventure-shGU1wL6-py3.10/bin/activate
+>(lab-00-terminal-adventure-shGU1wL6-py3.10) bash-5.1$
+
+{{< aside "Exiting the poetry shell" >}}
+When you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
+
+{{< code-action "Let's have a look at what's in the repository with:" >}}
+```shell
+ls
+```
+> You should see the following output:
+> ```shell
+> adventure	    returnToShip.py  poetry.lock	pyproject.toml
+> ```
+> `returnToShip.py` is a runnable Python file (you can tell by the `.py` at the end).
+
+{{< code-action "Run it to see what happens:" >}}
+
+```shell
+python returnToShip.py
+
+```
+> You should see the following output:
+> ```shell
+>Your adventure has only just begun. You are not yet ready to return
+>to the ship. More secrets await you in the ocean's depths.
+>```
 
 {{< aside "Your challenge is to see if you can get the treasure, using just the Terminal" >}}
 
@@ -76,6 +84,7 @@ Use Terminal to explore the contents of the `adventure` directory.
 
 
 {{< code-action "Begin by going into into the" >}}  `adventure` **directory:**
+> *Do not type `$`. These are to mark the start of a Terminal command.*
 
 ```shell
 $ cd adventure
@@ -83,12 +92,12 @@ $ ls
 seafloor	sinking.txt
 ```
 
-`sinking.txt` is a text file, so we can read it. 
+`sinking.txt` is a text file, so we can read it.
 
 {{< code-action "Try using the " >}} `cat` **command:**
 
 ```shell
-$ cat sinking.txt
+cat sinking.txt
 ```
 ---
 
@@ -100,14 +109,16 @@ $ cat sinking.txt
 
 Continue exploring into the depths of the sea to find it.
 
-Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again! 
+Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again!
 
-Before moving on, check in with a teacher and answer the following prompts in your notebook:
-- What are 3 functions of the Terminal?
-- Compare navigating the file system via the Terminal v. the Finder. 
+**Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc_OBYmQV95aeB96HuDfk9c3bBFzrV9HJBGFm6GVL2tFLQlfw/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
+
+{{< aside "Exiting the poetry shell" >}}
+Remember, when you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
 
 ---
 
@@ -141,7 +152,6 @@ These are just for fun. There's lots more--ask your teachers!
 | Command              | What it does                                 |
 | --------------       | -------------------------------------------- |
 | `say hello`          | Makes the computer say hello (Mac only)      |
-| `cat sinking.txt | say` | Makes the computer read the text file aloud |
+| `cat sinking.txt \| say` | Makes the computer read the text file aloud |
 | `cal`                | Shows you a monthly calendar                 |
 | `banner hello`       | Just try it                                  |
-
