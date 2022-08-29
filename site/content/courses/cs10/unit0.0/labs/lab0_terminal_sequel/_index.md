@@ -39,21 +39,13 @@ mwc update
 ```shell
 cd desktop/making_with_code/cs10/unit0.0_review/lab_terminal_adventure_sequel
 ```
+> note how it states the current lab you are in `(lab-terminal-adventure2-RFjquM5P-py3.10)`
 
-
-
-{{< code-action "Enter the Poetry shell:" >}}
-> *We will be entering the Poetry shell every time we enter a repository.*
-
+{{< code-action "You can now list out the items in the repo as you would normally with:" >}} `ls`
 ```shell
-poetry shell
-```
-You should see the following after entering the Poetry shell:
-```shell
-Spawning shell within /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-terminal-adventure2-QE1DVo_2-py3.10
-bash-5.1$ . /Users/eqbrown/Library/Caches/pypoetry/virtualenvs/lab-terminal-adv
-enture2-QE1DVo_2-py3.10/bin/activate
-(lab-terminal-adventure2-QE1DVo_2-py3.10) bash-5.1$
+ls
+
+kitchen	    captain.py     helpers.py
 ```
 {{< aside "Exiting the poetry shell" >}}
 When you want to exit the shell, you can type `exit` or `^D`
