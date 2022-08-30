@@ -13,11 +13,11 @@ In this lab, we will learn about variables, a powerful storage container of info
 
 ## [0] Variable tests
 
-{{< code-action "Start cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
 ```shell
 mwc update
 ```
-{{< code-action "Open Terminal and type the following command to open the lab folder." >}}
+{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_variables
 ```
@@ -26,7 +26,9 @@ cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_variables
 ```shell
 poetry shell
 ```
-
+{{< aside "Exiting the poetry shell" >}}
+When you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
 
 {{< code-action "Take a look at the files inside with:" >}} `ls`
 - `variable_test0.py`
@@ -43,11 +45,11 @@ poetry shell
 python variable_test0.py
 ```
 
-You should see words print out in the Terminal. 
+You should see words print out in the Terminal.
 
 
 {{< code-action "Let's see how that is happening by opening the file in Atom:" >}} `atom variable_test0.py`
-> Atom is the code editor we will be using throughout this course. 
+> Atom is the code editor we will be using throughout this course.
 
 ```python
 #####################
@@ -109,7 +111,7 @@ Hmm, something is wrong here.
 
 ```python
 #####################
-# Unit 0 Lab 2 
+# Unit 0 Lab 2
 # variable_test1.py
 #####################
 
@@ -127,7 +129,7 @@ favorite_fruit = "fruit"
 
 ```python
 #####################
-# Unit 0 Lab 2 
+# Unit 0 Lab 2
 # variable_test2.py
 #####################
 
@@ -157,13 +159,13 @@ The last variable test showed how your programs can be responsive to user input 
 
 {{< code-action "In a new file, create a turtle drawing that is responsive to user input." >}} Your drawing must include:
 - a numerical user input
-- a word based user input 
-- 1 Turtle function not included on the `0. Turtle` lab page 
+- a word based user input
+- 1 Turtle function not included on the `0. Turtle` lab page
     - You may want to look at the official documentation at [https://docs.python.org/3/library/turtle.html](https://docs.python.org/3/library/turtle.html)
 
 
 {{< aside "FYI" >}}
-You can get input from the user while your program is running using `input("PROMPT")`. By default, `input("PROMPT)` collects words. 
+You can get input from the user while your program is running using `input("PROMPT")`. By default, `input("PROMPT")` collects words.
 
 If you want to get a number from the user, use `int(input("PROMPT"))`. This is because
 Python treats numbers and words differently. We'll talk more about this next unit.
@@ -191,11 +193,10 @@ age = int(input("How old are you?"))
 
 ## [2] Extension: Size Factor Drawing
 
-**Create a turtle drawing of a face that changes sizes based on a user inputed size factor.** 
+**Create a turtle drawing of a face that changes sizes based on a user inputed size factor.**
 
 For example, if the user inputs `1` the face should be an average size. If the user inputs `.5`, the face should be half size. If the user inputs `2`, the face should be twice the size.
 
 
-{{< code-action "Create a new file:" >}} `atom size_factor.py`. 
+{{< code-action "Create a new file:" >}} `atom size_factor.py`.
 > *Make note of how we create a new file.* `atom <file_name.py>`
-
