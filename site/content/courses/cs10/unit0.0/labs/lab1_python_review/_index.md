@@ -9,6 +9,9 @@ title: "1. Python Review"
 
 In light of having the summer off, we thought we'd start with reviewing Python syntax and logical reasoning. 
 
+{{< figure src="https://miro.medium.com/max/727/1*mn6GkO9XxGwyHdlSGBUrTQ.png" width="30%" alt-text="python logo" >}}
+
+
 
 ## HackerRank
 
@@ -27,6 +30,8 @@ HankerRank is a website where coders go to practice their skills. Today we will 
 - Loops
 - Write a function
 
+---
+
 ## CodingBat
 
 Now that you've re-familiarized yourself with Python syntax. We will now apply those skills in mini-puzzles. 
@@ -43,3 +48,19 @@ Now that you've re-familiarized yourself with Python syntax. We will now apply t
 - 1 puzzles from Warmup-2
 - 1 puzzles from Logic-1
 > It is up to you to choose a specific problem from each section
+
+--- 
+
+## Deliverables
+
+{{< deliverables "" >}}  
+
+Once you've successfully completed the puzzles be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfFSyepj68NvtOxHWspMagXLVH85116lGxowNEu9R_Sxk3BHA/viewform?usp=sf_link).
+
+{{< /deliverables >}}
+
+---
+
+## Extension
+
+{{< code-action "If you've completed all of the required puzzles, explore the more advanced puzzles on either HyperRank or CodingBat." >}} How many challenges can you clear? 

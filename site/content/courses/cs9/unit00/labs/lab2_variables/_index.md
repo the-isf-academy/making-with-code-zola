@@ -17,10 +17,26 @@ In this lab, we will learn about variables, a powerful storage container of info
 ```shell
 mwc update
 ```
+
+{{< aside "Windows Users" >}}
+
+0. Go to the path that your `mwc` script lives on your computer using `cd`.
+0. Run `./mwc update` inside that directory. 
+
+Ask a teacher if you are unsuer of how to do this.
+
+{{< /aside >}}
+
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_variables
 ```
+
+{{< aside "Windows Users" >}}
+
+I suggest not copying the path command, and instead using `cd` and `ls` to ensure you are in the correct `making_with_code` folder.
+
+{{< /aside >}}
 
 {{< code-action "Enter the Poetry Shell." >}} We will also run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
@@ -182,7 +198,7 @@ age = int(input("How old are you?"))
 ### [Deliverables]
 
 
-{{< deliverables "Deliverables" >}}
+{{< deliverables  >}}
 
 **Once you've successfully completed the responsive drawing be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdj2v10XtImu8somw--aWTTspN6CxBJpYRTAfGIrSfC0o4EpA/viewform?usp=sf_link)**.
 
