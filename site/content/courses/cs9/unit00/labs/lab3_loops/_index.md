@@ -37,15 +37,21 @@ When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
 {{< code-action "Take a look at the files inside with:" >}} `ls`
-- `variable_test0.py`
+- `loops_repetition.py`
 - `variable_test1.py`
 - `variable_test2.py`
 - `responsive_drawing.py`
 
 ---
 
-### [Part A: Calculations]
-{{< code-action "Run your program and see what gets output." >}} 
+### [Repetition]
+
+{{< code-action "Let's start by openning" >}} `loops_repetition.py` **in Atom.**
+```shell
+atom loops_repetition.py
+```
+
+{{< code-action "Run your program and see what gets output:" >}} `python loops_repetition.py`
 
 This loop runs 10 times, repeating everything indented to the right of the `for i in range(10):` line.
 `i` is a variable that gets incremented by one every time the loop runs.
@@ -54,47 +60,9 @@ This loop runs 10 times, repeating everything indented to the right of the `for 
 Can you figure out how to do it?
 
 
----
+{{< code-action "Edit the loop again to print the square of numbers 0-12." >}} *Remember, the square of a number, is the number multiplied by itself.*
 
-### [Part B: Squaring Numbers]
-
-{{< code-action "Using a loop, print the square of numbers 0-12." >}} Put your code under "#[PART B: SQUARING NUMBERS]"
-
-{{< aside "FYI: Math in Python" >}}
-One feature of the Python language is that it understands math equations. 
-
-For example,
-```python
-print(1+1)
-```
-
-Will output,
-```shell
-2
-```
-
-And, 
-```python
-print(10/2)
-```
-
-Will output,
-```shell
-5
-```
-
-It also follow the convention of order of operations
-```python
-(3*2)+(5+5)
-```
-
-Will output,
-```shell
-16
-```
-{{< /aside >}}
-
-Your loop output should look like this:
+When you run `python loops_repitition.py` it should output:
 ```shell
 0
 1
@@ -114,7 +82,9 @@ Your loop output should look like this:
 
 <hr>
 
-### [Part C: Looping a Square]
+### [Looping a Square]
+
+
 
 Take a look at the code we've been using to draw a square:
 
@@ -133,15 +103,7 @@ Pretty repetitive, right?
 
 {{< code-action "Use a loop to draw a square to avoid repeating the same code over and over again." >}}
 
-{{< checkpoint >}}
-Answer the following check-in questions in your notebook before moving on:
-
-0. What is a loop?
-0. How do you put code into a loop?
-0. What changes over each iteration of a loop? What stays the same?
-{{< /checkpoint >}}
-
-<hr>
+---
 
 ## [1] Geometric sequences
 
@@ -155,15 +117,22 @@ number in the sequence.**
 > For example, `1, 2, 4, 16,...` is a geometric sequence
 where each number is 2 times the number before it. 
 >
-> The common ratio between the sequence is 2 
+> The ratio between the sequence is 2 
 
+**It is up to you to write a program that displays 10 digits of any geometric sequence given a ratio.**
 
+---
 
 
 ### [Pseudocode]
-To get started, think through the *pseudo-code* of what we want this program to do. **Pseudocode** is an outline of the program we'll ultimately write where we don't worry about using Python syntax.
 
-In `geometric_sequence.py`, use `Comments` to write the pseudocode to list the first 10 numbers of any geometric sequence. 
+**Pseudocode is an outline of the program we'll ultimately write where we don't worry about using Python syntax.**
+
+To get started, think through the *pseudo-code* of what we want this program to do. 
+
+{{< write-action >}} **In `geometric_sequence.py`, use `comments` to write the pseudocode to list the first 10 numbers of any geometric sequence.** There is currently one line of pseudocode in the file.
+> You've already seen examples of comments. 
+> Any line that begins with a `#` is a comment
 
 Here are some things to consider:
 - You will use a loop to calculate each term in the sequence. What is the formula
@@ -171,22 +140,21 @@ you will use at each step in the loop to calculate the term?
 - You will need to know the previous term to calculate the current term. How will
 you keep track of this?
 
-{{< aside "FYI: Commenting out code" >}}
-If you don't want code to be executed when you run a program, you can comment it
-out by placing `#` at the beginning of the line.
+{{< aside "FYI: Comments" >}}
+If you don't want code to be executed when you run a program, you can comment it out by placing `#` at the beginning of the line.
 
-If you don't wan't to run the code from 'Part A', just
-comment it out.
+This can be used as a debugging strategy or as a note-taking tool.
 {{< /aside >}}
 
+---
 
 ### [Code]
 
-{{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}} Create a new file for your geometric sequence program called `geometric_sequence.py`.
+{{< code-action "After you are confident your pseudocode has the correct logic, translate it into python code." >}} We suggest translating one line of pseudocode at a time.
 
 Here is an example of what the program will output when run:
 ```shell
-$ python3 geometricsequences.py
+$ python geometric_sequences.py
 What should the ratio of the sequence be? 4
 4
 16
@@ -200,16 +168,25 @@ What should the ratio of the sequence be? 4
 1048576
 ```
 
+---
 
+### [Visualize the Geometric Sequence]
 
+Geometric Sequences are great for creating interesting visualizations. 
 
+{{< figure src="images/courses/cs9/unit00/00_loops0.png" width=40% alt-text="geometric drawing" >}}
+
+{{< code-action "Using the Turtle library, create a visualization of the Geometric Sequence." >}}
+> You will need to include the following line at the start of your file to use the Turtle library:
+> 
+> `from turtle import *`
 
 
 ## [3] Deliverables
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the responsive drawing be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdj2v10XtImu8somw--aWTTspN6CxBJpYRTAfGIrSfC0o4EpA/viewform?usp=sf_link)**.
+**Once you've successfully completed the geometric sequence visualization be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdj2v10XtImu8somw--aWTTspN6CxBJpYRTAfGIrSfC0o4EpA/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
@@ -218,53 +195,53 @@ What should the ratio of the sequence be? 4
 
 ## [4] Extension: Fibonacci Sequence
 
-For the extension explore a more complicated sequence, the Fibonacci sequence. This sequence has all kinds
+For the extension, explore a more complicated sequence, the Fibonacci sequence. This sequence has all kinds
 of interesting properties.
 
-**We're going to write an algorithm to print out numbers in the Fibonnaci sequence.**
+The Fibonacci sequence begins with two numbers, `0` and `1`. Each subsequent number in the sequence is calucated by finding the sum of the two numbers that precede it. 
+> For example the first 5 digits of the sequence are: 
+> 0, 1, 1, 2, 3
 
-The Fibbonacci sequence begins with two numbers, `0` and `1`. Each subsequent number in the sequence is calucated by finding the sum of the two numbers that precede it. 
+**It is up to your to write the algorithm for determining any number of digits in the Fibonacci sequence.**
 
-{{< write-action "In your notebook, calculate the first 10 numbers of the Fibbonacci sequence and show your work." >}}
-
-
-Here is an example of what the program will output when run:
-```shell
-$ python3 fibonacci_sequence.py
-How many numbers of the Fibonacci sequence would you like to output? 3
-1
-1
-2
-```
+---
 
 ### [Pseudocode]
 
-{{< checkpoint >}}
-In your notebook,
+{{< code-action "Open a new file:" >}} `atom fibonacci_sequence.py`
 
-0. Write the pseudocode for the Fibonacci sequence algorithm. 
-0. Calculate the first 5 numbers of the Fibonacci sequence by exclusively following your pseudocode. 
+{{< write-action >}} **In `fibonacci_sequence.py`, use `comments` to write the pseudocode to list the first 10 digits of the Fibonacci sequence.** 
 
-Be sure to check-in with a teacher before moving on. 
-
-{{< /checkpoint >}}
-
+---
 
 ### [Code]
-{{< code-action "After you are confident your pseduocode has the correct logic, translate it into python code." >}}  Create a new file for your fibonacci sequence program called `fibonacci_sequence.py`.
+{{< code-action "After you are confident your pseduocode has the correct logic, translate it into Python code." >}} 
 
-Let's use the code you wrote to calculate Fibonacci sequences to make pattern
-drawings inspired by flowers and pinecones.
+Here is an example of what the program will output when run:
+```shell
+$ python fibonacci_sequence.py
+0
+1
+1
+2
+3
+5
+8
+13
+21
+24
+```
 
-{{< figure src="images/courses/cs9/unit00/00_variables_pinecone.png" title="Fibonacci drawing" >}}
+---
 
 ### [Visualize the Fibonacci Sequence]
-First, use your Fibonacci code to draw a single spiral. You can do this by drawing a
+
+Now with your working code make Fibonacci visualized pattern inspired by flowers and pinecones.
+
+{{< figure src="images/courses/cs9/unit00/00_variables_pinecone.png" width=75% alt-text="Fibonacci drawing" >}}
+
+{{< code-action "First, use your Fibonacci code to draw a single spiral." >}}  You can do this by drawing a
 line for each number in the Fibonacci sequence and connecting the lines at a standard angle.
-
-{{< code-action "Incorporate the Turtle drawing functionality into your" >}} `fibonacci_sequence.py` file.
-
-The Turtle should draw something like this:
 
 {{< figure src="images/courses/cs9/unit00/00_variables_spiral.png" title="Fibonacci spiral" >}}
 
@@ -288,4 +265,3 @@ and countercloackwise.
 
 Feel free to add colors and personalize the visualization however you would like! 
 
-{{< code-action "Be sure to update your file in your Hapara drive!" >}}
