@@ -1,6 +1,9 @@
 ---
-title: 0. Math
+title: 0. Variables
 type: checkup
+slug: donow0
+repo_url: https://github.com/the-isf-academy/donow-variables.git
+init_action: clone
 # draft: true
 ---
 
@@ -34,3 +37,4 @@ Will output,
 
 - 4 multiplied by 2
 - 12 divided by 3
+- 
