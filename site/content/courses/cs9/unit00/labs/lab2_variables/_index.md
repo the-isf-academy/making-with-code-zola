@@ -164,7 +164,7 @@ The last variable test showed how your programs can be responsive to user input 
 {{< figure src="images/courses/cs9/unit00/blue_hexagon2.png" width="30%" alt-text="blue hexagon" >}}
 
 
-{{< code-action "In a new file, create a turtle drawing that is responsive to user input." >}} Your drawing must include:
+{{< code-action "Create a turtle drawing that is responsive to user input." >}} Open the file `responsive_drawing.py` to get started.
 - a numerical user input
 - a word based user input
 - 1 Turtle function not included on the `0. Turtle` lab page
