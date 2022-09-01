@@ -2,13 +2,13 @@
 title: 3. Loops
 type: lab
 slug: lab_loops
-repo_url: https://github.com/the-isf-academy/lab-variables.git
+repo_url: https://github.com/the-isf-academy/lab-loops.git
 init_action: clone
-draft: true
+#draft: true
 ---
 
 # Loops Lab
-In this lab, we will learn how to make the computer do the same instruction over and over. 
+In this lab, we will learn how to make the computer do the same instruction over and over.
 
 In Python, when you want to run the same code multiple times, we use loops.
 If you have used Scratch before, you have seen loops before:
@@ -38,9 +38,8 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 {{< code-action "Take a look at the files inside with:" >}} `ls`
 - `loops_repetition.py`
-- `variable_test1.py`
-- `variable_test2.py`
-- `responsive_drawing.py`
+- `loops_square.py`
+- `geometric_sequence.py`
 
 ---
 
@@ -51,7 +50,10 @@ When you want to exit the shell, you can type `exit` or `^D`
 atom loops_repetition.py
 ```
 
-{{< code-action "Run your program and see what gets output:" >}} `python loops_repetition.py`
+{{< code-action "Run your program and see what gets output:" >}}
+```shell
+python loops_repetition.py
+```
 
 This loop runs 10 times, repeating everything indented to the right of the `for i in range(10):` line.
 `i` is a variable that gets incremented by one every time the loop runs.
@@ -76,6 +78,7 @@ When you run `python loops_repitition.py` it should output:
 81
 100
 121
+144
 ```
 
 
@@ -85,6 +88,11 @@ When you run `python loops_repitition.py` it should output:
 ### [Looping a Square]
 
 
+Use atom to open `loops_square.py`
+
+```shell
+atom loops_square.py
+```
 
 Take a look at the code we've been using to draw a square:
 
@@ -101,7 +109,7 @@ right(90)
 
 Pretty repetitive, right?
 
-{{< code-action "Use a loop to draw a square to avoid repeating the same code over and over again." >}}
+{{< code-action "Edit the code so that it uses a loop to draw a square, instead of repeating the same code over and over again." >}}
 
 ---
 
@@ -110,28 +118,28 @@ Pretty repetitive, right?
 Loops are particularly useful when we need to do things over time. To see this, we're going to explore geometric sequences.
 
 **Geometric sequences are sequences where there is a common ratio between each
-number in the sequence.** 
+number in the sequence.**
 
 {{< figure src="https://www.storyofmathematics.com/wp-content/uploads/2021/01/geometeric-sequence-example.png" width="50%" alt-text="geometric sequence" >}}
 
 > For example, `1, 2, 4, 16,...` is a geometric sequence
-where each number is 2 times the number before it. 
+where each number is 2 times the number before it.
 >
-> The ratio between the sequence is 2 
+> The ratio between the sequence is 2
 
-**It is up to you to write a program that displays 10 digits of any geometric sequence given a ratio.**
+**In a minute, you will write a program that displays 10 digits of any geometric sequence.**
 
 ---
 
 
 ### [Pseudocode]
 
-**Pseudocode is an outline of the program we'll ultimately write where we don't worry about using Python syntax.**
+**Pseudocode is an outline of the program we plan to write. When writing pseudocode, we don't worry about using Python syntax.**
 
-To get started, think through the *pseudo-code* of what we want this program to do. 
+To get started, think through the *pseudo-code* of what we want this program to do.
 
 {{< write-action >}} **In `geometric_sequence.py`, use `comments` to write the pseudocode to list the first 10 numbers of any geometric sequence.** There is currently one line of pseudocode in the file.
-> You've already seen examples of comments. 
+> You've already seen examples of comments.
 > Any line that begins with a `#` is a comment
 
 Here are some things to consider:
@@ -172,50 +180,53 @@ What should the ratio of the sequence be? 4
 
 ### [Visualize the Geometric Sequence]
 
-Geometric Sequences are great for creating interesting visualizations. 
+Geometric Sequences are great for creating interesting visualizations.
 
 {{< figure src="images/courses/cs9/unit00/00_loops0.png" width=40% alt-text="geometric drawing" >}}
 
 {{< code-action "Using the Turtle library, create a visualization of the Geometric Sequence." >}}
 > You will need to include the following line at the start of your file to use the Turtle library:
-> 
+>
 > `from turtle import *`
 
 
-## [3] Deliverables
+## [2] Deliverables
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the geometric sequence visualization be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdj2v10XtImu8somw--aWTTspN6CxBJpYRTAfGIrSfC0o4EpA/viewform?usp=sf_link)**.
+**Once you've successfully completed the geometric sequence visualization be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfM0nLnUFoMDa67aBk9xV9MSUw78jKlQwkGIdZi-TsrYEDNkA/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
 
 <hr>
 
-## [4] Extension: Fibonacci Sequence
+## [3] Extension: Fibonacci Sequence
 
 For the extension, explore a more complicated sequence, the Fibonacci sequence. This sequence has all kinds
 of interesting properties.
 
-The Fibonacci sequence begins with two numbers, `0` and `1`. Each subsequent number in the sequence is calucated by finding the sum of the two numbers that precede it. 
-> For example the first 5 digits of the sequence are: 
+The Fibonacci sequence begins with two numbers, `0` and `1`. Each subsequent number in the sequence is calculated by finding the sum of the two numbers that precede it.
+> For example the first 5 digits of the sequence are:
 > 0, 1, 1, 2, 3
 
-**It is up to your to write the algorithm for determining any number of digits in the Fibonacci sequence.**
+**It is up to you to write the algorithm for determining any number of digits in the Fibonacci sequence.**
 
 ---
 
 ### [Pseudocode]
 
-{{< code-action "Open a new file:" >}} `atom fibonacci_sequence.py`
+{{< code-action "Open a new file:" >}}
+```shell
+atom fibonacci_sequence.py
+```
 
-{{< write-action >}} **In `fibonacci_sequence.py`, use `comments` to write the pseudocode to list the first 10 digits of the Fibonacci sequence.** 
+{{< write-action >}} **In `fibonacci_sequence.py`, use `comments` to write the pseudocode to list the first 10 digits of the Fibonacci sequence.**
 
 ---
 
 ### [Code]
-{{< code-action "After you are confident your pseduocode has the correct logic, translate it into Python code." >}} 
+{{< code-action "After you are confident your pseduocode has the correct logic, translate it into Python code." >}}
 
 Here is an example of what the program will output when run:
 ```shell
@@ -229,24 +240,24 @@ $ python fibonacci_sequence.py
 8
 13
 21
-24
+34
 ```
 
 ---
 
 ### [Visualize the Fibonacci Sequence]
 
-Now with your working code make Fibonacci visualized pattern inspired by flowers and pinecones.
+Use your working code draw a pattern that utilizes the Fibonacci sequence.
 
 {{< figure src="images/courses/cs9/unit00/00_variables_pinecone.png" width=75% alt-text="Fibonacci drawing" >}}
 
 {{< code-action "First, use your Fibonacci code to draw a single spiral." >}}  You can do this by drawing a
-line for each number in the Fibonacci sequence and connecting the lines at a standard angle.
+line for each number in the Fibonacci sequence and connecting the lines at a consistent angle.
 
 {{< figure src="images/courses/cs9/unit00/00_variables_spiral.png" title="Fibonacci spiral" >}}
 
 ### [Multiple spirals]
-{{< code-action "Loop the drawing code to draw multiple spirals originating from the center." >}} 
+{{< code-action "Loop the drawing code to draw multiple spirals originating from the center." >}}
 
 Now, the Turtle should draw something like this:
 
@@ -258,10 +269,9 @@ center.
 {{< /aside >}}
 
 ### [Clockwise and counterclockwise]
-To get a pinecone or flower effect like the video above described, you'll need to spiral clockwise
-and countercloackwise.
+To get a pinecone or flower effect, you can try spiralling clockwise
+and counterclockwise.
 
 {{< code-action "Repeat your spiral code, changing it to make your spirals turn in the other direction." >}}
 
-Feel free to add colors and personalize the visualization however you would like! 
-
+Feel free to add colors and personalize the visualization however you would like!
