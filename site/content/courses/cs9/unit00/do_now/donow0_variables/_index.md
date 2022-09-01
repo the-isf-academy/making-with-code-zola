@@ -20,21 +20,7 @@ mwc update
 
 ## Math in Python
 
-One feature of the Python language is that it understands math equations. 
+{{< code-action "cd into the folder" >}} 
 
 
-For example,
-```python
-print(1+1)
-```
-
-Will output,
-```shell
-2
-```
-
-{{< code-action "Experiment with math operators and print the following equations:" >}}
-
-- 4 multiplied by 2
-- 12 divided by 3
-- 
+Look at starter code 

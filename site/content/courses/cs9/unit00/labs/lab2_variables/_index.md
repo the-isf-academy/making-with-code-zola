@@ -18,15 +18,6 @@ In this lab, we will learn about variables, a powerful storage container of info
 mwc update
 ```
 
-{{< aside "Windows Users" >}}
-
-0. Go to the path that your `mwc` script lives on your computer using `cd`.
-0. Run `./mwc update` inside that directory. 
-
-Ask a teacher if you are unsuer of how to do this.
-
-{{< /aside >}}
-
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_variables
