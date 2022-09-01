@@ -1,10 +1,10 @@
 ---
 title: 3. Loops
 type: lab
-slug: lab_loops
+slug: lab-loops
 repo_url: https://github.com/the-isf-academy/lab-variables.git
 init_action: clone
-draft: true
+# draft: true
 ---
 
 # Loops Lab
