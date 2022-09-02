@@ -1,6 +1,6 @@
 ---
 title: 0. Math
-type: checkup
+type: do
 draft: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Act I
-bookCollapseSection: true
+# bookCollapseSection: true
 ---
 
 # Act I: Web Applications with Django

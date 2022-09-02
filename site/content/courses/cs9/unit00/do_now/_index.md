@@ -2,8 +2,9 @@
 title: "Do Now"
 # bookCollapseSection: true
 type: modules
+slug: do-nows
 # headless: true
-draft: true
+# draft: true
 ---
 
 

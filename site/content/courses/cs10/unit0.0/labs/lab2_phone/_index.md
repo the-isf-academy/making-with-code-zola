@@ -1,7 +1,7 @@
 ---
-title: "0. Phone"
+title: "2. Phone"
 type: lab
-draft: true
+# draft: true
 ---
 
 # Phone
