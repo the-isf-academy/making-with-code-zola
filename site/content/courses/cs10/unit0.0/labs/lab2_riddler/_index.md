@@ -163,7 +163,9 @@ Score: 3/5
 
 Although the Riddler is functional, it is not the most exciting looking game. Let's spice it up with colors!
 
-{{< code-action >}} "Explore the package [colorama](https://pypi.org/project/colorama/) to add color to your game!"
+{{< code-action >}} **Explore the package [colorama](https://pypi.org/project/colorama/) to add color to your game!**
+
+> It is already installed, but you will need to add the import statements to the top of `game.py`.
 
 ### [Difficulty Setting]
 
