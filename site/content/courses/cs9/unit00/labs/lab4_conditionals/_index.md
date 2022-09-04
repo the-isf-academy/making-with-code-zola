@@ -1,10 +1,11 @@
 ---
 title: 4. Conditionals
 type: lab
-# draft: true
 slug: lab-loops
 repo_url: https://github.com/the-isf-academy/lab-loops.git
 init_action: clone
+draft: true
+
 ---
 
 # Conditionals

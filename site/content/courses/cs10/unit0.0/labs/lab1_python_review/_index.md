@@ -63,4 +63,4 @@ Once you've successfully completed the puzzles be sure to fill out [this Google 
 
 ## Extension
 
-{{< code-action "If you've completed all of the required puzzles, explore the more advanced puzzles on either HyperRank or CodingBat." >}} How many challenges can you clear? 
+{{< code-action "If you've completed all of the required puzzles, explore more advanced puzzles on either HyperRank or CodingBat." >}} How many challenges can you clear? 
