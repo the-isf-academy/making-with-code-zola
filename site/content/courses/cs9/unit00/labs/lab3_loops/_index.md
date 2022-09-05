@@ -19,7 +19,7 @@ How does a loop work in python? Let's see.
 
 ## [0] How to loop
 
-<!-- Due to an issue with our website, you will clone this lab manually. 
+Due to an issue with our website, you will clone this lab manually. 
 
 {{< code-action >}} **Start by going into your `unit00_drawing` folder.**
 ```shell
@@ -32,9 +32,9 @@ git clone https://github.com/the-isf-academy/lab-loops.git
 
 {{< code-action "Now that you have the lab, go into its folder." >}}
 ```shell
-cd lab-loops -->
-<!-- ``` -->
-
+cd lab-loops
+```
+<!-- 
 {{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
 ```shell
 mwc update
@@ -42,7 +42,7 @@ mwc update
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab-loops
-``` 
+```  -->
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
