@@ -8,11 +8,6 @@ git_backend: github_org
 
 # Welcome to CS 9
 
-## Calendar
-{{< gdocs src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTz_Y1h_w3auNOX8SyMuakhPQzUXa4c0BVrr7UsYX36n8HxFEpn4VnYGaE1B1oaJBQ94Qo22ZZg6W3i/pubhtml?widget=true&amp;headers=false" >}}
-
-## Curriculum
-
 This is a high-level overview of the curricular units that comprise this introductory course.
 
 
@@ -42,7 +37,7 @@ minute sessions. This should allow all students ample time to complete the core 
 each of the three labs in a cycle while providing extension content to students who complete 
 the labs more quickly.
 
-#### Checkups
+#### Check-ins
 Check-ups will serve the purpose of reviewing past content and preparing for future content.
 After each lab, students will complete a check-in question to check their understanding of 
 a practice or concept covered in the lab. These will usually be code-based problems like
