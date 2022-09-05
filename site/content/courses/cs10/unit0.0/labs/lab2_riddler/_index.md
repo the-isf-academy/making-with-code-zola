@@ -9,22 +9,40 @@ init_action: clone
 
 # Riddler
 
-In this lab we will remind ourserlves of classes and object-oriented programming with a riddle guessing game. It's up to you to use the `Riddle` class to create working game. 
+In this lab we will remind ourserlves of classes and object-oriented programming with a riddle guessing game. It's up to you to use the `Riddle` class to create working game.
 
 {{< figure src="https://play-lh.googleusercontent.com/DqluLBHRQ1VwCz13_2vIwSq3dEknwGjqXi3CXu10YC_Le-KRldpIZUtMOHgRPchui7A" width="25%"  >}}
 
 
 
 ## [0] Setup
+Due to an issue with our website, you will clone this lab manually.
 
-{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+{{< code-action >}} **Start by going into your `unit0.0_review` folder.**
+```shell
+cd ~/desktop/making_with_code/cs10/unit0.0_review/
+```
+{{< code-action "Then clone the lab" >}}
+```shell
+git clone https://github.com/the-isf-academy/lab-riddler.git
+```
+
+{{< code-action "Now that you have the lab, go into its folder." >}}
+```shell
+cd lab-riddler
+```
+<!-- {{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
 ```shell
 mwc update
 ```
 
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
-cd ~/desktop/making_with_code/cs9/unit0.0_review/lab-riddler
+cd ~/desktop/making_with_code/cs10/unit0.0_review/lab-riddler
+``` -->
+{{< code-action "Get the necessary packages" >}} Run the following command in your terminal.
+```shell
+poetry update
 ```
 
 {{< code-action "Enter the Poetry Shell." >}} We will run this command at the start of each lab, but only when we are inside a lab folder.
@@ -37,13 +55,13 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 This repository has two files:
 - `riddle.py`: This file had the `Riddle` class and a list of `Riddle` objects
-- `game.py`: When run, this file should play the riddle guessing ame
+- `game.py`: When run, this file should play the riddle guessing game
 
 ---
 
 ## [1] Riddle Object
 
-Let's start by exploring the `Riddle` object. It has two properties and one method. 
+Let's start by exploring the `Riddle` object. It has two properties and one method.
 ```python
 class Riddle:
     def __init__(self,prompt,answer):
@@ -57,7 +75,7 @@ class Riddle:
         """
         min_fuzz_ratio = 80
         similarity = fuzz.ratio(guess.lower(), self.answer.lower())
-        
+
         if similarity >= min_fuzz_ratio:
             return True
         else:
@@ -65,17 +83,17 @@ class Riddle:
 ```
 > *To learn more about how `check_guess()` accepts guesses that are very close to the answer, you can visit the [fuzzywuzzy documentation](https://pypi.org/project/fuzzywuzzy/)*
 
-{{< code-action >}} **Open `riddle.py` inside the interactive Python shell.** As a reminder, the Python shell is a great way to run small tests. 
+{{< code-action >}} **Open `riddle.py` inside the interactive Python shell.** As a reminder, the Python shell is a great way to run small tests.
 ```shell
 python -i riddle.py
 ```
 
-{{< code-action >}} **Create an instance of a `Riddle`.** 
+{{< code-action >}} **Create an instance of a `Riddle`.**
 ```shell
 r = Riddle('What gets wet when drying?','a towel')
 ```
 
-{{< code-action >}} **Print the prompt and the answer to check you correctly created a `Riddle`.** 
+{{< code-action >}} **Print the prompt and the answer to check you correctly created a `Riddle`.**
 ```shell
 r.prompt
 r.answer
@@ -85,10 +103,13 @@ r.answer
 ```shell
 r.check_guess('a towel')
 ```
+{{< aside "Exiting the python shell" >}}
+When you want to exit the shell, you can type `exit()` or `^D`
+{{< /aside >}}
 
-{{< code-action >}} **Now that you understand how to create a `Riddle`, open up `riddle.py`** 
+{{< code-action >}} **Now that you understand how to create a `Riddle`, open up `riddle.py`**
 
-This file contains a list of `Riddle` objects called `riddles`. Currently, there are only 2 riddles. 
+This file contains a list of `Riddle` objects called `riddles`. Currently, there are only 2 riddles.
 ```python
 riddles = [
     Riddle(
@@ -114,28 +135,28 @@ Now that you understand how the `Riddle` is structured, it's up to you use it an
 ```shell
 -----------------------------------
 ---- Welcome to the Riddler ----
------------------------------------ 
+-----------------------------------
 ```
 
-{{< code-action "Start by openning up" >}} `game.py`
+{{< code-action "Start by opening up" >}} `game.py`
 
 {{< code-action >}} **It is up to you to finish the code in `game.py` to create a riddle guessing game.** The game should:
-- loop each `Riddle` in the `riddles` list 
-- ask the user guess
+- loop each `Riddle` in the `riddles` list
+- ask the user to guess the answer
 - tell the user if their guess was correct or incorrect
 
 
 🕹️ **Once you've completed your game logic, play test your game!** `python game.py`
 
 
---- 
+---
 
 ## [3] Deliverables
 
 
 {{< deliverables "Congrats on completing the Riddler!" >}}  
 
-Once you've successfully completed the Riddler be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScjMk5bB6NCcO5r6UQlp34qoT8hLT6XTan7NTWu-ijoP6977w/viewform?usp=sf_link).
+Once you've successfully completed the Riddler be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScJyVd3VcP9Lj-t2Re6guWYsb2JvNhlrcJfc0f6QcZM2mC9ig/viewform?usp=sf_link).
 
 {{< /deliverables >}}
 
@@ -145,19 +166,19 @@ Once you've successfully completed the Riddler be sure to fill out [this Google 
 
 Now that we've got a basic riddle guessing game, let's improve it!
 
-### [Simple Imporvements]
+### [Simple Improvements]
 
-Let's start with a few simple improvements. 
+Let's start with a few simple improvements.
 
 {{< code-action "Keep track of the user's guesses and provide a score at the end." >}} For example once the user guessed all of the riddles, it may print:
 ```shell
-Score: 3/5 
+Score: 3/5
 ```
 
-{{< code-action "Randomize the order of the riddles." >}} Use the random library to change the order the riddles are given each time the user plays the game. 
+{{< code-action "Randomize the order of the riddles." >}} Use the random library to change the order the riddles are given each time the user plays the game.
 > *You may want to look at the [Random library documentation](https://docs.python.org/3/library/random.html#module-random) for a hint*
 
---- 
+---
 
 ### [Add Color]
 
@@ -169,6 +190,6 @@ Although the Riddler is functional, it is not the most exciting looking game. Le
 
 ### [Difficulty Setting]
 
-Currently, there are no difficulty settings for the game. Some riddles are easy, some riddles are difficult, and some riddles are in-between. 
+Currently, there are no difficulty settings for the game. Some riddles are easy, some riddles are difficult, and some riddles are in-between.
 
 {{< code-action "Implement a difficulty setting in your game to make it more accesisble." >}} Your game should allow the user between easy, medium, or hard riddles. This may require you to change the `Riddle` object and the game play flow in `game.py`.
