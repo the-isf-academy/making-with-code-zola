@@ -156,7 +156,7 @@ Now that you understand how the `Riddle` is structured, it's up to you use it an
 
 {{< deliverables "Congrats on completing the Riddler!" >}}  
 
-Once you've successfully completed the Riddler be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScJyVd3VcP9Lj-t2Re6guWYsb2JvNhlrcJfc0f6QcZM2mC9ig/viewform?usp=sf_link).
+Once you've successfully completed the Riddler be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScJyVd3VcP9Lj-t2Re6guWYsb2JvNhlrcJfc0f6QcZM2mC9ig/viewform?usp=sf_linkgit ).
 
 {{< /deliverables >}}
 
