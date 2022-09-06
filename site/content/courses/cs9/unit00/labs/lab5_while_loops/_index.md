@@ -1,7 +1,7 @@
 ---
 title: 5. While Loops
 type: lab
-draft: true
+# draft: true
 ---
 
 # While loops
