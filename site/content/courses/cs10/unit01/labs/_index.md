@@ -1,9 +1,10 @@
 ---
-title: "[Labs]"
+title: "Labs"
 # headless: true 
-bookCollapseSection: true
+# bookCollapseSection: true
 type: modules
 headless: true
+# draft: true
 ---
 
 ## Labs

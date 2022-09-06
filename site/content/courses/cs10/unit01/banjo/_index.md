@@ -3,7 +3,7 @@ title: "[Banjo]"
 bookCollapseSection: false
 type: unit
 headless: true
-# draft: true
+draft: true
 ---
 
 This page will serve as the extended documentation for Banjo. This page has been adapted from the offical [`README.md`](https://github.com/cproctor/django-banjo#deploying-to-heroku).

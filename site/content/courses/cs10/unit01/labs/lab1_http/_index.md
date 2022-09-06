@@ -1,5 +1,5 @@
 ---
-title: "0. HTTP"
+title: "0. Riddle Server"
 type: lab
 # draft: true
 ---

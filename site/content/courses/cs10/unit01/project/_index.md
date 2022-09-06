@@ -1,5 +1,6 @@
 ---
 Title: "[Project]"
+draft: true
 ---
 
 # Unit Networking: Server Project

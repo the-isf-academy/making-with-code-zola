@@ -1,6 +1,6 @@
 ---
 title: "Unit 01: Networking"
-bookCollapseSection: true
+# bookCollapseSection: true
 type: unit
 slug: unit01
 draft: true
@@ -16,9 +16,7 @@ security, hacking, and surveillance.
 - Writing clients and servers 
 
 
-## Project
 
-Microservices. Each student will write a server which responds to network requests.
-Some examples might be a tennis stat tracking app, a recipe holder, or an age calculator. 
 
-A simple web front-end, and CLI will be provided for consuming microservices. 
+
+{{< figure src="https://media.istockphoto.com/illustrations/home-computer-network-illustration-id165920811?k=20&m=165920811&s=612x612&w=0&h=o2jWdvvPkNKTjbUqPTu_fb7C44miY3AaUFHypU91bh4=" width="100%" alt-title="networking clip art" >}}

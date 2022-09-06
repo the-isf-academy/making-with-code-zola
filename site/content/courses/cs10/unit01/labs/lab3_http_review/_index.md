@@ -1,6 +1,7 @@
 ---
 title: 2. HTTP Review
-type: checkup
+
+draft: true
 ---
 
 # HTTP Review
