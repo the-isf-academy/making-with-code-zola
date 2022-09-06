@@ -13,7 +13,7 @@ Do Now exercises are quick problems at the start of class to help you sharpen yo
 
 ```shell
 cd unit_00
-mkdir do_now
+mkdir do_nows
 ```
 
 {{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
