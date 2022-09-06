@@ -2,18 +2,16 @@
 title: 4. Conditionals
 type: lab
 slug: lab_loops
-repo_url: https://github.com/the-isf-academy/lab_loops.git
+repo_url: https://github.com/the-isf-academy/lab_conditionals.git
 init_action: clone
 #draft: true
 
 ---
 
 # Conditionals
-In this lab, we'll introduce a new concept: conditionals. This allows the code to behave in one way or another in different contexts.
+In this lab, we'll introduce a new concept: conditionals. This allows change  the behavior of our code based on context.
 
 ## [0] Conditional behavior
-
-One of the most powerful ways to utilize computation is to change the behavior of our code based on context. This might sound complicated, but as a human you are very familiar with this kind of response.
 
 There are many situations where you change your behavior based on the environment. For example, if it is raining outside, you wear rain boots. Otherwise, you might wear a different kind of shoe like tennis shoes.
 
