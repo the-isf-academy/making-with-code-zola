@@ -1,7 +1,7 @@
 ---
 title: "2. Riddler"
 type: lab
-slug: lab-riddler
+slug: lab_riddler
 repo_url: https://github.com/the-isf-academy/lab-riddler
 init_action: clone
 # draft: true

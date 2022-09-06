@@ -1,7 +1,7 @@
 ---
 title: 3. Loops
 type: lab
-slug: lab-loops
+slug: lab_loops
 repo_url: https://github.com/the-isf-academy/lab-loops.git
 init_action: clone
 #draft: true
