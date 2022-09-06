@@ -4,7 +4,7 @@ type: lab
 slug: lab_movie_reviwes
 repo_url: https://github.com/the-isf-academy/lab_movie_review 
 init_action: clone
-# draft: true
+draft: true
 ---
 
 # Riddler
