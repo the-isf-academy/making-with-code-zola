@@ -120,6 +120,16 @@ Status codes are used to signal how the communication between the client and the
 - `404` means the resource requested could not be found 
 - `500` means, "Sorry, the server broke!" 
 
+### [Using HTTPIE]
+
+With the new tool we installed on your computer, `httpie`, we can send HTTP `GET` requests from our terminal. 
+
+{{< code-action >}} **Make a request to the cs.fablearn.org site:**
+```shell
+httpie get cs.fablearn.org
+```
+> You should be seeing something very similar to what you see in Chrome. 
+
 
 {{< checkpoint >}}
 
