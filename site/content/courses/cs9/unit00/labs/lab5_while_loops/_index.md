@@ -2,15 +2,44 @@
 title: 5. While Loops
 type: lab
 draft: true
+
 ---
 
 # While loops
 
 In addition to `for` loops which run for a set number of iterations, Python has another type of loop. `while` loops iterate until a particular condition is met.
 
-## [0] What is a While Loop?
-{{< tabs id="While-loops" >}}
-{{< tab "Text Explanation" >}}
+---
+
+## [0] Set up
+
+{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+```shell
+mwc update
+```
+{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
+```shell
+cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_while
+``` 
+
+{{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
+```shell
+poetry shell
+```
+{{< aside "Exiting the poetry shell" >}}
+When you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
+
+{{< code-action "Take a look at the files inside with:" >}} `ls`
+- `guessing_game.py`
+- `hailstone_sequence.py`
+
+---
+
+
+## [1] What is a While Loop?
+
+
 ### Conditions
 `while` loops use conditions just like `if` statements. You can use operators to compare
 values or to generate `True` or `False` conditions. Looping until a condition is met
@@ -36,6 +65,7 @@ conditionals in the previous lab.
 
 ```python
 speed(10)
+
 while True:
     drawing = input("What would you like me to draw? ")
     size = int(input("How big should I draw it? "))
@@ -48,20 +78,71 @@ while True:
     else:
         print("Sorry, I don't know how to draw that...")
 ```
-{{< /tab >}}
 
-{{< tab "Video Explanation" >}}
 
-{{< youtube "D0Nb2Fs3Q8c" >}}
-{{< /tab >}}
+---
 
-{{< /tabs >}}
+## [2] Guessing Game
+
+One common usage of `while` loops is in games. In this first part of the lab, you will be using a `while` loop to create a number guessing game. 
+
+
+
+
+{{< code-action "Start by running the game file:" >}}
+```shell
+python guessing_game.py
+```
+
+
+```shell
+----------------------------
+Guess a number between 1-10!
+----------------------------
+
+Guess a number: 5
+Guess a number: 10
+Guess a number: 3
+Correct
+Guess a number: 8
+Guess a number: 
+```
+> It works! But, even after you guess the correct number, the game continues. It's up to you to fix the code!
+
+
+{{< code-action "Open the file in atom" >}}
+```shell
+atom guessing_game.py
+```
+
+{{< code-action "Fix the game so the loop ends once the user guesses the correct number. It should also tell the user if their guess is too high or too low." >}}
+
+
+{{< figure src="images/courses/cs9/unit00/00_while_guessing_game.drawio.png" width=75% alt-text="bubble tea flow chart" >}}
+
+
+The final game should like something like this:
+```shell
+----------------------------
+Guess a number between 1-10!
+----------------------------
+
+Guess a number: 5
+Too high...
+Guess a number: 3
+Too high...
+Guess a number: 2
+Correct
+```
+
+---
+
 
 
 ## [1] Hailstone Sequence
 
 ### [Calculating the Sequence]
-In the first part of this lab, you will be exploring a special sequence known as the
+Now that you've gotten practice with `while` loops, you will be exploring a special sequence known as the
 hailstone sequence.
 
 **This sequence results from the following rules** (known as the Collatz conjecture):
@@ -73,82 +154,73 @@ hailstone sequence.
 
 The conjecture states that no matter the starting value of `n`, the sequences will always reach 1.
 
-{{< checkpoint >}} In your notebook, pick a number and perform the calculations.
-
-Can you find a number that doesn't reach 1?
-
-{{< /checkpoint >}}
-
 This sequence is interesting because though no number has ever been found that doesn't reach 1,the Collatz conjecture has never been proven. **This is an unsolved problem in mathematics!**
+
+{{< figure src="images/courses/cs9/unit00/00_while_hailstone.drawio.png" width=75% alt-text="bubble tea flow chart" >}}
+
+
+---
 
 ### [Pseudocode the Sequence]
 
 This is another algorithm which will require pseudocode to figure out.
 
-**Your program must:**
+{{< look-action >}} **Your program must:**
 
 0. Ask the user what number the program should calculate the hailstone sequence of.
 0. Print out each number in the sequence.
 0. Print out how many steps it took for the sequence to reach `1`
 
-{{< checkpoint >}}
-**Write out pseudocode to plan the logic of this program.**
 
-Here are some things to consider:
+**Here are some things to consider:**
 - This program will require a loop. What kind of loop do you think is best? Remember that
 for loops run for a definite number of times and while loops run until a condition is met.
 - You will need to determine if each term is odd or even. What are some characteristics
 of even numbers that will help you determine if a number is even?
 - In addition to calculating each term, you must count how many steps it takes to reach 1 and report this number at the end.
-{{< /checkpoint >}}
+
+
+{{< code-action >}} **To get started, open up `hailstone_sequence.py`.**
+```shell
+atom hailstone_sequence.py
+```
+
+{{< write-action >}} **Use `comments` to complete the pseudocode to find the hailstone sequence of any starting number.** There are currently three line of pseudocode in the file.
+
+
+---
 
 ### [Code the Sequence]
 
-Once you've completed your pseudocode, you can translate it into Python code.
-
-{{< code-action "Create a new folder" >}} called `lab_05_while_loops` in your `cs9\unit_00` folder.
-
+{{< code-action "Translate your pseudocode into Python code." >}} Once completed, your program will look something like this:
 ```shell
-cd cs9
-cd unit_00
-mkdir lab_05_while_loops
+--- Hailstone Sequence ---
+
+Input a starting number: 21
+64
+32
+16
+8
+4
+2
+1
+It took 7 steps to complete the sequence
 ```
 
-{{< code-action "Create a new file" >}} called `hailstone_sequence.py` in your `lab_05_while_loops` folder. Copy and paste the code below into your file.
 
-```python
-######################
-# Unit 0 Lab 5
-# Author: Your Name
-#######################
 
-# HAILSTONE SEQUENCE
-print("--- Hailstone Sequence ---")
-print()
-
-# YOUR CODE GOES HERE
-
-```
-
-{{< code-action "Translate your pseudocode into Python code." >}}
-
-{{< checkpoint >}}
-Answer the following check-in questions on your notebook before moving on:
-
-0. What kind of loop did you choose to write the hailstone sequence algorithm? Why did you choose
-this kind of loop?
-0. Describe a moment when your code didn't do what you intended. How did you fix it?
-0. Why do you think the Collatz conjecture is so hard to prove for all positive integers?
-{{< /checkpoint >}}
+---
 
 ## [2] Deliverables
-{{< deliverables "For this lab, you should submit the following:" >}}
 
-- The your `hailstone_sequence.py` file to your CS9 Google Drive folder.
-- Your notebook with responses to the checkpoint questions.
+{{< deliverables  >}}
+
+**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfM0nLnUFoMDa67aBk9xV9MSUw78jKlQwkGIdZi-TsrYEDNkA/viewform?usp=sf_link)**.
+
 
 {{< /deliverables >}}
 
+---
 
 ## [3] Extension: Visualizing the Sequence
 The sequences formed are known as hailstone sequences, because the terms move up
