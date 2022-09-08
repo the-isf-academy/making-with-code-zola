@@ -1,7 +1,7 @@
 ---
 title: 4. Conditionals
 type: lab
-slug: lab_loops
+slug: lab_conditionals
 repo_url: https://github.com/the-isf-academy/lab_conditionals.git
 init_action: clone
 # draft: true
@@ -30,8 +30,10 @@ You probably have even more complicated environmental responses as well.
 
 In computer science, **we call this kind of behavior `conditional`**: your code runs only in the case that some condition is satisfied.
 
-## [1] Set up
+---
 
+## [1] Set up
+<!-- 
 {{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
 ```shell
 mwc update
@@ -39,6 +41,22 @@ mwc update
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_conditionals
+``` -->
+
+Due to an issue with the `mwc` tool, you will clone this lab manually. 
+
+{{< code-action >}} **Start by going into your `unit00_drawing` folder.**
+```shell
+cd ~/desktop/making_with_code/cs9/unit00_drawing/
+```
+{{< code-action "Then clone the lab" >}}
+```shell
+git clone https://github.com/the-isf-academy/lab_conditionals.git
+```
+
+{{< code-action "Now that you have the lab, go into its folder." >}}
+```shell
+cd lab_conditionals
 ```
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
@@ -57,12 +75,8 @@ When you want to exit the shell, you can type `exit` or `^D`
 - `conditionals_user_input.py`
 
 
-
 ---
 
-
-
----
 <!--
 ### [Conditions]
 **In computer science, conditions are binary. They are either `True` or `False`, never in-between.** To create these conditions, we can use comparison operators to compare values.
@@ -161,6 +175,12 @@ This conditional creates the following cases for the variable `i`:
 - 15 <= i
 
 
+{{< code-action "Run the following file to see this conditional statement in action:" >}} `conditionals_example.py`.
+```shell
+python conditionals_example.py
+```
+
+
 {{< code-action "Open the code in:" >}} `conditionals_example.py`.
 ```shell
 atom conditionals_example.py
@@ -234,7 +254,7 @@ One such operator is **the modulo operator** (`%`). This operator **takes two va
 >
 > `5%2` = 1
 
-{{< code-action >}} **Open the file `conditionals_modulo.py` to experiment with the `modulo` operator.**
+{{< code-action >}} **Open and run the file `conditionals_modulo.py` to experiment with the `modulo` operator.** Does it output what you expected?
 ```python
 print(5%2)
 print(3%3)
@@ -251,12 +271,12 @@ patterns.
 
 {{< code-action "Start by running" >}} `conditional_pattern.py`. You should see a series of red boxes.
 ```shell
-python conditionals-pattern.py
+python conditionals_pattern.py
 ```
 
 {{< figure src="images/courses/cs9/unit00/00_conditionals_pattern0.png" width=40% alt-text="Pattern created by conditionals" >}}
 
-{{< code-action "Edit the code so it creates an alternating pattern of red and blue boxes." >}}
+{{< code-action "Edit the code so uses the modulo operator to create an alternating pattern of red and blue boxes." >}}
 > One common use of the `modulo` operator, is to determine if a number is even or odd. Use that in conjunction with conditional statements to create an alternating color pattern.
 
 {{< figure src="images/courses/cs9/unit00/00_conditionals_pattern1.png" width=40% alt-text="bubble tea flow chart" >}}
