@@ -1,7 +1,7 @@
 ---
 title: "0. Riddle Server"
 type: lab
-# draft: true
+draft: true
 ---
 
 # HTTP: How Computers Communicate

@@ -42,6 +42,7 @@ This time the mail delivery person is able to retrieve it from the business. You
 - **HTTP** stands for "**Hypertext Transfer Protocol**." It's a set of rules for how
   computers ask each other for content, and how they reply. 
 - **JSON** stands for **JavaScript Object Notation**. It is the standard file format for exchanging data over the internet. The syntax mimics dictionaries by using `key` and `value` pairs. 
+- ***API** stands for **Application Programming Interface**. It is software that allows computers to communicate with each other. An `API` often provides `JSON`. 
 
 ---
 
@@ -126,14 +127,19 @@ With the new tool we installed on your computer, `httpie`, we can send HTTP `GET
 
 {{< code-action >}} **Make a request to the cs.fablearn.org site:**
 ```shell
-httpie get cs.fablearn.org
+http get https://cs.fablearn.org
 ```
 > You should be seeing something very similar to what you see in Chrome. 
-
+>
+> If you see an error, try: `cs.fablearn.org` or `http://cs.fablearn.org`
 
 {{< checkpoint >}}
 
-Follow the instructions on the worksheet to before moving onto the next section. 
+{{< write-action >}}**Complete the section, `0. csfablearn`, of the worksheet.** You will need to:
+- Right click and click "Inspect"
+- Select "Network" from the top toolbar in the developer tools
+- Hard refresh the page with "Command + Shift + R"
+
 
 {{< /checkpoint >}}
 
@@ -141,20 +147,97 @@ Follow the instructions on the worksheet to before moving onto the next section.
 
 ## [2] HKO
 
-add example
+You may have noticed that our site is pretty simple. That's because the data being sent is primarily text. **Our site is not hooked up to a database.**
 
-add 
+**We're now going to look at a website that utilizes a database, the [Hong Kong Observatory](https://www.hko.gov.hk/en/index.html).**
 
+### [API]
+
+The HKO provides an open `API` that allows anyone to access their weather database. We are going to use `HTTP Requests` to access this database. 
+
+`API` stands for **Application Programming Interface**. It is software that allows computers to communicate with each other. An `API` often provides `JSON`. 
+
+{{< look-action "Open the documentation from the HKO:" >}} [API Documentation](https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf). We will use this throughout today's lab. 
+
+### [JSON]
+
+**JSON** stands for **JavaScript Object Notation**. It is the standard file format for exchanging data over the internet. The syntax mimics dictionaries by using `key` and `value` pairs. 
+
+{{< code-action >}}**Let's start by making a simple `http get` request to recieve `JSON` from the HKO.**
+```shell
+http get https://data.weather.gov.hk/weatherAPI/opendata/weather.php\? dataType==flw
+```
+
+{{< look-action >}} **Should recieve `JSON` that looks like this.** However, the information will differ depending which day and time you make the request.
+```shell
+{
+    "fireDangerWarning": "",
+    "forecastDesc": "Mainly fine. Very hot with isolated showers in the afternoon. Moderate easterly winds, occasionally fresh offshore.",
+    "forecastPeriod": "Weather forecast for this afternoon and tonight",
+    "generalSituation": "A ridge of high pressure is bringing generally fine weather to the coast of southeastern China. Besides, showers triggered by high temperatures are affecting the coast of Guangdong.",
+    "outlook": "Mainly fine tomorrow. Sunny periods and a few showers on the Mid-Autumn Festival and the following couple of days.",
+    "tcInfo": "At noon, Tropical Storm Muifa was centred about 1100 kilometres south-southeast of Okinawa. It is forecast to move northwest at about 12 kilometres per hour across the seas east of the Philippines.",
+    "updateTime": "2022-09-08T15:45:00+08:00"
+}
+```
+> Notice how it looks exactly like a dictionary with `key` and `value` pairs. 
+
+### [Making HTTP Requests]
+
+This lab will require you to make a series of `http requests` to the HKO API. Note the format:
+```shell
+http get https://data.weather.gov.hk/weatherAPI/opendata/weather.php\? dataType==flw
+```
+> - `http get` - tells the Terminal you are making a `get` request 
+> - `https://data.weather.gov.hk/weatherAPI/opendata/weather.php` - tells the Terminal which address you'd like to make the request to
+> - `dataType==flw` - this tells the API what type of data you'd like to recieve. In this instance, `flw` provies the Local Weather Forecast.
 
 
 {{< checkpoint >}}
 
-Follow the instructions on the worksheet before moving onto the next section. 
+{{< write-action >}}**Complete the section, `1. HKO API`, of the worksheet to further explore `http requests`, `JSON`, and `APIs`.**
+
+You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf) to make specific `http requests`. 
 
 {{< /checkpoint >}}
 
 
+## [2] ISF Energy Database
+
+The ISF Energy Database keep historical and current data about the school's energy usage. This includes XYZ thing. 
+
+{{< code-action >}}**Let's start by making a `http get` request to the ISF Energy Database API.**
+```shell
+http -A bearer -a 0SoXGdHjZb0iktf5dT9fMeAn4XwGyk get https://v4.en-trak.com/apis/usages/isf/total/ date==2022-07-15 period=day
+```
+> `-A bearer -a 0SoXGdHjZb0iktf5dT9fMeAn4XwGyk` - this API requires users to use an authentication token
+
+{{< checkpoint >}}
+
+{{< write-action >}}**Complete the section, `2. ISF Energy Database API`, of the worksheet to further explore `http requests`, `JSON`, and `APIs`.**
+
+You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf) to make specific `http requests`. 
+
+{{< /checkpoint >}}
+
+---
+
+## [3] Deliverables
 
 
+{{< deliverables >}}  
 
-add deliverables
+**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf-RzRIb6y3cFRbOj1uFjbmmPakYu2TI1A4UZzOBQdjEDGYCg/viewform?usp=sf_link).**
+
+{{< /deliverables >}}
+
+---
+
+## [4] Extension
+
+Now that you've had succifient practice accessing APIs, it's time to explore what type of APIs exist. 
+
+{{< code-action "Explore an API of your choosing." >}} Here are some suggestions:
+- [Joke API](https://sv443.net/jokeapi/v2/)
+- [ZenQuotes API](https://premium.zenquotes.io/zenquotes-documentation/)
+- [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page)
