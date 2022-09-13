@@ -1,7 +1,7 @@
 ---
 title: 5. While Loops
 type: lab
-draft: true
+#draft: true
 
 ---
 
@@ -20,7 +20,7 @@ mwc update
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_while
-``` 
+```
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
@@ -43,12 +43,12 @@ When you want to exit the shell, you can type `exit` or `^D`
 ### Conditions
 `while` loops use conditions just like `if` statements. You can use operators to compare
 values or to generate `True` or `False` conditions. Looping until a condition is met
-can be useful when you are gettin input from a user, generating random variables,
+can be useful when you are getting input from a user, generating random variables,
 or repeatedly changing a value.
 
 ```python
 user_input = -1
-while user_input < 1 and user_input > 10:
+while user_input < 1 or user_input > 10:
     user_input = int(input("Tell me a number between 1-10 (inclusive): "))
 
 ```
@@ -84,7 +84,7 @@ while True:
 
 ## [2] Guessing Game
 
-One common usage of `while` loops is in games. In this first part of the lab, you will be using a `while` loop to create a number guessing game. 
+One common usage of `while` loops is in games. In this first part of the lab, you will be using a `while` loop to create a number guessing game.
 
 
 
@@ -105,10 +105,13 @@ Guess a number: 10
 Guess a number: 3
 Correct
 Guess a number: 8
-Guess a number: 
+Guess a number:
 ```
 > It works! But, even after you guess the correct number, the game continues. It's up to you to fix the code!
 
+{{< aside "Stopping a program" >}}
+When you want to stop running a program, type `^C` in the terminal.
+{{< /aside >}}
 
 {{< code-action "Open the file in atom" >}}
 ```shell
@@ -215,7 +218,7 @@ It took 7 steps to complete the sequence
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfM0nLnUFoMDa67aBk9xV9MSUw78jKlQwkGIdZi-TsrYEDNkA/viewform?usp=sf_link)**.
+**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdghFADPT-K94LCT6QS9V_L626bYfoJXDUvYiPIGLeHrUopkA/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
@@ -223,7 +226,7 @@ It took 7 steps to complete the sequence
 ---
 
 ## [3] Extension: Visualizing the Sequence
-The sequences formed are known as hailstone sequences, because the terms move up
+The sequences you formed above are known as hailstone sequences, because the terms move up
 and down but ultimately reach 1 like hailstones gaining layers of ice in a cloud.
 
 {{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_cloud.png" width="100%" title="Hailstones forming in a cloud" >}}
