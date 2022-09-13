@@ -65,6 +65,8 @@ httpie --version
 
 Every time you visit a URL, your computer opens a connection with the server at that address and uses **HTTP** to send and recieve the content. 
 
+---
+
 ### [GET Request]
 
 Communication starts when one computer (the client) sends a *request* to another computer (the server). For example, by visiting "cs.fablearn.org" you initiate
@@ -79,6 +81,7 @@ Host: cs.fablearn.org
 
 {{< figure src="images/courses/cs10/unit00/00_http_get.png" width="100%" alt-text="An HTTP GET request" >}}
 
+---
 
 ### [GET Response]
 
@@ -111,6 +114,8 @@ Here's an example of a HTTP response to a successful `GET` request to the course
 
 {{< figure src="images/courses/cs10/unit00/00_http_response.png" width="100%" alt-text="An HTTP response" >}}
 
+---
+
 ### [Status Codes]
 Status codes are used to signal how the communication between the client and the server is going.
 
@@ -120,6 +125,8 @@ Status codes are used to signal how the communication between the client and the
 - `400` means you did something wrong.
 - `404` means the resource requested could not be found 
 - `500` means, "Sorry, the server broke!" 
+
+---
 
 ### [Using HTTPIE]
 
@@ -151,6 +158,11 @@ You may have noticed that our site is pretty simple. That's because the data bei
 
 **We're now going to look at a website that utilizes a database, the [Hong Kong Observatory](https://www.hko.gov.hk/en/index.html).**
 
+
+{{< figure src="https://www.hko.gov.hk/en/hko_logo_800.jpg" width="100%" alt-text="An HTTP GET request" >}}
+
+---
+
 ### [API]
 
 The HKO provides an open `API` that allows anyone to access their weather database. We are going to use `HTTP Requests` to access this database. 
@@ -158,6 +170,8 @@ The HKO provides an open `API` that allows anyone to access their weather databa
 `API` stands for **Application Programming Interface**. It is software that allows computers to communicate with each other. An `API` often provides `JSON`. 
 
 {{< look-action "Open the documentation from the HKO:" >}} [API Documentation](https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf). We will use this throughout today's lab. 
+
+---
 
 ### [JSON]
 
@@ -182,6 +196,8 @@ http get https://data.weather.gov.hk/weatherAPI/opendata/weather.php\? dataType=
 ```
 > Notice how it looks exactly like a dictionary with `key` and `value` pairs. 
 
+---
+
 ### [Making HTTP Requests]
 
 This lab will require you to make a series of `http requests` to the HKO API. Note the format:
@@ -201,26 +217,8 @@ You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weath
 
 {{< /checkpoint >}}
 
-
-## [2] ISF Energy Database
-
-The ISF Energy Database keep historical and current data about the school's energy usage. This includes XYZ thing. 
-
-{{< code-action >}}**Let's start by making a `http get` request to the ISF Energy Database API.**
-```shell
-http -A bearer -a 0SoXGdHjZb0iktf5dT9fMeAn4XwGyk get https://v4.en-trak.com/apis/usages/isf/total/ date==2022-07-15 period=day
-```
-> `-A bearer -a 0SoXGdHjZb0iktf5dT9fMeAn4XwGyk` - this API requires users to use an authentication token
-
-{{< checkpoint >}}
-
-{{< write-action >}}**Complete the section, `2. ISF Energy Database API`, of the worksheet to further explore `http requests`, `JSON`, and `APIs`.**
-
-You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf) to make specific `http requests`. 
-
-{{< /checkpoint >}}
-
 ---
+
 
 ## [3] Deliverables
 
@@ -235,9 +233,49 @@ You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weath
 
 ## [4] Extension
 
+
+### [ISF Energy Database]
+
+The ISF Energy Database keep historical and current data about the school's energy usage. This includes tracking how many kilowatt hours were used over a period of time and the amount of money spent. This data is tracked by sensors placed all around the school.
+
+
+{{< figure src="images/courses/cs10/unit00/isf_energy_sensors_00.png" width="100%" alt-text="An HTTP GET request" >}}
+
+This API requires an authroization access token. As such, we will use an online service to make API requests easier than using the Terminal. 
+
+{{< code-action >}} **To start, you will need to join our cs10 team on Postman via this [LINK](https://app.getpostman.com/join-team?invite_code=f4474c23d3b0d727b50c57a0c4ed6bd1&target_code=e00a10c981618d9db374041d68a577f1).** Simply sign in with your ISF Google account to get join. 
+
+{{< code-action >}} **Once you've joined, click on `isf energy database` to see the details of the API.**
+{{< figure src="images/courses/cs10/unit00/isf_energy_sensors_01.png" width="100%" alt-text="An HTTP GET request" >}}
+
+{{< code-action >}} **You will first need to generate an `access_token` from the `POST Get Access Token` route and copy it.** We will learn more about `http POST` requests and routes in the next lab.
+{{< figure src="images/courses/cs10/unit00/isf_energy_sensors_02.png" width="100%" alt-text="An HTTP GET request" >}}
+
+
+{{< code-action >}} **You can then explore the 3 `GET` requests available. For each one, you will need to paste in the `access_token`.** To paste in the token:
+> 0) Select a `GET` request
+> 1) Select `Headers`
+> 2) Paste in the `access_token`, replacing the old access token
+{{< figure src="images/courses/cs10/unit00/isf_energy_sensors_03.png" width="100%" alt-text="An HTTP GET request" >}}
+
+
+
+{{< code-action >}} **You can then `Send` the request to recieve the `JSON`.**
+> 0) Select `Params`
+> 1) Change any of the paramters under `Value` to your desired request. You may want to open the `Description` to learn more. 
+{{< figure src="images/courses/cs10/unit00/isf_energy_sensors_04.png" width="100%" alt-text="An HTTP GET request" >}}
+
+{{< code-action >}} **The `JSON` will appear below in the `Body`.** Feel free to experiment with the different display settings such as `Raw`.
+
+{{< figure src="images/courses/cs10/unit00/isf_energy_sensors_05.png" width="75%" alt-text="An HTTP GET request" >}}
+
+---
+
+### [Other APIs]
+
 Now that you've had succifient practice accessing APIs, it's time to explore what type of APIs exist. 
 
-{{< code-action "Explore an API of your choosing." >}} Here are some suggestions:
+{{< code-action "Explore an API of your choosing." >}} You may want to use the `httpie` Terminal commands, or experiment using Postman. Here are some suggestions of APIs to explore:
 - [Joke API](https://sv443.net/jokeapi/v2/)
 - [ZenQuotes API](https://premium.zenquotes.io/zenquotes-documentation/)
 - [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page)
