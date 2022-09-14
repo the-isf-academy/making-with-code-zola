@@ -1,9 +1,9 @@
 ---
-title: "Unit 01: Networking"
+title: "Unit 00: Networking"
 # bookCollapseSection: true
 type: unit
-slug: unit01
-draft: true
+slug: unit00_networking
+# draft: true
 ---
 
 ## Labs
