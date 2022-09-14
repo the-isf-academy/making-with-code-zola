@@ -39,8 +39,10 @@ When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
 {{< code-action "Take a look at the files inside with:" >}} `ls`
-- `guessing_game.py`
-- `hailstone_sequence.py`
+- `triangle.py`
+- `hexagon.py`
+- `icecream.py`
+- `grid.py`
 
 ---
 
@@ -115,9 +117,9 @@ draw_triangle(200)
 
 ### [Editing a Function]
 
-{{< code-action "Let's start by running" >}} `draw_triangle.py`
+{{< code-action "Let's start by running" >}} `triangle.py`
 ```shell
-python draw_triangle.py
+python triangle.py
 ```
 
 {{< figure src="images/courses/cs9/unit00/00_functions_0.png" width="300px">}}
@@ -125,7 +127,7 @@ python draw_triangle.py
 
 {{< code-action "Now, let's open the file:" >}} 
 ```shell
-atom draw_triangle.py
+atom triangle.py
 ```
 Notice how it calls the `draw_triangle()` function with a `side_length` of `200`.
 
@@ -137,18 +139,21 @@ Notice how it calls the `draw_triangle()` function with a `side_length` of `200`
 
 Now that you've had some practice editing a function, let's write a new one. 
 
-{{< code-action "Open the file:" >}} `draw_hexagon.py`
+{{< code-action "Open the file:" >}} `hexagon.py`
 ```shell
-atom draw_hexagon.py`
+atom hexagon.py
 ```
 
 {{< code-action "Write a function that draws a hexagon with any side_length." >}} You will need to:
 
-0. write the function `draw_hexagon()`
-0. call the function `draw_hexagon()` below the function definition
+0. Write the function `draw_hexagon()`. 
+    - It should the parameter `side_length`
+0. Call the function `draw_hexagon()` below the function definition. 
+    - It should be able to be called with any number for the `side_length`. 
 
 *Your finished drawing should look something like this:*
 {{< figure src="images/courses/cs9/unit00/00_functions_1.png" width="300px">}}
+
 
 
 ---
@@ -158,22 +163,36 @@ atom draw_hexagon.py`
 
 **When you want to draw something fancy, you need to break it down into smaller steps.** Then you can write functions to do the smaller steps, and write more functions to combine small steps into bigger steps. This concept is called **decomposition**.
 
+{{< figure src="https://www.thespruceeats.com/thmb/btLT5e97Xl3vBzNo37xPlUgfQcI=/3135x3900/filters:fill(auto,1)/GettyImages-90053856-588b7aff5f9b5874ee534b04.jpg" width="200px">}}
+
+
 The code in this lab illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
 
-- Draw ice cream: `draw_icecream(num_scoops)`
+- Draw ice cream: `draw_icecream()`
     - Draw an ice cream cone: `cone()`
-    - Draw a scoop of ice cream: `icecream_scoop()`
+    - Draw a scoop of ice cream: `scoop(num_scoops)`
     - Move the turtle between scoops: `setup(x,y)`
 
+---
 
 ### [Draw the Ice Cream]
 
-{{< code-action "Finish the following functions to draw ice cream: " >}}
-- `draw_icecream(num_scoops)`
-- `cone()`
-- `icecream_scoop()`
+{{< code-action "Start by running the file: " >}} `icecream.py`. Currently, it draws an incomplete ice cream.
+```shell
+python icecream.py
+```
 
-Your finished drawing will look similar to the image below. The colors of the cone and ice cream scoops are up to you!
+{{< figure src="images/courses/cs9/unit00/00_functions_3.png" width="200px">}}
+
+
+{{< code-action "Open the file: " >}} `icecream.py`. As you can see, the function definitions are already provided. You just need to edit the following functions:
+- `scoop(num_scoops)`
+- `cone()`
+- `draw_icecream(num_scoops)`
+
+
+
+{{< code-action "Complete the ice cream drawing by editing the funcitons. " >}} The colors of the cone and ice cream scoops are up to you!
 
 {{< figure src="images/courses/cs9/unit00/00_functions_icecream.png" width="200px">}}
 
@@ -215,94 +234,53 @@ This is a complex problem, and thus we should use the practice of **decompsition
 - **Step 2:** Drawing one line of squares
 - **Step 3:** Drawing a grid of squares 
 
-### [Set up]
+{{< aside "Many Solutions..." >}}
 
-{{< code-action "Create a new file" >}} called `grid.py` in your `lab_06_functions` folder. Copy and paste the code below into your file.
+There are many solutions to this problem. If you feel confident to solve this problem in different way and without hints, please feel free to do so. 
 
-```python
-#################################
-# Unit 0 Lab 6
-# Author: Your Name
-#################################
+*We will accept any solution that draws a grid of squares of any square size and any gap size when you run `python grid.py`.*
 
-from turtle import *
+{{< /aside >}}
 
-def setup(x, y):
-    '''Sets up the turtle, ready to draw,
-    at the given coordinates'''
-    penup()
-    goto(x, y)
-    pendown()
-    speed(0)
-    setheading(0)
-
-def square(square_size):
-    '''Draws a square using `square_size` as the length'''
-    #YOUR CODE GOES HERE
-
-
-#Keeps the drawing window open until key press  
-input("Press return to end drawing...")
-```
+---
 
 ### [Step 1]
+
+{{< code-action "Open the file:" >}}
+```shell
+atom grid.py
+```
 
 {{< code-action "Fill in the" >}} `square(square_size)` function. It should draw one square of any size. 
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_00.png" width="25%">}}
 
+{{< code-action >}} **Test your `square()` function.** Make sure it can draw a square of any size.  
 
-{{< checkpoint >}}
 
-Before moving on, test your `square(square_size)` function. 
-
-In your notebook answer the following question:
-- How do you know your function will draw a square of any size?
-
-{{< /checkpoint >}}
+---
 
 ### [Step 2]
 
-{{< code-action "Copy and paste the following code block below the " >}} `square(square_size)` function.
-
-```python
-def draw_grid(square_size, gap_size):
-    '''Draws a grid of squares. 
-    Uses `square_size` for the size of the square
-    and `gap_size` for the size of the gap inbetween each square.
-    Uses the function setup() to set the placement of the scoops.'''
-
-
-```
-
-{{< code-action "Implement the STEP 2 functionality in the" >}} `draw_grid(square_size, gap_size)` function. Draw one line of squares the length of `square_size` with gap the size of `gap_size`.
+{{< code-action "Implement the STEP 2 functionality in the" >}} `line_of_squares(square_size, gap_size)` function. Draw one line of squares the length of `square_size` with gap the size of `gap_size`.
+> You should use your `square()` function to create a line of squares. 
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_01.png" width="50%">}}
 
+{{< code-action >}} **Test your `line_of_squares()` function.** Make sure it can draw a line of squares of any `square_size` and `gap_size`.
 
-{{< checkpoint >}}
 
-Before moving on, test your `draw_grid(square_size, gap_size)` function. 
-
-In your notebook answer the following question:
-- How do you know your function will draw a line of squares of any `square_size` and any `grid_size`?
-
-{{< /checkpoint >}}
+---
 
 ### [Step 3]
 
-{{< code-action "Implement the STEP 3 functionality in the" >}} `draw_grid(square_size, gap_size)` function. 
+{{< code-action "Implement the STEP 3 functionality in the" >}} `grid(square_size, gap_size)` function. 
+> You should use your `line_of_squares` to create a grid of squares.
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
 
-{{< checkpoint >}}
+{{< code-action >}} **Test your `grid()` function.** Make it sure it can draw a 4x4 grid of squares.
 
-Before moving on, test your `draw_grid(square_size, gap_size)` function. 
-
-In your notebook answer the following question:
-- How do you know your function will draw a grid of squares of any `square_size` and any `grid_size`?
-
-{{< /checkpoint >}}
 
 ---
 
@@ -338,7 +316,7 @@ Consider the following:
 Here is an example interaction:
 
 ```shell
-python3 ice_cream.py
+python ice_cream.py
 
 --- Welcome to the ISF ice cream parlor ---
 
@@ -354,6 +332,7 @@ How many scoops would you like?
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_03.png" width="25%">}}
 
+---
 
 ### [Custom Grid]
 
@@ -368,7 +347,7 @@ Let's return to `grid.py`.
 Here is an example interaction:
 
 ```shell
-python3 grid.py
+python grid.py
 
 --- PATERN GENERATOR ---
 
