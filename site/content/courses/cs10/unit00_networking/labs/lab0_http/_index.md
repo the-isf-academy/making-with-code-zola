@@ -73,12 +73,6 @@ Communication starts when one computer (the client) sends a *request* to another
 a `GET` request to recieve the *Making with Code* homepage from the server. 
 
 A `GET` request contains following: 
-
-```shell
-GET / HTTP/1.1
-Host: cs.fablearn.org
-```
-
 {{< figure src="images/courses/cs10/unit00/00_http_get.png" width="100%" alt-text="An HTTP GET request" >}}
 
 ---
