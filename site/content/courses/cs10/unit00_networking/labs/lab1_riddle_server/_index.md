@@ -4,44 +4,22 @@ type: lab
 draft: true
 ---
 
-# HTTP: How Computers Communicate
-
-The Internet may be humanity's most profound invention. A global
-network of computers talking to one another, making it possible for people all
-over the world to interact. In this lab, we will start learning about *how*
-computers talk with one another. 
-
-## Vocabulary
-
-- A **protocol** is a set of rules for how to behave or communicate. 
-  Human speech has many protocols: when you must be serious and when you may tell jokes; 
-  when you must show respect and when you may be warm and friendly. Human
-  protocols are usually somewhat flexible, but computer protocols are usually very
-  strict. Either you follow all the rules or communication fails. 
-- **Hypertext** was an early word for webpage content--it's "hyper"
-  because any part of the text can be a link connecting to other texts, just
-  like the way ideas spark other ideas. 
-- **HTTP** stands for "**Hypertext Transfer Protocol**." It's a set of rules for how
-  computers ask each other for content, and how they reply. 
-- **HTML** stands for "**Hypertext Markup Language**," the grammar of websites.
-  HTML is a code full of tags like `<body>` and `<div>`. Putting it all
-  together, HTTP describes how comptuers ask each other for content; HTML describes 
-  how they should format the content when sending web pages. 
-
-
-## [1] The Basic Rules of HTTP
-Every time you visit a URL, your computer opens a connection with the server at that address and uses **HTTP** to send and recieve the content. 
-
-
-## [2] Riddle Server
+# Riddle Server 
 
 In this lab we are going to practice getting and sending HTTP requests. Let's begin by using a nice little tool called `httpie`. 
 
-{{< code-action "Install httpie by typing the following into Terminal on your personal computer:" >}}  
 
+{{< code-action >}} **Get the lab `mwc update`.** 
 ```shell
-pip3 install httpie
+mwc update
 ```
+
+{{< code-action "Enter the Poetry Shell" >}} You see a verison number appear.
+```shell
+httpie --version
+```
+
+
 
 {{< code-action "Let's explore the Riddle server by typing the below HTTP request into your terminal." >}} Replace `IP_ADDRESS_GIVEN_BY_TEACHER` with the IP address on the board.
 
