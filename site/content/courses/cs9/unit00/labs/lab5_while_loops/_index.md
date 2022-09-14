@@ -1,8 +1,10 @@
 ---
 title: 5. While Loops
 type: lab
-#draft: true
-
+slug: lab_while
+repo_url: https://github.com/the-isf-academy/lab_while.git
+init_action: clone
+# draft: true
 ---
 
 # While loops
