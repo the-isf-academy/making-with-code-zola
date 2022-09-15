@@ -6,28 +6,21 @@ draft: true
 
 # Riddle Server 
 
-In this lab we are going to practice getting and sending HTTP requests. Let's begin by using a nice little tool called `httpie`. 
+In this lab we are going to delve into databases and a newsoftware, `banjo`. 
 
+---
 
-{{< code-action >}} **Get the lab `mwc update`.** 
+## Experience the ISF Riddle Server 
+
+We have set up our own server to host `Riddles`. 
+
+{{< code-action >}} **Visit [http://riddles.student.isf.edu.hk/riddles/all](http://riddles.student.isf.edu.hk/riddles/all) to view what riddles are currently saved.**
+
+You can also see this same information, but with better formatting, in your terminal using `httpie`. 
 ```shell
-mwc update
+http get http://riddles.student.isf.edu.hk/riddles/all
 ```
 
-{{< code-action "Enter the Poetry Shell" >}} You see a verison number appear.
-```shell
-httpie --version
-```
-
-
-
-{{< code-action "Let's explore the Riddle server by typing the below HTTP request into your terminal." >}} Replace `IP_ADDRESS_GIVEN_BY_TEACHER` with the IP address on the board.
-
-```shell
-http GET IP_ADDRESS_GIVEN_BY_TEACHER:5000/riddles/all
-```
-
-You should see something like this: 
 ```shell
 HTTP/1.0 200 OK
 Content-Length: 102
@@ -39,17 +32,22 @@ Server: Werkzeug/1.0.1 Python/3.5.2
     "riddles": [
         {
             "correct": 0,
-            "guesses": 0,
+            "guesses": 3,
             "id": 1,
-            "question": "What month of the year has 28 days?"
+            "question": "Where does dragon milk come from?"
         }
     ]
 }
 ```
 
-{{< code-action "Do you know the answer? Try posting a guess via the Terminal." >}}
+{{< code-action "Do you know the answer? Try posting a guess via the Terminal." >}} 
+```shell
+http post http://riddles.student.isf.edu.hk/riddles/guess id=1
+```
+> Note: 
+> - because are sending information we using a `POST` request.
+> - because we want to guess the riddle, we are using a different url `route`, `/guess`
 
-Note that we are now using a different URL, `IP_ADDRESS_GIVEN_BY_TEACHER:5000/riddles/guess`, because we want to guess the answer to a riddle. 
 
 It is common for `POST` requests to send a *payload* with the request. In this case, the payload is a parameter called `id` specifying which riddle we are guessing, as well as `guess`.
 
