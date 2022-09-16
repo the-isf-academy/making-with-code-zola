@@ -47,7 +47,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 ---
 
 
-## [0] What is a function?
+## [1] What is a function?
 Before we can talk about functions, we need to talk about code blocks. A **code block** is one or more lines of code. Here's one:
 
 ```python
@@ -85,8 +85,8 @@ draw_triangle(200)
 >
 > - `line 1`
 >   - `def` defines a new function called `draw_triangle()`
->   - it takes on parameter, or arguement, called `side_length`
-> - `line 4` 
+>   - it takes on parameter, or argument, called `side_length`
+> - `line 4`
 >   - `side_length` is used as a variable
 >   - you can use function's parameters inside the function as variables
 > - `line 7`
@@ -125,19 +125,19 @@ python triangle.py
 {{< figure src="images/courses/cs9/unit00/00_functions_0.png" width="300px">}}
 
 
-{{< code-action "Now, let's open the file:" >}} 
+{{< code-action "Now, let's open the file:" >}}
 ```shell
 atom triangle.py
 ```
 Notice how it calls the `draw_triangle()` function with a `side_length` of `200`.
 
-{{< code-action "Experiment with editing the paramter and then re-running the program." >}} For example, change `200` to a `500`.
+{{< code-action "Experiment with editing the parameter and then re-running the program." >}} For example, change `200` to a `500`.
 
 ---
 
 ### [Writing  a Function]
 
-Now that you've had some practice editing a function, let's write a new one. 
+Now that you've had some practice editing a function, let's write a new one.
 
 {{< code-action "Open the file:" >}} `hexagon.py`
 ```shell
@@ -146,10 +146,10 @@ atom hexagon.py
 
 {{< code-action "Write a function that draws a hexagon with any side_length." >}} You will need to:
 
-0. Write the function `draw_hexagon()`. 
-    - It should the parameter `side_length`
-0. Call the function `draw_hexagon()` below the function definition. 
-    - It should be able to be called with any number for the `side_length`. 
+0. Write the function `draw_hexagon()`.
+    - It should have one parameter called `side_length`
+0. Call the function `draw_hexagon()` below the function definition.
+    - It should be able to be called with any number for the `side_length`.
 
 *Your finished drawing should look something like this:*
 {{< figure src="images/courses/cs9/unit00/00_functions_1.png" width="300px">}}
@@ -159,7 +159,7 @@ atom hexagon.py
 ---
 
 
-## [1] Combining functions
+## [2] Combining functions
 
 **When you want to draw something fancy, you need to break it down into smaller steps.** Then you can write functions to do the smaller steps, and write more functions to combine small steps into bigger steps. This concept is called **decomposition**.
 
@@ -171,7 +171,6 @@ The code in this lab illustrates this. If we want to draw an ice cream cone with
 - Draw ice cream: `draw_icecream()`
     - Draw an ice cream cone: `cone()`
     - Draw a scoop of ice cream: `scoop(num_scoops)`
-    - Move the turtle between scoops: `setup(x,y)`
 
 ---
 
@@ -222,21 +221,21 @@ end_fill()          #Tells the turtle to stop the color fill
 
 ---
 
-## [2] Looping Functions
+## [3] Looping Functions
 
-Let's practice writing some more functions. Our aim is to create a grid of squares. 
+Let's practice writing some more functions. Our aim is to create a grid of squares.
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
 
-This is a complex problem, and thus we should use the practice of **decompsition** to break it down into smaller steps. 
+This is a complex problem, and thus we should use the practice of **decompsition** to break it down into smaller steps.
 
 - **Step 1:** Drawing one square
 - **Step 2:** Drawing one line of squares
-- **Step 3:** Drawing a grid of squares 
+- **Step 3:** Drawing a grid of squares
 
 {{< aside "Many Solutions..." >}}
 
-There are many solutions to this problem. If you feel confident to solve this problem in different way and without hints, please feel free to do so. 
+There are many solutions to this problem. If you feel confident to solve this problem in different way and without hints, please feel free to do so.
 
 *We will accept any solution that draws a grid of squares of any square size and any gap size when you run `python grid.py`.*
 
@@ -251,7 +250,7 @@ There are many solutions to this problem. If you feel confident to solve this pr
 atom grid.py
 ```
 
-{{< code-action "Fill in the" >}} `square(square_size)` function. It should draw one square of any size. 
+{{< code-action "Fill in the" >}} `square(square_size)` function. It should draw one square of any size.
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_00.png" width="25%">}}
 
@@ -263,7 +262,7 @@ atom grid.py
 ### [Step 2]
 
 {{< code-action "Implement the STEP 2 functionality in the" >}} `line_of_squares(square_size, gap_size)` function. Draw one line of squares the length of `square_size` with gap the size of `gap_size`.
-> You should use your `square()` function to create a line of squares. 
+> You should use your `square()` function to create a line of squares.
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_01.png" width="50%">}}
 
@@ -274,7 +273,7 @@ atom grid.py
 
 ### [Step 3]
 
-{{< code-action "Implement the STEP 3 functionality in the" >}} `grid(square_size, gap_size)` function. 
+{{< code-action "Implement the STEP 3 functionality in the" >}} `grid(square_size, gap_size)` function.
 > You should use your `line_of_squares` to create a grid of squares.
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
@@ -284,7 +283,7 @@ atom grid.py
 
 ---
 
-## [3] Deliverables
+## [4] Deliverables
 
 {{< deliverables  >}}
 
@@ -294,13 +293,13 @@ atom grid.py
 {{< /deliverables >}}
 
 ---
-## [4] Extension
+## [5] Extension
 
 ### [Ice Cream Parlor]
 
-Let's return to `ice_cream.py`. 
+Let's return to `ice_cream.py`.
 
-Right now, both the color of the ice cream and the number of scoops are pre-determined or hard-coded. If you wanted to change the color or number of scoops, you would have to go back into the code and change it yourself. 
+Right now, both the color of the ice cream and the number of scoops are pre-determined or hard-coded. If you wanted to change the color or number of scoops, you would have to go back into the code and change it yourself.
 
 {{< code-action "Expand the functionality of this program to simulate an ice cream parlor."  >}} The user should be able to choose the flavor of the ice-cream and the number of scoops.
 
@@ -322,7 +321,7 @@ python ice_cream.py
 
 What flavor would you like?
    > Select a flavor (chocolate, strawberry, vanilla): chocolate
-How many scoops would you like? 
+How many scoops would you like?
    > Select number of scoops (max 3): 3
 
 --- Enjoy your ice cream! Please come again! ---
@@ -338,10 +337,10 @@ How many scoops would you like?
 
 Let's return to `grid.py`.
 
-{{< code-action "Expand the functionality of this program so the user can customize the following:"  >}} 
+{{< code-action "Expand the functionality of this program so the user can customize the following:"  >}}
 - number of rows
 - number of columns
-- color palette 
+- color palette
 
 
 Here is an example interaction:
@@ -358,7 +357,7 @@ How many columns?
 Pick a primary color.
    > Choose a color (darkseagreen, coral, deeppink): darkseagreen
 Pick a secondary color.
-   > Choose a color (darkred, , cyan, cadetblue): coral
+   > Choose a color (darkred, coral, cyan, cadetblue): coral
 
 [Press any key to exit]
 ```
