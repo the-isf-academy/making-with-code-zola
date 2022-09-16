@@ -28,16 +28,22 @@ while today != "Friday":
 
     if today == "Sunday":
         tomorrow = "Monday"
+
     elif today == "Monday":
         tomorrow = "Tuesday"
+
     elif today == "Tuesday":
         tomorrow = "Wednesday"
+
     elif today == "Wednesday":
         tomorrow = "Thursday"
+
     elif today == "Thursday":
         tomorrow == "Friday"
+
     elif today == "Friday":
         tomorrow = "Saturday"
+        
     elif today == "Saturday":
         tomorrow = "Sunday"
 

@@ -1,5 +1,5 @@
 ---
-title: "1. Databases"
+title: "1. Database"
 type: lab
 slug: lab_riddle_server
 repo_url: https://github.com/the-isf-academy/lab_riddle_server.git
@@ -7,7 +7,7 @@ init_action: init
 # draft: true
 ---
 
-# Databases
+# Riddle Database
 
 In this lab we are going to delve into databases and a new software, `banjo`. 
 
@@ -86,10 +86,10 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `138.68.28.249:5000/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
-| `GET`  | `138.68.28.249:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `138.68.28.249:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
-| `POST` | `138.68.28.249:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+| `GET`  | `/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
 
 {{< checkpoint >}} 
 

@@ -64,10 +64,10 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `127.0.0.1:5000/riddles/all`   |         N/A             | Returns a list of all the riddles, without answers.                                      |
-| `GET`  | `127.0.0.1:5000/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `127.0.0.1:5000/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
-| `POST` | `127.0.0.1:5000/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+| `GET`  | `/riddles/all`   |         N/A             | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
 
 
 ## [3] Riddle Client Overview
