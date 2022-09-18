@@ -250,6 +250,8 @@ Now that you've experienced adding and updating the database, we're going to exp
 
 {{< figure src="images/courses/cs10/unit00/00_databases_04.png" alt-text="django query example" >}}
 
+{{< figure src="images/courses/cs10/unit00/00_databases_13.png" alt-text="django query example" >}}
+
 {{< figure src="images/courses/cs10/unit00/00_databases_05.png" alt-text="django query example" >}}
 
 {{< figure src="images/courses/cs10/unit00/00_databases_06.png" alt-text="django query example" >}}
@@ -265,6 +267,8 @@ Now that you've experienced adding and updating the database, we're going to exp
 {{< figure src="images/courses/cs10/unit00/00_databases_11.png" alt-text="django query example" >}}
 
 {{< figure src="images/courses/cs10/unit00/00_databases_12.png" alt-text="django query example" >}}
+
+
 
 
 ## [3] Deliverables
