@@ -148,6 +148,13 @@ poetry shell
 When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
+
+{{< code-action "Install Banjo." >}}
+```shell
+pip3 install django-banjo
+```
+
+
 ---
 
 ### [Viewing the Database]
@@ -194,13 +201,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 >>>
 ```
-{{< aside "Troubleshooting" >}}
-If you get `banjo: command not found`, make sure that you are in the poetry shell. If you're in the poetry shell and still getting this error, try running:
-```shell
-pip3 install django-banjo
-```
-If you still have issues, ask a teacher for help
-{{< /aside >}}
 
 {{< code-action "Let's start by just viewing all the riddles in the shell:" >}}
 ```shell
