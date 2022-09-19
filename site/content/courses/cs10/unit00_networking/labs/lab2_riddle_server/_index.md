@@ -4,18 +4,18 @@ type: lab
 slug: lab_riddle_server
 # repo_url: https://github.com/the-isf-academy/lab_riddle_server.git
 # init_action: init
-# draft: true
+draft: true
 ---
 
 # Riddle Server
 
-In this lab we are going to learn how the riddle server is made. 
+In this lab we are going to learn how the riddle server is made.
 
 ---
 
 ## [0] Local Riddle Server
 
-You are each able to run a locally hosted riddle server on your laptop using Banjo. 
+You are each able to run a locally hosted riddle server on your laptop using Banjo.
 
 {{< code-action "Start by going into the lab folder" >}}
 ```shell
@@ -82,7 +82,7 @@ Your version of the riddle server only has the 2 endpoints:
 - `/riddles/all`
 - `/riddles/guess`
 
-{{< checkpoint >}} 
+{{< checkpoint >}}
 
 {{< code-action "Explore both endpoints via the Terminal and be sure to successfully:" >}}
 - view all riddles without the answers
@@ -93,7 +93,7 @@ Your version of the riddle server only has the 2 endpoints:
 
 ## [1] Exploring Banjo
 
-This server is written using Banjo, a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API. 
+This server is written using Banjo, a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API.
 
 Banjo apps must have an `app` folder. Within the app folder must be two files: `models.py`, `views.py`. The `database.sqlite` file is created when the server is first started. It is stored at the same level as `app`. Here is an example file structure:
 ```shell
@@ -104,8 +104,8 @@ lab_riddle_server
 |   └──views.py
 └──database.sqlite
 ```
-- `models.py` - A model is essentially an abstracted class. Just as a class has properties, a model has fields. When defining a model's fields, you must specify the data type. 
-- `views.py` - The views are where you define the API functionality. Here is where you decide what the `endpoints` are and the type of `HTTP` request it will require. 
+- `models.py` - A model is essentially an abstracted class. Just as a class has properties, a model has fields. When defining a model's fields, you must specify the data type.
+- `views.py` - The views are where you define the API functionality. Here is where you decide what the `endpoints` are and the type of `HTTP` request it will require.
 
 **In this lab, we are going to be primarily focused on the `views.py` file.**
 
@@ -116,9 +116,9 @@ atom app
 ```
 
 
-{{< checkpoint >}} 
+{{< checkpoint >}}
 
-{{< write-action >}}  **Complete the worksheet.** 
+{{< write-action >}}  **Complete the worksheet.**
 
 {{< code-action >}} **It will require you to edit code, run tests, and experiment with the riddle server.**
 {{< /checkpoint >}}
@@ -134,4 +134,3 @@ atom app
 **Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfgWwxFI8SotkBsredlpQejYI2fHzJDQ-2oZgdYTq1ZQO_zjw/viewform?usp=sf_link).**
 
 {{< /deliverables >}}
-

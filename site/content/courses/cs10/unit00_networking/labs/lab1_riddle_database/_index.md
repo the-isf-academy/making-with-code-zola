@@ -9,20 +9,20 @@ init_action: init
 
 # Riddle Database
 
-In this lab we are going to delve into databases and a new software, `banjo`. 
+In this lab we are going to delve into databases and a new software, `banjo`.
 
 ---
 
-## [0] Experience the ISF Riddle Server 
+## [0] Experience the ISF Riddle Server
 
-The last time we saw riddles, they were locally hosted on each of your computers. You had to manually add new ones and there was no way to keep track of how many people guessed them.
+The last time we saw riddles, they existed only within each of your computers. You had to manually add new ones and there was no way to keep track of how many people guessed them.
 
-We are now going to look at Riddles that are hosted on the internet! 
+We are now going to look at Riddles that are hosted on the internet!
 
-{{< code-action >}} **Visit [http://riddles.student.isf.edu.hk/riddles/all](http://riddles.student.isf.edu.hk/riddles/all) to view riddle server.** 
+{{< code-action >}} **Visit [http://riddles.student.isf.edu.hk/riddles/all](http://riddles.student.isf.edu.hk/riddles/all) to view riddle server.**
 > Not very easy to read, right? You can install the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) Chrome extension to view better formatted JSON.*
 
-{{< code-action >}} **Now try making `get` request to recieve the same information, in your terminal using `httpie`.**
+{{< code-action >}} **Now try making `get` request to receive the same information in your terminal using `httpie`.**
 ```shell
 http get http://riddles.student.isf.edu.hk/riddles/all
 ```
@@ -47,7 +47,7 @@ Server: gunicorn
 }
 ```
 
-{{< code-action "Do you know the answer? Try posting a guess via the Terminal." >}} 
+{{< code-action "Do you know the answer? Try posting a guess via the Terminal." >}}
 ```shell
 http post http://riddles.student.isf.edu.hk/riddles/guess id=1 guess="scales"
 ```
@@ -91,11 +91,11 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 | `POST` | `/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
 | `POST` | `/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
 
-{{< checkpoint >}} 
+{{< checkpoint >}}
 
 {{< code-action "Explore each endpoint, and be sure to successfully:" >}}
 - view all riddles without the answers
-- view a single riddle 
+- view a single riddle
 - add a new riddle
 - guess a riddle
 {{< /checkpoint >}}
@@ -105,7 +105,7 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 ## [1] Explore the Riddle Model
 
-Now that you've experienced the riddle server, let's delve into how it's made. 
+Now that you've experienced the riddle server, let's delve into how it's made.
 
 The `Riddle` objects looks almost identical to how it looked in the Riddler lab. **The main difference, is we must define the datatype of each property.** This tells the database, what type of information each property will store.
 
@@ -123,17 +123,18 @@ class Riddle(Model):
 
 ### [Set Up]
 
-For this lab, we need to download software to view the database in a nicely formatted chart. 
+For this lab, we need to download software to view the database in a nicely formatted chart.
 
 {{< code-action "Download dbsqlite onto your computer:" >}} [https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/)
 
 {{< figure src="https://sqlitebrowser.org/images/sqlitebrowser.svg" alt-text="database icon" >}}
 
 
-{{< code-action "Get the lab and install any necessary packages." >}} 
+{{< code-action "Get the lab and install any necessary packages." >}}
 ```shell
 mwc update
 ```
+
 {{< code-action "In the Terminal, open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking/lab_riddle_server
@@ -147,6 +148,13 @@ poetry shell
 When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
+
+{{< code-action "Install Banjo." >}}
+```shell
+pip3 install django-banjo
+```
+
+
 ---
 
 ### [Viewing the Database]
@@ -155,7 +163,7 @@ You have just downloaded a simple server that hosts `Riddles` onto your laptop. 
 
 {{< code-action "Open the database in the DB Browser:" >}}
 ```shell
-open database.sqlite 
+open database.sqlite
 ```
 
 {{< code-action "Select" >}} `Browse Data`
@@ -163,7 +171,7 @@ open database.sqlite
 {{< figure src="images/courses/cs10/unit00/00_databases_00.png" alt-text="databases" >}}
 
 
-{{< look-action "Here you will see all of the riddles that are in your locally hosted server." >}} This database file gets updated each time you guess or add a `Riddle`. 
+{{< look-action "Here you will see all of the riddles that are in your locally hosted server." >}} This database file gets updated each time you guess or add a `Riddle`.
 
 {{< figure src="images/courses/cs10/unit00/00_databases_01.png" alt-text="databases" >}}
 
@@ -174,7 +182,7 @@ open database.sqlite
 
 Now, let's guess a `Riddle` and add a new `Riddle` and see how that affects the database.
 
-In this unit, we will be using `Banjo` and wrapper over [Django](https://www.djangoproject.com/). Django is a popular web framework that is used to quickly create web apps. We will be using Django in the spring, so for now we will `Banjo` to introduce the software. 
+In this unit, we will be using `Banjo` and wrapper over [Django](https://www.djangoproject.com/). Django is a popular web framework that is used to quickly create web apps. We will be using Django in the spring, so for now we will `Banjo` to introduce the software.
 
 {{< code-action "Let's enter the Banjo shell to interact with the riddles." >}}
 ```shell
@@ -191,7 +199,7 @@ from app.models import Riddle
 Python 3.10.6 (v3.10.6:9c7b4bd164, Aug  1 2022, 17:13:48) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
->>> 
+>>>
 ```
 
 {{< code-action "Let's start by just viewing all the riddles in the shell:" >}}
@@ -242,6 +250,8 @@ Now that you've experienced adding and updating the database, we're going to exp
 
 {{< figure src="images/courses/cs10/unit00/00_databases_04.png" alt-text="django query example" >}}
 
+{{< figure src="images/courses/cs10/unit00/00_databases_13.png" alt-text="django query example" >}}
+
 {{< figure src="images/courses/cs10/unit00/00_databases_05.png" alt-text="django query example" >}}
 
 {{< figure src="images/courses/cs10/unit00/00_databases_06.png" alt-text="django query example" >}}
@@ -259,6 +269,8 @@ Now that you've experienced adding and updating the database, we're going to exp
 {{< figure src="images/courses/cs10/unit00/00_databases_12.png" alt-text="django query example" >}}
 
 
+
+
 ## [3] Deliverables
 
 
@@ -270,9 +282,9 @@ Now that you've experienced adding and updating the database, we're going to exp
 
 ---
 
-## [4] Extension 
+## [4] Extension
 
-Next lab we will explore how to write the Riddle server. 
+Next lab we will explore how to write the Riddle server.
 
 {{< code-action "Feel free to open up the code and start to understand how it works!" >}}
 ```shell
