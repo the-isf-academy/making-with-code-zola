@@ -1,8 +1,8 @@
 ---
 title: "1. Database"
 type: lab
-slug: lab_riddle_server
-repo_url: https://github.com/the-isf-academy/lab_riddle_server.git
+slug: lab_riddle_database
+repo_url: https://github.com/the-isf-academy/lab_riddle_database
 init_action: init
 # draft: true
 ---
