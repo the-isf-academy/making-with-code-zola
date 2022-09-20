@@ -4,7 +4,7 @@ type: lab
 slug: lab_riddle_server
 # repo_url: https://github.com/the-isf-academy/lab_riddle_server.git
 # init_action: init
-draft: true
+# draft: true
 ---
 
 # Riddle Server
@@ -95,7 +95,7 @@ Your version of the riddle server only has the 2 endpoints:
 
 ## [1] What is Banjo?
 
-This server is written using Banjo, a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API.
+This server is written using [Banjo](https://cs.fablearn.org/docs/banjo/index.html), a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API.
 
 Banjo apps must have an `app` folder. Within the app folder must be two files: `models.py`, `views.py`. The `database.sqlite` file is created when the server is first started. It is stored at the same level as `app`. Here is an example file structure:
 ```shell
@@ -111,9 +111,9 @@ lab_riddle_server
 
 **In this lab, we are going to be primarily focused on the `views.py` file.**
 
+---
 
-
-## [2] Writing a Route
+## [2] Writing Routes
 
 In this lab, you will build out the full functionality of the Riddle server. Currently, your file only has `riddles/all` and `riddle/guess`. 
 
@@ -132,13 +132,18 @@ atom app
 
 {{< code-action >}} **Open the `views.py` file.** Here is where you will write the additional endpoints. 
 
-{{< code-action >}} **Write the `riddles/one` endpoint. 
+---
+
+### [riddles/one]
+
+{{< code-action >}} **Write the `riddles/one` endpoint.** 
+- http: `get`
 - payload: `id`
-- return: a single `Riddle` with the `question`, `guesses`, and `correct`
+- return: a single `Riddle` with the `question`, `guesses`, and `correct` properties
 
 {{< checkpoint >}}
 
-{{< code-action >}} **Test the `riddles/one` endpoint.
+{{< code-action >}} **Test the `riddles/one` endpoint in a separate Terminal window from the server..**
 
 ```shell
 http get http://127.0.0.1:5000/riddles/one id=0
@@ -146,6 +151,42 @@ http get http://127.0.0.1:5000/riddles/one id=0
 
 {{< /checkpoint >}}
 
+---
+
+### [riddles/new]
+
+{{< code-action >}} **Write the `riddles/new` endpoint.** 
+- http: `get`
+- payload: `id`
+- return: a single `Riddle` with the `question`, `guesses`, and `correct` properties
+
+{{< checkpoint >}}
+
+{{< code-action >}} **Test the `riddles/new` endpoint in a separate Terminal window from the server..**
+
+```shell
+http post http://127.0.0.1:5000/riddles/new question="It goes up and down the stairs without moving." answer="A carpet"
+```
+
+{{< /checkpoint >}}
+
+---
+
+### [riddles/random]
+
+{{< code-action >}} **Write the `riddles/random` endpoint.** 
+- http: `get`
+- return: a single `Riddle` with the `question`, `answer`,  `correct`, and `guess` properties 
+
+{{< checkpoint >}}
+
+{{< code-action >}} **Test the `riddles/random` endpoint in a separate Terminal window from the server..**
+
+```shell
+http get http://127.0.0.1:5000/riddles/random 
+```
+
+{{< /checkpoint >}}
 
 ---
 
@@ -162,3 +203,25 @@ http get http://127.0.0.1:5000/riddles/one id=0
 
 ## [4] Extension
 
+Currently, there's not way to see the answer unless you correctly guess the riddle. 
+
+{{< code-action >}} **Write an endpoint that has the ability to view the solution of a given Riddle.** 
+> *Hint: a new method in the `Riddle` class may be useful*
+
+It should return `JSON` that looks something like:
+```shell
+{
+    "riddle": [
+        {
+            "correct": 0,
+            "guesses": 3,
+            "id": 1,
+            "question": "It goes up and down the stairs without moving.",
+            "answer": "A carpet"
+        }
+    ]
+}
+```
+
+{{< code-action >}} **Write an endpoint that has the ability to change the question or answer or a riddle.** 
+> *Consider, what kind of HTTP request would be best for this?*
