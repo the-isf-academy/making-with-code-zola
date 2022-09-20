@@ -3,7 +3,7 @@ title: "1. Database"
 type: lab
 slug: lab_riddle_database
 repo_url: https://github.com/the-isf-academy/lab_riddle_database
-init_action: init
+init_action: create_from_template 
 # draft: true
 ---
 
@@ -137,7 +137,7 @@ mwc update
 
 {{< code-action "In the Terminal, open the lab folder." >}}
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/lab_riddle_server
+cd ~/desktop/making_with_code/cs10/unit00_networking/lab_riddle_database
 ```
 
 {{< code-action "Enter the Poetry Shell." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
