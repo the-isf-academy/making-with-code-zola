@@ -241,34 +241,11 @@ Before moving on, make sure the Riddle properties, `guesses`, and `correct`, wer
 
 Now that you've experienced adding and updating the database, we're going to explore how to search, or query, the database.
 
-{{< write-action "Using the resources below, fill out the worksheet and properly query the database using the Banjo shell." >}} The images below are an exerpt of the offical Django documentation on [queries](https://docs.djangoproject.com/en/4.1/topics/db/queries/) and [QuerySets](https://docs.djangoproject.com/en/4.1/ref/models/querysets/). If you find it easier, feel free to explore the offical documentation to answer the questions.
+{{< look-action "Open the Banjo documentation:" >}} [https://cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
 
-{{< figure src="images/courses/cs10/unit00/00_databases_02.png" alt-text="django query example" >}}
+{{< write-action "Using the Banjo documentation, fill out the worksheet and properly query the database using the Banjo shell." >}} 
 
-
-{{< figure src="images/courses/cs10/unit00/00_databases_03.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_04.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_13.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_05.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_06.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_07.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_08.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_09.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_10.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_11.png" alt-text="django query example" >}}
-
-{{< figure src="images/courses/cs10/unit00/00_databases_12.png" alt-text="django query example" >}}
-
-
+---
 
 
 ## [3] Deliverables
