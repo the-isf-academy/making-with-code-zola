@@ -9,7 +9,9 @@ draft: true
 
 # Riddle Server
 
-In this lab we are going to learn how the riddle server is made.
+In this lab we are going to learn how the riddle server is made using Banjo.
+
+{{< look-action "Open the Banjo documentation:" >}} [https://cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
 
 ---
 
@@ -29,7 +31,7 @@ poetry shell
 
 ---
 
-### [Starting the Serve]
+### [Starting the Server]
 
 {{< code-action "Now, let's start your local server." >}}
 ```shell
@@ -60,7 +62,7 @@ Quit the server with CONTROL-C.
 
 ### [Accessing the Server]
 
-{{< look-action " You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet: " >}} [http://127.0.0.1:5000/riddesl/all](http://127.0.0.1:5000/riddles/all)
+{{< look-action " You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet: " >}} [http://127.0.0.1:5000/riddles/all](http://127.0.0.1:5000/riddles/all)
 
 **In order to send requests to the other endpoints, you will need always have 2 Terminal windows open.**
 - 1 window will run the server
@@ -70,7 +72,7 @@ Quit the server with CONTROL-C.
 
 {{< code-action "View all the riddles in the second Terminal window." >}}
 ```shell
-http get http://127.0.0.1:5000/riddesl/all
+http get http://127.0.0.1:5000/riddles/all
 ```
 
 {{< look-action " Look at the Terminal window running the server. Notice how it recorded your request." >}}
@@ -91,7 +93,7 @@ Your version of the riddle server only has the 2 endpoints:
 
 ---
 
-## [1] Exploring Banjo
+## [1] What is Banjo?
 
 This server is written using Banjo, a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API.
 
@@ -109,18 +111,39 @@ lab_riddle_server
 
 **In this lab, we are going to be primarily focused on the `views.py` file.**
 
-{{< code-action "Let's start by opening up the primary folder:" >}} `app`
+
+
+## [2] Writing a Route
+
+In this lab, you will build out the full functionality of the Riddle server. Currently, your file only has `riddles/all` and `riddle/guess`. 
+
+**It is up to you to add the following endpoints:**
+- `riddles/one`
+- `riddles/new`
+- `riddle/random`
+
+
+
+{{< code-action "Start by opening up the primary folder:" >}} `app`
 
 ```shell
 atom app
 ```
 
+{{< code-action >}} **Open the `views.py` file.** Here is where you will write the additional endpoints. 
+
+{{< code-action >}} **Write the `riddles/one` endpoint. 
+- payload: `id`
+- return: a single `Riddle` with the `question`, `guesses`, and `correct`
 
 {{< checkpoint >}}
 
-{{< write-action >}}  **Complete the worksheet.**
+{{< code-action >}} **Test the `riddles/one` endpoint.
 
-{{< code-action >}} **It will require you to edit code, run tests, and experiment with the riddle server.**
+```shell
+http get http://127.0.0.1:5000/riddles/one id=0
+```
+
 {{< /checkpoint >}}
 
 
@@ -134,3 +157,8 @@ atom app
 **Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfgWwxFI8SotkBsredlpQejYI2fHzJDQ-2oZgdYTq1ZQO_zjw/viewform?usp=sf_link).**
 
 {{< /deliverables >}}
+
+---
+
+## [4] Extension
+
