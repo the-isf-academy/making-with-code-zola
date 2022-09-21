@@ -156,8 +156,8 @@ http get http://127.0.0.1:5000/riddles/one id=0
 ### [riddles/new]
 
 {{< code-action >}} **Write the `riddles/new` endpoint.** 
-- http: `get`
-- payload: `id`
+- http: `post`
+- payload: `question` and `answer`
 - return: a single `Riddle` with the `question`, `guesses`, and `correct` properties
 
 {{< checkpoint >}}
@@ -176,7 +176,7 @@ http post http://127.0.0.1:5000/riddles/new question="It goes up and down the st
 
 {{< code-action >}} **Write the `riddles/random` endpoint.** 
 - http: `get`
-- return: a single `Riddle` with the `question`, `answer`,  `correct`, and `guess` properties 
+- return: a single `Riddle` with the `question`,  `correct`, and `guess` properties 
 
 {{< checkpoint >}}
 
@@ -195,7 +195,7 @@ http get http://127.0.0.1:5000/riddles/random
 
 {{< deliverables >}}  
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfgWwxFI8SotkBsredlpQejYI2fHzJDQ-2oZgdYTq1ZQO_zjw/viewform?usp=sf_link).**
+**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf8yjSaASsdDp2y4Zawso8Ko77nkhPH6ADf5BOTpPcO_kdtDw/viewform?usp=sf_link).**
 
 {{< /deliverables >}}
 
