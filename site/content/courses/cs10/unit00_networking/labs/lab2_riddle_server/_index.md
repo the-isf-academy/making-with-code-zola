@@ -15,7 +15,7 @@ In this lab we are going to learn how the riddle server is made using Banjo.
 
 ---
 
-## [0] Local Riddle Server
+## [0] Set Up
 
 You are each able to run a locally hosted riddle server on your laptop using Banjo.
 
@@ -24,7 +24,7 @@ You are each able to run a locally hosted riddle server on your laptop using Ban
 cd ~/desktop/making_with_code/cs10/unit00_networking/
 ```
 
-{{< code-action "Cloning the lab folder." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
+{{< code-action "Clone the lab folder." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
 ```shell
 git clone https://github.com/the-isf-academy/lab_riddle_server_YOUR_USERNAME
 ```
@@ -40,7 +40,20 @@ cd lab_riddle_server_YOUR_USERNAME
 poetry shell
 ```
 
+{{< code-action "Install requirements" >}}
+```shell
+poetry install
+```
+
+{{< code-action "Install Banjo" >}}
+```shell
+pip3 install django-banjo
+```
+
 ---
+## [1] Local Riddle Server
+
+You are each able to run a locally hosted riddle server on your laptop using Banjo.
 
 ### [Starting the Server]
 
@@ -104,7 +117,7 @@ Your version of the riddle server only has the 2 endpoints:
 
 ---
 
-## [1] What is Banjo?
+## [2] What is Banjo?
 
 This server is written using [Banjo](https://cs.fablearn.org/docs/banjo/index.html), a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API.
 
@@ -124,7 +137,7 @@ lab_riddle_server
 
 ---
 
-## [2] Writing Routes
+## [3] Writing Routes
 
 In this lab, you will build out the full functionality of the Riddle server. Currently, your file only has `riddles/all` and `riddle/guess`. 
 
@@ -201,7 +214,7 @@ http get http://127.0.0.1:5000/riddles/random
 
 ---
 
-## [3] Deliverables
+## [4] Deliverables
 
 
 {{< deliverables >}}  
@@ -212,7 +225,7 @@ http get http://127.0.0.1:5000/riddles/random
 
 ---
 
-## [4] Extension
+## [5] Extension
 
 Currently, there's not way to see the answer unless you correctly guess the riddle. 
 
