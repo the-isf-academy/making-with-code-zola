@@ -4,7 +4,7 @@ type: lab
 slug: lab_modules
 repo_url: https://github.com/the-isf-academy/lab_modules.git
 init_action: clone
-# draft: true---
+draft: true
 ---
 
 # Modules Lab
@@ -21,17 +21,17 @@ In this lab, we will learn how to organize our functions into modules. Modules a
 cd ~/Desktop/cs9/unit00_drawing
 ```
 
-{{< code-action "Clone the lab repo:" >}} `lab_modules` 
+{{< code-action "Clone the lab repo:" >}} `lab_modules`
 ```shell
 git clone --recurse-submodules https://github.com/the-isf-academy/lab_modules.git
 ```
 
-{{< code-action "Go into the folder:" >}} 
+{{< code-action "Go into the folder:" >}}
 ```shell
 cd lab_modules
 ```
 
-{{< code-action "Enter the Poetry shell:" >}} 
+{{< code-action "Enter the Poetry shell:" >}}
 ```shell
 poetry shell
 ```
@@ -43,7 +43,7 @@ poetry shell
 ## [1] What is a module?
 In the previous lab, we used functions to break up a big program into smaller programs. Modules do the same thing, but on a larger scale!
 
-So let's say you wrote a function in one file. What if you want to re-use a function you wrote in a different file? Copy it over?  It feels like there should be a better way. 
+So let's say you wrote a function in one file. What if you want to re-use a function you wrote in a different file? Copy it over?  It feels like there should be a better way.
 
 **Today we are going to learn how to import code from one module into another.** But first, let's get some vocabulary straight:
 
@@ -54,14 +54,14 @@ So let's say you wrote a function in one file. What if you want to re-use a func
 ---
 
 ### [How to import a module]
-When you want to use something from another module, you need to `import` it. 
+When you want to use something from another module, you need to `import` it.
 
 We have actually already been doing this. Every one of our programs so far has started with `from turtle import *`. But what is this `turtle`? It's a module! And it lives in a file called `turtle.py` that some people wrote for you.
 
 
-**There are actually three different ways to get `forward`.** 
+**There are actually three different ways to get `forward`.**
 
-First, is the way you are used to doing it. This way imports all of the functions in `turtle.py`. It's quick and easy, but it's kind of sloppy and it's not always a very good idea. 
+First, is the way you are used to doing it. This way imports all of the functions in `turtle.py`. It's quick and easy, but it's kind of sloppy and it's not always a very good idea.
 
 ```python
 from turtle import *
@@ -108,21 +108,21 @@ cd tree_drawing
 This folder has 3 files:
 - `basic_shapes.py`
 - `tree_parts.py`
-- `tree_full.py` 
+- `tree_full.py`
 
 
-{{< code-action "Open the folder in Atom" >}} 
+{{< code-action "Open the folder in Atom" >}}
 ```shell
 atom .
 ```
 
-{{< look-action "Take a look at" >}} `basic_shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `basic_shapes.py`. 
+{{< look-action "Take a look at" >}} `basic_shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `basic_shapes.py`.
 
 
 {{< code-action >}} **Currently, `tree_full.py` is empty. It's up to you to write function to draw a full tree.** Your `tree_full()` function should be able to draw a tree of any size.
 
 > Be sure to consider:
-> - what modules will you need to import? 
+> - what modules will you need to import?
 > - how can you combine exisiting functions to draw a full tree?
 
 When you run `tree_full`.py it look like:
@@ -135,10 +135,10 @@ When you run `tree_full`.py it look like:
 
 ## [3] Drawing Package
 
-Now we are going to use a package full of fancy drawing functions to turbocharge your turtle. 
+Now we are going to use a package full of fancy drawing functions to turbocharge your turtle.
 
-Packages always include documentation to communicate to users how to use the included software. 
-**This lab will require you to read documentation** provided in the `README.md` file. 
+Packages always include documentation to communicate to users how to use the included software.
+**This lab will require you to read documentation** provided in the `README.md` file.
 
 {{< checkpoint >}}
 
@@ -231,7 +231,7 @@ There are three places you can import modules from:
 - Finally, any modules that are in the same directory as your python file can be imported.
 
 
-Now let's try importing some of the code you wrote in previous lessons. 
+Now let's try importing some of the code you wrote in previous lessons.
 
 {{< code-action "Install" >}} `tree` to see what we're dealing with.
 > **Don't forget to exit the Python shell by pressing `control+d` before entering this command! Check to make sure you see the command line prompt!**
@@ -278,18 +278,18 @@ tree .
 
 ```
 
-From the `unit_00` folder, we can import any of these `.py` files as modules. 
+From the `unit_00` folder, we can import any of these `.py` files as modules.
 
-If they're in the same directory (like `lab_02_drawing.py`), we can just write `import lab_02_drawing`. 
+If they're in the same directory (like `lab_02_drawing.py`), we can just write `import lab_02_drawing`.
 
-{{< code-action "Open the Python shell and try it:" >}} 
+{{< code-action "Open the Python shell and try it:" >}}
 
 ```shell
 python3
 >>> import lab_02_drawing
 ```
 
-Fond memories. You should have seen your responsive drawing run again. This is because when you import a module, all the code in that module runs. 
+Fond memories. You should have seen your responsive drawing run again. This is because when you import a module, all the code in that module runs.
 
 What about subdirectories that contain `.py` files? Python thinks of these as packages. Remember that treasure chest from the {{< ref_lab "lab1_terminal" >}}? It's buried a few layers deep in packages, but we can get it.
 
