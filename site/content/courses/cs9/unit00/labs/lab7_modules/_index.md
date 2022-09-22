@@ -18,35 +18,25 @@ In this lab, we will learn how to organize our functions into modules. Modules a
 {{< code-action "Create a" >}} `lab_07_modules` **folder in your** `unit_00` **directory:**
 
 ```shell
-cd ~/Desktop/cs9/unit_00
-mkdir lab_07_modules
+cd ~/Desktop/cs9/unit00_drawing
 ```
 
-{{< code-action "Install the " >}} `drawing` **package using git:**
+{{< code-action "Clone the lab repo:" >}} `lab_modules` 
 ```shell
-git clone https://github.com/the-isf-academy/drawing.git
+git clone --recurse-submodules https://github.com/the-isf-academy/lab_modules.git
 ```
 
-{{< code-action "Run" >}} `tree drawing` to learn about what's included.
-
+{{< code-action "Go into the folder:" >}} 
 ```shell
-tree drawing
-drawing
-├── README.md
-├── images
-│   ├── dashes.png
-│   ├── dots.png
-│   ├── fancy_star.png
-│   ├── fancy_star_basic.png
-│   ├── letters.png
-│   ├── perspective.png
-│   └── rainbow.png
-├── lines.py
-├── movement.py
-└── shapes.py
+cd lab_modules
 ```
 
-POETRY SHELL
+{{< code-action "Enter the Poetry shell:" >}} 
+```shell
+poetry shell
+```
+
+
 
 ---
 
@@ -116,7 +106,7 @@ cd tree_drawing
 ```
 
 This folder has 3 files:
-- `shapes.py`
+- `basic_shapes.py`
 - `tree_parts.py`
 - `tree_full.py` 
 
@@ -126,7 +116,7 @@ This folder has 3 files:
 atom .
 ```
 
-{{< look-action "Take a look at" >}} `shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `shapes.py`. 
+{{< look-action "Take a look at" >}} `basic_shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `basic_shapes.py`. 
 
 
 {{< code-action >}} **Currently, `tree_full.py` is empty. It's up to you to write function to draw a full tree.** Your `tree_full()` function should be able to draw a tree of any size.
@@ -150,7 +140,14 @@ Now we are going to use a package full of fancy drawing functions to turbocharge
 Packages always include documentation to communicate to users how to use the included software. 
 **This lab will require you to read documentation** provided in the `README.md` file. 
 
-{{< look-action >}} **Read the [documentation](https://github.com/the-isf-academy/drawing) for examples of all the functions available in the `drawing` package.**
+{{< checkpoint >}}
+
+{{< look-action >}} **Open the [documentation](https://github.com/the-isf-academy/drawing/blob/master/README.md) for examples of all the functions available in the `drawing` package.** It has the following modules:
+- `shapes.py`
+- `movement.py`
+- `lines.py`
+
+{{< /checkpoint >}}
 
 
 {{< code-action >}} **`cd` out of the `/tree` folder.**
@@ -159,17 +156,33 @@ cd ..
 ```
 
 Here you should have:
-- `/drawing` folder
-- `drawing_example.py`
-- `drawing_fancy.py`
+- `/lab_modules`
+  - `/drawing` package
+  - `fancy_drawing_example.py` - an example usage of the drawing package
+  - `fancy_drawing.py` -  an empty file for you to create your own drawing
 
+---
 
 ### [Example]
 
-{{< code-action "Start by running:" >}} `drawing_fancy.py`
+{{< code-action "Start by running:" >}} `fancy_drawing_example.py`
 ```shell
-python drawing_fancy.py
+python drawing_fancy_example.py
 ```
+> *Consider:*
+> - *Why does the drawing just appear?*
+> - *What modules are used from the drawing package?*
+> - *How do the colors repeat?*
+
+
+
+{{< figure src="images/courses/cs9/unit00/00_modules_01.png" width="50%" >}}
+
+{{< code-action "Experiment with editing the code." >}} Try make your own version of this pattern! Here is just one of many potential patterns:
+
+{{< figure src="images/courses/cs9/unit00/00_modules_02.png" width="50%" >}}
+
+{{< look-action >}} Explore more color options [HERE](https://trinket.io/docs/colors)
 
 ---
 
@@ -177,54 +190,26 @@ python drawing_fancy.py
 ### [Fancy Drawing]
 
 
-{{< code-action "It is up to you to create a drawing of your choosing using the modules in the drawing package." >}} 
-
-> **Your file must include uses of at least:**
-> - 2 functions from the `shapes` module
-> - 2 functions from the `lines` module
-> - `no_delay()` from the `movement` module
-> - `restore _state_when_finished()` from the `movement` module.
-
-
-
-
-
-{{< code-action "Feel free to use the starter code below to get started." >}}
-```python
-###################
-# fancy_drawing.py
-# YOUR NAME
-###################
-
-from drawing.shapes import block_a, block_b
-from drawing.movement import update_position
-
-
-block_a(100)
-update_position(70,0)
-block_b(100)
-update_position(70,0)
-block_b(100)
-update_position(70,0)
-block_a(100)
-update_position(70,0)
-
-input()
+{{< code-action >}} **In `fancy_drawing.py`, it is up to you to create a drawing of your choosing using the modules in the drawing package.** It must include uses of at least 3 different modules from the drawing package.
+```shell
+atom fancy_drawing.py
 ```
 
+
+
 {{< checkpoint >}}
-In your notebook, answer the following questions:
-- What are the three ways to import and use the `fancy_star` function?
-- What does `with no_delay()` do?
-- What does `with restore_state_when_finished()` do?
-- What are 3 advantages of importing modules?
+**Be prepared to share your drawing!**
 {{< /checkpoint >}}
+
+
+
+---
 
 ## [4] Deliverables
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdghFADPT-K94LCT6QS9V_L626bYfoJXDUvYiPIGLeHrUopkA/viewform?usp=sf_link)**.
+**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd3P-0622hRFXybDHS8CDagep3YB7K1_q-tmUZ11VMoO-B0Tg/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
