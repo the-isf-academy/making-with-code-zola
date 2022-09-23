@@ -1,5 +1,5 @@
 ---
-title: 6. Functions
+title: 6. Functions I
 type: lab
 resources:
 - name: test_part_b() output
@@ -12,7 +12,7 @@ repo_url: https://github.com/the-isf-academy/lab_functions.git
 init_action: clone
 # draft: true
 ---
-# Functions Lab
+# Functions Lab | Part I
 
 In this lab, we will learn how to create and call functions. Functions are blocks of code that are reusable throughout a program. You've already encountered functions such as `print()`, which is a function built into Python.
 
@@ -218,69 +218,6 @@ end_fill()          #Tells the turtle to stop the color fill
 {{</aside>}}
 
 
-
----
-
-## [3] Looping Functions
-
-Let's practice writing some more functions. Our aim is to create a grid of squares.
-
-{{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
-
-This is a complex problem, and thus we should use the practice of **decompsition** to break it down into smaller steps.
-
-- **Step 1:** Drawing one square
-- **Step 2:** Drawing one line of squares
-- **Step 3:** Drawing a grid of squares
-
-{{< aside "Many Solutions..." >}}
-
-There are many solutions to this problem. If you feel confident to solve this problem in different way and without hints, please feel free to do so.
-
-*We will accept any solution that draws a grid of squares of any square size and any gap size when you run `python grid.py`.*
-
-{{< /aside >}}
-
----
-
-### [Step 1]
-
-{{< code-action "Open the file:" >}}
-```shell
-atom grid.py
-```
-
-{{< code-action "Fill in the" >}} `square(square_size)` function. It should draw one square of any size.
-
-{{< figure src="images/courses/cs9/unit00/lab_06_functions_00.png" width="25%">}}
-
-{{< code-action >}} **Test your `square()` function.** Make sure it can draw a square of any size.  
-
-
----
-
-### [Step 2]
-
-{{< code-action "Implement the STEP 2 functionality in the" >}} `line_of_squares(square_size, gap_size)` function. Draw one line of squares the length of `square_size` with gap the size of `gap_size`.
-> You should use your `square()` function to create a line of squares.
-
-{{< figure src="images/courses/cs9/unit00/lab_06_functions_01.png" width="50%">}}
-
-{{< code-action >}} **Test your `line_of_squares()` function.** Make sure it can draw a line of squares of any `square_size` and `gap_size`.
-
-
----
-
-### [Step 3]
-
-{{< code-action "Implement the STEP 3 functionality in the" >}} `grid(square_size, gap_size)` function.
-> You should use your `line_of_squares` to create a grid of squares.
-
-{{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
-
-{{< code-action >}} **Test your `grid()` function.** Make it sure it can draw a 4x4 grid of squares.
-
-
 ---
 
 ## [4] Deliverables
@@ -331,35 +268,3 @@ How many scoops would you like?
 
 {{< figure src="images/courses/cs9/unit00/lab_06_functions_03.png" width="25%">}}
 
----
-
-### [Custom Grid]
-
-Let's return to `grid.py`.
-
-{{< code-action "Expand the functionality of this program so the user can customize the following:"  >}}
-- number of rows
-- number of columns
-- color palette
-
-
-Here is an example interaction:
-
-```shell
-python grid.py
-
---- PATERN GENERATOR ---
-
-How many rows?
-   > Enter a number: 5
-How many columns?
-   > Enter a number: 3
-Pick a primary color.
-   > Choose a color (darkseagreen, coral, deeppink): darkseagreen
-Pick a secondary color.
-   > Choose a color (darkred, coral, cyan, cadetblue): coral
-
-[Press any key to exit]
-```
-
-{{< figure src="images/courses/cs9/unit00/lab_06_functions_04.png" width="50%">}}
