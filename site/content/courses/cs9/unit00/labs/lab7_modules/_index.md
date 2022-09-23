@@ -4,7 +4,7 @@ type: lab
 slug: lab_modules
 repo_url: https://github.com/the-isf-academy/lab_modules.git
 init_action: clone
-# draft: true---
+draft: true
 ---
 
 # Modules Lab
