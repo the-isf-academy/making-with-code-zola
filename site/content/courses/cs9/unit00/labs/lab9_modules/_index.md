@@ -1,5 +1,5 @@
 ---
-title: 7. Modules
+title: 9. Modules
 type: lab
 slug: lab_modules
 repo_url: https://github.com/the-isf-academy/lab_modules.git

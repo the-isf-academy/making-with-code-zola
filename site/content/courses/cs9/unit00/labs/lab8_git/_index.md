@@ -1,10 +1,10 @@
 ---
-title: 9. Version Control
+title: 8. Version Control
 type: lab
 resources:
 - name: GitHub
   src: images/courses/cs9/unit00/00_git_github.png
-# draft: true
+draft: true
 ---
 # Version Control Lab
 
