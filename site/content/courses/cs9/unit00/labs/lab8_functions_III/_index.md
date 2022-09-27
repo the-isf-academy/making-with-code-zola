@@ -14,17 +14,21 @@ init_action: clone
 ---
 # Functions Lab | Part III
 
-In this lab, we will deepen our understanding with a series of design challenges. 
+In this lab, we will deepen our understanding with a series of design challenges.
 
 ---
 
 ## [0] Set up
 
-This lab will use the previous lab directory. 
+This lab will use the previous lab directory.
 
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_functions
+```
+{{< code-action "Run mwc update to get the latest code." >}}
+```shell
+mwc update
 ```
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
@@ -36,12 +40,29 @@ poetry shell
 When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
-{{< code-action "Create a new file:" >}} 
+<!-- {{< code-action "Create a new file:" >}}
 ```shell
 atom circle_patterns.py
 ```
 
-{{< code-action "Copy and paste the starter code into the file:" >}} 
+{{< code-action "Copy and paste the starter code into the file:" >}}
+```python
+from turtle import *
+
+def filled_circle(circle_size,circle_color):
+    pencolor(circle_color)
+    pensize(0)
+    fillcolor(circle_color)
+    begin_fill()
+    circle(circle_size)
+    end_fill()
+``` -->
+{{< code-action "Open circle_patterns in atom:" >}}
+```shell
+atom circle_patterns.py
+```
+{{< look-action "Take a look at the code inside" >}}
+
 ```python
 from turtle import *
 
@@ -54,11 +75,10 @@ def filled_circle(circle_size,circle_color):
     end_fill()
 ```
 
----
 
 ### [Helpful Turtle Functions]
 
-Here are some helpful Turtle functions that may make this problem easier. You are not required to use all of these functions. 
+Here are some helpful Turtle functions that may make this problem easier. You are not required to use all of these functions.
 
 | Function     | Example Use     | Explanation                                                                                        |
 |--------------|-----------------|----------------------------------------------------------------------------------------------------|
@@ -93,11 +113,11 @@ This mini lab is designed to be a pick and choose adventure. The patterns below 
 {{< code-action >}} **Code a function `alternating_pattern(num_circles)`**
 > *Example function call: `alternating_pattern(5)`*
    - It takes `num_circles` as a parameter - this will change the amount of circles in the pattern
-   - Hard code the 2 the 2 colors to alternate between
+   - Hard code the 2 colors to alternate between
    - *Hint: look at the conditionals lab*
 
 For an additional challenge:
-- add `num_circle_size` and a parameter - this will change the size of the circles in the pattern
+- add `num_circle_size` as a parameter - this will change the size of the circles in the pattern
    - *Example function call: `alternating_pattern(5,200)`*
 
 ---
@@ -107,10 +127,10 @@ For an additional challenge:
 {{< figure src="images/courses/cs9/unit00/lab_08_functions_01.png" width="50%">}}
 
 
-{{< code-action >}} **Code a function `bullseye_pattern(num_circles, staring_circle_size)`**
+{{< code-action >}} **Code a function `bullseye_pattern(num_circles, starting_circle_size)`**
 > *Example function call: `bullseye_pattern(5, 200)`*
 
-   - It takes `num_circles` and `staring_circle_size` as parameters - the number of circles and the size of the bullseye should adjust accoridngly
+   - It takes `num_circles` and `starting_circle_size` as parameters - the number of circles and the size of the bullseye should adjust accordingly
    - Hard code the 2 colors to alternate between
 
 For an additional challenge:
@@ -122,7 +142,7 @@ For an additional challenge:
 ### [Size Pattern]
 {{< figure src="images/courses/cs9/unit00/lab_08_functions_02.png" width="50%">}}
 
-{{< code-action >}} **Code a function `size_pattern(num_columns, num_rows,color)`**
+{{< code-action >}} **Code a function `size_pattern(num_columns, num_rows, color)`**
 > *Example function call: `size_pattern(6,5,'coral')`*
 
 - It takes `num_columns`, `num_rows`, and `color` as parameters
@@ -147,11 +167,11 @@ For an additional challenge:
 {{< code-action >}} **First, code a function `thick_circle(circle_size, circle_color, thickness)`**
 - It should draw a circle of any color, size, and any pen thickness
 
-{{< code-action >}} **Second, code a function `random_pattern(num_cirlces, background_color)`**
+{{< code-action >}} **Second, code a function `random_pattern(num_circles, background_color)`**
 > *Example function call: `random_pattern(20,'black')`*
 
 - It should create a random pattern of thick circles and filled circles
-- The circles should all be of random colors and sizes. 
+- The circles should all be of random colors and sizes.
 
 
 **This will require you to:**
@@ -170,4 +190,3 @@ For an additional challenge:
 
 
 {{< /deliverables >}}
-
