@@ -6,7 +6,7 @@ type: lab
 
 # Riddle Server Client
 
-In this lab we will create a Command Line Interface(CLI) for the Riddle server. We will use the `Requests` library to send and recieve HTTP requests.To learn more about the `Requests` library, checkout its [documentation](https://docs.python-requests.org/en/latest/)
+In this lab we will create a Command Line Interface(CLI) for the Riddle server. We will use the `Requests` library to send and recieve HTTP requests.To learn more about the `Requests` library, checkout its [documentation](https://requests.readthedocs.io/en/latest/)
 
 
 ---
@@ -26,14 +26,14 @@ to a server to send and receive information.
 
 ---
 
-### [Set Up]
+## [1] Set Up
 
 
-{{< code-action "Make a unit01 folder and clone the riddle server repo." >}}
+{{< code-action "Go to the unit folder, clone the riddler server lab, and cd into the repo." >}}
 ```shell
-cd cs10
-git clone https://github.com/the-isf-academy/riddler_server_YOURGITHUBUSERNAME
-cd riddler_server_YOURGITHUBUSERNAME
+cd ~/desktop/making_with_code/cs10/unit00_networking/
+git clone https://github.com/the-isf-academy/lab_riddler_server_YOURGITHUBUSERNAME
+cd lab_riddler_server_YOURGITHUBUSERNAME
 ```
 
 {{< code-action "Install the requirements." >}}
@@ -41,7 +41,7 @@ cd riddler_server_YOURGITHUBUSERNAME
 poetry install
 ```
 
-{{< code-action "Go into the Poetry Shell" >}}
+{{< code-action "Enter the poetry shell." >}}
 ```shell
 poetry shell
 ```
@@ -49,9 +49,9 @@ poetry shell
 
 ---
 
-## [1] Try the Client
+## [2] Try the Client
 
-We are going to create a Terminal interface for the riddler server. This will allow users to easily interact with the server without needing to explicitly make a `GET` or a `POST` request.
+We are going to create a Terminal interface for the riddler server. This will allow users to easily interact with the server without needing to explicitly make a `GET` or `POST` request.
 
 {{< code-action "Try the client for the Riddle Server:" >}}
 ```shell
@@ -61,7 +61,7 @@ python client.py
 ```shell
 -----------------------------------
 ---- Welcome to the Riddler ----
------------------------------------ 
+-----------------------------------
 
 > View All Riddles                                                            
   View One Riddle                                                             
@@ -69,6 +69,10 @@ python client.py
 ```
 
 ---
+{{< code-action "Open the client.py file in atom and take a look inside:" >}}
+```shell
+atom client.py
+```
 
 ### [riddler_network_client.py]
 
@@ -96,12 +100,12 @@ And the following methods:
 
 ### [view_all_riddles()]
 
-{{< look-action >}} **Let's start by taking a look at the working function `view_all_riddles()`.** This function sends an HTTP GET request to the Riddle server endpoint `riddles/all` and prints all of the riddles in a bulleted list. 
+{{< look-action >}} **Let's start by taking a look at the working function `view_all_riddles()`.** This function sends an HTTP GET request to the Riddle server endpoint `riddles/all` and prints all of the riddles in a bulleted list.
 
 ```python {linenos=table}
 def view_all_riddles(self):
         '''This functions sends a GET request to riddles/all.
-        It gets all of the riddles and nicely formats them into a bulletted list.'''
+        It gets all of the riddles and nicely formats them into a bulleted list.'''
 
         all_riddles_address = self.riddle_server + 'riddles/all'
 
@@ -109,23 +113,25 @@ def view_all_riddles(self):
 
         if response.status_code == 200:
             all_riddles_json = response.json()
-            
+
             for riddle in all_riddles_json['riddles']:
                 print("  • {} (#{})".format(riddle['question'], riddle['id']))
         else:
+            error_json = response.json()
             print('Server {} Error. Try again...'.format(response.status_code))
+            print('-- {}'.format(error_json['errors'][0]))
 ```
-- `line 5:` stores the full URL address of where to get all of the riddles. It uses the `server_address` property of the client class as the base address and adds the endpoint to end of it.
-- `line 7:` sends an HTTP GET request to the server and stores the response. 
+- `line 5:` stores the full URL address of where to get all of the riddles. It uses the `riddle_server` property of the client class as the base address and adds the endpoint to the end of it.
+- `line 7:` sends an HTTP GET request to the server and stores the response.
 - `lines 9-13:` If the HTTP request was sucessful, it prints each riddle one at a time in a nicely formatted bulleted list.
   - `line 10:` converts the response from the server into JSON.
-- `line 14-15`: If the HTTP request was unsuccessful, it prints the error status code.
+- `line 14-17`: If the HTTP request was unsuccessful, it prints the error status code and the error message.
 
 ---
 
 ### [view_one_riddle()]
 
-{{< look-action >}} **Now let's look at the function `view_one_riddle()`.** This function sends an HTTP GET request to the Riddle server endpoint `riddles/one` and print a single riddle with the requested ID. 
+{{< look-action >}} **Now let's look at the function `view_one_riddle()`.** This function sends an HTTP GET request to the Riddle server endpoint `riddles/one` and print a single riddle with the requested ID.
 
 ```python {linenos=table}
 def view_one_riddle(self, user_chosen_id):
@@ -147,22 +153,24 @@ def view_one_riddle(self, user_chosen_id):
                 print("  • {}: {}".format(key,value))
 
         else:
+            error_json = response.json()
             print('Server {} Error. Try again...'.format(response.status_code))
+            print('-- {}'.format(error_json['errors'][0]))
 ```
-- `line 5:` stores the full URL address of where to get one riddle. 
-- `lines 7-9:` stores the payload in dictionary
-- `line 11:` sends an HTTP GET request with the payload to the server and stores the response. 
+- `line 5:` stores the full URL address of where to get one riddle.
+- `lines 7-9:` stores the payload in a dictionary.
+- `line 11:` sends an HTTP GET request with the payload to the server and stores the response.
 - `lines 13-17:` If the HTTP request was sucessful, it prints a single riddle with each of its properties in a bulleted list.
   - `line 14:` converts the response from the server into JSON.
-- `line 14-15`: If the HTTP request was unsuccessful, it prints the error status code.
+- `line 19-22`: If the HTTP request was unsuccessful, it prints the error status code and the error message.
 
 ---
 
-## [2] Add to the Client
+## [3] Add to the Client
 
 **Your job is to write 2 modules for `RiddleClient.py`:**
-- `guess_riddle(user_chosen_id, user_guess)` - should allow the user to guess a specific riddle and print a message telling the user is their guess was correct or incorrect
-- `new_riddle(user_question, user_answer)` - should allow the user to input a riddle answer and question, and then send a post request
+- `new_riddle(user_question, user_answer)` - should allow the user to input a riddle question and answer, send a post request, and print the newly added riddle
+- `guess_riddle(user_chosen_id, user_guess)` - should allow the user to guess a specific riddle, send a post request, and print a message telling the user is their guess was correct or incorrect
 
 ---
 
@@ -171,7 +179,7 @@ def view_one_riddle(self, user_chosen_id):
 This method should:
 - take two parameters: `user_question` and `user_answer`
 - send an HTTP POST request with the user's question and answer to the server's endpoint `riddles/new`
-- print the newly added riddle 
+- print the newly added riddle
 
 {{< look-action >}} **Take a look at the pseudocode for this method.**
 
@@ -185,7 +193,7 @@ This method should:
 4) else if the response was incorrect, tell the user
 ```
 
-{{< code-action "Translate the pseudocode into Python code to implement the guess riddle functionality into the client." >}} 
+{{< code-action "Translate the pseudocode into Python code to implement the new riddle functionality into the client." >}}
 
 **The client interaction should look something like this:**
 ```shell
@@ -215,7 +223,7 @@ This method should:
 - Does the endpoint require a payload?
 - How do you nicely format a dictionary to print to the user?
 
-{{< code-action "Code this functionality to allow the user to guess a riddle." >}} Reference your pseudocode and test cases to consider how to implement guessing a riddle. Be sure to look at the existing code for a starting off point.  
+{{< code-action "Code this functionality to allow the user to guess a riddle." >}} Reference your pseudocode to consider how to implement guessing a riddle. Be sure to look at the existing code for a starting off point.  
 
 **The client interaction should look something like this:**
 ```shell
@@ -248,7 +256,7 @@ JSON is a standardized format to transfer data over a network. It represents dat
 
 ---
 
-## [5] Deliverables
+## [4] Deliverables
 
 {{< deliverables >}}  
 
@@ -259,7 +267,7 @@ JSON is a standardized format to transfer data over a network. It represents dat
 
 ---
 
-## [6] Extension: Gamify
+## [5] Extension: Gamify
 
 
 Currently, the client simply takes care of the HTTP requests in a nicely formatted view. But, let's make it more fun and turn it into a game!
@@ -274,7 +282,7 @@ Gameplay should look something like this:
 ```shell
 -----------------------------------
 ---- Welcome to the Riddler ----
------------------------------------ 
+-----------------------------------
 
 [Riddler Game]
 Question: Do you exist?
@@ -286,10 +294,10 @@ Enter your guess: silence
 Incorrect!
 
 Question: What cups do not ohld water?
-Enter your guess: 
+Enter your guess:
 ```
 
-Potentail further extension features: 
-- keep score of how many riddles the user guessess correctly
+Potential further extension features:
+- keep score of how many riddles the user guesses correctly
 - display the current score after each riddle is guessed
 - randomly display each riddle
