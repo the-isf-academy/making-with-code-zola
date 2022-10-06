@@ -1,13 +1,14 @@
 ---
-title: 8. Decomposition
+title: 9. Animation I
 type: lab
-draft: true
+# draft: true
 ---
 
-# Decomposition Lab
+# Animation I Lab
 
-In this lab we are going to explore a key computer science concept, decomposition.
+In this lab we are going to explore different ways you can animate using the Turtle. This will require us to understand a key computer science concept, decomposition.
 
+---
 
 ## [0] What is Decomposition?
 
@@ -40,10 +41,111 @@ For example, let's consider baking again.
 - Top-down: You need to make a birthday cake, and so you figure out the steps and the ingredients.  
 - Bottom-up: You take a look at your all of your baking supplies and ingredients at home, and figure out you can make a birthday cake.
 
+---
 
+## [1] Set Up
+
+
+{{< code-action "Using git, download the repository with the mystery examples into your" >}} `lab_08_decomposition` folder.
+
+```shell
+git clone https://github.com/the-isf-academy/lab-decomposition.git
+```
+
+poetry shell
 
 
 ---
+
+
+## [2] Animations
+
+There are many ways to animate still images! Let's talk about these four:
+
+{{< columns >}}
+{{< figure src="images/courses/cs9/unit00/00_decomp_translate.gif" width="100%">}}
+{{< figure src="images/courses/cs9/unit00/00_decomp_rotate.gif" width="100%">}}
+<--->
+{{< figure src="images/courses/cs9/unit00/00_decomp_scale.gif" width="100%">}}
+{{< figure src="images/courses/cs9/unit00/00_decomp_frame.gif" width="100%">}}
+{{< /columns >}}
+
+We're going to explore each type of animation by looking at some small mystery examples.
+
+
+{{< code-action >}}{{< write-action >}} **Throughout this section, you will be asked to change part of the code and answer checkpoint questions about the following files:**
+- `animate_1.py`
+- `animate_2.py` 
+- `animate_3.py`
+- `animate_4.py`
+
+---
+
+### [Animation Mystery 1]
+
+{{< code-action "Run the" >}} `animate_1.py` **file.**
+
+{{< checkpoint >}}
+
+{{< write-action "Answer the following questions with your group." >}}
+
+
+1. Look inside the `main()` function. How many times is the for-loop running, and how did you find this number?
+2. Notice on line 21 that there's a timer set for `sleeptime` seconds that is being repeated for `num_frame` times. Calculate how long the animation lasts, using these two variables.
+3. Frames Per Second (FPS) is a rate we care about in the field of animation. You can calculate this rate by dividing the total number of frames over the total length of the animation. Calculate the FPS of this animation.
+4. Look inside the `draw_animation()` function. How many times is the for-loop here running, and how did you find this number? What is the difference between `settings.NUMREPEATS` and `settings.NUMFRAMES`?
+5. You will see that there are four conditionals inside the for-loop of `draw_animation()`. Calculate what the numbers in the conditionals are equivalent to: `num_frames/4`, `num_frames/2`, `3*num_frames/4`, `num_frames`.
+6. There are four if-statements, but only three triangles are drawn on the screen. What happened to the fourth triangle? Explain in at least once sentence.
+7. Change the last if-statement so that the animation is able to draw and animate all four triangles. What did you change?
+
+{{< /checkpoint >}}
+
+
+### [Animation Mystery 2]
+
+{{< code-action "Run the" >}} `animate_2.py` **file.**
+
+{{< checkpoint >}}
+<!---frame-based -->
+{{< write-action "Answer the following questions with your group." >}}
+
+
+1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`. What values did you change `START_X` and/or `START_Y` to?
+2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for first 10 `i` values and `new_size` values. (HINT: you can split up the work on this with your tablemates.)
+3. Calculate `max_size`. (HINT: you will need to reference the numbers in `settings.py`)
+4. For the second for-loop, trace through the code and fill out the table for every `j` and `new_size`.(HINT: you can split up the work on this with your tablemates.)
+5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`) What did you change?
+
+{{< /checkpoint >}}
+
+
+### [Animation Mystery 3]
+{{< code-action "Run the" >}} `animate_3.py` **file.**
+
+{{< checkpoint >}}
+{{< write-action "Answer the following questions with your group." >}}
+
+1. What does the `clear()` function do in line 18? What happens if you remove `clear()`?
+2. Change the code so that the animation moves five times as far. (HINT: you will need to change two lines of code in `draw_animation()`) What did you change?
+3. What if you wanted to draw an animating square instead of a triangle? Write a new helper function in `parts.py` called `draw_square()` that takes two parameters: `side_len` and `color_name`. Then change line 15 in `animate_3.py` to `draw_square(side_len, color_name)`.
+{{< /checkpoint >}}
+
+
+### [Animation Mystery 4]
+{{< code-action "Run the" >}} `animate_4.py` **file.**
+
+{{< checkpoint >}}
+{{< write-action "Answer the following questions with your group." >}}
+
+1. This animation involves three if-conditional branches, and each branch causes a different speed! Why is the second branch faster than the first
+branch? Why is the third branch faster than the second branch?
+2. Change the code so that the animation turns in the opposite direction for all three conditional branches. Describe in one sentence which lines of code you changed and how you changed the code.
+
+{{< /checkpoint >}}
+
+---
+
+
 ## [1] Iris's Project
 
 Today, we are going to analyze a repository made by a previous CS9 student, Iris! Pay special attention to how she decomposed her idea into parts. Her project will be similar to what you will make for your upcoming Unit 00 project.
@@ -162,98 +264,7 @@ Describe what happened and why you think it happened in 2 sentences.
 
 <hr>
 
-## [2] More Animations
 
-There are many ways to animate still images! Let's talk about these four:
-
-{{< columns >}}
-{{< figure src="images/courses/cs9/unit00/00_decomp_translate.gif" width="100%">}}
-{{< figure src="images/courses/cs9/unit00/00_decomp_rotate.gif" width="100%">}}
-<--->
-{{< figure src="images/courses/cs9/unit00/00_decomp_scale.gif" width="100%">}}
-{{< figure src="images/courses/cs9/unit00/00_decomp_frame.gif" width="100%">}}
-{{< /columns >}}
-
-We're going to explore each type of animation by looking at some small mystery examples.
-
-{{< code-action "Using git, download the repository with the mystery examples into your" >}} `lab_08_decomposition` folder.
-
-```shell
-git clone https://github.com/the-isf-academy/lab-decomposition.git
-```
-
-
-{{< code-action >}}{{< write-action >}} **Throughout this section, you will be asked to change part of the code and answer checkpoint questions about the following files:**
-- `animate_1.py`
-- `animate_2.py`
-- `animate_3.py`
-- `animate_4.py`
-
-### [Animation Mystery 1]
-
-{{< code-action "Run the" >}} `animate_1.py` **file.**
-
-{{< checkpoint >}}
-
-{{< write-action "Answer the following questions with your group." >}}
-
-
-0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. Look inside the `main()` function. How many times is the for-loop running, and how did you find this number?
-2. Notice on line 21 that there's a timer set for `sleeptime` seconds that is being repeated for `num_frame` times. Calculate how long the animation lasts, using these two variables.
-3. Frames Per Second (FPS) is a rate we care about in the field of animation. You can calculate this rate by dividing the total number of frames over the total length of the animation. Calculate the FPS of this animation.
-4. Look inside the `draw_animation()` function. How many times is the for-loop here running, and how did you find this number? What is the difference between `settings.NUMREPEATS` and `settings.NUMFRAMES`?
-5. You will see that there are four conditionals inside the for-loop of `draw_animation()`. Calculate what the numbers in the conditionals are equivalent to: `num_frames/4`, `num_frames/2`, `3*num_frames/4`, `num_frames`.
-6. There are four if-statements, but only three triangles are drawn on the screen. What happened to the fourth triangle? Explain in at least once sentence.
-7. Change the last if-statement so that the animation is able to draw and animate all four triangles. What did you change?
-
-{{< /checkpoint >}}
-
-
-### [Animation Mystery 2]
-
-{{< code-action "Run the" >}} `animate_2.py` **file.**
-
-{{< checkpoint >}}
-<!---frame-based -->
-{{< write-action "Answer the following questions with your group." >}}
-
-
-0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. Let's change some settings! Currently, the circle does not fit on the screen when it gets animated. Go to the `settings.py` file and change `START_X` and/or `START_Y` so that the animated circle is able to fit. While you're at it, let's also change `COLOR`. What values did you change `START_X` and/or `START_Y` to?
-2. You'll notice that we used two for-loops in this example. For the first for-loop, trace through the code and fill out the table for first 10 `i` values and `new_size` values. (HINT: you can split up the work on this with your tablemates.)
-3. Calculate `max_size`. (HINT: you will need to reference the numbers in `settings.py`)
-4. For the second for-loop, trace through the code and fill out the table for every `j` and `new_size`.(HINT: you can split up the work on this with your tablemates.)
-5. Change the code so that the animation only grows half as big (aka the `max_size` is half as large). (HINT: you only need to change something in `settings.py`) What did you change?
-
-{{< /checkpoint >}}
-
-
-### [Animation Mystery 3]
-{{< code-action "Run the" >}} `animate_3.py` **file.**
-
-{{< checkpoint >}}
-{{< write-action "Answer the following questions with your group." >}}
-
-0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. What does the `clear()` function do in line 18? What happens if you remove `clear()`?
-2. Change the code so that the animation moves five times as far. (HINT: you will need to change two lines of code in `draw_animation()`) What did you change?
-3. What if you wanted to draw an animating square instead of a triangle? Write a new helper function in `parts.py` called `draw_square()` that takes two parameters: `side_len` and `color_name`. Then change line 15 in `animate_3.py` to `draw_square(side_len, color_name)`.
-{{< /checkpoint >}}
-
-
-### [Animation Mystery 4]
-{{< code-action "Run the" >}} `animate_4.py` **file.**
-
-{{< checkpoint >}}
-{{< write-action "Answer the following questions with your group." >}}
-
-0. What type of animation is this [Translate, Rotate, Scale, Frame-Based]?
-1. This animation involves three if-conditional branches, and each branch causes a different speed! Why is the second branch faster than the first
-branch? Why is the third branch faster than the second branch?
-2. Change the code so that the animation turns in the opposite direction for all three conditional branches. Describe in one sentence which lines of code you changed and how you changed the code.
-
-{{< /checkpoint >}}
 
 <hr>
 
