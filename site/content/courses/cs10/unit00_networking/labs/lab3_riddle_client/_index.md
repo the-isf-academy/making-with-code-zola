@@ -1,12 +1,12 @@
 ---
-title: "3. Riddler Server Client"
+title: "3. Client"
 type: lab
 # draft: true
 ---
 
-# Riddle Server Client
+# Client
 
-In this lab we will create a Command Line Interface(CLI) for the Riddle server. We will use the `Requests` library to send and recieve HTTP requests.To learn more about the `Requests` library, checkout its [documentation](https://requests.readthedocs.io/en/latest/)
+In this lab we will create a Client in the form of a Command Line Interface(CLI) for the Riddle server. We will use the `Requests` library to send and recieve HTTP requests.To learn more about the `Requests` library, checkout its [documentation](https://requests.readthedocs.io/en/latest/)
 
 
 ---
