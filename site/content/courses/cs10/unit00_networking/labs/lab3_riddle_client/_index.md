@@ -1,7 +1,6 @@
 ---
 title: "3. Client"
 type: lab
-# draft: true
 ---
 
 # Client
@@ -322,9 +321,12 @@ JSON is a standardized format to transfer data over a network. It represents dat
 
 ## [4] Deliverables
 
-{{< deliverables >}}  
+{{< deliverables "Once you've successfully completed the client:" >}}  
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSedWRG5sYR_HfmgT7-uguhNNF27QK0Nh6jKv_tYR-UGimJqvA/viewform?usp=sf_link).**
+
+{{< write-action >}} **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSedWRG5sYR_HfmgT7-uguhNNF27QK0Nh6jKv_tYR-UGimJqvA/viewform?usp=sf_link)**
+
+{{< code-action "Push your code to Github." >}}
 
 {{< /deliverables >}}
 
