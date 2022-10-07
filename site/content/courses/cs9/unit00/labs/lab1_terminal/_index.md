@@ -1,5 +1,5 @@
 ---
-title: 1. Terminal Adventure
+title: 01. Terminal Adventure
 type: lab
 slug: lab_terminal_adventure
 repo_url: https://github.com/the-isf-academy/lab-terminal-adventure

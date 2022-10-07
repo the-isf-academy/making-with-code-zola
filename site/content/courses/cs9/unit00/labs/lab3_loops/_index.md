@@ -1,5 +1,5 @@
 ---
-title: 3. Loops
+title: 03. Loops
 type: lab
 slug: lab_loops
 repo_url: https://github.com/the-isf-academy/lab-loops.git

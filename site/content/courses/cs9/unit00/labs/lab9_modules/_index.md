@@ -1,10 +1,10 @@
 ---
-title: 9. Modules
+title: 10. Modules
 type: lab
 slug: lab_modules
 repo_url: https://github.com/the-isf-academy/lab_modules.git
 init_action: clone
-draft: true
+# draft: true
 ---
 
 # Modules Lab
@@ -15,20 +15,16 @@ In this lab, we will learn how to organize our functions into modules. Modules a
 
 ## [0] Setup
 
-{{< code-action "Create a" >}} `lab_07_modules` **folder in your** `unit_00` **directory:**
+{{< code-action "Go int your" >}} `lab_modules` **folder in your** `unit_00` **directory:**
 
 ```shell
-cd ~/Desktop/cs9/unit00_drawing
+cd ~/Desktop/making_with_code/cs9/unit00_drawing/lab_modules_YOURGITHUBUSERNAME
 ```
+> Don't forget to change "YOURGITHUBUSERNAME" to your actual Github username.
 
-{{< code-action "Clone the lab repo:" >}} `lab_modules`
+{{< code-action "Update the packages" >}}
 ```shell
-git clone --recurse-submodules https://github.com/the-isf-academy/lab_modules.git
-```
-
-{{< code-action "Go into the folder:" >}}
-```shell
-cd lab_modules
+git submodule update --init --recursive
 ```
 
 {{< code-action "Enter the Poetry shell:" >}}
@@ -211,6 +207,14 @@ atom fancy_drawing.py
 
 **Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd3P-0622hRFXybDHS8CDagep3YB7K1_q-tmUZ11VMoO-B0Tg/viewform?usp=sf_link)**.
 
+
+{{< code-action "Push your work to Github:" >}}
+- git status
+- git add fancy_drawing.py 
+- git status
+- git commit -m "describe your drawing and your process here"
+  > be sure to customize this message, do not copy and paste this line
+- git push
 
 {{< /deliverables >}}
 

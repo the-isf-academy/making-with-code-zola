@@ -1,5 +1,5 @@
 ---
-title: 5. While Loops
+title: 05. While Loops
 type: lab
 slug: lab_while
 repo_url: https://github.com/the-isf-academy/lab_while.git
