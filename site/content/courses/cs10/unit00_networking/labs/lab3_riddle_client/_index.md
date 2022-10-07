@@ -32,8 +32,8 @@ to a server to send and receive information.
 {{< code-action "Go to the unit folder, clone the riddler server lab, and cd into the repo." >}}
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking/
-git clone https://github.com/the-isf-academy/lab_riddler_server_YOURGITHUBUSERNAME
-cd lab_riddler_server_YOURGITHUBUSERNAME
+git clone https://github.com/the-isf-academy/lab_client_YOURGITHUBUSERNAME
+cd lab_client_YOURGITHUBUSERNAME
 ```
 
 {{< code-action "Install the requirements." >}}
@@ -74,7 +74,9 @@ python client.py
 atom client.py
 ```
 
-### [riddler_network_client.py]
+---
+
+### [RiddleClient]
 
 The `RiddleClient` has the following properties:
 
@@ -88,7 +90,7 @@ And the following methods:
 | Method                          | Description                                                          |
 |---------------------------------|----------------------------------------------------------------------|
 | menu()                          | allows user to pick a menu option and returns the option as a string |
-| start()                         | starts the client and controls the logic of the client               |
+| run()                         | runs the client and controls the logic of the client - all user input is taken here               |
 | view_all_riddles()              | GETS all of the riddles and prints them as a bulleted list           |
 | view_one_riddle(user_chosen_id) | GETS one riddle with the requested ID                                |
 
@@ -97,10 +99,56 @@ And the following methods:
 
 ---
 
+### [run()]
+
+{{< look-action >}} **Let's start by taking a look at the method `run()`.** This method controls the logic of the client. It also is the only method in the client that takes user input.
+
+
+```python {linenos=table}
+def run(self):
+        '''This function runs the client.'''
+
+        print("-"*35)
+        print("---- Welcome to the Riddler ----")
+        print("-"*35,"\n")
+
+        client_running = True
+
+        while client_running == True:
+            user_choice = self.menu()
+
+            if user_choice == 'View All Riddles':
+                print('[View All Riddles]')
+
+                self.view_all_riddles()
+
+            elif user_choice == 'View One Riddle':
+                print('[View One Riddle]')
+
+                user_chosen_id = input('Enter Riddle ID: ')
+                self.view_one_riddle(user_chosen_id)
+
+
+            elif user_choice == 'Quit':
+                client_running = False
+
+                print("="*75)
+
+            print()
+```
+
+- `lines 4-6:` prints a starting message to the user
+- `line 8:` `client_running` is the variable that keeps track if the user is still using the client
+- `line 11:` stores the user's choice when they select a menu option
+-  `lines 13, 18, 25:` control the logic for each menu option
+
+
+---
+
 
 ### [view_all_riddles()]
 
-{{< look-action >}} **Let's start by taking a look at the working function `view_all_riddles()`.** This function sends an HTTP GET request to the Riddle server endpoint `riddles/all` and prints all of the riddles in a bulleted list.
+{{< look-action >}} **Now let's look at the working method `view_all_riddles()`.** This method sends an HTTP GET request to the Riddle server endpoint `riddles/all` and prints all of the riddles in a bulleted list.
 
 ```python {linenos=table}
 def view_all_riddles(self):
@@ -131,7 +179,7 @@ def view_all_riddles(self):
 
 ### [view_one_riddle()]
 
-{{< look-action >}} **Now let's look at the function `view_one_riddle()`.** This function sends an HTTP GET request to the Riddle server endpoint `riddles/one` and print a single riddle with the requested ID.
+{{< look-action >}} **Finally take a look at the method `view_one_riddle()`.** This method sends an HTTP GET request to the Riddle server endpoint `riddles/one` and print a single riddle with the requested ID.
 
 ```python {linenos=table}
 def view_one_riddle(self, user_chosen_id):
@@ -166,36 +214,47 @@ def view_one_riddle(self, user_chosen_id):
 
 ---
 
-## [3] Add to the Client
+## [3] Extend the Client
 
-**Your job is to write 2 modules for `RiddleClient.py`:**
-- `new_riddle(user_question, user_answer)` - should allow the user to input a riddle question and answer, send a post request, and print the newly added riddle
-- `guess_riddle(user_chosen_id, user_guess)` - should allow the user to guess a specific riddle, send a post request, and print a message telling the user is their guess was correct or incorrect
+**Your job is to add 2 functionalites to the `RiddleClient.py`.** This will require you to edit a property, edit a method, and add methods to `RiddleClient`.
+- `new riddle` - should allow the user to input a riddle question and answer, send a post request, and print the newly added riddle
+- `guess riddle` - should allow the user to guess a specific riddle, send a post request, and print a message telling the user is their guess was correct or incorrect
 
 ---
 
-### [new_riddles()]
+### [new riddle]
 
-This method should:
+This will require you to edit:
+- `menu`
+- `run()`
+
+
+
+Write a method `new_riddle()`:
 - take two parameters: `user_question` and `user_answer`
 - send an HTTP POST request with the user's question and answer to the server's endpoint `riddles/new`
 - print the newly added riddle
 
-{{< look-action >}} **Take a look at the pseudocode for this method.**
+{{< look-action >}} **Take a look at the pseudocode for this funcitonality.**
 
 ```
-0) store the new riddle server address
-1) store the payload in a dictionary
-2) make the http post request and store the response
-3) if the response was successful
-  a) convert the response to JSON
-  c) print the newly added riddle in a nice format
-4) else if the response was incorrect, tell the user
+0) edit the `menu` property
+1) edit the `run()` method
+  - add a conditional statement 
+  - print a header to tell the user which menu option they are in 
+  - store the user input for the riddle question and answer
+  - call the `new_riddle()` method with the stored user input as parameters
+2) write the `new_riddle()` method
+  - store the new riddle server address
+  - store the payload in a dictionary
+  - make the http post request and store the response
+  - if the response was successful
+    - convert the response to JSON
+    - print the newly added riddle in a nice format
+  - else if the response was incorrect, tell the user
 ```
 
-{{< code-action "Translate the pseudocode into Python code to implement the new riddle functionality into the client." >}}
-
-**The client interaction should look something like this:**
+{{< code-action "Translate the pseudocode into Python code to implement the new riddle functionality into the client." >}} The client interaction should look something like this:
 ```shell
 [New Riddle]
 Enter a Riddle question: What kind of room has no doors or windows?
@@ -210,9 +269,14 @@ Riddle Successfully Added!
 
 ---
 
-### [guess_riddle()]
+### [guess riddle]
 
-This method should:
+This will require you to edit:
+- `menu`
+- `run()`
+
+
+Write a method `guess_riddle()`:
 - take two parameters: `user_chosen_id` and `user_guess`
 - send an HTTP POST request with the user's guess and corresponding riddle id to the server
 - print if the guess was correct or incorrect.
@@ -293,7 +357,7 @@ Question: What can fill a room but takes up no space?
 Enter your guess: silence
 Incorrect!
 
-Question: What cups do not ohld water?
+Question: What cups do not hold water?
 Enter your guess:
 ```
 
