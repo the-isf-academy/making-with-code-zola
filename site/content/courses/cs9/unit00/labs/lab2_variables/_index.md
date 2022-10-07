@@ -1,5 +1,5 @@
 ---
-title: 2. Variables
+title: 02. Variables
 type: lab
 slug: lab_variables
 repo_url: https://github.com/the-isf-academy/lab-variables.git

@@ -1,5 +1,5 @@
 ---
-title: 0. Turtle
+title: 00. Turtle
 slug: lab0_turtle
 type: lab
 resources:

@@ -1,5 +1,5 @@
 ---
-title: 8. Version Control
+title: 09. Version Control
 type: lab
 resources:
 - name: GitHub
@@ -81,7 +81,7 @@ cd ~/desktop/making_with_code/cs9/unit00_drawing/
 
 
 ```shell
-git clone https://github.com/the-isf-academy/lab_modules/yourGithubUsername
+git clone https://github.com/the-isf-academy/lab_modules_yourGithubUsername
 ```
 
 If successful, should see something like this in your Terminal:

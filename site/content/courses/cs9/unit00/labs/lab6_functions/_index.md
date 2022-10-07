@@ -1,5 +1,5 @@
 ---
-title: 6. Functions I
+title: 06. Functions I
 type: lab
 resources:
 - name: test_part_b() output
