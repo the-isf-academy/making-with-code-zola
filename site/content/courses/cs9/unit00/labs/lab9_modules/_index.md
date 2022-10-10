@@ -104,7 +104,7 @@ cd tree_drawing
 This folder has 3 files:
 - `basic_shapes.py`
 - `tree_parts.py`
-- `tree_full.py`
+- `tree.py` 
 
 
 {{< code-action "Open the folder in Atom" >}}
