@@ -115,13 +115,13 @@ atom .
 {{< look-action "Take a look at" >}} `basic_shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `basic_shapes.py`.
 
 
-{{< code-action >}} **Currently, `tree_full.py` is empty. It's up to you to write function to draw a full tree.** Your `tree_full()` function should be able to draw a tree of any size.
+{{< code-action >}} **Currently, `tree.py` is empty. It's up to you to write function to draw a full tree.** Your `tree_full()` function should be able to draw a tree of any size.
 
 > Be sure to consider:
 > - what modules will you need to import?
 > - how can you combine exisiting functions to draw a full tree?
 
-When you run `tree_full`.py it look like:
+When you run `tree`.py it look like:
 
 {{< figure src="images/courses/cs9/unit00/00_modules_0.png" width="50%" >}}
 
