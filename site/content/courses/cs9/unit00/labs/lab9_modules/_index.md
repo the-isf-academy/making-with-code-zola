@@ -163,7 +163,7 @@ Here you should have:
 
 {{< code-action "Start by running:" >}} `fancy_drawing_example.py`
 ```shell
-python drawing_fancy_example.py
+python fancy_drawing_example.py
 ```
 > *Consider:*
 > - *Why does the drawing just appear?*
