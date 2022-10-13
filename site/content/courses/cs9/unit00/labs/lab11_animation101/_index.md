@@ -49,14 +49,29 @@ For example, let's consider baking again.
 ## [1] Set Up
 
 
-{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+
+{{< code-action "Go to your" >}} `cs9/unit00_drawing` **folder.**
+
 ```shell
-mwc update
+cd ~/desktop/making_with_code/cs9/unit00_drawing/
 ```
+
+{{< code-action "Clone your repo. This will copy it onto your computer." >}}  
+```shell
+git clone https://github.com/the-isf-academy/lab_animation101_yourGithubUsername
+```
+> Below you'll see that the `git clone` command has a `yourGithubUsername`. 
+>
+> **You need to replace this with your username**
+>
+> *e.g. `https://github.com/the-isf-academy/lab_animation101_emmaqbrown`*
+
+
+
 
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_animation101
+cd lab_animation101_yourGithubUsername
 ```
 
 
@@ -183,7 +198,14 @@ This will require you to run and edit code.
 ## [3] Deliverables
 
 {{< deliverables "For this lab, you should:" >}}
-- Submit your worksheet with answers to each checkpoint question.
+{{< write-action  >}} **Submit your worksheet with answers to each checkpoint question.**
+
+{{< code-action "Push your code to Github" >}} 
+0. `git status`
+0. `git add file.py`
+0. `git status`
+0. `git commit -m "describe changes here"` 
+0. `git push`
 
 {{< /deliverables >}}
 
