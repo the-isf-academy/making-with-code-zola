@@ -1,6 +1,9 @@
 ---
 title: 11. Animation 101
 type: lab
+slug: lab_animation101
+repo_url: https://github.com/the-isf-academy/lab_animation101.git
+init_action: clone
 # draft: true
 ---
 
