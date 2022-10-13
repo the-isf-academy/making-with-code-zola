@@ -103,13 +103,20 @@ We're going to explore each type of animation by looking at some small mystery e
 - `animate_3.py`
 - `animate_4.py`
 
+
+{{< code-action "Open the folder in Atom:" >}}
+```shell
+atom .
+```
+
 ---
 
 ### [Animation Mystery 1]
 
-{{< code-action "Run the" >}} `animate_1.py` **file.**
+{{< code-action "Run the" >}} `animate_1.py` **file and view it in Atom.**
 
 {{< figure src="images/courses/cs9/unit00/animate_1.gif" width="100%">}}
+
 
 
 {{< checkpoint >}}
@@ -125,7 +132,7 @@ This will require you to run and edit code.
 
 ### [Animation Mystery 2]
 
-{{< code-action "Run the" >}} `animate_2.py` **file.**
+{{< code-action "Run the" >}} `animate_2.py` **file and view it in Atom.**
 
 {{< figure src="images/courses/cs9/unit00/animate_2.gif" width="100%">}}
 
@@ -141,7 +148,7 @@ This will require you to run and edit code.
 ---
 
 ### [Animation Mystery 3]
-{{< code-action "Run the" >}} `animate_3.py` **file.**
+{{< code-action "Run the" >}} `animate_3.py` **file and view it in Atom.**
 
 {{< figure src="images/courses/cs9/unit00/animate_3.gif" width="100%">}}
 
@@ -157,7 +164,7 @@ This will require you to run and edit code.
 ---
 
 ### [Animation Mystery 4]
-{{< code-action "Run the" >}} `animate_4.py` **file.**
+{{< code-action "Run the" >}} `animate_4.py` **file and view it in Atom.**
 
 {{< figure src="images/courses/cs9/unit00/animate_4.gif" width="100%">}}
 
@@ -177,4 +184,21 @@ This will require you to run and edit code.
 
 {{< deliverables "For this lab, you should:" >}}
 - Submit your worksheet with answers to each checkpoint question.
+
 {{< /deliverables >}}
+
+---
+
+## [4] Extension
+
+{{< code-action "Choose 1 of the 4 animations to customize:" >}}
+- `animate_1.py`
+- `animate_2.py` 
+- `animate_3.py`
+- `animate_4.py`
+
+{{< code-action "Customize the animation!" >}} Here are some ideas:
+- add changing color 
+- add randomized color
+- add randomized size
+- add multiple shape changes to one animation
