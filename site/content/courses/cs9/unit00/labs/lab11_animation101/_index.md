@@ -221,6 +221,6 @@ This will require you to run and edit code.
 
 {{< code-action "Customize the animation!" >}} Here are some ideas:
 - add changing color 
-- add randomized color
+- add randomized changing color
 - add randomized size
 - add multiple shape changes to one animation
