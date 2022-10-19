@@ -333,8 +333,11 @@ JSON is a standardized format to transfer data over a network. It represents dat
 
 ---
 
-## [5] Extension: Gamify
+## [5] Extension
 
+
+
+### [Gamify]
 
 Currently, the client simply takes care of the HTTP requests in a nicely formatted view. But, let's make it more fun and turn it into a game!
 
@@ -367,3 +370,9 @@ Potential further extension features:
 - keep score of how many riddles the user guesses correctly
 - display the current score after each riddle is guessed
 - randomly display each riddle
+
+---
+
+### [Magic 8]
+
+In this extension 
