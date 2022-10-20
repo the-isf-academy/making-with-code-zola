@@ -24,26 +24,6 @@ cd lab_merge_group#
 ```
 > replace `#` with your group number 
 
-{{< expand "cs9.1 Groups" >}}
-
-| Group #        | Members                  |
-|-------------|-------------------------|
-| 0  | Chris, Isaac, Edwin |
-| 1 | Mina & Charlotte        |
-| 2 | Ocean & Dubai                |
-| 3 | Nathan  & Alex            |
-| 4 | Marcus & Shangyi            |
-{{< /expand >}}
-
-{{< expand "cs9.2 Groups" >}}
-
-| Group #        | Members                  |
-|-------------|-------------------------|
-| 5  | Jonathan, Christopher,  Angus |
-| 6 | Shogo & Gabriel        |
-| 7 | Lok & Skylar                |
-| 8 | Julian & Evan           |
-{{< /expand >}}
 
 {{< code-action "Enter the poetry shell." >}}
 ```shell
