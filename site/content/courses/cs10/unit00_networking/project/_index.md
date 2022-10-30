@@ -3,9 +3,10 @@ Title: "Project"
 # draft: true
 ---
 
-# Networking: Social Collaboration Project
+# Networking: Social Computing Project
 
-In this project, you will create a server using Banjo. It is up to you to create a server with a user in mind. 
+In this project, you will create a social computing app. It is up to you to code the Banjo backend and the Python frontend client.
+
 
 ---
 
@@ -16,81 +17,127 @@ Before you start working on your project, you are required to complete the Proje
 
 *You can find your planning doc in your Google Drive folder called "Unit Networking Project: Planning Document".*
 
-{{< code-action >}} **Make a copy of [THIS SHEET]().**
+{{< code-action >}} **Find your planning sheet in your Google Drive folder: "Unit Networking Project: Planning Document".** Share the document with your group member(s)
 
-0. share it with your group member(s)
-0. share it with Ms. Brown & Ms. Genzlinger
+{{< write-action "Fill out the planning sheet." >}} Once you're completed, meet with a teacher to discuss your idea before beginning to code.
 
-{{< write-action "Fill out the 'Planning' sheet." >}} Once you're comp
+{{< aside "A few ideas..." >}}
+
+- collaborative story telling (poetry, madlibs, etc.)
+- collaboarative art project with emojis, symbols, or [ASCII art](https://www.asciiart.eu/)
+- collaborative messaging board 
+
+{{< /aside >}}
 
 ---
 
 ## [1] Starter Code
 
-{{< code-action "Clone the project repository" >}} in your `cs10\unit_00` folder. 
+
+In this lab, you will be working in groups, be sure to clone your group's repository. 
+
+{{< code-action "Download your repository with starter code for your project." >}}
 
 ```shell
-cd cd ~/desktop/making_with_code/cs10/unit00_networking/
-git clone https://github.com/the-isf-academy/project-networking-YOUR-GITHUB-USERNAME.git
+cd ~/desktop/making_with_code/cs10/unit00_networking/
+git clone https://github.com/the-isf-academy/project_networking_group#.git
+cd project_networking_group#
+```
+> replace `#` with your group number 
+
+
+{{< code-action "Enter the poetry shell." >}}
+```shell
+poetry shell
 ```
 
-It contains the following files:
-- `project.py` When this program runs, it should draw your project.
-- `settings.py` This is where you settings for your animation should be stored.
-- `README.md` This is documentation for your project for other people who may want to use your project.
-    
+{{< code-action "Install requirements" >}}
+```shell
+poetry install
+```
 
+{{< code-action "Install Banjo" >}}
+```shell
+pip3 install django-banjo
+```
+
+It contains the following :
+- A `project_networking` repository containing the following:
+  - `\app`
+    - `models.py` - This is where you will define your model.
+    - `views.py` - This is where you will define your routes and endpoints.
+  - `database.sqlite` - This is your database file. 
+  - `README.md` - This is documentation for the backend of your project.
+  - `client.py` - This is how the User will interact wiht your server. 
+    
 {{< code-action "Start coding your first milestone!" >}} With you design document approved by a teacher and your starter code downloaded, you're ready to start creating.
 
 ---
 
 ## [2] Criteria 
-You are responsible for assessing your own project, though your teachers will let you know if they disagree and provide a final score.
-
-In `Unit Networking Project: Self-Assessment`, you are required to explain how your project should be scored, and to give evidence to support your assessment. The rubric is based on claims that you should be able to make about your learning in this unit.
 
 
 **This project will be assessed on the following criteria:**
-- 
-- iterative development
-- group collaboration 
-- model architecture
-  - readability 
-  - abstraction
-- api architecture
-  - readability
-  - error handeling 
+- project management [3]
+- iterative development [3]
+- backend 
+  - model architecture [3]
+  - api architecture [3]
+  - backend readability [3]
+  - backend documentation [3]
+- frontend
+  - frontend readability [3]
+  - frontend user error handeling [3]
+  - user interaction usability [3]
 
-**For each criteria you will be assessed on a score from 0-3:**
+
+**For each criteria you will be assessed on a score from 0-3. With 9 criteria, there is a total of 27 potential points.** For each criteria, you will be awarded the same group as your group member(s). However, with one exception of the *iterative development* criteraia, which will individually awarded.. 
 - 0 - no evidence of the practice
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
 - 3 - substantial evidence of the practice
 
-*To do well in this project, you should be able to concretely demonstrate that you can successfully do each practice*
 
 ---
 
 ### [Success Claims]
 
 Successful computer scientists should be able to make the following claims:
-- I can write code with error handeling in mind 
-  - I can test the expected user scenarios
-  - I can test or prevented unexpected user scenarios
-- I can write code with readability in mind
-  - I can use descriptive names for models, fields, methods, endpoints, and parameters
-  - I can write descriptive comments
-  - I can document my code in the README.md
-- I can plan a model architecture
-  - I can reference the Banjo documentation
-  - I can plan the necessary features of the model prior to coding 
-  - I can write fields with appropriate data types
-  - I can use methods to simplify code 
-  - I can use the built-in model methods to appropriately affect the database
-- I use write api architecture 
-  - I can appropriately use GET and POST requests
-  - I can write endpoints with user experience in mind
-  - I can provide descriptive JSON messaging
+- I can thoughtfully plan and manage a large computer science project.  
+    - I can consider the components of my project before coding 
+    - I can manage my time well and complete the project by the deadline
+    - I can update my process journal on an ongoing basis to organize by thoughts for the next work day
+- I can develop my project iteratively over time
+    - I can track the development of my project by successfully committing to Github a minimum of each class work day 
+    - I can write descriptive commit messages that accurately describe the changes made
+    - I can systematically breakdown my project into smaller chunks  
+- I can develop a backend 
+  - I can write model architecture
+    - I can use Banjo to effectively build a model with necessary features
+    - I can write field with appropriate data types
+    - I can write methods to simplify code
+    - I can write a model with multiple uses in mind
+  - I use write api architecture
+    - I can appropriately use GET and POST requests
+    - I can write endpoints with user experience in mind 
+    - I can return descriptive and accurate JSON 
+  - I can write backend code with readability in mind
+    - I can use descriptive names for models, fields, methods, endpoints, variables, and  parameters
+    - I can write descriptive comments 
+  - I can write a README.md file with other Computer Scientists in mind
+    - I can document my model and it's features
+    - I can document my routes and their functionalities
+    - I can explain how to use the server
+- I can develop a frontend 
+  - I can write frontend code with readability in mind
+    - I can use descriptive names for variables, functions, data structures, etc. 
+    - I can write descriptive comments 
+  - I can write frontend code with user error handeling in mind 
+    - I can provide appropriate error messaging to the user if a user error occurs
+    - I can prevent unexpected user scenarios from crashing the client 
+  - I can write frontend code with user interaction in mind
+    - I can write an easy to use client with clear instructions and appropriate formatting 
+    - I can ensure users are able to interact with the client as it is intended 
 
 
 *Keep the success claims in mind when coding your project and self-assessing yourself.*
@@ -100,13 +147,13 @@ Successful computer scientists should be able to make the following claims:
 ### [Scoring]
 
 The project is scored out of 7. It will be calculated by adding the score from each criteria, then referencing the bands:
-- 1 = 0
-- 2 = 1-2
-- 3 = 3-5
-- 4 = 6-9
-- 5 = 10-12
-- 6 = 13-14
-- 7 = 15
+- 1 = 0-1
+- 2 = 2-4
+- 3 = 5-9
+- 4 = 10-13
+- 5 = 14-20
+- 6 = 21-24
+- 7 = 25-27
 
 ---
 
@@ -114,15 +161,22 @@ The project is scored out of 7. It will be calculated by adding the score from e
 
 {{< deliverables  "Projects are due on Friday, 25 Novemeber." >}}
 
-- A `Unit Networking Project: Planning Document` - Google doc. This is where you will plan your project.
-- A `project-networking` repository containing the following:
+- A `Unit Networking Project: Planning Sheet` - Google sheet. This is where you will plan your project.
+- A `project_networking` repository containing the following:
   - `\app`
     - `models.py` - This is where you will define your model.
     - `views.py` - This is where you will define your routes and endpoints.
   - `database.sqlite` - This is your database file. 
-  - `README.md` This is documentation for your project.
-- `Unit Networking Project: Self-Assessment` - Google doc. This is where you will self-assess your project.
+  - `README.md` - This is documentation for the backend of your project.
+  - `client.py` - This is how the User will interact wiht your server. 
 
+---
+
+**🗓️ Timeline**
+
+The project will begin on Wednesday, 02 Novemeber. You have 8 in-class work days. You may find it necessary to work outside of school, however if you are focused in class you can complete within the alloted blocks.
+
+---
 
 {{< code-action "Push your work to Github:" >}}
 - `git status`
