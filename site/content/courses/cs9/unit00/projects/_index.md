@@ -34,31 +34,25 @@ This is a big project, and you will get lost or frustrated if you don't do some 
 
 **👀 Once you have completed your planning document, meet with a teacher to talk through your project.**
 
----
-
-
-
-
-
 
 ---
 
 ##  [1] Starter Code
 
-For this project, your code will live in a git repository. It is your resopnsiblity to regularly commit to your repository.
+For this project, your code will live in a git repository. It is your responsibility to regularly commit to your repository.
 
 {{< code-action "Download your respository with starter code for your project." >}}
-> replace the `YOUR-GITHUB-USERNAME` with your Github username.
+> replace the `yourGithubUsername` with your Github username.
 >
 > *example:*
 >
-> *`git clone https://github.com/the-isf-academy/project-animation-emmaqbrown.git`*
+> *`git clone https://github.com/the-isf-academy/project_animation_emmaqbrown.git`*
 
 
 ```shell
 cd Desktop
 cd cs9/unit_00
-git clone https://github.com/the-isf-academy/project-animation-YOUR-GITHUB-USERNAME.git
+git clone https://github.com/the-isf-academy/project_animation_yourGithubUsername.git
 ```
 
 It contains the following files:
@@ -80,14 +74,14 @@ It contains the following files:
 {{< figure src="images/courses/cs9/unit00/00_project_2020_austin.gif" width="75%" title="by Austin" >}}
 {{< /columns >}}
 
-This project will be assessed on the following criteria:
-- planning
+**This project will be assessed on the following criteria:**
+- project managment 
 - iterative development
 - readability 
 - abstraction
 - decomposition 
 
-For each criteria you will be assessed on a score from 0-3:
+**For each criteria you will be assessed on a score from 0-3:**
 - 0 - no evidence of the practice
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
@@ -101,19 +95,23 @@ For each criteria you will be assessed on a score from 0-3:
 ### [Success Claims]
 
 Successful computer scientists should be able to make the following claims:
-- I can thoughtfully plan a large computer science project.  
+- I can thoughtfully plan and manage a large computer science project.  
     - I can consider the components of my project before coding 
-    - I can plan milestones for myself to ensure I complete the project by the deadline
+    - I can manage my time well and complete the project by the deadline
+    - I can update my process journal on an ongoing basis to organize by thoughts for the next work day
 - I can develop my project iteratively over time
-    - I can track the development of my project by committing to Github consistently throughout my project.
+    - I can track the development of my project by successfully committing to Github a minimum of each class work day 
+    - I can write descriptive commit messages that accurately describe the changes made
     - I can systematically breakdown my project into smaller chunks  
 - I can write code with readability in mind
-    - I can use describe names for variables, functions, and modules
-    - I can document my code in the README.md
+    - I can write code as readable as possible for another CS student to understand
+    - I can use descriptive names for modules, variables, and functions
+    - I can write descriptive comments to describe complex pieces of the code
 - I can effectively use the principle of abstraction to make my code more efficient and elegant
-    - I can write a function with at least one paramter
-    - I can use manipulate control flow with conditionals
+    - I can write a function with paramters
+    - I can manipulate control flow with conditional statements
     - I can use loops to repeat commands
+     can write functions with parameters
 - I can effictively use the principle of decomposition to make my code more efficient and elegant
     - I can write functions to be used in different scenarios
     - I can write modules for different aspects of my project
@@ -126,12 +124,12 @@ Successful computer scientists should be able to make the following claims:
 
 The project is scored out of 7. It will be calculated by adding the score from each criteria, then referencing the bands:
 - 1 = 0
-- 2 = 1-2
-- 3 = 3-5
-- 4 = 6-9
-- 5 = 10-12
-- 6 = 13-14
-- 7 = 15
+- 2 = 1
+- 3 = 2-3
+- 4 = 4-6
+- 5 = 7-11
+- 6 = 12-13
+- 7 = 14-15
 
 ---
 
@@ -144,7 +142,7 @@ The project is scored out of 7. It will be calculated by adding the score from e
 - `project_animation` repository containing the following files:
     - `project.py` When this program runs, it should draw your project.
     - `settings.py` This is where you settings for your animation should be stored.
-    - `README.md` This is documentation for your project for other people who may want to use your project.
+    - `README.md` This is documentation for your project 
     - At least one additional module (written by you)
 
 {{< code-action "Push your work to Github:" >}}
