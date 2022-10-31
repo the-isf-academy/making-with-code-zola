@@ -1,7 +1,7 @@
 ---
 Title: Project
 slug: drawing
-# draft: true
+draft: true
 ---
 
 # Animation Project
@@ -29,7 +29,7 @@ Here are a few examples from last year to get you started. More can be found at 
 This is a big project, and you will get lost or frustrated if you don't do some planning up front. You are required to write a project planning document and get it approved by a teacher. Your planning document can be found in your Google Drive folder.
 
 
-{{< write-action "Fill out your planning doc in your Google Drive folder." >}} First you must spend 10 minutes creating an inspiration board. 
+{{< write-action "Fill out your planning doc in your Google Drive folder." >}} First you must spend 10 minutes creating an inspiration board.
 
 
 **👀 Once you have completed your planning document, meet with a teacher to talk through your project.**
@@ -59,13 +59,13 @@ It contains the following files:
 - `project.py` When this program runs, it should draw your project.
 - `settings.py` This is where you settings for your animation should be stored.
 - `README.md` This is documentation for your project for other people who may want to use your project.
-    
+
 
 {{< code-action "Start coding your first milestone!" >}} With you design document approved by a teacher and your starter code downloaded, you're ready to start creating.
 
 ---
 
-## [3] Criteria 
+## [3] Criteria
 
 {{< columns >}}
 
@@ -75,11 +75,11 @@ It contains the following files:
 {{< /columns >}}
 
 **This project will be assessed on the following criteria:**
-- project managment 
+- project managment
 - iterative development
-- readability 
+- readability
 - abstraction
-- decomposition 
+- decomposition
 
 **For each criteria you will be assessed on a score from 0-3:**
 - 0 - no evidence of the practice
@@ -96,11 +96,11 @@ It contains the following files:
 
 Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan and manage a large computer science project.  
-    - I can consider the components of my project before coding 
+    - I can consider the components of my project before coding
     - I can manage my time well and complete the project by the deadline
     - I can update my process journal on an ongoing basis to organize by thoughts for the next work day
 - I can develop my project iteratively over time
-    - I can track the development of my project by successfully committing to Github a minimum of each class work day 
+    - I can track the development of my project by successfully committing to Github a minimum of each class work day
     - I can write descriptive commit messages that accurately describe the changes made
     - I can systematically breakdown my project into smaller chunks  
 - I can write code with readability in mind
@@ -142,7 +142,7 @@ The project is scored out of 7. It will be calculated by adding the score from e
 - `project_animation` repository containing the following files:
     - `project.py` When this program runs, it should draw your project.
     - `settings.py` This is where you settings for your animation should be stored.
-    - `README.md` This is documentation for your project 
+    - `README.md` This is documentation for your project
     - At least one additional module (written by you)
 
 {{< code-action "Push your work to Github:" >}}
