@@ -24,13 +24,12 @@ Here are a few examples from last year to get you started. More can be found at 
 
 ---
 
-## [0] Planning Document
+## [0] Project Management Booklet: Planning 
 
-This is a big project, and you will get lost or frustrated if you don't do some planning up front. You are required to write a project planning document and get it approved by a teacher. Your planning document can be found in your Google Drive folder.
+This is a big project, and you will get lost or frustrated if you don't do some planning up front. You are required to fill out the planning section of the Project Booklet and get it approved by a teacher. 
 
 
-{{< write-action "Fill out your planning doc in your Google Drive folder." >}} First you must spend 10 minutes creating an inspiration board. 
-
+{{< write-action "Fill out the Project Overview and Project Design sections of the Booket." >}}
 
 **👀 Once you have completed your planning document, meet with a teacher to talk through your project.**
 
