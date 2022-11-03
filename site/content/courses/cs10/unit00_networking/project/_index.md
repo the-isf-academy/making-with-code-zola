@@ -8,6 +8,13 @@ Title: "Project"
 In this project, you will create a social computing app. It is up to you to code the Banjo backend and the Python frontend client.
 
 
+{{< aside "Reference: Banjo Documentation" >}}
+
+[cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+
+{{< /aside >}}
+
+
 ---
 
 ## [0] Project Management Sheet
