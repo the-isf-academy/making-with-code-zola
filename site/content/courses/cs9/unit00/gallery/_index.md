@@ -20,11 +20,6 @@ This is a collection of work from previous students.
 
 {{< /columns >}}
 
-{{< columns >}}
-{{< figure src="images/courses/cs9/unit00/00_project_2021_alex.gif" width="50%" title="by Alex" >}}
-
-
-{{< /columns >}}
 
 ---
 
