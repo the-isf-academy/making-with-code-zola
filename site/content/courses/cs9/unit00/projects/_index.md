@@ -49,8 +49,7 @@ For this project, your code will live in a git repository. It is your responsibi
 
 
 ```shell
-cd Desktop
-cd cs9/unit_00
+cd ~/Desktop/making_with_code/cs9/unit00_drawing/
 git clone https://github.com/the-isf-academy/project_animation_yourGithubUsername.git
 ```
 
