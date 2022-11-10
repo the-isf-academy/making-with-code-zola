@@ -155,8 +155,8 @@ The project is scored out of 7. It will be calculated by adding the score from e
 - 1 = 0-1
 - 2 = 2-4
 - 3 = 5-9
-- 4 = 10-13
-- 5 = 14-20
+- 4 = 10-12
+- 5 = 13-20
 - 6 = 21-24
 - 7 = 25-27
 
