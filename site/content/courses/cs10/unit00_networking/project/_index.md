@@ -89,14 +89,13 @@ It contains the following :
   - model architecture [3]
   - api architecture [3]
   - backend readability [3]
-  - backend documentation [3]
 - frontend
   - frontend readability [3]
   - frontend user error handling [3]
   - user interaction usability [3]
 
 
-**For each criteria you will be assessed on a score from 0-3. With 9 criteria, there is a total of 27 potential points.** For each criteria, you will be awarded the same grade as your group member(s). However, the one exception is the *iterative development* criteria, which will be individually awarded.
+**For each criteria you will be assessed on a score from 0-3. With 8 criteria, there is a total of 24 potential points.** For each criteria, you will be awarded the same grade as your group member(s). However, the one exception is the *iterative development* criteria, which will be individually awarded.
 - 0 - no evidence of the practice
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
@@ -129,10 +128,6 @@ Successful computer scientists should be able to make the following claims:
   - I can write backend code with readability in mind
     - I can use descriptive names for models, fields, methods, endpoints, variables, and  parameters
     - I can write descriptive comments
-  - I can write a README.md file with other Computer Scientists in mind
-    - I can document my model and its features
-    - I can document my routes and their functionalities
-    - I can explain how to use the server
 - I can develop a frontend
   - I can write frontend code with readability in mind
     - I can use descriptive names for variables, functions, data structures, etc.
@@ -154,11 +149,11 @@ Successful computer scientists should be able to make the following claims:
 The project is scored out of 7. It will be calculated by adding the score from each criteria, then referencing the bands:
 - 1 = 0-1
 - 2 = 2-4
-- 3 = 5-9
-- 4 = 10-12
-- 5 = 13-20
-- 6 = 21-24
-- 7 = 25-27
+- 3 = 5-8
+- 4 = 9-13
+- 5 = 14-18
+- 6 = 19-22
+- 7 = 23-24
 
 ---
 
