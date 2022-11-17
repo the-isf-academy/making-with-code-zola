@@ -1,5 +1,7 @@
 {% macro navigation(paginator) %}
+
 <div class="blog-navigation d-flex justify-content-between">
+	<h1>section nav</h1>
 	{% if paginator.previous %}
 	<a href="{{ paginator.previous | safe }}">
 		<div class="card my-1">

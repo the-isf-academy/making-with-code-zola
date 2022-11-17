@@ -25,7 +25,8 @@
 				</li>
 			{% endif %}
 		</ul>
-		<div class="collapse navbar-collapse order-4 order-md-1">
+		<div class="collapse navbar-collapse order-4 order-md-1" id="navbarSupportedContent">
+
 			<ul class="navbar-nav main-nav me-auto order-5 order-md-2">
 				{% if lang == config.default_language %}
 					{% set rootsectionpath = "_index.md" %}
@@ -41,10 +42,28 @@
 					{% endfor %}
 				{% elif config.extra.menu.main %}
 					{% for val in config.extra.menu.main %}
-						<li class="nav-item{% if current_section == val.section %} {{ current_section }} active{% endif %}">
-							<a class="nav-link" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a>
+						<li class="nav-item{% if current_section == val.section %} {{ current_section }} active{% endif %} dropdown">
+							<a class="nav-link dropdown-toggle" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							  </div>
 						</li>
 					{% endfor %}
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Dropdown
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						  <a class="dropdown-item" href="#">Action</a>
+						  <a class="dropdown-item" href="#">Another action</a>
+						  <div class="dropdown-divider"></div>
+						  <a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					  </li>
+					
 				{% else %}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ get_url(path="docs", trailing_slash=true) | safe }}">Docs</a>

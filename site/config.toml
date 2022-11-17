@@ -8,6 +8,8 @@ compile_sass = true
 build_search_index = true
 
 theme = "adidoks"
+title="Making with Code"
+
 
 [markdown]
 # Whether to do syntax highlighting
@@ -17,12 +19,12 @@ highlight_code = true
 [extra]
 
 [[extra.menu.main]]
-name = "CS 9"
+name = "CS9"
 section = "cs9"
 url = "/cs9"
 
 [[extra.menu.main]]
-name = "CS 10"
+name = "CS10"
 section = "cs10"
 url = "/cs10"
 
