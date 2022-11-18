@@ -1,6 +1,5 @@
 +++
 title = "Initial Setup"
-template = "docs/page.html"
 
 [extra]
 toc = true
