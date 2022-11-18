@@ -37,19 +37,34 @@
 				{% if mainsec.extra.menu.main %}
 					{% for val in mainsec.extra.menu.main %}
 						<li class="nav-item{% if current_section == val.section %} {{ current_section }} active{% endif %}">
-							<a class="nav-link" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a>
+							<a class="nav-link" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }} </a>
 						</li>
 					{% endfor %}
 				{% elif config.extra.menu.main %}
 					{% for val in config.extra.menu.main %}
 						<li class="nav-item{% if current_section == val.section %} {{ current_section }} active{% endif %} dropdown">
-							<a class="nav-link dropdown-toggle" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a>
+							<!-- <a class="nav-link dropdown-toggle" href="{{ get_url(path=val.url, trailing_slash=true) | safe }}">{{ val.name }}</a> -->
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								{{ val.name }}
+							  </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Action</a>
-								<a class="dropdown-item" href="#">Another action</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Something else here</a>
-							  </div>
+								
+								
+							  {% set menu_path = val.url ~ "/_index.md" | trim_start_matches(pat="/") %}
+							  {% set menu_item = get_section(path=menu_path) %}
+							  {% set menu_item_subsections = menu_item.subsections %}
+							
+							  
+								{% for subsection_obj in menu_item_subsections %}
+								{% set subsection = get_section(path=subsection_obj) %}
+
+							  <a class="dropdown-item" href="{{ subsection.permalink }}">
+								{{ subsection.title }}
+								
+							</a>
+								{% endfor %}
+							</div>
+							  
 						</li>
 					{% endfor %}
 					

@@ -1,6 +1,6 @@
 +++
 title = "lab 1"
-template = "docs/testing_nav.html"
+template = "docs/page.html"
 
 [extra]
 toc = true

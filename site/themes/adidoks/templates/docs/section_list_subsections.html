@@ -21,6 +21,7 @@
           <div class="text-center">{{ section.content | safe }}</div>
           <div class="card-list">
             {% set index_path = current_path ~ "_index.md" | trim_start_matches(pat="/") %}
+          
             {% set index = get_section(path=index_path) %}
           
             {% for page in index.pages %}

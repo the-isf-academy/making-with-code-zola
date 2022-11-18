@@ -1,7 +1,7 @@
 +++
 title = "CS9"
 type = "course"
-template = "docs/section_unit.html"
+template = "custom/section_unit.html"
 
 
 [extra]

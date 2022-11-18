@@ -1,6 +1,6 @@
 +++
 title = "Unit 00: Drawing"
-template = "docs/section_list_pages.html"
+template = "custom/section_unit.html"
 weight= 0
 +++
 
