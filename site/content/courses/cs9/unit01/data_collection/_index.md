@@ -1,6 +1,6 @@
 ---
 Title: "[Data Collection]"
-bookCollapseSection: true
+# bookCollapseSection: true
 ---
 
 # Data Collection Guides

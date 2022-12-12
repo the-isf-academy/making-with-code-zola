@@ -1,8 +1,9 @@
 ---
 title: "Challenges"
-bookCollapseSection: true
+# bookCollapseSection: true
 type: unit
 headless: true
+draft: true
 ---
 
 #### Challenges
