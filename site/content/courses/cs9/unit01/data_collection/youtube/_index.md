@@ -20,11 +20,15 @@ This is a walkthrough to downloading your YouTube watch history.
 > 0. **Select `Deselect all`.** This will ensure you only download your Youtube data, as opposed to all of the data Google assosicates with your account.
 > 0. **Scroll to the bottom and find `YouTube and YouTube Music` and check the box.** 
 > 0. **Select `Multiple Formats`.** 
-> 0. **For `History`, select `HTML` and choose `JSON`. Then, click `OK`.**
+>       -  **For `History`, select `HTML` and choose `JSON`. Then, click `OK`.**
+> 0. **Select `All Youtube data included`**
+>       - **Select `Deselect all`**
+>       - **Select `history`**
+>       - **Select `OK`**
 > 0. **Select `Next step`**
 > 0. **Scroll down, select `Create export`.**
 > 
-> This may take awhile. It may only take a few minutes or an hour. You will recieve an email when your data is ready for download.
+> This may take awhile. It may only take a few minutes or an hour. You will receive an email when your data is ready for download.
 
 
 {{< code-action "Once your data is ready to download, you'll need to locate the correct file.." >}} 
