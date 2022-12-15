@@ -29,57 +29,41 @@
                 <ul>
                     {% block menu %}
                         {% set index = get_section(path="_index.md") %}
-                        {% for s in index.subsections %}
-                            {% set subsection = get_section(path=s) %}
-                            <li {% if current_path == subsection.path %}class="active"{% endif %}>
-                                <a href="{{ subsection.permalink }}">
-                                    <p class="top_menu_item">{{ subsection.title }}</p>
+                        {% for top_menu_obj in index.subsections %}
+                            {% set top_menu = get_section(path=top_menu_obj) %}
+                            <li {% if current_path == top_menu.path %}class="active"{% endif %}>
+                                <a href="{{ top_menu.permalink }}">
+                                    <p class="top_menu_item">{{ top_menu.title }}</p>
                                 </a>
                             </li>
                                 <ul>
-                                {% for subsection_obj in subsection.subsections %}
-                                    {% set subsection2 = get_section(path=subsection_obj) %}
-                                  
-                                        <li {% if current_path == subsection2.path %}class="active"{% endif %}>
-                                            <a href="{{ subsection2.permalink }}">
-                                               <p class="sub_menu_item">{{ subsection2.title }}</p>
-                                            </a>
+                                {% for section_obj in top_menu.subsections %}
+                                    {% set subsection = get_section(path=section_obj) %}
+                                    <li {% if current_path == subsection.path %}class="active"{% endif %}>
+                                        <a href="{{ subsection.permalink }}">
+                                            <p class="sub_menu_item">{{ subsection.title }} subsection</p>
+                                        </a>
 
-                                            {% if current_path == subsection2.path %}
-                                           
+                                        {% if current_path == subsection.path %}
+                                    
+                                            {% for subsection_obj in subsection.subsections %}
                                             <ul>
-                                                {% for subsection2_obj in subsection2.subsections %}
-                                                {% set subsection3 = get_section(path=subsection2_obj) %}
+                                                {% set subsection2 = get_section(path=subsection_obj) %}
                                                     <li {% if current_path == subsection2.path %}class="active"{% endif %}>
-                                                        <a href="#">
-                                                            <p class="sub_menu_item">{{ subsection3.title }}</p>
-                                                         </a>
+                                                        <a href="{{ subsection2.permalink }}">
+                                                            <p class="sub_menu_item">{{ subsection2.title }} sec2 </p>
+                                                            </a>
                                                     </li>
 
-                                                    {% if current_path == subsection2.path %}
-                                           
-                                                <ul>
-                                                    {% for subsection3_obj in subsection2.subsections %}
-                                                    {% set subsection4 = get_section(path=subsection3_obj) %}
-
-                                                        {% for subsection4_obj in subsection3.subsections %}
-                                                        {% set subsection5 = get_section(path=subsection4_obj) %}
-                                                            
-                                                        <li {% if current_path == subsection5.path %}class="active"{% endif %}>
-                                                            <a href="{{ subsection5.permalink }}">
-                                                                <p class="sub_menu_item">{{subsection5.title}}</p>
-                                                          
-                                                            </a>
-                                                           
-                                                        </li>
-                                                    {% endfor %}
-                                                    {% endfor %}
-                                                </ul>
-                                                {% endif %}
+                                                    
+                                                {% for subsection2_page in subsection2.pages %}
+                                                <p>{{subsection2_page.title}} page</p>
                                                 {% endfor %}
                                             </ul>
-                                            {% endif %}
-                                        </li>
+                                            {% endfor %}
+
+                                        {% endif %}
+                                    </li>
                                
                                 {% endfor %} 
                             </ul>

@@ -1,6 +1,5 @@
 +++
 title = "Lab 0"
-weight= 0
+weight= 1
+
 +++
-
-
