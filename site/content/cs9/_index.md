@@ -1,6 +1,8 @@
 +++
 title = "CS9"
-type = "course"
+weight = 1
+sort_by = "weight"
+
 
 [extra]
 slug = "cs9"

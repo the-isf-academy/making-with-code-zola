@@ -1,13 +1,15 @@
 # The URL the site will be built for
 base_url = "https://cs.fablearn.org"
 
+title="Making with Code"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-theme = "adidoks"
+theme = "zola_docsascode_theme_custom"
 
 [markdown]
 # Whether to do syntax highlighting
@@ -20,6 +22,7 @@ highlight_code = true
 name = "CS 9"
 section = "cs9"
 url = "/cs9"
+
 
 [[extra.menu.main]]
 name = "CS 10"
