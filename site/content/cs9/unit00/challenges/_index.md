@@ -1,6 +1,7 @@
 +++
 title = "Challenges"
 weight = 100
+draft = true
 
 [extra]
 slug = "cs9"

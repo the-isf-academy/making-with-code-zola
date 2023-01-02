@@ -13,7 +13,7 @@ git_backend = "github_org"
 
 This is a high-level overview of the curricular units that comprise this introductory course.
 
-
+<!-- 
 ### Unit 0: Drawing
 This initial unit prioritizes getting students making personally-meaningful things as fast as
 possible. This means we aren’t aiming for completeness. In particular, we’re not introducing 
@@ -62,27 +62,15 @@ Write basic functions to perform calculations on numbers and lists. Biggest, sma
 
 Lab 1: Students will write code to plot histograms, scatter plots, and the line of best fit.
 Lab 2: Students will be introduced to the basics of Pandas and matplotlib, the standard Python libraries for data analysis and plotting.
-<!--- need to update --->
 
 #### Project
 
 Collect some data or use an existing dataset. Frame a research question and use the data to answer it.
-<!--- need to update --->
 
 ### Unit 2: Games
 
 Games and other interactive media are some of the most important texts of the digital age. We will play and discuss several games, discussing how they work technically and drawing on theoretical perspectives to talk about how they create meaningful experiences for the player. Programming: prototyping, decomposition of larger problems, incremental & iterative development of larger projects.
 
-#### Homework
-
-Learning how games work can be a great spur toward imagining new ones. This unit’s problem sets will be focused on implementing simple game mechanics.
-
-#### Labs
-
-Lab 1: Using the Arcade platformer tutorial, program a maze game.
-Lab 2: Write an algorithm to procedurally-generate random mazes to initialize the maze game.
-There will also be ad-hoc mini-labs based on what students need for their games. Likely candidates are gravity, inventories, simulating perspective, animation techniques.
-
 #### Project
 
-Create a game that matters, perhaps as part of a group. This will be very open-ended, but students will be required to submit a substantial proposal, including a game concept with some evidence of prototyping and iteration; wireframes of the game interface; decomposition of tasks and who plans to work on what.  
+Create a game that matters, perhaps as part of a group. This will be very open-ended, but students will be required to submit a substantial proposal, including a game concept with some evidence of prototyping and iteration; wireframes of the game interface; decomposition of tasks and who plans to work on what.   -->
