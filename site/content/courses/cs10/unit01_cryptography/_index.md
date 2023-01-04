@@ -10,7 +10,7 @@ slug: unit00_networking
 It must have at least 3 parts to the puzzle. You will be responsible for ensuring the puzzle is solvable, includes sections that require coding, and is readable to the guesser.
 
 
-You may choose to do this project individually, or as a pair. Partners will receive the same grade as eachother. If do you choose to work as a pair, just pick 1 Puzzle Outline to complete.
+You may choose to do this project individually, or as a pair. Partners will receive the same grade as each other. If do you choose to work as a pair, just pick 1 Puzzle Outline to complete.
 
 ---
 
