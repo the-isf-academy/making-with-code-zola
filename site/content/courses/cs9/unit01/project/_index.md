@@ -1,7 +1,7 @@
 ---
 Title: Project
-draft: True
-# headless: true
+# draft: True
+
 ---
 
 # Unit 01 Data Science Project
