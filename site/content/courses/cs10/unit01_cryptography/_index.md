@@ -64,8 +64,8 @@ Each student has their own repository. If you are working as a pair, tell a teac
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit_cryptography/
-git clone https://github.com/the-isf-academy/project_cryptography.git
-cd project_cryptography
+git clone https://github.com/the-isf-academy/project_cryptography_yourgithubusername.git
+cd project_cryptography_yourgithubusername
 ```
 
 {{< code-action "Enter the poetry shell." >}}
@@ -170,6 +170,6 @@ You should not have to work on this outside of class. The key is to rely on the 
     - *e.g. `git add helpers.py adjectives.py`*
 - `git status`
 - `git commit -m "your message goes here"`
-  > be sure to customize this message, do not copy and paste this line
+    - be sure to customize this message, do not copy and paste this line
 - `git push`
 {{< /deliverables >}}
