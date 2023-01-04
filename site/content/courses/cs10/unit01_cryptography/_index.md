@@ -7,10 +7,10 @@ slug: unit00_networking
 
 **In this project, you will create a Cryptography puzzle. It is completely up to you to create its theme and the final message/prize. You can be as creative as you’d like!**
 
-It must have at least 3 parts to the puzzle. You will be responsible for ensuring the puzzle is solvable, includes sections that require coding, and is readable to the guesser. 
+It must have at least 3 parts to the puzzle. You will be responsible for ensuring the puzzle is solvable, includes sections that require coding, and is readable to the guesser.
 
 
-You may choose to do this project as a pair. You and your partner will receive the same grade if you choose to do it together. If you choose to work as a pair, just pick 1 Puzzle Outline to complete. 
+You may choose to do this project individually, or as a pair. Partners will receive the same grade as eachother. If do you choose to work as a pair, just pick 1 Puzzle Outline to complete.
 
 ---
 
@@ -44,21 +44,14 @@ You may choose to do this project as a pair. You and your partner will receive t
 
 This is a small project. The primary purpose of the document is that is holds a solution breakdown to each part of your puzzle.
 
-✏️ **For each step it should include:**
 
-0. the clue
-0. instructions on how to solve the clue
-0. what answering the clue leads you to
-0. if any additional materials are required
-
-
-{{< code-action >}} **Find your puzzle outline document in your Google Drive folder** Share the document with your group member if you are working as a pair.
+{{< code-action >}} **Find your puzzle outline document in your Google Drive folder.** Share the document with your group member if you are working as a pair.
 
 ---
 
 ## [2] Starter Code
 
-Each student has their own repository. If you are working as a pair, tell a teacher which repository you would like to work in and they will make it collaborative. 
+Each student has their own repository. If you are working as a pair, tell a teacher which repository you would like to work in and they will make it collaborative.
 
 {{< code-action "Download your repository with starter code for your project." >}}
 
@@ -79,13 +72,13 @@ poetry install
 ```
 
 It contains the following :
-- A `Cryptography Project | Puzzle Outline` - a Google Doc 
+- A `Cryptography Project | Puzzle Outline` - a Google Doc
 - A `project_cryptography` repository containing the following:
   - `helpers.py` - you may include any useful functions *(e.g. `caesar_decrypt()`)*
-  - `README.md` - this is the documentation. It should include a brief description of the puzzle and the first clue. 
+  - `README.md` - this is the documentation. It should include a brief description of the puzzle and the first clue.
   - any additional Python files *(e.g. `adjectives.py`)*
 
-{{< code-action "Start developing the first step of the puzzle!" >}} 
+{{< code-action "Start developing the first step of the puzzle!" >}}
 
 ---
 
@@ -111,16 +104,16 @@ It contains the following :
 ### [Success Claims]
 
 Successful computer scientists should be able to make the following claims:
-- I can thoughtfully plan and outline the puzzle 
-    - I can plan each step of the puzzle that logically 
-- I can successfully use 2 methods of encryption 
-    - I can use the caesar cipher or one of the additional methods you may have explored 
-    - I can create a password protected clue that requires brute force to break 
-- I can write a fully executable puzzle 
-    - I can ensure each step of the puzzle is solvable 
+- I can thoughtfully plan and outline the puzzle
+    - I can plan each step of the puzzle that logically
+- I can successfully use 2 methods of encryption
+    - I can use the caesar cipher or one of the additional methods you may have explored
+    - I can create a password protected clue that requires brute force to break
+- I can write a fully executable puzzle
+    - I can ensure each step of the puzzle is solvable
     - I can test my puzzle
 - I can write a readable puzzle
-    - I can provide the necessary helper functions and files in the repository 
+    - I can provide the necessary helper functions and files in the repository
     - I can write a README.md file with the puzzle description and first clue
     - I can prepare any additional materials such as printed documents or encrypted PDF files
 
@@ -146,10 +139,10 @@ The project is scored out of 7. It will be calculated by adding the score from e
 
 {{< deliverables  "Projects are due on Wednesday, 11 January." >}}
 
-- A `Cryptography Project | Puzzle Outline` - a Google Doc 
+- A `Cryptography Project | Puzzle Outline` - a Google Doc
 - A `project_cryptography` repository containing the following:
   - `helpers.py` - you may include any useful functions *(e.g. `caesar_decrypt()`)*
-  - `README.md` - this is the documentation. It should include a brief description of the puzzle and the first clue. 
+  - `README.md` - this is the documentation. It should include a brief description of the puzzle and the first clue.
   - any additional Python files *(e.g. `adjectives.py`)*
 
 ---
@@ -159,7 +152,7 @@ The project is scored out of 7. It will be calculated by adding the score from e
 - begins on Thursday, 05 January
 - due on Wednesday, 11 January
 
-You should not have to work on this outside of class. The key is to rely on the example puzzles and resources provided. 
+You should not have to work on this outside of class. The key is to rely on the example puzzles and resources provided.
 
 ---
 
