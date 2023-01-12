@@ -1,0 +1,32 @@
+{% set total_assets = section.assets | length %}
+
+<div class="image-gallery-container">
+ 
+  <div class="photo-gallery">
+      <div class="column">
+      {% for asset in section.assets | slice(start=1, end=total_assets/2|round) -%}
+        {%- if asset is matching("[.](jpg|png)$") -%}
+          <div class="photo">
+            <a href="{{ get_url(path=asset) }}" target="_blank">
+              <img src="{{ get_url(path=asset) }}" />
+            </a>
+          </div>
+          
+        {%- endif %}
+      {%- endfor %}
+      </div>
+
+      <div class="column">
+      {% for asset in section.assets | slice(start=total_assets/2|round) -%}
+        {%- if asset is matching("[.](jpg|png)$") -%}
+          <div class="photo">
+            <a href="{{ get_url(path=asset) }}" target="_blank">
+              <img src="{{ get_url(path=asset) }}" />
+            </a>
+          </div>
+          
+        {%- endif %}
+      {%- endfor %}
+      </div>
+      
+  </div>

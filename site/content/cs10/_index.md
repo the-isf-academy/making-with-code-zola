@@ -1,6 +1,6 @@
 +++
 title = "CS10"
-weight = 1
+weight = 50
 sort_by = "weight"
 
 +++

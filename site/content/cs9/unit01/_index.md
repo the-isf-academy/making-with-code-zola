@@ -1,5 +1,5 @@
 +++
-title= "Unit 01"
+title= "Unit 01: Data Science"
 weight= 1
 +++
 
@@ -7,7 +7,7 @@ weight= 1
 
 In this unit, we will explore data science ffdsfdsfsdds
 
-**In this unit we will introduce:**
+**Key concepts introduced**
 - functional programming
 - data types
 - data structures 

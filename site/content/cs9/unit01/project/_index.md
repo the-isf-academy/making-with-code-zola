@@ -10,6 +10,8 @@ To be successful in this project, you will need to find a question that is both 
 
 Here is an [example project juptyer notebook file](https://github.com/the-isf-academy/project-data-science-example/blob/master/project.ipynb). It has been adapted from a previous student's work. As such, the project had a different dataset requirement.
 
+{{ end_section() }}
+
 
 {% aside() %}
 
@@ -23,7 +25,8 @@ As such, we have adjusted the grading bands. Please see the below **Scoring** se
 {% end %}
 
 
----
+{{ end_section() }}
+
 
 
 
@@ -58,7 +61,8 @@ fill out the project.ipynb Jupyter notebook with each of the following sections:
 - Discussion - A discussion about the overarching question and how the sub-questions contribute to an 
   understanding of the overall question
 
----
+{{ end_section() }}
+
 
 ## [1] Timeline
 
@@ -102,7 +106,8 @@ Click below to see a detailed timeline for your class section.
 
 {{< /expand >}}
 
----
+{{ end_section() }}
+
 
 ## [2] Starter Code
 

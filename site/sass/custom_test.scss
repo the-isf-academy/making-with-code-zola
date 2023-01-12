@@ -1,0 +1,39 @@
+.book-hint{
+  background-color: red;
+  font-size: 200;
+}
+
+.image-galler-container {
+  max-width: 1224px;
+  width: 90%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+  
+.photo-gallery {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media(max-width: 768px){
+  .photo-gallery {
+    flex-direction: column;
+  }
+}
