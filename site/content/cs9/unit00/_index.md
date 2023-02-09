@@ -15,6 +15,9 @@ git_backend = "github_org"
 
 In this unit, within the context of drawing, students practice building up complex programs from simple ones. We’ll use Python’s turtle library to introduce fundamental computer science concepts, through hands-on visual labs. 
 
+{{ image(path='img1.png', width='50%') }}
+
+
 **Key concepts introduced:**
 - abstraction
 - decomposition 
@@ -24,3 +27,5 @@ In this unit, within the context of drawing, students practice building up compl
 
 **Python libraries explored:**
 - Turtle
+
+
