@@ -1,6 +1,7 @@
 ---
 title: "Unit 00: Drawing"
 bookCollapseSection: false
+draft: true
 type: unit
 slug: unit00_drawing
 ---

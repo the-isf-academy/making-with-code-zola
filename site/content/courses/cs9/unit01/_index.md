@@ -4,6 +4,7 @@ title: "Unit 01: Data Science"
 type: unit
 slug: unit01
 # draft: true
+headless: true
 ---
 
 ## Programming:

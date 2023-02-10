@@ -1,5 +1,6 @@
 ---
 Title: "[Resources]"
+draft: true
 ---
 
 # Resources
