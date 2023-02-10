@@ -1,6 +1,11 @@
 ---
 Title: "[Data Collection]"
+<<<<<<< HEAD
 bookCollapseSection: true
+=======
+draft: true
+# bookCollapseSection: true
+>>>>>>> cs9_unit01
 ---
 
 # Data Collection Guides
