@@ -73,7 +73,7 @@ The project is scored out of 7.
     - I can consistently track my progress with notes, comments, and commit messages. 
     - I can consistently save and track the development of my project by committing to Github.
     - I can systematically break down my project into smaller chunks.
-- Data & Methodology
+- Data Overview & Methodology
     - I can explain the data set and why I chose this subject of investigation. 
     - I can acknowledge any limitations of the data set. 
     - I can explain my action steps and reasoning for restructuring the data.
