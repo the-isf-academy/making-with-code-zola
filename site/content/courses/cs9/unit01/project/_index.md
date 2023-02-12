@@ -36,7 +36,7 @@ To be successful in this project, you should **find a topic that is both interes
 
 ✅ **The assessment is broken down into five criteria:**
 - Iterative Development 
-- Data & Methodology 
+- Data Overview & Methodology 
 - Data Analysis
 - Data Visualizations 
 - Narrative Report
