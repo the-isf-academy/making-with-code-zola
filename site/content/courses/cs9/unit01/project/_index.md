@@ -5,7 +5,7 @@ Title: Project
 
 # Unit 01 Data Science Project
 
-The final project for this unit will be a small research project. Working with the data science tools we explored this unit, **you are expected to tell a narrative story about a time in your life using data as evidence.** You will present your findings to your peers and
+The final project for this unit will be a research project. Working with the data science tools we explored this unit, **you are expected to tell a narrative story about a time in your life using data as evidence.** 
 
 To be successful in this project, you should **find a topic that is both interesting to you and answerable** (at least in part) with data from your chosen dataset. Your teachers will help you make sure your project hypothesis achieves that. 
 
@@ -16,7 +16,7 @@ To be successful in this project, you should **find a topic that is both interes
 
 ## [1] Timeline
 
-**The project begins on 13 February and you will have 4 in-class blocks to complete this project.** 
+📅 **The project begins on 13 February and you will have 4 in-class blocks to complete this project.** 
 
 | section | due date |
 |---------|----------|
@@ -27,15 +27,14 @@ To be successful in this project, you should **find a topic that is both interes
 
 ## [2] Starter Code
 
-{{< code-action >}} **You can find your project in your Google Drive:** `project_data_science`
-
+{{< code-action >}} **You can find your project in your Google Drive:** `project_data_science.ipynb`
 
 
 ---
 
 ## [3] Assessment
 
-The assessment is broken down into five criteria:
+✅ **The assessment is broken down into five criteria:**
 - Iterative Development 
 - Data & Methodology 
 - Data Analysis
@@ -69,7 +68,7 @@ The project is scored out of 7.
 
 ## [4] Success Claims
 
-Successful computer scientists should be able to make the following claims:
+💯 **Successful computer scientists should be able to make the following claims:**
 - Iterative Development 
     - I can consistently track my progress with notes, comments, and commit messages. 
     - I can consistently save and track the development of my project by committing to Github.
