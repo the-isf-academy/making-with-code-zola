@@ -3,7 +3,6 @@ title: "Challenges"
 # bookCollapseSection: true
 type: unit
 headless: true
-draft: true
 ---
 
 #### Challenges
