@@ -1,5 +1,5 @@
 ---
-title: "Unit Cryptography: Puzzle Project"
+title: "Unit Cryptography: Project"
 type: unit
 slug: unit00_networking
 # draft: true
