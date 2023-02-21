@@ -13,7 +13,7 @@ slug: unit02_web_design
 It should include at least one of the following:
 
 - personal achievements *(e.g. academic, athletic, artistic, etc.)*
-- hobbies and/or interests &(e.g. culture you identify with: games, movies, music, art, etc. )*
+- hobbies and/or interests *(e.g. culture you identify with: games, movies, music, art, etc. )*
 - examples/links to personal projects *(e.g. artwork, photography, music, writing, recipes)*
 - a portrait of yourself *(e.g. photography, drawing, cartoon, etc.)*
 
