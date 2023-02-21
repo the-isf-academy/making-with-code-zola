@@ -8,11 +8,15 @@ slug: unit02_web_design
 
 ## [0] Project Overview
 
-🎨 **Design Brief:** In this project, you must create a personal website to showcase yourself. This may include:
-- academic and/or non-academic achievements
-- hobbies and/or interests
-- examples/links to personal projects (e.g. artwork, music, writing, recipes)
-- a portrait of yourself
+🎨 **Design Brief:** In this project, you must create a personal website to showcase yourself. It is up to you to decide how to best express yourself and implement that vision. 
+
+It should include at least one of the following:
+
+- personal achievements *(e.g. academic, athletic, artistic, etc.)*
+- hobbies and/or interests &(e.g. culture you identify with: games, movies, music, art, etc. )*
+- examples/links to personal projects *(e.g. artwork, photography, music, writing, recipes)*
+- a portrait of yourself *(e.g. photography, drawing, cartoon, etc.)*
+
 
 **Your personal website must include:**
 - `.html` files
