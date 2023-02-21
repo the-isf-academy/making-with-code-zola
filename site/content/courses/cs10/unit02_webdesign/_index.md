@@ -29,17 +29,16 @@ You may use and adapt code you find online. However, you must keep track of the 
 
 ---
 
-## [1] Process Journal 
+## [1] Design Specification Document
 
 
-{{< write-action >}} **Find the Process Journal Document in your Google Drive folder. The purpose of the Process Journal is to outline your design specifications and track your ability to successfully implement your specifications.** You should also use a blank piece of paper to hand draw  a wireframe. You should include a photo of this in your planning document. This should include a:
+{{< write-action >}} **Find the Design Specification Document in your Google Drive folder. The purpose of this document is to outline your design specifications and justify any changes to the design over time.** You should also use a blank piece of paper to hand draw  a wireframe. You should include a photo of this in your planning document. This should include a:
 
 - [wireframe](https://balsamiq.com/learn/articles/what-are-wireframes/#:~:text=A%20wireframe%20is%20a%20schematic,or%20website%20you're%20building.) - a hand-drawn blueprint that is used to think through the structure of a website 
 - color palette - explanation for why you choose it
 - font(s) - explanation for why you choose it
 
-
-If your design specs change over time, that's okay! Just be sure to keep notes about what you changed and why.
+If your design specs change over time, that's okay! Just be sure to justify what you changed and why you changed it.
 
 ---
 
@@ -113,7 +112,7 @@ The project is scored out of 7.
 
 {{< deliverables  "Projects are due on Wednesday, 02 March." >}}
 
-- A `Web Design Project | Process Journal` - a Google Doc
+- A `Web Design Project | Design Specification Document` - a Google Doc
 - A `yourgithubusername.github.io` repository 
 
 ---
