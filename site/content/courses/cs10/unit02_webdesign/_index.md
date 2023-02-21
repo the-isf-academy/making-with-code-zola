@@ -88,7 +88,7 @@ The repository contains the following :
     - I can write well abstracted style rules using CSS 
 
 
-**For each criteria you will be assessed on a score from 0-3. With 4 criteria, there is a total of 9 potential points.** 
+**For each criteria you will be assessed on a score from 0-3. With 9 criteria, there is a total of 9 potential points.** 
 - 0 - no evidence of the practice
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
