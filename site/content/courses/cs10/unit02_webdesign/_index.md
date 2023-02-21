@@ -159,6 +159,7 @@ The project is scored out of 7.
 - [google color picker](https://g.co/kgs/aHdDB9)
 - [Escape Room](https://escape.wolfie.dev/)
 - [dribbble](https://dribbble.com/shots/popular/web-design)
+- [css examples](https://css-examples.wizardzines.com/)
 - Personal website examples
     - [jennylihan.com](https://jennylihan.com/)
     - [wolfei.dev](https://wolfie.dev/)
