@@ -21,7 +21,7 @@ It should include at least one of the following:
 **Your personal website must include:**
 - `.html` files
     - `index.html` homepage
-    - 2 or more additional `.html` pages 
+    - 1 additional `.html` sub-page
 - `styles.css` file
 - `media`
     - this may include images or videos to showcase yourself or your work
@@ -55,7 +55,6 @@ You have the option of hosting your site online using Github pages. Because of t
 The repository contains the following :
 - `index.html`
 - `page1.html` - you should rename this file
-- `page2.html` - you should rename this file
 - `styles.css`
 - `/assets` - you should put in photos into folder 
 - `README.md`
