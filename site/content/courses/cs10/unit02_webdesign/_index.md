@@ -48,11 +48,24 @@ If your design specs change over time, that's okay! Just be sure to justify what
 
 ## [2] Starter Code
 
-You have the option of hosting your site online using Github pages. Because of this, you will need to `fork` the repository into your personal Github account. 
+You have the option of hosting your site online using Github pages. Because of this, you will need to create a new repository from a *template* of  the repository into your personal Github account. 
 
-{{< code-action "Follow along with the teacher to ensure you fork this repository properly: " >}} [https://github.com/the-isf-academy/emmaqbrown.github.io](https://github.com/the-isf-academy/emmaqbrown.github.io). Be sure to add both teachers to your personal repository as a collaborator. 
+{{< code-action "Follow along with the teacher to ensure you properly create a template of the repository: " >}} [https://github.com/the-isf-academy/emmaqbrown.github.io](https://github.com/the-isf-academy/emmaqbrown.github.io).
+> - Select `Use this template`
+> - Select `Create a new repository`
+> - Name the repository: `yourgithubusername.github.io` *(e.g. emmaqbrown.github.io)*
+> - Select `Private`
+> - Select `Create repository from template`
 
-The repository contains the following :
+{{< code-action "Add the teachers to your  personal repository as a collaborators." >}}
+> - Select `Settings`
+> - Select `Collaborators and teams`
+> - Selected `Add people`
+> - Add `emmaqbrown` and `brittegenzlinger` as Admin
+
+{{< code-action "Clone the repository into your" >}} `cs10/unit_web_design` folder. 
+
+👀 **The repository contains the following:**
 - `index.html`
 - `page1.html` - you should rename this file
 - `styles.css`
@@ -60,10 +73,9 @@ The repository contains the following :
 - `README.md`
 
 🌐 **If you would like for your project to be live on the web, you must activate Github pages**. Every time you push your Github, it will automatically push your website live to: `yourgithubername.github.io`. For example, mine is hosted at:[https://emmaqbrown.github.io/](https://emmaqbrown.github.io/).
-
-0. Select `Settings` on the repo page
-0. Select `pages` on the left sidebar
-0. Select `Branch` > `main` > `Save`
+> - Select `Settings` on the repo page
+> - Select `Pages` on the left sidebar
+> - Select `Branch` > `main` > `Save`
 
 
 ---
