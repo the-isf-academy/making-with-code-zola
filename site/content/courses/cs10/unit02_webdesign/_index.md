@@ -54,7 +54,7 @@ You have the option of hosting your site online using Github pages. Because of t
 > - Select `Use this template`
 > - Select `Create a new repository`
 > - Name the repository: `yourgithubusername.github.io` *(e.g. emmaqbrown.github.io)*
-> - Select `Private`
+> - Select `Private` or `Public` (if you want your site to be live on the web, it must be `Public`)
 > - Select `Create repository from template`
 
 {{< code-action "Add the teachers to your  personal repository as a collaborators." >}}
