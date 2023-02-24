@@ -157,12 +157,13 @@ The project is scored out of 7.
 
 🔍 **Google is your best friend!** Especially when it comes to Web Design, it's not about remembering exact HTML syntax or hundreds of specific CSS properties. It's about coming up with a design and figuring out how to implement it by looking at examples and modifying existing code.
 
-- CSS Code Pen Challenges
+- CSS Code Pen Examples
     - [google search bar](bit.ly/cs10_css_challenge)
     - [button](bit.ly/css_challenge_button)
     - [hover](https://codepen.io/eqbrown/pen/mdGeZdy)
     - [photo grid](bit.ly/css_challenge_photogrid)
     - [card](bit.ly/css_challenge_card)
+    - [flexbox - align items](https://codepen.io/eqbrown/pen/MWqeLrg)
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Google Fonts](https://fonts.google.com/)
 - [Fontjoy](https://fontjoy.com/) - generates font combinations
