@@ -1,10 +1,6 @@
-<blockquote class="book-hint">
-    <strong>👾 💬jjkl </strong> 
-  <br>
-  testing aside
-  {{ body | markdown(inline=true) | safe}}
-
-
-
-
+<blockquote class="shortcode-aside">
+  <strong>👾 💬  {{ title}} </strong> 
+  <div>
+  {{ body | markdown(inline=true) }}
+</div>
 </blockquote>

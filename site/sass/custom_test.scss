@@ -1,7 +1,32 @@
-.book-hint{
-  background-color: red;
+.shortcode-aside{
+  background-color: rgb(220, 238, 244);
+  border-left: 5px solid rgb(179, 194, 200);
+  border-radius: 5px;
   font-size: 200;
+  padding: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
+
+.shortcode-expand{
+  background-color: rgb(220, 238, 244);
+  border-left: 5px solid rgb(179, 194, 200);
+  border-radius: 5px;
+  font-size: 200;
+  padding: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.shortcode-expand input[type="checkbox"]:checked + .shortcode-expand-content {
+  display: block;
+}
+
+.shortcode-expand .shortcode-expand-content {
+  display: none;
+  padding: 1rem;
+}
+
 
 .image-galler-container {
   max-width: 1224px;

@@ -13,7 +13,7 @@ Here is an [example project juptyer notebook file](https://github.com/the-isf-ac
 {{ end_section() }}
 
 
-{% aside() %}
+{% aside(title="ATTN") %}
 
 ATTN: Online learning change
 
